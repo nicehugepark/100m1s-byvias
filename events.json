@@ -24,7 +24,8 @@
         "외국 카드 결제 가능 호텔 우선 확인"
       ],
       "artist_color": "#7B4FB5",
-      "artist_badge": "BTS"
+      "artist_badge": "BTS",
+      "official_post_url": ""
     },
     {
       "slug": "blackpink-deadline-kaohsiung",
@@ -45,7 +46,8 @@
         "1인 호텔 지출 평균 NT$8,772 수준 참고"
       ],
       "artist_color": "#F36BAE",
-      "artist_badge": "BP"
+      "artist_badge": "BP",
+      "official_post_url": ""
     },
     {
       "slug": "blackpink-deadline-tokyo",
@@ -66,7 +68,8 @@
         "신주쿠/우에노 + JR 이동도 가성비"
       ],
       "artist_color": "#F36BAE",
-      "artist_badge": "BP"
+      "artist_badge": "BP",
+      "official_post_url": ""
     },
     {
       "slug": "twice-thisisfor-kaohsiung",
@@ -87,7 +90,8 @@
         "임박 시 인근 도시로 분산"
       ],
       "artist_color": "#FB6E9B",
-      "artist_badge": "TW"
+      "artist_badge": "TW",
+      "official_post_url": ""
     },
     {
       "slug": "seventeen-new-incheon",
@@ -108,7 +112,8 @@
         "서울 서남권(영등포·신도림)도 접근 양호"
       ],
       "artist_color": "#E29AAE",
-      "artist_badge": "SVT"
+      "artist_badge": "SVT",
+      "official_post_url": ""
     },
     {
       "slug": "newjeans-bunniescamp-tokyo",
@@ -129,7 +134,8 @@
         "JR 야마노테선 인근이면 어디든 무난"
       ],
       "artist_color": "#8A8A8A",
-      "artist_badge": "NJ"
+      "artist_badge": "NJ",
+      "official_post_url": ""
     },
     {
       "slug": "aespa-synk-tokyo",
@@ -150,7 +156,8 @@
         "성수기 겹치면 항공부터 확보"
       ],
       "artist_color": "#2EC4B6",
-      "artist_badge": "æ"
+      "artist_badge": "æ",
+      "official_post_url": ""
     },
     {
       "slug": "gdragon-ubermensch-macau",
@@ -171,7 +178,8 @@
         "주하이 숙박 + 육로 통근도 가성비"
       ],
       "artist_color": "#8A8A8A",
-      "artist_badge": "GD"
+      "artist_badge": "GD",
+      "official_post_url": ""
     },
     {
       "slug": "ive-showwhatiam-tokyo",
@@ -191,7 +199,18 @@
         "신주쿠/우에노 + JR 이동도 가성비"
       ],
       "artist_color": "#8A8A8A",
-      "artist_badge": "IVE"
+      "artist_badge": "IVE",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Ticketmaster (IVE 공식 티켓)",
+          "url": "https://www.ticketmaster.com/ive-tickets/artist/2850606"
+        },
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "bts-arirang-busan-0612",
@@ -211,7 +230,14 @@
         "평일 끼워 예약 시 주말 폭등 회피"
       ],
       "artist_color": "#7B4FB5",
-      "artist_badge": "BTS"
+      "artist_badge": "BTS",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "gidle-syncopation-yokohama",
@@ -231,7 +257,18 @@
         "도쿄 숙소 + JR/도큐선 통근도 대안"
       ],
       "artist_color": "#C7274C",
-      "artist_badge": "GI"
+      "artist_badge": "GI",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "K-Arena Yokohama 공식 일정",
+          "url": "https://k-arena.com/en/schedule/20260621-1/"
+        },
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "babymonster-choom-seoul",
@@ -251,7 +288,14 @@
         "성수/건대권도 접근 양호"
       ],
       "artist_color": "#C0392B",
-      "artist_badge": "BM"
+      "artist_badge": "BM",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "itzy-tunnelvision-hongkong",
@@ -271,7 +315,14 @@
         "공항 인근 숙소는 시내 접근성 확인"
       ],
       "artist_color": "#D81E5B",
-      "artist_badge": "ITZY"
+      "artist_badge": "ITZY",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "twice-thisisfor-seoul",
@@ -291,7 +342,14 @@
         "성내/천호권도 접근 양호"
       ],
       "artist_color": "#FB6E9B",
-      "artist_badge": "TW"
+      "artist_badge": "TW",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "lesserafim-pureflow-incheon",
@@ -311,7 +369,14 @@
         "서울 숙박 시 공연 후 귀가 교통 확인 필수"
       ],
       "artist_color": "#6FA8DC",
-      "artist_badge": "LSF"
+      "artist_badge": "LSF",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "nmixx-zerofrontier-kaohsiung",
@@ -331,7 +396,14 @@
         "타이베이발 고속철(HSR) 1.5~2h 통근도 대안"
       ],
       "artist_color": "#8A8A8A",
-      "artist_badge": "NMX"
+      "artist_badge": "NMX",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "enhypen-bloodsaga-dallas",
@@ -351,7 +423,18 @@
         "DART 접근 가능 외곽 숙소도 가성비"
       ],
       "artist_color": "#F2701E",
-      "artist_badge": "EN"
+      "artist_badge": "EN",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Ticketmaster (ENHYPEN Dallas 공식)",
+          "url": "https://www.ticketmaster.com/enhypen-world-tour-blood-saga-in-dallas-texas-07-17-2026/event/0C006489C525D38A"
+        },
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "exo-planet6-tokyo",
@@ -371,7 +454,14 @@
         "도쿄 도심 숙소 + JR 통근도 대안"
       ],
       "artist_color": "#AEB4BC",
-      "artist_badge": "EXO"
+      "artist_badge": "EXO",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "boynextdoor-knockon-seoul",
@@ -391,7 +481,14 @@
         "성내/천호권도 접근 양호"
       ],
       "artist_color": "#8A8A8A",
-      "artist_badge": "BND"
+      "artist_badge": "BND",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "lesserafim-pureflow-osaka",
@@ -411,7 +508,14 @@
         "신오사카권 + JR도 가성비"
       ],
       "artist_color": "#6FA8DC",
-      "artist_badge": "LSF"
+      "artist_badge": "LSF",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "babymonster-choom-osaka-kyocera",
@@ -431,7 +535,14 @@
         "우메다권 + JR/지하철도 무난"
       ],
       "artist_color": "#C0392B",
-      "artist_badge": "BM"
+      "artist_badge": "BM",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "aespa-synk-complaexity-seoul",
@@ -451,7 +562,14 @@
         "구로/가산권도 접근 양호"
       ],
       "artist_color": "#2EC4B6",
-      "artist_badge": "æ"
+      "artist_badge": "æ",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "aespa-synk-complaexity-taipei-dome",
@@ -471,7 +589,18 @@
         "타이베이 도심 어디든 MRT 접근 양호"
       ],
       "artist_color": "#2EC4B6",
-      "artist_badge": "æ"
+      "artist_badge": "æ",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Live Nation (aespa Taipei 공식)",
+          "url": "https://www.livenation.com/event/intl_1671209/aespa-live-tour-synk-complaexity-in-taipei"
+        },
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "bts-arirang-kaohsiung-1119",
@@ -491,7 +620,14 @@
         "타이난 숙소 + HSR 통근도 매진 시 대안"
       ],
       "artist_color": "#7B4FB5",
-      "artist_badge": "BTS"
+      "artist_badge": "BTS",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "babymonster-choom-taipei",
@@ -511,7 +647,14 @@
         "타이베이 도심 MRT 접근 양호"
       ],
       "artist_color": "#C0392B",
-      "artist_badge": "BM"
+      "artist_badge": "BM",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     },
     {
       "slug": "lesserafim-pureflow-london-o2",
@@ -531,7 +674,18 @@
         "시내 숙소 + 지하철 이동도 가성비"
       ],
       "artist_color": "#6FA8DC",
-      "artist_badge": "LSF"
+      "artist_badge": "LSF",
+      "official_post_url": "",
+      "sources": [
+        {
+          "name": "The O2 공식 일정",
+          "url": "https://www.theo2.co.uk/events/detail/2026-le-sserafim-tour-pureflow"
+        },
+        {
+          "name": "Soompi 2026 K-Pop 투어 일정",
+          "url": "https://www.soompi.com/article/1797016wpp"
+        }
+      ]
     }
   ],
   "affiliate": {

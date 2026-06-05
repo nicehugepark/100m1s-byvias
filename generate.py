@@ -104,6 +104,9 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
+.srcbox{background:#fff}.srcs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.srclink{font-size:13px;color:var(--accent);text-decoration:none;background:#f1f5fa;border:1px solid #dbe6f2;border-radius:7px;padding:6px 10px}
+.srclink:hover{background:#e6f1fb}
 """
 
 
@@ -126,6 +129,57 @@ def artist_badge(e):
     label = e.get("artist_badge") or e["artist"][:3].upper()
     fg = _text_on(color)
     return f'<span class="abadge" style="background:{color};color:{fg}" title="{esc(e["artist"])}">{esc(label)}</span>'
+
+
+def sources_section(e):
+    """일정 출처 영역 — 출처 있을 때만 렌더(없으면 빈 문자열). 출처 날조 금지."""
+    srcs = e.get("sources") or []
+    if not srcs:
+        return ""
+    links = "".join(
+        f'<a class="srclink" href="{esc(s["url"])}" target="_blank" rel="noopener nofollow">'
+        f"{esc(s['name'])} ↗</a>"
+        for s in srcs
+        if s.get("url") and s.get("name")
+    )
+    if not links:
+        return ""
+    return f"""
+<div class="box srcbox">
+  <div style="font-weight:600;font-size:14px">일정 출처</div>
+  <div class="srcs">{links}</div>
+</div>"""
+
+
+# 지원 SNS oEmbed/위젯 — 공식 플랫폼 위젯 js만 허용(임의 스크립트 금지)
+_SNS_WIDGETS = {
+    "x.com": '<script async src="https://platform.twitter.com/widgets.js"></script>',
+    "twitter.com": '<script async src="https://platform.twitter.com/widgets.js"></script>',
+    "instagram.com": '<script async src="https://www.instagram.com/embed.js"></script>',
+}
+
+
+def sns_embed(e):
+    """official_post_url 값이 있을 때만 표준 위젯 렌더(현재 값 0건 = 미렌더).
+    이시카와 수집 후 자동 활성. 외부 스크립트는 해당 플랫폼 공식 위젯 js만."""
+    url = (e.get("official_post_url") or "").strip()
+    if not url:
+        return ""
+    host = next((h for h in _SNS_WIDGETS if h in url), None)
+    if host is None:
+        return ""
+    if "instagram.com" in host:
+        body = f'<blockquote class="instagram-media" data-instgrm-permalink="{esc(url)}"></blockquote>'
+    else:  # x/twitter
+        body = (
+            f'<blockquote class="twitter-tweet"><a href="{esc(url)}"></a></blockquote>'
+        )
+    return f"""
+<div class="box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">공식 공지</div>
+  {body}
+  {_SNS_WIDGETS[host]}
+</div>"""
 
 
 def aff_hotel(city):
@@ -185,7 +239,7 @@ def event_html(e):
   <p style="margin:10px 0 0;font-size:14px"><b>예약 데드라인:</b> {esc(e["deadline_text"])}</p>
 </div>
 <p class="disc">가격·잔량 전망은 추정이며 실제와 다를 수 있습니다. 예약·결제 책임은 이용자 본인에게 있습니다.</p>
-
+{sources_section(e)}{sns_embed(e)}
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">지금 잠그기</p>
 <div class="btns">
   <a class="btn" href="{aff_hotel(e["city"])}" rel="sponsored nofollow" target="_blank">🏨 호텔 <small>· Booking</small></a>
