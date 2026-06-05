@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 96" width="300" height="96" role="img" aria-label="ByBias">
+  <title>ByBias</title>
+  <text x="16" y="68" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="60" font-weight="700" letter-spacing="-1.5">
+    <tspan fill="#23272F">by</tspan><tspan fill="#E84A7F">bias</tspan>
+  </text>
+  <path d="M262 22c-2.4-4-8.6-3.3-8.6 1.6 0 4 8.6 9.1 8.6 9.1s8.6-5.1 8.6-9.1c0-4.9-6.2-5.6-8.6-1.6z" fill="#E84A7F"/>
+</svg>

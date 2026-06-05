@@ -79,6 +79,7 @@ CSS = """
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
 .top b{font-weight:600}.top span{margin-left:auto;color:var(--muted);font-size:13px}
+.top .logo{height:28px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
@@ -126,6 +127,7 @@ def page(title, body):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(SITE["tagline"])}">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>{CSS}</style></head><body><div class="wrap">{body}</div></body></html>"""
 
 
@@ -214,7 +216,7 @@ def index_html(events):
 <p class="sub" style="margin-bottom:10px">이미 끝난 공연 — 리드타임·가격 폭등 참고용 회고 사례입니다.</p>
 <div class="grid">{past_cards}</div>"""
     body = f"""
-<div class="top"><b>{esc(SITE["name"])}</b><span>{esc(SITE["domain"])}</span></div>
+<div class="top"><img class="logo" src="logo.svg" alt="{esc(SITE["name"])}" width="88" height="28"><span>{esc(SITE["domain"])}</span></div>
 <h1>{esc(SITE["tagline"])}</h1>
 <p class="sub">콘서트·팬미팅이 뜨면 항공·호텔이 먼저 오릅니다. 오르기 전에 잠그세요.</p>
 <div class="grid">{cards}</div>
@@ -239,6 +241,10 @@ for f in DIST.glob("*.html"):
 # 페이지는 전 이벤트 생성(지난 이벤트도 회고 링크로 도달 가능). 메인 목록에서만 격리.
 for e in events:
     (DIST / f"{e['slug']}.html").write_text(event_html(e), encoding="utf-8")
+# 정적 에셋(로고·파비콘) dist 복사 — 빌드 산출 누락 방지
+for asset in ("logo.svg", "favicon.svg"):
+    if (ROOT / asset).exists():
+        shutil.copy(ROOT / asset, DIST / asset)
 # GitHub Pages용: 커스텀 도메인(CNAME) + Jekyll 비활성(.nojekyll)
 if (ROOT / "CNAME").exists():
     shutil.copy(ROOT / "CNAME", DIST / "CNAME")
