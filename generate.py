@@ -99,11 +99,33 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
 .disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
+.gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 7px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0}
+.ecard .ehead{display:flex;align-items:center;gap:9px}
+.ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
+.ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
 """
 
 
 def esc(s):
     return html.escape(str(s))
+
+
+def _text_on(bg_hex):
+    """배경 명도 기준 가독 텍스트색(흰/검) — WCAG 단순 luminance."""
+    h = bg_hex.lstrip("#")
+    r, g, b = (int(h[i : i + 2], 16) for i in (0, 2, 4))
+    lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+    return "#1a1a18" if lum > 0.62 else "#ffffff"
+
+
+def artist_badge(e):
+    """자체 생성 배지 = 팬덤 공식 응원색 배경 + 아티스트 약칭 이니셜(지시적 사용, 상표적 사용 아님).
+    공식 로고 그래픽·외부 이미지 모방 금지(텍스트 모노그램만). 컨테이너 CSS가 크기 결정."""
+    color = e.get("artist_color", "#8A8A8A")
+    label = e.get("artist_badge") or e["artist"][:3].upper()
+    fg = _text_on(color)
+    return f'<span class="abadge" style="background:{color};color:{fg}" title="{esc(e["artist"])}">{esc(label)}</span>'
 
 
 def aff_hotel(city):
@@ -128,7 +150,9 @@ def page(title, body):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(SITE["tagline"])}">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>{CSS}</style></head><body><div class="wrap">{body}</div></body></html>"""
+<style>{CSS}</style></head><body><div class="wrap">{body}
+<p class="gdisc">본 사이트는 아티스트·소속사와 무관한 비공식 일정·여행 정보 서비스이며, 공식 제휴 관계가 없습니다.</p>
+</div></body></html>"""
 
 
 def event_html(e):
@@ -147,11 +171,12 @@ def event_html(e):
     )
     body = f"""
 <a class="back" href="index.html">← 전체 일정</a>
-<div style="display:flex;align-items:flex-start;gap:10px;margin-top:10px">
-  <div><h1>{esc(e["artist"])} — {esc(e["city"])}</h1>
-  <p class="sub">{esc(e["event"])} · {esc(e["venue"])} · {esc(e["date"])} · {esc(e["country"])}</p></div>
+<div class="ehead-detail">
+  {artist_badge(e)}
+  <div><h1 style="margin:0">{esc(e["artist"])} — {esc(e["city"])}</h1>
+  <p class="sub" style="margin:2px 0 0">{esc(e["event"])} · {esc(e["venue"])} · {esc(e["date"])} · {esc(e["country"])}</p></div>
 </div>
-<span class="badge" style="color:{fg};background:{bg}">{esc(label)}</span>
+<span class="badge" style="color:{fg};background:{bg};margin-top:10px">{esc(label)}</span>
 
 <div class="box outlook">
   <div style="color:var(--muted);font-size:13px">가격·수요 전망 (발표 이후)</div>
@@ -192,8 +217,10 @@ def event_html(e):
 
 def _card(e):
     label, fg, bg = LEAD[lead_type_of(e)]
-    return f"""<a class="ecard" href="{e["slug"]}.html">
-<div class="a">{esc(e["artist"])}</div><div class="c">{esc(e["city"])} · {esc(e["date"])}</div>
+    stripe = e.get("artist_color", "#8A8A8A")
+    return f"""<a class="ecard" href="{e["slug"]}.html" style="border-left:4px solid {stripe}">
+<div class="ehead">{artist_badge(e)}<div class="a">{esc(e["artist"])}</div></div>
+<div class="c">{esc(e["city"])} · {esc(e["date"])}</div>
 <span class="badge" style="color:{fg};background:{bg};font-size:11px">{esc(label.split(" · ")[0])}</span></a>"""
 
 
