@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fandom — 정적 사이트 생성기 (린 MVP)
+ByBias — 정적 사이트 생성기 (린 MVP)
 events.json → dist/index.html + dist/<slug>.html
 어필리에이트 링크는 PLACEHOLDER. 보스 가입 후 events.json의 affiliate 값만 교체하면 전 페이지 일괄 반영.
 실행: python3 generate.py
@@ -183,7 +183,9 @@ def event_html(e):
 <div class="foot">이 페이지의 예약 링크는 제휴(어필리에이트) 링크로, 예약 시 수수료가 발생할 수 있습니다.
 수치는 공개 보도 기반 추정이며 실제와 다를 수 있습니다. · {esc(SITE["domain"])}</div>
 """
-    return page(f"{e['artist']} {e['city']} — 항공·숙박 예약 타이밍 | Fandom", body)
+    return page(
+        f"{e['artist']} {e['city']} — 항공·숙박 예약 타이밍 | {SITE['name']}", body
+    )
 
 
 def _card(e):
@@ -221,7 +223,7 @@ def index_html(events):
 {past_section}
 <div class="foot">예약 링크는 제휴 링크입니다. · {esc(SITE["domain"])}</div>
 """
-    return page(f"Fandom — {SITE['tagline']}", body)
+    return page(f"{SITE['name']} — {SITE['tagline']}", body)
 
 
 events = data["events"]

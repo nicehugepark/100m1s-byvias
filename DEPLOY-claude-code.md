@@ -1,4 +1,4 @@
-# Fandom 사이트 배포 지시서 (Claude Code / 보스 맥에서 실행)
+# ByBias 사이트 배포 지시서 (Claude Code / 보스 맥에서 실행)
 
 > Cowork 샌드박스는 GitHub 인증·네트워크가 없어 푸시 불가. 이 파일을 **Claude Code(보스 맥, SSH 인증됨)** 에 넘기거나 보스가 직접 실행.
 > 권고: 기존 `100m1s` repo가 아니라 **별도 repo `fandom-site`** 로 분리 (Pages는 repo당 사이트 1개).
@@ -24,13 +24,13 @@ gh repo create nicehugepark/fandom-site --public --source=. --remote=origin --pu
 - (CLI로도 가능) `gh api -X POST repos/nicehugepark/fandom-site/pages -f 'build_type=workflow'`
 
 ## 4. 커스텀 도메인 연결
-- 100m1s.com DNS에 **CNAME 레코드**: `fandom` → `nicehugepark.github.io`
-- repo Settings → Pages → Custom domain = `fandom.100m1s.com` → "Enforce HTTPS" 체크
+- 100m1s.com DNS에 **CNAME 레코드**: `bybias` → `nicehugepark.github.io`
+- repo Settings → Pages → Custom domain = `bybias.100m1s.com` → "Enforce HTTPS" 체크
 - (`CNAME` 파일은 이미 repo에 포함됨)
 
 ## 5. 검증
 - Actions 탭에서 build·deploy 성공 확인
-- `https://fandom.100m1s.com` 접속 → index + 이벤트 페이지 10개 확인
+- `https://bybias.100m1s.com` 접속 → index + 이벤트 페이지(미래분) 확인
 
 ## 이후 운영
 - `events.json`에 공연 추가 → 커밋·푸시하면 **자동 재생성·배포**
