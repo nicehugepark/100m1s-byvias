@@ -21,7 +21,7 @@
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
 .top b{font-weight:600}.top span{margin-left:auto;color:var(--muted);font-size:13px}
-.top .logo{height:28px;width:auto;display:block}
+.top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
@@ -39,7 +39,10 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
+ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
+/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+body{overflow-wrap:break-word;word-break:normal}
+li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
 .news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
 .news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
@@ -57,8 +60,36 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
 .srclink:hover{background:#e6f1fb}
 .postlink{display:inline-block;font-size:14px;font-weight:500;color:#fff;background:var(--accent);text-decoration:none;border-radius:8px;padding:9px 14px}
 .postlink:hover{filter:brightness(.94)}
+.plink{display:inline-flex;align-items:center;gap:7px}.plink .plogo{flex:0 0 auto}
+.chchips{display:flex;flex-wrap:wrap;gap:8px}
+.chchip{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);text-decoration:none;background:#f7f6f1;border:1px solid var(--line);border-radius:8px;padding:7px 11px}
+.chchip:hover{border-color:var(--accent);color:var(--accent)}.chchip .plogo{flex:0 0 auto;color:var(--muted)}.chchip:hover .plogo{color:var(--accent)}
+.oshows{display:flex;flex-direction:column;gap:7px}
+.oshow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:#fafaf7;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px}
+.oshow:hover{border-color:var(--accent)}.oshow .osc{font-weight:500}.oshow .osd{color:var(--muted);margin-inline-start:auto}
+.oshow-next{background:#eef4fb;border-color:#cfe0f2}.oshow .nextflag{font-weight:700;color:var(--accent);font-size:12px}
+.ytfacade{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;padding:0}
+.ytplay{position:absolute;inset:0;margin:auto;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.62);color:#fff;border-radius:50%;font-size:20px;padding-inline-start:3px}
+.ytfacade:hover .ytplay{background:#A32D2D}
+.ytframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
 .maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:#fff;border:1px solid #cfcdc4;border-radius:8px;padding:7px 12px;margin-top:8px}
 .maplink:hover{border-color:var(--ink)}
+/* 현지 실용 정보 접힘 섹션 */
+.linfo{margin:14px 0}.linfo>summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:8px}
+.linfo>summary::-webkit-details-marker{display:none}
+.linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
+.linfo[open]>summary::after{transform:rotate(180deg)}
+.linfo>summary:hover{border-color:#c9c7bd}
+.ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
+.lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
+.lirow .lv{line-height:1.55;min-width:0}.lirow .lv a{color:var(--accent);text-decoration:none}.lirow .lv a:hover{text-decoration:underline}
+.tkbox .lirow .lv a{font-weight:500}
+/* 핫플 항목: 이름+지도 한 줄, 설명은 그 아래 hanging(좌측 정렬 유지) */
+.hspot{margin:7px 0}.hspot:first-child{margin-top:0}.hspot .hn{font-weight:600}
+.hspot .hd{display:block;color:var(--muted);margin-top:2px;line-height:1.5}
+/* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
+@media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
@@ -77,8 +108,8 @@ ul{padding-inline-start:18px;padding-left:unset}
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,#ffffff 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
   <span class="ghost ghost-lg" aria-hidden="true">BP</span>
   <span class="abadge" style="background:#F36BAE;color:#ffffff" title="BLACKPINK">BP</span>
-  <div><h1 style="margin:0">BLACKPINK — 도쿄</h1>
-  <p class="sub" style="margin:2px 0 0">DEADLINE World Tour · 도쿄돔 · 2026-01-16 <span class="dday" data-date="2026-01-16"></span> · 🇯🇵 日本</p></div>
+  <div><h1 style="margin:0">BLACKPINK — 东京</h1>
+  <p class="sub" style="margin:2px 0 0">DEADLINE World Tour · 도쿄돔 · 2026-01-16 <span class="dday" data-date="2026-01-16"></span> · 🇯🇵 日本 东京</p></div>
 </div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">超长期预订 · 提前数月预约</span>
 
@@ -90,23 +121,37 @@ ul{padding-inline-start:18px;padding-left:unset}
 </div>
 <p class="disc">价格·余量预测为估计值，实际可能有所不同。预订·支付责任由用户自行承担。</p>
 
+<div class="box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">艺人视频</div>
+  <button class="ytfacade" data-vid="2GJfWMYCWY0" aria-label="视频播放: BLACKPINK - &#x27;GO&#x27; M/V"
+    style="background-image:url('https://i.ytimg.com/vi/2GJfWMYCWY0/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
+  <p style="margin:8px 0 0;font-size:13px">BLACKPINK - &#x27;GO&#x27; M/V <span style="color:var(--muted)">· BLACKPINK (공식)</span></p>
+</div>
+<div class="box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">艺人官方频道</div>
+  <div class="chchips"><a class="chchip" href="https://www.ygfamily.com/en/artist/BLACKPINK" target="_blank" rel="noopener nofollow"><span>经纪公司 · YG Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.blackpinkofficial.com/" target="_blank" rel="noopener nofollow"><span>官方网站</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/blackpinkofficial/" target="_blank" rel="noopener nofollow" aria-label="BLACKPINK Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/ygofficialblink" target="_blank" rel="noopener nofollow" aria-label="BLACKPINK X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@BLACKPINK" target="_blank" rel="noopener nofollow" aria-label="BLACKPINK YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/blackpink" target="_blank" rel="noopener nofollow" aria-label="BLACKPINK Weverse"><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/blackpink" target="_blank" rel="noopener nofollow"><span>粉丝俱乐部 · BLINK</span><span aria-hidden="true"> ↗</span></a></div>
+</div>
+<details class="linfo">
+  <summary>🧭 本地实用信息</summary>
+  <div class="ligrid"><div class="lirow"><div class="lk">交通</div><div class="lv">Tokyo Metro·Toei地铁 + JR线路密集。交通卡使用Suica·PASMO（互相兼容，适用全线路·便利店）。但普通Suica/PASMO销售因芯片短缺而受限 — 建议访客使用Welcome Suica（可使用28天）或移动Suica/PASMO。</div></div><div class="lirow"><div class="lk">深夜出行</div><div class="lv">地铁·JR末班车约午夜~00:30，部分线路约01:00前后（无24小时运营）。末班车后深夜巴士受限，出租车费用较高。演唱会若在22:00后结束，必须提前确认Tokyo Dome→市中心的末班车换乘时间。</div></div><div class="lirow"><div class="lk">支付方式</div><div class="lv">现金比重仍较高（小型店铺·部分餐饮仅收现金）。大型商店·连锁店·交通接受刷卡/IC卡。QR码支付（PayPay）正在普及。</div></div><div class="lirow"><div class="lk">换汇与货币</div><div class="lv">日元（JPY, ¥）。现金比重较高，建议兑换一定金额的现金。机场·市内兑换所·7-Eleven ATM（外卡取款）普遍。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">日语。旅游景点·车站指示标识英文标注良好，但日常英语通用度中等偏低，翻译应用程序较为便利。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(电车换乘·路线搜索（英文）)</span> · GO (タクシーGO) <span style='color:var(--muted)'>(打车应用)</span> · PayPay <span style='color:var(--muted)'>(QR码便捷支付)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">GO <span style='color:var(--muted)'>(深夜打车应用（日本市占率约80%，东京夜间强势）)</span> · S.RIDE <span style='color:var(--muted)'>(东京专用打车(OneSwipe，快速配对))</span> · DiDi <span style='color:var(--muted)'>(打车替代方案(东京地区运营))</span> · Uber <span style='color:var(--muted)'>(打车应用(英文界面，深夜可信度佳))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">Tokyo Dome正门可避开——移至水道桥/后乐园站对侧后叫车；应用未匹配，交叉呼叫GO↔S.RIDE↔DiDi(各应用车池不同)</div></div><div class="lirow"><div class="lk">末班车提醒</div><div class="lv">Suidobashi/Korakuen/Tokyo Dome City 附近。地铁、JR末班车时间约为午夜至00:30，建议提前确认前往市中心方向的末班车换乘时间。</div></div></div>
+</details>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即锁定</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=도쿄&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=도쿄&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航班 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Tokyo&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Tokyo&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航班 <small>· Skyscanner</small></a>
   <a class="btn" href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=도쿄&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 旅游·门票 <small>· Klook</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Tokyo&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 旅游·门票 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本页预订链接为合作（佣金）链接。用户无额外费用负担。</p>
 
 <div class="box">
   <div style="font-weight:600;font-size:14px">演出场地</div>
-  <p style="margin:4px 0 0;font-size:14px">도쿄돔 · 도쿄</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%8F%84%EC%BF%84%EB%8F%94+%EB%8F%84%EC%BF%84" target="_blank" rel="noopener">📍 在地图查看</a>
+  <p style="margin:4px 0 0;font-size:14px">도쿄돔 · 东京</p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%8F%84%EC%BF%84%EB%8F%94+Tokyo" target="_blank" rel="noopener">📍 在地图查看</a>
   <div style="font-weight:600;font-size:14px;margin-top:14px">附近住宿贴士</div>
-  <ul><li>水道桥·饭田桥·秋叶原区域接近便利</li><li>新宿/上野及JR往返也有性价比</li></ul>
+  <ul><li>水道桥(shuǐdàoqiào)·饭田桥(fàntián)·秋叶原(qiūyèyuán)区 交通便利</li><li>新宿(xīnjiù)/上野(shàngyě) + JR中转也划算</li></ul>
   <div style="font-weight:600;font-size:14px;margin-top:12px">演出后返回路线</div>
-  <p style="margin:6px 0 0;font-size:14px">水道桥/后乐园站。演出结束后拥挤 — 步行一站后上车。</p>
+  <p style="margin:6px 0 0;font-size:14px">水道桥(shuǐdàoqiào)/后乐园(hòulèyuàn)站。演出后拥堵 — 步行一站再乘车</p>
 </div>
 
 <div class="news">
@@ -150,5 +195,13 @@ for(var j=0;j<els.length;j++){var ds=els[j].getAttribute('data-date');
  var diff=Math.round((ev2-T)/86400000);var txt='';
  if(diff>0){txt='D-'+diff;}else if(diff===0){txt='D-DAY';}else{continue;}
  els[j].textContent=txt;els[j].setAttribute('dir','ltr');els[j].style.display='inline-block';}
+// YouTube 경량 facade: 썸네일 클릭 시에만 iframe 주입(외부 SDK 0, 초기 로드 가벼움).
+document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('.ytfacade');
+ if(!b)return;var vid=b.getAttribute('data-vid');if(!vid)return;
+ var f=document.createElement('iframe');f.className='ytframe';
+ f.setAttribute('allow','accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture');
+ f.setAttribute('allowfullscreen','');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+ f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(vid)+'?autoplay=1';
+ b.parentNode.replaceChild(f,b);});
 }catch(e){}})();
 </script></body></html>

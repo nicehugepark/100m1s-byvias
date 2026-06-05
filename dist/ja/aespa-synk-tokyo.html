@@ -21,7 +21,7 @@
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
 .top b{font-weight:600}.top span{margin-left:auto;color:var(--muted);font-size:13px}
-.top .logo{height:28px;width:auto;display:block}
+.top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
@@ -39,7 +39,10 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
+ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
+/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+body{overflow-wrap:break-word;word-break:normal}
+li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
 .news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
 .news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
@@ -57,8 +60,36 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
 .srclink:hover{background:#e6f1fb}
 .postlink{display:inline-block;font-size:14px;font-weight:500;color:#fff;background:var(--accent);text-decoration:none;border-radius:8px;padding:9px 14px}
 .postlink:hover{filter:brightness(.94)}
+.plink{display:inline-flex;align-items:center;gap:7px}.plink .plogo{flex:0 0 auto}
+.chchips{display:flex;flex-wrap:wrap;gap:8px}
+.chchip{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);text-decoration:none;background:#f7f6f1;border:1px solid var(--line);border-radius:8px;padding:7px 11px}
+.chchip:hover{border-color:var(--accent);color:var(--accent)}.chchip .plogo{flex:0 0 auto;color:var(--muted)}.chchip:hover .plogo{color:var(--accent)}
+.oshows{display:flex;flex-direction:column;gap:7px}
+.oshow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:#fafaf7;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px}
+.oshow:hover{border-color:var(--accent)}.oshow .osc{font-weight:500}.oshow .osd{color:var(--muted);margin-inline-start:auto}
+.oshow-next{background:#eef4fb;border-color:#cfe0f2}.oshow .nextflag{font-weight:700;color:var(--accent);font-size:12px}
+.ytfacade{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;padding:0}
+.ytplay{position:absolute;inset:0;margin:auto;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.62);color:#fff;border-radius:50%;font-size:20px;padding-inline-start:3px}
+.ytfacade:hover .ytplay{background:#A32D2D}
+.ytframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
 .maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:#fff;border:1px solid #cfcdc4;border-radius:8px;padding:7px 12px;margin-top:8px}
 .maplink:hover{border-color:var(--ink)}
+/* 현지 실용 정보 접힘 섹션 */
+.linfo{margin:14px 0}.linfo>summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:8px}
+.linfo>summary::-webkit-details-marker{display:none}
+.linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
+.linfo[open]>summary::after{transform:rotate(180deg)}
+.linfo>summary:hover{border-color:#c9c7bd}
+.ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
+.lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
+.lirow .lv{line-height:1.55;min-width:0}.lirow .lv a{color:var(--accent);text-decoration:none}.lirow .lv a:hover{text-decoration:underline}
+.tkbox .lirow .lv a{font-weight:500}
+/* 핫플 항목: 이름+지도 한 줄, 설명은 그 아래 hanging(좌측 정렬 유지) */
+.hspot{margin:7px 0}.hspot:first-child{margin-top:0}.hspot .hn{font-weight:600}
+.hspot .hd{display:block;color:var(--muted);margin-top:2px;line-height:1.5}
+/* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
+@media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
@@ -77,8 +108,8 @@ ul{padding-inline-start:18px;padding-left:unset}
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
   <span class="ghost ghost-lg" aria-hidden="true">æ</span>
   <span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa">æ</span>
-  <div><h1 style="margin:0">aespa — 도쿄</h1>
-  <p class="sub" style="margin:2px 0 0">SYNK : Parallel Line · 도쿄돔 · 2024-08-17 <span class="dday" data-date="2024-08-17"></span> · 🇯🇵 日本</p></div>
+  <div><h1 style="margin:0">aespa — 東京</h1>
+  <p class="sub" style="margin:2px 0 0">SYNK : Parallel Line · 도쿄돔 · 2024-08-17 <span class="dday" data-date="2024-08-17"></span> · 🇯🇵 日本 東京</p></div>
 </div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">超早期確保 · 数ヶ月前からのご予約</span>
 
@@ -90,23 +121,41 @@ ul{padding-inline-start:18px;padding-left:unset}
 </div>
 <p class="disc">料金・在庫見通しは推定値であり、実際と異なる場合があります。ご予約・お支払いの責任はご利用者様にあります。</p>
 
+<div class="box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">予定されている公演</div>
+  <div class="oshows"><a class="oshow oshow-next" href="aespa-synk-complaexity-seoul.html"><span class="nextflag">次の公演 →</span> <span class="osc">🇰🇷 韓国 ソウル</span><span class="osd">2026-08-07 <span class="dday" data-date="2026-08-07"></span></span></a><a class="oshow" href="aespa-synk-complaexity-taipei-dome.html"><span class="osc">🇹🇼 台湾 台北</span><span class="osd">2026-08-11 <span class="dday" data-date="2026-08-11"></span></span></a></div>
+</div>
+<div class="box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">アーティスト映像</div>
+  <button class="ytfacade" data-vid="83C3TZ4Zm_o" aria-label="映像を再生: aespa 에스파 &#x27;LEMONADE&#x27; MV"
+    style="background-image:url('https://i.ytimg.com/vi/83C3TZ4Zm_o/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
+  <p style="margin:8px 0 0;font-size:13px">aespa 에스파 &#x27;LEMONADE&#x27; MV <span style="color:var(--muted)">· SMTOWN</span></p>
+</div>
+<div class="box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">アーティスト公式チャネル</div>
+  <div class="chchips"><a class="chchip" href="https://www.smentertainment.com/en/artist/aespa/" target="_blank" rel="noopener nofollow"><span>所属事務所 · SM Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/aespa_official/" target="_blank" rel="noopener nofollow" aria-label="aespa Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/aespa_official" target="_blank" rel="noopener nofollow" aria-label="aespa X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@aespa" target="_blank" rel="noopener nofollow" aria-label="aespa YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/aespa" target="_blank" rel="noopener nofollow" aria-label="aespa Weverse"><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/aespa" target="_blank" rel="noopener nofollow"><span>ファンクラブ · MY</span><span aria-hidden="true"> ↗</span></a></div>
+</div>
+<details class="linfo">
+  <summary>🧭 現地の実用情報</summary>
+  <div class="ligrid"><div class="lirow"><div class="lk">交通</div><div class="lv">東京メトロ・都営地下鉄+JR線が充実しています。交通系ICカードはSuica・PASMO(相互利用可、全路線・コンビニで利用可)をお勧めします。ただし、通常のSuica/PASMO発売は在庫不足により制限されているため、訪問者にはWelcome Suica(28日間利用可)またはモバイルSuica/PASSMOをお勧めします。</div></div><div class="lirow"><div class="lk">深夜の移動</div><div class="lv">地下鉄・JR線の最終電車はおよそ24時～00:30で、一部路線は01時前後です(24時間運行ではありません)。最終電車以降は深夜バスが限定的で、タクシー料金が高くなります。22時以降に公演が終了する場合、東京ドーム→都心への最終電車の接続時間を事前にご確認いただくことをお勧めします。</div></div><div class="lirow"><div class="lk">お支払い</div><div class="lv">現金の利用比率がまだ高めです(小型店舗・一部飲食店は現金のみ)。大型店舗・チェーン店・交通ではカード/IC利用が一般的です。QR決済(PayPay)は拡大中です。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">日本円(JPY, ¥)。現金の利用がある程度ありますので、一定額の現金両替をお勧めします。空港・市内両替所・セブン-イレブンATM(海外カード出金)が便利です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">日本語です。観光地・駅の案内には英語表記がありますが、日常英語の通用度は限定的です。翻訳アプリが便利です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(電車乗り換え・ルート検索(英語))</span> · GO (タクシーGO) <span style='color:var(--muted)'>(タクシー配車)</span> · PayPay <span style='color:var(--muted)'>(QR決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">GO <span style='color:var(--muted)'>(深夜タクシー配車標準(日本の市場占有率約80%、東京夜間強化))</span> · S.RIDE <span style='color:var(--muted)'>(東京特化タクシー配車(ワンスワイプ、高速マッチング))</span> · DiDi <span style='color:var(--muted)'>(タクシー配車代替(東京圏運行))</span> · Uber <span style='color:var(--muted)'>(タクシー配車(英語UI、深夜以降の信頼度良好))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">手配のコツ</div><div class="lv">東京ドーム正門は避け、水道橋(すいどうばし)/後楽園(こうらくえん)駅の反対側の道路に移動してからタクシーを呼んでください。タクシーアプリが見つからない場合は、GO↔S.RIDE↔DiDiを交互に呼び出してください(アプリ別に提携車両プールが異なります)。</div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">水道橋/後楽園/東京ドームシティ周辺。地下鉄·JR最終電車は午前0時~00:30、都心方面への乗り換え最終電車時刻を事前確認されることをおすすめします。</div></div></div>
+</details>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今のうちにご予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=도쿄&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=도쿄&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ フライト <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Tokyo&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Tokyo&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ フライト <small>· Skyscanner</small></a>
   <a class="btn" href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=도쿄&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Tokyo&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページのご予約リンクはアフィリエイト（手数料）リンクです。ご利用者様の追加費用はありません。</p>
 
 <div class="box">
   <div style="font-weight:600;font-size:14px">会場</div>
-  <p style="margin:4px 0 0;font-size:14px">도쿄돔 · 도쿄</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%8F%84%EC%BF%84%EB%8F%94+%EB%8F%84%EC%BF%84" target="_blank" rel="noopener">📍 地図で見る</a>
+  <p style="margin:4px 0 0;font-size:14px">도쿄돔 · 東京</p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%8F%84%EC%BF%84%EB%8F%94+Tokyo" target="_blank" rel="noopener">📍 地図で見る</a>
   <div style="font-weight:600;font-size:14px;margin-top:14px">近隣宿泊施設のご案内</div>
   <ul><li>東京ドーム徒歩圏 + JRアクセス優先</li><li>繁忙期と重なるならフライトから確保されることをお勧めします</li></ul>
   <div style="font-weight:600;font-size:14px;margin-top:12px">コンサート後の帰宅ルート</div>
-  <p style="margin:6px 0 0;font-size:14px">水道橋/後楽園駅。</p>
+  <p style="margin:6px 0 0;font-size:14px">水道橋(すいどばし)/後楽園(こうらくえん)駅。</p>
 </div>
 
 <div class="news">
@@ -150,5 +199,13 @@ for(var j=0;j<els.length;j++){var ds=els[j].getAttribute('data-date');
  var diff=Math.round((ev2-T)/86400000);var txt='';
  if(diff>0){txt='D-'+diff;}else if(diff===0){txt='D-DAY';}else{continue;}
  els[j].textContent=txt;els[j].setAttribute('dir','ltr');els[j].style.display='inline-block';}
+// YouTube 경량 facade: 썸네일 클릭 시에만 iframe 주입(외부 SDK 0, 초기 로드 가벼움).
+document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('.ytfacade');
+ if(!b)return;var vid=b.getAttribute('data-vid');if(!vid)return;
+ var f=document.createElement('iframe');f.className='ytframe';
+ f.setAttribute('allow','accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture');
+ f.setAttribute('allowfullscreen','');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+ f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(vid)+'?autoplay=1';
+ b.parentNode.replaceChild(f,b);});
 }catch(e){}})();
 </script></body></html>

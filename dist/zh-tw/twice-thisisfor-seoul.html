@@ -21,7 +21,7 @@
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
 .top b{font-weight:600}.top span{margin-left:auto;color:var(--muted);font-size:13px}
-.top .logo{height:28px;width:auto;display:block}
+.top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
@@ -39,7 +39,10 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
+ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
+/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+body{overflow-wrap:break-word;word-break:normal}
+li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
 .news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
 .news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
@@ -57,8 +60,36 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
 .srclink:hover{background:#e6f1fb}
 .postlink{display:inline-block;font-size:14px;font-weight:500;color:#fff;background:var(--accent);text-decoration:none;border-radius:8px;padding:9px 14px}
 .postlink:hover{filter:brightness(.94)}
+.plink{display:inline-flex;align-items:center;gap:7px}.plink .plogo{flex:0 0 auto}
+.chchips{display:flex;flex-wrap:wrap;gap:8px}
+.chchip{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);text-decoration:none;background:#f7f6f1;border:1px solid var(--line);border-radius:8px;padding:7px 11px}
+.chchip:hover{border-color:var(--accent);color:var(--accent)}.chchip .plogo{flex:0 0 auto;color:var(--muted)}.chchip:hover .plogo{color:var(--accent)}
+.oshows{display:flex;flex-direction:column;gap:7px}
+.oshow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:#fafaf7;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px}
+.oshow:hover{border-color:var(--accent)}.oshow .osc{font-weight:500}.oshow .osd{color:var(--muted);margin-inline-start:auto}
+.oshow-next{background:#eef4fb;border-color:#cfe0f2}.oshow .nextflag{font-weight:700;color:var(--accent);font-size:12px}
+.ytfacade{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;padding:0}
+.ytplay{position:absolute;inset:0;margin:auto;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.62);color:#fff;border-radius:50%;font-size:20px;padding-inline-start:3px}
+.ytfacade:hover .ytplay{background:#A32D2D}
+.ytframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
 .maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:#fff;border:1px solid #cfcdc4;border-radius:8px;padding:7px 12px;margin-top:8px}
 .maplink:hover{border-color:var(--ink)}
+/* 현지 실용 정보 접힘 섹션 */
+.linfo{margin:14px 0}.linfo>summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:8px}
+.linfo>summary::-webkit-details-marker{display:none}
+.linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
+.linfo[open]>summary::after{transform:rotate(180deg)}
+.linfo>summary:hover{border-color:#c9c7bd}
+.ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
+.lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
+.lirow .lv{line-height:1.55;min-width:0}.lirow .lv a{color:var(--accent);text-decoration:none}.lirow .lv a:hover{text-decoration:underline}
+.tkbox .lirow .lv a{font-weight:500}
+/* 핫플 항목: 이름+지도 한 줄, 설명은 그 아래 hanging(좌측 정렬 유지) */
+.hspot{margin:7px 0}.hspot:first-child{margin-top:0}.hspot .hn{font-weight:600}
+.hspot .hd{display:block;color:var(--muted);margin-top:2px;line-height:1.5}
+/* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
+@media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
@@ -77,8 +108,8 @@ ul{padding-inline-start:18px;padding-left:unset}
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,#ffffff 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
   <span class="ghost ghost-lg" aria-hidden="true">TW</span>
   <span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE">TW</span>
-  <div><h1 style="margin:0">TWICE — 서울</h1>
-  <p class="sub" style="margin:2px 0 0">THIS IS FOR World Tour · KSPO 돔(올림픽체조경기장) · 2026-07-10 <span class="dday" data-date="2026-07-10"></span> · 🇰🇷 韓國</p></div>
+  <div><h1 style="margin:0">TWICE — 首爾</h1>
+  <p class="sub" style="margin:2px 0 0">THIS IS FOR World Tour · KSPO 돔(올림픽체조경기장) · 2026-07-10 <span class="dday" data-date="2026-07-10"></span> · 🇰🇷 韓國 首爾</p></div>
 </div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">超早搶佔 · 提前數月預訂</span>
 
@@ -94,19 +125,37 @@ ul{padding-inline-start:18px;padding-left:unset}
   <div style="font-weight:600;font-size:14px">日程來源</div>
   <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi 2026 K-Pop 투어 일정 ↗</a></div>
 </div>
+<div class="box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">藝人影片</div>
+  <button class="ytfacade" data-vid="eHHQaoEW30Q" aria-label="播放影片: TWICE &quot;THIS IS FOR&quot; M/V"
+    style="background-image:url('https://i.ytimg.com/vi/eHHQaoEW30Q/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
+  <p style="margin:8px 0 0;font-size:13px">TWICE &quot;THIS IS FOR&quot; M/V <span style="color:var(--muted)">· TWICE (JYP 공식)</span></p>
+</div>
+<div class="box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">藝人官方頻道</div>
+  <div class="chchips"><a class="chchip" href="https://twice.jype.com/" target="_blank" rel="noopener nofollow"><span>經紀公司 · JYP Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/twicetagram/" target="_blank" rel="noopener nofollow" aria-label="TWICE Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/JYPETWICE" target="_blank" rel="noopener nofollow" aria-label="TWICE X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@TWICE" target="_blank" rel="noopener nofollow" aria-label="TWICE YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://twice.jype.com/" target="_blank" rel="noopener nofollow"><span>粉絲團 · ONCE</span><span aria-hidden="true"> ↗</span></a></div>
+</div>
+<div class="box tkbox" style="padding:0">
+  <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 購票</div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">預定演出時間</div><div class="lv">19:00~20:00（週五晚間，預估）</div></div><div class="lirow"><div class="lk">預先購票</div><div class="lv">粉絲俱樂部ONCE搶先購 2026-06-09 20:00~23:59 KST</div></div><div class="lirow"><div class="lk">一般購票</div><div class="lv">2026-06-11 20:00 KST</div></div><div class="lirow"><div class="lk">購票管道</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket(world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">價位</div><div class="lv">스탠딩 일반(Standing General) 154000KRW, 지정석 일반(Reserved General) 154000KRW</div></div></div>
+</div>
+<details class="linfo">
+  <summary>🧭 當地實用資訊</summary>
+  <div class="ligrid"><div class="lirow"><div class="lk">交通</div><div class="lv">首爾圈地鐵（1～9號線、新分當線等）+ 市內巴士為主。統一廣域轉乘系統。交通卡採T-money、Cashbi為標準，幾乎相容於所有交通與便利商店結帳。</div></div><div class="lirow"><div class="lk">深夜移動</div><div class="lv">地鐵末班車各線約午夜～凌晨12:30左右（市區往郊外方向更早）。末班後深夜巴士N線（貓頭鷹巴士）行駛主要幹線。計程車、Kakao T召車廣泛可用，深夜加收費用。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡/簽帳卡·行動支付（Samsung Pay等）接受度甚高。小額或路邊攤販部分仍用現金。QR碼（Kakao Pay、Naver Pay）普遍。</div></div><div class="lirow"><div class="lk">換匯·幣種</div><div class="lv">韓圓（KRW, ₩）。卡片支付為主流，額外匯兌需求不高。機場、市內換匯所、提款機皆可使用。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">韓語。景點、大型演唱會場、交通標示多備英文，日常生活英語接受度一般。</div></div><div class="lirow"><div class="lk">當地App</div><div class="lv">카카오T <span style='color:var(--muted)'>(計程車、代駕、叫車)</span> · 네이버 지도 <span style='color:var(--muted)'>(大眾運輸路線、即時導航)</span> · 카카오페이 <span style='color:var(--muted)'>(QR碼、行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通App</div><div class="lv">카카오T <span style='color:var(--muted)'>(深夜計程車召車標配（市佔90%+、配對最快）。不接受外國號碼註冊。)</span> · UT(우티/Uber) <span style='color:var(--muted)'>(計程車召車 — 可直接使用海外卡片、號碼，外國人友善)</span> · 타다(TADA) <span style='color:var(--muted)'>(Carnival廂型車 — 支援海外號碼與卡片註冊)</span> · i.M(아이엠) <span style='color:var(--muted)'>(大型廂型車高級計程車)</span> · K-RIDE(케이라이드) <span style='color:var(--muted)'>(外國人專用計程車（無需KakaoTalk帳號，服務範圍：首爾、仁川、首都圈）)</span> · 올빼미버스(N버스) <span style='color:var(--muted)'>(末班車後深夜巴士 — 首爾市官方路線（N15、N16、N26等）)</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">演唱會場正門廣場叫車人多 — 走出1～2個街區後叫車可更快配對；往地鐵1站距離叫車可舒緩人潮</div></div><div class="lirow"><div class="lk">演唱會周邊</div><div class="lv"><div class="hspot"><span class="hn">올림픽공원 평화의 문</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%BC%ED%94%BD%EA%B3%B5%EC%9B%90+%ED%8F%89%ED%99%94%EC%9D%98+%EB%AC%B8+Olympic+Park+World+Peace+Gate" target="_blank" rel="noopener" aria-label="올림픽공원 평화의 문 📍 在地圖查看">📍</a><span class="hd">88 奧運雕塑與寬敞公園。散步・打卡勝地。</span></div><div class="hspot"><span class="hn">롯데월드몰</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0+Lotte+World+Mall" target="_blank" rel="noopener" aria-label="롯데월드몰 📍 在地圖查看">📍</a><span class="hd">配備 Olive Young・免稅・K-fashion・觀景台的大型複合商場。演唱會前後購物一站式。</span></div></div></div></div>
+</details>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即鎖定</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=서울&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=서울&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Seoul&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
   <a class="btn" href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=서울&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 旅遊·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Seoul&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 旅遊·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁面的預訂連結為合作夥伴(分潤)連結。用戶不需要額外承擔任何費用。</p>
 
 <div class="box">
   <div style="font-weight:600;font-size:14px">場館</div>
-  <p style="margin:4px 0 0;font-size:14px">KSPO 돔(올림픽체조경기장) · 서울</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=KSPO+%EB%8F%94%28%EC%98%AC%EB%A6%BC%ED%94%BD%EC%B2%B4%EC%A1%B0%EA%B2%BD%EA%B8%B0%EC%9E%A5%29+%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener">📍 在地圖查看</a>
+  <p style="margin:4px 0 0;font-size:14px">KSPO 돔(올림픽체조경기장) · 首爾</p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=KSPO+%EB%8F%94%28%EC%98%AC%EB%A6%BC%ED%94%BD%EC%B2%B4%EC%A1%B0%EA%B2%BD%EA%B8%B0%EC%9E%A5%29+Seoul" target="_blank" rel="noopener">📍 在地圖查看</a>
   <div style="font-weight:600;font-size:14px;margin-top:14px">周邊住宿建議</div>
   <ul><li>蠶室·江東地區 + 地鐵</li><li>城內/千戶地區交通也便利</li></ul>
   <div style="font-weight:600;font-size:14px;margin-top:12px">演唱會後回家路線</div>
@@ -154,5 +203,13 @@ for(var j=0;j<els.length;j++){var ds=els[j].getAttribute('data-date');
  var diff=Math.round((ev2-T)/86400000);var txt='';
  if(diff>0){txt='D-'+diff;}else if(diff===0){txt='D-DAY';}else{continue;}
  els[j].textContent=txt;els[j].setAttribute('dir','ltr');els[j].style.display='inline-block';}
+// YouTube 경량 facade: 썸네일 클릭 시에만 iframe 주입(외부 SDK 0, 초기 로드 가벼움).
+document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('.ytfacade');
+ if(!b)return;var vid=b.getAttribute('data-vid');if(!vid)return;
+ var f=document.createElement('iframe');f.className='ytframe';
+ f.setAttribute('allow','accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture');
+ f.setAttribute('allowfullscreen','');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+ f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(vid)+'?autoplay=1';
+ b.parentNode.replaceChild(f,b);});
 }catch(e){}})();
 </script></body></html>
