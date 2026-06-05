@@ -1,42 +1,10 @@
 {
   "site": {
-    "name": "Fandom",
+    "name": "ByBias",
     "tagline": "팬이 모이는 일정 → 미리 싸게 잡는 법",
-    "domain": "fandom.100m1s.com"
+    "domain": "bybias.100m1s.com"
   },
   "events": [
-    {
-      "slug": "bts-arirang-busan",
-      "artist": "BTS",
-      "event": "ARIRANG World Tour",
-      "city": "부산",
-      "country": "대한민국",
-      "venue": "아시아드 주경기장",
-      "date": "2026-06",
-      "announce_date": "2026-01-13",
-      "lead_type": "B",
-      "search_signal": "여행검색 +2,375% (발표 48h 내)",
-      "hotel_signal": "공연 주말 호텔 평균 2배+, 일부 최대 7.5배",
-      "deadline_text": "발표 직후가 가장 쌉니다. 인기 폭발 도시라 공연 2~3개월 전 예약 권장.",
-      "transport": "막차·심야버스 확인 필수. 인근 매진 시 울산 KTX 원정 사례 있음.",
-      "stays": ["경기장 인근은 조기 매진 — 서면/해운대권 + 지하철 이동 추천", "모텔도 콘서트 주말 3배 이상 — 평일 끼워 예약하면 절약"]
-    },
-    {
-      "slug": "bts-arirang-kaohsiung",
-      "artist": "BTS",
-      "event": "ARIRANG World Tour",
-      "city": "가오슝",
-      "country": "대만",
-      "venue": "가오슝 국가체육장",
-      "date": "2026-11-19",
-      "announce_date": "2026-01-13",
-      "lead_type": "B",
-      "search_signal": "호텔검색 +6,700% YoY, 단기임대 재고 60% 선예약(9개월 전)",
-      "hotel_signal": "발표 시점 호텔가는 아직 정상 — 선점 구간",
-      "deadline_text": "지역 유일 스탑 + 해외 원정 → 공연 6~9개월 전이 골든타임. 지금이 가장 쌉니다.",
-      "transport": "가오슝 MRT 홍선 World Games역. 타이베이발 고속철(HSR) 1.5~2h 대안.",
-      "stays": ["좌잉/World Games역 인근 우선", "타이난 숙소 + HSR 통근도 매진 시 대안"]
-    },
     {
       "slug": "bts-arirang-seoul",
       "artist": "BTS",
@@ -51,7 +19,10 @@
       "hotel_signal": "도심 호텔 22.5만→135만원(약 6배), 인근 모텔 5배",
       "deadline_text": "발표 직후 48시간이 가장 쌉니다. 도심 호텔은 빠르게 6배까지 — 즉시 예약.",
       "transport": "지하철 접근 양호. 공연 후 막차 시간만 확인.",
-      "stays": ["공연장 도보권 대신 2~3정거장 + 지하철이 가성비", "외국 카드 결제 가능 호텔 우선 확인"]
+      "stays": [
+        "공연장 도보권 대신 2~3정거장 + 지하철이 가성비",
+        "외국 카드 결제 가능 호텔 우선 확인"
+      ]
     },
     {
       "slug": "blackpink-deadline-kaohsiung",
@@ -67,7 +38,10 @@
       "hotel_signal": "호텔 점유율 ~90%, 인근 타이난·핑둥까지 매진, 호텔소비 +48%",
       "deadline_text": "점유율 90% 도시 — 발표 직후 ~수개월 전 예약 필수. 인근 도시까지 동남.",
       "transport": "MRT World Games역. 인근 매진 시 타이난 HSR 통근.",
-      "stays": ["좌잉구 우선, 매진 시 타이난/핑둥 + 교통", "1인 호텔 지출 평균 NT$8,772 수준 참고"]
+      "stays": [
+        "좌잉구 우선, 매진 시 타이난/핑둥 + 교통",
+        "1인 호텔 지출 평균 NT$8,772 수준 참고"
+      ]
     },
     {
       "slug": "blackpink-deadline-tokyo",
@@ -83,7 +57,10 @@
       "hotel_signal": "약 15만석 규모 — 공연 약 11개월 전 매진",
       "deadline_text": "도쿄돔급은 11개월 전부터 매진. 일정 뜨면 즉시 항공·숙박 선점.",
       "transport": "스이도바시/고라쿠엔역. 공연 종료 후 혼잡 — 한 정거장 걸어서 탑승.",
-      "stays": ["스이도바시·이이다바시·아키하바라권 접근 양호", "신주쿠/우에노 + JR 이동도 가성비"]
+      "stays": [
+        "스이도바시·이이다바시·아키하바라권 접근 양호",
+        "신주쿠/우에노 + JR 이동도 가성비"
+      ]
     },
     {
       "slug": "twice-thisisfor-kaohsiung",
@@ -99,7 +76,10 @@
       "hotel_signal": "호텔 1박 NT$1,134→11,000 (+870%, 폭리 단속 대상)",
       "deadline_text": "공연 임박 시 호텔가 9배 폭등 사례 — 절대 임박 예약 금지. 미리 잠그세요.",
       "transport": "MRT World Games역. 폭리 숙소 주의 — 검증된 체인 우선.",
-      "stays": ["조기 예약 시 정상가 확보 가능", "임박 시 인근 도시로 분산"]
+      "stays": [
+        "조기 예약 시 정상가 확보 가능",
+        "임박 시 인근 도시로 분산"
+      ]
     },
     {
       "slug": "seventeen-new-incheon",
@@ -115,7 +95,10 @@
       "hotel_signal": "공연 임박 시 인천·서울권 숙소 경쟁",
       "deadline_text": "티켓이 수시간 내 매진 — 숙소도 발표 직후 잡는 게 안전.",
       "transport": "공연 후 인천→서울 막차/광역버스 확인.",
-      "stays": ["송도/부평권 + 지하철", "서울 서남권(영등포·신도림)도 접근 양호"]
+      "stays": [
+        "송도/부평권 + 지하철",
+        "서울 서남권(영등포·신도림)도 접근 양호"
+      ]
     },
     {
       "slug": "newjeans-bunniescamp-tokyo",
@@ -131,7 +114,10 @@
       "hotel_signal": "도쿄돔 대규모 동원 — 인근 숙소 조기 경쟁",
       "deadline_text": "팬미팅도 도쿄돔급은 즉시 매진 — 발표 직후 항공·숙박 선점.",
       "transport": "스이도바시/고라쿠엔역. 종료 후 분산 탑승 권장.",
-      "stays": ["스이도바시·이이다바시권", "JR 야마노테선 인근이면 어디든 무난"]
+      "stays": [
+        "스이도바시·이이다바시권",
+        "JR 야마노테선 인근이면 어디든 무난"
+      ]
     },
     {
       "slug": "aespa-synk-tokyo",
@@ -147,7 +133,10 @@
       "hotel_signal": "도쿄돔 규모 — 공연 약 3.5개월 전 일정 확정",
       "deadline_text": "일정 확정(공연 ~3.5개월 전)에 맞춰 항공·숙박 동시 예약 권장.",
       "transport": "스이도바시/고라쿠엔역.",
-      "stays": ["도쿄돔 도보권 + JR 접근권 우선", "성수기 겹치면 항공부터 확보"]
+      "stays": [
+        "도쿄돔 도보권 + JR 접근권 우선",
+        "성수기 겹치면 항공부터 확보"
+      ]
     },
     {
       "slug": "gdragon-ubermensch-macau",
@@ -163,7 +152,334 @@
       "hotel_signal": "수요 폭주 — 마카오·인근 주하이 숙소 경쟁",
       "deadline_text": "동접 700만 폭주로 회차 증설 — 항공·숙박을 일정과 동시에 선점.",
       "transport": "홍콩 경유 페리/버스 + 주하이 육로 대안.",
-      "stays": ["코타이/마카오반도 + 무료 셔틀", "주하이 숙박 + 육로 통근도 가성비"]
+      "stays": [
+        "코타이/마카오반도 + 무료 셔틀",
+        "주하이 숙박 + 육로 통근도 가성비"
+      ]
+    },
+    {
+      "slug": "ive-showwhatiam-tokyo",
+      "artist": "IVE",
+      "event": "SHOW WHAT I AM World Tour",
+      "city": "도쿄",
+      "country": "일본",
+      "venue": "도쿄돔",
+      "date": "2026-06-24",
+      "announce_date": null,
+      "search_signal": "도쿄돔 단독 — 일본 원정 한국팬 + 현지팬 동시 수요. 도쿄돔급은 발표 직후 검색 변곡 통상 관측.",
+      "hotel_signal": "도쿄돔(약 5만석) 대규모 동원 — 스이도바시·고라쿠엔권 숙소 조기 경쟁 예상",
+      "deadline_text": "도쿄돔 단독 공연 — 항공·숙박을 일정과 동시에 선점하는 편이 안전합니다.",
+      "transport": "스이도바시/고라쿠엔역. 종료 후 혼잡 — 한 정거장 도보 후 탑승 권장.",
+      "stays": [
+        "스이도바시·이이다바시·아키하바라권 접근 양호",
+        "신주쿠/우에노 + JR 이동도 가성비"
+      ]
+    },
+    {
+      "slug": "bts-arirang-busan-0612",
+      "artist": "BTS",
+      "event": "ARIRANG World Tour",
+      "city": "부산",
+      "country": "대한민국",
+      "venue": "부산 아시아드 주경기장",
+      "date": "2026-06-12",
+      "announce_date": "2026-01-13",
+      "search_signal": "발표 48h 내 부산 여행검색 +2,375%(SIGNAL-DATASET 회고)",
+      "hotel_signal": "공연 주말 숙박 평균 2배+, 일부 최대 7.5배 사례 — 모텔 부족 시 울산 원정",
+      "deadline_text": "수요 폭발 도시 — 임박 예약 시 숙박가 급등 사례. 미리 잡는 편이 유리합니다.",
+      "transport": "막차·심야버스 확인 필수. 인근 매진 시 울산 KTX 원정 대안.",
+      "stays": [
+        "경기장 인근 조기 매진 — 서면/해운대권 + 지하철 이동 추천",
+        "평일 끼워 예약 시 주말 폭등 회피"
+      ]
+    },
+    {
+      "slug": "gidle-syncopation-yokohama",
+      "artist": "(G)I-DLE",
+      "event": "Syncopation World Tour",
+      "city": "요코하마",
+      "country": "일본",
+      "venue": "K-Arena Yokohama",
+      "date": "2026-06-20",
+      "announce_date": null,
+      "search_signal": "K-Arena(약 2만석) 아레나급 — 일본 원정 + 현지 수요 혼재",
+      "hotel_signal": "요코하마 미나토미라이권 숙소 공연 주말 경쟁 예상",
+      "deadline_text": "아레나급 일본 공연 — 발표 직후 항공·숙박 선점 구간입니다.",
+      "transport": "미나토미라이선/JU 사쿠라기초·신타카시마역. 도쿄발 당일 통근도 가능.",
+      "stays": [
+        "미나토미라이·사쿠라기초권 우선",
+        "도쿄 숙소 + JR/도큐선 통근도 대안"
+      ]
+    },
+    {
+      "slug": "babymonster-choom-seoul",
+      "artist": "BABYMONSTER",
+      "event": "CHOOM World Tour",
+      "city": "서울",
+      "country": "대한민국",
+      "venue": "잠실실내체육관",
+      "date": "2026-06-26",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도(소속사 공지 기반 일정만 확인)",
+      "hotel_signal": "잠실권 공연 주말 숙소 수요 — 정량치 미확인",
+      "deadline_text": "서울 잠실권 공연 — 주말 숙소는 발표 직후 잡는 편이 안전합니다.",
+      "transport": "잠실종합운동장역(2·9호선). 공연 후 막차 시간 확인.",
+      "stays": [
+        "잠실·강남권 + 지하철",
+        "성수/건대권도 접근 양호"
+      ]
+    },
+    {
+      "slug": "itzy-tunnelvision-hongkong",
+      "artist": "ITZY",
+      "event": "TUNNEL VISION World Tour",
+      "city": "홍콩",
+      "country": "홍콩",
+      "venue": "AsiaWorld-Arena",
+      "date": "2026-06-27",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 아레나급 해외 단독 스탑.",
+      "hotel_signal": "공항 인근(AsiaWorld) — 시내 이동 고려한 숙소 선택 필요",
+      "deadline_text": "지역 단독 스탑 해외 공연 — 항공·숙박 동시 선점 권장.",
+      "transport": "AsiaWorld-Expo역(공항선). 시내(쩜사쪼이) 30~40분.",
+      "stays": [
+        "쩜사쪼이/몽콕권 + MTR",
+        "공항 인근 숙소는 시내 접근성 확인"
+      ]
+    },
+    {
+      "slug": "twice-thisisfor-seoul",
+      "artist": "TWICE",
+      "event": "THIS IS FOR World Tour",
+      "city": "서울",
+      "country": "대한민국",
+      "venue": "KSPO 돔(올림픽체조경기장)",
+      "date": "2026-07-10",
+      "announce_date": null,
+      "search_signal": "투어 전반 폭발 수요(북미 17공연 추가 등) — 서울 스탑 정량치는 미보도",
+      "hotel_signal": "올림픽공원권 공연 주말 숙소 경쟁 예상 — 정량치 미확인",
+      "deadline_text": "메가 투어 서울 스탑 — 발표 직후 숙소 선점이 유리합니다.",
+      "transport": "올림픽공원역(5·9호선)/몽촌토성역(8호선). 막차 확인.",
+      "stays": [
+        "잠실·강동권 + 지하철",
+        "성내/천호권도 접근 양호"
+      ]
+    },
+    {
+      "slug": "lesserafim-pureflow-incheon",
+      "artist": "LE SSERAFIM",
+      "event": "PUREFLOW World Tour",
+      "city": "인천",
+      "country": "대한민국",
+      "venue": "INSPIRE Arena",
+      "date": "2026-07-11",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도(전작 투어 빠른 매진 정성 신호만)",
+      "hotel_signal": "영종도 INSPIRE 복합리조트 — 단지 내·인천공항권 숙소 수요",
+      "deadline_text": "영종도 단독 공연장 — 공연 후 교통 제약 큼. 숙소를 미리 잡는 편이 안전합니다.",
+      "transport": "INSPIRE는 영종도 — 공연 후 서울행 막차/셔틀 반드시 확인.",
+      "stays": [
+        "INSPIRE 단지 내 또는 영종/운서권 우선",
+        "서울 숙박 시 공연 후 귀가 교통 확인 필수"
+      ]
+    },
+    {
+      "slug": "nmixx-zerofrontier-kaohsiung",
+      "artist": "NMIXX",
+      "event": "EPISODE 1: ZERO FRONTIER World Tour",
+      "city": "가오슝",
+      "country": "대만",
+      "venue": "가오슝 아레나(Kaohsiung Arena)",
+      "date": "2026-07-11",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 첫 글로벌 투어 가오슝 스탑.",
+      "hotel_signal": "가오슝 아레나권 숙소 — 정량치 미확인(메가급 대비 여유 가능)",
+      "deadline_text": "해외 단독 스탑 — 항공·숙박을 일정에 맞춰 선점하는 편이 유리합니다.",
+      "transport": "가오슝 MRT 홍선 巨蛋(Kaohsiung Arena)역.",
+      "stays": [
+        "좌잉/巨蛋역 인근 우선",
+        "타이베이발 고속철(HSR) 1.5~2h 통근도 대안"
+      ]
+    },
+    {
+      "slug": "enhypen-bloodsaga-dallas",
+      "artist": "ENHYPEN",
+      "event": "BLOOD SAGA World Tour",
+      "city": "댈러스",
+      "country": "미국",
+      "venue": "American Airlines Center",
+      "date": "2026-07-17",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도(전작 투어 67만명·대부분 매진 정성 신호)",
+      "hotel_signal": "댈러스 다운타운(Victory Park)권 공연일 숙소 경쟁 예상",
+      "deadline_text": "북미 단독 스탑 — 항공이 비용 핵심. 일정 확정 시 항공부터 확보 권장.",
+      "transport": "Victory Park / DART Green·Orange 라인. 공연 후 차량 혼잡.",
+      "stays": [
+        "Victory Park·다운타운권 우선",
+        "DART 접근 가능 외곽 숙소도 가성비"
+      ]
+    },
+    {
+      "slug": "exo-planet6-tokyo",
+      "artist": "EXO",
+      "event": "PLANET #6: EXhOrizon",
+      "city": "도쿄",
+      "country": "일본",
+      "venue": "LaLa arena TOKYO-BAY",
+      "date": "2026-07-11",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 그룹 완전체 투어 일본 스탑.",
+      "hotel_signal": "지바(미하마)권 — 마쿠하리/가이힌마쿠하리권 숙소 수요",
+      "deadline_text": "일본 단독 스탑 — 항공·숙박 동시 선점이 안전합니다.",
+      "transport": "JR 게이요선 가이힌마쿠하리역 인근. 도쿄 도심발 40~50분.",
+      "stays": [
+        "가이힌마쿠하리·마쿠하리권 우선",
+        "도쿄 도심 숙소 + JR 통근도 대안"
+      ]
+    },
+    {
+      "slug": "boynextdoor-knockon-seoul",
+      "artist": "BOYNEXTDOOR",
+      "event": "KNOCK ON Vol.2",
+      "city": "서울",
+      "country": "대한민국",
+      "venue": "KSPO 돔(올림픽체조경기장)",
+      "date": "2026-07-17",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 장기 월드투어 서울 출발 스탑.",
+      "hotel_signal": "올림픽공원권 공연 주말 숙소 수요 — 정량치 미확인",
+      "deadline_text": "서울 출발 스탑 — 주말 숙소는 발표 직후 잡는 편이 안전합니다.",
+      "transport": "올림픽공원역(5·9호선). 막차 확인.",
+      "stays": [
+        "잠실·강동권 + 지하철",
+        "성내/천호권도 접근 양호"
+      ]
+    },
+    {
+      "slug": "lesserafim-pureflow-osaka",
+      "artist": "LE SSERAFIM",
+      "event": "PUREFLOW World Tour",
+      "city": "오사카",
+      "country": "일본",
+      "venue": "오사카성홀(Osaka-Jo Hall)",
+      "date": "2026-07-25",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 일본 아레나급 스탑.",
+      "hotel_signal": "오사카성공원권 — 우메다/난바 시내 숙소 분산 수요",
+      "deadline_text": "일본 단독 스탑 — 항공·숙박 동시 선점 권장.",
+      "transport": "JR 오사카조코엔역/오사카비즈니스파크역(나가호리쓰루미료쿠치선).",
+      "stays": [
+        "우메다·난바권 + 지하철",
+        "신오사카권 + JR도 가성비"
+      ]
+    },
+    {
+      "slug": "babymonster-choom-osaka-kyocera",
+      "artist": "BABYMONSTER",
+      "event": "CHOOM World Tour",
+      "city": "오사카",
+      "country": "일본",
+      "venue": "교세라돔 오사카(Kyocera Dome)",
+      "date": "2026-09-22",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 돔급(약 4만석) 스탑은 통상 조기 매진.",
+      "hotel_signal": "교세라돔(약 4만석) 대규모 동원 — 난바/우메다권 숙소 조기 경쟁 예상",
+      "deadline_text": "돔급 일본 공연 — 대규모 동원으로 숙소가 빠르게 빠질 수 있습니다. 일정 확정 시 선점 권장.",
+      "transport": "한신난바선 돔마에역/지하철 나가호리쓰루미료쿠치선 돔마에치요자키역.",
+      "stays": [
+        "난바·신사이바시권 + 지하철",
+        "우메다권 + JR/지하철도 무난"
+      ]
+    },
+    {
+      "slug": "aespa-synk-complaexity-seoul",
+      "artist": "aespa",
+      "event": "SYNK : COMPLæXITY",
+      "city": "서울",
+      "country": "대한민국",
+      "venue": "고척 스카이돔",
+      "date": "2026-08-07",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도(전작 도쿄돔 즉시 매진 정성 신호)",
+      "hotel_signal": "고척돔(약 1.7만석) — 구로/영등포권 숙소 수요",
+      "deadline_text": "서울 돔 공연 — 주말 숙소는 발표 직후 잡는 편이 안전합니다.",
+      "transport": "구일역(1호선) 도보권. 공연 후 막차 확인.",
+      "stays": [
+        "영등포·신도림권 + 지하철",
+        "구로/가산권도 접근 양호"
+      ]
+    },
+    {
+      "slug": "aespa-synk-complaexity-taipei-dome",
+      "artist": "aespa",
+      "event": "SYNK : COMPLæXITY",
+      "city": "타이베이",
+      "country": "대만",
+      "venue": "타이베이 돔(Taipei Dome)",
+      "date": "2026-08-11",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 타이베이돔급은 대규모 동원.",
+      "hotel_signal": "타이베이돔(약 4만석) 대규모 동원 — 시내 숙소 조기 경쟁 예상",
+      "deadline_text": "돔급 해외 공연 — 항공·숙박 동시 선점이 유리합니다.",
+      "transport": "타이베이 MRT 板南線 國父紀念館역/市政府역 인근.",
+      "stays": [
+        "國父紀念館·市政府역권 우선",
+        "타이베이 도심 어디든 MRT 접근 양호"
+      ]
+    },
+    {
+      "slug": "bts-arirang-kaohsiung-1119",
+      "artist": "BTS",
+      "event": "ARIRANG World Tour",
+      "city": "가오슝",
+      "country": "대만",
+      "venue": "가오슝 국가체육장(Kaohsiung National Stadium)",
+      "date": "2026-11-19",
+      "announce_date": "2026-01-13",
+      "search_signal": "발표 시점 가오슝 호텔검색 +6,700% YoY, 단기임대 재고 60% 9개월 전 선예약(SIGNAL-DATASET 회고)",
+      "hotel_signal": "지역 유일 스탑 + 해외 원정 — 발표 시점 숙박가는 아직 정상(선점 구간)",
+      "deadline_text": "지역 유일 스탑 + 해외 원정 — 공연 6~9개월 전이 골든타임. 지금이 선점 구간입니다.",
+      "transport": "가오슝 MRT 홍선 World Games역. 타이베이발 고속철(HSR) 1.5~2h 대안.",
+      "stays": [
+        "좌잉/World Games역 인근 우선",
+        "타이난 숙소 + HSR 통근도 매진 시 대안"
+      ]
+    },
+    {
+      "slug": "babymonster-choom-taipei",
+      "artist": "BABYMONSTER",
+      "event": "CHOOM World Tour",
+      "city": "타이베이",
+      "country": "대만",
+      "venue": "타이베이 아레나(Taipei Arena)",
+      "date": "2026-11-21",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 아레나급(약 1.5만석) 해외 스탑.",
+      "hotel_signal": "타이베이 아레나권 숙소 — 정량치 미확인",
+      "deadline_text": "해외 단독 스탑 — 항공·숙박을 일정에 맞춰 선점하는 편이 유리합니다.",
+      "transport": "타이베이 MRT 文湖線/松山新店線 南京復興역 인근.",
+      "stays": [
+        "南京復興·松山권 우선",
+        "타이베이 도심 MRT 접근 양호"
+      ]
+    },
+    {
+      "slug": "lesserafim-pureflow-london-o2",
+      "artist": "LE SSERAFIM",
+      "event": "PUREFLOW World Tour",
+      "city": "런던",
+      "country": "영국",
+      "venue": "The O2",
+      "date": "2026-10-16",
+      "announce_date": null,
+      "search_signal": "데이터 없음 — 정량 신호 미보도. 유럽 아레나급 단독 스탑.",
+      "hotel_signal": "The O2(약 2만석) — 그리니치/도클랜즈권 + 시내 숙소 분산",
+      "deadline_text": "유럽 단독 스탑 — 항공이 비용 핵심. 일정 확정 시 항공부터 확보 권장.",
+      "transport": "North Greenwich역(Jubilee line)/IFS Cloud Cable Car. 공연 후 혼잡.",
+      "stays": [
+        "그리니치/캐너리워프권 + Jubilee line",
+        "시내 숙소 + 지하철 이동도 가성비"
+      ]
     }
   ],
   "affiliate": {
