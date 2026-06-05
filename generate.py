@@ -161,7 +161,7 @@ _SNS_WIDGETS = {
 
 def sns_embed(e):
     """official_post_url 값이 있을 때만 표준 위젯 렌더(현재 값 0건 = 미렌더).
-    이시카와 수집 후 자동 활성. 외부 스크립트는 해당 플랫폼 공식 위젯 js만."""
+    데이터 수집 후 자동 활성. 외부 스크립트는 해당 플랫폼 공식 위젯 js만."""
     url = (e.get("official_post_url") or "").strip()
     if not url:
         return ""
@@ -319,7 +319,7 @@ for f in DIST.glob("*.html"):
         f.unlink()
         print(f"  (정리) 고아 페이지 삭제: {f.name}")
 (DIST / "index.html").write_text(index_html(events), encoding="utf-8")
-# 페이지는 전 이벤트 생성(지난 이벤트도 회고 링크로 도달 가능). 메인 목록에서만 격리.
+# 페이지는 전 이벤트 생성(지난 이벤트도 링크로 도달 가능). 메인 목록에서만 격리.
 for e in events:
     (DIST / f"{e['slug']}.html").write_text(event_html(e), encoding="utf-8")
 # 정적 에셋(로고·파비콘) dist 복사 — 빌드 산출 누락 방지
