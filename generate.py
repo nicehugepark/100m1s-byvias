@@ -240,7 +240,7 @@ def index_html(events):
         past_cards = "".join(_card(e) for e in past)
         past_section = f"""
 <h2 style="font-size:16px;font-weight:600;margin:28px 0 4px;color:var(--muted)">지난 이벤트</h2>
-<p class="sub" style="margin-bottom:10px">이미 끝난 공연 — 리드타임·가격 폭등 참고용 회고 사례입니다.</p>
+<p class="sub" style="margin-bottom:10px">이미 끝난 공연 — 언제·얼마나 가격이 올랐는지 참고용 지난 사례입니다.</p>
 <div class="grid">{past_cards}</div>"""
     body = f"""
 <div class="top"><img class="logo" src="logo.svg" alt="{esc(SITE["name"])}" width="88" height="28"><span>{esc(SITE["domain"])}</span></div>
