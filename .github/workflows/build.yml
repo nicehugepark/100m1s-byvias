@@ -1,4 +1,8 @@
-name: Build and deploy to GitHub Pages
+name: Deploy pre-built site to GitHub Pages
+
+# 다국어 번역은 로컬 빌드(번역 캐시) 산출물 dist/ 를 그대로 배포.
+# CI에서 generate.py 를 재실행하지 않음 (CI엔 번역 LLM 없음 → 외국어 깨짐 방지).
+# 콘텐츠/번역 갱신 = 로컬 `python3 generate.py` 후 dist/ 커밋·푸시.
 
 on:
   push:
@@ -15,25 +19,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: Generate static site
-        run: python generate.py
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
       - id: deployment
         uses: actions/deploy-pages@v4

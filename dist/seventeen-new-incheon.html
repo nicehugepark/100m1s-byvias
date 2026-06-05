@@ -1,8 +1,20 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<!doctype html><html lang="ko" data-lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SEVENTEEN 인천 — 항공·숙박 예약 타이밍 | ByBias</title>
+<title>SEVENTEEN 인천 — ByBias</title>
 <meta name="description" content="팬이 모이는 일정 → 미리 싸게 잡는 법">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate" hreflang="ko" href="seventeen-new-incheon.html">
+<link rel="alternate" hreflang="en" href="en/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="ja" href="ja/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="zh-Hans" href="zh-cn/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="zh-Hant" href="zh-tw/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="es" href="es/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="th" href="th/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="id" href="id/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="pt-BR" href="pt/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="ar" href="ar/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="vi" href="vi/seventeen-new-incheon.html">
+<link rel="alternate" hreflang="x-default" href="seventeen-new-incheon.html">
 <style>
 :root{--ink:#1a1a18;--muted:#6b6a64;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
@@ -13,8 +25,14 @@ a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.ecard{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
+.ecard>*{position:relative;z-index:1}
+/* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
+.ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
+.ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:12px}
+.ehead-detail>*{position:relative;z-index:1}
+.ghost-lg{font-size:96px;bottom:-22px;opacity:.09}
 .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
 .outlook{background:#fdf6ec;border:1px solid #f0e4cf}
 .metric{font-size:22px;font-weight:600;color:#A32D2D}
@@ -41,12 +59,26 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
 .postlink:hover{filter:brightness(.94)}
 .maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:#fff;border:1px solid #cfcdc4;border-radius:8px;padding:7px 12px;margin-top:8px}
 .maplink:hover{border-color:var(--ink)}
+.langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
+.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng:hover{background:#f0eee6}
+.dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
+/* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
+:root{--ga:135deg}
+ul{padding-inline-start:18px;padding-left:unset}
+[dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
+[dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
+[dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
+[dir="rtl"] .langbar{justify-content:flex-start}
 </style></head><body><div class="wrap">
+<div class="langbar"><a class="lng" href="seventeen-new-incheon.html" aria-current="true" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="en/seventeen-new-incheon.html" hreflang="en" data-lang="en">English</a><a class="lng" href="ja/seventeen-new-incheon.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="zh-cn/seventeen-new-incheon.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="zh-tw/seventeen-new-incheon.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="es/seventeen-new-incheon.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="th/seventeen-new-incheon.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="id/seventeen-new-incheon.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="pt/seventeen-new-incheon.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="ar/seventeen-new-incheon.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="vi/seventeen-new-incheon.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 전체 일정</a>
-<div class="ehead-detail">
+<div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(226,154,174,0.10) 0%,#ffffff 42%,rgba(226,154,174,0.26) 100%);--stripe:#E29AAE">
+  <span class="ghost ghost-lg" aria-hidden="true">SVT</span>
   <span class="abadge" style="background:#E29AAE;color:#1a1a18" title="SEVENTEEN">SVT</span>
   <div><h1 style="margin:0">SEVENTEEN — 인천</h1>
-  <p class="sub" style="margin:2px 0 0">NEW_ World Tour · 인천 문학경기장 권역 · 2025-09-13 · 대한민국</p></div>
+  <p class="sub" style="margin:2px 0 0">NEW_ World Tour · 인천 문학경기장 권역 · 2025-09-13 <span class="dday" data-date="2025-09-13"></span> · 🇰🇷 대한민국</p></div>
 </div>
 <span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">발표 골든창 · 지금이 가장 쌉니다</span>
 
@@ -82,8 +114,41 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
   <button>알림 받기</button>
 </div>
 
-<div class="foot">이 페이지의 예약 링크는 제휴(어필리에이트) 링크로, 예약 시 수수료가 발생할 수 있습니다.
-수치는 공개 보도 기반 추정이며 실제와 다를 수 있습니다. · bybias.100m1s.com</div>
+<div class="foot">각 페이지의 예약 링크는 제휴(수수료) 링크입니다. 가격·잔량 전망은 추정이며 실제와 다를 수 있습니다. 예약·결제 책임은 이용자 본인에게 있습니다. · bybias.100m1s.com</div>
 
 <p class="gdisc">본 사이트는 아티스트·소속사와 무관한 비공식 일정·여행 정보 서비스이며, 공식 제휴 관계가 없습니다.</p>
-</div></body></html>
+</div><script>
+(function(){try{
+var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';
+var cur=document.documentElement.getAttribute('data-lang')||DEFL;
+var PFX=/^\/?(en|ja|zh-cn|zh-tw|es|th|id|pt|ar|vi)(\/|$)/;
+// 언어 토글 클릭 = 선택 저장(이후 자동 리다이렉트 억제)
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('.lng');
+ if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('bybias_lang',hl);}catch(e){}}});
+// 첫 방문(저장값 없음)만 Accept-Language 자동. 저장값 있으면 그 언어로 1회 이동.
+function go(l){if(l===cur)return;
+ var path=location.pathname; var parts=path.split('/');
+ var file=parts.pop()||'index.html';
+ var dir=parts.join('/'); // 현재 디렉토리(언어 prefix 포함 가능)
+ // 현재 prefix 제거
+ var base=dir.replace(/\/(en|ja|zh-cn|zh-tw|es|th|id|pt|ar|vi)$/,'');
+ var tgt=(l===DEFL)?(base+'/'+file):(base+'/'+l+'/'+file);
+ tgt=tgt.replace(/\/+/g,'/');
+ location.replace(tgt);}
+var saved=null;try{saved=localStorage.getItem('bybias_lang');}catch(e){}
+if(saved&&SUP.indexOf(saved)>=0){go(saved);}
+else if(!saved){var nav=(navigator.languages||[navigator.language||'']);
+ for(var i=0;i<nav.length;i++){var c=(nav[i]||'').toLowerCase();
+  var m=(c.indexOf('ko')===0)?DEFL:(c.indexOf('zh')===0?((c.indexOf('tw')>0||c.indexOf('hant')>0||c.indexOf('hk')>0)?'zh-tw':'zh-cn'):c.split('-')[0]);
+  if(SUP.indexOf(m)>=0){go(m);break;}}}
+// D-day: 완전 날짜(data-date)만 계산. 과거/오늘 이후 표기, 부분날짜 span 자체 없음.
+var T=new Date();T.setHours(0,0,0,0);
+var els=document.querySelectorAll('.dday[data-date]');
+for(var j=0;j<els.length;j++){var ds=els[j].getAttribute('data-date');
+ var p=ds.split('-');if(p.length!==3){continue;}
+ var ev2=new Date(+p[0],+p[1]-1,+p[2]);ev2.setHours(0,0,0,0);
+ var diff=Math.round((ev2-T)/86400000);var txt='';
+ if(diff>0){txt='D-'+diff;}else if(diff===0){txt='D-DAY';}else{continue;}
+ els[j].textContent=txt;els[j].setAttribute('dir','ltr');els[j].style.display='inline-block';}
+}catch(e){}})();
+</script></body></html>
