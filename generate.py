@@ -12,6 +12,7 @@ import json
 import shutil
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote_plus
 
 ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
@@ -107,6 +108,10 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
 .srcbox{background:#fff}.srcs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .srclink{font-size:13px;color:var(--accent);text-decoration:none;background:#f1f5fa;border:1px solid #dbe6f2;border-radius:7px;padding:6px 10px}
 .srclink:hover{background:#e6f1fb}
+.postlink{display:inline-block;font-size:14px;font-weight:500;color:#fff;background:var(--accent);text-decoration:none;border-radius:8px;padding:9px 14px}
+.postlink:hover{filter:brightness(.94)}
+.maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:#fff;border:1px solid #cfcdc4;border-radius:8px;padding:7px 12px;margin-top:8px}
+.maplink:hover{border-color:var(--ink)}
 """
 
 
@@ -151,7 +156,7 @@ def sources_section(e):
 </div>"""
 
 
-# 지원 SNS oEmbed/위젯 — 공식 플랫폼 위젯 js만 허용(임의 스크립트 금지)
+# oEmbed 표준 위젯 지원 플랫폼 — 해당 플랫폼 공식 위젯 js만 허용(임의 스크립트 금지)
 _SNS_WIDGETS = {
     "x.com": '<script async src="https://platform.twitter.com/widgets.js"></script>',
     "twitter.com": '<script async src="https://platform.twitter.com/widgets.js"></script>',
@@ -159,26 +164,40 @@ _SNS_WIDGETS = {
 }
 
 
+def _platform_label(url):
+    if "facebook.com" in url:
+        return "공식 Facebook 공지"
+    if "weverse.io" in url:
+        return "공식 Weverse 공지"
+    if "instagram.com" in url:
+        return "공식 Instagram 공지"
+    if "x.com" in url or "twitter.com" in url:
+        return "공식 X(트위터) 공지"
+    return "공식 공지"
+
+
 def sns_embed(e):
-    """official_post_url 값이 있을 때만 표준 위젯 렌더(현재 값 0건 = 미렌더).
-    데이터 수집 후 자동 활성. 외부 스크립트는 해당 플랫폼 공식 위젯 js만."""
+    """official_post_url 값이 있을 때만 렌더. oEmbed 지원 플랫폼(X·Instagram)은 표준 위젯 임베드,
+    미지원(Facebook·Weverse 등)은 '공식 공지 ↗' 링크 버튼으로 graceful 처리. 외부 스크립트는 공식 위젯 js만."""
     url = (e.get("official_post_url") or "").strip()
     if not url:
         return ""
     host = next((h for h in _SNS_WIDGETS if h in url), None)
-    if host is None:
-        return ""
-    if "instagram.com" in host:
-        body = f'<blockquote class="instagram-media" data-instgrm-permalink="{esc(url)}"></blockquote>'
-    else:  # x/twitter
-        body = (
-            f'<blockquote class="twitter-tweet"><a href="{esc(url)}"></a></blockquote>'
+    if host is not None:  # oEmbed 지원 → 표준 위젯 임베드
+        if "instagram.com" in host:
+            body = f'<blockquote class="instagram-media" data-instgrm-permalink="{esc(url)}"></blockquote>'
+        else:
+            body = f'<blockquote class="twitter-tweet"><a href="{esc(url)}"></a></blockquote>'
+        inner = f"{body}\n  {_SNS_WIDGETS[host]}"
+    else:  # oEmbed 미지원(FB·Weverse) → graceful 링크 버튼
+        inner = (
+            f'<a class="postlink" href="{esc(url)}" target="_blank" rel="noopener nofollow">'
+            f"{esc(_platform_label(url))} ↗</a>"
         )
     return f"""
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">공식 공지</div>
-  {body}
-  {_SNS_WIDGETS[host]}
+  {inner}
 </div>"""
 
 
@@ -196,6 +215,16 @@ def aff_esim(country):
 
 def aff_tour(city):
     return f"https://www.klook.com/search/?query={esc(city)}&aid={AFF['klook_aid']}"
+
+
+def map_button(e):
+    """Google Maps 검색 URL 스킴(키 불요, 공식). venue+city로 공연장 검색. venue 없으면 생략."""
+    venue = (e.get("venue") or "").strip()
+    if not venue:
+        return ""
+    query = quote_plus(f"{venue} {e.get('city', '')}".strip())
+    url = f"https://www.google.com/maps/search/?api=1&query={query}"
+    return f'<a class="maplink" href="{esc(url)}" target="_blank" rel="noopener">📍 지도에서 보기</a>'
 
 
 def page(title, body):
@@ -250,7 +279,10 @@ def event_html(e):
 <p class="disc disc-aff">본 페이지의 예약 링크는 제휴(수수료) 링크입니다. 이용자가 추가로 부담하는 비용은 없습니다.</p>
 
 <div class="box">
-  <div style="font-weight:600;font-size:14px">근처 숙소 팁</div>
+  <div style="font-weight:600;font-size:14px">공연장</div>
+  <p style="margin:4px 0 0;font-size:14px">{esc(e["venue"])} · {esc(e["city"])}</p>
+  {map_button(e)}
+  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div>
   <ul>{stays}</ul>
   <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
   <p style="margin:6px 0 0;font-size:14px">{esc(e["transport"])}</p>
