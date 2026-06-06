@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -164,6 +164,14 @@ body{overflow-wrap:break-word;word-break:normal}
   <p style="margin:6px 0 0;font-size:14px">ARENA@EXPO — direct MRT access via Downtown/East-West Line Expo station.</p>
 </div>
 
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 Local travel essentials</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Getting around</div><div class="lv">MRT (subway), LRT, and buses run tight. Use an EZ-Link card or contactless (SimplyGo) to tap. Singapore Indoor Stadium is walkable from Stadium station (Circle Line) and Tanjong Rhu station (Thomson-East Coast Line). Singapore EXPO (ARENA@EXPO) connects straight into Expo station (East-West &amp; Downtown lines).</div></div></div>
+  <details class="limore">
+    <summary>See more</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Late-night transit</div><div class="lv">MRT last trains run around midnight (final departures from interchanges ~11:30pm, service ends ~12:30am). Catch one before 11pm if transferring after the show. After last trains, Grab, Gojek, and TADA available 24/7, but expect ~50% late-night surcharge and dynamic pricing from midnight to 6am.</div></div><div class="lirow"><div class="lk">Payment</div><div class="lv">Cards, contactless, and QR payments (PayNow, PayLah!) widely accepted. Some hawker centres cash-only. Overall a cashless market.</div></div><div class="lirow"><div class="lk">Currency &amp; exchange</div><div class="lv">Singapore Dollar (SGD, S$). Card-heavy, so minimal exchange needed. Airport, city exchange booths, and ATMs are widespread.</div></div><div class="lirow"><div class="lk">Language</div><div class="lv">English (official), Mandarin, Malay, Tamil. English is universally spoken—signage and apps entirely in English.</div></div><div class="lirow"><div class="lk">Local apps</div><div class="lv">Grab <span style='color:var(--muted)'>(Vehicles, taxis, food, payments (Southeast Asia&#x27;s leading services))</span> · Google Maps <span style='color:var(--muted)'>(MRT/bus routes)</span> · SimplyGo <span style='color:var(--muted)'>(Transit contactless payments and balance checks)</span></div></div><div class="lirow"><div class="lk">Late-night transit</div><div class="lv">Grab <span style='color:var(--muted)'>(Late-night ride-hailing standard (market leader, English UI, upfront pricing, ideal for visitors))</span> · Gojek <span style='color:var(--muted)'>(Alternative ride-hailing (often cheaper off-peak))</span> · TADA <span style='color:var(--muted)'>(Flat-rate ride-hailing (transparent pricing, available to international visitors))</span> · ComfortDelGro / CDG Zig <span style='color:var(--muted)'>(Traditional taxi hailing (abundant taxi stands, 50% surcharge midnight–6am))</span> &nbsp;<a href="https://www.airalo.com/?country=싱가포르&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">How to book</div><div class="lv">Indoor Stadium/EXPO: avoid the main entrance; walk a few minutes out and hail for better waits and pricing. If Grab runs short on vehicles, cross-check Gojek and TADA (pricing and availability vary by app).</div></div></div>
+  </details>
+</div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Book now</p>
 <div class="btns">
   <a class="btn" href="https://www.booking.com/searchresults.html?ss=Singapore&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 Hotels <small>· Booking</small></a>

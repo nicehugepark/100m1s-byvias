@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -154,6 +154,14 @@ body{overflow-wrap:break-word;word-break:normal}
   <p style="margin:6px 0 0;font-size:14px">KINTEX — accessible via GTX-A Kintex station or Seoul Metro Line 3 Daehwa station. Reachable from Seoul downtown.</p>
 </div>
 
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 Local travel essentials</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Getting around</div><div class="lv">Seoul Metro Line 3 (Daehwa Station) + GTX-A (opened Dec 2024, Kintex Station) + local &amp; express buses. Transit cards: T-money or Cashbee. KINTEX is adjacent to Daehwa Station (Line 3) or Kintex Station (GTX-A); shuttle buses run during events.</div></div></div>
+  <details class="limore">
+    <summary>See more</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Late-night transit</div><div class="lv">Line 3 last train: ~midnight. Event shuttles close ~23:00. Returning to Seoul? GTX-A&#x27;s Seoul Station train leaves ~00:42 (later than Line 3). Check times beforehand—miss it, grab a Kakao T taxi.</div></div><div class="lirow"><div class="lk">Payment</div><div class="lv">Cards, mobile payments (Samsung Pay, etc.), and QR codes (Kakao Pay, Naver Pay) widely accepted. Some street vendors cash-only.</div></div><div class="lirow"><div class="lk">Currency &amp; exchange</div><div class="lv">Korean won (KRW, ₩). Cards primary; currency exchange rarely needed.</div></div><div class="lirow"><div class="lk">Language</div><div class="lv">Korean. Major KINTEX events &amp; transit signs: bilingual. Everyday English: conversational level.</div></div><div class="lirow"><div class="lk">Local apps</div><div class="lv">Kakao T <span style='color:var(--muted)'>(Taxis, driver services, and ride-hailing available)</span> · Naver Map <span style='color:var(--muted)'>(Public transit routes &amp; real-time directions)</span> · Kakao Pay <span style='color:var(--muted)'>(QR codes, quick-pay)</span></div></div><div class="lirow"><div class="lk">Late-night transit</div><div class="lv">Kakao T <span style='color:var(--muted)'>(Night-taxi standard (90%+ market share, fastest matching). Foreign phone sign-up restricted.)</span> · Uber <span style='color:var(--muted)'>(Taxi hailing—bring your overseas card &amp; number. Made for travelers.)</span> · TADA <span style='color:var(--muted)'>(Carnival vans—sign up with your overseas number &amp; card.)</span> · K-RIDE <span style='color:var(--muted)'>(Foreigner-Exclusive Taxis (no KakaoTalk needed, Seoul &amp; surrounding regions))</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">How to book</div><div class="lv">Avoid calling at the KINTEX main entrance—move 1–2 blocks away for faster matches. If Kakao T doesn&#x27;t connect, try UT ↔ TADA cross-calling.</div></div></div>
+  </details>
+</div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Book now</p>
 <div class="btns">
   <a class="btn" href="https://www.booking.com/searchresults.html?ss=Goyang&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 Hotels <small>· Booking</small></a>
