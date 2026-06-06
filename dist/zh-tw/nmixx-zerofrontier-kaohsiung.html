@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-Hant" data-lang="zh-tw"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NMIXX 가오슝 — ByBias</title>
-<meta name="description" content="粉絲齊聚演出 → 趁便宜搶先鎖定">
+<title>NMIXX 高雄 — ByBias</title>
+<meta name="description" content="粉絲聚集 → 趁漲價前先鎖定">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="ko" href="../nmixx-zerofrontier-kaohsiung.html">
 <link rel="alternate" hreflang="en" href="../en/nmixx-zerofrontier-kaohsiung.html">
@@ -24,6 +24,11 @@ a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+/* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
+   기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
+.subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
+.subitem{white-space:nowrap}
+.subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
@@ -31,7 +36,8 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
 .ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:12px}
-.ehead-detail>*{position:relative;z-index:1}
+.ehead-detail>:not(.ghost){position:relative;z-index:1}
+.ehead-detail>.ghost{position:absolute;z-index:0}
 .ghost-lg{font-size:96px;bottom:-22px;opacity:.09}
 .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
 .outlook{background:#fdf6ec;border:1px solid #f0e4cf}
@@ -39,19 +45,20 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
-/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
 .disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
 .gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
-.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 7px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
@@ -80,6 +87,9 @@ li{overflow-wrap:break-word}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:13px 0;min-height:44px;box-sizing:border-box;display:flex;align-items:center}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
@@ -94,10 +104,16 @@ li{overflow-wrap:break-word}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
@@ -107,69 +123,72 @@ ul{padding-inline-start:18px;padding-left:unset}
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
   <span class="ghost ghost-lg" aria-hidden="true">NMX</span>
-  <span class="abadge" style="background:#8A8A8A;color:#ffffff" title="NMIXX">NMX</span>
-  <div><h1 style="margin:0">NMIXX — 高雄</h1>
-  <p class="sub" style="margin:2px 0 0">EPISODE 1: ZERO FRONTIER World Tour · 가오슝 아레나(Kaohsiung Arena) · 2026-07-11 <span class="dday" data-date="2026-07-11"></span> · 🇹🇼 台灣 高雄</p></div>
+  <span class="abadge" style="background:#8A8A8A;color:#ffffff" title="NMIXX"><bdi>NMX</bdi></span>
+  <div><h1 style="margin:0"><bdi>NMIXX</bdi> — <bdi>高雄</bdi></h1>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>EPISODE 1: ZERO FRONTIER World Tour</bdi></span><span class="subitem"><bdi>高雄體育館(Kaohsiung Arena)</bdi></span><span class="subitem">2026-07-11 <span class="dday" data-date="2026-07-11"></span></span><span class="subitem">🇹🇼 台灣 高雄</span></p></div>
 </div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">超早搶佔 · 提前數月預訂</span>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">超早鎖定·提前數月預訂</span>
 
 <div class="box outlook">
-  <div style="color:var(--muted);font-size:13px">價格·需求預測（公告後）</div>
-  <div class="metric">暫無數據。首場全球巡迴高雄演場</div>
-  <div style="font-size:14px;margin-top:4px">高雄競技場周邊住宿(相較 Mega 級可能有較多選擇)</div>
-  <p style="margin:10px 0 0;font-size:14px"><b>預訂截止時間：</b> 海外獨立演場 — 建議儘早預訂機票·住宿以符合日程</p>
+  <div style="color:var(--muted);font-size:13px">價格·需求預估 (公告後)</div>
+  <div class="metric">無數據。首場全球巡演高雄演唱會。</div>
+  <div style="font-size:14px;margin-top:4px">高雄體育館周邊住宿(相比大型場館選擇較多)</div>
+  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">海外專場演唱會 — 建議配合日期提前預訂航班和住宿會更有利。</p>
 </div>
-<p class="disc">價格·庫存預測為估計值，可能與實際不同。預訂及付款責任由使用者自行承擔。</p>
+<p class="disc">票價與庫存預測為估算，實際可能不同。預訂與付款責任由使用者自行承擔。</p>
 
 <div class="box srcbox">
   <div style="font-weight:600;font-size:14px">日程來源</div>
-  <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi 2026 K-Pop 투어 일정 ↗</a></div>
+  <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi 2026 K-Pop 巡演日程 ↗</a></div>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">藝人影片</div>
-  <button class="ytfacade" data-vid="6Ycn9qZK09I" aria-label="播放影片: NMIXX(엔믹스) &quot;Heavy Serenade&quot; M/V"
+  <button class="ytfacade" data-vid="6Ycn9qZK09I" aria-label="播放影片: NMIXX &quot;Heavy Serenade&quot; M/V"
     style="background-image:url('https://i.ytimg.com/vi/6Ycn9qZK09I/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
-  <p style="margin:8px 0 0;font-size:13px">NMIXX(엔믹스) &quot;Heavy Serenade&quot; M/V <span style="color:var(--muted)">· NMIXX (JYP 공식)</span></p>
+  <p style="margin:8px 0 0;font-size:13px">NMIXX &quot;Heavy Serenade&quot; M/V <span style="color:var(--muted)">· NMIXX (JYP 官方)</span></p>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">藝人官方頻道</div>
-  <div class="chchips"><a class="chchip" href="https://nmixx.jype.com/" target="_blank" rel="noopener nofollow"><span>經紀公司 · JYP Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/nmixx_official/" target="_blank" rel="noopener nofollow" aria-label="NMIXX Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/NMIXX_official" target="_blank" rel="noopener nofollow" aria-label="NMIXX X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@NMIXX_official" target="_blank" rel="noopener nofollow" aria-label="NMIXX YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://nmixx.jype.com/" target="_blank" rel="noopener nofollow"><span>粉絲團 · NSWER</span><span aria-hidden="true"> ↗</span></a></div>
+  <div class="chchips"><a class="chchip" href="https://nmixx.jype.com/" target="_blank" rel="noopener nofollow"><span>經紀公司 · JYP Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/nmixx_official/" target="_blank" rel="noopener nofollow" aria-label="NMIXX Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/NMIXX_official" target="_blank" rel="noopener nofollow" aria-label="NMIXX X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@NMIXX_official" target="_blank" rel="noopener nofollow" aria-label="NMIXX YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@nmixx_official" target="_blank" rel="noopener nofollow" aria-label="NMIXX TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://nmixx.jype.com/" target="_blank" rel="noopener nofollow"><span>官方粉絲會 · NSWER</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
 <div class="box tkbox" style="padding:0">
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 購票</div>
-  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">預定演出時間</div><div class="lv">17:00~19:00（週末，常見提早開始，預估）</div></div><div class="lirow"><div class="lk">預先購票</div><div class="lv">Live Nation搶先購 2026-05-13 11:00~23:59 當地時間</div></div><div class="lirow"><div class="lk">一般購票</div><div class="lv">2026-05-14 11:00 當地時間</div></div><div class="lirow"><div class="lk">購票管道</div><div class="lv"><a href="https://www.livenation.com.tw/en/event/nmixx-1st-world-tour-episode-1-zero-frontier-in-kaohsiung-kaohsiung-tickets-edp1670213" target="_blank" rel="noopener nofollow">Live Nation Taiwan ↗</a> · <a href="https://tixcraft.com/activity/detail/26_nmixx" target="_blank" rel="noopener nofollow">tixcraft(拓元) ↗</a></div></div><div class="lirow"><div class="lk">價位</div><div class="lv">VIP 패키지 6880TWD, 5,880등급 5880TWD, 4,880등급 4880TWD, 4,380등급 4380TWD, 3,880등급 3880TWD, 2,880등급 2880TWD</div></div></div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">預期演出時間</div><div class="lv">17:00~19:00 (週末，常見較早開始，預估)</div></div><div class="lirow"><div class="lk">提前預訂</div><div class="lv">Live Nation 預購 2026-05-13 11:00~23:59 當地時間</div></div><div class="lirow"><div class="lk">一般預訂</div><div class="lv">2026-05-14 11:00 當地時間</div></div><div class="lirow"><div class="lk">購票平台</div><div class="lv"><a href="https://www.livenation.com.tw/en/event/nmixx-1st-world-tour-episode-1-zero-frontier-in-kaohsiung-kaohsiung-tickets-edp1670213" target="_blank" rel="noopener nofollow">Live Nation Taiwan ↗</a> · <a href="https://tixcraft.com/activity/detail/26_nmixx" target="_blank" rel="noopener nofollow">tixcraft(拓元) ↗</a></div></div><div class="lirow"><div class="lk">票價區間</div><div class="lv">VIP 套票 6880TWD, 5,880等級 5880TWD, 4,880等級 4880TWD, 4,380等級 4380TWD, 3,880等級 3880TWD, 2,880等級 2880TWD</div></div></div>
 </div>
-<details class="linfo">
-  <summary>🧭 當地實用資訊</summary>
-  <div class="ligrid"><div class="lirow"><div class="lk">交通</div><div class="lv">高雄捷運(紅線·橙線·環狀線)+市區巴士+輕軌。交通卡為悠遊卡·iPASS 相容,便利超商付款亦可。高雄國家體育館鄰近世運站(World Games)。</div></div><div class="lirow"><div class="lk">深夜移動</div><div class="lv">捷運末班約午夜前後。演唱會後可呼叫計程車或 Uber(Uber 台灣營運)。國家體育館位處市郊，散場時段擁擠，建議提前預約車輛。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">市區刷卡便利，但夜市和路邊攤販以現金為主。一卡通、悠遊卡可用於便利商店與部分小額消費。QR Code(LINE Pay 等)逐漸普及。</div></div><div class="lirow"><div class="lk">換匯·幣種</div><div class="lv">台幣(TWD、NT$)。建議備妥現金應對夜市和路邊攤販。可在機場、市內兌換或便利商店 ATM 提領。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">繁體中文·台語。英語通用度略低於台北，捷運標誌備有英語。</div></div><div class="lirow"><div class="lk">當地App</div><div class="lv">Uber <span style='color:var(--muted)'>(車輛預約(台灣營運))</span> · Google 지도 <span style='color:var(--muted)'>(捷運·公車路線)</span> · LINE Pay <span style='color:var(--muted)'>(QR Code·行動支付(當地特約擴展))</span></div></div><div class="lirow"><div class="lk">深夜交通App</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜車輛預約(英文介面，高雄營運可靠性佳))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(台灣最大計程車平台(2 萬台+，英語選項))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(LINE 整合計程車預約)</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(計程車·車輛預約替代方案(在地))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">國家體育館正門避開，往相隔 1~2 街區呼叫 Uber；未匹配時轉用 55688(計程車隊規模大)</div></div></div>
-</details>
-<p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即鎖定</p>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">演唱場地</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>高雄體育館(Kaohsiung Arena)</bdi> · <bdi>高雄</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%80%EC%98%A4%EC%8A%9D+%EC%95%84%EB%A0%88%EB%82%98%28Kaohsiung+Arena%29+Kaohsiung" target="_blank" rel="noopener">📍 在地圖查看</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">周邊住宿推薦</div><ul><li>左營(zuǒ yíng)/巨蛋(jù dàn)站 附近優先</li><li>臺北出發高鐵(HSR) 1.5~2h 通勤也是替代方案</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">散場後回程規劃</div>
+  <p style="margin:6px 0 0;font-size:14px">高雄捷運紅線 巨蛋(Kaohsiung Arena)站</p>
+</div>
+
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 在地實用資訊</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">高雄捷運(紅線、橘線、環狀線) + 市公車 + 輕軌。交通卡與悠遊卡(EasyCard, 悠遊卡)及 iPASS 相容，便利商店付款亦可。高雄國家體育場毗鄰世運主場館(Shiyun/World Games Stadium)站。</div></div></div>
+  <details class="limore">
+    <summary>看更多</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">捷運末班大約午夜前後。演唱會後可預約計程車·Uber (Uber 台灣營運)。國家體育場位在市區外圍,散場直後人潮擁擠,建議事先預約。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">都市卡片通用良好，但夜市、攤販多以現金為主。以EasyCard或iPass可於便利店及部分小額交易。QR碼(LINE Pay等)正逐漸普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">台幣(TWD, NT$)。夜市、攤販建議備妥現金。機場、市區內均可兌換或利用便利店ATM。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">中文(繁體)、台語。英文通用度較台北略低，MTR指示牌附英文。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車服務(台灣營運))</span> · Google 地圖 <span style='color:var(--muted)'>(MTR·巴士路線)</span> · LINE Pay <span style='color:var(--muted)'>(QR碼·行動支付(在地商家網絡拓展中))</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車(英文UI、高雄營運可靠度佳))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(台灣最大計程車平台(2萬台+，英文選項))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(LINE整合計程車叫車)</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(計程車·叫車替代方案(在地))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">高雄巨蛋正門廣場，請迴避後移動1~2個街區再叫車。若Uber媒合無響應，改撥55688(計程車隊伍充足)</div></div></div>
+  </details>
+</div>
+<p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
   <a class="btn" href="https://www.booking.com/searchresults.html?ss=Kaohsiung&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
   <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Kaohsiung&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
   <a class="btn" href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Kaohsiung&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 旅遊·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Kaohsiung&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
-<p class="disc disc-aff">本頁面的預訂連結為合作夥伴(分潤)連結。用戶不需要額外承擔任何費用。</p>
-
-<div class="box">
-  <div style="font-weight:600;font-size:14px">場館</div>
-  <p style="margin:4px 0 0;font-size:14px">가오슝 아레나(Kaohsiung Arena) · 高雄</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%80%EC%98%A4%EC%8A%9D+%EC%95%84%EB%A0%88%EB%82%98%28Kaohsiung+Arena%29+Kaohsiung" target="_blank" rel="noopener">📍 在地圖查看</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">周邊住宿建議</div>
-  <ul><li>左營/巨蛋站附近優先</li><li>台北出發高鐵(HSR) 1.5~2 小時通勤亦可選擇</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">演唱會後回家路線</div>
-  <p style="margin:6px 0 0;font-size:14px">高雄捷運紅線 巨蛋(Kaohsiung Arena)站</p>
-</div>
+<p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 
 <div class="news">
-  <input placeholder="電郵 — 此藝人價格·購票狀態提醒">
+  <input placeholder="電郵—此藝人票價·完售提醒">
   <button>接收提醒</button>
 </div>
 
-<div class="foot">各頁面的預訂連結為合作夥伴(分潤)連結。價格、房間數預測為估計值，實際可能有異。預訂、付款責任由用戶自行承擔。 · bybias.100m1s.com</div>
+<div class="foot">各頁面的預訂連結為聯盟(佣金)連結。票價與庫存預測為估算，實際可能不同。預訂與付款責任由使用者自行承擔。 · bybias.100m1s.com</div>
 
-<p class="gdisc">本網站為非官方日程與旅遊資訊服務，與藝人、所屬公司無關，不具官方合作關係。</p>
+<p class="gdisc">本網站為非官方排程與旅遊資訊服務，與藝人·經紀公司無關，並無官方聯盟關係。</p>
 </div><script>
 (function(){try{
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';
