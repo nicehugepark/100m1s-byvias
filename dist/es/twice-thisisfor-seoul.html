@@ -1,7 +1,7 @@
 <!doctype html><html lang="es" data-lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TWICE 서울 — ByBias</title>
-<meta name="description" content="Cuando se reúnen los fans → Cómo asegurarlo barato">
+<title>TWICE Seúl — ByBias</title>
+<meta name="description" content="Cuando se anuncia un concierto → Cómo asegurar precios antes de que suban">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="ko" href="../twice-thisisfor-seoul.html">
 <link rel="alternate" hreflang="en" href="../en/twice-thisisfor-seoul.html">
@@ -24,6 +24,11 @@ a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+/* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
+   기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
+.subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
+.subitem{white-space:nowrap}
+.subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
@@ -31,7 +36,8 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
 .ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:12px}
-.ehead-detail>*{position:relative;z-index:1}
+.ehead-detail>:not(.ghost){position:relative;z-index:1}
+.ehead-detail>.ghost{position:absolute;z-index:0}
 .ghost-lg{font-size:96px;bottom:-22px;opacity:.09}
 .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
 .outlook{background:#fdf6ec;border:1px solid #f0e4cf}
@@ -39,19 +45,20 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
-/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
 .disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
 .gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
-.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 7px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
@@ -80,6 +87,9 @@ li{overflow-wrap:break-word}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:13px 0;min-height:44px;box-sizing:border-box;display:flex;align-items:center}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
@@ -94,10 +104,16 @@ li{overflow-wrap:break-word}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
@@ -107,69 +123,73 @@ ul{padding-inline-start:18px;padding-left:unset}
 <a class="back" href="index.html">← Todos los eventos</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,#ffffff 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
   <span class="ghost ghost-lg" aria-hidden="true">TW</span>
-  <span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE">TW</span>
-  <div><h1 style="margin:0">TWICE — Seúl</h1>
-  <p class="sub" style="margin:2px 0 0">THIS IS FOR World Tour · KSPO 돔(올림픽체조경기장) · 2026-07-10 <span class="dday" data-date="2026-07-10"></span> · 🇰🇷 Corea del Sur Seúl</p></div>
+  <span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE"><bdi>TW</bdi></span>
+  <div><h1 style="margin:0"><bdi>TWICE</bdi> — <bdi>Seúl</bdi></h1>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>THIS IS FOR World Tour</bdi></span><span class="subitem"><bdi>KSPO Dome (Estadio de Gimnasia Olímpica)</bdi></span><span class="subitem">2026-07-10 <span class="dday" data-date="2026-07-10"></span></span><span class="subitem">🇰🇷 Corea del Sur Seúl</span></p></div>
 </div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">Adelántate al máximo · Reserva con meses de anticipación</span>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">Reserva ultra anticipada · Meses de adelanto</span>
 
 <div class="box outlook">
-  <div style="color:var(--muted);font-size:13px">Proyección de precios y demanda (después del anuncio)</div>
-  <div class="metric">Demanda explosiva en toda la gira (17 conciertos adicionales Norteamérica, etc.) — Concierto Seúl</div>
-  <div style="font-size:14px;margin-top:4px">Zona Parque Olímpico: se espera competencia por alojamiento el fin de semana del concierto</div>
-  <p style="margin:10px 0 0;font-size:14px"><b>Plazo de reserva:</b> Asegura alojamiento en Seúl poco después del anuncio — es lo más ventajoso.</p>
+  <div style="color:var(--muted);font-size:13px">Pronóstico de precios y demanda (después del anuncio)</div>
+  <div class="metric">Demanda masiva en toda la gira (17 conciertos adicionales en América del Norte, etc.) — concierto de Seúl</div>
+  <div style="font-size:14px;margin-top:4px">Se espera competencia por alojamiento de fin de semana para conciertos en el Parque Olímpico.</div>
+  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">Concierto de Seúl de la megagira — es ventajoso asegurar alojamiento poco después del anuncio.</p>
 </div>
-<p class="disc">Las estimaciones de precios y disponibilidad pueden variar. Usted es responsable de sus reservas y pagos.</p>
+<p class="disc">Las proyecciones de precio y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario.</p>
 
 <div class="box srcbox">
   <div style="font-weight:600;font-size:14px">Fuente del evento</div>
-  <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi 2026 K-Pop 투어 일정 ↗</a></div>
+  <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi Cronograma de giras K-Pop 2026 ↗</a></div>
 </div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">Conciertos anteriores</div><div class="oshows"><a class="oshow" href="twice-thisisfor-kaohsiung.html"><span class="osc">🇹🇼 Taiwán Kaohsiung</span><span class="osd">2025-11-22 <span class="dday" data-date="2025-11-22"></span></span></a></div></div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">Videos del artista</div>
   <button class="ytfacade" data-vid="eHHQaoEW30Q" aria-label="Reproducir video: TWICE &quot;THIS IS FOR&quot; M/V"
     style="background-image:url('https://i.ytimg.com/vi/eHHQaoEW30Q/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
-  <p style="margin:8px 0 0;font-size:13px">TWICE &quot;THIS IS FOR&quot; M/V <span style="color:var(--muted)">· TWICE (JYP 공식)</span></p>
+  <p style="margin:8px 0 0;font-size:13px">TWICE &quot;THIS IS FOR&quot; M/V <span style="color:var(--muted)">· TWICE (JYP Oficial)</span></p>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">Canal oficial del artista</div>
-  <div class="chchips"><a class="chchip" href="https://twice.jype.com/" target="_blank" rel="noopener nofollow"><span>Agencia · JYP Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/twicetagram/" target="_blank" rel="noopener nofollow" aria-label="TWICE Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/JYPETWICE" target="_blank" rel="noopener nofollow" aria-label="TWICE X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@TWICE" target="_blank" rel="noopener nofollow" aria-label="TWICE YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://twice.jype.com/" target="_blank" rel="noopener nofollow"><span>Club de fans · ONCE</span><span aria-hidden="true"> ↗</span></a></div>
+  <div class="chchips"><a class="chchip" href="https://twice.jype.com/" target="_blank" rel="noopener nofollow"><span>Agencia · JYP Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/twicetagram/" target="_blank" rel="noopener nofollow" aria-label="TWICE Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/JYPETWICE" target="_blank" rel="noopener nofollow" aria-label="TWICE X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@TWICE" target="_blank" rel="noopener nofollow" aria-label="TWICE YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@twice_tiktok_official" target="_blank" rel="noopener nofollow" aria-label="TWICE TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://twice.jype.com/" target="_blank" rel="noopener nofollow"><span>Club de fans · ONCE</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
 <div class="box tkbox" style="padding:0">
-  <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 Compra de entradas</div>
-  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">Hora Estimada del Concierto</div><div class="lv">19:00~20:00 (viernes por la noche, estimado)</div></div><div class="lirow"><div class="lk">Reserva anticipada</div><div class="lv">Preventa de fanclub ONCE 2026-06-09 20:00~23:59 KST</div></div><div class="lirow"><div class="lk">Reserva General</div><div class="lv">2026-06-11 20:00 KST</div></div><div class="lirow"><div class="lk">Dónde Reservar</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket(world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">Rango de Precio</div><div class="lv">스탠딩 일반(Standing General) 154000KRW, 지정석 일반(Reserved General) 154000KRW</div></div></div>
+  <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 Entradas</div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">Hora estimada del concierto</div><div class="lv">19:00~20:00 (viernes por la noche, estimado)</div></div><div class="lirow"><div class="lk">Pre-venta</div><div class="lv">Preventa de fanclub ONCE 2026-06-09 20:00~23:59 KST</div></div><div class="lirow"><div class="lk">Venta general</div><div class="lv">2026-06-11 20:00 KST</div></div><div class="lirow"><div class="lk">Dónde comprar</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket (world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">Rango de precios</div><div class="lv">Entrada General de Pie (Standing General) 154000KRW, Asiento General Reservado (Reserved General) 154000KRW</div></div></div>
 </div>
-<details class="linfo">
-  <summary>🧭 Información práctica local</summary>
-  <div class="ligrid"><div class="lirow"><div class="lk">Transporte</div><div class="lv">Metro del área metropolitana (líneas 1–9, línea Shinbundang, etc.) + autobús urbano principal. Sistema integrado de transbordo regional. Las tarjetas de transporte estándar son T-money y Cashbi, compatibles con casi todos los transportes y tiendas de conveniencia.</div></div><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">El último tren es aproximadamente entre medianoche y las 00:30 según la línea (las líneas del centro hacia la periferia cierran más tarde). Después del último tren, los autobuses nocturnos N (autobuses búho) operan en las líneas principales. Los servicios de taxi y Kakao T están ampliamente disponibles, con tarifa nocturna aplicable.</div></div><div class="lirow"><div class="lk">Pago</div><div class="lv">Las tarjetas de crédito/débito y pagos digitales (Samsung Pay, etc.) son muy aceptados. Solo en pequeñas compras y puestos callejeros se requiere efectivo. Los códigos QR (Kakao Pay, Naver Pay) son estándar.</div></div><div class="lirow"><div class="lk">Moneda y cambio</div><div class="lv">Won coreano (KRW, ₩). Como los pagos con tarjeta son estándar, necesitas cambiar menos dinero. Hay casas de cambio y cajeros automáticos en el aeropuerto y en el centro.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Coreano. El inglés es común en atracciones turísticas, grandes salas de conciertos e información de transporte; el inglés cotidiano es moderado.</div></div><div class="lirow"><div class="lk">Apps locales</div><div class="lv">카카오T <span style='color:var(--muted)'>(Llamada de taxi, chófer privado, servicio de transporte)</span> · 네이버 지도 <span style='color:var(--muted)'>(Rutas de transporte público y navegación en tiempo real)</span> · 카카오페이 <span style='color:var(--muted)'>(Código QR y pagos digitales)</span></div></div><div class="lirow"><div class="lk">Apps de transporte nocturno</div><div class="lv">카카오T <span style='color:var(--muted)'>(Estándar de llamada de taxi nocturno (cuota de mercado 90%+, emparejamiento más rápido). Hay restricciones para números extranjeros.)</span> · UT(우티/Uber) <span style='color:var(--muted)'>(Llamada de taxi — usa tu tarjeta y número extranjero tal como son, totalmente amigable para extranjeros)</span> · 타다(TADA) <span style='color:var(--muted)'>(Llamada de Carnival Van — registro posible con número y tarjeta extranjera)</span> · i.M(아이엠) <span style='color:var(--muted)'>(Llamada de furgoneta grande, taxi premium)</span> · K-RIDE(케이라이드) <span style='color:var(--muted)'>(Servicio de taxi exclusivo para extranjeros (no requiere Kakao Talk, disponible en Seúl, Incheon, área metropolitana))</span> · 올빼미버스(N버스) <span style='color:var(--muted)'>(Autobús nocturno después del último tren — rutas oficiales de Seúl (N15, N16, N26, etc.))</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Consejos para solicitar transporte</div><div class="lv">La plaza de la entrada principal de la sala de conciertos está saturada de llamadas — camina 1–2 cuadras para obtener un emparejamiento más rápido; desciende una estación de metro antes de llamar para dispersar la competencia.</div></div><div class="lirow"><div class="lk">Alrededor del venue</div><div class="lv"><div class="hspot"><span class="hn">올림픽공원 평화의 문</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%BC%ED%94%BD%EA%B3%B5%EC%9B%90+%ED%8F%89%ED%99%94%EC%9D%98+%EB%AC%B8+Olympic+Park+World+Peace+Gate" target="_blank" rel="noopener" aria-label="올림픽공원 평화의 문 📍 Ver en mapa">📍</a><span class="hd">Escultura simbólica de los Juegos Olímpicos &#x27;88 y amplio parque. Popular para paseos y fotos.</span></div><div class="hspot"><span class="hn">롯데월드몰</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0+Lotte+World+Mall" target="_blank" rel="noopener" aria-label="롯데월드몰 📍 Ver en mapa">📍</a><span class="hd">Gran complejo: Olive Young, tienda duty-free, K-fashion, observatorio. Compras integrales antes y después de conciertos.</span></div></div></div></div>
-</details>
-<p style="font-weight:600;font-size:14px;margin:16px 0 4px">Asegúralo ahora</p>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">Lugar del concierto</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>KSPO Dome (Estadio de Gimnasia Olímpica)</bdi> · <bdi>Seúl</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=KSPO+%EB%8F%94%28%EC%98%AC%EB%A6%BC%ED%94%BD%EC%B2%B4%EC%A1%B0%EA%B2%BD%EA%B8%B0%EC%9E%A5%29+Seoul" target="_blank" rel="noopener">📍 Ver en mapa</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">Hospedaje recomendado cerca</div><ul><li>Área de Jamsil y Gangdong + Metro</li><li>Buena accesibilidad desde Seongnae/Cheonho</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">Cómo regresar después del concierto</div>
+  <p style="margin:6px 0 0;font-size:14px">Estación del Parque Olímpico (Líneas 5 y 9)/Estación Mongchontoseong (Línea 8). Verifica la hora del último tren.</p>
+</div>
+
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 Información práctica local</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte</div><div class="lv">Metro de la región metropolitana (Líneas 1-9, Línea Shinbundang, etc.) + autobús urbano. Transbordo integrado. Tarjetas estándar: T-money y Cashbi, compatibles con casi todos los transportes y tiendas de conveniencia.</div></div></div>
+  <details class="limore">
+    <summary>Ver más</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">El último tren es alrededor de las 0:00–00:30 según la línea (el trayecto centro-periferia sale más tarde). Tras el último tren, el Autobús Nocturno N (Owl Bus) cubre las rutas principales. Taxis y Kakao T ampliamente disponibles, con recargo nocturno.</div></div><div class="lirow"><div class="lk">Pago</div><div class="lv">Tarjetas de crédito/débito y pagos móviles (Samsung Pay, etc.) muy aceptados. Pequeños montos y vendedores ambulantes: algo de efectivo. Códigos QR (Kakao Pay, Naver Pay) muy extendidos.</div></div><div class="lirow"><div class="lk">Cambio de divisas</div><div class="lv">Won coreano (KRW, ₩). Como el pago con tarjeta es estándar, apenas necesitarás cambiar dinero. Disponible en aeropuerto, casas de cambio urbanas y cajeros automáticos.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Coreano. Lugares turísticos, grandes venues y señalización de transporte incluyen inglés, pero el inglés cotidiano tiene aceptación moderada.</div></div><div class="lirow"><div class="lk">Aplicaciones locales</div><div class="lv">Kakao T <span style='color:var(--muted)'>(Llamadas de taxi, conductores y servicios de movilidad)</span> · Naver Map <span style='color:var(--muted)'>(Rutas de transporte público, navegación en tiempo real)</span> · Kakao Pay <span style='color:var(--muted)'>(Códigos QR, pagos móviles)</span></div></div><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">Kakao T <span style='color:var(--muted)'>(App estándar para taxis nocturnos (90%+ de cuota de mercado, emparejamiento más rápido). Restricciones para números extranjeros.)</span> · Uber <span style='color:var(--muted)'>(Llamadas de taxi — usa tu tarjeta y número extranjero tal como están. Muy amigable con extranjeros.)</span> · TADA <span style='color:var(--muted)'>(Llamadas Carnival Van — puedes registrarte con número y tarjeta extranjeros.)</span> · i.M(i-eme) <span style='color:var(--muted)'>(Vans grandes: taxis premium.)</span> · K-RIDE <span style='color:var(--muted)'>(Taxis exclusivos para extranjeros (sin necesidad de KakaoTalk, Seúl/Incheon/área metropolitana).)</span> · Owl Bus (Autobús Nocturno de Seúl) <span style='color:var(--muted)'>(Autobús nocturno tras último tren — rutas oficiales de Seúl (N15, N16, N26, etc.).)</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Consejos para reservar</div><div class="lv">La plaza principal de la venue concentra muchas llamadas — camina 1-2 cuadras para emparejamiento más rápido. A 1 parada de metro, menos competencia.</div></div><div class="lirow"><div class="lk">Alrededores del lugar</div><div class="lv"><div class="hspot"><span class="hn">Parque Olímpico - Puerta de la Paz</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%BC%ED%94%BD%EA%B3%B5%EC%9B%90+%ED%8F%89%ED%99%94%EC%9D%98+%EB%AC%B8+Olympic+Park+World+Peace+Gate" target="_blank" rel="noopener" aria-label="Parque Olímpico - Puerta de la Paz 📍 Ver en mapa">📍</a><span class="hd">Monumento emblemático de los Juegos Olímpicos de 1988 y amplio parque. Popular para paseos y fotos.</span></div><div class="hspot"><span class="hn">Lotte World Mall</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0+Lotte+World+Mall" target="_blank" rel="noopener" aria-label="Lotte World Mall 📍 Ver en mapa">📍</a><span class="hd">Gran centro comercial con Olive Young, tienda duty-free, moda coreana y mirador. Shopping antes o después del concierto en un solo lugar.</span></div></div></div></div>
+  </details>
+</div>
+<p style="font-weight:600;font-size:14px;margin:16px 0 4px">Reserva ahora</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 Hotel <small>· Booking</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 Hoteles <small>· Booking</small></a>
   <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Seoul&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ Vuelos <small>· Skyscanner</small></a>
   <a class="btn" href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Seoul&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 Tours y entradas <small>· Klook</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Seoul&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 Tours · Entradas <small>· Klook</small></a>
 </div>
-<p class="disc disc-aff">Los enlaces de reserva en esta página son enlaces de afiliados (de comisión). El usuario no incurre en costos adicionales.</p>
-
-<div class="box">
-  <div style="font-weight:600;font-size:14px">Lugar del evento</div>
-  <p style="margin:4px 0 0;font-size:14px">KSPO 돔(올림픽체조경기장) · Seúl</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=KSPO+%EB%8F%94%28%EC%98%AC%EB%A6%BC%ED%94%BD%EC%B2%B4%EC%A1%B0%EA%B2%BD%EA%B8%B0%EC%9E%A5%29+Seoul" target="_blank" rel="noopener">📍 Ver en mapa</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">Dónde hospedarse cerca</div>
-  <ul><li>Zona Jamsil, Gangdong + metro</li><li>La zona Seongnaе/Cheonho también tiene buena accesibilidad</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">Cómo regresar a casa después del concierto</div>
-  <p style="margin:6px 0 0;font-size:14px">Estación Parque Olímpico (Líneas 5, 9) / Estación Mongchontoseong (Línea 8). Confirma el último tren.</p>
-</div>
+<p class="disc disc-aff">Los enlaces de reserva en esta página son enlaces de afiliación (comisión). No hay costos adicionales para el usuario.</p>
 
 <div class="news">
-  <input placeholder="Correo — Recibe alertas de precios y disponibilidad para este artista">
+  <input placeholder="Correo — Recibir alertas de precio y agotamiento para este artista">
   <button>Recibir alertas</button>
 </div>
 
-<div class="foot">Los enlaces de reserva en cada página son enlaces de afiliados (de comisión). Las previsiones de precios y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario. · bybias.100m1s.com</div>
+<div class="foot">Los enlaces de reserva en cada página son enlaces de afiliación (comisión). Las proyecciones de precio y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario. · bybias.100m1s.com</div>
 
-<p class="gdisc">Este sitio es un servicio no oficial de información de horarios y viajes, independiente de artistas y agencias, y no mantiene relaciones de afiliación oficial.</p>
+<p class="gdisc">Este sitio es un servicio no oficial de información de programación y viajes sin relación con el artista ni su agencia, y no mantiene una relación de asociación oficial.</p>
 </div><script>
 (function(){try{
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';

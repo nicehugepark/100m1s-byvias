@@ -1,7 +1,7 @@
 <!doctype html><html lang="es" data-lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SEVENTEEN 인천 — ByBias</title>
-<meta name="description" content="Cuando se reúnen los fans → Cómo asegurarlo barato">
+<title>SEVENTEEN Incheon — ByBias</title>
+<meta name="description" content="Cuando se anuncia un concierto → Cómo asegurar precios antes de que suban">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="ko" href="../seventeen-new-incheon.html">
 <link rel="alternate" hreflang="en" href="../en/seventeen-new-incheon.html">
@@ -24,6 +24,11 @@ a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+/* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
+   기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
+.subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
+.subitem{white-space:nowrap}
+.subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
@@ -31,7 +36,8 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
 .ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:12px}
-.ehead-detail>*{position:relative;z-index:1}
+.ehead-detail>:not(.ghost){position:relative;z-index:1}
+.ehead-detail>.ghost{position:absolute;z-index:0}
 .ghost-lg{font-size:96px;bottom:-22px;opacity:.09}
 .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
 .outlook{background:#fdf6ec;border:1px solid #f0e4cf}
@@ -39,19 +45,20 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
-/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
 .disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
 .gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
-.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 7px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
@@ -80,6 +87,9 @@ li{overflow-wrap:break-word}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:13px 0;min-height:44px;box-sizing:border-box;display:flex;align-items:center}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
@@ -94,10 +104,16 @@ li{overflow-wrap:break-word}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
@@ -107,61 +123,64 @@ ul{padding-inline-start:18px;padding-left:unset}
 <a class="back" href="index.html">← Todos los eventos</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(226,154,174,0.10) 0%,#ffffff 42%,rgba(226,154,174,0.26) 100%);--stripe:#E29AAE">
   <span class="ghost ghost-lg" aria-hidden="true">SVT</span>
-  <span class="abadge" style="background:#E29AAE;color:#1a1a18" title="SEVENTEEN">SVT</span>
-  <div><h1 style="margin:0">SEVENTEEN — Incheon</h1>
-  <p class="sub" style="margin:2px 0 0">NEW_ World Tour · 인천 문학경기장 권역 · 2025-09-13 <span class="dday" data-date="2025-09-13"></span> · 🇰🇷 Corea del Sur Incheon</p></div>
+  <span class="abadge" style="background:#E29AAE;color:#1a1a18" title="SEVENTEEN"><bdi>SVT</bdi></span>
+  <div><h1 style="margin:0"><bdi>SEVENTEEN</bdi> — <bdi>Incheon</bdi></h1>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>NEW_ World Tour</bdi></span><span class="subitem"><bdi>Zona del Complejo Deportivo Munhak de Incheon.</bdi></span><span class="subitem">2025-09-13 <span class="dday" data-date="2025-09-13"></span></span><span class="subitem">🇰🇷 Corea del Sur Incheon</span></p></div>
 </div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">Ventana dorada del anuncio · Ahora con los mejores precios</span>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">Ventana dorada del anuncio · Sale más barato ahora</span>
 
 <div class="box outlook">
-  <div style="color:var(--muted);font-size:13px">Proyección de precios y demanda (después del anuncio)</div>
-  <div class="metric">Las entradas de preventa se agotan en cuestión de horas</div>
-  <div style="font-size:14px;margin-top:4px">Cuando el concierto está cerca, hay fuerte competencia por alojamientos en el área de Incheon/Seoul</div>
-  <p style="margin:10px 0 0;font-size:14px"><b>Plazo de reserva:</b> Las entradas se agotan en cuestión de horas — también es más seguro reservar alojamiento justo después del anuncio.</p>
+  <div style="color:var(--muted);font-size:13px">Pronóstico de precios y demanda (después del anuncio)</div>
+  <div class="metric">La preventa se agota en pocas horas.</div>
+  <div style="font-size:14px;margin-top:4px">Cuando el concierto es inminente, el alojamiento en el área de Incheon/Seoul se vuelve competitivo.</div>
+  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">Los boletos se agotan en pocas horas — asegúrate el alojamiento justo después del anuncio.</p>
 </div>
-<p class="disc">Las estimaciones de precios y disponibilidad pueden variar. Usted es responsable de sus reservas y pagos.</p>
+<p class="disc">Las proyecciones de precio y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario.</p>
 
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">Videos del artista</div>
-  <button class="ytfacade" data-vid="pS57UX6s-xw" aria-label="Reproducir video: SEVENTEEN (세븐틴) &#x27;THUNDER&#x27; Official MV"
+  <button class="ytfacade" data-vid="pS57UX6s-xw" aria-label="Reproducir video: SEVENTEEN &#x27;THUNDER&#x27; Official MV"
     style="background-image:url('https://i.ytimg.com/vi/pS57UX6s-xw/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
-  <p style="margin:8px 0 0;font-size:13px">SEVENTEEN (세븐틴) &#x27;THUNDER&#x27; Official MV <span style="color:var(--muted)">· HYBE LABELS</span></p>
+  <p style="margin:8px 0 0;font-size:13px">SEVENTEEN &#x27;THUNDER&#x27; Official MV <span style="color:var(--muted)">· HYBE LABELS</span></p>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">Canal oficial del artista</div>
-  <div class="chchips"><a class="chchip" href="https://www.pledis.co.kr/" target="_blank" rel="noopener nofollow"><span>Agencia · PLEDIS Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.seventeen-17.com/" target="_blank" rel="noopener nofollow"><span>Sitio oficial</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/saythename_17/" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/pledis_17" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@pledis17" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/seventeen" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN Weverse"><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/seventeen" target="_blank" rel="noopener nofollow"><span>Club de fans · CARAT</span><span aria-hidden="true"> ↗</span></a></div>
+  <div class="chchips"><a class="chchip" href="https://www.pledis.co.kr/" target="_blank" rel="noopener nofollow"><span>Agencia · PLEDIS Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.seventeen-17.com/" target="_blank" rel="noopener nofollow"><span>Sitio oficial</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/saythename_17/" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/pledis_17" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@pledis17" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@seventeen17_official" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/seventeen" target="_blank" rel="noopener nofollow" aria-label="SEVENTEEN Weverse"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 6.5h2.7l3.05 8.36L10.8 6.5h2.4l3.05 8.36L19.3 6.5H22l-4.55 11h-2.5l-2.95-7.9-2.95 7.9h-2.5z"/></svg><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/seventeen" target="_blank" rel="noopener nofollow"><span>Club de fans · CARAT</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
-<details class="linfo">
-  <summary>🧭 Información práctica local</summary>
-  <div class="ligrid"><div class="lirow"><div class="lk">Transporte</div><div class="lv">Metro del área metropolitana (Líneas 1, 2, Ferrocarril al Aeropuerto de Incheon) conectado a Seúl + autobuses urbanos. Compatible con T-money y Cashbee.</div></div><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">El metro y el ferrocarril al aeropuerto tienen su último tren aproximadamente a medianoche (los trasbordos hacia Seúl pueden ser más temprano). En la zona del Munhak Stadium, tras el concierto necesitarás taxi o Kakao T. Si vuelves a Seúl, verifica los horarios del último trasbordo con anticipación.</div></div><div class="lirow"><div class="lk">Pago</div><div class="lv">Las tarjetas y pagos digitales son muy aceptados.</div></div><div class="lirow"><div class="lk">Moneda y cambio</div><div class="lv">Won coreano (KRW, ₩). Las tarjetas son la norma.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Coreano. Cerca del aeropuerto, el inglés es relativamente bien entendido.</div></div><div class="lirow"><div class="lk">Apps locales</div><div class="lv">카카오T <span style='color:var(--muted)'>(Llamar taxi o transporte)</span> · 네이버 지도 <span style='color:var(--muted)'>(Rutas de transporte público)</span> · 카카오페이 <span style='color:var(--muted)'>(Código QR y pagos digitales)</span></div></div><div class="lirow"><div class="lk">Apps de transporte nocturno</div><div class="lv">카카오T <span style='color:var(--muted)'>(Estándar de llamada de taxi nocturno (cuota de mercado 90%+, emparejamiento más rápido). Hay restricciones para números extranjeros.)</span> · UT(우티/Uber) <span style='color:var(--muted)'>(Llamada de taxi — usa tu tarjeta y número extranjero tal como son, totalmente amigable para extranjeros)</span> · 타다(TADA) <span style='color:var(--muted)'>(Llamada de Carnival Van — registro posible con número y tarjeta extranjera)</span> · i.M(아이엠) <span style='color:var(--muted)'>(Llamada de furgoneta grande, taxi premium)</span> · K-RIDE(케이라이드) <span style='color:var(--muted)'>(Servicio de taxi exclusivo para extranjeros (no requiere Kakao Talk, disponible en Seúl, Incheon, área metropolitana))</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Consejos para solicitar transporte</div><div class="lv">Evita la entrada principal — llama después. Si vuelves a Seúl, verifica el horario del último trasbordo nada más termine el concierto — si no lo alcanzas, llama un taxi de inmediato.</div></div><div class="lirow"><div class="lk">Alrededor del venue</div><div class="lv"><div class="hspot"><span class="hn">올리브영 송도센트럴파크점</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81+%EC%86%A1%EB%8F%84%EC%84%BC%ED%8A%B8%EB%9F%B4%ED%8C%8C%ED%81%AC%EC%A0%90" target="_blank" rel="noopener" aria-label="올리브영 송도센트럴파크점 📍 Ver en mapa">📍</a><span class="hd">Olive Young emblemático de 송도 (Songdo), con muchos clientes internacionales. A 2 minutos a pie del Central Park — K-beauty en un solo lugar.</span></div><div class="hspot"><span class="hn">송도 센트럴파크</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%86%A1%EB%8F%84+%EC%84%BC%ED%8A%B8%EB%9F%B4%ED%8C%8C%ED%81%AC+Songdo+Central+Park" target="_blank" rel="noopener" aria-label="송도 센트럴파크 📍 Ver en mapa">📍</a><span class="hd">Parque urbano donde canales con agua salada se funden con rascacielos. Punto de fotos con vistas nocturnas.</span></div></div></div><div class="lirow"><div class="lk">Horario del último viaje</div><div class="lv">Último metro alrededor de medianoche. Al regresar a Seúl, los transbordos tienen horarios más temprano — verifica con anticipación y usa taxi si te lo pierdes.</div></div></div>
-</details>
-<p style="font-weight:600;font-size:14px;margin:16px 0 4px">Asegúralo ahora</p>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">Lugar del concierto</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>Zona del Complejo Deportivo Munhak de Incheon.</bdi> · <bdi>Incheon</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C+%EB%AC%B8%ED%95%99%EA%B2%BD%EA%B8%B0%EC%9E%A5+%EA%B6%8C%EC%97%AD+Incheon" target="_blank" rel="noopener">📍 Ver en mapa</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">Hospedaje recomendado cerca</div><ul><li>Área de Songdo/Bupyeong + Metro.</li><li>El área suroeste de Seoul (Yeongdeungpo/Sindorim) también tiene buen acceso.</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">Cómo regresar después del concierto</div>
+  <p style="margin:6px 0 0;font-size:14px">Después del concierto, confirma el último tren/autobús express Incheon→Seoul.</p>
+</div>
+
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 Información práctica local</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte</div><div class="lv">Metro del área metropolitana (Líneas 1 y 2, Ferrocarril del Aeropuerto de Incheon) conectado a Seúl + autobuses urbanos. Compatible con T-money y Cashbee.</div></div></div>
+  <details class="limore">
+    <summary>Ver más</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">Último tren del metro/Ferrocarril del Aeropuerto aproximadamente a medianoche (los transbordos hacia Seúl pueden salir más temprano). Para Munhak Stadium, después del concierto dependerás de taxis y Kakao T; si regresas a Seúl, verifica los horarios del último transbardo con anticipación.</div></div><div class="lirow"><div class="lk">Pago</div><div class="lv">Tarjetas y pagos móviles se aceptan ampliamente.</div></div><div class="lirow"><div class="lk">Cambio de divisas</div><div class="lv">Won coreano (KRW, ₩). La tarjeta es lo estándar.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Coreano. El inglés es relativamente común en áreas cercanas al aeropuerto.</div></div><div class="lirow"><div class="lk">Aplicaciones locales</div><div class="lv">Kakao T <span style='color:var(--muted)'>(Llamada de taxi o movilidad)</span> · Naver Map <span style='color:var(--muted)'>(Ruta de transporte público)</span> · Kakao Pay <span style='color:var(--muted)'>(Códigos QR, pagos móviles)</span></div></div><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">Kakao T <span style='color:var(--muted)'>(App estándar para taxis nocturnos (90%+ de cuota de mercado, emparejamiento más rápido). Restricciones para números extranjeros.)</span> · Uber <span style='color:var(--muted)'>(Llamadas de taxi — usa tu tarjeta y número extranjero tal como están. Muy amigable con extranjeros.)</span> · TADA <span style='color:var(--muted)'>(Llamadas Carnival Van — puedes registrarte con número y tarjeta extranjeros.)</span> · i.M(i-eme) <span style='color:var(--muted)'>(Vans grandes: taxis premium.)</span> · K-RIDE <span style='color:var(--muted)'>(Taxis exclusivos para extranjeros (sin necesidad de KakaoTalk, Seúl/Incheon/área metropolitana).)</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Consejos para reservar</div><div class="lv">Evita la entrada principal de Munhak Stadium; llama desde otro lugar. Si regresas a Seúl, verifica los horarios del último transbardo justo después del concierto; si lo pierdes, cambia a un taxi de inmediato.</div></div><div class="lirow"><div class="lk">Alrededores del lugar</div><div class="lv"><div class="hspot"><span class="hn">Olive Young Songdo Central Park</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81+%EC%86%A1%EB%8F%84%EC%84%BC%ED%8A%B8%EB%9F%B4%ED%8C%8C%ED%81%AC%EC%A0%90" target="_blank" rel="noopener" aria-label="Olive Young Songdo Central Park 📍 Ver en mapa">📍</a><span class="hd">Principal Olive Young en Songdo, muy visitado por clientes extranjeros. A 2 minutos a pie del Parque Central: shopping de belleza coreana en un solo lugar.</span></div><div class="hspot"><span class="hn">Songdo Central Park</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%86%A1%EB%8F%84+%EC%84%BC%ED%8A%B8%EB%9F%B4%ED%8C%8C%ED%81%AC+Songdo+Central+Park" target="_blank" rel="noopener" aria-label="Songdo Central Park 📍 Ver en mapa">📍</a><span class="hd">Parque urbano que mezcla canales de agua salada y rascacielos. Lugar perfecto para fotos nocturnas.</span></div></div></div><div class="lirow"><div class="lk">Último horario de salida</div><div class="lv">El último metro sale alrededor de la medianoche. Cuando regresa a Seúl, el último tren de transferencias sale mucho más temprano — la verificación previa es imprescindible; si lo pierde, tome un taxi.</div></div></div>
+  </details>
+</div>
+<p style="font-weight:600;font-size:14px;margin:16px 0 4px">Reserva ahora</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Incheon&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 Hotel <small>· Booking</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Incheon&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 Hoteles <small>· Booking</small></a>
   <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Incheon&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ Vuelos <small>· Skyscanner</small></a>
   <a class="btn" href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Incheon&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 Tours y entradas <small>· Klook</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Incheon&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 Tours · Entradas <small>· Klook</small></a>
 </div>
-<p class="disc disc-aff">Los enlaces de reserva en esta página son enlaces de afiliados (de comisión). El usuario no incurre en costos adicionales.</p>
-
-<div class="box">
-  <div style="font-weight:600;font-size:14px">Lugar del evento</div>
-  <p style="margin:4px 0 0;font-size:14px">인천 문학경기장 권역 · Incheon</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C+%EB%AC%B8%ED%95%99%EA%B2%BD%EA%B8%B0%EC%9E%A5+%EA%B6%8C%EC%97%AD+Incheon" target="_blank" rel="noopener">📍 Ver en mapa</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">Dónde hospedarse cerca</div>
-  <ul><li>Área de Songdo/Bupyeong + metro</li><li>El área suroccidental de Seoul (Yeongdeungpo/Sindorim) también tiene buen acceso</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">Cómo regresar a casa después del concierto</div>
-  <p style="margin:6px 0 0;font-size:14px">Después del concierto, verifica los últimos trenes/autobuses express de Incheon → Seoul.</p>
-</div>
+<p class="disc disc-aff">Los enlaces de reserva en esta página son enlaces de afiliación (comisión). No hay costos adicionales para el usuario.</p>
 
 <div class="news">
-  <input placeholder="Correo — Recibe alertas de precios y disponibilidad para este artista">
+  <input placeholder="Correo — Recibir alertas de precio y agotamiento para este artista">
   <button>Recibir alertas</button>
 </div>
 
-<div class="foot">Los enlaces de reserva en cada página son enlaces de afiliados (de comisión). Las previsiones de precios y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario. · bybias.100m1s.com</div>
+<div class="foot">Los enlaces de reserva en cada página son enlaces de afiliación (comisión). Las proyecciones de precio y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario. · bybias.100m1s.com</div>
 
-<p class="gdisc">Este sitio es un servicio no oficial de información de horarios y viajes, independiente de artistas y agencias, y no mantiene relaciones de afiliación oficial.</p>
+<p class="gdisc">Este sitio es un servicio no oficial de información de programación y viajes sin relación con el artista ni su agencia, y no mantiene una relación de asociación oficial.</p>
 </div><script>
 (function(){try{
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';

@@ -1,7 +1,7 @@
 <!doctype html><html lang="es" data-lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ITZY 홍콩 — ByBias</title>
-<meta name="description" content="Cuando se reúnen los fans → Cómo asegurarlo barato">
+<title>ITZY Hong Kong — ByBias</title>
+<meta name="description" content="Cuando se anuncia un concierto → Cómo asegurar precios antes de que suban">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="ko" href="../itzy-tunnelvision-hongkong.html">
 <link rel="alternate" hreflang="en" href="../en/itzy-tunnelvision-hongkong.html">
@@ -24,6 +24,11 @@ a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+/* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
+   기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
+.subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
+.subitem{white-space:nowrap}
+.subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
@@ -31,7 +36,8 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
 .ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:12px}
-.ehead-detail>*{position:relative;z-index:1}
+.ehead-detail>:not(.ghost){position:relative;z-index:1}
+.ehead-detail>.ghost{position:absolute;z-index:0}
 .ghost-lg{font-size:96px;bottom:-22px;opacity:.09}
 .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
 .outlook{background:#fdf6ec;border:1px solid #f0e4cf}
@@ -39,19 +45,20 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
-/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
 .disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
 .gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
-.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 7px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
@@ -80,6 +87,9 @@ li{overflow-wrap:break-word}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:13px 0;min-height:44px;box-sizing:border-box;display:flex;align-items:center}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
@@ -94,10 +104,16 @@ li{overflow-wrap:break-word}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
@@ -107,23 +123,23 @@ ul{padding-inline-start:18px;padding-left:unset}
 <a class="back" href="index.html">← Todos los eventos</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(216,30,91,0.10) 0%,#ffffff 42%,rgba(216,30,91,0.26) 100%);--stripe:#D81E5B">
   <span class="ghost ghost-lg" aria-hidden="true">ITZY</span>
-  <span class="abadge" style="background:#D81E5B;color:#ffffff" title="ITZY">ITZY</span>
-  <div><h1 style="margin:0">ITZY — Hong Kong</h1>
-  <p class="sub" style="margin:2px 0 0">TUNNEL VISION World Tour · AsiaWorld-Arena · 2026-06-20 <span class="dday" data-date="2026-06-20"></span> · 🇭🇰 Hong Kong</p></div>
+  <span class="abadge" style="background:#D81E5B;color:#ffffff" title="ITZY"><bdi>ITZY</bdi></span>
+  <div><h1 style="margin:0"><bdi>ITZY</bdi> — <bdi>Hong Kong</bdi></h1>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>TUNNEL VISION World Tour</bdi></span><span class="subitem"><bdi>AsiaWorld-Arena</bdi></span><span class="subitem">2026-06-20 <span class="dday" data-date="2026-06-20"></span></span><span class="subitem">🇭🇰 Hong Kong</span></p></div>
 </div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">Ventana dorada del anuncio · Ahora con los mejores precios</span>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">Ventana dorada del anuncio · Sale más barato ahora</span>
 
 <div class="box outlook">
-  <div style="color:var(--muted);font-size:13px">Proyección de precios y demanda (después del anuncio)</div>
-  <div class="metric">Sin datos. Concierto arena en extranjero.</div>
-  <div style="font-size:14px;margin-top:4px">Cerca del aeropuerto (AsiaWorld) — Elige alojamiento considerando el traslado al centro.</div>
-  <p style="margin:10px 0 0;font-size:14px"><b>Plazo de reserva:</b> Concierto arena en extranjero — Asegura vuelos y alojamiento simultáneamente.</p>
+  <div style="color:var(--muted);font-size:13px">Pronóstico de precios y demanda (después del anuncio)</div>
+  <div class="metric">Sin datos. Concierto exclusivo internacional en arena.</div>
+  <div style="font-size:14px;margin-top:4px">Cerca del aeropuerto (AsiaWorld) — elige alojamiento considerando el traslado a la ciudad.</div>
+  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">Concierto exclusivo internacional — se recomienda reservar vuelos y alojamiento simultáneamente.</p>
 </div>
-<p class="disc">Las estimaciones de precios y disponibilidad pueden variar. Usted es responsable de sus reservas y pagos.</p>
+<p class="disc">Las proyecciones de precio y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario.</p>
 
 <div class="box srcbox">
   <div style="font-weight:600;font-size:14px">Fuente del evento</div>
-  <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi 2026 K-Pop 투어 일정 ↗</a></div>
+  <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi Cronograma de giras K-Pop 2026 ↗</a></div>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">Anuncio oficial</div>
@@ -133,47 +149,50 @@ ul{padding-inline-start:18px;padding-left:unset}
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">Videos del artista</div>
   <button class="ytfacade" data-vid="1jKnI_ib8c8" aria-label="Reproducir video: ITZY &quot;Motto&quot; M/V"
     style="background-image:url('https://i.ytimg.com/vi/1jKnI_ib8c8/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
-  <p style="margin:8px 0 0;font-size:13px">ITZY &quot;Motto&quot; M/V <span style="color:var(--muted)">· ITZY (JYP 공식)</span></p>
+  <p style="margin:8px 0 0;font-size:13px">ITZY &quot;Motto&quot; M/V <span style="color:var(--muted)">· ITZY (JYP oficial)</span></p>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">Canal oficial del artista</div>
-  <div class="chchips"><a class="chchip" href="https://itzy.jype.com/" target="_blank" rel="noopener nofollow"><span>Agencia · JYP Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/itzy.all.in.us/" target="_blank" rel="noopener nofollow" aria-label="ITZY Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/ITZYofficial" target="_blank" rel="noopener nofollow" aria-label="ITZY X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@ITZY" target="_blank" rel="noopener nofollow" aria-label="ITZY YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://itzy.jype.com/" target="_blank" rel="noopener nofollow"><span>Club de fans · MIDZY</span><span aria-hidden="true"> ↗</span></a></div>
+  <div class="chchips"><a class="chchip" href="https://itzy.jype.com/" target="_blank" rel="noopener nofollow"><span>Agencia · JYP Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/itzy.all.in.us/" target="_blank" rel="noopener nofollow" aria-label="ITZY Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/ITZYofficial" target="_blank" rel="noopener nofollow" aria-label="ITZY X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@ITZY" target="_blank" rel="noopener nofollow" aria-label="ITZY YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@itzyofficial" target="_blank" rel="noopener nofollow" aria-label="ITZY TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://itzy.jype.com/" target="_blank" rel="noopener nofollow"><span>Club de fans · MIDZY</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
 <div class="box tkbox" style="padding:0">
-  <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 Compra de entradas</div>
-  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">Hora Estimada del Concierto</div><div class="lv">17:00~19:00 (fines de semana, inicio temprano frecuente, estimado)</div></div><div class="lirow"><div class="lk">Dónde Reservar</div><div class="lv"><a href="https://www.livenation.hk/en/event/itzy-3rd-world-tour-tunnel-vision-in-hong-kong-hong-kong-tickets-edp1660372" target="_blank" rel="noopener nofollow">Live Nation Hong Kong ↗</a> · <a href="https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/itzy-tour-in-hong-kong-2026/" target="_blank" rel="noopener nofollow">AsiaWorld-Expo 공식 ↗</a></div></div><div class="lirow"><div class="lk">Rango de Precio</div><div class="lv">VIP 패키지(스탠딩 포함) 1999HKD, 스탠딩 1299HKD, 지정석 1등급 1399HKD, 지정석 2등급 999HKD, 지정석 3등급 799HKD</div></div></div>
+  <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 Entradas</div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">Hora estimada del concierto</div><div class="lv">17:00~19:00 (fin de semana, inicio temprano común, estimado)</div></div><div class="lirow"><div class="lk">Dónde comprar</div><div class="lv"><a href="https://www.livenation.hk/en/event/itzy-3rd-world-tour-tunnel-vision-in-hong-kong-hong-kong-tickets-edp1660372" target="_blank" rel="noopener nofollow">Live Nation Hong Kong ↗</a> · <a href="https://www.asiaworld-expo.com/en-us/whats-on/upcoming-events/events/itzy-tour-in-hong-kong-2026/" target="_blank" rel="noopener nofollow">AsiaWorld-Expo Oficial ↗</a></div></div><div class="lirow"><div class="lk">Rango de precios</div><div class="lv">Paquete VIP (Incluye Acceso de Pie) 1999HKD, Acceso de Pie 1299HKD, Asiento Designado Clase 1 1399HKD, Asiento Designado Grado 2 999HKD, Asiento Designado Grado 3 799HKD</div></div></div>
 </div>
-<details class="linfo">
-  <summary>🧭 Información práctica local</summary>
-  <div class="ligrid"><div class="lirow"><div class="lk">Transporte</div><div class="lv">MTR (incluye ferrocarril del aeropuerto) + autobuses, tranvías, ferrys. La tarjeta Octopus (八達通) es el estándar—cubre transporte, tiendas de conveniencia y micro-pagos. AsiaWorld-Expo está conectada directamente a la estación AsiaWorld-Expo del ferrocarril del aeropuerto.</div></div><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">Tren Aeropuerto (AsiaWorld-Expo ↔ Hong Kong Station): último tren aprox. 00:48~01:13 (intervalo ~12 min). Último MTR general también alrededor de medianoche~01:00. Después del último tren: autobuses nocturnos (línea N) o taxi. Si el concierto termina después de las 22:00, confirma de antemano la hora del último tren del aeropuerto.</div></div><div class="lirow"><div class="lk">Pago</div><div class="lv">Tarjeta Octopus ampliamente aceptada. También se acepta efectivo. Códigos QR en expansión (AlipayHK, WeChat Pay).</div></div><div class="lirow"><div class="lk">Moneda y cambio</div><div class="lv">Dólar de Hong Kong (HKD, HK$). La recarga de Octopus es esencialmente el centro de pago local. Cambio de moneda y cajeros automáticos disponibles en el aeropuerto y la ciudad.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Cantonés y mandarín. El inglés se usa a nivel de idioma oficial (signos y orientación ampliamente en inglés).</div></div><div class="lirow"><div class="lk">Apps locales</div><div class="lv">Uber <span style='color:var(--muted)'>(Llamar vehículo)</span> · Citymapper <span style='color:var(--muted)'>(Rutas MTR y autobús (en inglés))</span> · Octopus <span style='color:var(--muted)'>(Saldo, recarga y pago con Octopus)</span></div></div><div class="lirow"><div class="lk">Apps de transporte nocturno</div><div class="lv">Uber <span style='color:var(--muted)'>(Llamar vehículo/taxi de madrugada (interfaz en inglés). HKTaxi y FlyTaxi se integraron tras la adquisición: es el servicio principal de facto.)</span> · DiDi <span style='color:var(--muted)'>(Alternativa de llamada de vehículo (operada en Hong Kong))</span> · AlipayHK / WeChat Pay HK 택시 호출 <span style='color:var(--muted)'>(Función de llamada de taxi integrada en la aplicación de pago)</span> &nbsp;<a href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Consejos para solicitar transporte</div><div class="lv">Después de AsiaWorld-Expo, prioriza el último tren del aeropuerto (aprox. 00:48~01:13) — es el más confiable. Si pierdes el último tren, evita la entrada principal y llama a Uber o un taxi.</div></div><div class="lirow"><div class="lk">Horario del último viaje</div><div class="lv">Conexión directa a AsiaWorld-Expo (Airport Railway); último tren aprox. 00:48–01:13. Verifica los horarios hacia el centro (Estación de Hong Kong) o usa autobús nocturno/taxi si te lo pierdes.</div></div></div>
-</details>
-<p style="font-weight:600;font-size:14px;margin:16px 0 4px">Asegúralo ahora</p>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">Lugar del concierto</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>AsiaWorld-Arena</bdi> · <bdi>Hong Kong</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=AsiaWorld-Arena+Hong+Kong" target="_blank" rel="noopener">📍 Ver en mapa</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">Hospedaje recomendado cerca</div><ul><li>Área de 尖沙咀(Tsim Sha Tsui)/旺角(Mong Kok) + MTR</li><li>Para alojamiento cerca del aeropuerto, verifica la accesibilidad al centro de la ciudad.</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">Cómo regresar después del concierto</div>
+  <p style="margin:6px 0 0;font-size:14px">Estación AsiaWorld-Expo (Línea del Aeropuerto). Centro (尖沙咀(Tsim Sha Tsui)) 30-40 minutos.</p>
+</div>
+
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 Información práctica local</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte</div><div class="lv">MTR (incluyendo ferrocarril del aeropuerto) + autobús, tranvía y ferry. La tarjeta de transporte estándar es Octopus (八達通) — válida para transporte, tiendas de conveniencia y pagos pequeños en general. AsiaWorld-Expo está directamente conectado por el ferrocarril del aeropuerto, estación AsiaWorld-Expo.</div></div></div>
+  <details class="limore">
+    <summary>Ver más</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">Ferrocarril del aeropuerto (AsiaWorld-Expo ↔ Hong Kong Station): último tren aproximadamente a las 00:48~01:13 (intervalos de aproximadamente 12 minutos). El último MTR general es alrededor de las 00:00~01:00. Después de la última salida, hay autobuses nocturnos (línea N) y taxis disponibles. Si el concierto termina después de las 22:00, es imprescindible verificar los horarios del último tren del ferrocarril del aeropuerto con anticipación.</div></div><div class="lirow"><div class="lk">Pago</div><div class="lv">La tarjeta Octopus tiene muy amplia aceptación. También se usa efectivo. Códigos QR (AlipayHK, WeChat Pay) en expansión.</div></div><div class="lirow"><div class="lk">Cambio de divisas</div><div class="lv">Dólar de Hong Kong (HKD, HK$). La recarga de Octopus es prácticamente el centro de pago local. Casas de cambio y cajeros automáticos ampliamente disponibles en aeropuerto y centro urbano.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Cantonés y chino. El inglés funciona como lengua común (señalización e información ampliamente en inglés).</div></div><div class="lirow"><div class="lk">Aplicaciones locales</div><div class="lv">Uber <span style='color:var(--muted)'>(Servicio de transporte a demanda)</span> · Citymapper <span style='color:var(--muted)'>(Ruta MTR y autobús (en inglés))</span> · Pulpo <span style='color:var(--muted)'>(Saldo Octopus, recarga y pago)</span></div></div><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">Uber <span style='color:var(--muted)'>(Servicio de taxi y vehículos nocturnos (interfaz en inglés). HKTaxi y FlyTaxi integrados; prácticamente el servicio principal.)</span> · DiDi <span style='color:var(--muted)'>(Alternativa de transporte a demanda (operado en Hong Kong))</span> · AlipayHK / WeChat Pay HK Pedir taxi <span style='color:var(--muted)'>(Función de llamada de taxis en la aplicación de pago)</span> &nbsp;<a href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Consejos para reservar</div><div class="lv">Después del concierto en AsiaWorld-Expo, apunta al último tren del aeropuerto (aprox. 00:48–01:13) — sale con puntualidad. Si lo pierdes, evita la entrada principal y llama a Uber o un taxi.</div></div><div class="lirow"><div class="lk">Último horario de salida</div><div class="lv">Airport Express directo a AsiaWorld-Expo Station, último tren aproximadamente 00:48~01:13. Confirma por adelantado la hora del último tren hacia el centro (Hong Kong Station); si lo pierdes, hay autobuses nocturnos y taxis.</div></div></div>
+  </details>
+</div>
+<p style="font-weight:600;font-size:14px;margin:16px 0 4px">Reserva ahora</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Hong Kong&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 Hotel <small>· Booking</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Hong Kong&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 Hoteles <small>· Booking</small></a>
   <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Hong Kong&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ Vuelos <small>· Skyscanner</small></a>
   <a class="btn" href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Hong Kong&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 Tours y entradas <small>· Klook</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Hong Kong&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 Tours · Entradas <small>· Klook</small></a>
 </div>
-<p class="disc disc-aff">Los enlaces de reserva en esta página son enlaces de afiliados (de comisión). El usuario no incurre en costos adicionales.</p>
-
-<div class="box">
-  <div style="font-weight:600;font-size:14px">Lugar del evento</div>
-  <p style="margin:4px 0 0;font-size:14px">AsiaWorld-Arena · Hong Kong</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=AsiaWorld-Arena+Hong+Kong" target="_blank" rel="noopener">📍 Ver en mapa</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">Dónde hospedarse cerca</div>
-  <ul><li>Zona de Tsim Sha Tsui (尖沙咀) / Mong Kok (旺角) + MTR</li><li>Alojamiento cerca del aeropuerto — Verifica accesibilidad al centro.</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">Cómo regresar a casa después del concierto</div>
-  <p style="margin:6px 0 0;font-size:14px">Estación AsiaWorld-Expo (línea del aeropuerto). Al centro (Tsim Sha Tsui / 尖沙咀) en 30~40 minutos.</p>
-</div>
+<p class="disc disc-aff">Los enlaces de reserva en esta página son enlaces de afiliación (comisión). No hay costos adicionales para el usuario.</p>
 
 <div class="news">
-  <input placeholder="Correo — Recibe alertas de precios y disponibilidad para este artista">
+  <input placeholder="Correo — Recibir alertas de precio y agotamiento para este artista">
   <button>Recibir alertas</button>
 </div>
 
-<div class="foot">Los enlaces de reserva en cada página son enlaces de afiliados (de comisión). Las previsiones de precios y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario. · bybias.100m1s.com</div>
+<div class="foot">Los enlaces de reserva en cada página son enlaces de afiliación (comisión). Las proyecciones de precio y disponibilidad son estimadas y pueden diferir de la realidad. La responsabilidad de reserva y pago recae en el usuario. · bybias.100m1s.com</div>
 
-<p class="gdisc">Este sitio es un servicio no oficial de información de horarios y viajes, independiente de artistas y agencias, y no mantiene relaciones de afiliación oficial.</p>
+<p class="gdisc">Este sitio es un servicio no oficial de información de programación y viajes sin relación con el artista ni su agencia, y no mantiene una relación de asociación oficial.</p>
 </div><script>
 (function(){try{
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';
