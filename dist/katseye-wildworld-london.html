@@ -24,6 +24,11 @@ a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+/* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
+   기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
+.subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
+.subitem{white-space:nowrap}
+.subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
@@ -120,7 +125,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <span class="ghost ghost-lg" aria-hidden="true">KATSEYE</span>
   <span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KATSEYE"><bdi>KATSEYE</bdi></span>
   <div><h1 style="margin:0"><bdi>KATSEYE</bdi> — <bdi>런던</bdi></h1>
-  <p class="sub" style="margin:2px 0 0"><bdi>THE WILDWORLD TOUR</bdi> · <bdi>런던 (공연장 미발표)</bdi> · 2026-09 · 🇬🇧 영국 런던</p></div>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>THE WILDWORLD TOUR</bdi></span><span class="subitem"><bdi>런던 (공연장 미발표)</bdi></span><span class="subitem">2026-09</span><span class="subitem">🇬🇧 영국 런던</span></p></div>
 </div>
 <span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">발표 골든창 · 지금이 가장 쌉니다</span>
 
