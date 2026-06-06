@@ -1,7 +1,7 @@
 <!doctype html><html lang="id" data-lang="id"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ByBias — Konser trending → Cara amankan harga sebelum naik</title>
-<meta name="description" content="Konser trending → Cara amankan harga sebelum naik">
+<title>ByBias — Event Penuh Penggemar → Amankan Harga Murah Lebih Awal</title>
+<meta name="description" content="Event Penuh Penggemar → Amankan Harga Murah Lebih Awal">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="ko" href="../index.html">
 <link rel="alternate" hreflang="en" href="../en/index.html">
@@ -21,9 +21,14 @@
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
 .top b{font-weight:600}.top span{margin-left:auto;color:var(--muted);font-size:13px}
-.top .logo{height:28px;width:auto;display:block}
+.top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+/* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
+   기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
+.subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
+.subitem{white-space:nowrap}
+.subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
@@ -31,7 +36,8 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
 .ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:12px}
-.ehead-detail>*{position:relative;z-index:1}
+.ehead-detail>:not(.ghost){position:relative;z-index:1}
+.ehead-detail>.ghost{position:absolute;z-index:0}
 .ghost-lg{font-size:96px;bottom:-22px;opacity:.09}
 .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
 .outlook{background:#fdf6ec;border:1px solid #f0e4cf}
@@ -39,16 +45,20 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
+body{overflow-wrap:break-word;word-break:normal}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
 .disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
 .gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
-.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 7px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
@@ -57,139 +67,286 @@ ul{margin:8px 0 0;padding-left:18px}li{margin:4px 0}
 .srclink:hover{background:#e6f1fb}
 .postlink{display:inline-block;font-size:14px;font-weight:500;color:#fff;background:var(--accent);text-decoration:none;border-radius:8px;padding:9px 14px}
 .postlink:hover{filter:brightness(.94)}
+.plink{display:inline-flex;align-items:center;gap:7px}.plink .plogo{flex:0 0 auto}
+.chchips{display:flex;flex-wrap:wrap;gap:8px}
+.chchip{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);text-decoration:none;background:#f7f6f1;border:1px solid var(--line);border-radius:8px;padding:7px 11px}
+.chchip:hover{border-color:var(--accent);color:var(--accent)}.chchip .plogo{flex:0 0 auto;color:var(--muted)}.chchip:hover .plogo{color:var(--accent)}
+.oshows{display:flex;flex-direction:column;gap:7px}
+.oshow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:#fafaf7;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px}
+.oshow:hover{border-color:var(--accent)}.oshow .osc{font-weight:500}.oshow .osd{color:var(--muted);margin-inline-start:auto}
+.oshow-next{background:#eef4fb;border-color:#cfe0f2}.oshow .nextflag{font-weight:700;color:var(--accent);font-size:12px}
+.ytfacade{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;padding:0}
+.ytplay{position:absolute;inset:0;margin:auto;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.62);color:#fff;border-radius:50%;font-size:20px;padding-inline-start:3px}
+.ytfacade:hover .ytplay{background:#A32D2D}
+.ytframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
 .maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:#fff;border:1px solid #cfcdc4;border-radius:8px;padding:7px 12px;margin-top:8px}
 .maplink:hover{border-color:var(--ink)}
+/* 현지 실용 정보 접힘 섹션 */
+.linfo{margin:14px 0}.linfo>summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:8px}
+.linfo>summary::-webkit-details-marker{display:none}
+.linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
+.linfo[open]>summary::after{transform:rotate(180deg)}
+.linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:13px 0;min-height:44px;box-sizing:border-box;display:flex;align-items:center}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
+.ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
+.lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
+.lirow .lv{line-height:1.55;min-width:0}.lirow .lv a{color:var(--accent);text-decoration:none}.lirow .lv a:hover{text-decoration:underline}
+.tkbox .lirow .lv a{font-weight:500}
+/* 핫플 항목: 이름+지도 한 줄, 설명은 그 아래 hanging(좌측 정렬 유지) */
+.hspot{margin:7px 0}.hspot:first-child{margin-top:0}.hspot .hn{font-weight:600}
+.hspot .hd{display:block;color:var(--muted);margin-top:2px;line-height:1.5}
+/* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
+@media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
 </style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../index.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/index.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/index.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/index.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/index.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/index.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/index.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/index.html" aria-current="true" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/index.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/index.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/index.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
-<div class="top"><img class="logo" src="../logo.svg" alt="ByBias" width="88" height="28"><span>bybias.100m1s.com</span></div>
-<h1>Konser trending → Cara amankan harga sebelum naik</h1>
-<p class="sub">Saat konser &amp; fan-meeting trending, harga pesawat &amp; hotel naik duluan. Amankan sekarang sebelum naik.</p>
-<div class="grid"><a class="ecard" href="bts-arirang-busan-0612.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,#ffffff 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
-<span class="ghost" aria-hidden="true">BTS</span>
-<div class="ehead"><span class="abadge" style="background:#7B4FB5;color:#ffffff" title="BTS">BTS</span><div class="a">BTS</div></div>
-<div class="c">부산 · 2026-06-12 <span class="dday" data-date="2026-06-12"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Peluncuran</span></a><a class="ecard" href="gidle-syncopation-yokohama.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(199,39,76,0.10) 0%,#ffffff 42%,rgba(199,39,76,0.26) 100%);--stripe:#C7274C">
-<span class="ghost" aria-hidden="true">GI</span>
-<div class="ehead"><span class="abadge" style="background:#C7274C;color:#ffffff" title="(G)I-DLE">GI</span><div class="a">(G)I-DLE</div></div>
-<div class="c">요코하마 · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Peluncuran</span></a><a class="ecard" href="itzy-tunnelvision-hongkong.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(216,30,91,0.10) 0%,#ffffff 42%,rgba(216,30,91,0.26) 100%);--stripe:#D81E5B">
-<span class="ghost" aria-hidden="true">ITZY</span>
-<div class="ehead"><span class="abadge" style="background:#D81E5B;color:#ffffff" title="ITZY">ITZY</span><div class="a">ITZY</div></div>
-<div class="c">홍콩 · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Peluncuran</span></a><a class="ecard" href="ive-showwhatiam-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
-<span class="ghost" aria-hidden="true">IVE</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="IVE">IVE</span><div class="a">IVE</div></div>
-<div class="c">도쿄 · 2026-06-24 <span class="dday" data-date="2026-06-24"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Peluncuran</span></a><a class="ecard" href="babymonster-choom-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
-<span class="ghost" aria-hidden="true">BM</span>
-<div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER">BM</span><div class="a">BABYMONSTER</div></div>
-<div class="c">서울 · 2026-06-26 <span class="dday" data-date="2026-06-26"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Peluncuran</span></a><a class="ecard" href="twice-thisisfor-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,#ffffff 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
-<span class="ghost" aria-hidden="true">TW</span>
-<div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE">TW</span><div class="a">TWICE</div></div>
-<div class="c">서울 · 2026-07-10 <span class="dday" data-date="2026-07-10"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="lesserafim-pureflow-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,#ffffff 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
-<span class="ghost" aria-hidden="true">LSF</span>
-<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM">LSF</span><div class="a">LE SSERAFIM</div></div>
-<div class="c">인천 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="nmixx-zerofrontier-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
-<span class="ghost" aria-hidden="true">NMX</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="NMIXX">NMX</span><div class="a">NMIXX</div></div>
-<div class="c">가오슝 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="exo-planet6-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(174,180,188,0.10) 0%,#ffffff 42%,rgba(174,180,188,0.26) 100%);--stripe:#AEB4BC">
-<span class="ghost" aria-hidden="true">EXO</span>
-<div class="ehead"><span class="abadge" style="background:#AEB4BC;color:#1a1a18" title="EXO">EXO</span><div class="a">EXO</div></div>
-<div class="c">도쿄 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="enhypen-bloodsaga-dallas.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(242,112,30,0.10) 0%,#ffffff 42%,rgba(242,112,30,0.26) 100%);--stripe:#F2701E">
-<span class="ghost" aria-hidden="true">EN</span>
-<div class="ehead"><span class="abadge" style="background:#F2701E;color:#ffffff" title="ENHYPEN">EN</span><div class="a">ENHYPEN</div></div>
-<div class="c">댈러스 · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="boynextdoor-knockon-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
-<span class="ghost" aria-hidden="true">BND</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="BOYNEXTDOOR">BND</span><div class="a">BOYNEXTDOOR</div></div>
-<div class="c">서울 · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="lesserafim-pureflow-osaka.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,#ffffff 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
-<span class="ghost" aria-hidden="true">LSF</span>
-<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM">LSF</span><div class="a">LE SSERAFIM</div></div>
-<div class="c">오사카 · 2026-07-25 <span class="dday" data-date="2026-07-25"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="aespa-synk-complaexity-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
-<span class="ghost" aria-hidden="true">æ</span>
-<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa">æ</span><div class="a">aespa</div></div>
-<div class="c">서울 · 2026-08-07 <span class="dday" data-date="2026-08-07"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="aespa-synk-complaexity-taipei-dome.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
-<span class="ghost" aria-hidden="true">æ</span>
-<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa">æ</span><div class="a">aespa</div></div>
-<div class="c">타이베이 · 2026-08-11 <span class="dday" data-date="2026-08-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="babymonster-choom-osaka-kyocera.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
-<span class="ghost" aria-hidden="true">BM</span>
-<div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER">BM</span><div class="a">BABYMONSTER</div></div>
-<div class="c">오사카 · 2026-09-22 <span class="dday" data-date="2026-09-22"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="lesserafim-pureflow-london-o2.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,#ffffff 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
-<span class="ghost" aria-hidden="true">LSF</span>
-<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM">LSF</span><div class="a">LE SSERAFIM</div></div>
-<div class="c">런던 · 2026-10-16 <span class="dday" data-date="2026-10-16"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="bts-arirang-kaohsiung-1119.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,#ffffff 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
-<span class="ghost" aria-hidden="true">BTS</span>
-<div class="ehead"><span class="abadge" style="background:#7B4FB5;color:#ffffff" title="BTS">BTS</span><div class="a">BTS</div></div>
-<div class="c">가오슝 · 2026-11-19 <span class="dday" data-date="2026-11-19"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="babymonster-choom-taipei.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
-<span class="ghost" aria-hidden="true">BM</span>
-<div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER">BM</span><div class="a">BABYMONSTER</div></div>
-<div class="c">타이베이 · 2026-11-21 <span class="dday" data-date="2026-11-21"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a></div>
-<p class="disc">Tautan pemesanan di setiap halaman adalah tautan afiliasi (komisi). Prakiraan harga dan ketersediaan adalah estimasi dan mungkin berbeda dengan kondisi aktual. Tanggung jawab pemesanan dan pembayaran sepenuhnya ada pada pengguna.</p>
-<div class="news"><input placeholder="Email — Terima notifikasi harga konser baru"><button>Dapatkan notifikasi</button></div>
+<div class="top"><img class="logo" src="../logo.svg" alt="ByBias" width="119" height="38"><span>bybias.100m1s.com</span></div>
+<h1>Event Penuh Penggemar → Amankan Harga Murah Lebih Awal</h1>
+<p class="sub">Saat konser dan fan meeting trending, penerbangan dan hotel naik duluan. Amankan sebelum harganya naik.</p>
 
-<h2 style="font-size:16px;font-weight:600;margin:28px 0 4px;color:var(--muted)">Acara terdahulu</h2>
-<p class="sub" style="margin-bottom:10px">Konser sudah selesai — Contoh historis: kapan dan berapa banyak harga meningkat.</p>
+<div class="tabs" role="tablist">
+  <input type="radio" name="evtab" id="tab-c" checked><label for="tab-c">Pesan Perjalanan · Konser</label>
+  <input type="radio" name="evtab" id="tab-m"><label for="tab-m">Pesan Tiket Penonton · Siaran Musik</label>
+  <div class="tabpanel tp-c"><div class="grid"><a class="ecard" href="woodz-archive1-berlin.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">WOODZ</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="WOODZ"><bdi>WOODZ</bdi></span><div class="a"><bdi>WOODZ</bdi></div></div>
+<div class="c">🇩🇪 Jerman Berlin · 2026-06-07 <span class="dday" data-date="2026-06-07"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="woodz-archive1-london.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">WOODZ</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="WOODZ"><bdi>WOODZ</bdi></span><div class="a"><bdi>WOODZ</bdi></div></div>
+<div class="c">🇬🇧 Inggris London · 2026-06-10 <span class="dday" data-date="2026-06-10"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="bts-arirang-busan-0612.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,#ffffff 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
+<span class="ghost" aria-hidden="true">BTS</span>
+<div class="ehead"><span class="abadge" style="background:#7B4FB5;color:#ffffff" title="BTS"><bdi>BTS</bdi></span><div class="a"><bdi>BTS</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Busan · 2026-06-12 <span class="dday" data-date="2026-06-12"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="gidle-syncopation-yokohama.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(199,39,76,0.10) 0%,#ffffff 42%,rgba(199,39,76,0.26) 100%);--stripe:#C7274C">
+<span class="ghost" aria-hidden="true">GI</span>
+<div class="ehead"><span class="abadge" style="background:#C7274C;color:#ffffff" title="(G)I-DLE"><bdi>GI</bdi></span><div class="a"><bdi>(G)I-DLE</bdi></div></div>
+<div class="c">🇯🇵 Jepang Yokohama · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="itzy-tunnelvision-hongkong.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(216,30,91,0.10) 0%,#ffffff 42%,rgba(216,30,91,0.26) 100%);--stripe:#D81E5B">
+<span class="ghost" aria-hidden="true">ITZY</span>
+<div class="ehead"><span class="abadge" style="background:#D81E5B;color:#ffffff" title="ITZY"><bdi>ITZY</bdi></span><div class="a"><bdi>ITZY</bdi></div></div>
+<div class="c">🇭🇰 Hong Kong · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="ive-showwhatiam-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">IVE</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="IVE"><bdi>IVE</bdi></span><div class="a"><bdi>IVE</bdi></div></div>
+<div class="c">🇯🇵 Jepang Tokyo · 2026-06-24 <span class="dday" data-date="2026-06-24"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="babymonster-choom-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
+<span class="ghost" aria-hidden="true">BM</span>
+<div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER"><bdi>BM</bdi></span><div class="a"><bdi>BABYMONSTER</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-06-26 <span class="dday" data-date="2026-06-26"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="kiss-of-life-deja-vu-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIOF</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KISS OF LIFE"><bdi>KIOF</bdi></span><div class="a"><bdi>KISS OF LIFE</bdi></div></div>
+<div class="c">🇯🇵 Jepang Tokyo · 2026-06-27 <span class="dday" data-date="2026-06-27"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="twice-thisisfor-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,#ffffff 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
+<span class="ghost" aria-hidden="true">TW</span>
+<div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE"><bdi>TW</bdi></span><div class="a"><bdi>TWICE</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-07-10 <span class="dday" data-date="2026-07-10"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="lesserafim-pureflow-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,#ffffff 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
+<span class="ghost" aria-hidden="true">LSF</span>
+<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Incheon · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="nmixx-zerofrontier-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">NMX</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="NMIXX"><bdi>NMX</bdi></span><div class="a"><bdi>NMIXX</bdi></div></div>
+<div class="c">🇹🇼 Taiwan Kaohsiung · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="exo-planet6-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(174,180,188,0.10) 0%,#ffffff 42%,rgba(174,180,188,0.26) 100%);--stripe:#AEB4BC">
+<span class="ghost" aria-hidden="true">EXO</span>
+<div class="ehead"><span class="abadge" style="background:#AEB4BC;color:#1a1a18" title="EXO"><bdi>EXO</bdi></span><div class="a"><bdi>EXO</bdi></div></div>
+<div class="c">🇯🇵 Jepang Tokyo · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="enhypen-bloodsaga-dallas.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(242,112,30,0.10) 0%,#ffffff 42%,rgba(242,112,30,0.26) 100%);--stripe:#F2701E">
+<span class="ghost" aria-hidden="true">EN</span>
+<div class="ehead"><span class="abadge" style="background:#F2701E;color:#ffffff" title="ENHYPEN"><bdi>EN</bdi></span><div class="a"><bdi>ENHYPEN</bdi></div></div>
+<div class="c">🇺🇸 Amerika Serikat Dallas · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="boynextdoor-knockon-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">BND</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="BOYNEXTDOOR"><bdi>BND</bdi></span><div class="a"><bdi>BOYNEXTDOOR</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="xg-the-core-bangkok.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">XG</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="XG"><bdi>XG</bdi></span><div class="a"><bdi>XG</bdi></div></div>
+<div class="c">🇹🇭 Thailand Bangkok · 2026-07-19 <span class="dday" data-date="2026-07-19"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="illit-press-start-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">ILLIT</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="ILLIT"><bdi>ILLIT</bdi></span><div class="a"><bdi>ILLIT</bdi></div></div>
+<div class="c">🇯🇵 Jepang Tokyo · 2026-07-23 <span class="dday" data-date="2026-07-23"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="waterbomb-seoul-2026.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">WTB</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="WATERBOMB SEOUL 2026"><bdi>WTB</bdi></span><div class="a"><bdi>WATERBOMB SEOUL 2026</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Goyang · 2026-07-24 <span class="dday" data-date="2026-07-24"></span></div>
+<span class="badge" style="color:#A32D2D;background:#FCEBEB;font-size:11px">🎪 Festival</span></a><a class="ecard" href="lesserafim-pureflow-osaka.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,#ffffff 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
+<span class="ghost" aria-hidden="true">LSF</span>
+<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
+<div class="c">🇯🇵 Jepang Osaka · 2026-07-25 <span class="dday" data-date="2026-07-25"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="mamamoo-4ward-singapore.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">MMM</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="MAMAMOO"><bdi>MMM</bdi></span><div class="a"><bdi>MAMAMOO</bdi></div></div>
+<div class="c">🇸🇬 Singapura · 2026-07-31 <span class="dday" data-date="2026-07-31"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="cortis-put-your-phone-down-newyork.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">CORTIS</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="CORTIS"><bdi>CORTIS</bdi></span><div class="a"><bdi>CORTIS</bdi></div></div>
+<div class="c">🇺🇸 Amerika Serikat New York · 2026-08-06 <span class="dday" data-date="2026-08-06"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="aespa-synk-complaexity-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
+<span class="ghost" aria-hidden="true">æ</span>
+<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-08-07 <span class="dday" data-date="2026-08-07"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="aespa-synk-complaexity-taipei-dome.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
+<span class="ghost" aria-hidden="true">æ</span>
+<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
+<div class="c">🇹🇼 Taiwan Taipei · 2026-08-11 <span class="dday" data-date="2026-08-11"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="kcon-la-2026.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KCON</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KCON LA 2026"><bdi>KCON</bdi></span><div class="a"><bdi>KCON LA 2026</bdi></div></div>
+<div class="c">🇺🇸 Amerika Serikat Los Angeles · 2026-08-14 <span class="dday" data-date="2026-08-14"></span></div>
+<span class="badge" style="color:#A32D2D;background:#FCEBEB;font-size:11px">🎪 Festival</span></a><a class="ecard" href="stayc-stay-closer-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">STAYC</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="STAYC"><bdi>STAYC</bdi></span><div class="a"><bdi>STAYC</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-08-22 <span class="dday" data-date="2026-08-22"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="andteam-blaze-the-way-singapore.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">&amp;TEAM</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="&amp;TEAM"><bdi>&amp;TEAM</bdi></span><div class="a"><bdi>&amp;TEAM</bdi></div></div>
+<div class="c">🇸🇬 Singapura · 2026-08-22 <span class="dday" data-date="2026-08-22"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="tws-247foryou-fukuoka.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">TWS</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="TWS"><bdi>TWS</bdi></span><div class="a"><bdi>TWS</bdi></div></div>
+<div class="c">🇯🇵 Jepang Fukuoka · 2026-08-28 <span class="dday" data-date="2026-08-28"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="plave-keep-it-manic-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">PLAVE</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PLAVE"><bdi>PLAVE</bdi></span><div class="a"><bdi>PLAVE</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Incheon · 2026-09-12 <span class="dday" data-date="2026-09-12"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="babymonster-choom-osaka-kyocera.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
+<span class="ghost" aria-hidden="true">BM</span>
+<div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER"><bdi>BM</bdi></span><div class="a"><bdi>BABYMONSTER</bdi></div></div>
+<div class="c">🇯🇵 Jepang Osaka · 2026-09-22 <span class="dday" data-date="2026-09-22"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="katseye-wildworld-london.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KATSEYE</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KATSEYE"><bdi>KATSEYE</bdi></span><div class="a"><bdi>KATSEYE</bdi></div></div>
+<div class="c">🇬🇧 Inggris London · 2026-09</div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="mamamoo-4ward-hongkong.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">MMM</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="MAMAMOO"><bdi>MMM</bdi></span><div class="a"><bdi>MAMAMOO</bdi></div></div>
+<div class="c">🇭🇰 Hong Kong · 2026-10-04 <span class="dday" data-date="2026-10-04"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="monstax-the-x-nexus-newyork.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">MX</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="MONSTA X"><bdi>MX</bdi></span><div class="a"><bdi>MONSTA X</bdi></div></div>
+<div class="c">🇺🇸 Amerika Serikat New York · 2026-10-06 <span class="dday" data-date="2026-10-06"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="plave-keep-it-manic-bangkok.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">PLAVE</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PLAVE"><bdi>PLAVE</bdi></span><div class="a"><bdi>PLAVE</bdi></div></div>
+<div class="c">🇹🇭 Thailand Bangkok · 2026-10-10 <span class="dday" data-date="2026-10-10"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="stayc-stay-closer-taipei.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">STAYC</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="STAYC"><bdi>STAYC</bdi></span><div class="a"><bdi>STAYC</bdi></div></div>
+<div class="c">🇹🇼 Taiwan Taipei · 2026-10-11 <span class="dday" data-date="2026-10-11"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="lesserafim-pureflow-london-o2.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,#ffffff 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
+<span class="ghost" aria-hidden="true">LSF</span>
+<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
+<div class="c">🇬🇧 Inggris London · 2026-10-16 <span class="dday" data-date="2026-10-16"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="xg-the-core-oakland.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">XG</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="XG"><bdi>XG</bdi></span><div class="a"><bdi>XG</bdi></div></div>
+<div class="c">🇺🇸 Amerika Serikat Auckland · 2026-11-03 <span class="dday" data-date="2026-11-03"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="bts-arirang-kaohsiung-1119.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,#ffffff 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
+<span class="ghost" aria-hidden="true">BTS</span>
+<div class="ehead"><span class="abadge" style="background:#7B4FB5;color:#ffffff" title="BTS"><bdi>BTS</bdi></span><div class="a"><bdi>BTS</bdi></div></div>
+<div class="c">🇹🇼 Taiwan Kaohsiung · 2026-11-19 <span class="dday" data-date="2026-11-19"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="babymonster-choom-taipei.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
+<span class="ghost" aria-hidden="true">BM</span>
+<div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER"><bdi>BM</bdi></span><div class="a"><bdi>BABYMONSTER</bdi></div></div>
+<div class="c">🇹🇼 Taiwan Taipei · 2026-11-21 <span class="dday" data-date="2026-11-21"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="katseye-wildworld-losangeles.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KATSEYE</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KATSEYE"><bdi>KATSEYE</bdi></span><div class="a"><bdi>KATSEYE</bdi></div></div>
+<div class="c">🇺🇸 Amerika Serikat Los Angeles · 2026-11</div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a></div></div>
+  <div class="tabpanel tp-m"><div class="grid"><a class="ecard" href="music-core-20260606.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">♫</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="쇼! 음악중심 (Show! Music Core)"><bdi>♫</bdi></span><div class="a"><bdi>Show! Music Core</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-06-06 <span class="dday" data-date="2026-06-06"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 Siaran Musik</span></a><a class="ecard" href="inkigayo-20260607.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">♫</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="인기가요 (Inkigayo)"><bdi>♫</bdi></span><div class="a"><bdi>Inkigayo</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-06-07 <span class="dday" data-date="2026-06-07"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 Siaran Musik</span></a><a class="ecard" href="the-show-20260609.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">♫</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="더 쇼 (The Show)"><bdi>♫</bdi></span><div class="a"><bdi>The Show</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-06-09 <span class="dday" data-date="2026-06-09"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 Siaran Musik</span></a><a class="ecard" href="show-champion-20260610.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">♫</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="쇼! 챔피언 (Show Champion)"><bdi>♫</bdi></span><div class="a"><bdi>Show! Champion</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-06-10 <span class="dday" data-date="2026-06-10"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 Siaran Musik</span></a><a class="ecard" href="m-countdown-20260611.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">♫</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="엠카운트다운 (M Countdown)"><bdi>♫</bdi></span><div class="a"><bdi>M Countdown</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-06-11 <span class="dday" data-date="2026-06-11"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 Siaran Musik</span></a><a class="ecard" href="music-bank-20260612.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">♫</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="뮤직뱅크 (Music Bank)"><bdi>♫</bdi></span><div class="a"><bdi>Music Bank</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-06-12 <span class="dday" data-date="2026-06-12"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 Siaran Musik</span></a></div></div>
+</div>
+<p class="disc">Tautan pemesanan di setiap halaman adalah tautan afiliasi (komisi). Perkiraan harga dan ketersediaan adalah estimasi dan mungkin berbeda dengan kenyataan. Tanggung jawab penuh untuk pemesanan dan pembayaran ada pada pengguna.</p>
+<div class="news"><input placeholder="Email — Terima notifikasi harga untuk konser baru"><button>Terima Notifikasi</button></div>
+
+<h2 style="font-size:16px;font-weight:600;margin:28px 0 4px;color:var(--muted)">Acara Lalu</h2>
+<p class="sub" style="margin-bottom:10px">Konser yang Sudah Berakhir — Contoh historis untuk referensi kapan dan seberapa banyak harga naik.</p>
 <div class="grid"><a class="ecard" href="bts-arirang-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,#ffffff 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
 <span class="ghost" aria-hidden="true">BTS</span>
-<div class="ehead"><span class="abadge" style="background:#7B4FB5;color:#ffffff" title="BTS">BTS</span><div class="a">BTS</div></div>
-<div class="c">서울 · 2026-03-21 <span class="dday" data-date="2026-03-21"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Peluncuran</span></a><a class="ecard" href="blackpink-deadline-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,#ffffff 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
+<div class="ehead"><span class="abadge" style="background:#7B4FB5;color:#ffffff" title="BTS"><bdi>BTS</bdi></span><div class="a"><bdi>BTS</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Seoul · 2026-03-21 <span class="dday" data-date="2026-03-21"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="blackpink-deadline-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,#ffffff 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
 <span class="ghost" aria-hidden="true">BP</span>
-<div class="ehead"><span class="abadge" style="background:#F36BAE;color:#ffffff" title="BLACKPINK">BP</span><div class="a">BLACKPINK</div></div>
-<div class="c">도쿄 · 2026-01-16 <span class="dday" data-date="2026-01-16"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="twice-thisisfor-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,#ffffff 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
+<div class="ehead"><span class="abadge" style="background:#F36BAE;color:#ffffff" title="BLACKPINK"><bdi>BP</bdi></span><div class="a"><bdi>BLACKPINK</bdi></div></div>
+<div class="c">🇯🇵 Jepang Tokyo · 2026-01-16 <span class="dday" data-date="2026-01-16"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="twice-thisisfor-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,#ffffff 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
 <span class="ghost" aria-hidden="true">TW</span>
-<div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE">TW</span><div class="a">TWICE</div></div>
-<div class="c">가오슝 · 2025-11-22 <span class="dday" data-date="2025-11-22"></span></div>
-<span class="badge" style="color:#A32D2D;background:#FCEBEB;font-size:11px">Peringatan Mendadak</span></a><a class="ecard" href="blackpink-deadline-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,#ffffff 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
+<div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE"><bdi>TW</bdi></span><div class="a"><bdi>TWICE</bdi></div></div>
+<div class="c">🇹🇼 Taiwan Kaohsiung · 2025-11-22 <span class="dday" data-date="2025-11-22"></span></div>
+<span class="badge" style="color:#A32D2D;background:#FCEBEB;font-size:11px">Jangan Sampai Terlambat</span></a><a class="ecard" href="blackpink-deadline-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,#ffffff 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
 <span class="ghost" aria-hidden="true">BP</span>
-<div class="ehead"><span class="abadge" style="background:#F36BAE;color:#ffffff" title="BLACKPINK">BP</span><div class="a">BLACKPINK</div></div>
-<div class="c">가오슝 · 2025-10-18 <span class="dday" data-date="2025-10-18"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="seventeen-new-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(226,154,174,0.10) 0%,#ffffff 42%,rgba(226,154,174,0.26) 100%);--stripe:#E29AAE">
+<div class="ehead"><span class="abadge" style="background:#F36BAE;color:#ffffff" title="BLACKPINK"><bdi>BP</bdi></span><div class="a"><bdi>BLACKPINK</bdi></div></div>
+<div class="c">🇹🇼 Taiwan Kaohsiung · 2025-10-18 <span class="dday" data-date="2025-10-18"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="seventeen-new-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(226,154,174,0.10) 0%,#ffffff 42%,rgba(226,154,174,0.26) 100%);--stripe:#E29AAE">
 <span class="ghost" aria-hidden="true">SVT</span>
-<div class="ehead"><span class="abadge" style="background:#E29AAE;color:#1a1a18" title="SEVENTEEN">SVT</span><div class="a">SEVENTEEN</div></div>
-<div class="c">인천 · 2025-09-13 <span class="dday" data-date="2025-09-13"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Peluncuran</span></a><a class="ecard" href="gdragon-ubermensch-macau.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<div class="ehead"><span class="abadge" style="background:#E29AAE;color:#1a1a18" title="SEVENTEEN"><bdi>SVT</bdi></span><div class="a"><bdi>SEVENTEEN</bdi></div></div>
+<div class="c">🇰🇷 Korea Selatan Incheon · 2025-09-13 <span class="dday" data-date="2025-09-13"></span></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">Jendela Emas Pengumuman</span></a><a class="ecard" href="gdragon-ubermensch-macau.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
 <span class="ghost" aria-hidden="true">GD</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="G-DRAGON">GD</span><div class="a">G-DRAGON</div></div>
-<div class="c">마카오 · 2025-06-06 <span class="dday" data-date="2025-06-06"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="aespa-synk-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="G-DRAGON"><bdi>GD</bdi></span><div class="a"><bdi>G-DRAGON</bdi></div></div>
+<div class="c">🇲🇴 Makau · 2025-06-06 <span class="dday" data-date="2025-06-06"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="aespa-synk-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
 <span class="ghost" aria-hidden="true">æ</span>
-<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa">æ</span><div class="a">aespa</div></div>
-<div class="c">도쿄 · 2024-08-17 <span class="dday" data-date="2024-08-17"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a><a class="ecard" href="newjeans-bunniescamp-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
+<div class="c">🇯🇵 Jepang Tokyo · 2024-08-17 <span class="dday" data-date="2024-08-17"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a><a class="ecard" href="newjeans-bunniescamp-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
 <span class="ghost" aria-hidden="true">NJ</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="NewJeans">NJ</span><div class="a">NewJeans</div></div>
-<div class="c">도쿄 · 2024-06-26 <span class="dday" data-date="2024-06-26"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Penguncian Dini</span></a></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="NewJeans"><bdi>NJ</bdi></span><div class="a"><bdi>NewJeans</bdi></div></div>
+<div class="c">🇯🇵 Jepang Tokyo · 2024-06-26 <span class="dday" data-date="2024-06-26"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">Amankan Sekarang</span></a></div>
 <div class="foot">Tautan pemesanan adalah tautan afiliasi. · bybias.100m1s.com</div>
 
-<p class="gdisc">Situs ini adalah layanan informasi jadwal dan perjalanan tidak resmi yang tidak terkait dengan artis atau agensi, dan tidak memiliki hubungan afiliasi resmi.</p>
+<p class="gdisc">Situs ini adalah layanan jadwal dan informasi perjalanan tidak resmi yang tidak terkait dengan artis atau agensi mereka, tanpa kemitraan resmi.</p>
 </div><script>
 (function(){try{
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';
@@ -223,5 +380,13 @@ for(var j=0;j<els.length;j++){var ds=els[j].getAttribute('data-date');
  var diff=Math.round((ev2-T)/86400000);var txt='';
  if(diff>0){txt='D-'+diff;}else if(diff===0){txt='D-DAY';}else{continue;}
  els[j].textContent=txt;els[j].setAttribute('dir','ltr');els[j].style.display='inline-block';}
+// YouTube 경량 facade: 썸네일 클릭 시에만 iframe 주입(외부 SDK 0, 초기 로드 가벼움).
+document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('.ytfacade');
+ if(!b)return;var vid=b.getAttribute('data-vid');if(!vid)return;
+ var f=document.createElement('iframe');f.className='ytframe';
+ f.setAttribute('allow','accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture');
+ f.setAttribute('allowfullscreen','');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+ f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(vid)+'?autoplay=1';
+ b.parentNode.replaceChild(f,b);});
 }catch(e){}})();
 </script></body></html>
