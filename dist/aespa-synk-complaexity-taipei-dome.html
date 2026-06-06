@@ -39,10 +39,11 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
-/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
 .news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
 .news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
@@ -80,6 +81,9 @@ li{overflow-wrap:break-word}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:8px 0 2px}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
@@ -94,10 +98,16 @@ li{overflow-wrap:break-word}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-block;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 14px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
@@ -107,9 +117,9 @@ ul{padding-inline-start:18px;padding-left:unset}
 <a class="back" href="index.html">← 전체 일정</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
   <span class="ghost ghost-lg" aria-hidden="true">æ</span>
-  <span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa">æ</span>
-  <div><h1 style="margin:0">aespa — 타이베이</h1>
-  <p class="sub" style="margin:2px 0 0">SYNK : COMPLæXITY · 타이베이 돔(Taipei Dome) · 2026-08-11 <span class="dday" data-date="2026-08-11"></span> · 🇹🇼 대만 타이베이</p></div>
+  <span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span>
+  <div><h1 style="margin:0"><bdi>aespa</bdi> — <bdi>타이베이</bdi></h1>
+  <p class="sub" style="margin:2px 0 0"><bdi>SYNK : COMPLæXITY</bdi> · <bdi>타이베이 돔(Taipei Dome)</bdi> · 2026-08-11 <span class="dday" data-date="2026-08-11"></span> · 🇹🇼 대만 타이베이</p></div>
 </div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">초장기 선점 · 수개월 전 예약</span>
 
@@ -125,10 +135,7 @@ ul{padding-inline-start:18px;padding-left:unset}
   <div style="font-weight:600;font-size:14px">일정 출처</div>
   <div class="srcs"><a class="srclink" href="https://www.livenation.com/event/intl_1671209/aespa-live-tour-synk-complaexity-in-taipei" target="_blank" rel="noopener nofollow">Live Nation (aespa Taipei 공식) ↗</a><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi 2026 K-Pop 투어 일정 ↗</a></div>
 </div>
-<div class="box">
-  <div style="font-weight:600;font-size:14px;margin-bottom:8px">이 아티스트의 다른 공연</div>
-  <div class="oshows"><a class="oshow oshow-next" href="aespa-synk-complaexity-seoul.html"><span class="nextflag">다음 공연 →</span> <span class="osc">🇰🇷 대한민국 서울</span><span class="osd">2026-08-07 <span class="dday" data-date="2026-08-07"></span></span></a></div>
-</div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">다음 공연</div><div class="oshows"><a class="oshow oshow-next" href="aespa-synk-complaexity-seoul.html"><span class="nextflag">다음 공연 →</span> <span class="osc">🇰🇷 대한민국 서울</span><span class="osd">2026-08-07 <span class="dday" data-date="2026-08-07"></span></span></a></div><div style="font-weight:600;font-size:14px;margin:14px 0 8px">지난 공연</div><div class="oshows"><a class="oshow" href="aespa-synk-tokyo.html"><span class="osc">🇯🇵 일본 도쿄</span><span class="osd">2024-08-17 <span class="dday" data-date="2024-08-17"></span></span></a></div></div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">아티스트 영상</div>
   <button class="ytfacade" data-vid="83C3TZ4Zm_o" aria-label="영상 재생: aespa 에스파 &#x27;LEMONADE&#x27; MV"
@@ -137,16 +144,29 @@ ul{padding-inline-start:18px;padding-left:unset}
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">아티스트 공식 채널</div>
-  <div class="chchips"><a class="chchip" href="https://www.smentertainment.com/en/artist/aespa/" target="_blank" rel="noopener nofollow"><span>소속사 · SM Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/aespa_official/" target="_blank" rel="noopener nofollow" aria-label="aespa Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/aespa_official" target="_blank" rel="noopener nofollow" aria-label="aespa X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@aespa" target="_blank" rel="noopener nofollow" aria-label="aespa YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/aespa" target="_blank" rel="noopener nofollow" aria-label="aespa Weverse"><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/aespa" target="_blank" rel="noopener nofollow"><span>팬클럽 · MY</span><span aria-hidden="true"> ↗</span></a></div>
+  <div class="chchips"><a class="chchip" href="https://www.smentertainment.com/en/artist/aespa/" target="_blank" rel="noopener nofollow"><span>소속사 · SM Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/aespa_official/" target="_blank" rel="noopener nofollow" aria-label="aespa Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/aespa_official" target="_blank" rel="noopener nofollow" aria-label="aespa X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@aespa" target="_blank" rel="noopener nofollow" aria-label="aespa YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@aespa_official" target="_blank" rel="noopener nofollow" aria-label="aespa TikTok"><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/aespa" target="_blank" rel="noopener nofollow" aria-label="aespa Weverse"><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/aespa" target="_blank" rel="noopener nofollow"><span>팬클럽 · MY</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
 <div class="box tkbox" style="padding:0">
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 티켓팅</div>
   <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">예상 공연 시각</div><div class="lv">19:00~20:00 (평일 저녁, 예상)</div></div><div class="lirow"><div class="lk">선예매</div><div class="lv">위버스 멤버십 선예매 2026-05-06 11:00 현지시각 (MY MEMBERSHIP 등록 ~2026-04-29 09:00)</div></div><div class="lirow"><div class="lk">예매처</div><div class="lv"><a href="https://www.livenation.com.tw/en/event/aespa-live-tour-synk-complaexity-in-taipei-taipei-tickets-edp1671209" target="_blank" rel="noopener nofollow">Live Nation Taiwan ↗</a> · <a href="https://tixcraft.com/activity/detail/26_aespa" target="_blank" rel="noopener nofollow">tixcraft(拓元) ↗</a></div></div></div>
 </div>
-<details class="linfo">
-  <summary>🧭 현지 실용 정보</summary>
-  <div class="ligrid"><div class="lirow"><div class="lk">교통</div><div class="lv">타이베이 MRT(촘촘·정시성 우수) + 시내버스. 이지카드(EasyCard)가 표준 — MRT·버스 약 20% 할인, 편의점 결제 호환. 타이베이 돔은 난징싼민/타이베이 아레나역 권역.</div></div><div class="lirow"><div class="lk">심야 이동</div><div class="lv">MRT 막차 대략 자정 전후(노선·방향별 상이). 대형 공연 시 인근 역 임시 증편 사례 있음. 막차 후 택시·우버 호출 광범위. 돔 공연 종료 22시 이후면 막차 시각 사전 확인 권장.</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">도심 카드 통용 양호. 야시장·전통시장은 현금 중심. 이지카드 소액 결제 광범위, LINE Pay 등 QR 확산.</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">대만달러(TWD, NT$). 야시장 현금 준비 권장. 공항·시내 환전·편의점 ATM.</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">중국어(번체). 관광지·MRT 영어 병기 양호, 일상 영어 통용도 중간.</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(차량 호출(대만 운영))</span> · Google 지도 <span style='color:var(--muted)'>(MRT·버스 경로)</span> · LINE Pay <span style='color:var(--muted)'>(QR·간편결제)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(심야 차량 호출(영어 UI·선결제, 외국인 최적))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(대만 대표 택시 호출(LINE 앱 내 연동))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(최대 택시 호출(2만대+))</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(택시·차량 호출 대체(현지))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">타이베이 돔 정문 회피 — 인근 블록 이동 후 호출 Uber↔LINE Taxi↔55688 교차 호출로 매칭 분산</div></div><div class="lirow"><div class="lk">막차 메모</div><div class="lv">난징싼민/타이베이 아레나역 권역. MRT 막차 자정 전후, 대형 공연 시 인근 역 임시 증편 사례 — 당일 안내 확인 권장.</div></div></div>
-</details>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">공연장</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>타이베이 돔(Taipei Dome)</bdi> · <bdi>타이베이</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4+%EB%8F%94%28Taipei+Dome%29+Taipei" target="_blank" rel="noopener">📍 지도에서 보기</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div><ul><li>國父紀念館(궈푸지녠관)·市政府(스정푸)역권 우선</li><li>타이베이 도심 어디든 MRT 접근 양호</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
+  <p style="margin:6px 0 0;font-size:14px">타이베이 MRT 板南線(반난선) 國父紀念館(궈푸지녠관)역/市政府(스정푸)역 인근.</p>
+</div>
+
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 현지 실용 정보</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">교통</div><div class="lv">타이베이 MRT(촘촘·정시성 우수) + 시내버스. 이지카드(EasyCard)가 표준 — MRT·버스 약 20% 할인, 편의점 결제 호환. 타이베이 돔은 南京三民(난징싼민)/台北小巨蛋(타이베이 아레나)역 권역.</div></div></div>
+  <details class="limore">
+    <summary>더보기</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">심야 이동</div><div class="lv">MRT 막차 대략 자정 전후(노선·방향별 상이). 대형 공연 시 인근 역 임시 증편 사례 있음. 막차 후 택시·우버 호출 광범위. 돔 공연 종료 22시 이후면 막차 시각 사전 확인 권장.</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">도심 카드 통용 양호. 야시장·전통시장은 현금 중심. 이지카드 소액 결제 광범위, LINE Pay 등 QR 확산.</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">대만달러(TWD, NT$). 야시장 현금 준비 권장. 공항·시내 환전·편의점 ATM.</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">중국어(번체). 관광지·MRT 영어 병기 양호, 일상 영어 통용도 중간.</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(차량 호출(대만 운영))</span> · Google 지도 <span style='color:var(--muted)'>(MRT·버스 경로)</span> · LINE Pay <span style='color:var(--muted)'>(QR·간편결제)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(심야 차량 호출(영어 UI·선결제, 외국인 최적))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(대만 대표 택시 호출(LINE 앱 내 연동))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(최대 택시 호출(2만대+))</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(택시·차량 호출 대체(현지))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">타이베이 돔 정문 회피 — 인근 블록 이동 후 호출 Uber↔LINE Taxi↔55688 교차 호출로 매칭 분산</div></div><div class="lirow"><div class="lk">막차 메모</div><div class="lv">南京三民(난징싼민)/台北小巨蛋(타이베이 아레나)역 권역. MRT 막차 자정 전후, 대형 공연 시 인근 역 임시 증편 사례 — 당일 안내 확인 권장.</div></div></div>
+  </details>
+</div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">지금 잠그기</p>
 <div class="btns">
   <a class="btn" href="https://www.booking.com/searchresults.html?ss=Taipei&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 호텔 <small>· Booking</small></a>
@@ -155,16 +175,6 @@ ul{padding-inline-start:18px;padding-left:unset}
   <a class="btn" href="https://www.klook.com/search/?query=Taipei&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 투어·티켓 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">본 페이지의 예약 링크는 제휴(수수료) 링크입니다. 이용자가 추가로 부담하는 비용은 없습니다.</p>
-
-<div class="box">
-  <div style="font-weight:600;font-size:14px">공연장</div>
-  <p style="margin:4px 0 0;font-size:14px">타이베이 돔(Taipei Dome) · 타이베이</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4+%EB%8F%94%28Taipei+Dome%29+Taipei" target="_blank" rel="noopener">📍 지도에서 보기</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div>
-  <ul><li>國父紀念館(궈푸지녠관)·市政府(스정푸)역권 우선</li><li>타이베이 도심 어디든 MRT 접근 양호</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
-  <p style="margin:6px 0 0;font-size:14px">타이베이 MRT 板南線(반난선) 國父紀念館(궈푸지녠관)역/市政府(스정푸)역 인근.</p>
-</div>
 
 <div class="news">
   <input placeholder="이메일 — 이 아티스트 가격·매진 알림 받기">

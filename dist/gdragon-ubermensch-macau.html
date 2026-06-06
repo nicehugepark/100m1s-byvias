@@ -39,10 +39,11 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
-/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
 .news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
 .news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
@@ -80,6 +81,9 @@ li{overflow-wrap:break-word}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:8px 0 2px}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
@@ -94,10 +98,16 @@ li{overflow-wrap:break-word}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-block;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 14px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
@@ -107,9 +117,9 @@ ul{padding-inline-start:18px;padding-left:unset}
 <a class="back" href="index.html">← 전체 일정</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
   <span class="ghost ghost-lg" aria-hidden="true">GD</span>
-  <span class="abadge" style="background:#8A8A8A;color:#ffffff" title="G-DRAGON">GD</span>
-  <div><h1 style="margin:0">G-DRAGON — 마카오</h1>
-  <p class="sub" style="margin:2px 0 0">Übermensch World Tour · 마카오 아레나 · 2025-06-06 <span class="dday" data-date="2025-06-06"></span> · 🇲🇴 마카오</p></div>
+  <span class="abadge" style="background:#8A8A8A;color:#ffffff" title="G-DRAGON"><bdi>GD</bdi></span>
+  <div><h1 style="margin:0"><bdi>G-DRAGON</bdi> — <bdi>마카오</bdi></h1>
+  <p class="sub" style="margin:2px 0 0"><bdi>Übermensch World Tour</bdi> · <bdi>마카오 아레나</bdi> · 2025-06-06 <span class="dday" data-date="2025-06-06"></span> · 🇲🇴 마카오</p></div>
 </div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">초장기 선점 · 수개월 전 예약</span>
 
@@ -131,10 +141,23 @@ ul{padding-inline-start:18px;padding-left:unset}
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">아티스트 공식 채널</div>
   <div class="chchips"><a class="chchip" href="https://galaxyuniverse-en.imweb.me/artist" target="_blank" rel="noopener nofollow"><span>소속사 · Galaxy Corporation</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/xxxibgdragon/" target="_blank" rel="noopener nofollow" aria-label="G-DRAGON Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@gdragon" target="_blank" rel="noopener nofollow" aria-label="G-DRAGON YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
-<details class="linfo">
-  <summary>🧭 현지 실용 정보</summary>
-  <div class="ligrid"><div class="lirow"><div class="lk">교통</div><div class="lv">LRT(경전철) + 시내버스 + 호텔/카지노 무료 셔틀버스가 핵심 이동수단. 교통카드는 마카오패스(Macau Pass). 마카오 아레나(Macau East Asian Games Dome 권역)는 셔틀·택시 접근.</div></div><div class="lirow"><div class="lk">심야 이동</div><div class="lv">버스·LRT 막차는 노선별 상이(대략 자정 전후), 일부 카지노 셔틀은 심야까지 운행. 막차 후 택시 의존(수요 대비 부족할 수 있음). 공연 후 호텔 셔틀 가용 여부 사전 확인 권장.</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">현금·카드 병용, 카지노/리조트는 카드 통용 양호. 소형 점포 현금. QR(AlipayHK·WeChat Pay) 확산.</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">마카오 파타카(MOP). 홍콩달러(HKD)도 광범위 통용(거스름돈 MOP 가능). 환전·ATM 보편.</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">광둥어·포르투갈어(공용). 관광·카지노권 영어 통용 양호.</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Google 지도 <span style='color:var(--muted)'>(버스·도보 경로)</span> · macaubus / DSAT 공식 <span style='color:var(--muted)'>(버스 실시간 도착(현지 공식))</span> · AlipayHK <span style='color:var(--muted)'>(QR 간편결제)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">Macau Taxi (택시 호출 앱) <span style='color:var(--muted)'>(마카오 현지 택시 호출)</span> · 호텔/카지노 셔틀 <span style='color:var(--muted)'>(리조트 무료 셔틀 — 일부 심야 운행(이동 분산 핵심))</span> &nbsp;<a href="https://www.airalo.com/?country=마카오&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">마카오 아레나 종료 후 택시 수요 대비 부족 가능 → 호텔/카지노 셔틀로 거점 이동 후 분산 정문 대신 인근 호텔 셔틀 승강장 활용</div></div><div class="lirow"><div class="lk">막차 메모</div><div class="lv">LRT/버스 막차 자정 전후, 일부 카지노 셔틀 심야 운행. 호텔 셔틀 가용 여부·택시 대기 사전 확인 권장.</div></div></div>
-</details>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">공연장</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>마카오 아레나</bdi> · <bdi>마카오</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A7%88%EC%B9%B4%EC%98%A4+%EC%95%84%EB%A0%88%EB%82%98+Macau" target="_blank" rel="noopener">📍 지도에서 보기</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div><ul><li>路氹(코타이)/마카오반도 + 무료 셔틀</li><li>珠海(주하이) 숙박 + 육로 통근도 가성비</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
+  <p style="margin:6px 0 0;font-size:14px">홍콩 경유 페리/버스 + 珠海(주하이) 육로 대안.</p>
+</div>
+
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 현지 실용 정보</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">교통</div><div class="lv">LRT(경전철) + 시내버스 + 호텔/카지노 무료 셔틀버스가 핵심 이동수단. 교통카드는 마카오패스(Macau Pass). 마카오 아레나(Macau East Asian Games Dome 권역)는 셔틀·택시 접근.</div></div></div>
+  <details class="limore">
+    <summary>더보기</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">심야 이동</div><div class="lv">버스·LRT 막차는 노선별 상이(대략 자정 전후), 일부 카지노 셔틀은 심야까지 운행. 막차 후 택시 의존(수요 대비 부족할 수 있음). 공연 후 호텔 셔틀 가용 여부 사전 확인 권장.</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">현금·카드 병용, 카지노/리조트는 카드 통용 양호. 소형 점포 현금. QR(AlipayHK·WeChat Pay) 확산.</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">마카오 파타카(MOP). 홍콩달러(HKD)도 광범위 통용(거스름돈 MOP 가능). 환전·ATM 보편.</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">광둥어·포르투갈어(공용). 관광·카지노권 영어 통용 양호.</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Google 지도 <span style='color:var(--muted)'>(버스·도보 경로)</span> · macaubus / DSAT 공식 <span style='color:var(--muted)'>(버스 실시간 도착(현지 공식))</span> · AlipayHK <span style='color:var(--muted)'>(QR 간편결제)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">Macau Taxi (택시 호출 앱) <span style='color:var(--muted)'>(마카오 현지 택시 호출)</span> · 호텔/카지노 셔틀 <span style='color:var(--muted)'>(리조트 무료 셔틀 — 일부 심야 운행(이동 분산 핵심))</span> &nbsp;<a href="https://www.airalo.com/?country=마카오&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">마카오 아레나 종료 후 택시 수요 대비 부족 가능 → 호텔/카지노 셔틀로 거점 이동 후 분산 정문 대신 인근 호텔 셔틀 승강장 활용</div></div><div class="lirow"><div class="lk">막차 메모</div><div class="lv">LRT/버스 막차 자정 전후, 일부 카지노 셔틀 심야 운행. 호텔 셔틀 가용 여부·택시 대기 사전 확인 권장.</div></div></div>
+  </details>
+</div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">지금 잠그기</p>
 <div class="btns">
   <a class="btn" href="https://www.booking.com/searchresults.html?ss=Macau&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 호텔 <small>· Booking</small></a>
@@ -143,16 +166,6 @@ ul{padding-inline-start:18px;padding-left:unset}
   <a class="btn" href="https://www.klook.com/search/?query=Macau&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 투어·티켓 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">본 페이지의 예약 링크는 제휴(수수료) 링크입니다. 이용자가 추가로 부담하는 비용은 없습니다.</p>
-
-<div class="box">
-  <div style="font-weight:600;font-size:14px">공연장</div>
-  <p style="margin:4px 0 0;font-size:14px">마카오 아레나 · 마카오</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A7%88%EC%B9%B4%EC%98%A4+%EC%95%84%EB%A0%88%EB%82%98+Macau" target="_blank" rel="noopener">📍 지도에서 보기</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div>
-  <ul><li>路氹(코타이)/마카오반도 + 무료 셔틀</li><li>珠海(주하이) 숙박 + 육로 통근도 가성비</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
-  <p style="margin:6px 0 0;font-size:14px">홍콩 경유 페리/버스 + 珠海(주하이) 육로 대안.</p>
-</div>
 
 <div class="news">
   <input placeholder="이메일 — 이 아티스트 가격·매진 알림 받기">

@@ -39,10 +39,11 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
-/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
 .news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
 .news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
@@ -80,6 +81,9 @@ li{overflow-wrap:break-word}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:8px 0 2px}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
@@ -94,10 +98,16 @@ li{overflow-wrap:break-word}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-block;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 14px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
@@ -107,9 +117,9 @@ ul{padding-inline-start:18px;padding-left:unset}
 <a class="back" href="index.html">← 전체 일정</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(242,112,30,0.10) 0%,#ffffff 42%,rgba(242,112,30,0.26) 100%);--stripe:#F2701E">
   <span class="ghost ghost-lg" aria-hidden="true">EN</span>
-  <span class="abadge" style="background:#F2701E;color:#ffffff" title="ENHYPEN">EN</span>
-  <div><h1 style="margin:0">ENHYPEN — 댈러스</h1>
-  <p class="sub" style="margin:2px 0 0">BLOOD SAGA World Tour · American Airlines Center · 2026-07-17 <span class="dday" data-date="2026-07-17"></span> · 🇺🇸 미국 댈러스</p></div>
+  <span class="abadge" style="background:#F2701E;color:#ffffff" title="ENHYPEN"><bdi>EN</bdi></span>
+  <div><h1 style="margin:0"><bdi>ENHYPEN</bdi> — <bdi>댈러스</bdi></h1>
+  <p class="sub" style="margin:2px 0 0"><bdi>BLOOD SAGA World Tour</bdi> · <bdi>American Airlines Center</bdi> · 2026-07-17 <span class="dday" data-date="2026-07-17"></span> · 🇺🇸 미국 댈러스</p></div>
 </div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">초장기 선점 · 수개월 전 예약</span>
 
@@ -133,16 +143,29 @@ ul{padding-inline-start:18px;padding-left:unset}
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">아티스트 공식 채널</div>
-  <div class="chchips"><a class="chchip" href="https://beliftlab.com/" target="_blank" rel="noopener nofollow"><span>소속사 · BELIFT LAB</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://enhypen.weverse.io/" target="_blank" rel="noopener nofollow"><span>공식 사이트</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/enhypen/" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/ENHYPEN" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@ENHYPEN" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/enhypen" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN Weverse"><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/enhypen" target="_blank" rel="noopener nofollow"><span>팬클럽 · ENGENE</span><span aria-hidden="true"> ↗</span></a></div>
+  <div class="chchips"><a class="chchip" href="https://beliftlab.com/" target="_blank" rel="noopener nofollow"><span>소속사 · BELIFT LAB</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://enhypen.weverse.io/" target="_blank" rel="noopener nofollow"><span>공식 사이트</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/enhypen/" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/ENHYPEN" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@ENHYPEN" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@enhypen" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN TikTok"><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/enhypen" target="_blank" rel="noopener nofollow" aria-label="ENHYPEN Weverse"><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/enhypen" target="_blank" rel="noopener nofollow"><span>팬클럽 · ENGENE</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
 <div class="box tkbox" style="padding:0">
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 티켓팅</div>
   <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">예상 공연 시각</div><div class="lv">19:00~20:00 (금요일 저녁, 예상)</div></div><div class="lirow"><div class="lk">선예매</div><div class="lv">미국 투어 선예매 2026-04-15 개시 (현지시각)</div></div><div class="lirow"><div class="lk">일반 예매</div><div class="lv">2026-04-24 16:00 현지시각</div></div><div class="lirow"><div class="lk">예매처</div><div class="lv"><a href="https://www.ticketmaster.com/enhypen-world-tour-blood-saga-in-dallas-texas-07-17-2026/event/0C006489C525D38A" target="_blank" rel="noopener nofollow">Ticketmaster (Dallas 공식) ↗</a></div></div><div class="lirow"><div class="lk">가격대</div><div class="lv">시작가(starting price) 130USD</div></div></div>
 </div>
-<details class="linfo">
-  <summary>🧭 현지 실용 정보</summary>
-  <div class="ligrid"><div class="lirow"><div class="lk">교통</div><div class="lv">DART(경전철·버스) 운영하나 도시 구조상 차량 이동 비중 큼. 교통카드는 GoPass 앱/카드. American Airlines Center는 빅토리파크/Victory DART역 인접.</div></div><div class="lirow"><div class="lk">심야 이동</div><div class="lv">DART 야간 운행 제한적(노선별 막차 대략 자정 전후). 공연 후에는 우버/리프트(Uber·Lyft) 의존이 현실적, 종료 직후 호출 급증·요금 상승 주의.</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">카드·모바일결제(Apple/Google Pay) 통용도 매우 높음. 현금 거의 불필요(팁 문화로 카드 팁 보편).</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">미국 달러(USD, $). 카드 중심이라 환전 의존도 낮음, 소액 현금만 보조.</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">영어(스페인어 병용 흔함).</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(차량 호출(공연 후 주력))</span> · Lyft <span style='color:var(--muted)'>(차량 호출(대체))</span> · GoPass (DART) <span style='color:var(--muted)'>(DART 승차권·경로)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(심야 차량 호출 주력(공연 후 현실적 1순위))</span> · Lyft <span style='color:var(--muted)'>(차량 호출 대체(요금 비교 분산))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">American Airlines Center 정문/Victory Plaza는 surge 집중 — 1~2블록(빅토리파크 외곽) 이동 후 호출 시 요금·매칭 개선 Uber↔Lyft 요금 동시 비교 후 낮은 쪽 선택</div></div><div class="lirow"><div class="lk">막차 메모</div><div class="lv">Victory DART역 인접. DART 야간 막차 자정 전후로 제한적 — 공연 후 Uber/Lyft가 현실적, 종료 직후 요금 상승 주의.</div></div></div>
-</details>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">공연장</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>American Airlines Center</bdi> · <bdi>댈러스</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=American+Airlines+Center+Dallas" target="_blank" rel="noopener">📍 지도에서 보기</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div><ul><li>Victory Park·다운타운권 우선</li><li>DART 접근 가능 외곽 숙소도 가성비</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
+  <p style="margin:6px 0 0;font-size:14px">Victory Park / DART Green·Orange 라인. 공연 후 차량 혼잡.</p>
+</div>
+
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 현지 실용 정보</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">교통</div><div class="lv">DART(경전철·버스) 운영하나 도시 구조상 차량 이동 비중 큼. 교통카드는 GoPass 앱/카드. American Airlines Center는 빅토리파크/Victory DART역 인접.</div></div></div>
+  <details class="limore">
+    <summary>더보기</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">심야 이동</div><div class="lv">DART 야간 운행 제한적(노선별 막차 대략 자정 전후). 공연 후에는 우버/리프트(Uber·Lyft) 의존이 현실적, 종료 직후 호출 급증·요금 상승 주의.</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">카드·모바일결제(Apple/Google Pay) 통용도 매우 높음. 현금 거의 불필요(팁 문화로 카드 팁 보편).</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">미국 달러(USD, $). 카드 중심이라 환전 의존도 낮음, 소액 현금만 보조.</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">영어(스페인어 병용 흔함).</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(차량 호출(공연 후 주력))</span> · Lyft <span style='color:var(--muted)'>(차량 호출(대체))</span> · GoPass (DART) <span style='color:var(--muted)'>(DART 승차권·경로)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(심야 차량 호출 주력(공연 후 현실적 1순위))</span> · Lyft <span style='color:var(--muted)'>(차량 호출 대체(요금 비교 분산))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">American Airlines Center 정문/Victory Plaza는 surge 집중 — 1~2블록(빅토리파크 외곽) 이동 후 호출 시 요금·매칭 개선 Uber↔Lyft 요금 동시 비교 후 낮은 쪽 선택</div></div><div class="lirow"><div class="lk">막차 메모</div><div class="lv">Victory DART역 인접. DART 야간 막차 자정 전후로 제한적 — 공연 후 Uber/Lyft가 현실적, 종료 직후 요금 상승 주의.</div></div></div>
+  </details>
+</div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">지금 잠그기</p>
 <div class="btns">
   <a class="btn" href="https://www.booking.com/searchresults.html?ss=Dallas&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 호텔 <small>· Booking</small></a>
@@ -151,16 +174,6 @@ ul{padding-inline-start:18px;padding-left:unset}
   <a class="btn" href="https://www.klook.com/search/?query=Dallas&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 투어·티켓 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">본 페이지의 예약 링크는 제휴(수수료) 링크입니다. 이용자가 추가로 부담하는 비용은 없습니다.</p>
-
-<div class="box">
-  <div style="font-weight:600;font-size:14px">공연장</div>
-  <p style="margin:4px 0 0;font-size:14px">American Airlines Center · 댈러스</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=American+Airlines+Center+Dallas" target="_blank" rel="noopener">📍 지도에서 보기</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div>
-  <ul><li>Victory Park·다운타운권 우선</li><li>DART 접근 가능 외곽 숙소도 가성비</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
-  <p style="margin:6px 0 0;font-size:14px">Victory Park / DART Green·Orange 라인. 공연 후 차량 혼잡.</p>
-</div>
 
 <div class="news">
   <input placeholder="이메일 — 이 아티스트 가격·매진 알림 받기">
