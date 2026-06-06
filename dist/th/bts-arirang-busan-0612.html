@@ -1,7 +1,7 @@
 <!doctype html><html lang="th" data-lang="th"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BTS 부산 — ByBias</title>
-<meta name="description" content="วิธีล็อคราคาต่ำ ก่อนแฟนชุมนุมนะ">
+<title>BTS ปูซาน — ByBias</title>
+<meta name="description" content="วันเวลาแฟนๆ ชุมนุม → วิธีจองล็อกราคาประหยัดล่วงหน้า">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="ko" href="../bts-arirang-busan-0612.html">
 <link rel="alternate" hreflang="en" href="../en/bts-arirang-busan-0612.html">
@@ -24,6 +24,11 @@ a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+/* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
+   기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
+.subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
+.subitem{white-space:nowrap}
+.subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
@@ -31,7 +36,8 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
 .ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:12px}
-.ehead-detail>*{position:relative;z-index:1}
+.ehead-detail>:not(.ghost){position:relative;z-index:1}
+.ehead-detail>.ghost{position:absolute;z-index:0}
 .ghost-lg{font-size:96px;bottom:-22px;opacity:.09}
 .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
 .outlook{background:#fdf6ec;border:1px solid #f0e4cf}
@@ -39,19 +45,20 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-ul{margin:8px 0 0;padding-inline-start:20px}li{margin:5px 0;padding-inline-start:2px}
-/* 들여쓰기·줄바꿈 정합: 긴 단어(URL·붙여쓰기 언어)도 박스 안에서 줄바꿈, 2줄+는 hanging */
+/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
+li{margin:5px 0;overflow-wrap:break-word}
+/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-li{overflow-wrap:break-word}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
 .disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
 .gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
-.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 7px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
@@ -80,6 +87,9 @@ li{overflow-wrap:break-word}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:13px 0;min-height:44px;box-sizing:border-box;display:flex;align-items:center}
+.limore>summary::-webkit-details-marker{display:none}
+.limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
@@ -94,10 +104,16 @@ li{overflow-wrap:break-word}
 .langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
+/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+.tabs>input{position:absolute;opacity:0;pointer-events:none}
+.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:#c9c7bd}
+.tabs>.tabpanel{display:none}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
-ul{padding-inline-start:18px;padding-left:unset}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
@@ -107,73 +123,73 @@ ul{padding-inline-start:18px;padding-left:unset}
 <a class="back" href="index.html">← ทั้งหมด</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,#ffffff 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
   <span class="ghost ghost-lg" aria-hidden="true">BTS</span>
-  <span class="abadge" style="background:#7B4FB5;color:#ffffff" title="BTS">BTS</span>
-  <div><h1 style="margin:0">BTS — ปูซาน</h1>
-  <p class="sub" style="margin:2px 0 0">ARIRANG World Tour · 부산 아시아드 주경기장 · 2026-06-12 <span class="dday" data-date="2026-06-12"></span> · 🇰🇷 เกาหลีใต้ ปูซาน</p></div>
+  <span class="abadge" style="background:#7B4FB5;color:#ffffff" title="BTS"><bdi>BTS</bdi></span>
+  <div><h1 style="margin:0"><bdi>BTS</bdi> — <bdi>ปูซาน</bdi></h1>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>ARIRANG World Tour</bdi></span><span class="subitem"><bdi>สนามกีฬาหลัก Busan Asiad</bdi></span><span class="subitem">2026-06-12 <span class="dday" data-date="2026-06-12"></span></span><span class="subitem">🇰🇷 เกาหลีใต้ ปูซาน</span></p></div>
 </div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">ช่วงประกาศ · ราคาน่าจะถูกที่สุด</span>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">ช่วงเวลาประกาศ · น่าจะถูกที่สุด</span>
 
 <div class="box outlook">
   <div style="color:var(--muted);font-size:13px">พยากรณ์ราคา·ความต้องการ (หลังประกาศ)</div>
-  <div class="metric">ภายใน 48 ชั่วโมงหลังประกาศ การค้นหาการท่องเที่ยว Busan +2,375% (รวมข้อมูลข่าวสาร)</div>
-  <div style="font-size:14px;margin-top:4px">ที่พักช่วงสุดสัปดาห์ของการแสดง เฉลี่ย 2 เท่า+, บางกรณี สูงสุด 7.5 เท่า — ถ้าขาดแคลนโรงแรม ลองไปยัง Ulsan</div>
-  <p style="margin:10px 0 0;font-size:14px"><b>กำหนดเวลาจอง:</b> เมืองที่มีความต้องการเพิ่มสูง — ราคาที่พักอาจเพิ่มตัวได้ ถ้าจองในนาทีสุดท้าย ลองจองล่วงหน้าจะคุ้มกว่านะ</p>
+  <div class="metric">ภายใน 48 ชั่วโมงหลังการประกาศ การค้นหาการท่องเที่ยวบูซาน เพิ่มขึ้น +2,375% (รวมข้อมูลจากหลายสื่อ)</div>
+  <div style="font-size:14px;margin-top:4px">ที่พักสำหรับวันหยุดสุดสัปดาห์ของการแสดง โดยเฉลี่ยแพงขึ้น 2 เท่า+ และมีบางกรณีแพงได้ถึง 7.5 เท่า — เมื่อโมเทลขาดแคลน ลองดูทางเลือกทีอูลซานนะค่ะ</div>
+  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">เมืองที่มีความต้องการระเบิด — มีหลายกรณีที่ราคาที่พักพุ่งสูงเมื่อจองในเวลาสุดท้าย ดังนั้นการจองล่วงหน้าจึงเป็นทางเลือกที่ดีกว่านะค่ะ</p>
 </div>
-<p class="disc">พยากรณ์ราคา·จำนวนคงเหลือ เป็นการประมาณการเท่านั้น และอาจแตกต่างจากความเป็นจริง ความรับผิดชอบด้านการจองและการชำระเงิน เป็นของผู้ใช้เท่านั้น</p>
+<p class="disc">การคาดการณ์ราคา และปริมาณตั๋วคงเหลือ เป็นการประมาณการเท่านั้น และอาจแตกต่างจากความเป็นจริง ความรับผิดชอบในการจอง และการชำระเงิน เป็นของท่านเองนะคะ</p>
 
 <div class="box srcbox">
-  <div style="font-weight:600;font-size:14px">แหล่งข้อมูลตารางเวลา</div>
-  <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi 2026 K-Pop 투어 일정 ↗</a></div>
+  <div style="font-weight:600;font-size:14px">ที่มาของข้อมูล</div>
+  <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">ตารางการแสดง Soompi K-Pop 2026 ↗</a></div>
 </div>
-<div class="box">
-  <div style="font-weight:600;font-size:14px;margin-bottom:8px">การแสดงอื่น ๆ ของศิลปินคนนี้</div>
-  <div class="oshows"><a class="oshow oshow-next" href="bts-arirang-kaohsiung-1119.html"><span class="nextflag">การแสดงครั้งต่อไป →</span> <span class="osc">🇹🇼 ไต้หวัน เกาสง</span><span class="osd">2026-11-19 <span class="dday" data-date="2026-11-19"></span></span></a></div>
-</div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">คอนเสิร์ตครั้งต่อไป</div><div class="oshows"><a class="oshow oshow-next" href="bts-arirang-kaohsiung-1119.html"><span class="nextflag">คอนเสิร์ตครั้งต่อไป →</span> <span class="osc">🇹🇼 ไต้หวัน เกาสง</span><span class="osd">2026-11-19 <span class="dday" data-date="2026-11-19"></span></span></a></div><div style="font-weight:600;font-size:14px;margin:14px 0 8px">คอนเสิร์ตที่จบลงแล้ว</div><div class="oshows"><a class="oshow" href="bts-arirang-seoul.html"><span class="osc">🇰🇷 เกาหลีใต้ โซล</span><span class="osd">2026-03-21 <span class="dday" data-date="2026-03-21"></span></span></a></div></div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">วิดีโอศิลปิน</div>
-  <button class="ytfacade" data-vid="diBO0gMuTXo" aria-label="การเล่นวิดีโอ: BTS (방탄소년단) &#x27;Hooligan&#x27; Official MV"
+  <button class="ytfacade" data-vid="diBO0gMuTXo" aria-label="เล่นวิดีโอ: BTS &#x27;Hooligan&#x27; Official MV"
     style="background-image:url('https://i.ytimg.com/vi/diBO0gMuTXo/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
-  <p style="margin:8px 0 0;font-size:13px">BTS (방탄소년단) &#x27;Hooligan&#x27; Official MV <span style="color:var(--muted)">· HYBE LABELS</span></p>
+  <p style="margin:8px 0 0;font-size:13px">BTS &#x27;Hooligan&#x27; Official MV <span style="color:var(--muted)">· HYBE LABELS</span></p>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">ช่องทางอย่างเป็นทางการของศิลปิน</div>
-  <div class="chchips"><a class="chchip" href="https://ibighit.com/bts/" target="_blank" rel="noopener nofollow"><span>บริษัท · BIGHIT MUSIC</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/bts.bighitofficial/" target="_blank" rel="noopener nofollow" aria-label="BTS Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/BTS_twt" target="_blank" rel="noopener nofollow" aria-label="BTS X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@BTS" target="_blank" rel="noopener nofollow" aria-label="BTS YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/bts" target="_blank" rel="noopener nofollow" aria-label="BTS Weverse"><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://shop.weverse.io/en/shop/USD/artists/2/sales/4523" target="_blank" rel="noopener nofollow"><span>ชมรมแฟน · ARMY</span><span aria-hidden="true"> ↗</span></a></div>
+  <div class="chchips"><a class="chchip" href="https://ibighit.com/bts/" target="_blank" rel="noopener nofollow"><span>บริษัทจัดการ · BIGHIT MUSIC</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/bts.bighitofficial/" target="_blank" rel="noopener nofollow" aria-label="BTS Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/BTS_twt" target="_blank" rel="noopener nofollow" aria-label="BTS X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@BTS" target="_blank" rel="noopener nofollow" aria-label="BTS YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@bts_official_bighit" target="_blank" rel="noopener nofollow" aria-label="BTS TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://weverse.io/bts" target="_blank" rel="noopener nofollow" aria-label="BTS Weverse"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 6.5h2.7l3.05 8.36L10.8 6.5h2.4l3.05 8.36L19.3 6.5H22l-4.55 11h-2.5l-2.95-7.9-2.95 7.9h-2.5z"/></svg><span>Weverse</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://shop.weverse.io/en/shop/USD/artists/2/sales/4523" target="_blank" rel="noopener nofollow"><span>ชมรมแฟน · ARMY</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
 <div class="box tkbox" style="padding:0">
-  <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 การจองตั๋ว</div>
-  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">เวลาแสดงโดยประมาณ</div><div class="lv">19:00~20:00 (เย็นวันศุกร์ คาดว่า)</div></div><div class="lirow"><div class="lk">การจองล่วงหน้า</div><div class="lv">การจองล่วงหน้าสมาชิก (Weverse) — ดำเนินการก่อนการขายทั่วไป</div></div><div class="lirow"><div class="lk">จองตั๋วทั่วไป</div><div class="lv">2026-04-30 20:00 KST (จำนวนที่เหลือจำกัด ซื้อได้ 1-2 ใบต่อคน)</div></div><div class="lirow"><div class="lk">ที่จองตั๋ว</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000398/products/26005547" target="_blank" rel="noopener nofollow">NOL 인터파크(NOL Interpark) ↗</a></div></div></div>
+  <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 ตั๋ว</div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">เวลาคอนเสิร์ต (คาดการณ์)</div><div class="lv">19:00~20:00 (เย็นวันศุกร์ คาดว่า)</div></div><div class="lirow"><div class="lk">การจองตั๋วล่วงหน้า</div><div class="lv">Weverse membership presale — เปิดจำหน่ายก่อนการเปิดจำหน่ายทั่วไปนะ</div></div><div class="lirow"><div class="lk">การจองตั๋วทั่วไป</div><div class="lv">2026-04-30 20:00 KST (จำนวนที่นั่งจำกัด 1-2 ใบต่อคน)</div></div><div class="lirow"><div class="lk">ช่องทางจองตั๋ว</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000398/products/26005547" target="_blank" rel="noopener nofollow">NOL Interpark ↗</a></div></div></div>
 </div>
-<details class="linfo">
-  <summary>🧭 ข้อมูลท่องเที่ยวท้องถิ่น</summary>
-  <div class="ligrid"><div class="lirow"><div class="lk">การขนส่ง</div><div class="lv">ระบบขนส่งใน Busan ประกอบด้วย รถไฟใต้ดิน(สาย 1~4)·สาย Donghae บวกกับรถประจำเมือง บัตรขนส่ง T-money·Cashbi·Hana Card ใช้ได้ทั่วไปค่ะ</div></div><div class="lirow"><div class="lk">การเดินทางกลางคืน</div><div class="lv">รถไฟฟ้าขบวนสุดท้ายประมาณเที่ยงคืนก่อน/หลัง หลังจากนั้นรถบัสค่ำคืนมีเส้นทางจำกัด ต้องอาศัยรถแท็กซี่หรือแอป KakaoT เพราะ Asiad Main Stadium อยู่ห่างจากใจกลางเมือง อาจมีคิวรถแท็กซี่หลังคอนเสิร์ต ขอแนะนำให้จองไว้ล่วงหน้านะ</div></div><div class="lirow"><div class="lk">การชำระเงิน</div><div class="lv">บัตรและการชำระเงินผ่านแอปมีการยอมรับอย่างกว้างขวาง แต่ตลาดดั้งเดิมและแผงลอยบางแห่งต้องใช้เงินสด</div></div><div class="lirow"><div class="lk">แลกเงิน · สกุลเงิน</div><div class="lv">วอน(KRW, ₩) เดียวกับกรุงโซล บัตรเป็นวิธีหลัก</div></div><div class="lirow"><div class="lk">ภาษา</div><div class="lv">ภาษาเกาหลี ความสามารถในภาษาอังกฤษน้อยกว่ากรุงโซล แต่ข้อมูลการขนส่งมีภาษาอังกฤษ</div></div><div class="lirow"><div class="lk">แอปท้องถิ่น</div><div class="lv">카카오T <span style='color:var(--muted)'>(เรียกรถแท็กซี่/รับส่ง)</span> · 네이버 지도 <span style='color:var(--muted)'>(เส้นทางการขนส่งสาธารณะ)</span> · 카카오페이 <span style='color:var(--muted)'>(QR Code·การชำระเงินมือถือ)</span></div></div><div class="lirow"><div class="lk">แอปขนส่งกลางคืน</div><div class="lv">카카오T <span style='color:var(--muted)'>(แอปเรียกแท็กซี่ยามเที่ยงคืนมาตรฐาน(มีส่วนแบ่งตลาด 90%+ และระบบจับคู่เร็วที่สุด) อย่างไรก็ตาม มีข้อจำกัดในการลงทะเบียนด้วยหมายเลขโทรศัพท์ต่างประเทศค่ะ)</span> · UT(우티/Uber) <span style='color:var(--muted)'>(เรียกแท็กซี่ — ใช้บัตรและหมายเลขโทรศัพท์ต่างประเทศได้ทันที เป็นการบริการที่เอื้อเฟื้อต่างชาติค่ะ)</span> · 타다(TADA) <span style='color:var(--muted)'>(เรียก Carnival Van — สามารถลงทะเบียนด้วยหมายเลขโทรศัพท์และบัตรต่างประเทศได้ค่ะ)</span> · i.M(아이엠) <span style='color:var(--muted)'>(เรียกแท็กซี่ Van ขนาดใหญ่ระดับพรีเมียม)</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">เคล็ดลับการเรียกรถ</div><div class="lv">ไม่ควรเรียกรถจากประตูหลักของสนามกีฬา ลองย้ายไป 1–2 ช่วงตึกแล้วเรียก Asiad อยู่บริเวณขอบ ลองจองรถไว้ก่อนสิ้นสุดคอนเสิร์ต</div></div><div class="lirow"><div class="lk">รอบ ๆ สถานที่แสดง</div><div class="lv"><div class="hspot"><span class="hn">올리브영 서면 타운</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81+%EC%84%9C%EB%A9%B4+%ED%83%80%EC%9A%B4" target="_blank" rel="noopener" aria-label="올리브영 서면 타운 📍 ดูบนแผนที่">📍</a><span class="hd">ร้าน Olive Young ที่ใหญ่ที่สุดในภูมิภาค 270평 เน้นสินค้านานาชาติ มีป้ายกำกับหลายภาษา บริการ Tax Refund ที่นักท่องเที่ยวต่างชาติใช้กันมากมาย</span></div><div class="hspot"><span class="hn">광안리 해수욕장</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B4%91%EC%95%88%EB%A6%AC+%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5+Gwangalli+Beach" target="_blank" rel="noopener" aria-label="광안리 해수욕장 📍 ดูบนแผนที่">📍</a><span class="hd">สถานที่ถ่ายรูปแนะนำของบูซาน ที่มีชื่อเสียงจากมุมมองกลางคืนของสะพาน Gwangandaegyo และคาเฟ่ริมหาด</span></div><div class="hspot"><span class="hn">해운대 해수욕장</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%ED%95%B4%EC%9A%B4%EB%8C%80+%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5+Haeundae+Beach" target="_blank" rel="noopener" aria-label="해운대 해수욕장 📍 ดูบนแผนที่">📍</a><span class="hd">หาดที่เป็นสัญลักษณ์ของบูซาน มีร้านค้า ร้านอาหาร และแหล่งท่องเที่ยวมากมาย เป็นจุดท่องเที่ยวสำคัญสำหรับนักท่องเที่ยวต่างชาติ</span></div></div></div><div class="lirow"><div class="lk">หมายเหตุรถคันสุดท้าย</div><div class="lv">ตั้งอยู่นอกเขตใจกลางเมือง รถไฟฟ้าขบวนสุดท้ายประมาณเที่ยงคืน หลังคอนเสิร์ตจบ ความต้องการแท็กซี่จะเพิ่มเยอะ — ลองเรียก Kakao T ล่วงหน้าแล้วกันนะ</div></div></div>
-</details>
-<p style="font-weight:600;font-size:14px;margin:16px 0 4px">จองล็อคเลย</p>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">สถานที่แสดง</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>สนามกีฬาหลัก Busan Asiad</bdi> · <bdi>ปูซาน</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%B6%80%EC%82%B0+%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C+%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5+Busan" target="_blank" rel="noopener">📍 ดูบนแผนที่</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">เคล็ดลับที่พักใกล้</div><ul><li>ที่พักใกล้สนามกีฬาอาจหมดเร็ว — ลองมองหาบริเวณโซมยอน/แฮอุนแด + ใช้สายรถไฟใต้ดินจะสะดวกกว่านะค่ะ</li><li>ลองจองโดยผสมวันธรรมดาเข้าไปจะช่วยหลีกเลี่ยงราคาที่พักพุ่งสูงของวันหยุดนะค่ะ</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">เส้นทางกลับบ้านหลังคอนเสิร์ต</div>
+  <p style="margin:6px 0 0;font-size:14px">ตรวจสอบรถไฟรุ่นสุดท้ายและรถบัสดึกให้แน่ใจนะค่ะ เมื่อที่พักใกล้เคียงขาดแคลน KTX ไปอูลซานอาจเป็นทางเลือกที่ดีค่ะ</p>
+</div>
+
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 ข้อมูลปฏิบัติท้องถิ่น</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">การขนส่ง</div><div class="lv">รถไฟฟ้า Busan (สายที่ 1-4), Donghae Line + รถประจำทาง. บัตรขนส่ง: T-money, Cashbee, Hana Card ใช้ได้</div></div></div>
+  <details class="limore">
+    <summary>ดูเพิ่มเติม</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">เดินทางตอนดึก</div><div class="lv">รถไฟฟ้าแล่นครั้งสุดท้าย ประมาณเที่ยงคืน. หลังแล่นครั้งสุดท้าย เส้นทางรถประจำทางกลางคืน จำกัด ดังนั้นต้องพึ่งพาแท็กซี่ / Kakao T. สนามกีฬาหลัก Asiad อยู่ห่างจากเขตหลวง อาจเกิดแถวคอยแท็กซี่หลังแสดง ดังนั้นแนะนำให้เรียกล่วงหน้านะ</div></div><div class="lirow"><div class="lk">ชำระเงิน</div><div class="lv">บัตรและการชำระเงินสะดวก ใช้ได้กว้างขวาง บางแห่งเช่น แผงลอยและตลาดดั้งเดิมอาจรับเฉพาะเงินสดนะ</div></div><div class="lirow"><div class="lk">แลกเงิน·สกุลเงิน</div><div class="lv">วอนเกาหลี (KRW, ₩) เหมือนกับที่โซล บัตรใช้ได้เป็นมาตรฐาน</div></div><div class="lirow"><div class="lk">ภาษา</div><div class="lv">ภาษาเกาหลี ภาษาอังกฤษไม่ใช้ทั่วไปเท่าโซล แต่ป้ายขนส่งมีภาษาอังกฤษให้นะ</div></div><div class="lirow"><div class="lk">แอปของท้องถิ่น</div><div class="lv">Kakao T <span style='color:var(--muted)'>(เรียกแท็กซี่ / บริการเรียกรถ)</span> · Naver Map <span style='color:var(--muted)'>(เส้นทางการขนส่งสาธารณะ)</span> · Kakao Pay <span style='color:var(--muted)'>(QR / Mobile Payment)</span></div></div><div class="lirow"><div class="lk">แอปขนส่งค่ำคืน</div><div class="lv">Kakao T <span style='color:var(--muted)'>(บริการเรียกแท็กซี่กลางคืน มาตรฐาน (ส่วนแบ่ง 90%+ จับคู่ได้เร็วที่สุด). จำกัดการลงทะเบียนด้วยหมายเลขโทรศัพท์ต่างประเทศ)</span> · Uber <span style='color:var(--muted)'>(เรียกแท็กซี่ — ใช้บัตรต่างประเทศ / หมายเลขโทรศัพท์ได้เลย เป็นมิตรกับนักท่องเที่ยวต่างชาติ)</span> · TADA <span style='color:var(--muted)'>(เรียก Carnival Van — ลงทะเบียนด้วยหมายเลขต่างประเทศ / บัตรได้)</span> · i.M <span style='color:var(--muted)'>(เรียกรถตู้ Premium Taxi ขนาดใหญ่)</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">เคล็ดลับการเรียกรถ</div><div class="lv">หลีกเลี่ยงประตูหลักของสนามกีฬา เคลื่อนตัวไป 1–2 บล็อก แล้วเรียกรถได้ค่ะ สำหรับสนามที่อยู่ในเขตชานเมือง แนะนำจองเรียกรถล่วงหน้าก่อนคอนเสิร์ตจบนะ</div></div><div class="lirow"><div class="lk">รอบ ๆ สถานที่จัดแสดง</div><div class="lv"><div class="hspot"><span class="hn">Olive Young Seomyeon Town</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81+%EC%84%9C%EB%A9%B4+%ED%83%80%EC%9A%B4" target="_blank" rel="noopener" aria-label="Olive Young Seomyeon Town 📍 ดูบนแผนที่">📍</a><span class="hd">ร้าน Olive Young ที่ใหญ่ที่สุดในภูมิภาค (270평) เฉพาะสำหรับ global travelers มีฉลากหลายภาษา·บริการ tax refund กับแขกชาวต่างชาติเป็นครึ่งหนึ่งของร้านค่ะ</span></div><div class="hspot"><span class="hn">Gwangalli Beach</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B4%91%EC%95%88%EB%A6%AC+%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5+Gwangalli+Beach" target="_blank" rel="noopener" aria-label="Gwangalli Beach 📍 ดูบนแผนที่">📍</a><span class="hd">สถานที่ถ่ายภาพที่ชื่นชอบมากที่สุดของ Busan ที่มี Gwangandaegyo Bridge(กวางานแดกโยบริดจ์) ยามค่ำ·ร้านกาแฟข้างหาดค่ะ</span></div><div class="hspot"><span class="hn">Haeundae Beach</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%ED%95%B4%EC%9A%B4%EB%8C%80+%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5+Haeundae+Beach" target="_blank" rel="noopener" aria-label="Haeundae Beach 📍 ดูบนแผนที่">📍</a><span class="hd">ชายหาดแสนงดงามของปูซาน ที่อัดแน่นไปด้วยร้านค้า ร้านอาหารอร่อยๆ และสถานที่ท่องเที่ยวมากมาย เป็นสถานที่ที่ต้องไปเมื่อมาปูซานค่ะ</span></div></div></div><div class="lirow"><div class="lk">หมายเหตุรถสุดท้าย</div><div class="lv">พื้นที่นอกเมืองไกลจากใจกลางเมือง รถไฟใต้ดินขบวนสุดท้ายประมาณเที่ยงคืน หลังเสร็จงานอุปสงค์แท็กซี่มากขึ้น — แนะนำเรียก Kakao T ล่วงหน้านะ</div></div></div>
+  </details>
+</div>
+<p style="font-weight:600;font-size:14px;margin:16px 0 4px">จองเลย</p>
 <div class="btns">
   <a class="btn" href="https://www.booking.com/searchresults.html?ss=Busan&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 โรงแรม <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Busan&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ บิน <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Busan&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ เที่ยวบิน <small>· Skyscanner</small></a>
   <a class="btn" href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
   <a class="btn" href="https://www.klook.com/search/?query=Busan&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ทัวร์·ตั๋ว <small>· Klook</small></a>
 </div>
-<p class="disc disc-aff">ลิงค์การจองในหน้านี้เป็นลิงค์พันธมิตร(ค่าคมิชชั่น) ผู้ใช้ไม่มีค่าใช้งานเพิ่มเติม</p>
-
-<div class="box">
-  <div style="font-weight:600;font-size:14px">สถานที่จัดแสดง</div>
-  <p style="margin:4px 0 0;font-size:14px">부산 아시아드 주경기장 · ปูซาน</p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%B6%80%EC%82%B0+%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C+%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5+Busan" target="_blank" rel="noopener">📍 ดูบนแผนที่</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">คำแนะนำที่พักใกล้เคียง</div>
-  <ul><li>บริเวณใกล้สนามกีฬา อาจหมดเร็ว — แนะนำพื้นที่ Seomyeon/Haeundae + การเดินทางรถไฟใต้ดินค่ะ</li><li>วันธรรมชาติปนรวม ช่วยหลีกเลี่ยงราคาพุ่งวันหยุดนะ</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">วิธีกลับบ้านหลังคอนเสิร์ต</div>
-  <p style="margin:6px 0 0;font-size:14px">อย่าลืมตรวจสอบรถไฟท้ายสุด/รถบัสกลางคืนน่ะ ถ้าสถานที่ใกล้เคียงหมด ลอง Ulsan KTX ทางเลือก</p>
-</div>
+<p class="disc disc-aff">ลิงก์การจองในหน้านี้เป็นลิงก์ของพันธมิตร (ได้รับค่าธรรมเนียม) ผู้ใช้ไม่มีค่าใช้งานเพิ่มเติมค่ะ</p>
 
 <div class="news">
-  <input placeholder="อีเมล — แจ้งเตือนราคา·หมดตั๋ว ศิลปินท่านนี้">
-  <button>รับแจ้งเตือน</button>
+  <input placeholder="อีเมล — รับการแจ้งเตือนราคา/หมดตั๋ว ของศิลปินนี้">
+  <button>รับการแจ้งเตือน</button>
 </div>
 
-<div class="foot">ลิงค์การจองในแต่ละหน้าเป็นลิงค์พันธมิตร(ค่าคมิชชั่น) ราคาและจำนวนห้องว่างที่แสดงเป็นการประมาณการซึ่งอาจแตกต่างจากความเป็นจริง ความรับผิดชอบในการจองและชำระเงินอยู่กับผู้ใช้เอง · bybias.100m1s.com</div>
+<div class="foot">ลิงก์การจองในแต่ละหน้าเป็นลิงก์ของพันธมิตร (ได้รับค่าธรรมเนียม) การคาดการณ์ราคา และจำนวนตั๋วคงเหลือ เป็นการประมาณการเท่านั้น อาจแตกต่างจากความเป็นจริง ความรับผิดชอบในการจอง และการชำระเงิน เป็นของท่านเองนะคะ · bybias.100m1s.com</div>
 
-<p class="gdisc">เว็บไซต์นี้เป็นบริการข้อมูลตารางเวลาและการท่องเที่ยวไม่เป็นทางการ ไม่เกี่ยวข้องกับศิลปินหรือเอจเจนซี่ และไม่มีความสัมพันธ์พันธมิตรอย่างเป็นทางการ</p>
+<p class="gdisc">เว็บไซต์นี้เป็นบริการข้อมูลตารางเวลา และการท่องเที่ยวที่ไม่เป็นทางการ ไม่เกี่ยวข้องกับศิลปิน และบริษัทจัดการ และไม่มีความสัมพันธ์ทางพันธมิตรอย่างเป็นทางการนะคะ</p>
 </div><script>
 (function(){try{
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';
