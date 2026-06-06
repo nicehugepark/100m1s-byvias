@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -128,6 +128,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <input type="radio" name="evtab" id="tab-c" checked><label for="tab-c">여행 잡기 · 콘서트</label>
   <input type="radio" name="evtab" id="tab-m"><label for="tab-m">방청 잡기 · 음악방송</label>
   <input type="radio" name="evtab" id="tab-u"><label for="tab-u">언더그라운드</label>
+  <input type="radio" name="evtab" id="tab-s"><label for="tab-s">직관 잡기 · 스포츠</label>
   <div class="tabpanel tp-c"><div class="grid"><a class="ecard" href="woodz-archive1-berlin.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
 <span class="ghost" aria-hidden="true">WOODZ</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="WOODZ"><bdi>WOODZ</bdi></span><div class="a"><bdi>WOODZ</bdi></div></div>
@@ -387,6 +388,23 @@ body{overflow-wrap:break-word;word-break:normal}
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="주간 아이돌 점프 vol.19"><bdi>주간 </bdi></span><div class="a"><bdi>주간 아이돌 점프 vol.19</bdi></div></div>
 <div class="c">🇰🇷 대한민국 서울 · 정기 공연 (일정 발표 대기)</div>
 <span class="badge" style="color:#6B3FA0;background:#F0E9F9;font-size:11px">🎤 언더그라운드</span></a></div></div>
+  <div class="tabpanel tp-s"><div class="grid"><a class="ecard" href="wc2026-kor-cze-guadalajara.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,#ffffff 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
+<span class="ghost" aria-hidden="true">KOR</span>
+<div class="ehead"><span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span><div class="a"><bdi>대한민국 대표팀</bdi></div></div>
+<div class="c">멕시코 과달라하라(사포판) · 2026-06-11 <span class="dday" data-date="2026-06-11"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">⚽ 스포츠</span></a><a class="ecard" href="wc2026-mex-kor-guadalajara.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,#ffffff 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
+<span class="ghost" aria-hidden="true">KOR</span>
+<div class="ehead"><span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span><div class="a"><bdi>대한민국 대표팀</bdi></div></div>
+<div class="c">멕시코 과달라하라(사포판) · 2026-06-18 <span class="dday" data-date="2026-06-18"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">⚽ 스포츠</span></a><a class="ecard" href="wc2026-rsa-kor-monterrey.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,#ffffff 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
+<span class="ghost" aria-hidden="true">KOR</span>
+<div class="ehead"><span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span><div class="a"><bdi>대한민국 대표팀</bdi></div></div>
+<div class="c">멕시코 몬테레이(과달루페, 누에보레온주) · 2026-06-24 <span class="dday" data-date="2026-06-24"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">⚽ 스포츠</span></a><a class="ecard" href="wc2026-kor-r32-conditional.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,#ffffff 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
+<span class="ghost" aria-hidden="true">KOR</span>
+<div class="ehead"><span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span><div class="a"><bdi>대한민국 대표팀</bdi></div></div>
+<div class="c">미국 또는 멕시코 (조 순위별 구장 결정) · 2026-06-28 <span class="dday" data-date="2026-06-28"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">⚽ 스포츠</span></a></div></div>
 </div>
 <p class="disc">각 페이지의 예약 링크는 제휴(수수료) 링크입니다. 가격·잔량 전망은 추정이며 실제와 다를 수 있습니다. 예약·결제 책임은 이용자 본인에게 있습니다.</p>
 <div class="news"><input placeholder="이메일 — 새 공연 가격 알림 받기"><button>알림 받기</button></div>
