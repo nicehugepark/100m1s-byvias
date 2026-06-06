@@ -45,14 +45,14 @@ li{margin:5px 0;overflow-wrap:break-word}
 /* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
 .news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
 .disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
 .gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
-.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 7px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px}
@@ -81,7 +81,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
 .linfo>summary:hover{border-color:#c9c7bd}
-.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:8px 0 2px}
+.limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:13px 0;min-height:44px;box-sizing:border-box;display:flex;align-items:center}
 .limore>summary::-webkit-details-marker{display:none}
 .limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
 .ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
@@ -100,7 +100,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
-.tabs>label{display:inline-block;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 14px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
 #tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
@@ -127,7 +127,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div style="color:var(--muted);font-size:13px">가격·수요 전망 (발표 이후)</div>
   
   
-  <p style="margin:10px 0 0;font-size:14px"><b>예약 데드라인:</b> 방콕은 숙소 공급 풍부해 급등 위험 낮은 편. 항공권 타이밍이 핵심.</p>
+  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">방콕은 숙소 공급 풍부해 급등 위험 낮은 편. 항공권 타이밍이 핵심.</p>
 </div>
 <p class="disc">가격·잔량 전망은 추정이며 실제와 다를 수 있습니다. 예약·결제 책임은 이용자 본인에게 있습니다.</p>
 
