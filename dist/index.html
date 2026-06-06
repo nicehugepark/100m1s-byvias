@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -127,6 +127,7 @@ body{overflow-wrap:break-word;word-break:normal}
 <div class="tabs" role="tablist">
   <input type="radio" name="evtab" id="tab-c" checked><label for="tab-c">여행 잡기 · 콘서트</label>
   <input type="radio" name="evtab" id="tab-m"><label for="tab-m">방청 잡기 · 음악방송</label>
+  <input type="radio" name="evtab" id="tab-u"><label for="tab-u">언더그라운드</label>
   <div class="tabpanel tp-c"><div class="grid"><a class="ecard" href="woodz-archive1-berlin.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
 <span class="ghost" aria-hidden="true">WOODZ</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="WOODZ"><bdi>WOODZ</bdi></span><div class="a"><bdi>WOODZ</bdi></div></div>
@@ -147,11 +148,19 @@ body{overflow-wrap:break-word;word-break:normal}
 <span class="ghost" aria-hidden="true">ITZY</span>
 <div class="ehead"><span class="abadge" style="background:#D81E5B;color:#ffffff" title="ITZY"><bdi>ITZY</bdi></span><div class="a"><bdi>ITZY</bdi></div></div>
 <div class="c">🇭🇰 홍콩 · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="ive-showwhatiam-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="kim-junsu-gravity-macau.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIM JUNSU</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KIM JUNSU"><bdi>KIM JUNSU</bdi></span><div class="a"><bdi>KIM JUNSU</bdi></div></div>
+<div class="c">🇲🇴 마카오 · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="ive-showwhatiam-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
 <span class="ghost" aria-hidden="true">IVE</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="IVE"><bdi>IVE</bdi></span><div class="a"><bdi>IVE</bdi></div></div>
 <div class="c">🇯🇵 일본 도쿄 · 2026-06-24 <span class="dday" data-date="2026-06-24"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="babymonster-choom-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="kim-junsu-gravity-taipei.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIM JUNSU</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KIM JUNSU"><bdi>KIM JUNSU</bdi></span><div class="a"><bdi>KIM JUNSU</bdi></div></div>
+<div class="c">🇹🇼 대만 타이베이 · 2026-06-24 <span class="dday" data-date="2026-06-24"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="babymonster-choom-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
 <span class="ghost" aria-hidden="true">BM</span>
 <div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER"><bdi>BM</bdi></span><div class="a"><bdi>BABYMONSTER</bdi></div></div>
 <div class="c">🇰🇷 대한민국 서울 · 2026-06-26 <span class="dday" data-date="2026-06-26"></span></div>
@@ -159,10 +168,26 @@ body{overflow-wrap:break-word;word-break:normal}
 <span class="ghost" aria-hidden="true">KIOF</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KISS OF LIFE"><bdi>KIOF</bdi></span><div class="a"><bdi>KISS OF LIFE</bdi></div></div>
 <div class="c">🇯🇵 일본 도쿄 · 2026-06-27 <span class="dday" data-date="2026-06-27"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="kim-junsu-gravity-tokyo-d1.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIM JUNSU</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KIM JUNSU"><bdi>KIM JUNSU</bdi></span><div class="a"><bdi>KIM JUNSU</bdi></div></div>
+<div class="c">🇯🇵 일본 도쿄 · 2026-07-03 <span class="dday" data-date="2026-07-03"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="kim-junsu-gravity-tokyo-d2.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIM JUNSU</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KIM JUNSU"><bdi>KIM JUNSU</bdi></span><div class="a"><bdi>KIM JUNSU</bdi></div></div>
+<div class="c">🇯🇵 일본 도쿄 · 2026-07-04 <span class="dday" data-date="2026-07-04"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="kim-junsu-gravity-osaka-d1.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIM JUNSU</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KIM JUNSU"><bdi>KIM JUNSU</bdi></span><div class="a"><bdi>KIM JUNSU</bdi></div></div>
+<div class="c">🇯🇵 일본 오사카 · 2026-07-09 <span class="dday" data-date="2026-07-09"></span></div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="twice-thisisfor-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,#ffffff 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
 <span class="ghost" aria-hidden="true">TW</span>
 <div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE"><bdi>TW</bdi></span><div class="a"><bdi>TWICE</bdi></div></div>
 <div class="c">🇰🇷 대한민국 서울 · 2026-07-10 <span class="dday" data-date="2026-07-10"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="kim-junsu-gravity-osaka-d2.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIM JUNSU</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KIM JUNSU"><bdi>KIM JUNSU</bdi></span><div class="a"><bdi>KIM JUNSU</bdi></div></div>
+<div class="c">🇯🇵 일본 오사카 · 2026-07-10 <span class="dday" data-date="2026-07-10"></span></div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="lesserafim-pureflow-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,#ffffff 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
 <span class="ghost" aria-hidden="true">LSF</span>
 <div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
@@ -175,6 +200,10 @@ body{overflow-wrap:break-word;word-break:normal}
 <span class="ghost" aria-hidden="true">EXO</span>
 <div class="ehead"><span class="abadge" style="background:#AEB4BC;color:#1a1a18" title="EXO"><bdi>EXO</bdi></span><div class="a"><bdi>EXO</bdi></div></div>
 <div class="c">🇯🇵 일본 도쿄 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="park-ji-hoon-reflect-bangkok.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">PARK JI HOON</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PARK JI HOON"><bdi>PARK JI HOON</bdi></span><div class="a"><bdi>PARK JI HOON</bdi></div></div>
+<div class="c">🇹🇭 태국 방콕 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="enhypen-bloodsaga-dallas.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(242,112,30,0.10) 0%,#ffffff 42%,rgba(242,112,30,0.26) 100%);--stripe:#F2701E">
 <span class="ghost" aria-hidden="true">EN</span>
 <div class="ehead"><span class="abadge" style="background:#F2701E;color:#ffffff" title="ENHYPEN"><bdi>EN</bdi></span><div class="a"><bdi>ENHYPEN</bdi></div></div>
@@ -183,11 +212,23 @@ body{overflow-wrap:break-word;word-break:normal}
 <span class="ghost" aria-hidden="true">BND</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="BOYNEXTDOOR"><bdi>BND</bdi></span><div class="a"><bdi>BOYNEXTDOOR</bdi></div></div>
 <div class="c">🇰🇷 대한민국 서울 · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="kim-junsu-gravity-hongkong.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIM JUNSU</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KIM JUNSU"><bdi>KIM JUNSU</bdi></span><div class="a"><bdi>KIM JUNSU</bdi></div></div>
+<div class="c">🇭🇰 홍콩 · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="park-ji-hoon-reflect-singapore.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">PARK JI HOON</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PARK JI HOON"><bdi>PARK JI HOON</bdi></span><div class="a"><bdi>PARK JI HOON</bdi></div></div>
+<div class="c">🇸🇬 싱가포르 · 2026-07-18 <span class="dday" data-date="2026-07-18"></span></div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="xg-the-core-bangkok.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
 <span class="ghost" aria-hidden="true">XG</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="XG"><bdi>XG</bdi></span><div class="a"><bdi>XG</bdi></div></div>
 <div class="c">🇹🇭 태국 방콕 · 2026-07-19 <span class="dday" data-date="2026-07-19"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="illit-press-start-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="kim-junsu-gravity-singapore.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KIM JUNSU</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KIM JUNSU"><bdi>KIM JUNSU</bdi></span><div class="a"><bdi>KIM JUNSU</bdi></div></div>
+<div class="c">🇸🇬 싱가포르 · 2026-07-19 <span class="dday" data-date="2026-07-19"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="illit-press-start-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
 <span class="ghost" aria-hidden="true">ILLIT</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="ILLIT"><bdi>ILLIT</bdi></span><div class="a"><bdi>ILLIT</bdi></div></div>
 <div class="c">🇯🇵 일본 도쿄 · 2026-07-23 <span class="dday" data-date="2026-07-23"></span></div>
@@ -207,10 +248,22 @@ body{overflow-wrap:break-word;word-break:normal}
 <span class="ghost" aria-hidden="true">CORTIS</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="CORTIS"><bdi>CORTIS</bdi></span><div class="a"><bdi>CORTIS</bdi></div></div>
 <div class="c">🇺🇸 미국 뉴욕 · 2026-08-06 <span class="dday" data-date="2026-08-06"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="aespa-synk-complaexity-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="kai-kaion-yokohama.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KAI</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KAI"><bdi>KAI</bdi></span><div class="a"><bdi>KAI</bdi></div></div>
+<div class="c">🇯🇵 일본 요코하마 · 2026-08-06 <span class="dday" data-date="2026-08-06"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="aespa-synk-complaexity-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
 <span class="ghost" aria-hidden="true">æ</span>
 <div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
 <div class="c">🇰🇷 대한민국 서울 · 2026-08-07 <span class="dday" data-date="2026-08-07"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="kai-kaion-yokohama-d2.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">KAI</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KAI"><bdi>KAI</bdi></span><div class="a"><bdi>KAI</bdi></div></div>
+<div class="c">🇯🇵 일본 요코하마 · 2026-08-07 <span class="dday" data-date="2026-08-07"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="park-ji-hoon-reflect-manila.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">PARK JI HOON</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PARK JI HOON"><bdi>PARK JI HOON</bdi></span><div class="a"><bdi>PARK JI HOON</bdi></div></div>
+<div class="c">필리핀 마닐라 · 2026-08-08 <span class="dday" data-date="2026-08-08"></span></div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="aespa-synk-complaexity-taipei-dome.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
 <span class="ghost" aria-hidden="true">æ</span>
 <div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
@@ -231,7 +284,11 @@ body{overflow-wrap:break-word;word-break:normal}
 <span class="ghost" aria-hidden="true">TWS</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="TWS"><bdi>TWS</bdi></span><div class="a"><bdi>TWS</bdi></div></div>
 <div class="c">🇯🇵 일본 후쿠오카 · 2026-08-28 <span class="dday" data-date="2026-08-28"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="plave-keep-it-manic-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">발표 골든창</span></a><a class="ecard" href="park-ji-hoon-reflect-jakarta.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">PARK JI HOON</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PARK JI HOON"><bdi>PARK JI HOON</bdi></span><div class="a"><bdi>PARK JI HOON</bdi></div></div>
+<div class="c">인도네시아 자카르타 · 2026-08-29 <span class="dday" data-date="2026-08-29"></span></div>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">초장기 선점</span></a><a class="ecard" href="plave-keep-it-manic-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
 <span class="ghost" aria-hidden="true">PLAVE</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PLAVE"><bdi>PLAVE</bdi></span><div class="a"><bdi>PLAVE</bdi></div></div>
 <div class="c">🇰🇷 대한민국 인천 · 2026-09-12 <span class="dday" data-date="2026-09-12"></span></div>
@@ -304,7 +361,32 @@ body{overflow-wrap:break-word;word-break:normal}
 <span class="ghost" aria-hidden="true">♫</span>
 <div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="뮤직뱅크 (Music Bank)"><bdi>♫</bdi></span><div class="a"><bdi>뮤직뱅크 (Music Bank)</bdi></div></div>
 <div class="c">🇰🇷 대한민국 서울 · 2026-06-12 <span class="dday" data-date="2026-06-12"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 음악방송</span></a></div></div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 음악방송</span></a><a class="ecard" href="inkigayo-audience-sbs.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">인기가</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="인기가요 (Inkigayo)"><bdi>인기가</bdi></span><div class="a"><bdi>인기가요 (Inkigayo)</bdi></div></div>
+<div class="c">🇰🇷 대한민국 서울 · 매주 일요일 생방송 (12:20 PM 전후)</div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 방청</span></a><a class="ecard" href="musicbank-audience-kbs.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">뮤직뱅</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="뮤직뱅크 (Music Bank)"><bdi>뮤직뱅</bdi></span><div class="a"><bdi>뮤직뱅크 (Music Bank)</bdi></div></div>
+<div class="c">🇰🇷 대한민국 서울 · 매주 금요일 생방송</div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 방청</span></a><a class="ecard" href="kbs-open-concert-audience.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">열린음</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="열린음악회 (Open Concert)"><bdi>열린음</bdi></span><div class="a"><bdi>열린음악회 (Open Concert)</bdi></div></div>
+<div class="c">🇰🇷 대한민국 서울 · 매주 일요일 오후 6시 방송 (KBS 1TV)</div>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 방청</span></a></div></div>
+  <div class="tabpanel tp-u"><div class="grid"><a class="ecard" href="azito-2026-06-10-toriset-lineup.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">라이브</span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="라이브아이돌 합동공연 (2026-06-10)"><bdi>라이브</bdi></span><div class="a"><bdi>라이브아이돌 합동공연 (2026-06-10)</bdi></div></div>
+<div class="c">🇰🇷 대한민국 서울 · 2026-06-10 <span class="dday" data-date="2026-06-10"></span></div>
+<span class="badge" style="color:#6B3FA0;background:#F0E9F9;font-size:11px">🎤 언더그라운드</span></a><a class="ecard" href="seoul-live-idol-festival-2026-07-18-19-kintex.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">서울 </span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="서울 라이브아이돌 페스티벌"><bdi>서울 </bdi></span><div class="a"><bdi>서울 라이브아이돌 페스티벌</bdi></div></div>
+<div class="c">🇰🇷 대한민국 고양(일산) · 2026-07-18 <span class="dday" data-date="2026-07-18"></span></div>
+<span class="badge" style="color:#6B3FA0;background:#F0E9F9;font-size:11px">🎤 언더그라운드</span></a><a class="ecard" href="jugan-idol-jump-vol19-aroaro-RECURRING.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
+<span class="ghost" aria-hidden="true">주간 </span>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="주간 아이돌 점프 vol.19"><bdi>주간 </bdi></span><div class="a"><bdi>주간 아이돌 점프 vol.19</bdi></div></div>
+<div class="c">🇰🇷 대한민국 서울 · 정기 공연 (일정 발표 대기)</div>
+<span class="badge" style="color:#6B3FA0;background:#F0E9F9;font-size:11px">🎤 언더그라운드</span></a></div></div>
 </div>
 <p class="disc">각 페이지의 예약 링크는 제휴(수수료) 링크입니다. 가격·잔량 전망은 추정이며 실제와 다를 수 있습니다. 예약·결제 책임은 이용자 본인에게 있습니다.</p>
 <div class="news"><input placeholder="이메일 — 새 공연 가격 알림 받기"><button>알림 받기</button></div>
