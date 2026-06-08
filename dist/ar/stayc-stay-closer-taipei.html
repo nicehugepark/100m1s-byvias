@@ -1,7 +1,7 @@
 <!doctype html><html lang="ar" dir="rtl" data-lang="ar"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>STAYC تايبيه — ByBias</title>
-<meta name="description" content="حفلات المعجبين → الحجز بأسعار أقل مسبقاً">
+<meta name="description" content="الأحداث التي يجتمع فيها المعجبون → الحجز المبكر برسوم أقل">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="ko" href="../stayc-stay-closer-taipei.html">
 <link rel="alternate" hreflang="en" href="../en/stayc-stay-closer-taipei.html">
@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -127,55 +127,60 @@ body{overflow-wrap:break-word;word-break:normal}
   <div><h1 style="margin:0"><bdi>STAYC</bdi> — <bdi>تايبيه</bdi></h1>
   <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>2026 FAN CONCERT TOUR [STAY CLOSER]</bdi></span><span class="subitem"><bdi>تايبيه (لم يتم الإعلان عن المكان)</bdi></span><span class="subitem">2026-10-11 <span class="dday" data-date="2026-10-11"></span></span><span class="subitem">🇹🇼 تايوان تايبيه</span></p></div>
 </div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">الحجز طويل الأجل · احجز قبل عدة أشهر</span>
+<span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">الحجز المبكر · احجز قبل عدة أشهر</span>
 
 <div class="box outlook">
   <div style="color:var(--muted);font-size:13px">توقعات الأسعار والطلب (بعد الإعلان)</div>
-  <div class="metric">بدون بيانات. حفلات المعجبين بالخارج — طلب السفر المصحوب برحلات وإقامات.</div>
-  <div style="font-size:14px;margin-top:4px">بدون بيانات. المكان لم يُعلن عنه بعد.</div>
-  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">بالنسبة لحفلات المعجبين بالخارج، تميل أسعار الرحلات للارتفاع عادة قبل أسعار الفنادق. احجز الرحلات أولاً عند تأكيد الجدول.</p>
+  <div class="metric">لا توجد بيانات. حفل المعجبين بالخارج — يترافق معه طلب على الرحلات الجوية والإقامة.</div>
+  <div style="font-size:14px;margin-top:4px">لا توجد بيانات. لم يتم الإعلان عن المكان.</div>
+  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">بالنسبة لحفل المعجبين بالخارج، تميل أسعار الرحلات الجوية للارتفاع قبل أسعار الفنادق. عند تأكيد الجدول، اختر الرحلات الجوية أولاً.</p>
 </div>
-<p class="disc">توقعات الأسعار والكميات المتبقية تقديرية وقد تختلف عن الواقع. المسؤولية عن الحجز والدفع تقع على عاتق المستخدم.</p>
+<p class="disc">تقديرات الأسعار والكميات المتبقية تقريبية وقد تختلف عن الواقع. تقع مسؤولية الحجز والدفع على عاتق المستخدم.</p>
 
 <div class="box srcbox">
-  <div style="font-weight:600;font-size:14px">مصدر الجدول الزمني</div>
-  <div class="srcs"><a class="srclink" href="https://stayc.lnk.to/tour" target="_blank" rel="noopener nofollow">صفحة جولة STAYC الرسمية ↗</a><a class="srclink" href="https://www.starnewskorea.com/en/music/2026/05/19/2026051914065962082" target="_blank" rel="noopener nofollow">Starnews — STAY CLOSER 7 مدن ↗</a></div>
+  <div style="font-weight:600;font-size:14px">مصدر الحدث</div>
+  <div class="srcs"><a class="srclink" href="https://stayc.lnk.to/tour" target="_blank" rel="noopener nofollow">صفحة الجولة الرسمية لـ STAYC ↗</a><a class="srclink" href="https://www.starnewskorea.com/en/music/2026/05/19/2026051914065962082" target="_blank" rel="noopener nofollow">Starnews — STAY CLOSER 7 مدن ↗</a></div>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">الإعلان الرسمي</div>
   <a class="postlink plink" href="https://stayc.lnk.to/tour" target="_blank" rel="noopener nofollow" aria-label="Link الإعلان الرسمي"><span>Link</span><span aria-hidden="true">↗</span></a>
 </div>
-<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">الحفل القادم</div><div class="oshows"><a class="oshow oshow-next" href="stayc-stay-closer-seoul.html"><span class="nextflag">الحفل القادم →</span> <span class="osc">🇰🇷 كوريا الجنوبية سيول</span><span class="osd">2026-08-22 <span class="dday" data-date="2026-08-22"></span></span></a></div></div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">الحفلة القادمة</div><div class="oshows"><a class="oshow oshow-next" href="stayc-stay-closer-seoul.html"><span class="nextflag">الحفلة القادمة →</span> <span class="osc">🇰🇷 كوريا الجنوبية سيول</span><span class="osd">2026-08-22 <span class="dday" data-date="2026-08-22"></span></span></a></div></div>
 <div class="box">
-  <div style="font-weight:600;font-size:14px;margin-bottom:8px">فيديوهات الفنان</div>
-  <button class="ytfacade" data-vid="W8ml4ryPwic" aria-label="تشغيل الفيديو: STAYC &#x27;I WANT IT&#x27; الفيديو الموسيقي"
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">مقاطع فيديو للفنان</div>
+  <button class="ytfacade" data-vid="W8ml4ryPwic" aria-label="تشغيل الفيديو: STAYC &#x27;I WANT IT&#x27; MV"
     style="background-image:url('https://i.ytimg.com/vi/W8ml4ryPwic/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
-  <p style="margin:8px 0 0;font-size:13px">STAYC &#x27;I WANT IT&#x27; الفيديو الموسيقي <span style="color:var(--muted)">· STAYC (High Up الرسمي)</span></p>
+  <p style="margin:8px 0 0;font-size:13px">STAYC &#x27;I WANT IT&#x27; MV <span style="color:var(--muted)">· STAYC (High Up الرسمية)</span></p>
 </div>
 <div class="box">
-  <div style="font-weight:600;font-size:14px;margin-bottom:8px">القناة الرسمية للفنان</div>
-  <div class="chchips"><a class="chchip" href="https://www.highup-ent.com/en/stayc/" target="_blank" rel="noopener nofollow"><span>شركة الإنتاج · High Up Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/stayc_highup/" target="_blank" rel="noopener nofollow" aria-label="STAYC Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/STAYC_official" target="_blank" rel="noopener nofollow" aria-label="STAYC X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@STAYC" target="_blank" rel="noopener nofollow" aria-label="STAYC YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@stayc_official" target="_blank" rel="noopener nofollow" aria-label="STAYC TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.highup-ent.com/en/stayc/" target="_blank" rel="noopener nofollow"><span>نادي المعجبين · SWITH</span><span aria-hidden="true"> ↗</span></a></div>
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">قنوات الفنان الرسمية</div>
+  <div class="chchips"><a class="chchip" href="https://www.highup-ent.com/en/stayc/" target="_blank" rel="noopener nofollow"><span>الشركة الأم · High Up Entertainment</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/stayc_highup/" target="_blank" rel="noopener nofollow" aria-label="STAYC Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/STAYC_official" target="_blank" rel="noopener nofollow" aria-label="STAYC X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@STAYC" target="_blank" rel="noopener nofollow" aria-label="STAYC YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@stayc_official" target="_blank" rel="noopener nofollow" aria-label="STAYC TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.highup-ent.com/en/stayc/" target="_blank" rel="noopener nofollow"><span>نادي المعجبين · SWITH</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
 <div class="box tkbox" style="padding:0">
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 حجز التذاكر</div>
-  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">الحجز العام</div><div class="lv">2026-05-30 الساعة 12:00 (KKTIX)</div></div><div class="lirow"><div class="lk">منصات الحجز</div><div class="lv"><a href="https://farglorycreative.kktix.cc/events/cacf3d76" target="_blank" rel="noopener nofollow">KKTIX (Farglory Creative) ↗</a></div></div><div class="lirow"><div class="lk">نطاق الأسعار</div><div class="lv">VIP 7800TWD, عام 5800TWD, عام 4800TWD, عام 3800TWD, عام 2800TWD</div></div></div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">الحجز العام</div><div class="lv">2026-05-30 الساعة 12:00 (KKTIX)</div></div><div class="lirow"><div class="lk">خيارات الحجز</div><div class="lv"><a href="https://farglorycreative.kktix.cc/events/cacf3d76" target="_blank" rel="noopener nofollow">KKTIX (Farglory Creative) ↗</a></div></div><div class="lirow"><div class="lk">نطاق الأسعار</div><div class="lv">VIP 7800TWD, عام 5800TWD, عام 4800TWD, عام 3800TWD, عام 2800TWD</div></div></div>
 </div>
 <div class="box">
-  <div style="font-weight:600;font-size:14px">المكان</div>
+  <div style="font-weight:600;font-size:14px">قاعة الحفل</div>
   <p style="margin:4px 0 0;font-size:14px"><bdi>تايبيه (لم يتم الإعلان عن المكان)</bdi> · <bdi>تايبيه</bdi></p>
   <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4+%28%EA%B3%B5%EC%97%B0%EC%9E%A5+%EB%AF%B8%EB%B0%9C%ED%91%9C%29+Taipei" target="_blank" rel="noopener">📍 عرض على الخريطة</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">نصائح الإقامة القريبة</div><ul><li>أعط الأولوية للمناطق القريبة من محطات MRT؛ تحقق من خط النقل عند الإعلان عن المكان.</li><li>تايبيه توفر مجموعة واسعة من الإقامات ذات سعر معقول — لا حاجة للاستعجال في الحجز.</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">نصائح السكن القريب</div><ul><li>اختر المناطق القريبة من محطات MRT، وتحقق من خطوط المترو بعد إعلان المكان.</li><li>تايبيه توفر نطاقاً واسعاً من الإقامات اقتصادية — لا حاجة للعجلة.</li></ul>
   <div style="font-weight:600;font-size:14px;margin-top:12px">طريق العودة بعد الحفل</div>
-  <p style="margin:6px 0 0;font-size:14px">المكان لم يُعلن عنه بعد. تايبيه بها عدة مناطق بإمكانية وصول جيدة من خلال MRT.</p>
+  <p style="margin:6px 0 0;font-size:14px">لم يتم الإعلان عن المكان. تايبيه توفر عدة مناطق بإمكانية وصول جيدة إلى نظام MRT.</p>
 </div>
 
 <div class="box linfo-box">
-  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 المعلومات العملية المحلية</div>
-  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">النقل</div><div class="lv">مترو تايبيه (كثيف الخدمة وموثوق الجدول الزمني) + حافلات المدينة. بطاقة EasyCard هي المعيار — حوالي 20% خصم على المترو والحافلات، متوافقة مع الدفع في محلات الراحة. قبة تايبيه تقع في منطقة محطات 南京三民(نانجينج سانمين) / 台北小巨蛋(تايبيه أرينا).</div></div></div>
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 معلومات محلية عملية</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">النقل</div><div class="lv">نقل سريع بتايبيه (شبكة كثيفة وفي الموعد) + حافلات مدينة. بطاقة سهلة (EasyCard) هي المعيار — توفر حوالي 20% على النقل السريع والحافلات، متوافقة مع متاجر الراحة. قبة تايبيه بالقرب من محطات نانجينغ سانمين (南京三民) و قبة تايبيه الصغرى (台北小巨蛋).</div></div></div>
   <details class="limore">
-    <summary>المزيد</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">التنقل ليلاً</div><div class="lv">آخر قطار MRT تقريباً في منتصف الليل (يختلف حسب خط المترو والاتجاه). هناك حالات لزيادة مؤقتة بالخدمة في المحطات المجاورة خلال الحفلات الكبرى. التاكسي و Uber متاحان على نطاق واسع بعد آخر قطار. يُنصح بالتحقق من موعد آخر قطار مقدماً إذا انتهت الحفلة في القبة بعد الساعة 22:00.</div></div><div class="lirow"><div class="lk">الدفع</div><div class="lv">البطاقات مقبولة بشكل جيد في المناطق الحضرية. الأسواق الليلية والأسواق التقليدية تعتمد على الدفع بالنقد بشكل أساسي. خدمات الدفع الصغيرة عبر بطاقات ذكية (EZ Card) متاحة على نطاق واسع، وتطبيقات الدفع عبر رمز QR (مثل LINE Pay) منتشرة بشكل واسع.</div></div><div class="lirow"><div class="lk">صرف العملات</div><div class="lv">الدولار التايواني (TWD, NT$). يُنصح بتحضير النقود للأسواق الليلية. تحويل العملات في المطار والمدينة وأجهزة صراف آلي في المتاجر.</div></div><div class="lirow"><div class="lk">اللغة</div><div class="lv">اللغة الصينية (النسخة التقليدية). المواقع السياحية وخطوط MRT لديها ملصقات إنجليزية جيدة؛ استخدام اللغة الإنجليزية في الحياة اليومية متوسط.</div></div><div class="lirow"><div class="lk">التطبيق المحلي</div><div class="lv">Uber <span style='color:var(--muted)'>(استدعاء السيارات (تايوان))</span> · Google Maps <span style='color:var(--muted)'>(مسار MRT والحافلة)</span> · LINE Pay <span style='color:var(--muted)'>(رموز QR والدفع الرقمي)</span></div></div><div class="lirow"><div class="lk">تطبيق النقل الليلي</div><div class="lv">Uber <span style='color:var(--muted)'>(استدعاء المركبات ليلاً (واجهة إنجليزية·دفع مقدم، مثالي للأجانب))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(استدعاء تاكسي تايوان (المدمج في تطبيق LINE))</span> · 55688 (台灣大車隊 / خدمة تايوان للسيارات) <span style='color:var(--muted)'>(استدعاء تاكسي (20,000+ سيارة))</span> · Yoxi <span style='color:var(--muted)'>(بدائل محلية لاستدعاء التاكسي والمركبات)</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">نصيحة الاستدعاء</div><div class="lv">تجنب طلب السيارة من المدخل الرئيسي لقبة تايبيه — انتقل إلى كتلة مجاورة ثم استدعِ Uber ↔ LINE Taxi ↔ 55688 بالتناوب لتوزيع الطلبات</div></div></div>
+    <summary>عرض المزيد</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">النقل الليلي</div><div class="lv">آخر قطار نقل سريع يغادر تقريباً حول منتصف الليل (يختلف حسب الخط والاتجاه). خلال الحفلات الكبرى قد توجد خدمات مؤقتة إضافية في المحطات المجاورة. بعد آخر قطار سيارات الأجرة و Uber متوفرة بشكل واسع. إذا انتهت الحفلة بعد الساعة 22، يُنصح بالتحقق من أوقات آخر قطار مقدماً.</div></div><div class="lirow"><div class="lk">الدفع</div><div class="lv">البطاقات مقبولة جداً في المدينة. الأسواق الليلية والأسواق التقليدية تعتمد على النقود الورقية. دفع المبالغ الصغيرة متاح بنطاق واسع عبر بطاقة سهلة (EasyCard)؛ QR وتطبيقات مثل LINE Pay تتسع.</div></div><div class="lirow"><div class="lk">العملات والصرف</div><div class="lv">دولار تايواني (TWD, NT$). يُنصح بتحضير نقود للأسواق الليلية. صرف العملات متاح في المطار والمدينة وأجهزة الصرف الآلي في متاجر الراحة.</div></div><div class="lirow"><div class="lk">اللغة</div><div class="lv">لغة صينية (تقليدية). المواقع السياحية والنقل السريع بها إنجليزية جيدة؛ استخدام الإنجليزية اليومية متوسط.</div></div><div class="lirow"><div class="lk">التطبيقات المحلية</div><div class="lv">Uber <span style='color:var(--muted)'>(استدعاء السيارات (تشغيل تايواني))</span> · Google Maps <span style='color:var(--muted)'>(مسارات النقل السريع والحافلات)</span> · LINE Pay <span style='color:var(--muted)'>(رموز QR والدفع المحمول)</span></div></div><div class="lirow"><div class="lk">تطبيقات المواصلات الليلية</div><div class="lv">Uber <span style='color:var(--muted)'>(استدعاء سيارات ليلية (واجهة إنجليزية، حجز مقدم، مثالي للسياح الأجانب))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(استدعاء سيارات الأجرة الممثلة لتايوان (مرتبط عبر تطبيق LINE))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(خدمة استدعاء أكبر سيارات أجرة (أكثر من 20,000 سيارة))</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(خدمة استدعاء سيارات بديلة (محلية))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">نصائح الحجز</div><div class="lv">تجنّب مدخل قبة تايبيه الرئيسي — انتقل إلى الكتلة القريبة ثم اطلب Uber↔LINE Taxi↔55688 لتوزيع الطلبات</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ الأمان</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">رقم الطوارئ</div><div class="lv"><strong>الشرطة 110</strong> · <strong>الإطفاء والإسعاف 119</strong> · <strong>backup 112(عند ضعف الإشارة)</strong></div></div><div class="lirow"><div class="lk">تحذيرات السفر</div><div class="lv">وزارة الخارجية الأمريكية Level 1 (احتياطات عادية). وزارة الخارجية الكورية أيضاً على المستوى العادي.</div></div><div class="lirow"><div class="lk">شرطة السياحة</div><div class="lv">لا توجد مركز شرطة سياحة متخصص منفصل. شرطة الشؤون الخارجية (0800-024-111، إنجليزي) + خط السياحة الساخن (0800-011-765، 24 ساعة).</div></div><div class="lirow"><div class="lk">أقرب مركز شرطة</div><div class="lv">بالقرب من قاعة Taipei Dome مركز شرطة — ابحث على الخريطة &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Taipei%20Dome" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 عرض على الخريطة ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">معلومات الأمان هي إرشادات عامة مرجعية فقط، وإرشادات السلطات المحلية الرسمية والسفارات لها الأولوية دائماً. أرقام الطوارئ وتحذيرات السفر قد تتغير، يرجى إعادة التحقق قبل السفر.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">احجز الآن</p>
 <div class="btns">
@@ -184,16 +189,16 @@ body{overflow-wrap:break-word;word-break:normal}
   <a class="btn" href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
   <a class="btn" href="https://www.klook.com/search/?query=Taipei&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 الجولات والتذاكر <small>· Klook</small></a>
 </div>
-<p class="disc disc-aff">روابط الحجز على هذه الصفحة هي روابط تابعة (بعمولة). لا توجد تكاليف إضافية على المستخدم.</p>
+<p class="disc disc-aff">روابط الحجز على هذه الصفحة هي روابط تابعة (بعمولة). لا يتحمل المستخدم أي تكاليف إضافية.</p>
 
 <div class="news">
-  <input placeholder="البريد الإلكتروني — تلقي تنبيهات الأسعار والتوفّر لهذا الفنان">
-  <button>تلقي التنبيهات</button>
+  <input placeholder="البريد الإلكتروني — تلقي إشعارات بأسعار هذا الفنان والحفلات المكتملة">
+  <button>تلقي الإشعارات</button>
 </div>
 
-<div class="foot">روابط الحجز على كل صفحة هي روابط تابعة (بعمولة). توقعات الأسعار والكميات المتبقية تقديرية وقد تختلف عن الواقع. المسؤولية عن الحجز والدفع تقع على عاتق المستخدم. · bybias.100m1s.com</div>
+<div class="foot">روابط الحجز في كل صفحة هي روابط تابعة (بعمولة). تقديرات الأسعار والكميات المتبقية تقريبية وقد تختلف عن الواقع. تقع مسؤولية الحجز والدفع على عاتق المستخدم. · bybias.100m1s.com</div>
 
-<p class="gdisc">هذا الموقع هو خدمة معلومات غير رسمية عن جداول الحفلات والسفر، وليس مرتبطًا بالفنانين أو وكالاتهم، وليس له علاقة شراكة رسمية معهم.</p>
+<p class="gdisc">هذا الموقع خدمة غير رسمية لمعلومات الحفلات والسفر، مستقلة عن الفنانين والشركات الإنتاجية، وليس لديها علاقات شراكة رسمية.</p>
 </div><script>
 (function(){try{
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';

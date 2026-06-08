@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -164,6 +164,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">捷運末班大約午夜前後。演唱會後可預約計程車·Uber (Uber 台灣營運)。國家體育場位在市區外圍,散場直後人潮擁擠,建議事先預約。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">都市卡片通用良好，但夜市、攤販多以現金為主。以EasyCard或iPass可於便利店及部分小額交易。QR碼(LINE Pay等)正逐漸普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">台幣(TWD, NT$)。夜市、攤販建議備妥現金。機場、市區內均可兌換或利用便利店ATM。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">中文(繁體)、台語。英文通用度較台北略低，MTR指示牌附英文。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車服務(台灣營運))</span> · Google 地圖 <span style='color:var(--muted)'>(MTR·巴士路線)</span> · LINE Pay <span style='color:var(--muted)'>(QR碼·行動支付(在地商家網絡拓展中))</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車(英文UI、高雄營運可靠度佳))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(台灣最大計程車平台(2萬台+，英文選項))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(LINE整合計程車叫車)</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(計程車·叫車替代方案(在地))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">高雄巨蛋正門廣場，請迴避後移動1~2個街區再叫車。若Uber媒合無響應，改撥55688(計程車隊伍充足)</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">世運站(World Games Station) 毗鄰。MRT 末班車約午夜;因位處郊外,建議演唱會結束後立即呼叫計程車或 Uber。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>警察 110</strong> · <strong>消防·救護 119</strong> · <strong>backup 112(通訊不良時)</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美 國務院·韓 外交部均為平時水準(一般注意)。僅提供天然災害(地震)防災資訊。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無獨立觀光警察局。外事警察(0800-024-111,英語) + 觀光服務熱線(0800-011-765,24小時)。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">國家體育場(世運)附近的派出所 — 地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20National%20Stadium%20Kaohsiung" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

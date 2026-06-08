@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">BART 末班車平日、假日都約午夜發車（各路線有異）——大型演唱會若 22 點後結束，務必提前確認末班車時間。末班車後須倚賴 Uber·Lyft，散場直後預約激增、車費可能上漲。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡跟行動支付(Apple Pay/Google Pay)極為通用。現金幾乎不用(刷卡付小費很普遍)。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">美元(USD, $)。以卡付款為主，小額現金輔助。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英語(常見併用西班牙語)。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車服務(演唱會後首選)。)</span> · Lyft <span style='color:var(--muted)'>(叫車服務(備選)。)</span> · BART (official) <span style='color:var(--muted)'>(BART 即時班次·路線·車資)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜車輛預約主力（末班車後實質首選、英文介面）)</span> · Lyft <span style='color:var(--muted)'>(叫車服務備選(費用比較以分散)。)</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">從 Oakland Arena 正門離開後預約——Uber↔Lyft 車費同時比較。趕得上末班車的話，BART Coliseum Station（行人天橋直連）最便宜又最快。</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">美國加州奧克蘭（非紐西蘭奧克蘭）。BART Coliseum站有行人天橋直通（約步行6分鐘），BLUE·ORANGE·GREEN線。末班車約午夜前後——趕不上可用 Uber/Lyft，演唱會結束後注意車資漲價。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>統一緊急(警察·消防·救護) 911</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">國內（美國加州）。奧克蘭某些地區車輛竊盜·財產犯罪頻率較高— 夜間避免在 Coliseum 地區單獨活動，車內勿放置物品。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專用觀光警察。911(緊急) / 非緊急撥打當地警局報警號碼。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">Oakland Arena(Coliseum) 附近警察局— 地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Oakland%20Arena%20Coliseum" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

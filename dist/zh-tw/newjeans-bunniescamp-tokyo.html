@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -157,6 +157,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">地鐵·JR末班車約午夜~00:30,部分路線約01:00前後(非24小時營運)。末班車後深夜巴士受限,計程車費用高。若表演在22時後結束,須事先確認東京巨蛋至市中心的末班轉乘時間。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">仍以現金為主(小型店鋪、部分餐廳僅收現金)。大型賣場·連鎖店·交通接受信用卡/IC。QR碼(PayPay)持續擴展。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">日圓(JPY, ¥)。現金佔比仍高,建議換取一定金額現金。機場·市區兌換所·7-Eleven提款機(國外卡提領)普遍。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">日語。觀光景點·車站指示牌備有英文且清楚,但日常英語通用度中等偏低,翻譯應用程式頗實用。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(電車轉乘·路線搜尋(英文))</span> · GO (タクシーGO) <span style='color:var(--muted)'>(計程車叫車)</span> · PayPay <span style='color:var(--muted)'>(QR碼行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">GO <span style='color:var(--muted)'>(深夜計程車叫車標準(日本約80%市佔率,東京夜間強勢))</span> · S.RIDE <span style='color:var(--muted)'>(東京特化計程車叫車(OneSwipe,快速配對))</span> · DiDi <span style='color:var(--muted)'>(計程車替代(東京圈運行))</span> · Uber <span style='color:var(--muted)'>(叫計程車(英文介面，深夜後信譽良好))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">避開東京巨蛋正門 — 改從水道橋(すいどうばし)/後楽園(こうらくえん)站對面道路進出，計程車 App 沒接單就交叉呼叫 GO ↔ S.RIDE ↔ DiDi(各 App 合作車隊不同)</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">水道橋(Shuǐdàoqiáo)/後樂園(Hòu Lè Yuán)/東京 Dome City 附近。地鐵·JR 末班車午夜~00:30，建議事先確認往市區末班車的轉乘時間。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>警察 110</strong> · <strong>消防·救護 119</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美 國務院·韓 外交部均為平時水準(一般注意)。僅提供天然災害(地震)防災資訊。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專門觀光警察。車站·繁華地帶的交番(派出所)負責失物招領及指路。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">Tokyo Dome 附近的交番 — 水道橋(Suido-bashi)站附近等,地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20koban%20near%20Tokyo%20Dome" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

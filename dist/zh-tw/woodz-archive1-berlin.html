@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">週五·週六 夜間 U-Bahn·S-Bahn 24小時運行（約15分鐘間隔）。平日（週日～週四）約 00:30 末班→04:00 復運，其間夜間巴士（Nachtbus）以同線替代（可用一般票券）。演唱會結束後，建議提前確認當日末班車及夜間巴士班次。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡與無接觸支付普及度增加，但德國特色使然，現金交易仍佔相當比例（小店及部分餐廳僅收現金）。大型商店、連鎖店及交通運輸接受刷卡。建議準備適量現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">歐元(EUR, €)。現金使用比例高，建議先兌換一定金額現金。ATM 遍布各地。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">德語。柏林英文通用度高(觀光客、年輕人),交通標示有英文。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(計程車·車輛呼叫(德國主力))</span> · BVG / Jelbi <span style='color:var(--muted)'>(柏林公共運輸公司官方車票·路線)</span> · Citymapper <span style='color:var(--muted)'>(U-Bahn·S-Bahn·夜間路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(深夜計程車·叫車標準(德國最大, 整合計程車與叫車, 支援卡/Apple Pay/Google Pay))</span> · Uber <span style='color:var(--muted)'>(叫車(英文介面,柏林通用))</span> · Bolt <span style='color:var(--muted)'>(叫車服務備選(費用比較以分散)。)</span> · Nachtbus(夜班巴士) <span style='color:var(--muted)'>(平日末班車後的夜間巴士網絡 — U6 替代路線等(應用：BVG/Citymapper 路線))</span> &nbsp;<a href="https://www.airalo.com/?country=독일&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Columbiahalle 避開正門後叫車 — FREE NOW↔Uber↔Bolt 費用比較交叉叫車；週五·週六 U6 24小時營運，降低叫車依賴是最佳</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">U6線 Platz der Luftbrücke(普拉茨德盧夫特橋) 站 + 104、248 號公車。週五、週六 U-Bahn 24 小時營運，平日約 00:30 末班車→轉乘夜間公車(Nachtbus)。先確認各日末班車時間。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>警察 110</strong> · <strong>消防·救護 112</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美國國務院 Level 2（提升警戒，恐怖威脅）。平時治安良好，車站·景點注意扒竊。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專用觀光警察。110（警察）/ 112（救護·消防）— 可使用英語。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">Columbiahalle(Tempelhof) 附近警察局(Polizei)— 地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Columbiahalle%20Berlin" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

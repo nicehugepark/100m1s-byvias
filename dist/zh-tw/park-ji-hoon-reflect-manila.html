@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -125,7 +125,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <span class="ghost ghost-lg" aria-hidden="true">PARK JI HOON</span>
   <span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PARK JI HOON"><bdi>PARK JI HOON</bdi></span>
   <div><h1 style="margin:0"><bdi>PARK JI HOON</bdi> — <bdi>馬尼拉</bdi></h1>
-  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>2026 PARK JI HOON ASIA FANCON [RE:FLECT]</bdi></span><span class="subitem"><bdi>場館未公布</bdi></span><span class="subitem">2026-08-08 <span class="dday" data-date="2026-08-08"></span></span><span class="subitem">菲律賓 馬尼拉</span></p></div>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>2026 PARK JI HOON ASIA FANCON [RE:FLECT]</bdi></span><span class="subitem"><bdi>場館未公布</bdi></span><span class="subitem">2026-08-08 <span class="dday" data-date="2026-08-08"></span></span><span class="subitem">🇵🇭 菲律賓 馬尼拉</span></p></div>
 </div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">超早鎖定·提前數月預訂</span>
 
@@ -145,7 +145,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">官方公告</div>
   <a class="postlink plink" href="https://world.nol.com/en/content/festas/019dfae5-1947-7a15-9f45-4b6cc43bb237" target="_blank" rel="noopener nofollow" aria-label="Link 官方公告"><span>Link</span><span aria-hidden="true">↗</span></a>
 </div>
-<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">下一場公演</div><div class="oshows"><a class="oshow oshow-next" href="park-ji-hoon-reflect-bangkok.html"><span class="nextflag">下一場公演 →</span> <span class="osc">🇹🇭 泰國 曼谷</span><span class="osd">2026-07-11 <span class="dday" data-date="2026-07-11"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-singapore.html"><span class="osc">🇸🇬 新加坡</span><span class="osd">2026-07-18 <span class="dday" data-date="2026-07-18"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-jakarta.html"><span class="osc">印尼 雅加達</span><span class="osd">2026-08-29 <span class="dday" data-date="2026-08-29"></span></span></a></div></div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">下一場公演</div><div class="oshows"><a class="oshow oshow-next" href="park-ji-hoon-reflect-bangkok.html"><span class="nextflag">下一場公演 →</span> <span class="osc">🇹🇭 泰國 曼谷</span><span class="osd">2026-07-11 <span class="dday" data-date="2026-07-11"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-singapore.html"><span class="osc">🇸🇬 新加坡</span><span class="osd">2026-07-18 <span class="dday" data-date="2026-07-18"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-jakarta.html"><span class="osc">🇮🇩 印尼 雅加達</span><span class="osd">2026-08-29 <span class="dday" data-date="2026-08-29"></span></span></a></div></div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">藝人影片</div>
   <button class="ytfacade" data-vid="1Xyu6LgxORQ" aria-label="播放影片: Park Jihoon &#x27;Bodyelse&#x27; MV"
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">LRT·MRT 末班車約 22:00~22:30(因線路異) — 演唱會結束時間可能晚於末班車。演唱會結束後立即叫 Grab 是常態做法，但結束後需求暴增、費用飆升。深夜街邊計程車常拒跳錶、亂喊價 → Grab(預先付款·司機資訊)強烈建議。場地若在郊區，建議提前預約。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">大型購物中心·飯店·連鎖店刷卡(Visa/Mastercard)接受度佳。吉普尼·街邊計程車·路邊攤·小店以現金為主。GCash·Maya 等 QR 行動支付普及(當地常見、外國人註冊受限)。建議隨時備好小額現金(披索)。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">菲律賓披索(PHP, ₱)。街邊計程車·吉普尼·路邊攤建議備好小額現金。機場(NAIA)·市區換匯所·ATM(24 小時、接受國際卡)廣泛便利。ATM 提款有手續費。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">菲律賓語(他加祿語) + 英語共通 — 英語通用度極高(路標·告示·交談英文普遍)。外國人溝通無障礙。基本問候 &#x27;Salamat(感謝)&#x27; 足矣。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Grab <span style='color:var(--muted)'>(叫車·計程車預約(菲律賓首選、預先付款·司機資訊))</span> · Google 地圖 <span style='color:var(--muted)'>(LRT·MRT·公車路線)</span> · GCash <span style='color:var(--muted)'>(QR 行動支付(當地普遍、外國人註冊受限留意))</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜叫車·計程車最佳選擇(菲律賓市佔首位、預先付款·司機資訊、避免街邊計程車亂喊價 — 外國人最優方案))</span> · Angkas <span style='color:var(--muted)'>(叫機車計程車(摩的) — 躲避塞車的短程替代(提供安全帽)。叫不到車時的備選方案)</span> &nbsp;<a href="https://www.airalo.com/?country=필리핀&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">避開演唱會場正門及廣場，移動一個街區後呼叫 Grab — 規避演唱會結束直後的車資飆漲；若 Grab 搭不到，短程改用 Angkas (機車計程車) 分散，或稍候重新呼叫</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>警察·消防 911</strong> · <strong>警察熱線 117</strong> · <strong>旅遊協助 DOT 觀光警察·觀光熱線</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美國國務院 Level 2（提升警戒 — 犯罪·綁匪等）。馬尼拉都會區遵循一般大都市規則，棉蘭老部分地區為 Level 4（獨立評估）。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">DOT 運營觀光警察（Tourist Police）— 駐守主要景點。可撥 911/117。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">演唱會場地附近警察局（場地未公布 — 假設 Araneta Coliseum 周邊）— 地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Araneta%20Coliseum%20Manila" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

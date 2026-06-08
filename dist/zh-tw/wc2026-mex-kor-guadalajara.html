@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -125,7 +125,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <span class="ghost ghost-lg" aria-hidden="true">KOR</span>
   <span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span>
   <div><h1 style="margin:0"><bdi>韓國代表隊</bdi> — <bdi>瓜達拉哈拉(薩波潘)</bdi></h1>
-  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>2026 FIFA 世界盃 A組小組賽 第2場</bdi></span><span class="subitem"><bdi>Estadio Akron, Zapopan (埃斯塔迪奧·阿克龍，薩波潘)</bdi></span><span class="subitem">2026-06-18 <span class="dday" data-date="2026-06-18"></span></span><span class="subitem">墨西哥 瓜達拉哈拉(薩波潘)</span></p></div>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>2026 FIFA 世界盃 A組小組賽 第2場</bdi></span><span class="subitem"><bdi>Estadio Akron, Zapopan (埃斯塔迪奧·阿克龍，薩波潘)</bdi></span><span class="subitem">2026-06-18 <span class="dday" data-date="2026-06-18"></span></span><span class="subitem">🇲🇽 墨西哥 瓜達拉哈拉(薩波潘)</span></p></div>
 </div>
 <span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">公佈黃金窗·現下最優惠</span>
 
@@ -158,6 +158,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">Mi Macro·Tren Ligero 末班時間——Mi Macro Calzada 約 23:00，Periférico 主線約 23:30（部分次線 00:30）終班（無 24 小時運行）。演唱會 22 點後結束易趕不上末班車，實際上得仰賴 Uber·DiDi 叫車。郊區位置導致場館結束後馬上叫車會面臨呼叫激增、費用飆升，務必留意。深夜外出用叫車 App 或正規計程車（避免路邊攬客）。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">都市大型店鋪、連鎖店及飯店普遍接受卡片/行動支付(Apple/Google Pay),但街邊攤販、小店及市集主要以現金交易。墨西哥整體現金使用率仍高,建議預先準備適當現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">墨西哥披索(MXN, $)。現金使用比例較高,建議兌換或 ATM 提領。機場、市區兌換所及 ATM 普遍(避免攜帶大額現金)。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">西班牙文。觀光及賽事區域英語通用度中等,日常英語通用度較低 — 翻譯應用、應用程式(英文UI)相當實用。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車(外國遊客推薦,英文介面))</span> · DiDi <span style='color:var(--muted)'>(叫車(墨西哥廣泛提供，往往比Uber便宜))</span> · Google 地圖 <span style='color:var(--muted)'>(Mi Macro·輕軌·巴士路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車標準(英文介面·先付款·司機/車牌確認,外國遊客最佳·安全防護推薦))</span> · DiDi <span style='color:var(--muted)'>(叫車替代方案(運費比較分散、墨西哥可用·信賴度佳))</span> &nbsp;<a href="https://www.airalo.com/?country=멕시코&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Estadio Akron (阿克隆體育場) 正門與廣場避開，移動1～2個街區後再召車 — Uber 沒車時改用 DiDi，優先從外圍位置分散打車 → 演唱會結束前提早試著召車，或末班車班次充足時優先搭乘 Mi Macro Periférico (周邊大道)</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>統一緊急(警察·消防·救護) 911</strong> · <strong>旅遊協助 078(Ángeles Verdes)</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美國國務院哈利斯科州 Level 3（建議評估旅遊 — 毒梟·綁匪）。惟瓜達拉哈拉都會區本身無行動限制。夜間避免城市間移動·郊區活動，建議使用應用程式呼叫·正規計程車（2026-05-29 更新，新增世界盃安全指南）。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">聯邦旅遊救援 &#x27;Ángeles Verdes(綠色天使)&#x27; 078(英語可用·24小時) — 道路及旅遊支援。911統一警察及急救號碼。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">Estadio Akron(薩波潘外圍) 附近警察局 — 地圖查詢 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Estadio%20Akron%20Guadalajara" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

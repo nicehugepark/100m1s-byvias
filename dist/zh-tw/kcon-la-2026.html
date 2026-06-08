@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -161,6 +161,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">Metro 鐵路深夜末班車有限(各線約午夜前後尾班)。Pico Station 大型演唱會時月台人潮洶湧。演唱會後得倚靠 Uber·Lyft,注意活動結束直後呼叫暴增、動態漲價。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡跟行動支付(Apple Pay/Google Pay)極為通用。現金幾乎不用(刷卡付小費很普遍)。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">美元(USD, $)。以卡付款為主，小額現金輔助。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英文（西班牙文也常並用）。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車服務(演唱會後首選)。)</span> · Lyft <span style='color:var(--muted)'>(叫車服務(備選)。)</span> · Transit <span style='color:var(--muted)'>(LA Metro 軌道·公車 實時路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車首選(演唱會後最實際的第一選擇，英文UI))</span> · Lyft <span style='color:var(--muted)'>(叫車服務備選(費用比較以分散)。)</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Crypto.com Arena 指定共乘接駁點(Chick Hearn Ct./Figueroa St. 白色區域)——避免正門人潮，同步比較 Uber↔Lyft 車資，選較便宜的方案</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>統一緊急(警察·消防·救護) 911</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美國境內——不在特別旅遊警告範圍內。避免夜間獨自外出、避免在車內顯露貴重物品等一般大都市安全須知。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專用觀光警察。911(緊急) / 非緊急撥打當地警局報警號碼。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">Crypto.com Arena(L.A. Live) 附近 LAPD——地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Crypto.com%20Arena%20Los%20Angeles" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

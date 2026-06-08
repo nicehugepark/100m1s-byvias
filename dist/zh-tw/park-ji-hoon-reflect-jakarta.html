@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -125,7 +125,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <span class="ghost ghost-lg" aria-hidden="true">PARK JI HOON</span>
   <span class="abadge" style="background:#8A8A8A;color:#ffffff" title="PARK JI HOON"><bdi>PARK JI HOON</bdi></span>
   <div><h1 style="margin:0"><bdi>PARK JI HOON</bdi> — <bdi>雅加達</bdi></h1>
-  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>2026 PARK JI HOON ASIA FANCON [RE:FLECT]</bdi></span><span class="subitem"><bdi>場館未公布</bdi></span><span class="subitem">2026-08-29 <span class="dday" data-date="2026-08-29"></span></span><span class="subitem">印尼 雅加達</span></p></div>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>2026 PARK JI HOON ASIA FANCON [RE:FLECT]</bdi></span><span class="subitem"><bdi>場館未公布</bdi></span><span class="subitem">2026-08-29 <span class="dday" data-date="2026-08-29"></span></span><span class="subitem">🇮🇩 印尼 雅加達</span></p></div>
 </div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">超早鎖定·提前數月預訂</span>
 
@@ -145,7 +145,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">官方公告</div>
   <a class="postlink plink" href="https://world.nol.com/en/content/festas/019dfae5-1947-7a15-9f45-4b6cc43bb237" target="_blank" rel="noopener nofollow" aria-label="Link 官方公告"><span>Link</span><span aria-hidden="true">↗</span></a>
 </div>
-<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">下一場公演</div><div class="oshows"><a class="oshow oshow-next" href="park-ji-hoon-reflect-bangkok.html"><span class="nextflag">下一場公演 →</span> <span class="osc">🇹🇭 泰國 曼谷</span><span class="osd">2026-07-11 <span class="dday" data-date="2026-07-11"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-singapore.html"><span class="osc">🇸🇬 新加坡</span><span class="osd">2026-07-18 <span class="dday" data-date="2026-07-18"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-manila.html"><span class="osc">菲律賓 馬尼拉</span><span class="osd">2026-08-08 <span class="dday" data-date="2026-08-08"></span></span></a></div></div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">下一場公演</div><div class="oshows"><a class="oshow oshow-next" href="park-ji-hoon-reflect-bangkok.html"><span class="nextflag">下一場公演 →</span> <span class="osc">🇹🇭 泰國 曼谷</span><span class="osd">2026-07-11 <span class="dday" data-date="2026-07-11"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-singapore.html"><span class="osc">🇸🇬 新加坡</span><span class="osd">2026-07-18 <span class="dday" data-date="2026-07-18"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-manila.html"><span class="osc">🇵🇭 菲律賓 馬尼拉</span><span class="osd">2026-08-08 <span class="dday" data-date="2026-08-08"></span></span></a></div></div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">藝人影片</div>
   <button class="ytfacade" data-vid="1Xyu6LgxORQ" aria-label="播放影片: Park Jihoon &#x27;Bodyelse&#x27; MV"
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">MRT·LRT末班車約在午夜(00:00)前後(因站點、方向而異,活動期間可能延長至~01:30)。TransJakarta幹線約於23:00結束(部分7條路線24小時營運)。若演唱會結束時間晚於末班車,通常需依賴Gojek、Grab等車輛。ICE BSD等外圍場館建議事先確認末班車及KRL時間,並在演唱會結束後立即預約。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">大型購物中心、飯店與連鎖店都能刷卡。路邊攤、街邊與傳統市場主要用現金。QRIS(國家統一二維碼支付)從咖啡廳到傳統市場廣泛通用 — GoPay、OVO、DANA 等電子錢包可用統一二維碼支付(部分電子錢包支援外國人綁定國際卡)。建議隨時準備小額印尼盧比現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">印尼盾(IDR、Rp)。面額較大(千位數常見)，提領現金時務必確認鈔票面額。街邊攤販處備好小額現金。機場及市區的換匯所和ATM遍佈。QRIS支付逐漸普及，現金依賴度持續下降。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">印尼語(Bahasa Indonesia)。景點·交通標示英文併記不錯,但日常英語通用度中等 — 翻譯App好用。基本用語 &#x27;Terima kasih(感謝)&#x27;·&#x27;Berapa?(多少錢?)&#x27;受歡迎。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Gojek <span style='color:var(--muted)'>(車輛·機車·美食·支付(GoPay) 超級應用(在地首選))</span> · Grab <span style='color:var(--muted)'>(汽車·機車叫車替代(費用比較分散))</span> · Google 地圖 <span style='color:var(--muted)'>(MRT·KRL·TransJakarta 路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Gojek <span style='color:var(--muted)'>(深夜車輛(GoCar)·機車(GoRide) 叫車標準(當地市佔最高，GoPay 預付))</span> · Grab <span style='color:var(--muted)'>(車輛·機車替代方案 — Gojek 找不到時試試其他平台(長距離通常更便宜))</span> · Blue Bird (My Bluebird) <span style='color:var(--muted)'>(官方Bluebird Taxi應用 — 里程計費·信譽優良的正規計程車即時召車(深夜備選方案))</span> &nbsp;<a href="https://www.airalo.com/?country=인도네시아&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">避開場館正門後叫車 — 若Gojek叫不到，改用Grab↔Blue Bird交替呼叫分散；外圍場館(ICE BSD等)在散場前提早下單，或優先搭KRL末班車</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>一般安全 112</strong> · <strong>警察 110</strong> · <strong>救護 118 / 119</strong> · <strong>消防 113</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美國國務院 Level 2（提升警戒 — 恐怖威脅·自然災害）。雅加達遵循一般大都市規則，巴布亞部分地區為 Level 4（獨立評估）。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">雅加達無確認專用觀光警察 — 可撥 112（統合緊急）/ 110（警察）。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">演唱會場地附近警察分局(Polsek)（場地未公布 — 假設 GBK 周邊）— 地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Gelora%20Bung%20Karno%20Jakarta" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

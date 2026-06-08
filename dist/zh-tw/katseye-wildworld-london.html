@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">Jubilee Line 末班車至 North Greenwich 附近約 01:01,週五·週六 24 小時運行(Night Tube)。末班車後有多班 24 小時巴士(188 號線等,Waterloo ↔ North Greenwich 直達)。主打演唱會通常 22:30 ~ 23:00 結束,末班車與夜間巴士都充裕無虞。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">非接觸式信用卡·行動支付通用度最高。現金幾乎不需要。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">英鎊(GBP, £)。以卡片為主,兌換最少即可。ATM 隨處可得。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英語。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube·巴士·夜間路線(倫敦優勢)。)</span> · Uber <span style='color:var(--muted)'>(叫車)</span> · TfL Go <span style='color:var(--muted)'>(TfL 官方路線·運行資訊。)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車。)</span> · Bolt <span style='color:var(--muted)'>(叫車服務備選(倫敦通用,費用比較)。)</span> · Night Tube / 24小時公車 <span style='color:var(--muted)'>(週五·週六 Jubilee Line 24 小時 + 188 號線等 24 小時巴士(應用程式:TfL Go/Citymapper 查路線)。)</span> &nbsp;<a href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">The O2 的大眾交通強勢,優先搭 Jubilee Line 末班車(約 01:01)與夜間巴士,減低叫車依賴是上策。Uber 尖峰時改用 Bolt 比費,或轉向 188 號 24 小時巴士。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>統一緊急(警察·消防·救護) 999</strong> · <strong>backup 112</strong> · <strong>警察非緊急熱線 101</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美 國務部 Level 2(提高警戒,恐怖威脅一般警戒級別)。平時觀光治安良好,小心扒手。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專用觀光警察。999(緊急)/101(非緊急)——可用英語。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">The O2(North Greenwich) 附近警局——地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20The%20O2%20Arena%20London" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

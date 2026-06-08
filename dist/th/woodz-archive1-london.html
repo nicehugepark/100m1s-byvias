@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -145,7 +145,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">ประกาศเป็นทางการ</div>
   <a class="postlink plink" href="https://www.allkpop.com/article/2026/02/woodz-announces-full-schedule-for-his-2026-world-tour-woodz-archive-1" target="_blank" rel="noopener nofollow" aria-label="Link ประกาศเป็นทางการ"><span>Link</span><span aria-hidden="true">↗</span></a>
 </div>
-<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">คอนเสิร์ตครั้งต่อไป</div><div class="oshows"><a class="oshow oshow-next" href="woodz-archive1-berlin.html"><span class="nextflag">คอนเสิร์ตครั้งต่อไป →</span> <span class="osc">🇩🇪 เยอรมนี เบอร์ลิน</span><span class="osd">2026-06-07 <span class="dday" data-date="2026-06-07"></span></span></a></div></div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">คอนเสิร์ตที่จบลงแล้ว</div><div class="oshows"><a class="oshow" href="woodz-archive1-berlin.html"><span class="osc">🇩🇪 เยอรมนี เบอร์ลิน</span><span class="osd">2026-06-07 <span class="dday" data-date="2026-06-07"></span></span></a></div></div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">วิดีโอศิลปิน</div>
   <button class="ytfacade" data-vid="elyhLAHsXGg" aria-label="เล่นวิดีโอ: WOODZ &#x27;Human Extinction&#x27; MV"
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>ดูเพิ่มเติม</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">เดินทางตอนดึก</div><div class="lv">ขบวน Jubilee Line สุดท้ายออกจากพื้นที่ใกล้ North Greenwich ประมาณ 01:01 วันศุกร์-เสาร์มีขบวนรถวิ่ง 24 ชั่วโมง (Night Tube) นอกจากนั้นมีรถบัส 24 ชั่วโมงจำนวนมาก (เช่นเลขที่ 188 เชื่อมตรง Waterloo ↔ North Greenwich) ปกติคอนเสิร์ตศิลปินหลักจะจบประมาณ 22:30-23:00 ดังนั้นจึงไม่ต้องห่วง</div></div><div class="lirow"><div class="lk">ชำระเงิน</div><div class="lv">บัตรไม่สัมผัส / Mobile Payment ยอมรับได้ที่สูงสุด เงินสดแทบไม่ต้องใช้</div></div><div class="lirow"><div class="lk">แลกเงิน·สกุลเงิน</div><div class="lv">ปอนด์สเตอร์ลิง (GBP, £) ระบบการชำระเงินเป็นบัตรเป็นหลัก ลดการแลกเปลี่ยนเงินให้น้อยที่สุด ตู้ ATM แพร่หลาย</div></div><div class="lirow"><div class="lk">ภาษา</div><div class="lv">ภาษาอังกฤษ</div></div><div class="lirow"><div class="lk">แอปของท้องถิ่น</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube · รถบัส · เส้นทางกลางคืน (จุดแข็งของลอนดอน))</span> · Uber <span style='color:var(--muted)'>(เรียกรถ)</span> · TfL Go <span style='color:var(--muted)'>(เส้นทางและตารางเวลาอย่างเป็นทางการจากสำนักงานขนส่ง)</span></div></div><div class="lirow"><div class="lk">แอปขนส่งค่ำคืน</div><div class="lv">Uber <span style='color:var(--muted)'>(บริการเรียกแท็กซี่ตอนดึก)</span> · Bolt <span style='color:var(--muted)'>(บริการเรียกแท็กซี่สำรอง (นิยมใช้ที่ลอนดอน เปรียบเทียบอัตราค่า))</span> · Night Tube / รถบัส 24 ชั่วโมง <span style='color:var(--muted)'>(วันศุกร์-เสาร์ Jubilee Line วิ่ง 24 ชั่วโมง + รถบัส 24 ชั่วโมง เช่นเลขที่ 188 (แอป: TfL Go / Citymapper สำหรับเส้นทาง))</span> &nbsp;<a href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">เคล็ดลับการเรียกรถ</div><div class="lv">The O2 มีระบบขนส่งสาธารณะที่แข็งแกร่ง ลดพึ่งพาบริการเรียกแท็กซี่เป็นวิธีแยกตัวที่ดีที่สุด — ลองใช้ขบวน Jubilee Line สุดท้าย (ประมาณ 01:01) / Night Tube วันศุกร์-เสาร์ ก่อน เมื่อ Uber มี surge ให้เปรียบเทียบราคา Bolt หรือสลับไปใช้รถบัส 24 ชั่วโมง เช่นเลขที่ 188</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ ความปลอดภัย</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">หมายเลขฉุกเฉิน</div><div class="lv"><strong>หมายเลขเหตุฉุกเฉินแบบรวม (ตำรวจ·เพลิงไหม้·รถพยาบาล) 999</strong> · <strong>backup 112</strong> · <strong>หมายเลขโทรศัพท์ตำรวจแจ้งเหตุไม่เร่งด่วน 101</strong></div></div><div class="lirow"><div class="lk">คำเตือนการเดินทาง</div><div class="lv">สหรัฐอเมริกา ระดับความเสี่ยง Level 2 (ระดับความระมัดระวังเพิ่มขึ้น·ระดับการเตือนเกี่ยวกับการก่อการร้ายโดยทั่วไป) ความปลอดภัยของการท่องเที่ยวในสภาวะปกติดี ระวังความเสี่ยงจากการขโมย</div></div><div class="lirow"><div class="lk">ตำรวจท่องเที่ยว</div><div class="lv">ไม่มีตำรวจท่องเที่ยวเฉพาะ 999 (เหตุฉุกเฉิน) / 101 (ไม่เร่งด่วน) — พูดภาษาอังกฤษได้</div></div><div class="lirow"><div class="lk">สถานีตำรวจใกล้เคียง</div><div class="lv">สถานีตำรวจใกล้ The O2 (North Greenwich) — ค้นหาจากแผนที่ &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20The%20O2%20Arena%20London" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 ดูบนแผนที่ ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">ข้อมูลความปลอดภัยนี้เป็นข้อมูลอ้างอิงทั่วไป ข้อแนะนำจากหน่วยงานราชการท้องถิ่นและสถานทูตมีความสำคัญเสมอ หมายเลขฉุกเฉินและคำเตือนการเดินทางอาจมีการเปลี่ยนแปลง โปรดตรวจสอบอีกครั้งก่อนการเดินทาง</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">จองเลย</p>
 <div class="btns">

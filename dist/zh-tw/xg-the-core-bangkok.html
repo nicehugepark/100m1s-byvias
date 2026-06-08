@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -177,6 +177,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">BTS·MRT·粉紅線末班車約午夜前後(粉紅線 06:00 ~ 午夜運行)。Impact Arena 位於郊區,演唱會結束後務必事先確認粉紅線末班車時刻,錯過只能叫 Grab·Bolt(散場後叫車激增,費用易漲,請留意)。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">大型城市商場、連鎖店、便利店接受卡片/QR 碼,但夜市、攤販、傳統計程車主要使用現金。QR 碼(PromptPay·TrueMoney)普及中。建議先準備適額現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">泰銖(THB, ฿)。攤販和計程車主要現金交易,建議先備妥現金。機場、市區的兌換所(SuperRich 等)和 ATM 廣泛。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">泰語。觀光地、BTS/MRT 標示有英文並列,日常英語通用度中等,翻譯 App 或呼叫 App 實用。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Grab <span style='color:var(--muted)'>(車輛·計程車·餐飲外送(泰國主力服務))</span> · Google 地圖 <span style='color:var(--muted)'>(BTS·MRT·公車路線)</span> · LINE MAN <span style='color:var(--muted)'>(計程車·外送·付款整合(當地普遍))</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜車輛·計程車呼叫標準(泰國市占率最高、英文介面·預付款、最適合遊客))</span> · Bolt <span style='color:var(--muted)'>(車輛呼叫替代(常比 Grab 便宜,可比價分散))</span> · LINE MAN Taxi <span style='color:var(--muted)'>(當地計程車即時呼叫(預付款·駕駛資訊、外國遊客可用))</span> &nbsp;<a href="https://www.airalo.com/?country=태국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Impact Arena 正門·廣場迴避後呼叫——Grab 叫不到的話,試試 Bolt 和 LINE MAN、外圍位置呼叫→活動結束前提前嘗試呼叫,或優先搭粉紅線末班車</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>警察 191</strong> · <strong>救護·救援 1669</strong> · <strong>消防 199</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美 國務部升級至 Level 1(2026-06-09,包含曼谷等主要觀光區)。惟柬埔寨邊境 50 公里·最南部部分省份為更高警戒——曼谷無關。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">觀光警察 1155(24 小時·可用英語)——語言障礙·糾紛·被宰對策的關鍵。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">Impact Arena(Muang Thonburi) 附近警局——郊區,地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Impact%20Arena%20Muang%20Thong%20Thani%20Bangkok" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

@@ -1,7 +1,7 @@
 <!doctype html><html lang="ar" dir="rtl" data-lang="ar"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>XG أوكلاند — ByBias</title>
-<meta name="description" content="حفلات المعجبين → الحجز بأسعار أقل مسبقاً">
+<meta name="description" content="الأحداث التي يجتمع فيها المعجبون → الحجز المبكر برسوم أقل">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="ko" href="../xg-the-core-oakland.html">
 <link rel="alternate" hreflang="en" href="../en/xg-the-core-oakland.html">
@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -125,57 +125,62 @@ body{overflow-wrap:break-word;word-break:normal}
   <span class="ghost ghost-lg" aria-hidden="true">XG</span>
   <span class="abadge" style="background:#8A8A8A;color:#ffffff" title="XG"><bdi>XG</bdi></span>
   <div><h1 style="margin:0"><bdi>XG</bdi> — <bdi>أوكلاند</bdi></h1>
-  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>XG WORLD TOUR : THE CORE</bdi></span><span class="subitem"><bdi>Oakland Arena (أوكلاند أرينا)</bdi></span><span class="subitem">2026-11-03 <span class="dday" data-date="2026-11-03"></span></span><span class="subitem">🇺🇸 الولايات المتحدة أوكلاند</span></p></div>
+  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>XG WORLD TOUR : THE CORE</bdi></span><span class="subitem"><bdi>Oakland Arena</bdi></span><span class="subitem">2026-11-03 <span class="dday" data-date="2026-11-03"></span></span><span class="subitem">🇺🇸 الولايات المتحدة أوكلاند</span></p></div>
 </div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">النافذة الذهبية · قد يكون الآن أرخص وقت</span>
+<span class="badge" style="color:#185FA5;background:#E6F1FB;margin-top:10px">نافذة ذهبية للإعلان · الآن عادة ما تكون الأسعار في أفضل مستوياتها</span>
 
 <div class="box outlook">
   <div style="color:var(--muted);font-size:13px">توقعات الأسعار والطلب (بعد الإعلان)</div>
-  <div class="metric">لا توجد بيانات. جولة XG العالمية الثانية - الجزء الأمريكي الشمالي — تنطلق من أوكلاند في 11/3 عبر 7 مدن. مع ألبومهم الأول The Core.</div>
-  <div style="font-size:14px;margin-top:4px">لا توجد بيانات. Oakland Arena - فئة أرينا — الأسعار في Bay Area متغيرة.</div>
-  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">جولة الأرينا — عرض واحد في كل مدينة يركز على معجبي النواة. تتمتع Bay Area بأسعار أعلى، وقد يكون الحجز المبكر مفيداً.</p>
+  <div class="metric">لا توجد بيانات. جولة XG العالمية الثانية — مرحلة أمريكا الشمالية تبدأ في 3 نوفمبر (أوكلاند) عبر 7 مدن. برفقة ألبومهم الأول The Core.</div>
+  <div style="font-size:14px;margin-top:4px">لا توجد بيانات. Oakland Arena من فئة أرينا — تتقلب أسعار منطقة خليج سان فرانسيسكو.</div>
+  <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">جولة أرينا — عروض منفردة لكل مدينة تجمع المعجبين الأساسيين. منطقة الخليج ذات أسعار عالية، من المفيد الحجز مبكراً.</p>
 </div>
-<p class="disc">توقعات الأسعار والكميات المتبقية تقديرية وقد تختلف عن الواقع. المسؤولية عن الحجز والدفع تقع على عاتق المستخدم.</p>
+<p class="disc">تقديرات الأسعار والكميات المتبقية تقريبية وقد تختلف عن الواقع. تقع مسؤولية الحجز والدفع على عاتق المستخدم.</p>
 
 <div class="box srcbox">
-  <div style="font-weight:600;font-size:14px">مصدر الجدول الزمني</div>
-  <div class="srcs"><a class="srclink" href="https://www.billboard.com/music/pop/xg-dates-winter-2026-north-american-the-core-world-tour-1236253411/" target="_blank" rel="noopener nofollow">Billboard — XG THE CORE جدول العروض بأمريكا الشمالية ↗</a><a class="srclink" href="https://x.com/XGOfficial_/status/1979019544761921927" target="_blank" rel="noopener nofollow">XG الرسمي X — إعلان جدول THE CORE ↗</a></div>
+  <div style="font-weight:600;font-size:14px">مصدر الحدث</div>
+  <div class="srcs"><a class="srclink" href="https://www.billboard.com/music/pop/xg-dates-winter-2026-north-american-the-core-world-tour-1236253411/" target="_blank" rel="noopener nofollow">Billboard — جدول XG THE CORE لأمريكا الشمالية ↗</a><a class="srclink" href="https://x.com/XGOfficial_/status/1979019544761921927" target="_blank" rel="noopener nofollow">حساب X الرسمي لـ XG — إعلان جدول THE CORE ↗</a></div>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">الإعلان الرسمي</div>
   <a class="postlink plink" href="https://www.billboard.com/music/pop/xg-dates-winter-2026-north-american-the-core-world-tour-1236253411/" target="_blank" rel="noopener nofollow" aria-label="Link الإعلان الرسمي"><span>Link</span><span aria-hidden="true">↗</span></a>
 </div>
-<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">الحفل القادم</div><div class="oshows"><a class="oshow oshow-next" href="xg-the-core-bangkok.html"><span class="nextflag">الحفل القادم →</span> <span class="osc">🇹🇭 تايلاند بانكوك</span><span class="osd">2026-07-19 <span class="dday" data-date="2026-07-19"></span></span></a></div></div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">الحفلة القادمة</div><div class="oshows"><a class="oshow oshow-next" href="xg-the-core-bangkok.html"><span class="nextflag">الحفلة القادمة →</span> <span class="osc">🇹🇭 تايلاند بانكوك</span><span class="osd">2026-07-19 <span class="dday" data-date="2026-07-19"></span></span></a></div></div>
 <div class="box">
-  <div style="font-weight:600;font-size:14px;margin-bottom:8px">فيديوهات الفنان</div>
-  <button class="ytfacade" data-vid="cUfDOS2SINM" aria-label="تشغيل الفيديو: XG - HYPNOTIZE (Official Music Video)"
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">مقاطع فيديو للفنان</div>
+  <button class="ytfacade" data-vid="cUfDOS2SINM" aria-label="تشغيل الفيديو: XG - HYPNOTIZE (فيديو موسيقي رسمي)"
     style="background-image:url('https://i.ytimg.com/vi/cUfDOS2SINM/hqdefault.jpg')"><span class="ytplay" aria-hidden="true">▶</span></button>
-  <p style="margin:8px 0 0;font-size:13px">XG - HYPNOTIZE (Official Music Video) <span style="color:var(--muted)">· XG (XGALX رسمي)</span></p>
+  <p style="margin:8px 0 0;font-size:13px">XG - HYPNOTIZE (فيديو موسيقي رسمي) <span style="color:var(--muted)">· XG (XGALX رسمي)</span></p>
 </div>
 <div class="box">
-  <div style="font-weight:600;font-size:14px;margin-bottom:8px">القناة الرسمية للفنان</div>
-  <div class="chchips"><a class="chchip" href="https://xgalx.com/xg/" target="_blank" rel="noopener nofollow"><span>شركة الإنتاج · XGALX</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/xgofficial/" target="_blank" rel="noopener nofollow" aria-label="XG Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/XGofficial_" target="_blank" rel="noopener nofollow" aria-label="XG X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@XGOFFICIAL" target="_blank" rel="noopener nofollow" aria-label="XG YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@xg.official" target="_blank" rel="noopener nofollow" aria-label="XG TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://xg.pasch.fan/" target="_blank" rel="noopener nofollow"><span>نادي المعجبين · ALPHAZ</span><span aria-hidden="true"> ↗</span></a></div>
+  <div style="font-weight:600;font-size:14px;margin-bottom:8px">قنوات الفنان الرسمية</div>
+  <div class="chchips"><a class="chchip" href="https://xgalx.com/xg/" target="_blank" rel="noopener nofollow"><span>الشركة الأم · XGALX</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.instagram.com/xgofficial/" target="_blank" rel="noopener nofollow" aria-label="XG Instagram"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://x.com/XGofficial_" target="_blank" rel="noopener nofollow" aria-label="XG X"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.29z"/></svg><span>X</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.youtube.com/@XGOFFICIAL" target="_blank" rel="noopener nofollow" aria-label="XG YouTube"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg><span>YouTube</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://www.tiktok.com/@xg.official" target="_blank" rel="noopener nofollow" aria-label="XG TikTok"><svg class="plogo" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.93a2.45 2.45 0 0 1-2.45 2.45 2.45 2.45 0 1 1 .64-4.81v-3.36a5.8 5.8 0 0 0-.64-.04A5.8 5.8 0 1 0 15.13 18V9.4a7.55 7.55 0 0 0 4.4 1.4V7.5a4.28 4.28 0 0 1-2.93-1.68z"/></svg><span>TikTok</span><span aria-hidden="true"> ↗</span></a><a class="chchip" href="https://xg.pasch.fan/" target="_blank" rel="noopener nofollow"><span>نادي المعجبين · ALPHAZ</span><span aria-hidden="true"> ↗</span></a></div>
 </div>
 <div class="box tkbox" style="padding:0">
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 حجز التذاكر</div>
-  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">الوقت المتوقع للحفلة</div><div class="lv">من 19:00 إلى 20:00 (مساء الثلاثاء، متوقع)</div></div><div class="lirow"><div class="lk">منصات الحجز</div><div class="lv"><a href="https://www.ticketmaster.com/xg-tickets/artist/3160790" target="_blank" rel="noopener nofollow">Ticketmaster (صفحة فنان XG) ↗</a></div></div></div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">الوقت المتوقع للعرض</div><div class="lv">19:00~20:00 (مساء الثلاثاء، متوقع)</div></div><div class="lirow"><div class="lk">خيارات الحجز</div><div class="lv"><a href="https://www.ticketmaster.com/xg-tickets/artist/3160790" target="_blank" rel="noopener nofollow">Ticketmaster (صفحة الفنان XG) ↗</a></div></div></div>
 </div>
 <div class="box">
-  <div style="font-weight:600;font-size:14px">المكان</div>
-  <p style="margin:4px 0 0;font-size:14px"><bdi>Oakland Arena (أوكلاند أرينا)</bdi> · <bdi>أوكلاند</bdi></p>
+  <div style="font-weight:600;font-size:14px">قاعة الحفل</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>Oakland Arena</bdi> · <bdi>أوكلاند</bdi></p>
   <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Oakland+Arena+Auckland" target="_blank" rel="noopener">📍 عرض على الخريطة</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">نصائح الإقامة القريبة</div><ul><li>من منطقة BART يمكنك الوصول بسهولة إلى أماكن الإقامة في أوكلاند و SF معاً</li><li>تأكد من موعد آخر قطار BART بعد انتهاء الحفل</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">نصائح السكن القريب</div><ul><li>إذا كنت بالقرب من محطة BART، يمكنك الوصول إلى الإقامة في أوكلاند وسان فرانسيسكو معاً.</li><li>تأكد من موعد آخر قطار BART بعد انتهاء الحفل الموسيقي.</li></ul>
   <div style="font-weight:600;font-size:14px;margin-top:12px">طريق العودة بعد الحفل</div>
-  <p style="margin:6px 0 0;font-size:14px">Oakland Arena — وصول مباشر عبر محطة Coliseum (BART)</p>
+  <p style="margin:6px 0 0;font-size:14px">Oakland Arena — اتصال مباشر بمحطة BART Coliseum.</p>
 </div>
 
 <div class="box linfo-box">
-  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 المعلومات العملية المحلية</div>
-  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">النقل</div><div class="lv">BART (نظام النقل السريع في منطقة خليج سان فرانسيسكو) وحافلات AC Transit. Oakland Arena (كاليفورنيا، الولايات المتحدة، 7000 Coliseum Way) متصلة مباشرة بمحطة BART Coliseum عبر جسر للمشاة (حوالي 6 دقائق سيراً على الأقدام). توقف على خطوط BLUE و ORANGE و GREEN.</div></div></div>
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 معلومات محلية عملية</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">النقل</div><div class="lv">BART (خدمة النقل السريع في منطقة خليج سان فرانسيسكو) وحافلات AC Transit. يتصل Oakland Arena (أوكلاند، كاليفورنيا بالولايات المتحدة، 7000 Coliseum Way) مباشرة بمحطة BART Coliseum بجسر للمشاة (حوالي 6 دقائق سيراً على الأقدام). تتوقف خطوط BLUE و ORANGE و GREEN هنا.</div></div></div>
   <details class="limore">
-    <summary>المزيد</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">التنقل ليلاً</div><div class="lv">آخر قطار في BART يغادر حوالي منتصف الليل (يختلف حسب الخط) في أيام الأسبوع والعطلات — إذا انتهت الحفلة الموسيقية بعد الساعة 10 مساءً، تحقق من أوقات آخر قطار مسبقاً. بعد آخر قطار، اعتمد على Uber و Lyft، لكن احذر من الطلبات المتزايدة وارتفاع الأسعار مباشرة بعد الحفلات.</div></div><div class="lirow"><div class="lk">الدفع</div><div class="lv">بطاقات الائتمان والدفع عبر الهاتف المحمول (Apple/Google Pay) منتشرة جداً. النقود الورقية غير ضرورية تقريباً (البقشيش بالبطاقة شائع).</div></div><div class="lirow"><div class="lk">صرف العملات</div><div class="lv">الدولار الأمريكي (USD, $). تركيز على البطاقات، مع نقود ورقية قليلة كإضافة.</div></div><div class="lirow"><div class="lk">اللغة</div><div class="lv">الإنجليزية (الإسبانية شائعة أيضاً).</div></div><div class="lirow"><div class="lk">التطبيق المحلي</div><div class="lv">Uber <span style='color:var(--muted)'>(استدعاء المركبات (الخيار الأساسي بعد الحفل).)</span> · Lyft <span style='color:var(--muted)'>(استدعاء المركبات (بديل).)</span> · BART (official) <span style='color:var(--muted)'>(أوقات BART والمسارات والأسعار في الوقت الفعلي)</span></div></div><div class="lirow"><div class="lk">تطبيق النقل الليلي</div><div class="lv">Uber <span style='color:var(--muted)'>(تطبيق استدعاء السيارات الرئيسي في ساعات متأخرة من الليل (الخيار الأول الواقعي بعد آخر قطار، واجهة إنجليزية))</span> · Lyft <span style='color:var(--muted)'>(استدعاء المركبات (بديل لمقارنة الأسعار).)</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">نصيحة الاستدعاء</div><div class="lv">اطلب سيارة بعد تجنب المدخل الرئيسي لـ Oakland Arena — قارن أسعار Uber و Lyft في نفس الوقت. إن أمكن، محطة BART Coliseum (متصلة بجسر للمشاة) هي الخيار الأرخص والأسرع.</div></div><div class="lirow"><div class="lk">ملاحظة آخر قطار/حافلة</div><div class="lv">الولايات المتحدة، كاليفورنيا، أوكلاند (ليس أوكلاند بنيوزيلندا). محطة Coliseum (كوليزيوم) على نظام BART، متصلة بجسر المشاة (حوالي 6 دقائق سيرًا)، على خطوط BLUE و ORANGE و GREEN. آخر رحلة حول منتصف الليل — في حالة الفوات: Uber و Lyft، احذر من رسوم الطلب المرتفعة (surge) مباشرة بعد الحفل.</div></div></div>
+    <summary>عرض المزيد</summary>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">النقل الليلي</div><div class="lv">آخر قطارات BART تغادر تقريباً عند منتصف الليل في أيام الأسبوع وأيام نهاية الأسبوع (تختلف حسب الخط) — إذا انتهت الحفلة الكبيرة بعد الساعة 22:00، تحقق من أوقات آخر قطار مسبقاً. بعد آخر قطار، اعتمد على Uber و Lyft، لكن احذر من ازدياد الطلب المفاجئ وارتفاع الأسعار مباشرة بعد انتهاء الحفلة.</div></div><div class="lirow"><div class="lk">الدفع</div><div class="lv">البطاقات والدفع عبر الهاتف المحمول (Apple Pay / Google Pay) منتشرة على نطاق واسع جداً. النقود المعدنية نادرة جداً (البقشيش ببطاقة شائع جداً).</div></div><div class="lirow"><div class="lk">العملات والصرف</div><div class="lv">الدولار الأمريكي (USD، $). التركيز الأساسي على البطاقات، مع مبالغ صغيرة من النقود كاحتياطي.</div></div><div class="lirow"><div class="lk">اللغة</div><div class="lv">الإنجليزية (الإسبانية مستخدمة بشكل شائع أيضاً).</div></div><div class="lirow"><div class="lk">التطبيقات المحلية</div><div class="lv">Uber <span style='color:var(--muted)'>(استدعاء السيارات (الخيار الرئيسي بعد الحفل))</span> · Lyft <span style='color:var(--muted)'>(استدعاء السيارات (خيار بديل))</span> · BART (رسمي) <span style='color:var(--muted)'>(أوقات BART الفعلية والمسارات والأسعار)</span></div></div><div class="lirow"><div class="lk">تطبيقات المواصلات الليلية</div><div class="lv">Uber <span style='color:var(--muted)'>(خيار استدعاء السيارات في منتصف الليل بكفاءة (الخيار الواقعي الأول بعد آخر قطار، واجهة إنجليزية))</span> · Lyft <span style='color:var(--muted)'>(استدعاء السيارات - بديل (قارن الأسعار عبر التطبيقات))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">نصائح الحجز</div><div class="lv">قارن أسعار Uber و Lyft جنباً إلى جنب بعد مغادرة المدخل الرئيسي لـ Oakland Arena — إذا كان آخر قطار ممكناً، فمحطة BART Coliseum (المتصلة بجسر المشاة) هي الأرخص والأسرع.</div></div><div class="lirow"><div class="lk">ملاحظة آخر رحلة</div><div class="lv">أوكلاند، كاليفورنيا، الولايات المتحدة (ليست أوكلاند نيوزيلندا). محطة BART Coliseum متصلة مباشرة عبر جسر للمشاة (حوالي 6 دقائق مشي)، على خطوط BLUE و ORANGE و GREEN. آخر قطار حول منتصف الليل — إذا فاتك استخدم Uber أو Lyft، انتبه لـ surge pricing بعد الحفل مباشرة.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ الأمان</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">رقم الطوارئ</div><div class="lv"><strong>خط الطوارئ الموحد (شرطة وإطفاء وإسعاف) 911</strong></div></div><div class="lirow"><div class="lk">تحذيرات السفر</div><div class="lv">داخل الولايات المتحدة (كاليفورنيا). أوكلاند لديها معدلات عالية نسبياً من سرقات السيارات والجرائم ضد الممتلكات في بعض المناطق — تجنب التنقل الليلي بمفردك في منطقة Coliseum، لا تترك الأشياء ظاهرة في السيارة.</div></div><div class="lirow"><div class="lk">شرطة السياحة</div><div class="lv">لا توجد شرطة سياحية مخصصة. 911 (حالات الطوارئ) / للحالات غير الطارئة، استخدم رقم قسم الشرطة المحلي.</div></div><div class="lirow"><div class="lk">أقرب مركز شرطة</div><div class="lv">مركز شرطة بالقرب من Oakland Arena(Coliseum) — ابحث على الخريطة &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Oakland%20Arena%20Coliseum" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 عرض على الخريطة ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">معلومات الأمان هي إرشادات عامة مرجعية فقط، وإرشادات السلطات المحلية الرسمية والسفارات لها الأولوية دائماً. أرقام الطوارئ وتحذيرات السفر قد تتغير، يرجى إعادة التحقق قبل السفر.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">احجز الآن</p>
 <div class="btns">
@@ -184,16 +189,16 @@ body{overflow-wrap:break-word;word-break:normal}
   <a class="btn" href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
   <a class="btn" href="https://www.klook.com/search/?query=Auckland&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 الجولات والتذاكر <small>· Klook</small></a>
 </div>
-<p class="disc disc-aff">روابط الحجز على هذه الصفحة هي روابط تابعة (بعمولة). لا توجد تكاليف إضافية على المستخدم.</p>
+<p class="disc disc-aff">روابط الحجز على هذه الصفحة هي روابط تابعة (بعمولة). لا يتحمل المستخدم أي تكاليف إضافية.</p>
 
 <div class="news">
-  <input placeholder="البريد الإلكتروني — تلقي تنبيهات الأسعار والتوفّر لهذا الفنان">
-  <button>تلقي التنبيهات</button>
+  <input placeholder="البريد الإلكتروني — تلقي إشعارات بأسعار هذا الفنان والحفلات المكتملة">
+  <button>تلقي الإشعارات</button>
 </div>
 
-<div class="foot">روابط الحجز على كل صفحة هي روابط تابعة (بعمولة). توقعات الأسعار والكميات المتبقية تقديرية وقد تختلف عن الواقع. المسؤولية عن الحجز والدفع تقع على عاتق المستخدم. · bybias.100m1s.com</div>
+<div class="foot">روابط الحجز في كل صفحة هي روابط تابعة (بعمولة). تقديرات الأسعار والكميات المتبقية تقريبية وقد تختلف عن الواقع. تقع مسؤولية الحجز والدفع على عاتق المستخدم. · bybias.100m1s.com</div>
 
-<p class="gdisc">هذا الموقع هو خدمة معلومات غير رسمية عن جداول الحفلات والسفر، وليس مرتبطًا بالفنانين أو وكالاتهم، وليس له علاقة شراكة رسمية معهم.</p>
+<p class="gdisc">هذا الموقع خدمة غير رسمية لمعلومات الحفلات والسفر، مستقلة عن الفنانين والشركات الإنتاجية، وليس لديها علاقات شراكة رسمية.</p>
 </div><script>
 (function(){try{
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';

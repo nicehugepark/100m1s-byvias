@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -145,7 +145,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">官方公告</div>
   <a class="postlink plink" href="https://world.nol.com/en/content/festas/019dfae5-1947-7a15-9f45-4b6cc43bb237" target="_blank" rel="noopener nofollow" aria-label="Link 官方公告"><span>Link</span><span aria-hidden="true">↗</span></a>
 </div>
-<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">下一場公演</div><div class="oshows"><a class="oshow oshow-next" href="park-ji-hoon-reflect-bangkok.html"><span class="nextflag">下一場公演 →</span> <span class="osc">🇹🇭 泰國 曼谷</span><span class="osd">2026-07-11 <span class="dday" data-date="2026-07-11"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-manila.html"><span class="osc">菲律賓 馬尼拉</span><span class="osd">2026-08-08 <span class="dday" data-date="2026-08-08"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-jakarta.html"><span class="osc">印尼 雅加達</span><span class="osd">2026-08-29 <span class="dday" data-date="2026-08-29"></span></span></a></div></div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">下一場公演</div><div class="oshows"><a class="oshow oshow-next" href="park-ji-hoon-reflect-bangkok.html"><span class="nextflag">下一場公演 →</span> <span class="osc">🇹🇭 泰國 曼谷</span><span class="osd">2026-07-11 <span class="dday" data-date="2026-07-11"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-manila.html"><span class="osc">🇵🇭 菲律賓 馬尼拉</span><span class="osd">2026-08-08 <span class="dday" data-date="2026-08-08"></span></span></a><a class="oshow" href="park-ji-hoon-reflect-jakarta.html"><span class="osc">🇮🇩 印尼 雅加達</span><span class="osd">2026-08-29 <span class="dday" data-date="2026-08-29"></span></span></a></div></div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">藝人影片</div>
   <button class="ytfacade" data-vid="1Xyu6LgxORQ" aria-label="播放影片: Park Jihoon &#x27;Bodyelse&#x27; MV"
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">MRT 末班車約午夜前後（終點站約 23:30 出發，最終約 00:30 結束）。演唱會結束後轉乘，建議 23:00 前離場。末班車後可用 Grab·Gojek·TADA 等 24 小時叫車，惟午夜～06:00 期間加收 50% 深夜加成，動態計費需留意。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡、感應支付、QR碼(PayNow、PayLah!)廣泛通用。部分小販中心接受現金。整體為無現金環境。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">新加坡幣(SGD, S$)。卡片為主,小額兌換即可。機場·市區兌換·ATM 遍佈。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英文（通用語言）·中文·馬來語·泰米爾語。英文通用度最高——導覽·應用都用英文沒問題。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Grab <span style='color:var(--muted)'>(車輛·計程車·飲食·支付（東南亞重點）)</span> · Google 地圖 <span style='color:var(--muted)'>(MTR·巴士路線)</span> · SimplyGo <span style='color:var(--muted)'>(大眾運輸無接觸支付·餘額查詢)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜車輛·計程車預約標準（市佔率最高、英文介面·預付款、外國人最佳選擇）)</span> · Gojek <span style='color:var(--muted)'>(車輛預約替代方案（離峰時段常更便宜）)</span> · TADA <span style='color:var(--muted)'>(免手續費車輛預約（價格透明、外國人可用）)</span> · ComfortDelGro / CDG Zig <span style='color:var(--muted)'>(正規計程車預約（計程車招呼站眾多、午夜～06時加價50%）)</span> &nbsp;<a href="https://www.airalo.com/?country=싱가포르&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">從 Indoor Stadium/EXPO 正門離開，步行幾分鐘後預約——等車時間·車費都會改善。Grab 叫不到的話，Gojek↔TADA 交叉預約（各應用費率·車隊不同）</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>警察 999</strong> · <strong>消防·救護 995</strong> · <strong>簡訊報警 71999</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美國國務院 Level 1（平時警戒）。世界頂級治安。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專用觀光警察。999 或一般 Neighbourhood Police（英語通用）。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">Singapore Indoor Stadium / EXPO 附近警察局(NPC)— 地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Singapore%20Indoor%20Stadium" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

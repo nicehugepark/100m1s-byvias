@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -175,6 +175,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">紐約地鐵 24 小時運行,末班車不用擔心(只是深夜班次間隔變長)。大型演唱會後,主要路線在 Penn Station 附近停靠——但演唱會結束直後 Penn Station 入口人潮洶湧。用距離一個街區的 28th St 等站點,才是疏散人潮的關鍵。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">卡片·行動支付(Apple/Google Pay)接受度最高。現金幾乎不必(因為小費文化,卡片付費小費很普遍)。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">美元(USD, $)。以卡片為主,兌換依賴低,小額現金為輔。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英語(常見併用西班牙語)。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車)</span> · Citymapper <span style='color:var(--muted)'>(地鐵·公車·深夜路線(紐約優勢))</span> · MYmta <span style='color:var(--muted)'>(MTA 官方地鐵·公車即時路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">地鐵(24小時) <span style='color:var(--muted)'>(MSG 附近 1·2·3·A·C·E 等線深夜也運行——末班車壓力不大(應用:MYmta/Citymapper 查路線))</span> · Uber <span style='color:var(--muted)'>(深夜車輛呼叫(MSG 指定上車點運營、英文介面))</span> · Lyft <span style='color:var(--muted)'>(車輛呼叫替代(與 Uber 比價分散))</span> · Curb <span style='color:var(--muted)'>(Yellow Cab(官方計程車)呼叫 App——咪錶計費透明)</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Penn Station 正門附近人潮洶湧——使用距離一、兩個街區的 28th St 等地下鐵站是分散人流的關鍵。演唱會結束後在附近餐廳等待 30~45 分鐘,再搭地鐵或呼叫,人潮和漲價壓力都能緩解。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>統一緊急(警察·消防·救護) 911</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美國境內——不在特別旅遊警告範圍內。避免夜間獨自外出、避免在車內顯露貴重物品等一般大都市安全須知。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專用觀光警察。911(緊急) / 非緊急撥打當地警局報警號碼。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">Madison Square Garden 附近 NYPD Midtown South 等——地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Madison%20Square%20Garden%20New%20York" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

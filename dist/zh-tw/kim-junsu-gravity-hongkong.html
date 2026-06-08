@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">機場快綫(AsiaWorld-Expo(亞洲國際博覽館)↔香港站(Hong Kong))末班車約00:48~01:13(約12分鐘間隔)。一般MTR末班車約午夜~01:00前後。末班車後有夜間巴士(N線)及計程車。若演唱會於22:00後結束，務必預先確認機場快綫末班車時間。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">八達通卡接受度極高。現金亦通用。QR碼(AlipayHK·WeChat Pay)普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">香港元(HKD、HK$)。八達通儲值事實上是本地支付樞紐。機場·市區匯兌·ATM廣泛。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">廣東話·中文。英文廣泛通用，堪稱準官方(標示·指引英文廣泛並行)。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車)</span> · Citymapper <span style='color:var(--muted)'>(MTR·巴士路線(英文))</span> · Octopus <span style='color:var(--muted)'>(八達通餘額·儲值·付款)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車/計程車(英文介面)。HKTaxi·FlyTaxi併購整合下事實上為主力。)</span> · DiDi <span style='color:var(--muted)'>(叫車替代方案(香港營運))</span> · AlipayHK / WeChat Pay HK 計程車呼叫 <span style='color:var(--muted)'>(支付應用內建計程車召喚功能)</span> &nbsp;<a href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">AsiaWorld-Expo公演後優先搭乘機場鐵路末班車(約00:48~01:13)——準點性最佳末班車未趕上時，繞避正門後召喚Uber/計程車</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>統一緊急(警察·消防·救護) 999</strong> · <strong>backup 112</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美 國務部 Level 1(平時警戒)。英語廣泛通用,治安良好。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專用觀光警察。撥 999 或逕往當地警局(可用英語)。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">AsiaWorld-Expo 附近警局——機場地帶,地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20AsiaWorld-Expo%20Hong%20Kong" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

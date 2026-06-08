@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -175,6 +175,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">地下鐵末班車約午夜發車，05:30 左右重啟（不營運 24 小時）。末班車後須仰賴計程車（23 點後約加價 20～30%）。演唱會結束後，務必提前確認末班車時間；若錯過，可撥 GO·DiDi·Uber。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">現金使用度高（小店·部分餐廳現金專用），大型·連鎖·交通卡／IC 通用，QR（PayPay）普及。建議準備一定現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">日圓（JPY、¥）。現金使用度高，建議兌換一定現金。機場·7-Eleven ATM 普及（支援國外卡提領）。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">日文。觀光景點·車站指引英文並用尚可，但日常英文通用度中等偏低、翻譯 App·應用預約功能實用。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">GO (タクシーGO) <span style='color:var(--muted)'>(計程車預約（日本最大、英文支援）)</span> · Japan Travel by NAVITIME <span style='color:var(--muted)'>(電鐵·公車轉乘·路線（英文版）)</span> · PayPay <span style='color:var(--muted)'>(QR碼行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">GO <span style='color:var(--muted)'>(深夜計程車預約標準（福岡覆蓋最廣、英文支援）)</span> · DiDi <span style='color:var(--muted)'>(計程車預約備選方案（福岡營運，車隊相比東京較少）)</span> · Uber <span style='color:var(--muted)'>(計程車呼叫(英文介面、正規車隊合作 — 可用性會變動))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">避開演場正門後呼叫 — GO 沒訂到,改用 DiDi↔Uber 交替呼叫。移到 博多(Hakata)·天神(Tenjin) 等計程車叫車點,更容易媒合</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">Events 數據上場地未公佈 (TWS, 2026-08-28)。福岡地下鐵末班車約午夜、05:30 恢復營運，博多 (Hakata)、天神 (Tenjin) 為計程車樞紐點。場地確認後，重新確認末班車與動線。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>警察 110</strong> · <strong>消防·救護 119</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美 國務院·韓 外交部均為平時水準(一般注意)。僅提供天然災害(地震)防災資訊。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專門觀光警察。可利用交番。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">博多(Hakata) 車站附近警察派出所(交番)— 演唱會場地未公布，地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Hakata%20Fukuoka" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">

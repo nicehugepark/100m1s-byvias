@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -177,6 +177,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>See more</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Late-night transit</div><div class="lv">Last trains around midnight (earlier for Tokyo transfers). Heading to Tokyo after? Last-train windows can be tight—check first. Miss it? Taxi.</div></div><div class="lirow"><div class="lk">Payment</div><div class="lv">Same as Tokyo—cash still matters, cards and IC work at big stores and transit, PayPay spreading.</div></div><div class="lirow"><div class="lk">Currency &amp; exchange</div><div class="lv">Japanese Yen (JPY, ¥). Same as Tokyo.</div></div><div class="lirow"><div class="lk">Language</div><div class="lv">Japanese. English availability like Tokyo; translation apps help.</div></div><div class="lirow"><div class="lk">Local apps</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(Train connections &amp; routes (English))</span> · GO <span style='color:var(--muted)'>(Taxi)</span> · PayPay <span style='color:var(--muted)'>(QR quick pay)</span></div></div><div class="lirow"><div class="lk">Late-night transit</div><div class="lv">GO <span style='color:var(--muted)'>(Late-night taxi (Yokohama metro))</span> · Uber <span style='color:var(--muted)'>(Taxi (English UI))</span> · DiDi <span style='color:var(--muted)'>(Taxi app as backup)</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">How to book</div><div class="lv">Skip K-Arena&#x27;s main entrance crowds—call ahead. Heading to Tokyo? Miss the last train and switch to app taxi immediately.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Safety</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Emergency Number</div><div class="lv"><strong>Police 110</strong> · <strong>Fire &amp; Rescue 119</strong></div></div><div class="lirow"><div class="lk">Travel Alert</div><div class="lv">U.S. State Dept and Korean Foreign Ministry both rate this normal (general caution). Earthquake preparedness guidance only.</div></div><div class="lirow"><div class="lk">Tourist Police</div><div class="lv">No dedicated tourist police. Use police boxes (交番).</div></div><div class="lirow"><div class="lk">Nearby Police Station</div><div class="lv">Police boxes (交番) near 新横浜(Shin-Yokohama) Station — search map &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20K-Arena%20Yokohama" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 View on map ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Safety information is general guidance for reference only; official local agencies and embassies always take priority. Emergency numbers and travel alerts may change — confirm before your trip.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Book now</p>
 <div class="btns">

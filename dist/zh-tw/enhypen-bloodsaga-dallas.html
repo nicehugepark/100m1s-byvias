@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -171,6 +171,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">DART夜間運行受限(依路線末班車約午夜前後)。演唱會後仰賴Uber/Lyft較現實，演出結束直後注意召喚激增·票價上漲。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡·行動支付(Apple/Google Pay)廣泛通用。現金幾乎不需要(小費文化下信用卡小費已成常規)。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">美元(USD, $)。以卡片為主,兌換依賴低,小額現金為輔。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英語(常見併用西班牙語)。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車服務(演唱會後首選)。)</span> · Lyft <span style='color:var(--muted)'>(叫車服務(備選)。)</span> · GoPass (DART) <span style='color:var(--muted)'>(DART 車票·路線。)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車首選(演唱會後實際第一選擇)。)</span> · Lyft <span style='color:var(--muted)'>(叫車服務備選(費用比較以分散)。)</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">American Airlines Center 正門/Victory Plaza 尖峰集中 — 移動至 1 ~ 2 街區外(Victory Park 邊緣)後叫車,費用與媒合都會更優。Uber ↔ Lyft 費用同時比較,選低價方案。</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">Victory DART 站毗鄰。DART 夜間末班車約午夜左右受限——演唱會後改用 Uber/Lyft 較實際,注意結束後馬上會出現尖峰價格。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急電話號碼</div><div class="lv"><strong>統一緊急(警察·消防·救護) 911</strong></div></div><div class="lirow"><div class="lk">旅遊警示</div><div class="lv">美國境內——不在特別旅遊警告範圍內。避免夜間獨自外出、避免在車內顯露貴重物品等一般大都市安全須知。</div></div><div class="lirow"><div class="lk">觀光警察</div><div class="lv">無專用觀光警察。911(緊急) / 非緊急撥打當地警局報警號碼。</div></div><div class="lirow"><div class="lk">附近派出所</div><div class="lv">American Airlines Center(Victory Park) 附近警局——地圖搜尋 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20American%20Airlines%20Center%20Dallas" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地圖查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全資訊為參考用一般指南,當地官方機構及大使館指南優先。緊急電話號碼及旅遊警示可能變動,造訪前請重新確認。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
