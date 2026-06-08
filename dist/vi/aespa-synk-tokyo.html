@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -164,6 +164,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Xem thêm</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Di chuyển về đêm</div><div class="lv">Tàu điện ngầm/JR khoảng giữa đêm~00:30, một số tuyến khoảng 01:00 (không có dịch vụ 24 giờ). Xe buýt đêm sau tàu cuối hạn chế, giá taxi cao. Nếu concert kết thúc sau 22:00, phải kiểm tra trước thời gian tàu cuối từ Tokyo Dome → trung tâm thành phố.</div></div><div class="lirow"><div class="lk">Thanh toán</div><div class="lv">Tiền mặt vẫn chiếm tỉ lệ cao (cửa hàng nhỏ/một số nhà hàng chỉ nhận tiền mặt). Cửa hàng lớn/chuỗi/giao thông chấp nhận thẻ/IC. QR (PayPay) đang phổ biến.</div></div><div class="lirow"><div class="lk">Đổi tiền &amp; tiền tệ</div><div class="lv">Đồng Yên (JPY, ¥). Vì tiền mặt chiếm tỉ lệ cao, hãy đổi một khoản tiền mặt. Phổ biến tại sân bay/quầy đổi tiền trong thành phố/ATM 7-Eleven (rút tiền từ thẻ nước ngoài).</div></div><div class="lirow"><div class="lk">Ngôn ngữ</div><div class="lv">Tiếng Nhật. Các trang web du lịch/hướng dẫn tại nhà ga có tiếng Anh kèm theo tốt, nhưng tiếng Anh hàng ngày ít phổ biến hơn, ứng dụng dịch có ích.</div></div><div class="lirow"><div class="lk">Ứng dụng địa phương</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(Tìm kiếm chuyến tiếp tục tàu điện/lộ trình (tiếng Anh))</span> · GO (Taxi GO) <span style='color:var(--muted)'>(Gọi taxi)</span> · PayPay <span style='color:var(--muted)'>(Thanh toán QR nhanh)</span></div></div><div class="lirow"><div class="lk">App gọi xe đêm khuya</div><div class="lv">GO <span style='color:var(--muted)'>(Tiêu chuẩn gọi taxi đêm (khoảng 80% thị phần Nhật, mạnh về đêm ở Tokyo))</span> · S.RIDE <span style='color:var(--muted)'>(Gọi taxi Tokyo — chuyên biệt (một chạm, kết nối nhanh))</span> · DiDi <span style='color:var(--muted)'>(Gọi taxi thay thế (khu vực Tokyo))</span> · Uber <span style='color:var(--muted)'>(Gọi taxi (UI tiếng Anh, độ tin cậy tốt sau nửa đêm))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Mẹo gọi xe</div><div class="lv">Tránh cửa chính Tokyo Dome — Di chuyển sang phía đối diện từ 水道橋(Suidobashi)/後楽園(Korakuen) để gọi taxi. Nếu ứng dụng không bắt được, gọi chéo GO↔S.RIDE↔DiDi (mỗi ứng dụng có nhóm xe hợp tác khác nhau)</div></div><div class="lirow"><div class="lk">Lưu ý chuyến cuối</div><div class="lv">Gần 水道橋 (Suidobashi) / 後楽園 (Korakuen) / Thành phố Tokyo Dome. Tàu điện ngầm · JR tàu cuối lúc 00:00 ~ 00:30, nên kiểm tra trước giờ chuyển tiếp về trung tâm.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ An Toàn</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Số Khẩn Cấp</div><div class="lv"><strong>Cảnh sát 110</strong> · <strong>Cứu hỏa·Cấp cứu 119</strong></div></div><div class="lirow"><div class="lk">Cảnh Báo Du Lịch</div><div class="lv">Bộ Ngoại giao Mỹ·Bộ Ngoại giao Hàn Quốc đều ở mức thời bình (chú ý chung). Chỉ hướng dẫn chuẩn bị cho thảm họa thiên nhiên (động đất).</div></div><div class="lirow"><div class="lk">Cảnh Sát Du Lịch</div><div class="lv">Không có cảnh sát du lịch riêng. Koban (交番) ở ga tàu·khu sầm uất xử lý đồ thất lạc·chỉ đường.</div></div><div class="lirow"><div class="lk">Đồn Cảnh Sát Gần Nhất</div><div class="lv">Koban (交番) gần Tokyo Dome — Ga 水道橋(Suido-bashi) gần đó, v.v., tìm kiếm bản đồ &nbsp;<a href="https://www.google.com/maps/search/police%20koban%20near%20Tokyo%20Dome" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Xem trên bản đồ ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Thông tin an toàn chỉ là hướng dẫn chung tham khảo; hướng dẫn từ các cơ quan chính thức địa phương và đại sứ quán luôn ưu tiên. Số điện thoại khẩn cấp và cảnh báo du lịch có thể thay đổi, vui lòng kiểm tra lại trước khi thăm.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Đặt ngay</p>
 <div class="btns">

@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">BTS・MRT・ピンクラインの最終便はおおむね午前0時前後です(ピンクライン06:00~午前0時運行)。Impact Arenaは郊外に位置しているため、公演終了後のピンクラインの最終便時刻をご確認ください。乗り遅れた場合はGrab・Boltでの車両手配をご利用ください(終了直後は手配希望が増加し、料金が上昇する傾向があるのでご注意ください)。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都心の大型店舗・チェーン店・コンビニではカード/QRコード決済が広く利用できますが、夜市・露店・現金タクシーは現金が中心です。QR決済(PromptPay・TrueMoney)が普及しています。ある程度の現金をご用意されることをお勧めします。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">タイバーツ(THB, ฿)。露店・現金タクシーの利用に備えて、現金をご準備することをお勧めします。空港・市内の両替所(SuperRichなど)・ATMが広くご利用いただけます。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">タイ語。観光地・BTS/MRT案内は英語表記が充実していますが、日常英語の通用度は中程度です。翻訳アプリ・配車アプリが便利です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Grab <span style='color:var(--muted)'>(車両・タクシー・フード配達(タイで主流))</span> · Google マップ <span style='color:var(--muted)'>(BTS・MRT・バス経路)</span> · LINE MAN <span style='color:var(--muted)'>(タクシー・配達・決済連携)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜の車両・タクシー手配の標準(タイの市場シェア最高、英語UI・事前決済、外国人向け最適))</span> · Bolt <span style='color:var(--muted)'>(車両手配の選択肢(Grabより安いことが多く、複数アプリで料金比較がお勧めです))</span> · LINE MAN Taxi <span style='color:var(--muted)'>(現地タクシーの即時手配(事前決済・運転手情報あり、外国人利用可能))</span> &nbsp;<a href="https://www.airalo.com/?country=태국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Impact Arena正門・広場を避けた場所での手配をお勧めします — Grabが利用できない場合はBolt・LINE MANでの交互手配をお試しください。郊外立地のため、公演終了前のあらかじめの手配をお試しいただくか、ピンクラインの最終便をご優先ください。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>警察 191</strong> · <strong>救急車・救助 1669</strong> · <strong>消防 199</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">米国国務省 Level 1へ引き上げ(2026-06-09、バンコク含む主要観光地)。ただしカンボジア国境50km・最南部の一部州はより高い警告レベル — バンコクは対象外。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">観光警察 1155(24時間・英語対応) — 言語障壁、紛争、ぼったくり対応に不可欠です。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">Impact Arena(Muang Thonburi)周辺の警察署 — 郊外エリア、地図で検索ください。 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Impact%20Arena%20Muang%20Thong%20Thani%20Bangkok" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

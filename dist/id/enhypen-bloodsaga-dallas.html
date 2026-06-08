@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -171,6 +171,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Lihat Selengkapnya</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transportasi Larut Malam</div><div class="lv">Operasi malam DART terbatas (jadwal akhir per rute sekitar tengah malam). Setelah pertunjukan, ketergantungan Uber·Lyft adalah praktis—hati-hati dengan lonjakan panggilan dan kenaikan harga langsung setelah berakhir.</div></div><div class="lirow"><div class="lk">Pembayaran</div><div class="lv">Kartu dan pembayaran mobile (Apple/Google Pay) sangat diterima. Uang tunai hampir tidak diperlukan—budaya tip membuat pembayaran kartu menjadi umum.</div></div><div class="lirow"><div class="lk">Tukar Valuta &amp; Mata Uang</div><div class="lv">Dolar Amerika Serikat (USD, $). Karena sistem berbasis kartu, kebutuhan penukaran valuta cukup rendah—cukup siapkan uang tunai dalam jumlah kecil sebagai cadangan.</div></div><div class="lirow"><div class="lk">Bahasa</div><div class="lv">Bahasa Inggris (Bahasa Spanyol sering digunakan bersama).</div></div><div class="lirow"><div class="lk">Aplikasi Lokal</div><div class="lv">Uber <span style='color:var(--muted)'>(Pesan Kendaraan (Pilihan Utama Pasca-Konser))</span> · Lyft <span style='color:var(--muted)'>(Panggilan Kendaraan (Alternatif))</span> · GoPass (DART) <span style='color:var(--muted)'>(Tiket DART &amp; Rute)</span></div></div><div class="lirow"><div class="lk">Aplikasi Transportasi Malam</div><div class="lv">Uber <span style='color:var(--muted)'>(Taksi malam — andalan utama (pilihan praktis #1 setelah konser))</span> · Lyft <span style='color:var(--muted)'>(Alternatif Transportasi (Bandingkan Tarif))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Tips Pemesanan</div><div class="lv">American Airlines Center (pintu utama/Victory Plaza) mengalami surge pricing tinggi — berjalan 1–2 blok lebih jauh (luar Victory Park), lalu pesan untuk harga dan pencocokan yang lebih baik. Bandingkan tarif Uber ↔ Lyft secara bersamaan dan ambil yang lebih murah.</div></div><div class="lirow"><div class="lk">Informasi Bus/Kereta Malam Terakhir</div><div class="lv">Dekat Stasiun Victory DART. Kereta terakhir DART malam hari terbatas sekitar tengah malam — setelah konser, Uber/Lyft lebih praktis; perhatikan kenaikan tarif setelah acara selesai.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Keamanan</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Nomor Darurat</div><div class="lv"><strong>Nomor darurat terpadu (polisi, pemadam kebakaran, ambulans) 911</strong></div></div><div class="lirow"><div class="lk">Peringatan Perjalanan</div><div class="lv">Dalam negeri (Amerika Serikat) — tidak termasuk peringatan perjalanan khusus. Hindari bepergian sendirian malam hari, jangan membiarkan barang berharga terlihat di dalam kendaraan, dan ikuti tata cara umum kota besar.</div></div><div class="lirow"><div class="lk">Polisi Pariwisata</div><div class="lv">Tidak ada polisi pariwisata khusus. Hubungi 911 (darurat) / untuk non-darurat hubungi kantor polisi lokal.</div></div><div class="lirow"><div class="lk">Kantor Polisi Terdekat</div><div class="lv">Kantor polisi dekat American Airlines Center (Victory Park) — cari di peta &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20American%20Airlines%20Center%20Dallas" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Lihat di peta ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Informasi keamanan adalah panduan umum untuk referensi; panduan dari badan resmi lokal dan kedutaan selalu menjadi prioritas. Nomor darurat dan peringatan perjalanan dapat berubah — periksa kembali sebelum berkunjung.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Pesan Sekarang</p>
 <div class="btns">

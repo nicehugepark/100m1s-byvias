@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -171,6 +171,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">MRT終電は大体真夜中前後(始発駅出発が約23:30、最終到着が00:30頃)です。コンサート終了後の乗り継ぎを考えると、23:00までの出発をお勧めします。終電後はGrab・Gojek・TADAなどの24時間配車サービスが利用できますが、深夜(00:00〜06:00)は50%の割増料金・変動料金にご注意ください。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・非接触決済・QR(PayNow・PayLah!)が非常に普及しています。ホーカーセンター(屋台街)の一部で現金対応があります。全体的にはキャッシュレス環境です。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">シンガポール・ドル(SGD、S$)。カード決済が中心のため、両替は最小限で結構です。空港・市街地ともに両替・ATMが充実しています。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語(公用語)・中国語・マレー語・タミル語が使用されています。英語は最も通用度が高く、案内・アプリともに英語で大丈夫です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Grab <span style='color:var(--muted)'>(ライドシェア・タクシー・飲食・決済(東南アジア主流))</span> · Google マップ <span style='color:var(--muted)'>(MRT・バス経路)</span> · SimplyGo <span style='color:var(--muted)'>(交通用非接触決済・残高確認)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜のライドシェア・タクシー手配の標準(最大シェア、英語UI・先払い決済、外国人に最適))</span> · Gojek <span style='color:var(--muted)'>(ライドシェア手配の代替選択肢(オフピーク時に割安な場合が多い))</span> · TADA <span style='color:var(--muted)'>(手数料無料モデルのライドシェア手配(料金透明、外国人利用可能))</span> · ComfortDelGro / CDG Zig <span style='color:var(--muted)'>(正規タクシー手配(タクシースタンド多数、00:00〜06:00は50%割増料金))</span> &nbsp;<a href="https://www.airalo.com/?country=싱가포르&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Indoor Stadium/EXPO正面を避けて、数分歩いてから手配すると、待ち時間と料金の改善が期待できます。Grabで配車できない場合は、Gojek↔TADA複数アプリを同時手配することをお勧めします(アプリごとに料金・車両プールが異なります)</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>警察 999</strong> · <strong>消防・救急 995</strong> · <strong>SMS police 71999</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">米国務省レベル1(通常の注意)。世界有数の治安水準です。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">専用の観光警察はございません。999 または一般 Neighbourhood Police(英語が公用語)。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">Singapore Indoor Stadium / EXPO 近郊の警察署(NPC) — 地図検索 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Singapore%20Indoor%20Stadium" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

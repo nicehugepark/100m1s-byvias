@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -171,6 +171,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Xem thêm</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Di chuyển về đêm</div><div class="lv">DART đêm hạn chế (chuyến cuối khoảng giữa đêm tùy tuyến). Sau hòa nhạc, Uber/Lyft là lựa chọn thực tế; cẩn thận tăng giá lúc gọi xe ngay sau.</div></div><div class="lirow"><div class="lk">Thanh toán</div><div class="lv">Thẻ · thanh toán di động (Apple/Google Pay) được chấp nhận rộng rãi. Tiền mặt gần như không cần thiết (trong văn hóa tiền boa, thanh toán thẻ là phổ biến).</div></div><div class="lirow"><div class="lk">Đổi tiền &amp; tiền tệ</div><div class="lv">Đô la Mỹ (USD, $). Vì thanh toán chủ yếu bằng thẻ, nên ít cần đổi ngoại tệ, chỉ dùng tiền mặt cho số tiền nhỏ.</div></div><div class="lirow"><div class="lk">Ngôn ngữ</div><div class="lv">Tiếng Anh (tiếng Tây Ban Nha thường dùng song song).</div></div><div class="lirow"><div class="lk">Ứng dụng địa phương</div><div class="lv">Uber <span style='color:var(--muted)'>(Gọi xe (ưu tiên sau diễn))</span> · Lyft <span style='color:var(--muted)'>(Gọi xe (thay thế))</span> · GoPass (DART) <span style='color:var(--muted)'>(Vé DART · lộ trình)</span></div></div><div class="lirow"><div class="lk">App gọi xe đêm khuya</div><div class="lv">Uber <span style='color:var(--muted)'>(Gọi xe đêm khuya (lựa chọn thực tế nhất sau diễn))</span> · Lyft <span style='color:var(--muted)'>(Gọi xe thay thế (so sánh giá để chọn lựa))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Mẹo gọi xe</div><div class="lv">Tại lối vào chính American Airlines Center / Victory Plaza, giá xe tăng cao nhất — di chuyển 1~2 block (ngoài khu Victory Park) rồi gọi để được giá tốt hơn. So sánh giá Uber ↔ Lyft, chọn cái rẻ hơn.</div></div><div class="lirow"><div class="lk">Lưu ý chuyến cuối</div><div class="lv">Nhà ga Victory DART gần đó. DART tàu cuối khuya hạn chế (khoảng nửa đêm) — sau sự kiện, Uber / Lyft sẽ hợp lý hơn, lưu ý giá tăng ngay sau khi kết thúc.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ An Toàn</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Số Khẩn Cấp</div><div class="lv"><strong>Dịch vụ khẩn cấp (cảnh sát, cứu hỏa, cấp cứu) 911</strong></div></div><div class="lirow"><div class="lk">Cảnh Báo Du Lịch</div><div class="lv">Nước Mỹ — không có cảnh báo du lịch riêng. Tuân thủ quy tắc an toàn cơ bản: tránh đi một mình ban đêm, không để hàng quý giá trong xe.</div></div><div class="lirow"><div class="lk">Cảnh Sát Du Lịch</div><div class="lv">Không có cảnh sát du lịch riêng. 911 (khẩn cấp) / cảnh sát địa phương cho những việc không khẩn cấp.</div></div><div class="lirow"><div class="lk">Đồn Cảnh Sát Gần Nhất</div><div class="lv">Đồn cảnh sát gần American Airlines Center (Victory Park) — tìm trên bản đồ &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20American%20Airlines%20Center%20Dallas" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Xem trên bản đồ ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Thông tin an toàn chỉ là hướng dẫn chung tham khảo; hướng dẫn từ các cơ quan chính thức địa phương và đại sứ quán luôn ưu tiên. Số điện thoại khẩn cấp và cảnh báo du lịch có thể thay đổi, vui lòng kiểm tra lại trước khi thăm.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Đặt ngay</p>
 <div class="btns">

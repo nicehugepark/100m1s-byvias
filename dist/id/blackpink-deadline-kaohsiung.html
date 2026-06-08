@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -159,11 +159,16 @@ body{overflow-wrap:break-word;word-break:normal}
 
 <div class="box linfo-box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 Informasi Praktis Lokal</div>
-  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transportasi</div><div class="lv">Kaohsiung MRT (Merah·Oranye·Lingkaran) + bus kota + LRT. Kartu transportasi kompatibel EasyCard (悠遊卡)·iPASS, pembayaran minimarket juga tersedia. National Stadium Kaohsiung berdekatan dengan stasiun 世運(World Games).</div></div></div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transportasi</div><div class="lv">Kaohsiung MRT (garis Red, Orange, dan Circular) + bis kota + LRT. Kartu transit kompatibel dengan EasyCard (悠遊卡) dan iPASS; pembayaran kartu di toko serba ada juga tersedia. Stadion Nasional Kaohsiung bersebelahan dengan Stasiun 世運主場館 (Shiyun/Stadion World Games).</div></div></div>
   <details class="limore">
     <summary>Lihat Selengkapnya</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transportasi Larut Malam</div><div class="lv">Kereta MRT terakhir sekitar tengah malam. Setelah pertunjukan, dapat panggil taksi·Uber (dioperasikan Uber Taiwan). National Stadium terletak di pinggiran kota sehingga ramai setelah penutupan—panggilan sebelumnya disarankan.</div></div><div class="lirow"><div class="lk">Pembayaran</div><div class="lv">Pembayaran kartu tersedia luas di pusat kota, tetapi pasar malam dan kios pinggir jalan sebagian besar tunai. Pembayaran nir-kontak dengan Easycard/iPass dimungkinkan di toko serba ada dan beberapa transaksi kecil. Kode QR (LINE Pay, dll) sedang berkembang.</div></div><div class="lirow"><div class="lk">Tukar Valuta &amp; Mata Uang</div><div class="lv">Dolar Taiwan (TWD, NT$). Sebaiknya siapkan tunai untuk pasar malam dan kios. Tukar uang di bandara, pusat kota, atau gunakan ATM di toko serba ada.</div></div><div class="lirow"><div class="lk">Bahasa</div><div class="lv">Bahasa Mandarin (Tradisional)·Bahasa Taiwan. Bahasa Inggris kurang umum dibanding Taipei; papan petunjuk MRT bilingual Inggris.</div></div><div class="lirow"><div class="lk">Aplikasi Lokal</div><div class="lv">Uber <span style='color:var(--muted)'>(Aplikasi panggil kendaraan (dioperasikan Taiwan))</span> · Google Maps <span style='color:var(--muted)'>(Rute MRT·Bus)</span> · LINE Pay <span style='color:var(--muted)'>(Kode QR·Pembayaran digital (adopsi pedagang setempat berkembang))</span></div></div><div class="lirow"><div class="lk">Aplikasi Transportasi Malam</div><div class="lv">Uber <span style='color:var(--muted)'>(Aplikasi panggil kendaraan malam (antarmuka Bahasa Inggris, keandalan operasi Kaohsiung baik))</span> · 55688 (Taksi Taiwan) <span style='color:var(--muted)'>(Aplikasi taksi terbesar Taiwan (20.000+ kendaraan, opsi Bahasa Inggris))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(Aplikasi taksi terintegrasi LINE)</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(Alternatif taksi·panggil kendaraan (lokal))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Tips Pemesanan</div><div class="lv">Hindari memanggil dari plaza pintu utama Stadion Nasional Kaohsiung. Pindah 1–2 blok terlebih dahulu, lalu panggil Uber. Jika tidak berhasil, beralih ke 55688 (pool kendaraan besar).</div></div><div class="lirow"><div class="lk">Informasi Bus/Kereta Malam Terakhir</div><div class="lv">Dekat Stasiun 世運(World Games) MRT. MRT terakhir sekitar tengah malam, lokasi pinggiran—sebaiknya pesan taksi/Uber sebelumnya.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Keamanan</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Nomor Darurat</div><div class="lv"><strong>Polisi 110</strong> · <strong>Pemadam kebakaran·Ambulans 119</strong> · <strong>backup 112 (saat sinyal lemah)</strong></div></div><div class="lirow"><div class="lk">Peringatan Perjalanan</div><div class="lv">AS (Departemen Negara) Level 1 (perhatian normal). Korea Selatan juga pada tingkat normal.</div></div><div class="lirow"><div class="lk">Polisi Pariwisata</div><div class="lv">Tidak ada kantor polisi pariwisata khusus. Manfaatkan Polisi Urusan Luar Negeri (0800-024-111, bahasa Inggris) + garis panas pariwisata (0800-011-765, 24 jam).</div></div><div class="lirow"><div class="lk">Kantor Polisi Terdekat</div><div class="lv">Kantor cabang polisi dekat Stadion Nasional (世運) — cari di peta &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20National%20Stadium%20Kaohsiung" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Lihat di peta ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Informasi keamanan adalah panduan umum untuk referensi; panduan dari badan resmi lokal dan kedutaan selalu menjadi prioritas. Nomor darurat dan peringatan perjalanan dapat berubah — periksa kembali sebelum berkunjung.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Pesan Sekarang</p>
 <div class="btns">

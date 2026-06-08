@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -175,6 +175,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">地下鉄の終電はおおよそ真夜中前後、05:30頃に運行を再開します(24時間運行ではありません)。終電後はタクシーのご利用となります(真夜中・23時以降は約20～30%の深夜割増料金)。公演終了後は終電時刻をあらかじめご確認いただき、見逃した場合はGO・DiDi・Uber などのご利用をお勧めします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">現金のご利用が一定程度あります(小規模店舗・一部飲食店は現金のみの場合があります)。大型店・チェーン店・交通機関ではカード/IC がご利用でき、QR決済(PayPay)も広がっています。ある程度の現金のご準備をお勧めします。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">日本円(JPY、¥)です。現金のご利用が一定程度あるため、ある程度の現金のご両替をお勧めします。空港・セブン-イレブン ATM(海外カードでのご出金)が一般的です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">日本語です。観光地・駅の案内には英語が併記されていますが、日常会話での英語の通用度は中程度以下となります。翻訳アプリ・配車アプリなどが便利です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">GO(タクシーGO) <span style='color:var(--muted)'>(タクシー配車(日本最大規模・英語対応))</span> · Japan Travel by NAVITIME <span style='color:var(--muted)'>(電車・バス乗り換え・経路(英語対応))</span> · PayPay <span style='color:var(--muted)'>(QR決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">GO <span style='color:var(--muted)'>(深夜タクシー配車の定番(福岡カバレッジ最広・英語対応))</span> · DiDi <span style='color:var(--muted)'>(タクシー配車のご代替(福岡運行、東京比で車両プール限定))</span> · Uber <span style='color:var(--muted)'>(タクシー配車(英語UI、正規タクシー会社連携――利用可能性は変動する場合があります))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">会場の正門をお避けいただいた上での配車をお勧めします――GOで配車できない場合はDiDi↔Uber のクロス配車をお試しください。博多(はかた)・天神(てんじん)などのタクシー拠点ハブへお移りいただくと、配車がつかみやすくなります。</div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">イベントデータによると、会場未発表(TWS、2026-08-28)。福岡地下鉄は終電が真夜中前後、05:30に再開いたします。博多・天神がタクシー乗車地点のハブとなります。会場が確定いたしましたら、終電と移動ルートを再度ご確認ください。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>警察 110</strong> · <strong>消防・救急 119</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">米国務省・韓国外交部とも平時レベル（一般的なご注意）です。自然災害（地震）への備えのご案内のみとなります。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">専用の観光警察はございません。交番(こうばん)をご利用ください。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">博多(はかた)駅 近郊の交番(こうばん) — 公演場所未発表、地図検索 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Hakata%20Fukuoka" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

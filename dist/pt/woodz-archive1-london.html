@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -145,7 +145,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">Anúncio oficial</div>
   <a class="postlink plink" href="https://www.allkpop.com/article/2026/02/woodz-announces-full-schedule-for-his-2026-world-tour-woodz-archive-1" target="_blank" rel="noopener nofollow" aria-label="Link Anúncio oficial"><span>Link</span><span aria-hidden="true">↗</span></a>
 </div>
-<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">Próximo show</div><div class="oshows"><a class="oshow oshow-next" href="woodz-archive1-berlin.html"><span class="nextflag">Próximo show →</span> <span class="osc">🇩🇪 Alemanha Berlim</span><span class="osd">2026-06-07 <span class="dday" data-date="2026-06-07"></span></span></a></div></div>
+<div class="box"><div style="font-weight:600;font-size:14px;margin-bottom:8px">Últimos Concertos</div><div class="oshows"><a class="oshow" href="woodz-archive1-berlin.html"><span class="osc">🇩🇪 Alemanha Berlim</span><span class="osd">2026-06-07 <span class="dday" data-date="2026-06-07"></span></span></a></div></div>
 <div class="box">
   <div style="font-weight:600;font-size:14px;margin-bottom:8px">Vídeos do Artista</div>
   <button class="ytfacade" data-vid="elyhLAHsXGg" aria-label="Reproduzir Vídeo: WOODZ &#x27;Human Extinction&#x27; Vídeo"
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Ver mais</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte noturno</div><div class="lv">Última composição da Linha Jubilee perto de North Greenwich em torno de 01:01. Sex/Sab funciona 24 horas (Night Tube). Vários ônibus 24 horas após a última composição (linha 188 etc, Waterloo ↔ North Greenwich direto). Como headliners costumam terminar 22:30~23:00, há bastante tempo para pegar a última composição ou ônibus noturno.</div></div><div class="lirow"><div class="lk">Formas de pagamento</div><div class="lv">Cartão sem contato e pagamento móvel amplamente aceitos. Dinheiro praticamente desnecessário.</div></div><div class="lirow"><div class="lk">Câmbio e moeda</div><div class="lv">Libra esterlina (GBP, £). Cartões são o foco; pouca necessidade de câmbio. Caixas eletrônicos em toda parte.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Inglês.</div></div><div class="lirow"><div class="lk">Apps locais</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube·ônibus·rotas noturnas (ponto forte de Londres))</span> · Uber <span style='color:var(--muted)'>(Chamar carro)</span> · TfL Go <span style='color:var(--muted)'>(Informações oficiais de rotas e operação da autoridade de transporte)</span></div></div><div class="lirow"><div class="lk">App de transporte noturno</div><div class="lv">Uber <span style='color:var(--muted)'>(Chamada de carro noturna)</span> · Bolt <span style='color:var(--muted)'>(Chamada de carro como alternativa (comum em Londres, compare as tarifas))</span> · Night Tube / ônibus 24h <span style='color:var(--muted)'>(Sex/Sab Linha Jubilee 24 horas + ônibus 24 horas (linha 188 etc.))</span> &nbsp;<a href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Dicas para chamar</div><div class="lv">The O2 tem transporte público forte, então reduzir dependência de chamada de carro distribui melhor a carga — priorize Linha Jubilee última composição (cerca de 01:01) ou Night Tube (sex/sab); se Uber tiver surge, compare com Bolt ou mude para ônibus 24 horas linha 188.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Segurança</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Número de Emergência</div><div class="lv"><strong>Emergência integrada (polícia, bombeiros, ambulância) 999</strong> · <strong>backup 112</strong> · <strong>polícia não emergencial 101</strong></div></div><div class="lirow"><div class="lk">Alerta de Viagem</div><div class="lv">Departamento de Estado dos EUA — Nível 2 (precaução aumentada, nível geral de alerta a terrorismo). Segurança boa em turismo padrão, cuidado com carteiristas.</div></div><div class="lirow"><div class="lk">Polícia Turística</div><div class="lv">Sem polícia turística dedicada. 999 (emergência)/101 (não emergência) — inglês disponível.</div></div><div class="lirow"><div class="lk">Delegacia Próxima</div><div class="lv">Delegacia perto de The O2(North Greenwich) — procure no mapa &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20The%20O2%20Arena%20London" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Ver no mapa ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">As informações de segurança são orientações gerais apenas para referência; as diretrizes das autoridades locais oficiais e embaixadas têm sempre prioridade. Os números de emergência e avisos de viagem podem mudar, então confirme novamente antes de sua visita.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Garanta agora</p>
 <div class="btns">

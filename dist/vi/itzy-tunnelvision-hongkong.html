@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -175,6 +175,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Xem thêm</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Di chuyển về đêm</div><div class="lv">Airport Express (AsiaWorld-Expo ↔ Hong Kong Station): chuyến cuối khoảng 00:48~01:13 (cách ~12 phút). Chuyến cuối MTR cũng khoảng nửa đêm~01:00. Sau chuyến cuối là xe buýt đêm (tuyến N) và taxi. Nếu show kết thúc sau 22:00, nhớ check giờ chuyến cuối Airport Express trước.</div></div><div class="lirow"><div class="lk">Thanh toán</div><div class="lv">Thẻ Octopus chấp nhận rội rãi. Tiền mặt cũng tốt. Mã QR (AlipayHK, WeChat Pay) phổ biến.</div></div><div class="lirow"><div class="lk">Đổi tiền &amp; tiền tệ</div><div class="lv">Đồng Hong Kong (HKD, HK$). Nạp thẻ Octopus là hub thanh toán địa phương. Đổi tiền và ATM rội rãi ở sân bay, quanh thành phố.</div></div><div class="lirow"><div class="lk">Ngôn ngữ</div><div class="lv">Tiếng Quảng Đông và Tiếng Trung. Tiếng Anh dùng rội rãi ở mức công cộng (biển chỉ dẫn, hướng dẫn tiếng Anh ở khắp nơi).</div></div><div class="lirow"><div class="lk">Ứng dụng địa phương</div><div class="lv">Uber <span style='color:var(--muted)'>(Gọi xe)</span> · Citymapper <span style='color:var(--muted)'>(Tuyến MTR và xe buýt (Tiếng Anh))</span> · Octopus <span style='color:var(--muted)'>(Số dư thẻ Octopus, nạp tiền, thanh toán)</span></div></div><div class="lirow"><div class="lk">App gọi xe đêm khuya</div><div class="lv">Uber <span style='color:var(--muted)'>(Gọi xe/taxi đêm khuya (giao diện tiếng Anh). Thâu tóm HKTaxi và FlyTaxi tạo thành lực lượng chính thực.)</span> · DiDi <span style='color:var(--muted)'>(Ứng dụng gọi xe thay thế (hoạt động tại Hong Kong))</span> · AlipayHK / WeChat Pay HK (Gọi tắc xị) <span style='color:var(--muted)'>(Ứng dụng thanh toán có chức năng gọi taxi tích hợp)</span> &nbsp;<a href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Mẹo gọi xe</div><div class="lv">Sau buổi hòa nhạc AsiaWorld-Expo, ưu tiên chuyến tàu sân bay cuối cùng (khoảng 00:48~01:13) — cực đúng giờ. Nếu bỏ lỡ, tránh cổng chính, gọi Uber/taxi.</div></div><div class="lirow"><div class="lk">Lưu ý chuyến cuối</div><div class="lv">Tàu Airport Express kết nối trực tiếp Nhà ga AsiaWorld-Expo, tàu cuối khoảng 00:48 ~ 01:13. Kiểm tra trước giờ tàu về trung tâm (Nhà ga Hong Kong), nếu lỡ thì có xe buýt đêm · taxi.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ An Toàn</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Số Khẩn Cấp</div><div class="lv"><strong>Dịch vụ khẩn cấp (cảnh sát, cứu hỏa, cấp cứu) 999</strong> · <strong>dự phòng 112</strong></div></div><div class="lirow"><div class="lk">Cảnh Báo Du Lịch</div><div class="lv">Bộ Ngoại giao Mỹ Level 1 (Cảnh báo thường thức). Tiếng Anh phổ biến, an ninh tốt.</div></div><div class="lirow"><div class="lk">Cảnh Sát Du Lịch</div><div class="lv">Không có cảnh sát du lịch riêng biệt. Gọi 999 hoặc liên hệ đồn cảnh sát địa phương (có tiếng Anh).</div></div><div class="lirow"><div class="lk">Đồn Cảnh Sát Gần Nhất</div><div class="lv">Đồn cảnh sát gần AsiaWorld-Expo — tìm trên bản đồ &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20AsiaWorld-Expo%20Hong%20Kong" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Xem trên bản đồ ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Thông tin an toàn chỉ là hướng dẫn chung tham khảo; hướng dẫn từ các cơ quan chính thức địa phương và đại sứ quán luôn ưu tiên. Số điện thoại khẩn cấp và cảnh báo du lịch có thể thay đổi, vui lòng kiểm tra lại trước khi thăm.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Đặt ngay</p>
 <div class="btns">

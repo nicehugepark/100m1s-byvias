@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -171,6 +171,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Lihat Selengkapnya</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transportasi Larut Malam</div><div class="lv">Kereta terakhir sekitar tengah malam hingga 00:30; beberapa jalur ~01:00 (tidak beroperasi 24 jam). Bus malam terbatas setelah itu, taksi mahal. Jika pertunjukan berakhir setelah 22:00, periksa jadwal kereta terakhir Tokyo Dome → pusat kota lebih dulu.</div></div><div class="lirow"><div class="lk">Pembayaran</div><div class="lv">Tunai masih dominan (toko kecil &amp; warung makan: tunai saja). Toko besar, chain &amp; transportasi: kartu/IC diterima. QR (PayPay) berkembang.</div></div><div class="lirow"><div class="lk">Tukar Valuta &amp; Mata Uang</div><div class="lv">Yen Jepang (JPY, ¥). Tunai cukup penting — tukar sejumlah uang di bandara. Layanan penukaran &amp; ATM 7-Eleven (kartu luar negeri) umum.</div></div><div class="lirow"><div class="lk">Bahasa</div><div class="lv">Bahasa Jepang. Panduan di situs wisata &amp; stasiun dalam bahasa Inggris; sehari-hari kurang umum — aplikasi terjemahan sangat membantu.</div></div><div class="lirow"><div class="lk">Aplikasi Lokal</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(Cari rute/penghubung kereta (bahasa Inggris))</span> · GO (Taksi GO) <span style='color:var(--muted)'>(Panggil taksi)</span> · PayPay <span style='color:var(--muted)'>(Pembayaran QR)</span></div></div><div class="lirow"><div class="lk">Aplikasi Transportasi Malam</div><div class="lv">GO <span style='color:var(--muted)'>(Standar panggilan taksi malam (pangsa pasar Jepang ~80%, kuat di Tokyo malam))</span> · S.RIDE <span style='color:var(--muted)'>(Aplikasi taksi khusus Tokyo (satu sapuan, pencocokan cepat))</span> · DiDi <span style='color:var(--muted)'>(Alternatif panggilan taksi (area Tokyo))</span> · Uber <span style='color:var(--muted)'>(Panggilan taksi (UI Inggris, keandalan baik di larut malam))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Tips Pemesanan</div><div class="lv">Hindari pintu utama Tokyo Dome — pindah ke jalan seberang stasiun 水道橋(Suido-bashi)/後楽園(Korakuen), lalu panggil. Jika aplikasi taksi tidak berhasil, coba panggil bergantian GO↔S.RIDE↔DiDi (pool kendaraan berbeda per aplikasi)</div></div><div class="lirow"><div class="lk">Informasi Bus/Kereta Malam Terakhir</div><div class="lv">Dekat 水道橋(Suidōbashi)·後楽園(Kōrakuen)·Tokyo Dome City. Metro·JR terakhir sekitar tengah malam~00:30, sebaiknya periksa jadwal transfer menuju pusat kota sebelumnya.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Keamanan</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Nomor Darurat</div><div class="lv"><strong>Polisi 110</strong> · <strong>Pemadam kebakaran·Ambulans 119</strong></div></div><div class="lirow"><div class="lk">Peringatan Perjalanan</div><div class="lv">Kementerian Luar Negeri AS dan Korea keduanya pada tingkat normal (perhatian umum). Hanya panduan persiapan bencana alam (gempa bumi).</div></div><div class="lirow"><div class="lk">Polisi Pariwisata</div><div class="lv">Tidak ada polisi pariwisata khusus. Koban (交番, pos polisi) di stasiun dan area ramai menangani barang hilang dan pengarahan arah.</div></div><div class="lirow"><div class="lk">Kantor Polisi Terdekat</div><div class="lv">Koban (交番) dekat Tokyo Dome — dekat Stasiun 水道橋 (Suidobashi), cari di peta &nbsp;<a href="https://www.google.com/maps/search/police%20koban%20near%20Tokyo%20Dome" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Lihat di peta ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Informasi keamanan adalah panduan umum untuk referensi; panduan dari badan resmi lokal dan kedutaan selalu menjadi prioritas. Nomor darurat dan peringatan perjalanan dapat berubah — periksa kembali sebelum berkunjung.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Pesan Sekarang</p>
 <div class="btns">

@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -167,11 +167,16 @@ body{overflow-wrap:break-word;word-break:normal}
 
 <div class="box linfo-box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 現地の実用情報</div>
-  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">高雄MRT(レッド・オレンジ・サークルライン) + シティバス + LRT。交通カードはEasyCard(悠遊卡)・iPASS対応、コンビニ決済も利用可能。高雄国家体育館は世運/スタジアム(World Games)駅に隣接。</div></div></div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">高雄MRT(レッド・オレンジ・ファンタジーライン) + 市内バス + LRT。交通カードはEasyCard(悠遊卡)・iPASS対応で、コンビニ支払いも利用可能です。高雄国家体育場は世運主場館(Shiyun/World Games Stadium)駅に隣接しています。</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">MRTの終電はおおむね真夜中前後です。公演後はタクシー・Uber(台湾運営)の配車が利用できます。国家体育館は都心外にあるため、終了直後は混雑が予想されます。事前の配車予約をお勧めします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都市部ではカード利用が良好ですが、夜市・屋台は現金が中心です。EasyCard/iPASSはコンビニ・一部の少額決済に利用できます。QR決済(LINE Pay等)が普及中です。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">台湾ドル(TWD、NT$)。夜市・屋台利用に備えて現金のご準備をお勧めします。空港・市内での両替やコンビニATMをご利用ください。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">中国語(繁体字)・台湾語。英語通用度は台北より多少低いですが、MRT案内には英語表記があります。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(台湾運営))</span> · Google マップ <span style='color:var(--muted)'>(MRT・バス経路)</span> · LINE Pay <span style='color:var(--muted)'>(QR・簡便決済(現地加盟店の普及が進んでいます))</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両呼び出し（英語UI、高雄での運行信頼度が良好）)</span> · 55688(台灣大車隊) <span style='color:var(--muted)'>(台湾最大級のタクシー呼び出し（2万台以上、英語オプション対応）)</span> · LINE Taxi(LINE GO) <span style='color:var(--muted)'>(LINE連携タクシー呼び出し)</span> · Yoxi(yoxi) <span style='color:var(--muted)'>(タクシー・車両呼び出しの代替手段（現地）)</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">国家体育場の正門広場を避けて、1～2ブロック移動後にUberをお呼び出しください。マッチングが成立しない場合は55688への切り替えをお勧めします（車両プール規模が大きい）</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>警察 110</strong> · <strong>消防・救急 119</strong> · <strong>バックアップ 112(通信が弱い場合)</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">美 国務省 Level 1(平時の注意)。韓 外交部も平時の水準です。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">専用観光警察はありません。外事警察(0800-024-111、英語)+ 観光ホットライン(0800-011-765、24時間)。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">国家体育場(世運) 近くの交番 — 地図で検索 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20National%20Stadium%20Kaohsiung" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

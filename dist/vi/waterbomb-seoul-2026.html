@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -161,6 +161,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Xem thêm</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Di chuyển về đêm</div><div class="lv">Tàu cuối line 3 khoảng nửa đêm, xe buýt đưa đón sự kiện thường kết thúc lúc 23:00. Khi trở về Seoul, GTX-A về Nhà ga Seoul chạy muộn hơn (khoảng 00:42) — nên kiểm tra giờ tàu cuối trước, nếu lỡ thì gọi taxi Kakao T.</div></div><div class="lirow"><div class="lk">Thanh toán</div><div class="lv">Thẻ · thanh toán di động (Samsung Pay, v.v.) · QR (Kakao Pay, Naver Pay) được chấp nhận rộng rãi. Một số hàng nước rong chỉ nhận tiền mặt.</div></div><div class="lirow"><div class="lk">Đổi tiền &amp; tiền tệ</div><div class="lv">Won (KRW, ₩). Sử dụng thẻ là chính, ít cần đổi tiền.</div></div><div class="lirow"><div class="lk">Ngôn ngữ</div><div class="lv">Tiếng Hàn. Kintex có hướng dẫn tiếng Anh cho các sự kiện lớn · giao thông, tiếng Anh thường dùng ở mức trung bình.</div></div><div class="lirow"><div class="lk">Ứng dụng địa phương</div><div class="lv">Kakao T <span style='color:var(--muted)'>(Gọi taxi, lái xe thay thế, gọi di chuyển)</span> · Naver Map <span style='color:var(--muted)'>(Tuyến giao thông công cộng, hướng dẫn đường thực thời)</span> · Kakao Pay <span style='color:var(--muted)'>(Mã QR, thanh toán nhanh)</span></div></div><div class="lirow"><div class="lk">App gọi xe đêm khuya</div><div class="lv">Kakao T <span style='color:var(--muted)'>(Tiêu chuẩn gọi taxi đêm (chiếm 90%+ thị trường, ghép cặp nhanh nhất). Hạn chế đăng ký bằng số nước ngoài.)</span> · Uber <span style='color:var(--muted)'>(Gọi taxi — thẻ quốc tế và số nước ngoài dùng được trực tiếp, rất thân thiện.)</span> · TADA <span style='color:var(--muted)'>(Gọi Carnival Van — đăng ký được với số điện thoại và thẻ nước ngoài.)</span> · K-RIDE <span style='color:var(--muted)'>(Gọi taxi dành cho du khách nước ngoài (không cần đăng ký KakaoTalk, Seoul · vùng thủ đô))</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Mẹo gọi xe</div><div class="lv">Hoạt động gọi tập trung tại cổng chính KINTEX · quảng trường — di chuyển 1~2 khối rồi gọi sẽ nhanh hơn. Nếu Kakao T không kết nối, thử Uber Taxi hoặc TADA lần lượt.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ An Toàn</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Số Khẩn Cấp</div><div class="lv"><strong>Cảnh sát 112</strong> · <strong>Cứu hỏa·Cấp cứu 119</strong></div></div><div class="lirow"><div class="lk">Cảnh Báo Du Lịch</div><div class="lv">Trong nước — không thuộc đối tượng cảnh báo du lịch riêng (thời bình thường).</div></div><div class="lirow"><div class="lk">Cảnh Sát Du Lịch</div><div class="lv">Cảnh sát du lịch riêng + đường dây 1330 hướng dẫn dịch thuật du lịch (24 giờ·đa ngôn ngữ).</div></div><div class="lirow"><div class="lk">Đồn Cảnh Sát Gần Nhất</div><div class="lv">Phòng công an/chốt cảnh sát gần sân khấu — tìm kiếm trên bản đồ &nbsp;<a href="https://www.google.com/maps/search/%EA%B2%BD%EC%B0%B0%EC%84%9C%20%EA%B3%A0%EC%96%91%20%ED%82%A8%ED%85%8D%EC%8A%A4%20KINTEX" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Xem trên bản đồ ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Thông tin an toàn chỉ là hướng dẫn chung tham khảo; hướng dẫn từ các cơ quan chính thức địa phương và đại sứ quán luôn ưu tiên. Số điện thoại khẩn cấp và cảnh báo du lịch có thể thay đổi, vui lòng kiểm tra lại trước khi thăm.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Đặt ngay</p>
 <div class="btns">

@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">金・土の夜間はU-Bahn・S-Bahn24時間運行(約15分間隔)です。平日(日~木)は大約00:30終電→04:00再開、その間、夜間バス(Nachtbus)が同じ路線を代替します(通常のチケット使用可)。公演終了後は曜日別の終電・夜間バス時刻をご確認いただくことをお勧めします</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・コンタクトレス決済は拡大していますが、ドイツの特性上、現金比重が依然あります(小型店舗・一部レストランは現金のみ)。大型店・チェーン・交通はカード利用可。ある程度の現金準備をお勧めします</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">ユーロ(EUR、€)。現金比重があるため、一定金額を現金に両替することをお勧めします。ATMは広範囲に設置されています</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">ドイツ語。ベルリンは英語の通用度が比較的高い(観光・若年層)、交通案内は英語併記です</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(タクシー・車両呼び出し(ドイツの主流))</span> · BVG / Jelbi <span style='color:var(--muted)'>(ベルリン交通公社(BVG)公式チケット・経路)</span> · Citymapper <span style='color:var(--muted)'>(U-Bahn・S-Bahn・夜間経路)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(深夜のタクシー・ライドシェア手配の標準(ドイツ最大シェア、タクシー+ライドシェア統合、カード/Apple/Google Pay対応))</span> · Uber <span style='color:var(--muted)'>(ライドシェア手配(英語UI、ベルリン標準))</span> · Bolt <span style='color:var(--muted)'>(車両呼び出しの代替案(料金比較による分散))</span> · Nachtbus(ナイトバス) <span style='color:var(--muted)'>(平日のU/S-Bahn(ウーバーン/エスバーン)終電後の夜間バス網 — U6線代替など(アプリ:BVG/Citymapper経路案内))</span> &nbsp;<a href="https://www.airalo.com/?country=독일&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Columbiahalle正面を避けて、少し歩いてから手配しましょう — FREE NOW↔Uber↔Bolt料金を並べて比較し、複数アプリで同時手配。金・土はU6終夜運行(24時間)のため、ライドシェア依存を抑えるのが得策です。</div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">U6線Platz der Luftbrücke(プラッツ・デア・ルフトブリュッケ)駅 + 104・248番バス。金・土曜日のU-Bahn は24時間運行しますが、平日はおおよそ00:30が終電となり、その後は夜間バス(Nachtbus)へ切り替わります。曜日ごとの終電時刻をあらかじめご確認いただくことをお勧めします。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>警察 110</strong> · <strong>消防・救急 112</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">米国務省レベル2(警戒水準の上昇、テロの一般的な警戒)。平時の治安は良好ですが、駅・観光地でのスリにはご注意ください。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">専用の観光警察はございません。110(警察)/112(救急・消防) — 英語対応です。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">Columbiahalle(Tempelhof) 近郊の警察署(Polizei) — 地図検索 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Columbiahalle%20Berlin" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

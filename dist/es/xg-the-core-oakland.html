@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Ver más</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">El último tren BART es alrededor de la medianoche tanto entre semana como en fin de semana (varía según la línea) — si el concierto termina después de las 22:00, verifica los horarios de último tren con anticipación. Después del último tren, dependerás de Uber·Lyft; ten cuidado con la demanda inmediata después del evento y el aumento de tarifas.</div></div><div class="lirow"><div class="lk">Pago</div><div class="lv">Tarjeta de crédito y pago móvil (Apple/Google Pay) muy ampliamente aceptados. Efectivo casi innecesario (propinas con tarjeta son comunes).</div></div><div class="lirow"><div class="lk">Cambio de divisas</div><div class="lv">Dólar estadounidense (USD, $). Tarjeta como medio principal, solo efectivo en pequeñas cantidades como complemento.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Inglés (español muy hablado también).</div></div><div class="lirow"><div class="lk">Aplicaciones locales</div><div class="lv">Uber <span style='color:var(--muted)'>(Servicio de transporte por aplicación (opción principal después del concierto))</span> · Lyft <span style='color:var(--muted)'>(Servicio de transporte por aplicación (alternativa))</span> · BART (official) <span style='color:var(--muted)'>(Horarios, rutas y tarifas de BART en tiempo real)</span></div></div><div class="lirow"><div class="lk">Transporte nocturno</div><div class="lv">Uber <span style='color:var(--muted)'>(Servicio de viaje compartido de madrugada principal (opción realista #1 después del último tren, interfaz en inglés))</span> · Lyft <span style='color:var(--muted)'>(Servicio de transporte por aplicación (compare tarifas))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Consejos para reservar</div><div class="lv">Evita la entrada principal de Oakland Arena antes de pedir. Compara tarifas de Uber ↔ Lyft simultáneamente. Si es posible el último tren, el metro BART Coliseum (conectado por pasarela) es la opción más barata y rápida.</div></div><div class="lirow"><div class="lk">Último horario de salida</div><div class="lv">Oakland, California (no es Auckland, Nueva Zelanda). Estación BART Coliseum, acceso directo por pasarela peatonal (aprox. 6 min a pie), líneas BLUE, ORANGE y GREEN. Último tren alrededor de medianoche — si lo pierdes, Uber/Lyft, pero cuidado con los recargos por demanda inmediatamente después del concierto.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Seguridad</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Número de emergencia</div><div class="lv"><strong>Emergencia integrada (policía·bomberos·ambulancia) 911</strong></div></div><div class="lirow"><div class="lk">Alerta de viaje</div><div class="lv">Dentro de EE.UU. (California). Oakland tiene mayor frecuencia de robo de vehículos y delitos contra la propiedad en algunas áreas — evite viajar solo en la zona de Coliseum de noche, no deje objetos visibles en vehículos.</div></div><div class="lirow"><div class="lk">Policía de turismo</div><div class="lv">No hay policía turística dedicada. 911 (emergencia) / para consultas no urgentes, contacte a su comisaría local.</div></div><div class="lirow"><div class="lk">Comisaría cercana</div><div class="lv">Comisaría cercana a Oakland Arena(Coliseum) — búsqueda en mapa &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Oakland%20Arena%20Coliseum" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Ver en mapa ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">La información de seguridad es orientativa y general; las recomendaciones oficiales de autoridades locales y embajadas siempre tienen prioridad. Los números de emergencia y alertas de viaje pueden cambiar; por favor, verifica antes de tu viaje.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Reserva ahora</p>
 <div class="btns">

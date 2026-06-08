@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>查看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">Jubilee Line末班车到North Greenwich附近约01:01，周五周六24小时运营(Night Tube)。末班车后还有众多24小时巴士(188路等Waterloo↔North Greenwich直达)。压轴演出通常于22:30~23:00结束，末班车和夜间巴士时间相对充裕。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">非接触卡·移动支付通用度最高。几乎无需现金。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">英镑(GBP, £)。卡支付为主，兑换所需最少。ATM 覆盖广泛。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">英文.</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube·巴士·夜间路线(伦敦优势))</span> · Uber <span style='color:var(--muted)'>(车辆呼叫服务)</span> · TfL Go <span style='color:var(--muted)'>(首尔地铁官方路线·运营信息)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜用车)</span> · Bolt <span style='color:var(--muted)'>(打车替代方案（伦敦常用，价格对比）)</span> · Night Tube / 24小时巴士 <span style='color:var(--muted)'>(周五·周六 Jubilee Line(朱比利线) 24小时 + 188路等24小时公交(应用: TfL Go/Citymapper路线规划))</span> &nbsp;<a href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">The O2 公共交通发达，减少网约车依赖是最佳分散方案——优先选择 Jubilee Line 末班车（约 01:01）或周五周六的 Night Tube；Uber 涨价时不妨对比 Bolt 车费，或改乘 188 路 24 小时巴士</div></div><div class="lirow"><div class="lk">末班车提示</div><div class="lv">Jubilee线North Greenwich站直通，末班车约01:01。周五·周六Night Tube 24小时 + 188路等24小时巴士——结束(22:30~23:00)后仍有余裕。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">紧急号码</div><div class="lv"><strong>统一紧急号码(警察·消防·救护) 999</strong> · <strong>backup 112</strong> · <strong>警察非紧急号码 101</strong></div></div><div class="lirow"><div class="lk">旅行警报</div><div class="lv">美国国务院安全等级 Level 2(提高警惕，恐怖袭击一般警戒)。旅游治安总体良好，需防范扒窃。</div></div><div class="lirow"><div class="lk">旅游警察</div><div class="lv">无专门旅游警察。紧急情况拨 999 / 非紧急情况拨 101 — 可用英语。</div></div><div class="lirow"><div class="lk">附近警察局</div><div class="lv">The O2 (North Greenwich) 附近警察局 — 地图搜索 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20The%20O2%20Arena%20London" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地图查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全信息为一般参考指南；当地官方机构和大使馆指导始终优先。紧急号码和旅行警报可能变化，建议访问前重新确认。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">

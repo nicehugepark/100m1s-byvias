@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Xem thêm</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Di chuyển về đêm</div><div class="lv">Tàu điện ngầm·JR cuối khoảng nửa đêm. Không hoạt động 24 giờ. Kiểm tra giờ tàu cuối sau buổi diễn, nếu bỏ lỡ thì gọi taxi.</div></div><div class="lirow"><div class="lk">Thanh toán</div><div class="lv">Tiền mặt vẫn dùng (đặc biệt cửa hàng nhỏ), cửa hàng lớn·thẻ giao thông/IC chấp nhận, PayPay đang lan rộng.</div></div><div class="lirow"><div class="lk">Đổi tiền &amp; tiền tệ</div><div class="lv">Yên Nhật (JPY, ¥). Giống Tokyo.</div></div><div class="lirow"><div class="lk">Ngôn ngữ</div><div class="lv">Tiếng Nhật. Khu du lịch có tiếng Anh, tiếng Anh hàng ngày có mức độ sử dụng trung bình trở xuống.</div></div><div class="lirow"><div class="lk">Ứng dụng địa phương</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(Chuyển tàu điện·Lộ trình (tiếng Anh))</span> · GO (Taxi GO) <span style='color:var(--muted)'>(Gọi taxi)</span> · PayPay <span style='color:var(--muted)'>(Thanh toán QR nhanh)</span></div></div><div class="lirow"><div class="lk">App gọi xe đêm khuya</div><div class="lv">GO <span style='color:var(--muted)'>(Gọi taxi nửa đêm chuẩn (khu vực Kansai))</span> · DiDi <span style='color:var(--muted)'>(Gọi taxi (mạnh ở Osaka·Kyoto và các thành phố Kansai))</span> · Uber <span style='color:var(--muted)'>(Gọi taxi (UI tiếng Anh))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Mẹo gọi xe</div><div class="lv">Tránh cửa chính Osaka Jo Hall rồi gọi taxi. Nếu ứng dụng không bắt được, gọi chéo GO↔DiDi.</div></div><div class="lirow"><div class="lk">Lưu ý chuyến cuối</div><div class="lv">Vùng 大阪ビジネスパーク (Osaka Business Park) / Nhà ga 森ノ宮 (Morinomiya). Tàu điện ngầm · JR tàu cuối khoảng nửa đêm — nên xác nhận giờ đóng cửa nhà ga.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ An Toàn</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Số Khẩn Cấp</div><div class="lv"><strong>Cảnh sát 110</strong> · <strong>Cứu hỏa·Cấp cứu 119</strong></div></div><div class="lirow"><div class="lk">Cảnh Báo Du Lịch</div><div class="lv">Bộ Ngoại giao Mỹ·Bộ Ngoại giao Hàn Quốc đều ở mức thời bình (chú ý chung). Chỉ hướng dẫn chuẩn bị cho thảm họa thiên nhiên (động đất).</div></div><div class="lirow"><div class="lk">Cảnh Sát Du Lịch</div><div class="lv">Không có cảnh sát du lịch riêng. Sử dụng Koban (交番).</div></div><div class="lirow"><div class="lk">Đồn Cảnh Sát Gần Nhất</div><div class="lv">Koban (交番) gần Osaka-jo Hall — tìm kiếm bản đồ &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Osaka-jo%20Hall" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Xem trên bản đồ ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Thông tin an toàn chỉ là hướng dẫn chung tham khảo; hướng dẫn từ các cơ quan chính thức địa phương và đại sứ quán luôn ưu tiên. Số điện thoại khẩn cấp và cảnh báo du lịch có thể thay đổi, vui lòng kiểm tra lại trước khi thăm.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Đặt ngay</p>
 <div class="btns">

@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -175,6 +175,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Ver mais</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte noturno</div><div class="lv">O metrô de Nova York funciona 24 horas, então não se preocupe tanto com o último trem (os intervalos é que ficam mais longos à noite). Após shows grandes, as principais linhas param perto de Penn Station — mas cuidado: a entrada fica muito cheia logo depois. Usar estações um ou dois quarteirões de distância (como 28th St) é a chave para dispersar a multidão.</div></div><div class="lirow"><div class="lk">Formas de pagamento</div><div class="lv">Cartão e pagamento móvel (Apple/Google Pay) têm altíssima aceitação. Dinheiro é quase desnecessário (na cultura de gorjeta, pagar com cartão é a norma).</div></div><div class="lirow"><div class="lk">Câmbio e moeda</div><div class="lv">Dólar americano (USD, $). Cartões dominam; pouca necessidade de câmbio — apenas pequenas quantias em dinheiro como apoio.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Inglês (espanhol também muito comum).</div></div><div class="lirow"><div class="lk">Apps locais</div><div class="lv">Uber <span style='color:var(--muted)'>(Chamar carro)</span> · Citymapper <span style='color:var(--muted)'>(Rotas de metrô, ônibus e noturnas (força de NYC))</span> · MYmta <span style='color:var(--muted)'>(Rotas em tempo real do metrô e ônibus MTA oficial)</span></div></div><div class="lirow"><div class="lk">App de transporte noturno</div><div class="lv">metrô (24h) <span style='color:var(--muted)'>(Perto de MSG: as linhas 1, 2, 3, A, C, E, etc. funcionam até tarde da noite — sem preocupação com o último trem (apps: MYmta / Citymapper para planejar).)</span> · Uber <span style='color:var(--muted)'>(Chamada de transporte à noite (MSG tem zonas de pickup designadas, interface em inglês))</span> · Lyft <span style='color:var(--muted)'>(Alternativa de chamada de transporte (compare tarifas com Uber e outras opções))</span> · Curb <span style='color:var(--muted)'>(App de chamada Táxi Amarelo (táxi oficial) — tarifas de taxímetro transparentes)</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Dicas para chamar</div><div class="lv">Entrada de Penn Station: extremamente congestionada. Usar estações de metrô um ou dois quarteirões de distância (como 28th St) é essencial para dispersar a multidão. Dica de ouro: após o show, espere 30-45 minutos em um restaurante próximo antes de usar metrô ou chamar transporte — você evita aglomerações e aqueles aumentos dinâmicos de preço.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Segurança</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Número de Emergência</div><div class="lv"><strong>Emergência integrada (polícia, bombeiros, ambulância) 911</strong></div></div><div class="lirow"><div class="lk">Alerta de Viagem</div><div class="lv">Doméstico (EUA) — sem alerta de viagem separado. Evite deslocamentos noturnos sozinho, não deixe objetos de valor à vista no veículo e observe as regras gerais de grandes cidades.</div></div><div class="lirow"><div class="lk">Polícia Turística</div><div class="lv">Sem polícia turística dedicada. Ligue 911 (emergências) / Para não-emergências, consulte o número da delegacia local.</div></div><div class="lirow"><div class="lk">Delegacia Próxima</div><div class="lv">NYPD Midtown South e outras perto de Madison Square Garden — procure no mapa &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Madison%20Square%20Garden%20New%20York" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Ver no mapa ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">As informações de segurança são orientações gerais apenas para referência; as diretrizes das autoridades locais oficiais e embaixadas têm sempre prioridade. Os números de emergência e avisos de viagem podem mudar, então confirme novamente antes de sua visita.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Garanta agora</p>
 <div class="btns">

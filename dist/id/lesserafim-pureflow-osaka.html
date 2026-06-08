@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Lihat Selengkapnya</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transportasi Larut Malam</div><div class="lv">Kereta metro·JR terakhir sekitar tengah malam. Tidak ada layanan 24 jam. Verifikasi waktu kereta terakhir setelah pertunjukan, jika terlewat gunakan taksi.</div></div><div class="lirow"><div class="lk">Pembayaran</div><div class="lv">Ada bagian tunai (terutama toko kecil), kartu transit/IC luas digunakan, PayPay tersebar.</div></div><div class="lirow"><div class="lk">Tukar Valuta &amp; Mata Uang</div><div class="lv">Yen (JPY, ¥). Sama dengan Tokyo.</div></div><div class="lirow"><div class="lk">Bahasa</div><div class="lv">Bahasa Jepang. Bahasa Inggris ditampilkan di tempat wisata, bahasa Inggris umum juga sedang-sedang saja.</div></div><div class="lirow"><div class="lk">Aplikasi Lokal</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(Transfer kereta·rute (Inggris))</span> · GO (Taksi GO) <span style='color:var(--muted)'>(Panggil taksi)</span> · PayPay <span style='color:var(--muted)'>(Pembayaran QR)</span></div></div><div class="lirow"><div class="lk">Aplikasi Transportasi Malam</div><div class="lv">GO <span style='color:var(--muted)'>(Standar panggilan taksi larut malam (area Kansai))</span> · DiDi <span style='color:var(--muted)'>(Panggilan taksi (dominan di Osaka·Kyoto, dll. Kansai))</span> · Uber <span style='color:var(--muted)'>(Panggilan taksi (UI Inggris))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Tips Pemesanan</div><div class="lv">Hindari pintu utama Osaka Castle Hall, lalu panggil. Jika aplikasi tidak tersedia, coba panggil bergantian GO↔DiDi.</div></div><div class="lirow"><div class="lk">Informasi Bus/Kereta Malam Terakhir</div><div class="lv">Area 大阪ビジネスパーク(Osaka Business Park)·Stasiun 森ノ宮(Morinoiya). Metro·JR terakhir sekitar tengah malam — sebaiknya periksa waktu penutupan stasiun.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Keamanan</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Nomor Darurat</div><div class="lv"><strong>Polisi 110</strong> · <strong>Pemadam kebakaran·Ambulans 119</strong></div></div><div class="lirow"><div class="lk">Peringatan Perjalanan</div><div class="lv">Kementerian Luar Negeri AS dan Korea keduanya pada tingkat normal (perhatian umum). Hanya panduan persiapan bencana alam (gempa bumi).</div></div><div class="lirow"><div class="lk">Polisi Pariwisata</div><div class="lv">Tidak ada polisi pariwisata khusus. Gunakan Koban (交番).</div></div><div class="lirow"><div class="lk">Kantor Polisi Terdekat</div><div class="lv">Koban (交番) dekat Osaka Castle Hall — cari di peta &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Osaka-jo%20Hall" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Lihat di peta ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Informasi keamanan adalah panduan umum untuk referensi; panduan dari badan resmi lokal dan kedutaan selalu menjadi prioritas. Nomor darurat dan peringatan perjalanan dapat berubah — periksa kembali sebelum berkunjung.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Pesan Sekarang</p>
 <div class="btns">

@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -161,6 +161,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>查看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">地铁(Metro Rail)深夜末班车有限(各线路约于午夜前后停运)。Pico站在大型演唱会期间平台拥堵严重。演唱会结束后，Uber·Lyft是更现实的选择，但请注意演唱会结束后打车需求激增、动态价格可能上升。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">卡片·移动支付(Apple/Google Pay)高度通用。现金几乎无需(刷卡小费普遍)。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">美元(USD, $)。以卡为主，少额现金辅助。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">英语(西班牙语并用很常见)。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Uber <span style='color:var(--muted)'>(打车(演唱会后首选))</span> · Lyft <span style='color:var(--muted)'>(车辆预约(备选))</span> · Transit <span style='color:var(--muted)'>(LA Metro轨道·巴士实时路线)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜车辆召唤为首选(演唱会后实用第一选项，英文UI))</span> · Lyft <span style='color:var(--muted)'>(打车替代方案（车费对比、费用分摊）)</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">Crypto.com Arena指定打车点(Chick Hearn Ct./Figueroa St. 白区)——避开正门拥挤，Uber↔Lyft实时比价选最便宜。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">紧急号码</div><div class="lv"><strong>统一紧急号码(警察·消防·救护) 911</strong></div></div><div class="lirow"><div class="lk">旅行警报</div><div class="lv">美国国内 — 不涉及单独旅游警报。注意夜间独自出行、车内贵重物品暴露等一般大城市安全规则。</div></div><div class="lirow"><div class="lk">旅游警察</div><div class="lv">无专门旅游警察。紧急情况拨 911 / 非紧急情况请拨当地警察局非紧急号码。</div></div><div class="lirow"><div class="lk">附近警察局</div><div class="lv">Crypto.com Arena (L.A. Live) 附近 LAPD — 地图搜索 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Crypto.com%20Arena%20Los%20Angeles" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地图查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全信息为一般参考指南；当地官方机构和大使馆指导始终优先。紧急号码和旅行警报可能变化，建议访问前重新确认。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">

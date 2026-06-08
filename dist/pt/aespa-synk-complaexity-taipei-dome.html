@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Ver mais</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte noturno</div><div class="lv">Último trem do MTR sai aproximadamente à meia-noite (varia conforme a linha e direção). Em shows maiores, há reforço de trens nas estações próximas. Após o último trem, táxis e Uber estão bem disponíveis. Se seu show terminar após as 22h, confirme o horário do último trem com antecedência.</div></div><div class="lirow"><div class="lk">Formas de pagamento</div><div class="lv">Cartão é bem aceito no centro. Mercados noturnos e tradicionais preferem dinheiro. EasyCard funciona muito bem para pequenos pagamentos, e QR codes (LINE Pay, etc.) estão em expansão.</div></div><div class="lirow"><div class="lk">Câmbio e moeda</div><div class="lv">Dólar taiwanês (TWD, NT$). Para mercados noturnos, traga dinheiro à mão. Troque em aeroportos, casas de câmbio ou use ATM em lojas de conveniência.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Chinês (tradicional). Locais turísticos e MTR têm legendas em inglês. Inglês no dia a dia é moderado.</div></div><div class="lirow"><div class="lk">Apps locais</div><div class="lv">Uber <span style='color:var(--muted)'>(Táxi e carros (operação em Taiwan))</span> · Google Maps <span style='color:var(--muted)'>(Rotas de MRT e ônibus)</span> · LINE Pay <span style='color:var(--muted)'>(QR · Pagamentos móveis)</span></div></div><div class="lirow"><div class="lk">App de transporte noturno</div><div class="lv">Uber <span style='color:var(--muted)'>(Táxi 24h (interface em inglês, pagamento antecipado, perfeito para visitantes))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(Principal app de táxi de Taiwan (integrado ao app LINE))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(Maior app de táxi (20.000+ veículos))</span> · Yoxi <span style='color:var(--muted)'>(Alternativa local para táxi e carros)</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Dicas para chamar</div><div class="lv">Do Domo de Taipei: evite a entrada principal — mude alguns quarteirões e distribua suas solicitações entre Uber, LINE Taxi e 55688.</div></div><div class="lirow"><div class="lk">Lembrete do último ônibus</div><div class="lv">Região de 南京三民(Nanjing Fuxing)/台北小巨蛋(Taipei Arena) Estação. Última partida MRT próxima à meia-noite; em grandes eventos, é comum haver serviço extra em estações próximas — verifique as informações no dia.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Segurança</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Número de Emergência</div><div class="lv"><strong>Polícia 110</strong> · <strong>Bombeiros e Ambulância 119</strong> · <strong>backup 112 (quando o sinal está fraco)</strong></div></div><div class="lirow"><div class="lk">Alerta de Viagem</div><div class="lv">Departamento de Estado dos EUA — Nível 1 (precaução padrão). Ministério das Relações Exteriores da Coreia também em nível padrão.</div></div><div class="lirow"><div class="lk">Polícia Turística</div><div class="lv">Sem polícia turística dedicada. Polícia de Assuntos Internacionais (0800-024-111, inglês) + Linha Turística (0800-011-765, 24 horas).</div></div><div class="lirow"><div class="lk">Delegacia Próxima</div><div class="lv">Delegacia perto do Taipei Dome — confira no mapa &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Taipei%20Dome" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Ver no mapa ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">As informações de segurança são orientações gerais apenas para referência; as diretrizes das autoridades locais oficiais e embaixadas têm sempre prioridade. Os números de emergência e avisos de viagem podem mudar, então confirme novamente antes de sua visita.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Garanta agora</p>
 <div class="btns">

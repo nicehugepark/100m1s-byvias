@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">MRT最終列車はおおよそ深夜前後となります（路線・方向により異なります）。大型コンサート時は周辺駅の臨時増便が行われることがあります。最終列車後はタクシー・Uber呼び出しを広くご利用いただけます。ドームコンサート終了が22時以降の場合は、最終列車の時刻をあらかじめご確認されることをお勧めします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都市部ではカード決済の利用が良好です。夜市・伝統市場は現金中心です。EasyCardの少額決済が広く利用でき、LINE Payなどのペイメント手段も普及しています。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">台湾ドル（TWD、NT$）。夜市では現金の準備をお勧めします。空港・市内での両替所およびコンビニATMで対応できます。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">中国語（繁体字）。観光地・MRTでは英語表記が充実しており、日常での英語の通用度は中程度です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(台湾運営))</span> · Google マップ <span style='color:var(--muted)'>(MRT・バス経路)</span> · LINE Pay <span style='color:var(--muted)'>(QR・モバイル決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両呼び出し（英語UI・事前決済対応、外国人に最適）)</span> · LINE Taxi(LINE GO) <span style='color:var(--muted)'>(台湾大手タクシー呼び出し（LINEアプリ内連携）)</span> · 55688(台灣大車隊) <span style='color:var(--muted)'>(最大級タクシー呼び出し（2万台以上）)</span> · Yoxi(yoxi) <span style='color:var(--muted)'>(タクシー・車両呼び出しの代替手段（現地）)</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">台北ドームの正門を避けて、周辺ブロックに移動後、Uber・LINE Taxi・55688を交互に呼び出してマッチング成功率を高めることができます。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>警察 110</strong> · <strong>消防・救急 119</strong> · <strong>バックアップ 112(通信が弱い場合)</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">美 国務省 Level 1(平時の注意)。韓 外交部も平時の水準です。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">専用観光警察はありません。外事警察(0800-024-111、英語)+ 観光ホットライン(0800-011-765、24時間)。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">台北(たいぺい)ドーム近くの派出所 — 地図検索 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Taipei%20Dome" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

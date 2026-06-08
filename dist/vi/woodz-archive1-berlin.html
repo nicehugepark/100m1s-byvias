@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Xem thêm</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Di chuyển về đêm</div><div class="lv">T6·T7 đêm: U-Bahn·S-Bahn chạy 24h(cách ~15 phút). Ngày thường(CN~T5): ~00:30 chuyến cuối→04:00 quay lại, khoảng giữa là xe buýt đêm(Nachtbus) thay thế(vé thường). Sau buổi diễn kiểm tra giờ chuyến cuối/xe buýt theo ngày.</div></div><div class="lirow"><div class="lk">Thanh toán</div><div class="lv">Thẻ·contactless phổ biến nhưng tiền mặt vẫn cần(cửa hàng nhỏ·một số nhà hàng chỉ tiền mặt). Cửa hàng lớn·chuỗi·giao thông dùng thẻ. Nên dùng chút tiền mặt.</div></div><div class="lirow"><div class="lk">Đổi tiền &amp; tiền tệ</div><div class="lv">Euro(EUR, €). Tiền mặt vẫn cần nên đổi một khoảng. ATM rộng rãi.</div></div><div class="lirow"><div class="lk">Ngôn ngữ</div><div class="lv">Tiếng Đức. Berlin: tiếng Anh phổ biến cao(du lịch·thanh niên), hướng dẫn giao thông tiếng Anh.</div></div><div class="lirow"><div class="lk">Ứng dụng địa phương</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(Taxi·gọi xe(chính thức ở Đức))</span> · BVG / Jelbi <span style='color:var(--muted)'>(BVG: vé giao thông·lộ trình chính thức)</span> · Citymapper <span style='color:var(--muted)'>(U-Bahn·S-Bahn·lộ trình đêm)</span></div></div><div class="lirow"><div class="lk">App gọi xe đêm khuya</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(Gọi taxi·xe đêm(hàng đầu Đức, taxi+gọi xe 1 ứng dụng, thẻ/Apple/Google Pay))</span> · Uber <span style='color:var(--muted)'>(Gọi xe(UI tiếng Anh, phổ biến Berlin))</span> · Bolt <span style='color:var(--muted)'>(Gọi xe thay thế (so sánh giá để chọn lựa))</span> · Nachtbus (xe buýt ban đêm) <span style='color:var(--muted)'>(Ngày thường sau chuyến cuối U/S-Bahn: mạng xe buýt đêm — U6 thay thế(ứng dụng: BVG/Citymapper))</span> &nbsp;<a href="https://www.airalo.com/?country=독일&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Mẹo gọi xe</div><div class="lv">Tránh cửa chính Columbiahalle, gọi từ chỗ khác — so sánh giá FREE NOW↔Uber↔Bolt, chọn rẻ hơn. T6·T7 U6 chạy 24h nên tàu tốt hơn gọi xe.</div></div><div class="lirow"><div class="lk">Lưu ý chuyến cuối</div><div class="lv">Tuyến U6 ga Platz der Luftbrücke + xe buýt 104·248. Thứ Sáu·Thứ Bảy U-Bahn chạy 24 giờ, ngày thường khoảng 00:30 chuyến cuối → chuyển xe buýt đêm (Nachtbus). Kiểm tra chuyến cuối theo ngày trước.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ An Toàn</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Số Khẩn Cấp</div><div class="lv"><strong>Cảnh sát 110</strong> · <strong>Cứu hỏa·Cấp cứu 112</strong></div></div><div class="lirow"><div class="lk">Cảnh Báo Du Lịch</div><div class="lv">Bộ Ngoại giao Mỹ Level 2 (Cảnh báo tăng cường, giám sát khủng bố chung). Lúc bình thường an ninh tốt, cẩn thận móc túi tại ga và điểm du lịch.</div></div><div class="lirow"><div class="lk">Cảnh Sát Du Lịch</div><div class="lv">Không có cảnh sát du lịch riêng biệt. 110 (Cảnh sát)/112 (Cấp cứu·Cứu hỏa) — Tiếng Anh khả dụng.</div></div><div class="lirow"><div class="lk">Đồn Cảnh Sát Gần Nhất</div><div class="lv">Gần Columbiahalle (Tempelhof) có Polizei (cảnh sát) — Tra cứu bản đồ. &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Columbiahalle%20Berlin" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Xem trên bản đồ ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Thông tin an toàn chỉ là hướng dẫn chung tham khảo; hướng dẫn từ các cơ quan chính thức địa phương và đại sứ quán luôn ưu tiên. Số điện thoại khẩn cấp và cảnh báo du lịch có thể thay đổi, vui lòng kiểm tra lại trước khi thăm.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Đặt ngay</p>
 <div class="btns">

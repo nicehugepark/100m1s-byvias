@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">メトロの最終便は概ね午前0時前後です。最終便後のナイトバスは路線が限定的であるため、タクシー・Kakao T に頼ることになります。アシアード主競技場は市街地から離れているため、コンサート終了後はタクシーの待機列が想定されます。事前の呼び出し予約をお勧めいたします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・モバイル決済は一般的に利用できます。路上店舗・伝統市場では一部現金対応の場合があります。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">韓国ウォン（KRW、₩）です。ソウルと同様に、カード決済が基本です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">韓国語です。英語対応はソウルより若干低いですが、交通案内は英語併記されています。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Kakao T <span style='color:var(--muted)'>(タクシー・配車呼び出し)</span> · Naver Map <span style='color:var(--muted)'>(公共交通経路)</span> · Kakao Pay <span style='color:var(--muted)'>(QR・モバイル決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Kakao T <span style='color:var(--muted)'>(夜間タクシー呼び出しの標準サービス（市場シェア 90%+、マッチング迅速）。海外番号での登録に制限があります。)</span> · Uber <span style='color:var(--muted)'>(タクシー呼び出し — 海外カード・番号をそのまま利用可能、外国人向けフレンドリー)</span> · TADA <span style='color:var(--muted)'>(Carnival バン呼び出し — 海外番号・カードでの登録に対応しています)</span> · i.M <span style='color:var(--muted)'>(大型バン・プレミアムタクシーの呼び出し)</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">主競技場の正門を避けて、1～2ブロック移動してからご呼び出しください。アシアード会場は郊外にあるため、終了前の事前予約（ご呼び出し）をお勧めいたします。</div></div><div class="lirow"><div class="lk">会場周辺</div><div class="lv"><div class="hspot"><span class="hn">Olive Young Seomyeon Town</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81+%EC%84%9C%EB%A9%B4+%ED%83%80%EC%9A%B4" target="_blank" rel="noopener" aria-label="Olive Young Seomyeon Town 📍 地図で見る">📍</a><span class="hd">地方最大級の 270坪グローバル特化型 Olive Young。多言語ラベル・税務還付対応で、外国人顧客が約半数を占めています。</span></div><div class="hspot"><span class="hn">ゴアンナリビーチ</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B4%91%EC%95%88%EB%A6%AC+%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5+Gwangalli+Beach" target="_blank" rel="noopener" aria-label="ゴアンナリビーチ 📍 地図で見る">📍</a><span class="hd">Gwangandaegyo Bridge の夜景とビーチカフェで有名な釜山を代表するフォトスポットです。</span></div><div class="hspot"><span class="hn">ヘウンデビーチ（Haeundae Beach）</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%ED%95%B4%EC%9A%B4%EB%8C%80+%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5+Haeundae+Beach" target="_blank" rel="noopener" aria-label="ヘウンデビーチ（Haeundae Beach） 📍 地図で見る">📍</a><span class="hd">釜山を象徴するビーチ。ショッピング・グルメ・観光が集中する外国人観光客の必須コースです。</span></div></div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">都心から離れた郊外地域です。都市鉄道の最終電車はほぼ深夜0時前後で、コンサート終了後はタクシー需要が集中します。Kakao Tの事前予約をお勧めします。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>警察 112</strong> · <strong>消防・救急 119</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">国内 — 別途の渡航警告の対象ではありません(平時)。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">別途 観光警察 + 1330 観光通訳案内(24時間・多言語)。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">公演会場周辺の交番・警察署 — 地図検索 &nbsp;<a href="https://www.google.com/maps/search/%EA%B2%BD%EC%B0%B0%EC%84%9C%20%EB%B6%80%EC%82%B0%20%EC%95%84%EC%8B%9C%EC%95%84%EB%93%9C%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

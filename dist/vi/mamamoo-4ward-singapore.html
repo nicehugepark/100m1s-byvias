@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Xem thêm</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Di chuyển về đêm</div><div class="lv">Chuyến cuối MRT ~nửa đêm(terminal xuất phát ~23:30, cuối ~00:30). Sau buổi diễn: đi trước 23:00 để kịp chuyển tuyến. Sau đó gọi Grab·Gojek·TADA v.v. 24h, lưu ý phí tăng 50% từ 00:00~06:00 + giá động.</div></div><div class="lirow"><div class="lk">Thanh toán</div><div class="lv">Thẻ·contactless·QR(PayNow·PayLah!) phổ biến. Hawker centres: một số chỉ tiền mặt. Tổng thể: cashless.</div></div><div class="lirow"><div class="lk">Đổi tiền &amp; tiền tệ</div><div class="lv">Đô la Singapore(SGD, S$). Ưu tiên thẻ nên chỉ đổi ít. ATM·dịch vụ đổi tiền khắp sân bay·thành phố.</div></div><div class="lirow"><div class="lk">Ngôn ngữ</div><div class="lv">Tiếng Anh (ngôn ngữ chung) · Tiếng Trung · Tiếng Malay · Tiếng Tamil. Tiếng Anh phổ biến nhất — hướng dẫn và ứng dụng đều không vấn đề với tiếng Anh.</div></div><div class="lirow"><div class="lk">Ứng dụng địa phương</div><div class="lv">Grab <span style='color:var(--muted)'>(Xe · Taxi · Ăn uống · Thanh toán (dịch vụ chính Đông Nam Á))</span> · Google Maps <span style='color:var(--muted)'>(Tuyến MRT·Xe buýt)</span> · SimplyGo <span style='color:var(--muted)'>(Thanh toán không tiếp xúc giao thông · Kiểm tra số dư)</span></div></div><div class="lirow"><div class="lk">App gọi xe đêm khuya</div><div class="lv">Grab <span style='color:var(--muted)'>(Ứng dụng gọi xe/taxi nửa đêm (thị phần hàng đầu, giao diện tiếng Anh, thanh toán trước, dành cho du khách))</span> · Gojek <span style='color:var(--muted)'>(Ứng dụng gọi xe thay thế (thường rẻ hơn ngoài giờ cao điểm))</span> · TADA <span style='color:var(--muted)'>(Ứng dụng gọi xe không hoa hồng (giá rõ ràng, sử dụng được cho du khách))</span> · ComfortDelGro / CDG Zig <span style='color:var(--muted)'>(Gọi taxi thường (nhiều bến taxi, tăng 50% từ nửa đêm–6 sáng))</span> &nbsp;<a href="https://www.airalo.com/?country=싱가포르&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Mẹo gọi xe</div><div class="lv">Tránh cửa chính Sân vận động trong nhà/EXPO; đi bộ vài phút rồi gọi để chờ tốt hơn/giá tốt hơn. Nếu Grab không có, thử Gojek ↔ TADA (giá và khả dụng khác nhau theo ứng dụng)</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ An Toàn</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Số Khẩn Cấp</div><div class="lv"><strong>Cảnh sát 999</strong> · <strong>Cứu hỏa·Cấp cứu 995</strong> · <strong>Báo cảnh sát qua SMS 71999</strong></div></div><div class="lirow"><div class="lk">Cảnh Báo Du Lịch</div><div class="lv">Bộ Ngoại giao Mỹ Level 1 (Cảnh báo thường lệ). An ninh hàng đầu thế giới.</div></div><div class="lirow"><div class="lk">Cảnh Sát Du Lịch</div><div class="lv">Không có cảnh sát du lịch riêng biệt. Gọi 999 hoặc liên hệ Neighbourhood Police (Tiếng Anh là ngôn ngữ chính thức).</div></div><div class="lirow"><div class="lk">Đồn Cảnh Sát Gần Nhất</div><div class="lv">Gần Singapore Indoor Stadium / EXPO có đồn cảnh sát (NPC) — Tra cứu bản đồ. &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Singapore%20Indoor%20Stadium" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Xem trên bản đồ ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">Thông tin an toàn chỉ là hướng dẫn chung tham khảo; hướng dẫn từ các cơ quan chính thức địa phương và đại sứ quán luôn ưu tiên. Số điện thoại khẩn cấp và cảnh báo du lịch có thể thay đổi, vui lòng kiểm tra lại trước khi thăm.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Đặt ngay</p>
 <div class="btns">

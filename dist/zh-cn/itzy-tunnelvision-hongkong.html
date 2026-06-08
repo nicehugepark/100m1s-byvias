@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -175,6 +175,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>查看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">机场线(AsiaWorld-Expo–香港站)末班车约00:48–01:13(约12分钟间隔)。常规MTR末班车亦约午夜–01:00。末班车后可乘夜间公交(N路线)·出租车。若演出22时后结束，务必提前查询机场线末班车时间。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">八達通卡(Octopus Card)接受度很高。现金也通用。二维码支付(AlipayHK·WeChat Pay)日渐普及。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">香港元(HKD, HK$)。八達通卡(Octopus Card)充值实际上是当地支付枢纽。机场·市区换汇·ATM广泛分布。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">广东话·汉语。英语作为通用语言广泛应用(标识·导览普遍配有英文)。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Uber <span style='color:var(--muted)'>(车辆呼叫服务)</span> · Citymapper <span style='color:var(--muted)'>(MTR·公交路线(英文))</span> · Octopus <span style='color:var(--muted)'>(八達通卡(Octopus Card)余额·充值·支付)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜车辆/出租车呼叫(英文界面)。HKTaxi·FlyTaxi并购整合后实为主力)</span> · DiDi <span style='color:var(--muted)'>(车辆呼叫替代方案(香港运营))</span> · AlipayHK / WeChat Pay HK 打车 <span style='color:var(--muted)'>(支付应用内置出租车呼叫功能)</span> &nbsp;<a href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">AsiaWorld-Expo演唱会后优先乘坐机场铁路末班车(约 00:48~01:13) — 准点性最佳 若错过末班车建议绕过正门后呼叫Uber/出租车</div></div><div class="lirow"><div class="lk">末班车提示</div><div class="lv">机场铁路AsiaWorld-Expo站直通，末班车约00:48~01:13。市区(香港站)方向末班时间建议提前确认，错过则改用夜间巴士·出租车。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">紧急号码</div><div class="lv"><strong>统一紧急号码(警察·消防·救护) 999</strong> · <strong>backup 112</strong></div></div><div class="lirow"><div class="lk">旅行警报</div><div class="lv">美国国务院安全等级 Level 1(日常注意事项)。英语广泛通用，治安良好。</div></div><div class="lirow"><div class="lk">旅游警察</div><div class="lv">无专门旅游警察。可拨打 999 或到一般警察局咨询(可用英语)。</div></div><div class="lirow"><div class="lk">附近警察局</div><div class="lv">AsiaWorld-Expo 附近警察局 — 机场区域，地图搜索 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20AsiaWorld-Expo%20Hong%20Kong" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地图查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全信息为一般参考指南；当地官方机构和大使馆指导始终优先。紧急号码和旅行警报可能变化，建议访问前重新确认。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">

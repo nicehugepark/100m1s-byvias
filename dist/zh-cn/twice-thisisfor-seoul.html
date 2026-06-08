@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>查看更多</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">地铁末班车按路线约午夜~00:30左右(市中心→郊外方向更晚)。末班车后,夜间巴士N(夜猫巴士)运行主要干线。出租车·Kakao T呼叫覆盖范围广,夜间加价适用。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">信用卡/借记卡·快捷支付(Samsung Pay等)使用度很高。小额·路边摊部分接受现金。QR(Kakao Pay·Naver Pay)广泛使用。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">韩元(KRW, ₩)。刷卡支付为主,对单独换汇的依赖度低。机场·市内换汇所·ATM可用。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">韩语。旅游景点·大型场馆·交通标牌通常配有英文,日常英语使用度一般。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(出租车·代驾·移动出行呼叫)</span> · Naver 地图 <span style='color:var(--muted)'>(公共交通路线·实时导航)</span> · Kakao Pay <span style='color:var(--muted)'>(QR码·快捷支付)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(夜间出租车呼叫标准(市场占有率90%+,配对最快)。外国号码注册有限制。)</span> · Uber(优步) <span style='color:var(--muted)'>(出租车呼叫 — 可直接使用海外卡·号码,外国人友好)</span> · TADA <span style='color:var(--muted)'>(Carnival Van呼叫 — 可注册海外号码·卡片)</span> · i.M <span style='color:var(--muted)'>(大型厢式车高级出租车呼叫)</span> · K-RIDE <span style='color:var(--muted)'>(外国人专用出租车呼叫(无需KakaoTalk账户,首尔·仁川·首都圈))</span> · 猫头鹰巴士(N巴士) <span style='color:var(--muted)'>(末班车后夜间巴士 — 首尔市官方路线(N15·N16·N26等))</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">演出场地正门广场呼叫集中 — 走出1-2个街区再呼叫,配对更快;或地铁移动1站再呼叫,竞争分散</div></div><div class="lirow"><div class="lk">演出场地周边</div><div class="lv"><div class="hspot"><span class="hn">奥林匹克公园 和平之门</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%BC%ED%94%BD%EA%B3%B5%EC%9B%90+%ED%8F%89%ED%99%94%EC%9D%98+%EB%AC%B8+Olympic+Park+World+Peace+Gate" target="_blank" rel="noopener" aria-label="奥林匹克公园 和平之门 📍 在地图查看">📍</a><span class="hd">1988奥运会纪念雕塑与宽敞公园。散步和拍照的热门地点。</span></div><div class="hspot"><span class="hn">乐天世界商城</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0+Lotte+World+Mall" target="_blank" rel="noopener" aria-label="乐天世界商城 📍 在地图查看">📍</a><span class="hd">大型购物综合体，汇聚Olive Young·免税店·K时尚·观景台。演出前后购物一站式。</span></div></div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">紧急号码</div><div class="lv"><strong>警察 112</strong> · <strong>消防·急救 119</strong></div></div><div class="lirow"><div class="lk">旅行警报</div><div class="lv">国内 — 不属于单独旅行警报对象(平时)。</div></div><div class="lirow"><div class="lk">旅游警察</div><div class="lv">专门旅游警察 + 1330 旅游口译服务(24小时·多语言)。</div></div><div class="lirow"><div class="lk">附近警察局</div><div class="lv">演出场地附近警察分驻/派出所 — 地图搜索 &nbsp;<a href="https://www.google.com/maps/search/%EA%B2%BD%EC%B0%B0%EC%84%9C%20%EC%84%9C%EC%9A%B8%20%EC%9E%A0%EC%8B%A4%20%EC%98%AC%EB%A6%BC%ED%94%BD%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地图查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全信息为一般参考指南；当地官方机构和大使馆指导始终优先。紧急号码和旅行警报可能变化，建议访问前重新确认。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">

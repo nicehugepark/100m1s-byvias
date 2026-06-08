@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -163,6 +163,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Ver mais</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte noturno</div><div class="lv">Último ônibus·LRT varia por linha (aprox. meia-noite), alguns ônibus de cassino funcionam até tarde. Após o último, táxis podem ser insuficientes para a demanda. Confirme com antecedência se há ônibus do hotel após a apresentação.</div></div><div class="lirow"><div class="lk">Formas de pagamento</div><div class="lv">Dinheiro e cartão funcionam bem; cassinos/resorts aceitam cartão regularmente. Pequenas lojas usam dinheiro. Códigos QR (AlipayHK·WeChat Pay) estão em expansão.</div></div><div class="lirow"><div class="lk">Câmbio e moeda</div><div class="lv">Pataca de Macau (MOP). Dólar de Hong Kong (HKD) também amplamente aceito (troco em MOP). Câmbio e ATM disponíveis em qualquer lugar.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Cantonês·Português (oficiais). Inglês bem falado em áreas turísticas e cassinos.</div></div><div class="lirow"><div class="lk">Apps locais</div><div class="lv">Google Maps <span style='color:var(--muted)'>(Rota ônibus·a pé)</span> · macaubus / DSAT Oficial <span style='color:var(--muted)'>(Chegada de ônibus em tempo real (app oficial local))</span> · AlipayHK <span style='color:var(--muted)'>(Pagamento digital por QR)</span></div></div><div class="lirow"><div class="lk">App de transporte noturno</div><div class="lv">Macau Taxi (App de Chamada de Táxi) <span style='color:var(--muted)'>(Chamar táxi local de Macau)</span> · Traslado de Hotel/Cassino <span style='color:var(--muted)'>(Ônibus gratuito do resort — alguns funcionam à noite (essencial para distribuir o fluxo))</span> &nbsp;<a href="https://www.airalo.com/?country=마카오&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Dicas para chamar</div><div class="lv">Após Arena de Macau encerrar: táxis podem ser insuficientes → use ônibus gratuito de hotel/cassino para se mover a um ponto de distribuição; em vez da entrada principal, use paradas próximas.</div></div><div class="lirow"><div class="lk">Lembrete do último ônibus</div><div class="lv">Última partida LRT/ônibus próxima à meia-noite; alguns ônibus de cassino funcionam durante a madrugada. Recomendamos verificar com antecedência a disponibilidade de ônibus do hotel e a espera de táxi.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Segurança</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Número de Emergência</div><div class="lv"><strong>Emergência integrada (polícia, bombeiros, ambulância) 999</strong> · <strong>tourist backup 112 (para turistas estrangeiros·conecta a 999)</strong></div></div><div class="lirow"><div class="lk">Alerta de Viagem</div><div class="lv">Departamento de Estado dos EUA — Nível 1 (precaução padrão). Segurança boa nas zonas de cassino e turismo.</div></div><div class="lirow"><div class="lk">Polícia Turística</div><div class="lv">Operado pela Polícia de Segurança Pública (PSP). Linha 24 horas para turistas internacionais: 112 (conecta com 999).</div></div><div class="lirow"><div class="lk">Delegacia Próxima</div><div class="lv">Delegacia de polícia perto de Macau Arena — confira no mapa &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Macau%20Arena%20East%20Asian%20Games%20Dome" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Ver no mapa ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">As informações de segurança são orientações gerais apenas para referência; as diretrizes das autoridades locais oficiais e embaixadas têm sempre prioridade. Os números de emergência e avisos de viagem podem mudar, então confirme novamente antes de sua visita.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Garanta agora</p>
 <div class="btns">

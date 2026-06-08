@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -172,6 +172,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">地下鉄の最終便は路線によって異なりますが、概ね午前0時～0時30分頃です（中心部→郊外方向はやや遅いです）。最終便後は、N（ソウルナイトバス）が主要幹線で運行されます。タクシー・Kakao T は広く利用でき、夜間割増料金が適用されます。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">クレジットカード・デビットカード・決済アプリ（Samsung Pay など）の利用は非常に一般的です。少額や路上店舗では現金の場合もあります。QR決済（Kakao Pay・Naver Pay）は広く普及しています。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">韓国ウォン（KRW、₩）です。カード決済が基本のため、別途の両替必要性は低くなっています。空港・市内の両替所・ATM が利用可能です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">韓国語です。観光地・大型コンサート会場・交通案内は英語併記が一般的で、日常会話の英語対応は中程度です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Kakao T <span style='color:var(--muted)'>(タクシー・配車・ライドシェアの呼び出し)</span> · Naver Map <span style='color:var(--muted)'>(公共交通経路・リアルタイム経路検索)</span> · Kakao Pay <span style='color:var(--muted)'>(QR・モバイル決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Kakao T <span style='color:var(--muted)'>(夜間タクシー呼び出しの標準サービス（市場シェア 90%+、マッチング迅速）。海外番号での登録に制限があります。)</span> · Uber <span style='color:var(--muted)'>(タクシー呼び出し — 海外カード・番号をそのまま利用可能、外国人向けフレンドリー)</span> · TADA <span style='color:var(--muted)'>(Carnival バン呼び出し — 海外番号・カードでの登録に対応しています)</span> · i.M <span style='color:var(--muted)'>(大型バン・プレミアムタクシーの呼び出し)</span> · K-RIDE <span style='color:var(--muted)'>(外国人専用タクシー呼び出し（Kakao Talk 登録不要、ソウル・仁川・首都圏対応）)</span> · Owl Bus(オウルバス) <span style='color:var(--muted)'>(最終便後のナイトバス — ソウル市の公式路線（N15・N16・N26 など）)</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">コンサート会場の正門広場は呼び出しが集中しています。1～2ブロック離れたところから呼び出すと、マッチングが早くなります。地下鉄1駅分移動して呼び出すと、競争が分散します。</div></div><div class="lirow"><div class="lk">会場周辺</div><div class="lv"><div class="hspot"><span class="hn">オリンピック公園 平和の門</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%BC%ED%94%BD%EA%B3%B5%EC%9B%90+%ED%8F%89%ED%99%94%EC%9D%98+%EB%AC%B8+Olympic+Park+World+Peace+Gate" target="_blank" rel="noopener" aria-label="オリンピック公園 平和の門 📍 地図で見る">📍</a><span class="hd">1988年オリンピックを象徴する彫刻と広大な公園。散歩やフォトスポットとして人気があります。</span></div><div class="hspot"><span class="hn">ロッテワールドモール</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0+Lotte+World+Mall" target="_blank" rel="noopener" aria-label="ロッテワールドモール 📍 地図で見る">📍</a><span class="hd">Olive Young・免税・K-ファッション・展望台を備えた大型複合施設。コンサート前後のショッピングがワンストップです。</span></div></div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>警察 112</strong> · <strong>消防・救急 119</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">国内 — 別途の渡航警告の対象ではありません(平時)。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">別途 観光警察 + 1330 観光通訳案内(24時間・多言語)。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">公演会場周辺の交番・警察署 — 地図検索 &nbsp;<a href="https://www.google.com/maps/search/%EA%B2%BD%EC%B0%B0%EC%84%9C%20%EC%84%9C%EC%9A%B8%20%EC%9E%A0%EC%8B%A4%20%EC%98%AC%EB%A6%BC%ED%94%BD%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

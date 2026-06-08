@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Ver mais</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte noturno</div><div class="lv">O último trem BART sai por volta da meia-noite (tanto na semana quanto no fim de semana, varia conforme a linha) — se o show terminar depois das 22h, verifique o horário do último trem com antecedência. Após o último trem, Uber e Lyft são suas opções; cuidado com a alta demanda e aumento de tarifas logo após o evento.</div></div><div class="lirow"><div class="lk">Formas de pagamento</div><div class="lv">Cartão e pagamento móvel (Apple/Google Pay) muito aceitos. Dinheiro quase desnecessário (gorjeta no cartão é comum).</div></div><div class="lirow"><div class="lk">Câmbio e moeda</div><div class="lv">Dólar americano (USD, $). Cartão é o principal, dinheiro em pequenas quantidades apenas.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Inglês (espanhol também muito comum).</div></div><div class="lirow"><div class="lk">Apps locais</div><div class="lv">Uber <span style='color:var(--muted)'>(Chamada de carro (principal após o show))</span> · Lyft <span style='color:var(--muted)'>(Chamada de carro (alternativa))</span> · BART (oficial) <span style='color:var(--muted)'>(Horários ao vivo da BART·rotas·tarifas)</span></div></div><div class="lirow"><div class="lk">App de transporte noturno</div><div class="lv">Uber <span style='color:var(--muted)'>(Chamada de carro noturno é a escolha prática (1ª opção realista após o último trem, interface em inglês))</span> · Lyft <span style='color:var(--muted)'>(Chamada de carro como alternativa (compare as tarifas))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Dicas para chamar</div><div class="lv">Saia da entrada principal da Oakland Arena antes de chamar um transporte — compare tarifas de Uber e Lyft. Se conseguir pegar o último trem, a estação BART Coliseum (conectada por passarela) é a opção mais barata e rápida.</div></div><div class="lirow"><div class="lk">Lembrete do último ônibus</div><div class="lv">Oakland, Califórnia (não Auckland, Nova Zelândia). Estação Coliseum do BART conectada por passarela (cerca de 6 minutos a pé), linhas AZUL, LARANJA e VERDE. Último trem por volta da meia-noite — se perder, Uber/Lyft; cuidado com a majoração de preço logo após o show.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Segurança</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Número de Emergência</div><div class="lv"><strong>Emergência integrada (polícia, bombeiros, ambulância) 911</strong></div></div><div class="lirow"><div class="lk">Alerta de Viagem</div><div class="lv">Dentro do país (Califórnia, EUA). Oakland tem alta incidência de roubo de veículos e crimes contra a propriedade em algumas áreas — evite se deslocar sozinho na região do Coliseum à noite e não deixe pertences visíveis nos veículos.</div></div><div class="lirow"><div class="lk">Polícia Turística</div><div class="lv">Sem polícia turística dedicada. Ligue 911 (emergências) / Para não-emergências, consulte o número da delegacia local.</div></div><div class="lirow"><div class="lk">Delegacia Próxima</div><div class="lv">Delegacia perto de Oakland Arena(Coliseum) — procure no mapa &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Oakland%20Arena%20Coliseum" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Ver no mapa ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">As informações de segurança são orientações gerais apenas para referência; as diretrizes das autoridades locais oficiais e embaixadas têm sempre prioridade. Os números de emergência e avisos de viagem podem mudar, então confirme novamente antes de sua visita.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Garanta agora</p>
 <div class="btns">

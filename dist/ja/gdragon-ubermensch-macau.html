@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -163,6 +163,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">バス・LRTの最終列車はルート別に異なります(凡そ真夜中前後)。一部のカジノシャトルは深夜まで運行。最終列車後はタクシー頼り(需要に対して供給が不足する可能性あり)。公演後のホテルシャトル利用可能性を事前にご確認いただくことをお勧めします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">現金とカードの両方をご利用いただけます。カジノ/リゾートではカード利用がスムーズです。小型店舗では現金のご用意をお勧めします。QR(AlipayHK・WeChat Pay)も普及しています。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">マカオパタカ(MOP)が主要通貨です。香港ドル(HKD)も広く受け入れられています(お釣りはMOPで対応可能)。両替・ATMは一般的です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">広東語・ポルトガル語(公用語)。観光・カジノエリアでは英語が通じやすいです。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Google マップ <span style='color:var(--muted)'>(バス・徒歩ルート)</span> · macaubus / DSAT 公式 <span style='color:var(--muted)'>(バス実時間到着情報(現地公式))</span> · AlipayHK <span style='color:var(--muted)'>(QR決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Macau Taxi(配車アプリ) <span style='color:var(--muted)'>(マカオ現地タクシー配車)</span> · ホテル/カジノシャトル <span style='color:var(--muted)'>(リゾート無料シャトル — 一部は深夜まで運行(移動分散の鍵))</span> &nbsp;<a href="https://www.airalo.com/?country=마카오&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">マカオアリーナ終了後、タクシー需要に対して供給が不足する可能性 → ホテル/カジノシャトルで拠点に移動し分散。正門を避けて近隣ホテルシャトル乗車場をご利用ください</div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">LRT/バスの最終便は真夜中前後、一部のカジノシャトルは深夜まで運行しています。ホテルシャトルの利用可能性・タクシーの待機状況は事前のご確認をお勧めします。</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>統合緊急通報(警察・消防・救急) 999</strong> · <strong>観光客向けサポート 112(海外観光客向け・999に接続)</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">米国国務省 Level 1(平時の注意)。カジノ・観光地の治安が良好です。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">公共安全警察(PSP)が運営。海外観光客向け24時間ホットライン 112(999に接続)</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">マカオ・アレーナ周辺の警察署 — 地図で検索ください。 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Macau%20Arena%20East%20Asian%20Games%20Dome" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

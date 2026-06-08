@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>詳細を見る</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">Metro レール夜間の終電は限定的(路線により異なります)。Pico駅は大規模公演時にプラットフォームが混雑します。公演後はUber・Lyft頼みになるのが現実的ですが、終了直後は呼び出し急増・変動料金上昇にご注意ください</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・モバイル決済(Apple/Google Pay)の通用度が非常に高いです。現金はほぼ不要です(カード払いでのチップが一般的)</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">米国ドル(USD、$)。カード中心で、少額の現金は補助的に</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語(スペイン語との併用が非常に一般的です)</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(公演後メイン手段))</span> · Lyft <span style='color:var(--muted)'>(車両配車(代替手段))</span> · Transit <span style='color:var(--muted)'>(LA Metro レール・バス リアルタイム経路)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両呼び出しが主流(公演後の現実的な1番の選択肢、英語UI))</span> · Lyft <span style='color:var(--muted)'>(車両呼び出しの代替案(料金比較による分散))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Crypto.com Arena指定のライドシェア ピックアップゾーン(Chick Hearn Ct./Figueroa St. ホワイトゾーン)のご利用—正面の混雑回避。Uber↔Lyft料金を同時比較して安い方をお選びください</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">緊急番号</div><div class="lv"><strong>統合緊急通報(警察・消防・救急) 911</strong></div></div><div class="lirow"><div class="lk">渡航警告</div><div class="lv">国内(米国) — 別途の渡航警告の対象外。夜間の単独移動や車内での貴重品の放置など、一般的な大都市での注意事項をご確認ください。</div></div><div class="lirow"><div class="lk">観光警察</div><div class="lv">専用の観光警察はございません。911(緊急)/ 非緊急は地域警察署の非常番号をご利用ください。</div></div><div class="lirow"><div class="lk">最寄りの警察署</div><div class="lv">Crypto.com Arena(L.A. Live)周辺のLAPD — 地図で検索ください。 &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20Crypto.com%20Arena%20Los%20Angeles" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 地図で見る ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全情報は参考用の一般案内であり、現地の公式機関・大使館の案内が常に優先されます。緊急番号・旅行警告は変動する可能性がありますので、訪問前にご確認ください。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">

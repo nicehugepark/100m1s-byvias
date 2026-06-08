@@ -27,7 +27,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
-.subitem{white-space:nowrap}
+.subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
@@ -109,8 +109,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"]{color:#fff;background:var(--accent);border-color:var(--accent)}
-#tab-c:checked~.tp-c,#tab-m:checked~.tp-m{display:block}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
@@ -176,6 +176,11 @@ body{overflow-wrap:break-word;word-break:normal}
     <summary>Ver mais</summary>
     <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Transporte noturno</div><div class="lv">Airport Express (AsiaWorld-Expo ↔ Hong Kong Station) — último trem sai aproximadamente entre 00:48-01:13 (intervalos de ~12 minutos). MTR geral cessa por volta de meia-noite a 01:00. Após o último trem, há ônibus noturnos (linhas N) e táxis. Se seu show terminar após as 22h, confirme o horário do último trem do Airport Express com antecedência.</div></div><div class="lirow"><div class="lk">Formas de pagamento</div><div class="lv">O Octopus Card é amplamente aceito. Dinheiro também funciona. Códigos QR (AlipayHK·WeChat Pay) estão em expansão.</div></div><div class="lirow"><div class="lk">Câmbio e moeda</div><div class="lv">Dólar de Hong Kong (HKD, HK$). O carregamento do Octopus Card é seu hub de pagamento local. Câmbio e ATM amplamente disponíveis no aeroporto e centro.</div></div><div class="lirow"><div class="lk">Idioma</div><div class="lv">Cantonês·Chinês. Inglês é falado amplamente (placas e orientações em inglês amplamente disponíveis).</div></div><div class="lirow"><div class="lk">Apps locais</div><div class="lv">Uber <span style='color:var(--muted)'>(Chamar carro)</span> · Citymapper <span style='color:var(--muted)'>(Rota MTR·ônibus (em inglês))</span> · Octopus <span style='color:var(--muted)'>(Saldo·carregamento·pagamento do Octopus)</span></div></div><div class="lirow"><div class="lk">App de transporte noturno</div><div class="lv">Uber <span style='color:var(--muted)'>(Chamar carro/táxi à noite (UI em inglês). HKTaxi·FlyTaxi integrados são a opção principal.)</span> · DiDi <span style='color:var(--muted)'>(Alternativa para chamar carro (operada em Hong Kong))</span> · AlipayHK / WeChat Pay HK <span style='color:var(--muted)'>(Função de chamada de táxi integrada ao app de pagamento)</span> &nbsp;<a href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">Dicas para chamar</div><div class="lv">Após AsiaWorld-Expo: priorize o último trem do Airport Express (aprox. 00:48~01:13) — o mais pontual; se perder, evite a entrada principal e chame Uber/táxi de outro lugar.</div></div></div>
   </details>
+</div>
+<div class="box linfo-box">
+  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ Segurança</div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">Número de Emergência</div><div class="lv"><strong>Emergência integrada (polícia, bombeiros, ambulância) 999</strong> · <strong>backup 112</strong></div></div><div class="lirow"><div class="lk">Alerta de Viagem</div><div class="lv">Departamento de Estado dos EUA — Nível 1 (precaução padrão). Inglês amplamente falado, segurança boa.</div></div><div class="lirow"><div class="lk">Polícia Turística</div><div class="lv">Sem polícia turística dedicada. Ligue 911 para emergências / Para não-emergências, consulte o número da delegacia local (inglês disponível).</div></div><div class="lirow"><div class="lk">Delegacia Próxima</div><div class="lv">Delegacia de polícia perto do AsiaWorld-Expo — área do aeroporto, confira no mapa &nbsp;<a href="https://www.google.com/maps/search/police%20station%20near%20AsiaWorld-Expo%20Hong%20Kong" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 Ver no mapa ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">As informações de segurança são orientações gerais apenas para referência; as diretrizes das autoridades locais oficiais e embaixadas têm sempre prioridade. Os números de emergência e avisos de viagem podem mudar, então confirme novamente antes de sua visita.</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">Garanta agora</p>
 <div class="btns">
