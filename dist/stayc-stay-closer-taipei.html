@@ -182,6 +182,20 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 출처 표기(카카오맵 등) — 재배포 라이선스 의무. 작게·muted, place_url 링크 */
 .spot-card .psrc{align-self:flex-start;font-size:10.5px;color:var(--muted);text-decoration:none}
 .spot-card a.psrc:hover{text-decoration:underline;color:var(--accent)}
+/* 인스타 공식 임베드(에이전트 선별 핫플) — 좌우 슬라이드 레일, iframe lazy */
+.ig-rail{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;gap:12px;scrollbar-width:none;padding:2px 0 4px;margin:6px 0 0}
+.ig-rail::-webkit-scrollbar{display:none}
+.ig-card{flex:0 0 88%;max-width:340px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.ig-embed{position:relative;width:100%;background:#f3f1ea}
+.ig-embed iframe{width:100%;min-height:480px;border:0;display:block}
+/* 임베드 깨짐 대비 fallback 캡션(임베드 위 안내·계정·사유). iframe 실패해도 정보 남음 */
+.ig-cap{padding:9px 11px;display:flex;flex-direction:column;gap:3px;border-top:1px solid var(--line)}
+.ig-cap .igtop{font-size:12.5px;font-weight:600;line-height:1.3}
+.ig-cap .igwhy{font-size:11px;color:var(--muted);line-height:1.4}
+.ig-cap .igmeta{font-size:10.5px;color:var(--muted)}
+.ig-cap a.iglink{font-size:11px;color:var(--accent);text-decoration:none}
+.ig-cap a.iglink:hover{text-decoration:underline}
+.ig-disc{font-size:10.5px;color:var(--muted);margin:4px 0 0;line-height:1.4}
 /* 실데이터 — 실사진(숙소·스텝), 공연일 대기·혼잡 안내(빨강 강조), 소요시간/공연일 노트 */
 .stay-card .simg img{width:100%;height:100%;object-fit:cover;display:block}
 .lirow .lk .dur{display:block;font-size:10.5px;color:var(--muted);font-weight:400;margin-top:1px}
