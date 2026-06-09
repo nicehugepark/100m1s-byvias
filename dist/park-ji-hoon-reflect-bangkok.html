@@ -152,6 +152,28 @@ body{overflow-wrap:break-word;word-break:normal}
 /* B3: 캐러셀 하단 보조 CTA(ghost .btn 재사용, 폭 자동) */
 .rail-more{margin-top:10px}
 .rail-more .btn{display:inline-flex;width:auto}
+/* A: 코스 A/B/C 전환 — CSS-only radio(신규 JS 0), 메인 evtab과 격리(name=crs).
+   탭 = 상단 sticky 칩(좌우 스와이프 아님 — 식당 슬라이드 제스처 충돌 회피). */
+.crs-tabs>input{position:absolute;opacity:0;pointer-events:none}
+.crs-tabbar{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;background:var(--card);padding:8px 0;margin:6px 0 2px}
+.crs-tabbar::-webkit-scrollbar{display:none}
+.crs-tabs label{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13px;font-weight:600;color:var(--muted);padding:8px 14px;border:1px solid var(--line);border-radius:9px;cursor:pointer;background:var(--card);white-space:nowrap}
+.crs-tabs label:hover{border-color:#c9c7bd}
+.crs-panel{display:none}
+/* 선택 탭 강조 + 해당 패널 노출(코스 최대 6개 — 페이지당 코스 1세트라 고정 id 안전) */
+#crs-0:checked~.crs-tabbar label[for="crs-0"],#crs-1:checked~.crs-tabbar label[for="crs-1"],#crs-2:checked~.crs-tabbar label[for="crs-2"],#crs-3:checked~.crs-tabbar label[for="crs-3"],#crs-4:checked~.crs-tabbar label[for="crs-4"],#crs-5:checked~.crs-tabbar label[for="crs-5"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#crs-0:checked~.cp-0,#crs-1:checked~.cp-1,#crs-2:checked~.cp-2,#crs-3:checked~.cp-3,#crs-4:checked~.cp-4,#crs-5:checked~.cp-5{display:block}
+/* 식당·핫플 = Day 스텝 내 좌우 슬라이드. stays-rail 복제 + 폭 차별(56% vs 숙소 76%).
+   overscroll-behavior-x:contain = 레일 끝에서 부모/페이지 가로 스크롤 누수(chaining) 차단(핵심). */
+.spot-rail{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;gap:10px;scrollbar-width:none;padding:2px 0;margin:6px 0 0}
+.spot-rail::-webkit-scrollbar{display:none}
+.spot-card{flex:0 0 56%;max-width:230px;scroll-snap-align:start;background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.spot-card .pimg{width:100%;aspect-ratio:16/10;background:#ece9e0;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.spot-card .pbody{padding:9px 10px;display:flex;flex-direction:column;gap:4px}
+.spot-card .pname{font-weight:600;font-size:13px;line-height:1.3}
+.spot-card .ptag{font-size:11.5px;color:var(--muted)}
+.spot-card .plink{align-self:flex-start;color:var(--accent);text-decoration:none;font-size:12.5px;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+.spot-more{flex:0 0 auto;align-self:center;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--accent);font-size:12.5px;font-weight:600;text-decoration:none;white-space:nowrap}
 </style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="park-ji-hoon-reflect-bangkok.html" aria-current="true" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="en/park-ji-hoon-reflect-bangkok.html" hreflang="en" data-lang="en">English</a><a class="lng" href="ja/park-ji-hoon-reflect-bangkok.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="zh-cn/park-ji-hoon-reflect-bangkok.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="zh-tw/park-ji-hoon-reflect-bangkok.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="es/park-ji-hoon-reflect-bangkok.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="th/park-ji-hoon-reflect-bangkok.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="id/park-ji-hoon-reflect-bangkok.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="pt/park-ji-hoon-reflect-bangkok.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="ar/park-ji-hoon-reflect-bangkok.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="vi/park-ji-hoon-reflect-bangkok.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 전체 일정</a>
