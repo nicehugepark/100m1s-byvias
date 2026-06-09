@@ -121,9 +121,9 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .langbar{justify-content:flex-start}
 /* 1a 엔빵 다인 숙소 캐러셀 (좌우 스와이프) + 2박3일 코스 — 신규 클래스 3종.
    색·radius·이모지 신규 0(기존 토큰·클래스 재사용). 햇살칩만 --sun-chip-* 토큰(다크 분기). */
-.stays-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;scroll-padding-inline:16px;scrollbar-width:none;padding:2px 0 4px;margin:8px 0 0}
+.stays-rail{display:flex;overflow-x:auto;scroll-snap-type:x proximity;gap:12px;scroll-padding-inline:16px;scrollbar-width:none;padding:2px 0 4px;margin:8px 0 0}
 .stays-rail::-webkit-scrollbar{display:none}
-.stay-card{flex:0 0 82%;max-width:300px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.stay-card{flex:0 0 76%;max-width:300px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .stay-card .simg{width:100%;aspect-ratio:16/10;background:#ece9e0;display:flex;align-items:center;justify-content:center;color:var(--muted)}
 .stay-card .sbody{padding:12px;display:flex;flex-direction:column;gap:6px}
 .stay-card .sname{font-weight:600;font-size:14.5px;line-height:1.35}
@@ -131,12 +131,21 @@ body{overflow-wrap:break-word;word-break:normal}
 .sun-chip{align-self:flex-start;font-size:12.5px;background:var(--sun-chip-bg);color:var(--sun-chip-ink);border-radius:8px;padding:5px 9px;line-height:1.4}
 .sun-chip b{font-weight:700}
 .stay-card .scap{font-size:11.5px;color:var(--muted)}
-.stay-card .postlink{align-self:flex-start;margin-top:2px}
+/* B1: 예약 버튼 터치타겟 44px(현 38px 미달) — 텍스트 크기 불변, 히트영역만 */
+.stay-card .postlink{align-self:flex-start;margin-top:2px;min-height:44px;display:inline-flex;align-items:center}
+/* 총액 줄 보조 메타(공연장 N분) — muted, SVG 인라인 */
+.stotal-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.smeta{display:inline-flex;align-items:center;gap:3px;font-size:12px;color:var(--muted)}
+.smeta svg{flex:0 0 auto}
 .day-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:8px 0 0}
 .day-card .dhead{font-weight:600;font-size:14px;margin-bottom:4px}
 .course-aff{margin-top:6px}
-.course-aff a{color:var(--accent);text-decoration:none;font-size:13.5px;font-weight:500}
+/* B2: inline 어필리에이트 링크 터치타겟 44px(현 16px) — 텍스트 크기 불변, 히트영역만 */
+.course-aff a{color:var(--accent);text-decoration:none;font-size:13.5px;font-weight:500;display:inline-flex;align-items:center;min-height:44px;padding:11px 0}
 .course-aff a:hover{text-decoration:underline}
+/* B3: 캐러셀 하단 보조 CTA(ghost .btn 재사용, 폭 자동) */
+.rail-more{margin-top:10px}
+.rail-more .btn{display:inline-flex;width:auto}
 </style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="boynextdoor-knockon-seoul.html" aria-current="true" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="en/boynextdoor-knockon-seoul.html" hreflang="en" data-lang="en">English</a><a class="lng" href="ja/boynextdoor-knockon-seoul.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="zh-cn/boynextdoor-knockon-seoul.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="zh-tw/boynextdoor-knockon-seoul.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="es/boynextdoor-knockon-seoul.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="th/boynextdoor-knockon-seoul.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="id/boynextdoor-knockon-seoul.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="pt/boynextdoor-knockon-seoul.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="ar/boynextdoor-knockon-seoul.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="vi/boynextdoor-knockon-seoul.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 전체 일정</a>
@@ -155,6 +164,16 @@ body{overflow-wrap:break-word;word-break:normal}
   <p style="margin:10px 0 0;font-size:14px;color:var(--muted)">서울 공연 — 주말 숙소는 발표 직후 잡는 편이 안전합니다.</p>
 </div>
 <p class="disc">가격·잔량 전망은 추정이며 실제와 다를 수 있습니다. 예약·결제 책임은 이용자 본인에게 있습니다.</p>
+<div class="box">
+  <div style="font-weight:600;font-size:14px">공연장</div>
+  <p style="margin:4px 0 0;font-size:14px"><bdi>KSPO 돔(올림픽체조경기장)</bdi> · <bdi>서울</bdi></p>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=KSPO+%EB%8F%94%28%EC%98%AC%EB%A6%BC%ED%94%BD%EC%B2%B4%EC%A1%B0%EA%B2%BD%EA%B8%B0%EC%9E%A5%29+Seoul" target="_blank" rel="noopener">📍 지도에서 보기</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div><ul><li>잠실·강동권 + 지하철</li><li>성내/천호권도 접근 양호</li></ul>
+  <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
+  <p style="margin:6px 0 0;font-size:14px">올림픽공원역(5·9호선). 막차 확인.</p>
+</div>
+
+
 
 <div class="box srcbox">
   <div style="font-weight:600;font-size:14px">일정 출처</div>
@@ -178,16 +197,14 @@ body{overflow-wrap:break-word;word-break:normal}
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 티켓팅</div>
   <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">예상 공연 시각</div><div class="lv">19:00~20:00 (금요일 저녁, 예상)</div></div><div class="lirow"><div class="lk">선예매</div><div class="lv">멤버십 인증 2026-06-17 / 멤버십 선예매 2026-06-22 (KST, 시각 세부 미공표)</div></div><div class="lirow"><div class="lk">일반 예매</div><div class="lv">2026-06-23 (KST)</div></div><div class="lirow"><div class="lk">예매처</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000541/products/26007138" target="_blank" rel="noopener nofollow">NOL Ticket(world.nol.com) ↗</a> · <a href="https://weverse.io/boynextdoor/notice/35805" target="_blank" rel="noopener nofollow">Weverse 공지 ↗</a></div></div><div class="lirow"><div class="lk">가격대</div><div class="lv">일반석(General) 165000KRW, 사운드체크석(Sound Check) 220000KRW, M&amp;G석(Meet &amp; Greet) 253000KRW</div></div></div>
 </div>
-<div class="box">
-  <div style="font-weight:600;font-size:14px">공연장</div>
-  <p style="margin:4px 0 0;font-size:14px"><bdi>KSPO 돔(올림픽체조경기장)</bdi> · <bdi>서울</bdi></p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=KSPO+%EB%8F%94%28%EC%98%AC%EB%A6%BC%ED%94%BD%EC%B2%B4%EC%A1%B0%EA%B2%BD%EA%B8%B0%EC%9E%A5%29+Seoul" target="_blank" rel="noopener">📍 지도에서 보기</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">근처 숙소 팁</div><ul><li>잠실·강동권 + 지하철</li><li>성내/천호권도 접근 양호</li></ul>
-  <div style="font-weight:600;font-size:14px;margin-top:12px">공연 후 귀가 동선</div>
-  <p style="margin:6px 0 0;font-size:14px">올림픽공원역(5·9호선). 막차 확인.</p>
+<p style="font-weight:600;font-size:14px;margin:16px 0 4px">지금 예매</p>
+<div class="btns">
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Booking" data-aff-event="boynextdoor-knockon-seoul" data-aff-pos="0">🏨 호텔 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Seoul&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Skyscanner" data-aff-event="boynextdoor-knockon-seoul" data-aff-pos="1">✈️ 항공 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Airalo" data-aff-event="boynextdoor-knockon-seoul" data-aff-pos="2">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Seoul&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Klook" data-aff-event="boynextdoor-knockon-seoul" data-aff-pos="3">🎟 투어·티켓 <small>· Klook</small></a>
 </div>
-
-
+<p class="disc disc-aff">본 페이지의 예약 링크는 제휴(수수료) 링크입니다. 이용자가 추가로 부담하는 비용은 없습니다.</p>
 
 <div class="box linfo-box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 현지 실용 정보</div>
@@ -202,14 +219,6 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">긴급번호</div><div class="lv"><strong>경찰 112</strong> · <strong>소방·구급 119</strong></div></div><div class="lirow"><div class="lk">여행경보</div><div class="lv">국내 — 별도 여행경보 대상 아님(평시).</div></div><div class="lirow"><div class="lk">관광경찰</div><div class="lv">별도 관광경찰 + 1330 관광통역안내(24시간·다국어).</div></div><div class="lirow"><div class="lk">가까운 경찰서</div><div class="lv">공연장 인근 지구대/파출소 — 지도 검색 &nbsp;<a href="https://www.google.com/maps/search/%EA%B2%BD%EC%B0%B0%EC%84%9C%20%EC%84%9C%EC%9A%B8%20%EC%9E%A0%EC%8B%A4%20%EC%98%AC%EB%A6%BC%ED%94%BD%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 지도에서 보기 ↗</a></div></div></div>
   <p style="font-size:12px;color:var(--muted);margin:6px 0 0">안전 정보는 참고용 일반 안내이며, 현지 공식 기관·대사관 안내가 항상 우선합니다. 긴급번호·여행경보는 변동될 수 있으니 방문 전 재확인하세요.</p>
 </div>
-<p style="font-weight:600;font-size:14px;margin:16px 0 4px">지금 예매</p>
-<div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Booking" data-aff-event="boynextdoor-knockon-seoul" data-aff-pos="0">🏨 호텔 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Seoul&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Skyscanner" data-aff-event="boynextdoor-knockon-seoul" data-aff-pos="1">✈️ 항공 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Airalo" data-aff-event="boynextdoor-knockon-seoul" data-aff-pos="2">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Seoul&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Klook" data-aff-event="boynextdoor-knockon-seoul" data-aff-pos="3">🎟 투어·티켓 <small>· Klook</small></a>
-</div>
-<p class="disc disc-aff">본 페이지의 예약 링크는 제휴(수수료) 링크입니다. 이용자가 추가로 부담하는 비용은 없습니다.</p>
 
 <div class="news">
   <input placeholder="이메일 — 이 아티스트 가격·매진 알림 받기">
