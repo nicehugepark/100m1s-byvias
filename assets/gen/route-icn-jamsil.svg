@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Incheon Airport to Jamsil transit route">
+  <title>ICN Airport to KSPO Dome — transit route</title>
+  <defs>
+    <linearGradient id="rg-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFDF6"/>
+      <stop offset="1" stop-color="#FBF3DE"/>
+    </linearGradient>
+    <filter id="rg-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#4A4470" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="320" rx="20" fill="url(#rg-sun)"/>
+
+  <text x="48" y="52" font-family="-apple-system,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif" font-size="22" font-weight="800" fill="#4A4470" letter-spacing="0.3">ICN → KSPO DOME</text>
+  <text x="48" y="76" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="500" fill="#8B8499">Airport to the venue · approx. 80 min total</text>
+
+  <!-- 4 nodes evenly spaced at x = 150, 470, 730, 1050; line y = 178 -->
+  <!-- segmented connecting line (drawn first, under nodes; gaps where badges sit handled by badge bg) -->
+  <g stroke-linecap="round" fill="none" stroke-width="9">
+    <line x1="172" y1="178" x2="448" y2="178" stroke="#E84A7F"/>
+    <line x1="492" y1="178" x2="708" y2="178" stroke="#E84A7F"/>
+    <line x1="752" y1="178" x2="1028" y2="178" stroke="#C7396B"/>
+  </g>
+
+  <!-- segment badge A (ICN→Seoul): centered x=310 -->
+  <g transform="translate(310,178)">
+    <rect x="-60" y="-20" width="120" height="40" rx="20" fill="#fff" stroke="#F3D9CB" stroke-width="1.5" filter="url(#rg-soft)"/>
+    <text x="0" y="-2" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13.5" font-weight="800" fill="#C7396B">AREX</text>
+    <text x="0" y="13" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" fill="#8B8499">≈ 43 min</text>
+  </g>
+  <!-- segment badge B (Seoul→Jamsil): centered x=600 -->
+  <g transform="translate(600,178)">
+    <rect x="-66" y="-20" width="132" height="40" rx="20" fill="#fff" stroke="#F3D9CB" stroke-width="1.5" filter="url(#rg-soft)"/>
+    <text x="0" y="-2" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13" font-weight="800" fill="#C7396B">Line 2 · Line 8</text>
+    <text x="0" y="13" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" fill="#8B8499">≈ 28 min</text>
+  </g>
+  <!-- segment badge C (Jamsil→Dome walk): centered x=890 -->
+  <g transform="translate(890,178)">
+    <rect x="-52" y="-18" width="104" height="36" rx="18" fill="#FFF9E8" stroke="#F0E0B8" stroke-width="1.5"/>
+    <text x="0" y="-2" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="12" font-weight="800" fill="#7A5A12">walk</text>
+    <text x="0" y="12" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="600" fill="#9A7B2C">≈ 8 min</text>
+  </g>
+
+  <!-- ===== NODE 1: ICN ===== -->
+  <g transform="translate(150,178)">
+    <circle r="26" fill="#fff" stroke="#E84A7F" stroke-width="6" filter="url(#rg-soft)"/>
+    <g transform="translate(-13,-13) scale(1.08)" fill="#E84A7F">
+      <path d="M23.5 12.2 14 14.4l-3.2-6.1c-.2-.4-.6-.6-1-.5l-1.5.3c-.5.1-.8.6-.6 1.1l2 5.7-3.6.8-1.8-2.1c-.2-.2-.5-.3-.8-.2l-1 .2c-.5.1-.7.6-.5 1l1.3 2.6-.9 2c-.2.4 0 .9.5 1l.2.1 2.1-.5 1.5 2.5c.2.4.6.5 1 .4l1-.2c.4-.1.6-.5.5-.9l-.6-2.7 3.6-.8.5 6c0 .5.5.9 1 .8l1.5-.3c.4-.1.7-.4.7-.9l.4-6.9 9.5-2.2c.7-.2 1.2-.8 1.2-1.5 0-1-1-1.8-2-1.5z"/>
+    </g>
+    <text x="0" y="-44" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="18" font-weight="800" fill="#2E2A4A">ICN</text>
+    <text x="0" y="56" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13" font-weight="600" fill="#6B6A64">Incheon Airport</text>
+  </g>
+
+  <!-- ===== NODE 2: Seoul Stn ===== -->
+  <g transform="translate(470,178)">
+    <circle r="24" fill="#fff" stroke="#C7396B" stroke-width="5" filter="url(#rg-soft)"/>
+    <g transform="translate(-11,-11) scale(1.1)" fill="#C7396B">
+      <rect x="2" y="1" width="16" height="14" rx="4"/>
+      <rect x="5" y="4" width="10" height="5" rx="1.5" fill="#fff"/>
+      <circle cx="6.5" cy="17" r="1.8"/><circle cx="13.5" cy="17" r="1.8"/>
+      <rect x="3.5" y="15.5" width="3" height="2.5" rx="1"/><rect x="13.5" y="15.5" width="3" height="2.5" rx="1"/>
+    </g>
+    <text x="0" y="-42" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" font-weight="800" fill="#2E2A4A">Seoul Stn.</text>
+    <text x="0" y="54" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13" font-weight="600" fill="#6B6A64">transfer hub</text>
+  </g>
+
+  <!-- ===== NODE 3: Jamsil ===== -->
+  <g transform="translate(730,178)">
+    <circle r="24" fill="#fff" stroke="#C7396B" stroke-width="5" filter="url(#rg-soft)"/>
+    <g transform="translate(-11,-11) scale(1.1)" fill="#C7396B">
+      <rect x="2" y="1" width="16" height="14" rx="4"/>
+      <rect x="5" y="4" width="10" height="5" rx="1.5" fill="#fff"/>
+      <circle cx="6.5" cy="17" r="1.8"/><circle cx="13.5" cy="17" r="1.8"/>
+      <rect x="3.5" y="15.5" width="3" height="2.5" rx="1"/><rect x="13.5" y="15.5" width="3" height="2.5" rx="1"/>
+    </g>
+    <text x="0" y="-42" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" font-weight="800" fill="#2E2A4A">Jamsil</text>
+    <text x="0" y="54" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13" font-weight="600" fill="#6B6A64">stay base</text>
+  </g>
+
+  <!-- ===== NODE 4: KSPO Dome ===== -->
+  <g transform="translate(1050,178)">
+    <circle r="28" fill="#E84A7F" stroke="#fff" stroke-width="4" filter="url(#rg-soft)"/>
+    <g transform="translate(-14,-13) scale(1.16)" fill="#fff">
+      <path d="M2 13a10 10 0 0 1 20 0v1H2z"/>
+      <rect x="1" y="14" width="22" height="3" rx="1.5"/>
+    </g>
+    <text x="0" y="-46" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="18" font-weight="800" fill="#2E2A4A">KSPO Dome</text>
+    <text x="0" y="58" text-anchor="middle" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13" font-weight="700" fill="#C7396B">the venue</text>
+  </g>
+</svg>

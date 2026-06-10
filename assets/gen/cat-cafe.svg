@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Cafe">
+  <title>Cafe</title>
+  <defs>
+    <linearGradient id="cc-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF6"/><stop offset="1" stop-color="#FBE3EC"/></linearGradient>
+    <radialGradient id="cc-glow" cx="50%" cy="40%" r="55%"><stop offset="0" stop-color="#FFF4D1" stop-opacity=".8"/><stop offset="1" stop-color="#FFF4D1" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="360" rx="20" fill="url(#cc-bg)"/>
+  <ellipse cx="320" cy="150" rx="240" ry="120" fill="url(#cc-glow)"/>
+  <!-- saucer -->
+  <ellipse cx="320" cy="262" rx="130" ry="26" fill="#fff" stroke="#F0D8C8" stroke-width="3"/>
+  <!-- cup body -->
+  <path d="M236 168 L404 168 L388 250 Q320 268 252 250 Z" fill="#E84A7F"/>
+  <path d="M236 168 L404 168 L398 196 L242 196 Z" fill="#fff" opacity=".25"/>
+  <!-- coffee surface -->
+  <ellipse cx="320" cy="170" rx="84" ry="16" fill="#C7396B"/>
+  <ellipse cx="320" cy="168" rx="60" ry="11" fill="#FBE3EC"/>
+  <!-- handle -->
+  <path d="M404 188 q44 4 44 36 q0 30 -40 34" fill="none" stroke="#C7396B" stroke-width="11" stroke-linecap="round"/>
+  <!-- steam -->
+  <g fill="none" stroke="#C7396B" stroke-width="4" stroke-linecap="round" opacity=".55"><path d="M300 150 q-10 -16 0 -32 q10 -16 0 -30"/><path d="M340 150 q10 -16 0 -32 q-10 -16 0 -30"/></g>
+</svg>
