@@ -224,12 +224,15 @@ function go(l){if(l===cur)return;
  var tgt=(l===DEFL)?(base+'/'+file):(base+'/'+l+'/'+file);
  tgt=tgt.replace(/\/+/g,'/');
  location.replace(tgt);}
+// 명시 언어경로(prefix 있음 = cur!==DEFL) = 자동/저장 리다이렉트 전면 skip. 명시 URL 우선.
+if(cur===DEFL){
 var saved=null;try{saved=localStorage.getItem('bybias_lang');}catch(e){}
 if(saved&&SUP.indexOf(saved)>=0){go(saved);}
 else if(!saved){var nav=(navigator.languages||[navigator.language||'']);
  for(var i=0;i<nav.length;i++){var c=(nav[i]||'').toLowerCase();
   var m=(c.indexOf('ko')===0)?DEFL:(c.indexOf('zh')===0?((c.indexOf('tw')>0||c.indexOf('hant')>0||c.indexOf('hk')>0)?'zh-tw':'zh-cn'):c.split('-')[0]);
   if(SUP.indexOf(m)>=0){go(m);break;}}}
+}
 // D-day: 완전 날짜(data-date)만 계산. 과거/오늘 이후 표기, 부분날짜 span 자체 없음.
 var T=new Date();T.setHours(0,0,0,0);
 var els=document.querySelectorAll('.dday[data-date]');
