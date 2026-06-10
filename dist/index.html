@@ -119,6 +119,22 @@ body{overflow-wrap:break-word;word-break:normal}
 .langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
+/* P0-2 언어 스위처 — 현재 언어만 노출 + 펼침(무JS details). 키보드 접근 가능, hreflang/href 보존. twice 페이지 패턴 이식. */
+.langpick{margin:0 0 10px;display:flex;justify-content:flex-end}
+.langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600;color:var(--muted);background:var(--card)}
+.langpick>summary::-webkit-details-marker{display:none}
+.langpick>summary::after{content:"▾";font-size:10px;color:var(--muted);transition:transform .2s cubic-bezier(0.16,1,0.3,1)}
+.langpick[open]>summary::after{transform:rotate(180deg)}
+.langpick>summary:hover{border-color:#c9c7bd}
+.langpick>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.langpick .langmenu{display:none;position:absolute;right:16px;margin-top:6px;z-index:5;flex-direction:column;min-width:160px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.langpick[open] .langmenu{display:flex}
+.langpick .langmenu .lng{display:flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:6px;font-size:13px;color:var(--muted);text-decoration:none}
+.langpick .langmenu .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langpick .langmenu .lng:hover{background:#f0eee6}
+.langpick .langmenu .lng:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+@media(prefers-color-scheme:dark){.langpick .langmenu{box-shadow:0 8px 24px rgba(0,0,0,.5)}.langpick .langmenu .lng[aria-current="true"]{background:#1e2b3d}.langpick>summary:hover,.langpick .langmenu .lng:hover{background:#222}}
+[dir="rtl"] .langpick{justify-content:flex-start}[dir="rtl"] .langpick .langmenu{right:auto;left:16px}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
@@ -261,7 +277,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .hf-count b{color:var(--accent);font-weight:600}
 .ecard[hidden]{display:none}
 </style></head><body><div class="wrap">
-<div class="langbar"><a class="lng" href="index.html" aria-current="true" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="en/index.html" hreflang="en" data-lang="en">English</a><a class="lng" href="ja/index.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="zh-cn/index.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="zh-tw/index.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="es/index.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="th/index.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="id/index.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="pt/index.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="ar/index.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="vi/index.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
+<details class="langpick"><summary aria-label="언어 선택 — 현재 한국어">한국어</summary><div class="langmenu"><a class="lng" href="index.html" aria-current="true" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="en/index.html" hreflang="en" data-lang="en">English</a><a class="lng" href="ja/index.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="zh-cn/index.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="zh-tw/index.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="es/index.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="th/index.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="id/index.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="pt/index.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="ar/index.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="vi/index.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div></details>
 <div class="top"><img class="logo" src="logo.svg" alt="ByBias" width="119" height="38"><span>bybias.100m1s.com</span></div>
 <h1>팬이 모이는 일정 → 미리 싸게 잡는 법</h1>
 <p class="sub">콘서트·팬미팅이 뜨면 항공·호텔이 먼저 오릅니다. 오르기 전에 잠그세요.</p>
