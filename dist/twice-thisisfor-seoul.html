@@ -355,10 +355,10 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 3일 연속 FINALE 명시줄 — hero 한정, 응원색 톤 칩. */
 .hero-finale{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.01em;margin:8px 0 0;padding:4px 10px;border-radius:8px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.34)}
 /* D-day 카운트다운 — hero의 심장. 큰 숫자 + 라벨. JS가 .hero-dd-num 채움. */
-.hero-cd{display:inline-flex;align-items:baseline;gap:8px;margin:16px 0 4px;background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.34);border-radius:14px;padding:10px 18px;backdrop-filter:blur(2px)}
+.hero-cd{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:16px 0 4px;background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.34);border-radius:14px;padding:10px 18px;backdrop-filter:blur(2px);max-width:100%}
 .hero-cd .hero-dd-label{font-size:12px;font-weight:600;opacity:.92}
-.hero-cd .hero-dd-num{font-size:30px;font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.hero-cd .hero-dd-num{font-size:30px;font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .hero-cd .hero-dd-unit{font-size:13px;font-weight:600;opacity:.92}
 /* 선예매 D-N 보조줄(티켓팅 데이터 있을 때만 JS가 노출) */
 .hero-presale{display:none;font-size:12px;font-weight:600;opacity:.94;margin:6px 0 0}
