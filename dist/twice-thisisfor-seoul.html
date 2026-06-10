@@ -282,7 +282,7 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 52px 1글자 고스트 + 픽토 SVG 전면 제거 — 공간만 차지, 정보 0 */
 .place-ph .ph-init,.place-ph .ph-pic{display:none}
 /* 카테고리 칩 = 색띠 바로 아래 컴팩트 인라인 칩(피츠 ≥ 본문 첫 줄 위계). */
-.place-ph .ph-chip{display:inline-flex;align-items:center;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--ph-chip-bg,#eeece5);color:var(--ph-chip-ink,var(--muted));line-height:1.3}
+.place-ph .ph-chip{display:inline-flex;align-items:center;font-family:-apple-system,'Helvetica Neue',Arial,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--ph-chip-bg,#eeece5);color:var(--ph-chip-ink,var(--muted));line-height:1.3}
 /* 실사진 들어오면(향후) 색띠 대신 4:3 cover 복원 */
 .place-ph:has(img){display:block;padding:0;aspect-ratio:4/3;overflow:hidden}
 .place-ph:has(img)::before{display:none}
@@ -345,7 +345,8 @@ body{overflow-wrap:break-word;word-break:normal}
 .ota-btn:hover{color:#E84A7F;text-decoration:underline}
 .stay-noota{font-size:11.5px;color:var(--muted);margin-top:auto;padding-top:6px}
 /* 메인 예약 버튼 — solid 핑크(최저가 비교 라우팅), 하단 고정. 카드당 솔리드 CTA 1개만. */
-.stay22-btn{align-self:flex-start;margin-top:auto;background:#E84A7F;color:#fff;border-radius:12px;padding:10px 16px;font-size:13px;font-weight:600;min-height:44px}
+.stay22-btn{align-self:flex-start;margin-top:auto;background:#E84A7F;color:#fff;text-decoration:none;border-radius:12px;padding:10px 16px;font-size:13px;font-weight:600;min-height:44px}
+.stay22-btn:hover,.stay22-btn:focus{text-decoration:none}
 .stay22-btn:hover{filter:brightness(0.94)}
 .stay-cta{display:flex;flex-direction:column;gap:4px;margin-top:auto;padding-top:6px}
 .stay-cta .stay22-btn{margin-top:0}
@@ -378,7 +379,15 @@ body{overflow-wrap:break-word;word-break:normal}
 .day-card.day-card--show{border-color:#5A2A3E;box-shadow:0 0 0 1px #3A1622}.day-card.day-card--show .dhead{color:#F6B8CF}
 .ckstep{border-color:#5A3A47;background:var(--card)}.ckstep:checked{background:#E84A7F;border-color:#E84A7F}
 /* 다크: 숙소 OTA 텍스트링크·인스타링크 핑크를 밝은 핑크로(다크 카드 대비 9.95:1) — 밝은 핑크 칩 톤 정합 */
-.ota-btn{color:#F6B8CF}.ota-btn:hover{color:#FBD0E0}.stay-iglink:hover{color:#F6B8CF}}
+.ota-btn{color:#F6B8CF}.ota-btn:hover{color:#FBD0E0}.stay-iglink:hover{color:#F6B8CF}
+/* 다크: 카테고리 색띠 = 라이트 파스텔 그대로면 다크 표면에서 탁한 갈·자주로 뭉개짐 → 브랜드 색상(hue)을 다크 표면 위 저채도 가로띠로 재정의. 칩 bg = 라이트 크림(밝은 칩 튐) → 동일 hue 다크 tint + 밝은 ink로 대비 확보. */
+.place-ph[data-cat="venue"]{--ph-band:linear-gradient(90deg,#E84A7F,#C7396B);--ph-chip-bg:#3A1A28;--ph-chip-ink:#F6B8CF}
+.place-ph[data-cat="stay"]{--ph-band:linear-gradient(90deg,#C76A8E,#9A4E6E);--ph-chip-bg:#3A1E2A;--ph-chip-ink:#F2C4D6}
+.place-ph[data-cat="cafe"]{--ph-band:linear-gradient(90deg,#C98A5E,#A86A3E);--ph-chip-bg:#33271A;--ph-chip-ink:#E8C49A}
+.place-ph[data-cat="restaurant"]{--ph-band:linear-gradient(90deg,#C97E5A,#A8603A);--ph-chip-bg:#33241A;--ph-chip-ink:#E8BC9A}
+.place-ph[data-cat="sight"]{--ph-band:linear-gradient(90deg,#6A64A0,#4A4470);--ph-chip-bg:#222040;--ph-chip-ink:#C4C0E8}
+.place-ph[data-cat="mountain"]{--ph-band:linear-gradient(90deg,#7AA470,#5A8450);--ph-chip-bg:#1E2C1A;--ph-chip-ink:#B8DCB0}
+.place-ph[data-cat="market"]{--ph-band:linear-gradient(90deg,#C9A45E,#A8843E);--ph-chip-bg:#332A1A;--ph-chip-ink:#E8D29A}}
 /* ===== Hero 재설계 — 욕망 먼저(응원색·타이포·카운트다운), 영업 나중 ===== */
 /* 응원색 그라데이션 배경. 아티스트 실사진은 법무 GO 후 hero-photo 슬롯에 후행(현재 색면). */
 .hero{position:relative;overflow:hidden;border-radius:16px;margin:4px 0 18px;padding:26px 20px 22px;

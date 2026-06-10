@@ -48,7 +48,8 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
 .ecard>*{position:relative;z-index:1}
-/* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
+/* 다크: 인라인 아티스트색 그라데이션(rgba 0.10→mid→0.26) + 밝은 mid가 다크 표면 위에서 "은빛 신용카드" 광택(sheen)으로 읽힘 → 다크에선 단색 surface로 강등(인라인 우선순위 때문에 !important), 아티스트색은 좌측 4px 색띠(인라인 border-inline-start)로만 유지. */
+@media(prefers-color-scheme:dark){.ecard{background:var(--card)!important}.ecard:hover{border-color:#4a4840}}
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
 .ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:16px;min-height:64px}
 .ehead-detail>:not(.ghost){position:relative;z-index:1}
