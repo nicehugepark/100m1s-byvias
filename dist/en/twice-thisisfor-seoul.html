@@ -478,23 +478,28 @@ body{overflow-wrap:break-word;word-break:normal}
 /* local time note (US Central) */
 .us-ct{color:var(--muted);font-weight:400;white-space:nowrap}
 /* ===== Visual media (R10) — photos + infographic SVG. Add information only, no clutter. ===== */
-.media-banner{display:block;margin:0 0 16px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--g04)}
+.media-banner{display:block;margin:0 0 16px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--g04)}
 .media-banner img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
 .sec-media{display:block;margin:-16px -16px 12px;border-bottom:1px solid var(--line);background:var(--g04);overflow:hidden;border-radius:12px 12px 0 0}
 .sec-media img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
 .infographic{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--card)}
-.route-icn{display:block;width:100%;height:auto;margin:10px 0 0;border-radius:10px}
+.route-icn{display:block;width:100%;height:auto;margin:10px 0 0;border-radius:12px}
 .date-rail{display:flex;gap:10px;margin:8px 0 0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:2px}
 .date-rail::-webkit-scrollbar{height:0}
 .date-card{flex:1 1 0;min-width:140px;scroll-snap-align:start}
 .date-card img{display:block;width:100%;height:auto;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--line);background:var(--card)}
 .sharecard{margin:12px 0 0}
-.sharecard img{display:block;width:100%;max-width:360px;height:auto;aspect-ratio:1/1;border-radius:14px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.sharecard img{display:block;width:100%;max-width:360px;height:auto;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.08)}
 .sharecard .sc-cap{font-size:12px;color:var(--muted);margin:6px 0 0;display:flex;align-items:center;gap:6px}
 .sharecard .sc-cap svg{flex:0 0 auto;color:var(--accent)}
 @media (prefers-color-scheme:dark){
   .media-banner,.sec-media,.date-card img,.infographic,.sharecard img{border-color:#2a2a28;background:#16161a}
   .sharecard img{box-shadow:0 4px 16px rgba(0,0,0,.4)}
+  /* Light-only infographic SVGs (date cards, route icon, last-train timeline) — the artwork itself is dark
+     type on a cream surface, so img{brightness(.88)} mutes the text and making it transparent breaks in dark.
+     → frame them as an intentional light card: drop the brightness filter + add a subtle border/shadow frame.
+     (quote-lasttrain is a pink card, excluded.) */
+  .date-card img,.route-icn,.infographic{filter:none;border:1px solid rgba(255,255,255,.14);background:transparent;box-shadow:0 4px 18px rgba(0,0,0,.45)}
 }
 </style></head><body><div class="wrap">
 <details class="langpick"><summary aria-label="Language — current English">English</summary><div class="langmenu"><a class="lng" href="../twice-thisisfor-seoul.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/twice-thisisfor-seoul.html" aria-current="true" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/twice-thisisfor-seoul.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/twice-thisisfor-seoul.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/twice-thisisfor-seoul.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/twice-thisisfor-seoul.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/twice-thisisfor-seoul.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/twice-thisisfor-seoul.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/twice-thisisfor-seoul.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/twice-thisisfor-seoul.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/twice-thisisfor-seoul.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div></details>
@@ -517,7 +522,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <a class="hero-cta" href="#stay-len"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M8 2v4M16 2v4M3 9h18M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Build my trip plan</a>
 </div>
 <!-- Hero mood banner — keeps the lightstick-color hero identity, adds atmosphere via a wide photo (no background overlay). -->
-<div class="media-banner"><img src="/assets/gen/photo/hero.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="KSPO Dome at night before the show, with a sea of lightsticks"></div>
+<div class="media-banner"><img src="/assets/gen/photo/hero.jpg" width="1200" height="800" loading="eager" fetchpriority="high" decoding="async" alt="KSPO Dome at night before the show, with a sea of lightsticks"></div>
 <span class="badge" style="color:#0F6E56;background:#E1F5EE;margin-top:10px">Far Ahead · Book months in advance</span>
 
 <!-- 5-step order guide (synced from ko) — first-timer wayfinding. -->
