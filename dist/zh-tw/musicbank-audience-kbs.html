@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../musicbank-audience-kbs.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/musicbank-audience-kbs.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/musicbank-audience-kbs.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/musicbank-audience-kbs.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/musicbank-audience-kbs.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/musicbank-audience-kbs.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/musicbank-audience-kbs.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/musicbank-audience-kbs.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/musicbank-audience-kbs.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/musicbank-audience-kbs.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/musicbank-audience-kbs.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -159,7 +159,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">首爾都會地下鐵（1～9 號線、新分堂線等）+ 市內公車為主。廣域整合轉乘系統。交通卡採用 T-money·Cashbee 標準，相容幾乎所有交通及便利店付款。</div></div></div>
   <details class="limore">
     <summary>看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">地下鐵末班車按路線約午夜～00:30 左右（市中心往外圍方向更晚）。末班車後 N 系列深夜巴士（Owl Bus）行駛主要幹線。計程車·Kakao T 可廣泛叫車，深夜加收費用。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡·簽帳卡·行動支付（Samsung Pay 等）接受度極高。小額·街邊攤位接受部分現金。QR 碼支付（Kakao Pay·Naver Pay）普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">韓元（KRW、₩）。以卡片支付為主，對兌換外幣的依賴度較低。機場、市區兌換所、ATM 提供兌換服務。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">韓語。觀光景點、大型演藝場、交通標示普遍附英文，日常英語通用度中等。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(計程車·代駕·移動派遣)</span> · Naver Map <span style='color:var(--muted)'>(大眾運輸路線·實時導航)</span> · Kakao Pay <span style='color:var(--muted)'>(QR 碼·行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(深夜計程車派遣標準（市佔率 90%+，配對速度最快）。外國號碼有註冊限制。)</span> · Uber <span style='color:var(--muted)'>(計程車派遣——可直接使用海外卡片·號碼，對外國人友善。)</span> · TADA <span style='color:var(--muted)'>(Carnival 廂型車派遣——可用海外號碼·卡片註冊。)</span> · i.M <span style='color:var(--muted)'>(豪華大型廂型車派遣)</span> · K-RIDE <span style='color:var(--muted)'>(外國人專門計程車派遣（毋需 Kakao Talk 帳號，首爾·仁川·首爾圈）)</span> · Owl Bus (Seoul Night Bus) <span style='color:var(--muted)'>(末班車後深夜巴士——首爾市官方路線（N15·N16·N26 等）)</span> &nbsp;<a href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">演藝場正門廣場叫車人潮集中——走出 1～2 街區再叫車配對更快。或移動 1 站地鐵後叫車，客源分散。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">地下鐵末班車按路線約午夜～00:30 左右（市中心往外圍方向更晚）。末班車後 N 系列深夜巴士（Owl Bus）行駛主要幹線。計程車·Kakao T 可廣泛叫車，深夜加收費用。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡·簽帳卡·行動支付（Samsung Pay 等）接受度極高。小額·街邊攤位接受部分現金。QR 碼支付（Kakao Pay·Naver Pay）普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">韓元（KRW、₩）。以卡片支付為主，對兌換外幣的依賴度較低。機場、市區兌換所、ATM 提供兌換服務。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">韓語。觀光景點、大型演藝場、交通標示普遍附英文，日常英語通用度中等。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(計程車·代駕·移動派遣)</span> · Naver Map <span style='color:var(--muted)'>(大眾運輸路線·實時導航)</span> · Kakao Pay <span style='color:var(--muted)'>(QR 碼·行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(深夜計程車派遣標準（市佔率 90%+，配對速度最快）。外國號碼有註冊限制。)</span> · Uber <span style='color:var(--muted)'>(計程車派遣——可直接使用海外卡片·號碼，對外國人友善。)</span> · TADA <span style='color:var(--muted)'>(Carnival 廂型車派遣——可用海外號碼·卡片註冊。)</span> · i.M <span style='color:var(--muted)'>(豪華大型廂型車派遣)</span> · K-RIDE <span style='color:var(--muted)'>(外國人專門計程車派遣（毋需 Kakao Talk 帳號，首爾·仁川·首爾圈）)</span> · Owl Bus (Seoul Night Bus) <span style='color:var(--muted)'>(末班車後深夜巴士——首爾市官方路線（N15·N16·N26 等）)</span> &nbsp;<a href="https://www.airalo.com/south-korea-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">演藝場正門廣場叫車人潮集中——走出 1～2 街區再叫車配對更快。或移動 1 站地鐵後叫車，客源分散。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -169,10 +169,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Seoul&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=대한민국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Seoul&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Seoul" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/south-korea-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Seoul" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 

@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../lesserafim-pureflow-london-o2.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/lesserafim-pureflow-london-o2.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/lesserafim-pureflow-london-o2.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/lesserafim-pureflow-london-o2.html" aria-current="true" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/lesserafim-pureflow-london-o2.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/lesserafim-pureflow-london-o2.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/lesserafim-pureflow-london-o2.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/lesserafim-pureflow-london-o2.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/lesserafim-pureflow-london-o2.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/lesserafim-pureflow-london-o2.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/lesserafim-pureflow-london-o2.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,#ffffff 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
@@ -170,7 +170,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">伦敦地铁(Tube)·公交·DLR·National Rail。无需办卡，凭非接触式信用卡/手机(Apple·Google Pay)可乘车(Oyster替代)。The O2与Jubilee Line(朱比利线)的North Greenwich(北格林威治)站直达。</div></div></div>
   <details class="limore">
     <summary>查看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">Jubilee Line末班车到North Greenwich附近约01:01，周五周六24小时运营(Night Tube)。末班车后还有众多24小时巴士(188路等Waterloo↔North Greenwich直达)。压轴演出通常于22:30~23:00结束，末班车和夜间巴士时间相对充裕。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">非接触卡·移动支付通用度最高。几乎无需现金。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">英镑(GBP, £)。卡支付为主，兑换所需最少。ATM 覆盖广泛。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">英文.</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube·巴士·夜间路线(伦敦优势))</span> · Uber <span style='color:var(--muted)'>(车辆呼叫服务)</span> · TfL Go <span style='color:var(--muted)'>(首尔地铁官方路线·运营信息)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜用车)</span> · Bolt <span style='color:var(--muted)'>(打车替代方案（伦敦常用，价格对比）)</span> · Night Tube / 24小时巴士 <span style='color:var(--muted)'>(周五·周六 Jubilee Line(朱比利线) 24小时 + 188路等24小时公交(应用: TfL Go/Citymapper路线规划))</span> &nbsp;<a href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">The O2 公共交通发达，减少网约车依赖是最佳分散方案——优先选择 Jubilee Line 末班车（约 01:01）或周五周六的 Night Tube；Uber 涨价时不妨对比 Bolt 车费，或改乘 188 路 24 小时巴士</div></div><div class="lirow"><div class="lk">末班车提示</div><div class="lv">Jubilee线North Greenwich站直通，末班车约01:01。周五·周六Night Tube 24小时 + 188路等24小时巴士——结束(22:30~23:00)后仍有余裕。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">Jubilee Line末班车到North Greenwich附近约01:01，周五周六24小时运营(Night Tube)。末班车后还有众多24小时巴士(188路等Waterloo↔North Greenwich直达)。压轴演出通常于22:30~23:00结束，末班车和夜间巴士时间相对充裕。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">非接触卡·移动支付通用度最高。几乎无需现金。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">英镑(GBP, £)。卡支付为主，兑换所需最少。ATM 覆盖广泛。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">英文.</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube·巴士·夜间路线(伦敦优势))</span> · Uber <span style='color:var(--muted)'>(车辆呼叫服务)</span> · TfL Go <span style='color:var(--muted)'>(首尔地铁官方路线·运营信息)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜用车)</span> · Bolt <span style='color:var(--muted)'>(打车替代方案（伦敦常用，价格对比）)</span> · Night Tube / 24小时巴士 <span style='color:var(--muted)'>(周五·周六 Jubilee Line(朱比利线) 24小时 + 188路等24小时公交(应用: TfL Go/Citymapper路线规划))</span> &nbsp;<a href="https://www.airalo.com/united-kingdom-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">The O2 公共交通发达，减少网约车依赖是最佳分散方案——优先选择 Jubilee Line 末班车（约 01:01）或周五周六的 Night Tube；Uber 涨价时不妨对比 Bolt 车费，或改乘 188 路 24 小时巴士</div></div><div class="lirow"><div class="lk">末班车提示</div><div class="lv">Jubilee线North Greenwich站直通，末班车约01:01。周五·周六Night Tube 24小时 + 188路等24小时巴士——结束(22:30~23:00)后仍有余裕。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -180,10 +180,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=London&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=London&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 机票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=London&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 套餐·门票 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=London" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=London" rel="sponsored nofollow" target="_blank">✈️ 机票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/united-kingdom-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=London" rel="sponsored nofollow" target="_blank">🎟 套餐·门票 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本页面的预订链接为联盟(佣金)链接。用户不产生额外费用。</p>
 

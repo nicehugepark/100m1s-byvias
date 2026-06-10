@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../cortis-put-your-phone-down-newyork.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/cortis-put-your-phone-down-newyork.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/cortis-put-your-phone-down-newyork.html" aria-current="true" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/cortis-put-your-phone-down-newyork.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/cortis-put-your-phone-down-newyork.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/cortis-put-your-phone-down-newyork.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/cortis-put-your-phone-down-newyork.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/cortis-put-your-phone-down-newyork.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/cortis-put-your-phone-down-newyork.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/cortis-put-your-phone-down-newyork.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/cortis-put-your-phone-down-newyork.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -173,7 +173,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">MTA地下鉄(24時間運行)・バス・通勤電車(LIRR・NJ Transit・Metro-North)。交通カードはOMNY(コンタクトレスカード・モバイルタップ)またはMetroCardです。Madison Square Gardenは34 St-Penn Station/34 St-Herald Sq駅の直上部にあり(1・2・3・A・C・E・B・D・F・M・N・Q・R・Wで複数乗換可)。</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">ニューヨークの地下鉄は24時間運行のため、最終便の心配はあまりありませんが、深夜は配車間隔が長くなります。大型公演終了後も主要路線はPenn Station付近で停車を続けています。ただし、終了直後のPenn Station入口は混雑が著しいため、28th Stなど1ブロック離れた駅をご利用いただく方が、乗客の分散に効果的です。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・モバイル決済(Apple/Google Pay)は最も一般的で、ほぼ現金は不要です(チップ文化によりカードでのチップ支払いが一般的)。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">米国ドル(USD, $)。カード中心のため両替の必要性が低く、少額現金はバックアップとしてご用意いただく程度です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語(スペイン語の併用が一般的)。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両呼び出し)</span> · Citymapper <span style='color:var(--muted)'>(地下鉄・バス・夜間経路(ニューヨークの強み))</span> · MYmta <span style='color:var(--muted)'>(MTA公式の地下鉄・バス リアルタイム経路)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">地下鉄(24時間) <span style='color:var(--muted)'>(MSG周辺の1・2・3・A・C・E線など深夜も運行—終電の心配が少なめです(アプリ: MYmta/Citymapper経路))</span> · Uber <span style='color:var(--muted)'>(深夜の車両呼び出し(MSG指定ピックアップゾーン運営、英語UI))</span> · Lyft <span style='color:var(--muted)'>(車両呼び出し代替(Uberと料金を比較して選択可能))</span> · Curb <span style='color:var(--muted)'>(イエローキャブ(公式タクシー)呼び出しアプリ—メーター料金が透明です)</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Penn Station正面付近は混雑が激しいため、28th Stなど1~2ブロック離れた地下鉄駅のご利用が混雑緩和のコツです。終了直後30~45分はお近くのレストランでお待ちいただき、その後、地下鉄をご利用いただくか、お車をお呼びいただくと、人混みと変動料金の上昇が緩和されます</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">ニューヨークの地下鉄は24時間運行のため、最終便の心配はあまりありませんが、深夜は配車間隔が長くなります。大型公演終了後も主要路線はPenn Station付近で停車を続けています。ただし、終了直後のPenn Station入口は混雑が著しいため、28th Stなど1ブロック離れた駅をご利用いただく方が、乗客の分散に効果的です。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・モバイル決済(Apple/Google Pay)は最も一般的で、ほぼ現金は不要です(チップ文化によりカードでのチップ支払いが一般的)。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">米国ドル(USD, $)。カード中心のため両替の必要性が低く、少額現金はバックアップとしてご用意いただく程度です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語(スペイン語の併用が一般的)。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両呼び出し)</span> · Citymapper <span style='color:var(--muted)'>(地下鉄・バス・夜間経路(ニューヨークの強み))</span> · MYmta <span style='color:var(--muted)'>(MTA公式の地下鉄・バス リアルタイム経路)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">地下鉄(24時間) <span style='color:var(--muted)'>(MSG周辺の1・2・3・A・C・E線など深夜も運行—終電の心配が少なめです(アプリ: MYmta/Citymapper経路))</span> · Uber <span style='color:var(--muted)'>(深夜の車両呼び出し(MSG指定ピックアップゾーン運営、英語UI))</span> · Lyft <span style='color:var(--muted)'>(車両呼び出し代替(Uberと料金を比較して選択可能))</span> · Curb <span style='color:var(--muted)'>(イエローキャブ(公式タクシー)呼び出しアプリ—メーター料金が透明です)</span> &nbsp;<a href="https://www.airalo.com/united-states-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Penn Station正面付近は混雑が激しいため、28th Stなど1~2ブロック離れた地下鉄駅のご利用が混雑緩和のコツです。終了直後30~45分はお近くのレストランでお待ちいただき、その後、地下鉄をご利用いただくか、お車をお呼びいただくと、人混みと変動料金の上昇が緩和されます</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -183,10 +183,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=New York&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=New York&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=New York&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=New York" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=New York" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/united-states-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=New York" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページの予約リンクはアフィリエイト（仲介手数料）リンクです。ご利用者の追加負担はございません。</p>
 

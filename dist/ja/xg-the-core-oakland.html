@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../xg-the-core-oakland.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/xg-the-core-oakland.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/xg-the-core-oakland.html" aria-current="true" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/xg-the-core-oakland.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/xg-the-core-oakland.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/xg-the-core-oakland.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/xg-the-core-oakland.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/xg-the-core-oakland.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/xg-the-core-oakland.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/xg-the-core-oakland.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/xg-the-core-oakland.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -174,7 +174,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">BART(サンフランシスコ・ベイエリア広域鉄道)・AC Transit バス。Oakland Arena(米国カリフォルニア州オークランド、7000 Coliseum Way)はBART Coliseum駅(コロシアム駅)と歩道橋で直結(徒歩約6分)。BLUE・ORANGE・GREEN線が停車します。</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">BART終電は平日・土日ともに真夜中前後(路線による相違あり)です。大型公演が22:00以降に終了する場合は、終電時刻の事前確認が必須です。終電以降はUber・Lyftに頼ることになりますが、終演直後は配車リクエスト集中により料金が上昇する傾向ですので、ご注意ください。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・モバイル決済(Apple/Google Pay)の通用度が非常に高いです。現金はほぼ不要です(カード払いでのチップが一般的)</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">米国ドル(USD、$)。カード中心で、少額の現金は補助的に</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語(スペイン語の併用が一般的)。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(公演後メイン手段))</span> · Lyft <span style='color:var(--muted)'>(車両配車(代替手段))</span> · BART (official) <span style='color:var(--muted)'>(BART リアルタイム時刻・経路・運賃)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜のライドシェア手配を主軸に(終電後の現実的第1選択肢、英語UI))</span> · Lyft <span style='color:var(--muted)'>(車両呼び出しの代替案(料金比較による分散))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Oakland Arena正面を避けてから手配してください — Uber↔Lyft料金を同時比較。終電が利用できれば、BART Coliseum駅(歩道橋直結)が最も低額で最速です。</div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">Oakland, California(Auckland, ニュージーランドではありません)。BART Coliseum駅は歩行者橋で直結(徒歩約6分)、BLUE・ORANGE・GREEN線。終電は真夜中前後です。乗り遅れた場合はUber/Lyftをご利用いただけますが、終了直後のサージ料金についてはご注意ください。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">BART終電は平日・土日ともに真夜中前後(路線による相違あり)です。大型公演が22:00以降に終了する場合は、終電時刻の事前確認が必須です。終電以降はUber・Lyftに頼ることになりますが、終演直後は配車リクエスト集中により料金が上昇する傾向ですので、ご注意ください。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・モバイル決済(Apple/Google Pay)の通用度が非常に高いです。現金はほぼ不要です(カード払いでのチップが一般的)</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">米国ドル(USD、$)。カード中心で、少額の現金は補助的に</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語(スペイン語の併用が一般的)。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(公演後メイン手段))</span> · Lyft <span style='color:var(--muted)'>(車両配車(代替手段))</span> · BART (official) <span style='color:var(--muted)'>(BART リアルタイム時刻・経路・運賃)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜のライドシェア手配を主軸に(終電後の現実的第1選択肢、英語UI))</span> · Lyft <span style='color:var(--muted)'>(車両呼び出しの代替案(料金比較による分散))</span> &nbsp;<a href="https://www.airalo.com/united-states-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Oakland Arena正面を避けてから手配してください — Uber↔Lyft料金を同時比較。終電が利用できれば、BART Coliseum駅(歩道橋直結)が最も低額で最速です。</div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">Oakland, California(Auckland, ニュージーランドではありません)。BART Coliseum駅は歩行者橋で直結(徒歩約6分)、BLUE・ORANGE・GREEN線。終電は真夜中前後です。乗り遅れた場合はUber/Lyftをご利用いただけますが、終了直後のサージ料金についてはご注意ください。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -184,10 +184,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Auckland&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Auckland&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Auckland&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Auckland" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Auckland" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/united-states-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Auckland" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページの予約リンクはアフィリエイト（仲介手数料）リンクです。ご利用者の追加負担はございません。</p>
 

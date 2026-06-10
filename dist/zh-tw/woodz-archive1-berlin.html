@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../woodz-archive1-berlin.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/woodz-archive1-berlin.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/woodz-archive1-berlin.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/woodz-archive1-berlin.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/woodz-archive1-berlin.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/woodz-archive1-berlin.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/woodz-archive1-berlin.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/woodz-archive1-berlin.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/woodz-archive1-berlin.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/woodz-archive1-berlin.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/woodz-archive1-berlin.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -174,7 +174,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">U-Bahn(地鐵)、S-Bahn(市郊鐵路)、電車、公車。無須交通卡，可用 BVG/VBB APP 或自動售票機購票。Columbiahalle 位於 U6 線 Platz der Luftbrücke 車站，搭 104、248 號公車至 Columbiadamm 站。</div></div></div>
   <details class="limore">
     <summary>看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">週五·週六 夜間 U-Bahn·S-Bahn 24小時運行（約15分鐘間隔）。平日（週日～週四）約 00:30 末班→04:00 復運，其間夜間巴士（Nachtbus）以同線替代（可用一般票券）。演唱會結束後，建議提前確認當日末班車及夜間巴士班次。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡與無接觸支付普及度增加，但德國特色使然，現金交易仍佔相當比例（小店及部分餐廳僅收現金）。大型商店、連鎖店及交通運輸接受刷卡。建議準備適量現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">歐元(EUR, €)。現金使用比例高，建議先兌換一定金額現金。ATM 遍布各地。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">德語。柏林英文通用度高(觀光客、年輕人),交通標示有英文。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(計程車·車輛呼叫(德國主力))</span> · BVG / Jelbi <span style='color:var(--muted)'>(柏林公共運輸公司官方車票·路線)</span> · Citymapper <span style='color:var(--muted)'>(U-Bahn·S-Bahn·夜間路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(深夜計程車·叫車標準(德國最大, 整合計程車與叫車, 支援卡/Apple Pay/Google Pay))</span> · Uber <span style='color:var(--muted)'>(叫車(英文介面,柏林通用))</span> · Bolt <span style='color:var(--muted)'>(叫車服務備選(費用比較以分散)。)</span> · Nachtbus(夜班巴士) <span style='color:var(--muted)'>(平日末班車後的夜間巴士網絡 — U6 替代路線等(應用：BVG/Citymapper 路線))</span> &nbsp;<a href="https://www.airalo.com/?country=독일&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Columbiahalle 避開正門後叫車 — FREE NOW↔Uber↔Bolt 費用比較交叉叫車；週五·週六 U6 24小時營運，降低叫車依賴是最佳</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">U6線 Platz der Luftbrücke(普拉茨德盧夫特橋) 站 + 104、248 號公車。週五、週六 U-Bahn 24 小時營運，平日約 00:30 末班車→轉乘夜間公車(Nachtbus)。先確認各日末班車時間。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">週五·週六 夜間 U-Bahn·S-Bahn 24小時運行（約15分鐘間隔）。平日（週日～週四）約 00:30 末班→04:00 復運，其間夜間巴士（Nachtbus）以同線替代（可用一般票券）。演唱會結束後，建議提前確認當日末班車及夜間巴士班次。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡與無接觸支付普及度增加，但德國特色使然，現金交易仍佔相當比例（小店及部分餐廳僅收現金）。大型商店、連鎖店及交通運輸接受刷卡。建議準備適量現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">歐元(EUR, €)。現金使用比例高，建議先兌換一定金額現金。ATM 遍布各地。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">德語。柏林英文通用度高(觀光客、年輕人),交通標示有英文。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(計程車·車輛呼叫(德國主力))</span> · BVG / Jelbi <span style='color:var(--muted)'>(柏林公共運輸公司官方車票·路線)</span> · Citymapper <span style='color:var(--muted)'>(U-Bahn·S-Bahn·夜間路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">FREE NOW <span style='color:var(--muted)'>(深夜計程車·叫車標準(德國最大, 整合計程車與叫車, 支援卡/Apple Pay/Google Pay))</span> · Uber <span style='color:var(--muted)'>(叫車(英文介面,柏林通用))</span> · Bolt <span style='color:var(--muted)'>(叫車服務備選(費用比較以分散)。)</span> · Nachtbus(夜班巴士) <span style='color:var(--muted)'>(平日末班車後的夜間巴士網絡 — U6 替代路線等(應用：BVG/Citymapper 路線))</span> &nbsp;<a href="https://www.airalo.com/germany-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Columbiahalle 避開正門後叫車 — FREE NOW↔Uber↔Bolt 費用比較交叉叫車；週五·週六 U6 24小時營運，降低叫車依賴是最佳</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">U6線 Platz der Luftbrücke(普拉茨德盧夫特橋) 站 + 104、248 號公車。週五、週六 U-Bahn 24 小時營運，平日約 00:30 末班車→轉乘夜間公車(Nachtbus)。先確認各日末班車時間。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -184,10 +184,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Berlin&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Berlin&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=독일&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Berlin&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Berlin" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Berlin" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/germany-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Berlin" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 

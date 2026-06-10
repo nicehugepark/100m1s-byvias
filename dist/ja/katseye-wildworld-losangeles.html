@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../katseye-wildworld-losangeles.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/katseye-wildworld-losangeles.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/katseye-wildworld-losangeles.html" aria-current="true" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/katseye-wildworld-losangeles.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/katseye-wildworld-losangeles.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/katseye-wildworld-losangeles.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/katseye-wildworld-losangeles.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/katseye-wildworld-losangeles.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/katseye-wildworld-losangeles.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/katseye-wildworld-losangeles.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/katseye-wildworld-losangeles.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -174,7 +174,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">LA Metro レール(B/D地下鉄、A/E軽電車)・バス。都市構造上、車による移動の比重が大きいです。交通カードはTAPカード。Crypto.com Arena(L.A. Live・LA Convention Center隣接)はA・E線Pico駅から徒歩約2分です</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">Metro レール夜間の終電は限定的(路線により異なります)。Pico駅は大規模公演時にプラットフォームが混雑します。公演後はUber・Lyft頼みになるのが現実的ですが、終了直後は呼び出し急増・変動料金上昇にご注意ください</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・モバイル決済(Apple/Google Pay)の通用度が非常に高いです。現金はほぼ不要です(カード払いでのチップが一般的)</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">米国ドル(USD、$)。カード中心で、少額の現金は補助的に</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語(スペイン語との併用が非常に一般的です)</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(公演後メイン手段))</span> · Lyft <span style='color:var(--muted)'>(車両配車(代替手段))</span> · Transit <span style='color:var(--muted)'>(LA Metro レール・バス リアルタイム経路)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両呼び出しが主流(公演後の現実的な1番の選択肢、英語UI))</span> · Lyft <span style='color:var(--muted)'>(車両呼び出しの代替案(料金比較による分散))</span> &nbsp;<a href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Crypto.com Arena指定のライドシェア ピックアップゾーン(Chick Hearn Ct./Figueroa St. ホワイトゾーン)のご利用—正面の混雑回避。Uber↔Lyft料金を同時比較して安い方をお選びください</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">Metro レール夜間の終電は限定的(路線により異なります)。Pico駅は大規模公演時にプラットフォームが混雑します。公演後はUber・Lyft頼みになるのが現実的ですが、終了直後は呼び出し急増・変動料金上昇にご注意ください</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">カード・モバイル決済(Apple/Google Pay)の通用度が非常に高いです。現金はほぼ不要です(カード払いでのチップが一般的)</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">米国ドル(USD、$)。カード中心で、少額の現金は補助的に</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語(スペイン語との併用が非常に一般的です)</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(公演後メイン手段))</span> · Lyft <span style='color:var(--muted)'>(車両配車(代替手段))</span> · Transit <span style='color:var(--muted)'>(LA Metro レール・バス リアルタイム経路)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両呼び出しが主流(公演後の現実的な1番の選択肢、英語UI))</span> · Lyft <span style='color:var(--muted)'>(車両呼び出しの代替案(料金比較による分散))</span> &nbsp;<a href="https://www.airalo.com/united-states-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Crypto.com Arena指定のライドシェア ピックアップゾーン(Chick Hearn Ct./Figueroa St. ホワイトゾーン)のご利用—正面の混雑回避。Uber↔Lyft料金を同時比較して安い方をお選びください</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -184,10 +184,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Los Angeles&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Los Angeles&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=미국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Los Angeles&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Los Angeles" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Los Angeles" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/united-states-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Los Angeles" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページの予約リンクはアフィリエイト（仲介手数料）リンクです。ご利用者の追加負担はございません。</p>
 

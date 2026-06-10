@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../park-ji-hoon-reflect-manila.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/park-ji-hoon-reflect-manila.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/park-ji-hoon-reflect-manila.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/park-ji-hoon-reflect-manila.html" aria-current="true" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/park-ji-hoon-reflect-manila.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/park-ji-hoon-reflect-manila.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/park-ji-hoon-reflect-manila.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/park-ji-hoon-reflect-manila.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/park-ji-hoon-reflect-manila.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/park-ji-hoon-reflect-manila.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/park-ji-hoon-reflect-manila.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -170,7 +170,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">LRT-1·LRT-2·MRT-3(轻轨/地铁) + 吉普车(Jeepney)·巴士。用整合交通卡 beep 卡乘坐 LRT·MRT。Park Ji-hoon 粉丝演唱会(2026-08-08)场馆于 6/6 未公布(TBA) — 马尼拉主要场馆包括 Smart Araneta Coliseum(奎松市，MRT-3 Araneta Center-Cubao 站)·New Frontier Theater(奎松市同一区域)·SM Mall of Asia Arena(帕赛，滨海)。公布后请重新确认交通路线。</div></div></div>
   <details class="limore">
     <summary>查看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">LRT·MRT 末班车大约 22:00～22:30（按线路有差异）— 演出结束可能晚于末班车。结束后立即打车时，Grab 叫车是标准选择，但结束后打车需求激增、价格上升。深夜路边出租车常拒绝使用计价表、经常宰客 → 建议选择 Grab（预付款·司机信息）。若场馆位于外围，建议提前预约。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">大型商场·酒店·连锁店接受信用卡(Visa/Mastercard)通用良好。吉普车·路边出租车·街边摊·小商店以现金为主。GCash·Maya 二维码手机支付普及（本地常见，外国人注册有限制）。建议随时准备小额现金(比索)。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">菲律宾比索(PHP, ₱)。相比路边出租车·吉普车·街边摊，建议准备小面额现金。机场(NAIA)·市区兑换所·自动提款机(24小时，接受国际卡)广泛。自动提款机提款有手续费。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">菲律宾语(他加禄语) + 英语通用 — 英语通用度非常高(指示·标志·对话英语广泛)。外国人沟通压力小。基本问候 &#x27;Salamat(感谢)&#x27; 就够了。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Grab <span style='color:var(--muted)'>(叫车(菲律宾主要方式，预付款·司机信息))</span> · Google 地图 <span style='color:var(--muted)'>(LRT·MRT·巴士路线)</span> · GCash <span style='color:var(--muted)'>(QR 移动支付（当地通用，外国人注册有限制）)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Grab <span style='color:var(--muted)'>(夜间车辆·出租车召唤标准（菲律宾占有率最高，预付费·驾驶员信息，避免街头出租车宰客——外国人最优选择）)</span> · Angkas <span style='color:var(--muted)'>(摩托车出租车（Angkas）召唤——短距离避堵方案（提供头盔）。无法打到车时分散使用)</span> &nbsp;<a href="https://www.airalo.com/?country=필리핀&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">避开演唱会场正门·广场，移动一个街区后召唤 Grab——避免演出结束后瞬间涨价。Grab 打不到时，短距离可分散用 Angkas（摩托车），或稍候后重试</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">LRT·MRT 末班车大约 22:00～22:30（按线路有差异）— 演出结束可能晚于末班车。结束后立即打车时，Grab 叫车是标准选择，但结束后打车需求激增、价格上升。深夜路边出租车常拒绝使用计价表、经常宰客 → 建议选择 Grab（预付款·司机信息）。若场馆位于外围，建议提前预约。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">大型商场·酒店·连锁店接受信用卡(Visa/Mastercard)通用良好。吉普车·路边出租车·街边摊·小商店以现金为主。GCash·Maya 二维码手机支付普及（本地常见，外国人注册有限制）。建议随时准备小额现金(比索)。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">菲律宾比索(PHP, ₱)。相比路边出租车·吉普车·街边摊，建议准备小面额现金。机场(NAIA)·市区兑换所·自动提款机(24小时，接受国际卡)广泛。自动提款机提款有手续费。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">菲律宾语(他加禄语) + 英语通用 — 英语通用度非常高(指示·标志·对话英语广泛)。外国人沟通压力小。基本问候 &#x27;Salamat(感谢)&#x27; 就够了。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Grab <span style='color:var(--muted)'>(叫车(菲律宾主要方式，预付款·司机信息))</span> · Google 地图 <span style='color:var(--muted)'>(LRT·MRT·巴士路线)</span> · GCash <span style='color:var(--muted)'>(QR 移动支付（当地通用，外国人注册有限制）)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Grab <span style='color:var(--muted)'>(夜间车辆·出租车召唤标准（菲律宾占有率最高，预付费·驾驶员信息，避免街头出租车宰客——外国人最优选择）)</span> · Angkas <span style='color:var(--muted)'>(摩托车出租车（Angkas）召唤——短距离避堵方案（提供头盔）。无法打到车时分散使用)</span> &nbsp;<a href="https://www.airalo.com/philippines-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">避开演唱会场正门·广场，移动一个街区后召唤 Grab——避免演出结束后瞬间涨价。Grab 打不到时，短距离可分散用 Angkas（摩托车），或稍候后重试</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -180,10 +180,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Manila&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Manila&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 机票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=필리핀&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Manila&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 套餐·门票 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Manila" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Manila" rel="sponsored nofollow" target="_blank">✈️ 机票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/philippines-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Manila" rel="sponsored nofollow" target="_blank">🎟 套餐·门票 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本页面的预订链接为联盟(佣金)链接。用户不产生额外费用。</p>
 

@@ -17,7 +17,7 @@
 <link rel="alternate" hreflang="x-default" href="kai-kaion-yokohama-d2.html">
 <style>
 :root{--ink:#1a1a18;--muted:#6b6a64;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5;--sun-chip-bg:#FFF9E8;--sun-chip-ink:#7A5A12}
-@media(prefers-color-scheme:dark){:root{--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}}
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18;--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}img{filter:brightness(.88)}}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
@@ -102,8 +102,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -272,10 +272,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">지금 예매</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Yokohama&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Booking" data-aff-event="kai-kaion-yokohama-d2" data-aff-pos="0">🏨 호텔 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Yokohama&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Skyscanner" data-aff-event="kai-kaion-yokohama-d2" data-aff-pos="1">✈️ 항공 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Airalo" data-aff-event="kai-kaion-yokohama-d2" data-aff-pos="2">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Yokohama&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Klook" data-aff-event="kai-kaion-yokohama-d2" data-aff-pos="3">🎟 투어·티켓 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Yokohama" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Booking" data-aff-event="kai-kaion-yokohama-d2" data-aff-pos="0">🏨 호텔 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Yokohama" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Skyscanner" data-aff-event="kai-kaion-yokohama-d2" data-aff-pos="1">✈️ 항공 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/japan-esim" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Airalo" data-aff-event="kai-kaion-yokohama-d2" data-aff-pos="2">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Yokohama" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Klook" data-aff-event="kai-kaion-yokohama-d2" data-aff-pos="3">🎟 투어·티켓 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">본 페이지의 예약 링크는 제휴(수수료) 링크입니다. 이용자가 추가로 부담하는 비용은 없습니다.</p>
 
@@ -284,7 +284,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">교통</div><div class="lv">JR·도큐·요코하마 시영지하철 + みなとみらい(미나토미라이)선. Suica·PASMO 상호 호환 그대로 사용(도쿄권 동일 IC). K-Arena는 新横浜(신요코하마)/横浜(요코하마)역 권역.</div></div></div>
   <details class="limore">
     <summary>더보기</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">심야 이동</div><div class="lv">막차 대략 자정 전후(도쿄 방면 환승 시 더 이름). 공연 후 도쿄로 이동 시 막차 환승 빡빡할 수 있어 사전 확인 필수, 미스 시 택시.</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">도쿄와 동일 — 현금 비중 있음, 대형 점포·교통 카드/IC 통용, PayPay 확산.</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">엔화(JPY, ¥). 도쿄와 동일.</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">일본어. 영어 통용도 도쿄와 유사, 번역앱 유용.</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(전철 환승·경로(영어))</span> · GO (タクシーGO) <span style='color:var(--muted)'>(택시 호출)</span> · PayPay <span style='color:var(--muted)'>(QR 간편결제)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">GO <span style='color:var(--muted)'>(심야 택시 호출(요코하마권 운행))</span> · Uber <span style='color:var(--muted)'>(택시 호출(영어 UI))</span> · DiDi <span style='color:var(--muted)'>(택시 호출 대체)</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">K-Arena 정문 집중 회피 후 호출 도쿄 귀가자는 막차 환승 못 맞추면 바로 앱 택시 전환</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">심야 이동</div><div class="lv">막차 대략 자정 전후(도쿄 방면 환승 시 더 이름). 공연 후 도쿄로 이동 시 막차 환승 빡빡할 수 있어 사전 확인 필수, 미스 시 택시.</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">도쿄와 동일 — 현금 비중 있음, 대형 점포·교통 카드/IC 통용, PayPay 확산.</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">엔화(JPY, ¥). 도쿄와 동일.</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">일본어. 영어 통용도 도쿄와 유사, 번역앱 유용.</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(전철 환승·경로(영어))</span> · GO (タクシーGO) <span style='color:var(--muted)'>(택시 호출)</span> · PayPay <span style='color:var(--muted)'>(QR 간편결제)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">GO <span style='color:var(--muted)'>(심야 택시 호출(요코하마권 운행))</span> · Uber <span style='color:var(--muted)'>(택시 호출(영어 UI))</span> · DiDi <span style='color:var(--muted)'>(택시 호출 대체)</span> &nbsp;<a href="https://www.airalo.com/japan-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">K-Arena 정문 집중 회피 후 호출 도쿄 귀가자는 막차 환승 못 맞추면 바로 앱 택시 전환</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">

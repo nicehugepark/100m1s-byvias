@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../xg-the-core-bangkok.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/xg-the-core-bangkok.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/xg-the-core-bangkok.html" aria-current="true" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/xg-the-core-bangkok.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/xg-the-core-bangkok.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/xg-the-core-bangkok.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/xg-the-core-bangkok.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/xg-the-core-bangkok.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/xg-the-core-bangkok.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/xg-the-core-bangkok.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/xg-the-core-bangkok.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -175,7 +175,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">BTS・MRT(地下鉄)・水上バス + シティバス。交通カードはRabbit Card(BTS系)・MRTカードに分かれており、充電式です。Impact Arena(Muang Thong Thani)は都心北部の郊外です — ピンクライン(Pink Line)MRT PK10 — เมืองทองธานี(ムアントンタニ)駅からIMPACT直結支線Impact Linkで接続しています。</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">BTS・MRT・ピンクラインの最終便はおおむね午前0時前後です(ピンクライン06:00~午前0時運行)。Impact Arenaは郊外に位置しているため、公演終了後のピンクラインの最終便時刻をご確認ください。乗り遅れた場合はGrab・Boltでの車両手配をご利用ください(終了直後は手配希望が増加し、料金が上昇する傾向があるのでご注意ください)。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都心の大型店舗・チェーン店・コンビニではカード/QRコード決済が広く利用できますが、夜市・露店・現金タクシーは現金が中心です。QR決済(PromptPay・TrueMoney)が普及しています。ある程度の現金をご用意されることをお勧めします。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">タイバーツ(THB, ฿)。露店・現金タクシーの利用に備えて、現金をご準備することをお勧めします。空港・市内の両替所(SuperRichなど)・ATMが広くご利用いただけます。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">タイ語。観光地・BTS/MRT案内は英語表記が充実していますが、日常英語の通用度は中程度です。翻訳アプリ・配車アプリが便利です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Grab <span style='color:var(--muted)'>(車両・タクシー・フード配達(タイで主流))</span> · Google マップ <span style='color:var(--muted)'>(BTS・MRT・バス経路)</span> · LINE MAN <span style='color:var(--muted)'>(タクシー・配達・決済連携)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜の車両・タクシー手配の標準(タイの市場シェア最高、英語UI・事前決済、外国人向け最適))</span> · Bolt <span style='color:var(--muted)'>(車両手配の選択肢(Grabより安いことが多く、複数アプリで料金比較がお勧めです))</span> · LINE MAN Taxi <span style='color:var(--muted)'>(現地タクシーの即時手配(事前決済・運転手情報あり、外国人利用可能))</span> &nbsp;<a href="https://www.airalo.com/?country=태국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Impact Arena正門・広場を避けた場所での手配をお勧めします — Grabが利用できない場合はBolt・LINE MANでの交互手配をお試しください。郊外立地のため、公演終了前のあらかじめの手配をお試しいただくか、ピンクラインの最終便をご優先ください。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">BTS・MRT・ピンクラインの最終便はおおむね午前0時前後です(ピンクライン06:00~午前0時運行)。Impact Arenaは郊外に位置しているため、公演終了後のピンクラインの最終便時刻をご確認ください。乗り遅れた場合はGrab・Boltでの車両手配をご利用ください(終了直後は手配希望が増加し、料金が上昇する傾向があるのでご注意ください)。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都心の大型店舗・チェーン店・コンビニではカード/QRコード決済が広く利用できますが、夜市・露店・現金タクシーは現金が中心です。QR決済(PromptPay・TrueMoney)が普及しています。ある程度の現金をご用意されることをお勧めします。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">タイバーツ(THB, ฿)。露店・現金タクシーの利用に備えて、現金をご準備することをお勧めします。空港・市内の両替所(SuperRichなど)・ATMが広くご利用いただけます。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">タイ語。観光地・BTS/MRT案内は英語表記が充実していますが、日常英語の通用度は中程度です。翻訳アプリ・配車アプリが便利です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Grab <span style='color:var(--muted)'>(車両・タクシー・フード配達(タイで主流))</span> · Google マップ <span style='color:var(--muted)'>(BTS・MRT・バス経路)</span> · LINE MAN <span style='color:var(--muted)'>(タクシー・配達・決済連携)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜の車両・タクシー手配の標準(タイの市場シェア最高、英語UI・事前決済、外国人向け最適))</span> · Bolt <span style='color:var(--muted)'>(車両手配の選択肢(Grabより安いことが多く、複数アプリで料金比較がお勧めです))</span> · LINE MAN Taxi <span style='color:var(--muted)'>(現地タクシーの即時手配(事前決済・運転手情報あり、外国人利用可能))</span> &nbsp;<a href="https://www.airalo.com/thailand-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Impact Arena正門・広場を避けた場所での手配をお勧めします — Grabが利用できない場合はBolt・LINE MANでの交互手配をお試しください。郊外立地のため、公演終了前のあらかじめの手配をお試しいただくか、ピンクラインの最終便をご優先ください。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -185,10 +185,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Bangkok&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Bangkok&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=태국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Bangkok&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Bangkok" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Bangkok" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/thailand-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Bangkok" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページの予約リンクはアフィリエイト（仲介手数料）リンクです。ご利用者の追加負担はございません。</p>
 

@@ -17,7 +17,7 @@
 <link rel="alternate" hreflang="x-default" href="wc2026-mex-kor-guadalajara.html">
 <style>
 :root{--ink:#1a1a18;--muted:#6b6a64;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5;--sun-chip-bg:#FFF9E8;--sun-chip-ink:#7A5A12}
-@media(prefers-color-scheme:dark){:root{--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}}
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18;--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}img{filter:brightness(.88)}}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
@@ -102,8 +102,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -253,10 +253,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">지금 예매</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Guadalajara&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Booking" data-aff-event="wc2026-mex-kor-guadalajara" data-aff-pos="0">🏨 호텔 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Guadalajara&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Skyscanner" data-aff-event="wc2026-mex-kor-guadalajara" data-aff-pos="1">✈️ 항공 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=멕시코&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Airalo" data-aff-event="wc2026-mex-kor-guadalajara" data-aff-pos="2">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Guadalajara&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Klook" data-aff-event="wc2026-mex-kor-guadalajara" data-aff-pos="3">🎟 투어·티켓 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Guadalajara" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Booking" data-aff-event="wc2026-mex-kor-guadalajara" data-aff-pos="0">🏨 호텔 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Guadalajara" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Skyscanner" data-aff-event="wc2026-mex-kor-guadalajara" data-aff-pos="1">✈️ 항공 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/mexico-esim" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Airalo" data-aff-event="wc2026-mex-kor-guadalajara" data-aff-pos="2">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Guadalajara" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Klook" data-aff-event="wc2026-mex-kor-guadalajara" data-aff-pos="3">🎟 투어·티켓 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">본 페이지의 예약 링크는 제휴(수수료) 링크입니다. 이용자가 추가로 부담하는 비용은 없습니다.</p>
 
@@ -265,7 +265,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">교통</div><div class="lv">Mi Macro Periférico(미 마크로 페리페리코, BRT)·Tren Ligero(트렌 리헤로, 경전철)·Mi Tren(미 트렌) + 시내버스. 운영은 주 공기업 SITEUR. 월드컵 한국전 경기장 Estadio Akron(에스타디오 아크론, 사파판 외곽)은 Mi Macro Periférico &#x27;Estadio Chivas(에스타디오 치바스)&#x27;역에서 Andador Chivas 보행로 도보 약 10분. 요금 약 11페소(1달러 미만).</div></div></div>
   <details class="limore">
     <summary>더보기</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">심야 이동</div><div class="lv">Mi Macro·Tren Ligero 막차가 이름 — Mi Macro Calzada 약 23:00, Periférico 주요 노선 약 23:30(일부 보조 노선 00:30) 종료(24시간 운행 없음). 경기 종료 22시 이후면 막차 놓칠 가능성 커 Uber·DiDi(디디) 차량 호출 의존이 현실적. 외곽 입지라 종료 직후 호출 급증·요금 상승 주의. 심야 이동은 앱 호출/정규 택시 권장(거리 택시 회피).</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">도심 대형 점포·체인·호텔 카드/모바일결제(Apple/Google Pay) 통용 양호하나, 노점·소형 점포·시장은 현금 중심. 멕시코 전반 현금 비중 여전히 높음, 일정 금액 현금 준비 권장.</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">멕시코 페소(MXN, $). 현금 비중 있어 환전·ATM 인출 권장. 공항·시내 환전소·ATM 보편(고액 현금 휴대 자제).</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">스페인어. 관광·경기 운영 구역 영어 통용도는 중간, 일상 영어 통용도는 낮은 편 — 번역앱·앱 호출(영어 UI) 유용.</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(차량 호출(외국인 추천 주력, 영어 UI))</span> · DiDi <span style='color:var(--muted)'>(차량 호출(멕시코 광범위, Uber보다 저렴한 경우 많음))</span> · Google 지도 <span style='color:var(--muted)'>(Mi Macro·Tren Ligero·버스 경로)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(심야 차량 호출 표준(영어 UI·선결제·기사/번호판 확인, 외국인 최적·치안 안전 권장))</span> · DiDi <span style='color:var(--muted)'>(차량 호출 대체(요금 비교 분산, 멕시코 가용·신뢰 양호))</span> &nbsp;<a href="https://www.airalo.com/?country=멕시코&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">Estadio Akron 정문·광장 회피 후 1~2블록 이동 호출 — Uber 안 잡히면 DiDi 교차 호출로 분산 외곽 입지 → 종료 전 미리 호출 시도 또는 막차 가능 시 Mi Macro Periférico 우선</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">심야 이동</div><div class="lv">Mi Macro·Tren Ligero 막차가 이름 — Mi Macro Calzada 약 23:00, Periférico 주요 노선 약 23:30(일부 보조 노선 00:30) 종료(24시간 운행 없음). 경기 종료 22시 이후면 막차 놓칠 가능성 커 Uber·DiDi(디디) 차량 호출 의존이 현실적. 외곽 입지라 종료 직후 호출 급증·요금 상승 주의. 심야 이동은 앱 호출/정규 택시 권장(거리 택시 회피).</div></div><div class="lirow"><div class="lk">결제</div><div class="lv">도심 대형 점포·체인·호텔 카드/모바일결제(Apple/Google Pay) 통용 양호하나, 노점·소형 점포·시장은 현금 중심. 멕시코 전반 현금 비중 여전히 높음, 일정 금액 현금 준비 권장.</div></div><div class="lirow"><div class="lk">환전·통화</div><div class="lv">멕시코 페소(MXN, $). 현금 비중 있어 환전·ATM 인출 권장. 공항·시내 환전소·ATM 보편(고액 현금 휴대 자제).</div></div><div class="lirow"><div class="lk">언어</div><div class="lv">스페인어. 관광·경기 운영 구역 영어 통용도는 중간, 일상 영어 통용도는 낮은 편 — 번역앱·앱 호출(영어 UI) 유용.</div></div><div class="lirow"><div class="lk">현지 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(차량 호출(외국인 추천 주력, 영어 UI))</span> · DiDi <span style='color:var(--muted)'>(차량 호출(멕시코 광범위, Uber보다 저렴한 경우 많음))</span> · Google 지도 <span style='color:var(--muted)'>(Mi Macro·Tren Ligero·버스 경로)</span></div></div><div class="lirow"><div class="lk">심야 교통 앱</div><div class="lv">Uber <span style='color:var(--muted)'>(심야 차량 호출 표준(영어 UI·선결제·기사/번호판 확인, 외국인 최적·치안 안전 권장))</span> · DiDi <span style='color:var(--muted)'>(차량 호출 대체(요금 비교 분산, 멕시코 가용·신뢰 양호))</span> &nbsp;<a href="https://www.airalo.com/mexico-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">호출 팁</div><div class="lv">Estadio Akron 정문·광장 회피 후 1~2블록 이동 호출 — Uber 안 잡히면 DiDi 교차 호출로 분산 외곽 입지 → 종료 전 미리 호출 시도 또는 막차 가능 시 Mi Macro Periférico 우선</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">

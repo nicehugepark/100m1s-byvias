@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../kim-junsu-gravity-taipei.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/kim-junsu-gravity-taipei.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/kim-junsu-gravity-taipei.html" aria-current="true" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/kim-junsu-gravity-taipei.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/kim-junsu-gravity-taipei.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/kim-junsu-gravity-taipei.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/kim-junsu-gravity-taipei.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/kim-junsu-gravity-taipei.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/kim-junsu-gravity-taipei.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/kim-junsu-gravity-taipei.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/kim-junsu-gravity-taipei.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -174,7 +174,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">台北MRT（路線が充実、定時性に優れています）+ 市内バス。EasyCardが標準です — MRT・バスで約20%割引、コンビニ決済対応。台北ドームは南京三民（なんきんさんみん）/台北小巨蛋（台北アリーナ）駅周辺です。</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">MRT最終列車はおおよそ深夜前後となります（路線・方向により異なります）。大型コンサート時は周辺駅の臨時増便が行われることがあります。最終列車後はタクシー・Uber呼び出しを広くご利用いただけます。ドームコンサート終了が22時以降の場合は、最終列車の時刻をあらかじめご確認されることをお勧めします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都市部ではカード決済の利用が良好です。夜市・伝統市場は現金中心です。EasyCardの少額決済が広く利用でき、LINE Payなどのペイメント手段も普及しています。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">台湾ドル（TWD、NT$）。夜市では現金の準備をお勧めします。空港・市内での両替所およびコンビニATMで対応できます。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">中国語（繁体字）。観光地・MRTでは英語表記が充実しており、日常での英語の通用度は中程度です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(台湾運営))</span> · Google マップ <span style='color:var(--muted)'>(MRT・バス経路)</span> · LINE Pay <span style='color:var(--muted)'>(QR・モバイル決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両呼び出し（英語UI・事前決済対応、外国人に最適）)</span> · LINE Taxi(LINE GO) <span style='color:var(--muted)'>(台湾大手タクシー呼び出し（LINEアプリ内連携）)</span> · 55688(台灣大車隊) <span style='color:var(--muted)'>(最大級タクシー呼び出し（2万台以上）)</span> · Yoxi(yoxi) <span style='color:var(--muted)'>(タクシー・車両呼び出しの代替手段（現地）)</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">台北ドームの正門を避けて、周辺ブロックに移動後、Uber・LINE Taxi・55688を交互に呼び出してマッチング成功率を高めることができます。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">MRT最終列車はおおよそ深夜前後となります（路線・方向により異なります）。大型コンサート時は周辺駅の臨時増便が行われることがあります。最終列車後はタクシー・Uber呼び出しを広くご利用いただけます。ドームコンサート終了が22時以降の場合は、最終列車の時刻をあらかじめご確認されることをお勧めします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都市部ではカード決済の利用が良好です。夜市・伝統市場は現金中心です。EasyCardの少額決済が広く利用でき、LINE Payなどのペイメント手段も普及しています。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">台湾ドル（TWD、NT$）。夜市では現金の準備をお勧めします。空港・市内での両替所およびコンビニATMで対応できます。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">中国語（繁体字）。観光地・MRTでは英語表記が充実しており、日常での英語の通用度は中程度です。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(台湾運営))</span> · Google マップ <span style='color:var(--muted)'>(MRT・バス経路)</span> · LINE Pay <span style='color:var(--muted)'>(QR・モバイル決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両呼び出し（英語UI・事前決済対応、外国人に最適）)</span> · LINE Taxi(LINE GO) <span style='color:var(--muted)'>(台湾大手タクシー呼び出し（LINEアプリ内連携）)</span> · 55688(台灣大車隊) <span style='color:var(--muted)'>(最大級タクシー呼び出し（2万台以上）)</span> · Yoxi(yoxi) <span style='color:var(--muted)'>(タクシー・車両呼び出しの代替手段（現地）)</span> &nbsp;<a href="https://www.airalo.com/taiwan-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">台北ドームの正門を避けて、周辺ブロックに移動後、Uber・LINE Taxi・55688を交互に呼び出してマッチング成功率を高めることができます。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -184,10 +184,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Taipei&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Taipei&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Taipei&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Taipei" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Taipei" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/taiwan-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Taipei" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページの予約リンクはアフィリエイト（仲介手数料）リンクです。ご利用者の追加負担はございません。</p>
 

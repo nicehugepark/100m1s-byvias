@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../aespa-synk-complaexity-taipei-dome.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/aespa-synk-complaexity-taipei-dome.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/aespa-synk-complaexity-taipei-dome.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/aespa-synk-complaexity-taipei-dome.html" aria-current="true" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/aespa-synk-complaexity-taipei-dome.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/aespa-synk-complaexity-taipei-dome.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/aespa-synk-complaexity-taipei-dome.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/aespa-synk-complaexity-taipei-dome.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/aespa-synk-complaexity-taipei-dome.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/aespa-synk-complaexity-taipei-dome.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/aespa-synk-complaexity-taipei-dome.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,#ffffff 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
@@ -170,7 +170,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">台北地铁(密集、运行准时) + 市内公交。悠游卡(EasyCard)为标准卡 — 地铁·公交优惠约20%，便利店支付兼容。台北小巨蛋邻近南京三民(Nanjing Sanmin)、台北小巨蛋(Taipei Arena)两地铁站。</div></div></div>
   <details class="limore">
     <summary>查看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">地铁末班车约在午夜前后(因线路·方向而异)。大型演出期间，附近站点可能有临时加班。末班车后广泛可叫出租车·Uber。若演出在22时后结束，建议提前确认末班车时间。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">市中心刷卡广泛接受。夜市·传统市场以现金为主。悠游卡(EasyCard)广泛用于小额交易，二维码(LINE Pay等)快速普及。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">台币(TWD, NT$)。建议为夜市·传统市场准备现金。可在机场·市中心兑换或便利店ATM。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">繁体中文。景点·地铁指示牌配有英文，日常英语通用度中等。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Uber <span style='color:var(--muted)'>(打车服务(台湾运营))</span> · Google 地图 <span style='color:var(--muted)'>(地铁·公交路线)</span> · LINE Pay <span style='color:var(--muted)'>(QR码·快捷支付)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜打车(英文界面·预付款，外国游客最优))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(台湾最大出租车应用(LINE应用内集成))</span> · 55688 (台湾大车队) <span style='color:var(--muted)'>(最大出租车应用(2万+车辆))</span> · Yoxi <span style='color:var(--muted)'>(出租车·打车应用替代方案(本地))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">台北小巨蛋正门避开，移动至附近街区后交替拨打Uber、LINE Taxi、55688来分散匹配</div></div><div class="lirow"><div class="lk">末班车提示</div><div class="lv">南京三民(Nanjing Sanmin)/台北小巨蛋(Taipei Arena)站区域。MRT末班车午夜前后，大型演出时周边车站或有临时增班——建议确认当日通知。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">地铁末班车约在午夜前后(因线路·方向而异)。大型演出期间，附近站点可能有临时加班。末班车后广泛可叫出租车·Uber。若演出在22时后结束，建议提前确认末班车时间。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">市中心刷卡广泛接受。夜市·传统市场以现金为主。悠游卡(EasyCard)广泛用于小额交易，二维码(LINE Pay等)快速普及。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">台币(TWD, NT$)。建议为夜市·传统市场准备现金。可在机场·市中心兑换或便利店ATM。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">繁体中文。景点·地铁指示牌配有英文，日常英语通用度中等。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Uber <span style='color:var(--muted)'>(打车服务(台湾运营))</span> · Google 地图 <span style='color:var(--muted)'>(地铁·公交路线)</span> · LINE Pay <span style='color:var(--muted)'>(QR码·快捷支付)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜打车(英文界面·预付款，外国游客最优))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(台湾最大出租车应用(LINE应用内集成))</span> · 55688 (台湾大车队) <span style='color:var(--muted)'>(最大出租车应用(2万+车辆))</span> · Yoxi <span style='color:var(--muted)'>(出租车·打车应用替代方案(本地))</span> &nbsp;<a href="https://www.airalo.com/taiwan-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">台北小巨蛋正门避开，移动至附近街区后交替拨打Uber、LINE Taxi、55688来分散匹配</div></div><div class="lirow"><div class="lk">末班车提示</div><div class="lv">南京三民(Nanjing Sanmin)/台北小巨蛋(Taipei Arena)站区域。MRT末班车午夜前后，大型演出时周边车站或有临时增班——建议确认当日通知。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -180,10 +180,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Taipei&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Taipei&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 机票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Taipei&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 套餐·门票 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Taipei" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Taipei" rel="sponsored nofollow" target="_blank">✈️ 机票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/taiwan-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Taipei" rel="sponsored nofollow" target="_blank">🎟 套餐·门票 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本页面的预订链接为联盟(佣金)链接。用户不产生额外费用。</p>
 

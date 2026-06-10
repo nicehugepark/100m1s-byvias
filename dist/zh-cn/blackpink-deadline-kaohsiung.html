@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../blackpink-deadline-kaohsiung.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/blackpink-deadline-kaohsiung.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/blackpink-deadline-kaohsiung.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/blackpink-deadline-kaohsiung.html" aria-current="true" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/blackpink-deadline-kaohsiung.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/blackpink-deadline-kaohsiung.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/blackpink-deadline-kaohsiung.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/blackpink-deadline-kaohsiung.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/blackpink-deadline-kaohsiung.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/blackpink-deadline-kaohsiung.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/blackpink-deadline-kaohsiung.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,#ffffff 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
@@ -162,7 +162,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">高雄捷运（红线·橙线·环线）+ 市区巴士 + 轻轨。交通卡兼容悠遊卡(EasyCard)·iPASS，便利店付款也可以。高雄国家体育场邻近世運主場館(Shiyun/World Games Stadium)站。</div></div></div>
   <details class="limore">
     <summary>查看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">捷运末班车大约午夜前后。演唱会后可预约出租车·Uber(Uber台湾运营)。国家体育场位于城市外围，演唱会结束后易拥堵 — 建议提前预约。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">市中心刷卡广泛接受，但夜市·路边摊以现金为主。可用悠游卡(EasyCard)/一卡通(iPASS)在便利店及部分小额交易。二维码(LINE Pay等)快速普及。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">台币(TWD, NT$)。建议为夜市·路边摊准备现金。可在机场·市中心兑换或便利店ATM。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">繁体中文·台语。英语通用度略低于台北，地铁指示牌配有英文。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Uber <span style='color:var(--muted)'>(打车服务(台湾运营))</span> · Google 地图 <span style='color:var(--muted)'>(地铁·公交路线)</span> · LINE Pay <span style='color:var(--muted)'>(二维码·便捷支付(本地商家网络扩展))</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜打车(英文界面，高雄运营可靠))</span> · 55688 (台湾大车队) <span style='color:var(--muted)'>(台湾最大出租车应用(2万+车辆，支持英文))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(LINE应用内出租车叫车)</span> · Yoxi <span style='color:var(--muted)'>(出租车·打车应用替代方案(本地))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">避开高雄国家体育场正门广场，移动1–2个街区后拨打Uber。若无法匹配，改拨55688(车队规模大)</div></div><div class="lirow"><div class="lk">末班车提示</div><div class="lv">World Games MRT站直通。MRT末班车午夜前后，位于外围故建议演出结束后提前呼叫出租车/Uber。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">捷运末班车大约午夜前后。演唱会后可预约出租车·Uber(Uber台湾运营)。国家体育场位于城市外围，演唱会结束后易拥堵 — 建议提前预约。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">市中心刷卡广泛接受，但夜市·路边摊以现金为主。可用悠游卡(EasyCard)/一卡通(iPASS)在便利店及部分小额交易。二维码(LINE Pay等)快速普及。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">台币(TWD, NT$)。建议为夜市·路边摊准备现金。可在机场·市中心兑换或便利店ATM。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">繁体中文·台语。英语通用度略低于台北，地铁指示牌配有英文。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Uber <span style='color:var(--muted)'>(打车服务(台湾运营))</span> · Google 地图 <span style='color:var(--muted)'>(地铁·公交路线)</span> · LINE Pay <span style='color:var(--muted)'>(二维码·便捷支付(本地商家网络扩展))</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜打车(英文界面，高雄运营可靠))</span> · 55688 (台湾大车队) <span style='color:var(--muted)'>(台湾最大出租车应用(2万+车辆，支持英文))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(LINE应用内出租车叫车)</span> · Yoxi <span style='color:var(--muted)'>(出租车·打车应用替代方案(本地))</span> &nbsp;<a href="https://www.airalo.com/taiwan-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">避开高雄国家体育场正门广场，移动1–2个街区后拨打Uber。若无法匹配，改拨55688(车队规模大)</div></div><div class="lirow"><div class="lk">末班车提示</div><div class="lv">World Games MRT站直通。MRT末班车午夜前后，位于外围故建议演出结束后提前呼叫出租车/Uber。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -172,10 +172,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Kaohsiung&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Kaohsiung&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 机票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Kaohsiung&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 套餐·门票 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Kaohsiung" rel="sponsored nofollow" target="_blank">🏨 酒店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Kaohsiung" rel="sponsored nofollow" target="_blank">✈️ 机票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/taiwan-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Kaohsiung" rel="sponsored nofollow" target="_blank">🎟 套餐·门票 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本页面的预订链接为联盟(佣金)链接。用户不产生额外费用。</p>
 

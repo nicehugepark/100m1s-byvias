@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../woodz-archive1-london.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/woodz-archive1-london.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/woodz-archive1-london.html" aria-current="true" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/woodz-archive1-london.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/woodz-archive1-london.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/woodz-archive1-london.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/woodz-archive1-london.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/woodz-archive1-london.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/woodz-archive1-london.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/woodz-archive1-london.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/woodz-archive1-london.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -174,7 +174,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">ロンドン地下鉄(Tube)・バス・DLR・National Rail。別途カード不要で、接触なしクレジットカード/モバイル(Apple・Google Pay)をタップして乗車できます(Oyster代替)。The O2はJubilee LineのNorth Greenwich駅に直結しています。</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">Jubilee LineのNorth Greenwich駅周辺への最終電車は約01:01ごろで、金・土は24時間運行(Night Tube)です。最終電車後も24時間バスが複数あります(188番などはWaterloo↔North Greenwich直結)。ヘッドライナーコンサートは通常22:30～23:00に終了するため、最終電車/夜間バスに比較的余裕があります。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">接触なしカード・モバイル決済の普及度は最高レベルです。現金はほぼ不要です。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">ポンドスターリング(GBP, £)。カード利用が一般的なため、両替は最小限で構いません。ATMは広範囲に利用できます。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube・バス・夜間ルート(ロンドンの強み))</span> · Uber <span style='color:var(--muted)'>(車両呼び出し)</span> · TfL Go <span style='color:var(--muted)'>(公共交通の公式ルート・運行情報)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜帯の車両呼び出し)</span> · Bolt <span style='color:var(--muted)'>(車両呼び出しの代替案(ロンドン利用、料金比較))</span> · Night Tube / 24時間バス <span style='color:var(--muted)'>(金・土のJubilee Line24時間運行+188番等の24時間バス(アプリ: TfL Go/Citymapperで経路確認))</span> &nbsp;<a href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">The O2は公共交通が充実しているため、車両呼び出しへの依存を低減することが最善の分散方法です。Jubilee Lineの最終電車(約01:01)/金土のNight Tubeを優先し、Uberがサージ料金となっている場合はBoltの料金と比較するか、188番などの24時間バスに切り替えることをお勧めします。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">Jubilee LineのNorth Greenwich駅周辺への最終電車は約01:01ごろで、金・土は24時間運行(Night Tube)です。最終電車後も24時間バスが複数あります(188番などはWaterloo↔North Greenwich直結)。ヘッドライナーコンサートは通常22:30～23:00に終了するため、最終電車/夜間バスに比較的余裕があります。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">接触なしカード・モバイル決済の普及度は最高レベルです。現金はほぼ不要です。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">ポンドスターリング(GBP, £)。カード利用が一般的なため、両替は最小限で構いません。ATMは広範囲に利用できます。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">英語。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube・バス・夜間ルート(ロンドンの強み))</span> · Uber <span style='color:var(--muted)'>(車両呼び出し)</span> · TfL Go <span style='color:var(--muted)'>(公共交通の公式ルート・運行情報)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜帯の車両呼び出し)</span> · Bolt <span style='color:var(--muted)'>(車両呼び出しの代替案(ロンドン利用、料金比較))</span> · Night Tube / 24時間バス <span style='color:var(--muted)'>(金・土のJubilee Line24時間運行+188番等の24時間バス(アプリ: TfL Go/Citymapperで経路確認))</span> &nbsp;<a href="https://www.airalo.com/united-kingdom-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">The O2は公共交通が充実しているため、車両呼び出しへの依存を低減することが最善の分散方法です。Jubilee Lineの最終電車(約01:01)/金土のNight Tubeを優先し、Uberがサージ料金となっている場合はBoltの料金と比較するか、188番などの24時間バスに切り替えることをお勧めします。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -184,10 +184,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=London&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=London&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=London&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=London" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=London" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/united-kingdom-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=London" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページの予約リンクはアフィリエイト（仲介手数料）リンクです。ご利用者の追加負担はございません。</p>
 

@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../tws-247foryou-fukuoka.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/tws-247foryou-fukuoka.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/tws-247foryou-fukuoka.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/tws-247foryou-fukuoka.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/tws-247foryou-fukuoka.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/tws-247foryou-fukuoka.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/tws-247foryou-fukuoka.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/tws-247foryou-fukuoka.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/tws-247foryou-fukuoka.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/tws-247foryou-fukuoka.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/tws-247foryou-fukuoka.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -173,7 +173,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">福岡市營地下鐵（空港線·箱崎線·七隈線）+ 西日本鐵路·公車。交通卡使用 Hayakaken·SUGOCA·nimoca + Suica·PASMO 等全國 IC 卡互通。主要樞紐為 博多(Hakata)·天神(Tenjin) 站。</div></div></div>
   <details class="limore">
     <summary>看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">地下鐵末班車約午夜發車，05:30 左右重啟（不營運 24 小時）。末班車後須仰賴計程車（23 點後約加價 20～30%）。演唱會結束後，務必提前確認末班車時間；若錯過，可撥 GO·DiDi·Uber。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">現金使用度高（小店·部分餐廳現金專用），大型·連鎖·交通卡／IC 通用，QR（PayPay）普及。建議準備一定現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">日圓（JPY、¥）。現金使用度高，建議兌換一定現金。機場·7-Eleven ATM 普及（支援國外卡提領）。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">日文。觀光景點·車站指引英文並用尚可，但日常英文通用度中等偏低、翻譯 App·應用預約功能實用。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">GO (タクシーGO) <span style='color:var(--muted)'>(計程車預約（日本最大、英文支援）)</span> · Japan Travel by NAVITIME <span style='color:var(--muted)'>(電鐵·公車轉乘·路線（英文版）)</span> · PayPay <span style='color:var(--muted)'>(QR碼行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">GO <span style='color:var(--muted)'>(深夜計程車預約標準（福岡覆蓋最廣、英文支援）)</span> · DiDi <span style='color:var(--muted)'>(計程車預約備選方案（福岡營運，車隊相比東京較少）)</span> · Uber <span style='color:var(--muted)'>(計程車呼叫(英文介面、正規車隊合作 — 可用性會變動))</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">避開演場正門後呼叫 — GO 沒訂到,改用 DiDi↔Uber 交替呼叫。移到 博多(Hakata)·天神(Tenjin) 等計程車叫車點,更容易媒合</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">Events 數據上場地未公佈 (TWS, 2026-08-28)。福岡地下鐵末班車約午夜、05:30 恢復營運，博多 (Hakata)、天神 (Tenjin) 為計程車樞紐點。場地確認後，重新確認末班車與動線。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">地下鐵末班車約午夜發車，05:30 左右重啟（不營運 24 小時）。末班車後須仰賴計程車（23 點後約加價 20～30%）。演唱會結束後，務必提前確認末班車時間；若錯過，可撥 GO·DiDi·Uber。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">現金使用度高（小店·部分餐廳現金專用），大型·連鎖·交通卡／IC 通用，QR（PayPay）普及。建議準備一定現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">日圓（JPY、¥）。現金使用度高，建議兌換一定現金。機場·7-Eleven ATM 普及（支援國外卡提領）。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">日文。觀光景點·車站指引英文並用尚可，但日常英文通用度中等偏低、翻譯 App·應用預約功能實用。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">GO (タクシーGO) <span style='color:var(--muted)'>(計程車預約（日本最大、英文支援）)</span> · Japan Travel by NAVITIME <span style='color:var(--muted)'>(電鐵·公車轉乘·路線（英文版）)</span> · PayPay <span style='color:var(--muted)'>(QR碼行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">GO <span style='color:var(--muted)'>(深夜計程車預約標準（福岡覆蓋最廣、英文支援）)</span> · DiDi <span style='color:var(--muted)'>(計程車預約備選方案（福岡營運，車隊相比東京較少）)</span> · Uber <span style='color:var(--muted)'>(計程車呼叫(英文介面、正規車隊合作 — 可用性會變動))</span> &nbsp;<a href="https://www.airalo.com/japan-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">避開演場正門後呼叫 — GO 沒訂到,改用 DiDi↔Uber 交替呼叫。移到 博多(Hakata)·天神(Tenjin) 等計程車叫車點,更容易媒合</div></div><div class="lirow"><div class="lk">末班車提醒</div><div class="lv">Events 數據上場地未公佈 (TWS, 2026-08-28)。福岡地下鐵末班車約午夜、05:30 恢復營運，博多 (Hakata)、天神 (Tenjin) 為計程車樞紐點。場地確認後，重新確認末班車與動線。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -183,10 +183,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Fukuoka&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Fukuoka&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Fukuoka&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Fukuoka" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Fukuoka" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/japan-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Fukuoka" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 

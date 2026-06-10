@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../wc2026-mex-kor-guadalajara.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/wc2026-mex-kor-guadalajara.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/wc2026-mex-kor-guadalajara.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/wc2026-mex-kor-guadalajara.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/wc2026-mex-kor-guadalajara.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/wc2026-mex-kor-guadalajara.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/wc2026-mex-kor-guadalajara.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/wc2026-mex-kor-guadalajara.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/wc2026-mex-kor-guadalajara.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/wc2026-mex-kor-guadalajara.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/wc2026-mex-kor-guadalajara.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,#ffffff 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
@@ -156,7 +156,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">Mi Macro Periférico(BRT)·Tren Ligero(輕軌)·Mi Tren + 市內公車。由州公營事業SITEUR營運。世界盃韓國隊球場 Estadio Akron（Zapopan外圍），從 Mi Macro Periférico 線「Estadio Chivas」站出發，沿著 Andador Chivas 行人步道，步行約10分鐘即達。車資約11披索（不到1美元）。</div></div></div>
   <details class="limore">
     <summary>看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">Mi Macro·Tren Ligero 末班時間——Mi Macro Calzada 約 23:00，Periférico 主線約 23:30（部分次線 00:30）終班（無 24 小時運行）。演唱會 22 點後結束易趕不上末班車，實際上得仰賴 Uber·DiDi 叫車。郊區位置導致場館結束後馬上叫車會面臨呼叫激增、費用飆升，務必留意。深夜外出用叫車 App 或正規計程車（避免路邊攬客）。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">都市大型店鋪、連鎖店及飯店普遍接受卡片/行動支付(Apple/Google Pay),但街邊攤販、小店及市集主要以現金交易。墨西哥整體現金使用率仍高,建議預先準備適當現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">墨西哥披索(MXN, $)。現金使用比例較高,建議兌換或 ATM 提領。機場、市區兌換所及 ATM 普遍(避免攜帶大額現金)。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">西班牙文。觀光及賽事區域英語通用度中等,日常英語通用度較低 — 翻譯應用、應用程式(英文UI)相當實用。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車(外國遊客推薦,英文介面))</span> · DiDi <span style='color:var(--muted)'>(叫車(墨西哥廣泛提供，往往比Uber便宜))</span> · Google 地圖 <span style='color:var(--muted)'>(Mi Macro·輕軌·巴士路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車標準(英文介面·先付款·司機/車牌確認,外國遊客最佳·安全防護推薦))</span> · DiDi <span style='color:var(--muted)'>(叫車替代方案(運費比較分散、墨西哥可用·信賴度佳))</span> &nbsp;<a href="https://www.airalo.com/?country=멕시코&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Estadio Akron (阿克隆體育場) 正門與廣場避開，移動1～2個街區後再召車 — Uber 沒車時改用 DiDi，優先從外圍位置分散打車 → 演唱會結束前提早試著召車，或末班車班次充足時優先搭乘 Mi Macro Periférico (周邊大道)</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">Mi Macro·Tren Ligero 末班時間——Mi Macro Calzada 約 23:00，Periférico 主線約 23:30（部分次線 00:30）終班（無 24 小時運行）。演唱會 22 點後結束易趕不上末班車，實際上得仰賴 Uber·DiDi 叫車。郊區位置導致場館結束後馬上叫車會面臨呼叫激增、費用飆升，務必留意。深夜外出用叫車 App 或正規計程車（避免路邊攬客）。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">都市大型店鋪、連鎖店及飯店普遍接受卡片/行動支付(Apple/Google Pay),但街邊攤販、小店及市集主要以現金交易。墨西哥整體現金使用率仍高,建議預先準備適當現金。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">墨西哥披索(MXN, $)。現金使用比例較高,建議兌換或 ATM 提領。機場、市區兌換所及 ATM 普遍(避免攜帶大額現金)。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">西班牙文。觀光及賽事區域英語通用度中等,日常英語通用度較低 — 翻譯應用、應用程式(英文UI)相當實用。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車(外國遊客推薦,英文介面))</span> · DiDi <span style='color:var(--muted)'>(叫車(墨西哥廣泛提供，往往比Uber便宜))</span> · Google 地圖 <span style='color:var(--muted)'>(Mi Macro·輕軌·巴士路線)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車標準(英文介面·先付款·司機/車牌確認,外國遊客最佳·安全防護推薦))</span> · DiDi <span style='color:var(--muted)'>(叫車替代方案(運費比較分散、墨西哥可用·信賴度佳))</span> &nbsp;<a href="https://www.airalo.com/mexico-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">Estadio Akron (阿克隆體育場) 正門與廣場避開，移動1～2個街區後再召車 — Uber 沒車時改用 DiDi，優先從外圍位置分散打車 → 演唱會結束前提早試著召車，或末班車班次充足時優先搭乘 Mi Macro Periférico (周邊大道)</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -166,10 +166,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Guadalajara(Zapopan)&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Guadalajara(Zapopan)&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=멕시코&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Guadalajara(Zapopan)&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Guadalajara(Zapopan)" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Guadalajara(Zapopan)" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/mexico-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Guadalajara(Zapopan)" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 

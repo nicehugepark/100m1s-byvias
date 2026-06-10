@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../blackpink-deadline-tokyo.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/blackpink-deadline-tokyo.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/blackpink-deadline-tokyo.html" aria-current="true" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/blackpink-deadline-tokyo.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/blackpink-deadline-tokyo.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/blackpink-deadline-tokyo.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/blackpink-deadline-tokyo.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/blackpink-deadline-tokyo.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/blackpink-deadline-tokyo.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/blackpink-deadline-tokyo.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/blackpink-deadline-tokyo.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,#ffffff 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
@@ -162,7 +162,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">東京メトロ・都営地下鉄 + JR路線が密集しています。交通カードはSuica・PASMO（相互利用可能、全路線・コンビニで使用可）です。ただし、通常のSuica/PASMO発行はチップ不足により制限中です。訪問者はWelcome Suica（28日使用）またはモバイルSuica/PASMOのご利用をお勧めします。</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">地下鉄・JR最終便は大体真夜中～00:30、一部路線は01:00前後です（24時間運行なし）。最終便後は深夜バスが限定的で、タクシー費用が高くなります。22時以降に公演終了の場合、東京ドーム→都心への最終便乗り換え時刻の事前確認をお勧めします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">現金がまだ相応の割合を占めています（小型店舗・一部飲食店は現金専用）。大型店舗・チェーン・交通はカード/IC対応です。QR（PayPay）の利用が広がっています。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">日本円（JPY、¥）。現金の利用があるため、一定金額の現金両替をお勧めします。空港・市内両替所・セブン-イレブン ATM（海外カード出金）が一般的です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">日本語を使用します。観光地・駅の案内は英語併記が良好ですが、日常英語の通用度は中程度以下です。翻訳アプリが役立ちます。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(電車乗り換え・経路検索（英語対応）)</span> · GO(タクシーGO) <span style='color:var(--muted)'>(タクシー呼び出し)</span> · PayPay <span style='color:var(--muted)'>(QR決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">GO <span style='color:var(--muted)'>(深夜タクシー呼び出しの標準アプリ（日本市場シェア約80%、東京の夜間で優勢）)</span> · S.RIDE <span style='color:var(--muted)'>(東京特化タクシー呼び出し（OneSwipe、高速マッチング）)</span> · DiDi <span style='color:var(--muted)'>(タクシー呼び出しの代替（東京圏で運行）)</span> · Uber <span style='color:var(--muted)'>(タクシー呼び出し（英語UI、深夜後の信頼度が良好）)</span> &nbsp;<a href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">東京ドーム正面玄関を避けて、水道橋(すいどうばし)/後楽園(こうらくえん)駅の反対側の道路に移動してからお呼びください。タクシーアプリが拾えない場合、GO↔S.RIDE↔DiDiで複数呼び出しをお試しください（アプリごとに提携車両プールが異なります）。</div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">水道橋(すいどうばし)/後楽園(こうらくえん)/東京ドームシティ周辺。地下鉄・JR最終電車は深夜0時～00:30で、都心方向の乗り換え最終電車の時間を事前確認することをお勧めします。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">地下鉄・JR最終便は大体真夜中～00:30、一部路線は01:00前後です（24時間運行なし）。最終便後は深夜バスが限定的で、タクシー費用が高くなります。22時以降に公演終了の場合、東京ドーム→都心への最終便乗り換え時刻の事前確認をお勧めします。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">現金がまだ相応の割合を占めています（小型店舗・一部飲食店は現金専用）。大型店舗・チェーン・交通はカード/IC対応です。QR（PayPay）の利用が広がっています。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">日本円（JPY、¥）。現金の利用があるため、一定金額の現金両替をお勧めします。空港・市内両替所・セブン-イレブン ATM（海外カード出金）が一般的です。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">日本語を使用します。観光地・駅の案内は英語併記が良好ですが、日常英語の通用度は中程度以下です。翻訳アプリが役立ちます。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Japan Travel by NAVITIME <span style='color:var(--muted)'>(電車乗り換え・経路検索（英語対応）)</span> · GO(タクシーGO) <span style='color:var(--muted)'>(タクシー呼び出し)</span> · PayPay <span style='color:var(--muted)'>(QR決済)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">GO <span style='color:var(--muted)'>(深夜タクシー呼び出しの標準アプリ（日本市場シェア約80%、東京の夜間で優勢）)</span> · S.RIDE <span style='color:var(--muted)'>(東京特化タクシー呼び出し（OneSwipe、高速マッチング）)</span> · DiDi <span style='color:var(--muted)'>(タクシー呼び出しの代替（東京圏で運行）)</span> · Uber <span style='color:var(--muted)'>(タクシー呼び出し（英語UI、深夜後の信頼度が良好）)</span> &nbsp;<a href="https://www.airalo.com/japan-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">東京ドーム正面玄関を避けて、水道橋(すいどうばし)/後楽園(こうらくえん)駅の反対側の道路に移動してからお呼びください。タクシーアプリが拾えない場合、GO↔S.RIDE↔DiDiで複数呼び出しをお試しください（アプリごとに提携車両プールが異なります）。</div></div><div class="lirow"><div class="lk">終電メモ</div><div class="lv">水道橋(すいどうばし)/後楽園(こうらくえん)/東京ドームシティ周辺。地下鉄・JR最終電車は深夜0時～00:30で、都心方向の乗り換え最終電車の時間を事前確認することをお勧めします。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -172,10 +172,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Tokyo&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Tokyo&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=일본&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Tokyo&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Tokyo" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Tokyo" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/japan-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Tokyo" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページの予約リンクはアフィリエイト（仲介手数料）リンクです。ご利用者の追加負担はございません。</p>
 

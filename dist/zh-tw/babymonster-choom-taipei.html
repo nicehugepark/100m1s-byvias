@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../babymonster-choom-taipei.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/babymonster-choom-taipei.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/babymonster-choom-taipei.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/babymonster-choom-taipei.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/babymonster-choom-taipei.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/babymonster-choom-taipei.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/babymonster-choom-taipei.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/babymonster-choom-taipei.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/babymonster-choom-taipei.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/babymonster-choom-taipei.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/babymonster-choom-taipei.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,#ffffff 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
@@ -164,7 +164,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">台北MTR(路線密集·準時度優異) + 市公車。EasyCard(悠遊卡)為標準 — MTR·公車約20%折扣、便利店支付相容。台北巨蛋位於南京三民(Nanjing Sānmín)/台北小巨蛋(Taipei Arena)站域。</div></div></div>
   <details class="limore">
     <summary>看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">MTR末班車約在午夜前後(因路線與方向而異)。大型演唱會時，鄰近站點有臨時加班的案例。末班車後計程車、Uber叫車服務廣泛。若穹頂演唱會於22:00後結束，建議事先確認末班車時間。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">都市卡片通用良好。夜市、傳統市場多以現金為主。EasyCard小額交易廣泛，LINE Pay等QR碼逐漸普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">台幣(TWD, NT$)。夜市建議備妥現金。機場、市區可兌換或使用便利店ATM。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">中文(繁體)。觀光景點、MTR英文標示良好，日常英文通用度中等。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車服務(台灣營運))</span> · Google 地圖 <span style='color:var(--muted)'>(MTR·巴士路線)</span> · LINE Pay <span style='color:var(--muted)'>(QR 碼·行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車(英文UI、預付款，外國人最佳選擇))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(台灣代表計程車平台(LINE應用內整合))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(最大計程車平台(2萬台+))</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(計程車·叫車替代方案(在地))</span> &nbsp;<a href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">台北小巨蛋正門，請迴避 — 移動至鄰近街區後叫車。用Uber↔LINE Taxi↔55688交叉叫車分散媒合機會。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">MTR末班車約在午夜前後(因路線與方向而異)。大型演唱會時，鄰近站點有臨時加班的案例。末班車後計程車、Uber叫車服務廣泛。若穹頂演唱會於22:00後結束，建議事先確認末班車時間。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">都市卡片通用良好。夜市、傳統市場多以現金為主。EasyCard小額交易廣泛，LINE Pay等QR碼逐漸普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">台幣(TWD, NT$)。夜市建議備妥現金。機場、市區可兌換或使用便利店ATM。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">中文(繁體)。觀光景點、MTR英文標示良好，日常英文通用度中等。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車服務(台灣營運))</span> · Google 地圖 <span style='color:var(--muted)'>(MTR·巴士路線)</span> · LINE Pay <span style='color:var(--muted)'>(QR 碼·行動支付)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車(英文UI、預付款，外國人最佳選擇))</span> · LINE Taxi (LINE GO) <span style='color:var(--muted)'>(台灣代表計程車平台(LINE應用內整合))</span> · 55688 (台灣大車隊) <span style='color:var(--muted)'>(最大計程車平台(2萬台+))</span> · Yoxi (yoxi) <span style='color:var(--muted)'>(計程車·叫車替代方案(在地))</span> &nbsp;<a href="https://www.airalo.com/taiwan-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">台北小巨蛋正門，請迴避 — 移動至鄰近街區後叫車。用Uber↔LINE Taxi↔55688交叉叫車分散媒合機會。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -174,10 +174,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Taipei&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Taipei&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=대만&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Taipei&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Taipei" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Taipei" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/taiwan-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Taipei" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 

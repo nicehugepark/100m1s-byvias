@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../wc2026-kor-cze-guadalajara.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/wc2026-kor-cze-guadalajara.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/wc2026-kor-cze-guadalajara.html" aria-current="true" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/wc2026-kor-cze-guadalajara.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/wc2026-kor-cze-guadalajara.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/wc2026-kor-cze-guadalajara.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/wc2026-kor-cze-guadalajara.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/wc2026-kor-cze-guadalajara.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/wc2026-kor-cze-guadalajara.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/wc2026-kor-cze-guadalajara.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/wc2026-kor-cze-guadalajara.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,#ffffff 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
@@ -156,7 +156,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">Mi Macro Periférico(高速バス)·Tren Ligero(ライトレール)·Mi Tren + 市内バス。運営は州の公企業SITEURです。ワールドカップ韓国戦の競技場Estadio Akron(サパパン郊外)はMi Macro Periférico &#x27;Estadio Chivas&#x27;駅からAndador Chivas歩行路を徒歩約10分です。運賃は約11ペソ(1ドル未満)となります。</div></div></div>
   <details class="limore">
     <summary>詳細を見る</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">Mi Macro·Tren Ligeroは最終便です — Mi Macro Calzadaは約23:00、Periférico主要路線は約23:30(一部補助路線は00:30)に終電となります(24時間運行はありません)。コンサート終了が22:00以降の場合、終電を逃す可能性が高くなるため、Uber・DiDi(ディディ)などのライドシェアサービスのご利用が実用的です。郊外立地のため、終電後の配車需要増加と料金上昇が見込まれます。深夜のご移動にはアプリでの配車またはタクシー乗り場のご利用をお勧めします(流し営業タクシーはお避けください)。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都市部の大型店舗・チェーン店・ホテルではカード/モバイル決済(Apple/Google Pay)がご利用いただけますが、屋台や小型店舗・市場では現金が中心となります。メキシコ全体では現金利用の割合がまだ高いため、ある程度の現金をご準備いただくことをお勧めします。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">メキシコペソ(MXN, $)。現金の利用が多いため、両替・ATM出金をお勧めします。空港や市内の両替所・ATMが一般的です(高額現金のご携帯はお控えください)。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">スペイン語。観光地やスポーツ施設では英語が中程度通じますが、日常生活では英語使用度が低めです — 翻訳アプリやアプリの英語UI機能のご活用をお勧めします。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(外国人向けおすすめ、英語UI))</span> · DiDi <span style='color:var(--muted)'>(車両配車(メキシコ広範対応、Uberより安い場合が多い))</span> · Google マップ <span style='color:var(--muted)'>(Mi Macro·Tren Ligero·バスルート)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両配車標準(英語UI・事前決済・ドライバー/ナンバープレート確認、外国人向け最適・治安安全推奨))</span> · DiDi <span style='color:var(--muted)'>(車両配車の代替手段(料金比較・分散、メキシコ対応・信頼性良好))</span> &nbsp;<a href="https://www.airalo.com/?country=멕시코&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Estadio Akron(エスタディオ・アクロン)の正門・広場を避けて1～2ブロック離れた場所から配車しましょう — Uberが手配できない場合、DiDiへのクロス配車で分散対応(外側エリア) → 終了前に事前配車を試みるか、ラストトレーン利用可能な場合はMi Macro Periférico優先</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜移動</div><div class="lv">Mi Macro·Tren Ligeroは最終便です — Mi Macro Calzadaは約23:00、Periférico主要路線は約23:30(一部補助路線は00:30)に終電となります(24時間運行はありません)。コンサート終了が22:00以降の場合、終電を逃す可能性が高くなるため、Uber・DiDi(ディディ)などのライドシェアサービスのご利用が実用的です。郊外立地のため、終電後の配車需要増加と料金上昇が見込まれます。深夜のご移動にはアプリでの配車またはタクシー乗り場のご利用をお勧めします(流し営業タクシーはお避けください)。</div></div><div class="lirow"><div class="lk">決済</div><div class="lv">都市部の大型店舗・チェーン店・ホテルではカード/モバイル決済(Apple/Google Pay)がご利用いただけますが、屋台や小型店舗・市場では現金が中心となります。メキシコ全体では現金利用の割合がまだ高いため、ある程度の現金をご準備いただくことをお勧めします。</div></div><div class="lirow"><div class="lk">両替・通貨</div><div class="lv">メキシコペソ(MXN, $)。現金の利用が多いため、両替・ATM出金をお勧めします。空港や市内の両替所・ATMが一般的です(高額現金のご携帯はお控えください)。</div></div><div class="lirow"><div class="lk">言語</div><div class="lv">スペイン語。観光地やスポーツ施設では英語が中程度通じますが、日常生活では英語使用度が低めです — 翻訳アプリやアプリの英語UI機能のご活用をお勧めします。</div></div><div class="lirow"><div class="lk">現地アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(車両配車(外国人向けおすすめ、英語UI))</span> · DiDi <span style='color:var(--muted)'>(車両配車(メキシコ広範対応、Uberより安い場合が多い))</span> · Google マップ <span style='color:var(--muted)'>(Mi Macro·Tren Ligero·バスルート)</span></div></div><div class="lirow"><div class="lk">深夜交通アプリ</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜の車両配車標準(英語UI・事前決済・ドライバー/ナンバープレート確認、外国人向け最適・治安安全推奨))</span> · DiDi <span style='color:var(--muted)'>(車両配車の代替手段(料金比較・分散、メキシコ対応・信頼性良好))</span> &nbsp;<a href="https://www.airalo.com/mexico-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">呼び出しのコツ</div><div class="lv">Estadio Akron(エスタディオ・アクロン)の正門・広場を避けて1～2ブロック離れた場所から配車しましょう — Uberが手配できない場合、DiDiへのクロス配車で分散対応(外側エリア) → 終了前に事前配車を試みるか、ラストトレーン利用可能な場合はMi Macro Periférico優先</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -166,10 +166,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">今すぐ予約</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Guadalajara(Zapopan)&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Guadalajara(Zapopan)&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=멕시코&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Guadalajara(Zapopan)&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Guadalajara(Zapopan)" rel="sponsored nofollow" target="_blank">🏨 ホテル <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Guadalajara(Zapopan)" rel="sponsored nofollow" target="_blank">✈️ 航空券 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/mexico-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Guadalajara(Zapopan)" rel="sponsored nofollow" target="_blank">🎟 ツアー・チケット <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本ページの予約リンクはアフィリエイト（仲介手数料）リンクです。ご利用者の追加負担はございません。</p>
 

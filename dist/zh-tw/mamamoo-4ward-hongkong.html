@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../mamamoo-4ward-hongkong.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/mamamoo-4ward-hongkong.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/mamamoo-4ward-hongkong.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/mamamoo-4ward-hongkong.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/mamamoo-4ward-hongkong.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/mamamoo-4ward-hongkong.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/mamamoo-4ward-hongkong.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/mamamoo-4ward-hongkong.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/mamamoo-4ward-hongkong.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/mamamoo-4ward-hongkong.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/mamamoo-4ward-hongkong.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -174,7 +174,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">MTR(含機場快綫) + 巴士、電車、渡輪。交通卡八達通(Octopus)為標準 — 交通、便利店、小額支付通用。亞洲國際博覽館(AsiaWorld-Expo)與機場快綫AsiaWorld-Expo(亞洲國際博覽館)站直結。</div></div></div>
   <details class="limore">
     <summary>看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">機場快綫(AsiaWorld-Expo(亞洲國際博覽館)↔香港站(Hong Kong))末班車約00:48~01:13(約12分鐘間隔)。一般MTR末班車約午夜~01:00前後。末班車後有夜間巴士(N線)及計程車。若演唱會於22:00後結束，務必預先確認機場快綫末班車時間。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">八達通卡接受度極高。現金亦通用。QR碼(AlipayHK·WeChat Pay)普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">香港元(HKD、HK$)。八達通儲值事實上是本地支付樞紐。機場·市區匯兌·ATM廣泛。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">廣東話·中文。英文廣泛通用，堪稱準官方(標示·指引英文廣泛並行)。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車)</span> · Citymapper <span style='color:var(--muted)'>(MTR·巴士路線(英文))</span> · Octopus <span style='color:var(--muted)'>(八達通餘額·儲值·付款)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車/計程車(英文介面)。HKTaxi·FlyTaxi併購整合下事實上為主力。)</span> · DiDi <span style='color:var(--muted)'>(叫車替代方案(香港營運))</span> · AlipayHK / WeChat Pay HK 計程車呼叫 <span style='color:var(--muted)'>(支付應用內建計程車召喚功能)</span> &nbsp;<a href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">AsiaWorld-Expo公演後優先搭乘機場鐵路末班車(約00:48~01:13)——準點性最佳末班車未趕上時，繞避正門後召喚Uber/計程車</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">機場快綫(AsiaWorld-Expo(亞洲國際博覽館)↔香港站(Hong Kong))末班車約00:48~01:13(約12分鐘間隔)。一般MTR末班車約午夜~01:00前後。末班車後有夜間巴士(N線)及計程車。若演唱會於22:00後結束，務必預先確認機場快綫末班車時間。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">八達通卡接受度極高。現金亦通用。QR碼(AlipayHK·WeChat Pay)普及。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">香港元(HKD、HK$)。八達通儲值事實上是本地支付樞紐。機場·市區匯兌·ATM廣泛。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">廣東話·中文。英文廣泛通用，堪稱準官方(標示·指引英文廣泛並行)。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Uber <span style='color:var(--muted)'>(叫車)</span> · Citymapper <span style='color:var(--muted)'>(MTR·巴士路線(英文))</span> · Octopus <span style='color:var(--muted)'>(八達通餘額·儲值·付款)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車/計程車(英文介面)。HKTaxi·FlyTaxi併購整合下事實上為主力。)</span> · DiDi <span style='color:var(--muted)'>(叫車替代方案(香港營運))</span> · AlipayHK / WeChat Pay HK 計程車呼叫 <span style='color:var(--muted)'>(支付應用內建計程車召喚功能)</span> &nbsp;<a href="https://www.airalo.com/hong-kong-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">AsiaWorld-Expo公演後優先搭乘機場鐵路末班車(約00:48~01:13)——準點性最佳末班車未趕上時，繞避正門後召喚Uber/計程車</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -184,10 +184,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Hong Kong&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Hong Kong&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=홍콩&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Hong Kong&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Hong Kong" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Hong Kong" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/hong-kong-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Hong Kong" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 

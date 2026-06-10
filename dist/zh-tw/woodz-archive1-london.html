@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../woodz-archive1-london.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/woodz-archive1-london.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/woodz-archive1-london.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/woodz-archive1-london.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/woodz-archive1-london.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/woodz-archive1-london.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/woodz-archive1-london.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/woodz-archive1-london.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/woodz-archive1-london.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/woodz-archive1-london.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/woodz-archive1-london.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -174,7 +174,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">倫敦地鐵(Tube)·巴士·DLR·國家鐵路。不需另辦卡片,用非接觸式信用卡/行動支付(Apple·Google Pay)嗶卡即可上車(Oyster 替代)。The O2 與 Jubilee Line North Greenwich 站直接連接。</div></div></div>
   <details class="limore">
     <summary>看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">Jubilee Line 末班車至 North Greenwich 附近約 01:01,週五·週六 24 小時運行(Night Tube)。末班車後有多班 24 小時巴士(188 號線等,Waterloo ↔ North Greenwich 直達)。主打演唱會通常 22:30 ~ 23:00 結束,末班車與夜間巴士都充裕無虞。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">非接觸式信用卡·行動支付通用度最高。現金幾乎不需要。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">英鎊(GBP, £)。以卡片為主,兌換最少即可。ATM 隨處可得。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英語。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube·巴士·夜間路線(倫敦優勢)。)</span> · Uber <span style='color:var(--muted)'>(叫車)</span> · TfL Go <span style='color:var(--muted)'>(TfL 官方路線·運行資訊。)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車。)</span> · Bolt <span style='color:var(--muted)'>(叫車服務備選(倫敦通用,費用比較)。)</span> · Night Tube / 24小時公車 <span style='color:var(--muted)'>(週五·週六 Jubilee Line 24 小時 + 188 號線等 24 小時巴士(應用程式:TfL Go/Citymapper 查路線)。)</span> &nbsp;<a href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">The O2 的大眾交通強勢,優先搭 Jubilee Line 末班車(約 01:01)與夜間巴士,減低叫車依賴是上策。Uber 尖峰時改用 Bolt 比費,或轉向 188 號 24 小時巴士。</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">Jubilee Line 末班車至 North Greenwich 附近約 01:01,週五·週六 24 小時運行(Night Tube)。末班車後有多班 24 小時巴士(188 號線等,Waterloo ↔ North Greenwich 直達)。主打演唱會通常 22:30 ~ 23:00 結束,末班車與夜間巴士都充裕無虞。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">非接觸式信用卡·行動支付通用度最高。現金幾乎不需要。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">英鎊(GBP, £)。以卡片為主,兌換最少即可。ATM 隨處可得。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英語。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Citymapper <span style='color:var(--muted)'>(Tube·巴士·夜間路線(倫敦優勢)。)</span> · Uber <span style='color:var(--muted)'>(叫車)</span> · TfL Go <span style='color:var(--muted)'>(TfL 官方路線·運行資訊。)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Uber <span style='color:var(--muted)'>(深夜叫車。)</span> · Bolt <span style='color:var(--muted)'>(叫車服務備選(倫敦通用,費用比較)。)</span> · Night Tube / 24小時公車 <span style='color:var(--muted)'>(週五·週六 Jubilee Line 24 小時 + 188 號線等 24 小時巴士(應用程式:TfL Go/Citymapper 查路線)。)</span> &nbsp;<a href="https://www.airalo.com/united-kingdom-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">The O2 的大眾交通強勢,優先搭 Jubilee Line 末班車(約 01:01)與夜間巴士,減低叫車依賴是上策。Uber 尖峰時改用 Bolt 比費,或轉向 188 號 24 小時巴士。</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -184,10 +184,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=London&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=London&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=영국&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=London&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=London" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=London" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/united-kingdom-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=London" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 

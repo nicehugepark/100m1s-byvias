@@ -101,8 +101,8 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -118,7 +118,7 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
-</style></head><body><div class="wrap">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18}img{filter:brightness(.88)}}</style></head><body><div class="wrap">
 <div class="langbar"><a class="lng" href="../park-ji-hoon-reflect-singapore.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/park-ji-hoon-reflect-singapore.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/park-ji-hoon-reflect-singapore.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/park-ji-hoon-reflect-singapore.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/park-ji-hoon-reflect-singapore.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/park-ji-hoon-reflect-singapore.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/park-ji-hoon-reflect-singapore.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/park-ji-hoon-reflect-singapore.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/park-ji-hoon-reflect-singapore.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/park-ji-hoon-reflect-singapore.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/park-ji-hoon-reflect-singapore.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
 <a class="back" href="index.html">← 全部日程</a>
 <div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(138,138,138,0.10) 0%,#ffffff 42%,rgba(138,138,138,0.26) 100%);--stripe:#8A8A8A">
@@ -174,7 +174,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通資訊</div><div class="lv">MRT(地鐵)·LRT·公車路線密集便利。交通卡用EZ-Link或感應卡(SimplyGo)輕鬆感應。Singapore Indoor Stadium靠近Circle Line Stadium站/Thomson-East Coast Line Tanjong Rhu站，步行可達；Singapore EXPO(ARENA@EXPO)與EWL/DTL Expo站直結。</div></div></div>
   <details class="limore">
     <summary>看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">MRT 末班車約午夜前後（終點站約 23:30 出發，最終約 00:30 結束）。演唱會結束後轉乘，建議 23:00 前離場。末班車後可用 Grab·Gojek·TADA 等 24 小時叫車，惟午夜～06:00 期間加收 50% 深夜加成，動態計費需留意。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡、感應支付、QR碼(PayNow、PayLah!)廣泛通用。部分小販中心接受現金。整體為無現金環境。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">新加坡幣(SGD, S$)。卡片為主,小額兌換即可。機場·市區兌換·ATM 遍佈。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英文（通用語言）·中文·馬來語·泰米爾語。英文通用度最高——導覽·應用都用英文沒問題。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Grab <span style='color:var(--muted)'>(車輛·計程車·飲食·支付（東南亞重點）)</span> · Google 地圖 <span style='color:var(--muted)'>(MTR·巴士路線)</span> · SimplyGo <span style='color:var(--muted)'>(大眾運輸無接觸支付·餘額查詢)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜車輛·計程車預約標準（市佔率最高、英文介面·預付款、外國人最佳選擇）)</span> · Gojek <span style='color:var(--muted)'>(車輛預約替代方案（離峰時段常更便宜）)</span> · TADA <span style='color:var(--muted)'>(免手續費車輛預約（價格透明、外國人可用）)</span> · ComfortDelGro / CDG Zig <span style='color:var(--muted)'>(正規計程車預約（計程車招呼站眾多、午夜～06時加價50%）)</span> &nbsp;<a href="https://www.airalo.com/?country=싱가포르&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">從 Indoor Stadium/EXPO 正門離開，步行幾分鐘後預約——等車時間·車費都會改善。Grab 叫不到的話，Gojek↔TADA 交叉預約（各應用費率·車隊不同）</div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜交通</div><div class="lv">MRT 末班車約午夜前後（終點站約 23:30 出發，最終約 00:30 結束）。演唱會結束後轉乘，建議 23:00 前離場。末班車後可用 Grab·Gojek·TADA 等 24 小時叫車，惟午夜～06:00 期間加收 50% 深夜加成，動態計費需留意。</div></div><div class="lirow"><div class="lk">付款方式</div><div class="lv">信用卡、感應支付、QR碼(PayNow、PayLah!)廣泛通用。部分小販中心接受現金。整體為無現金環境。</div></div><div class="lirow"><div class="lk">換匯·幣別</div><div class="lv">新加坡幣(SGD, S$)。卡片為主,小額兌換即可。機場·市區兌換·ATM 遍佈。</div></div><div class="lirow"><div class="lk">語言</div><div class="lv">英文（通用語言）·中文·馬來語·泰米爾語。英文通用度最高——導覽·應用都用英文沒問題。</div></div><div class="lirow"><div class="lk">當地應用</div><div class="lv">Grab <span style='color:var(--muted)'>(車輛·計程車·飲食·支付（東南亞重點）)</span> · Google 地圖 <span style='color:var(--muted)'>(MTR·巴士路線)</span> · SimplyGo <span style='color:var(--muted)'>(大眾運輸無接觸支付·餘額查詢)</span></div></div><div class="lirow"><div class="lk">深夜交通應用</div><div class="lv">Grab <span style='color:var(--muted)'>(深夜車輛·計程車預約標準（市佔率最高、英文介面·預付款、外國人最佳選擇）)</span> · Gojek <span style='color:var(--muted)'>(車輛預約替代方案（離峰時段常更便宜）)</span> · TADA <span style='color:var(--muted)'>(免手續費車輛預約（價格透明、外國人可用）)</span> · ComfortDelGro / CDG Zig <span style='color:var(--muted)'>(正規計程車預約（計程車招呼站眾多、午夜～06時加價50%）)</span> &nbsp;<a href="https://www.airalo.com/singapore-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫車小貼士</div><div class="lv">從 Indoor Stadium/EXPO 正門離開，步行幾分鐘後預約——等車時間·車費都會改善。Grab 叫不到的話，Gojek↔TADA 交叉預約（各應用費率·車隊不同）</div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
@@ -184,10 +184,10 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即預訂</p>
 <div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Singapore&aid=PLACEHOLDER_BOOKING_AID" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Singapore&associateid=PLACEHOLDER_SKYSCANNER_PID" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/?country=싱가포르&ref=PLACEHOLDER_AIRALO_IMPACT_REF" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Singapore&aid=PLACEHOLDER_KLOOK_AID" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
+  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Singapore" rel="sponsored nofollow" target="_blank">🏨 飯店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Singapore" rel="sponsored nofollow" target="_blank">✈️ 機票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.airalo.com/singapore-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
+  <a class="btn" href="https://www.klook.com/search/?query=Singapore" rel="sponsored nofollow" target="_blank">🎟 行程·票券 <small>· Klook</small></a>
 </div>
 <p class="disc disc-aff">本頁的預訂連結為聯盟(佣金)連結。使用者不需負擔任何額外費用。</p>
 
