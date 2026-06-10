@@ -195,8 +195,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .stays-rail::-webkit-scrollbar{display:none}
 .stay-card{flex:0 0 76%;max-width:300px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .stay-card .simg{width:100%;aspect-ratio:16/10;background:#ece9e0;display:flex;align-items:center;justify-content:center;color:var(--muted)}
-/* 숙소 미디어 = 코스 카드와 동일 place-ph 시스템(4:3 색면·이니셜·픽토·칩). 셸 통일 결정요인. sbody flex:1 = 레일 내 카드 높이 자동 정합. */
-.stay-card .place-ph{aspect-ratio:4/3}
+/* 숙소 미디어 = 코스 카드와 동일 place-ph 시스템(얇은 카테고리 색띠). sbody flex:1 = 레일 내 카드 높이 자동 정합. */
 .stay-card .sbody{padding:12px;display:flex;flex-direction:column;gap:6px;flex:1}
 .stay-card .sname{font-weight:600;font-size:14.5px;line-height:1.35}
 .sun-chip{align-self:flex-start;font-size:12.5px;background:var(--sun-chip-bg);color:var(--sun-chip-ink);border-radius:8px;padding:5px 9px;line-height:1.4}
@@ -266,32 +265,37 @@ body{overflow-wrap:break-word;word-break:normal}
 .spot-card{flex:0 0 62%;max-width:248px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 /* 빈 이미지 = 회색 박스 폐기 → place_type별 핑크패밀리 톤온톤 색면(브랜딩 스펙). "비어보임"이 아니라 "타입을 알려주는 색면".
    구조: 좌하단 장소명 이니셜(대형) + 우상단 타입 픽토 + 좌상단 타입칩. data-cat으로 그라데이션·이니셜 색 분기. */
-.place-ph{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;display:block;background:var(--ph-grad,linear-gradient(135deg,#FCE8D8,#F7D4B8))}
-/* 7타입 핑크패밀리 그라데이션(브랜딩 verbatim). 색면 채도 = 사진보다 한 단계 낮춰 역전 방지. */
-.place-ph[data-cat="venue"]{--ph-grad:linear-gradient(135deg,#E84A7F,#C7396B);--ph-ink:rgba(255,255,255,.82);--ph-pic:rgba(255,255,255,.6)}
-.place-ph[data-cat="stay"]{--ph-grad:linear-gradient(135deg,#FBE3EC,#F5C6D8);--ph-ink:rgba(35,39,47,.7);--ph-pic:rgba(35,39,47,.42)}
-.place-ph[data-cat="cafe"]{--ph-grad:linear-gradient(135deg,#FCE8D8,#F7D4B8);--ph-ink:rgba(35,39,47,.7);--ph-pic:rgba(35,39,47,.42)}
-.place-ph[data-cat="restaurant"]{--ph-grad:linear-gradient(135deg,#F8D7C4,#EFB89A);--ph-ink:rgba(35,39,47,.72);--ph-pic:rgba(35,39,47,.44)}
-.place-ph[data-cat="sight"]{--ph-grad:linear-gradient(135deg,#2E2A4A,#4A4470);--ph-ink:rgba(255,255,255,.82);--ph-pic:rgba(255,255,255,.6)}
-.place-ph[data-cat="mountain"]{--ph-grad:linear-gradient(135deg,#D8E8D4,#B8D4B0);--ph-ink:rgba(35,39,47,.7);--ph-pic:rgba(35,39,47,.42)}
-.place-ph[data-cat="market"]{--ph-grad:linear-gradient(135deg,#FBE8C8,#F2D49A);--ph-ink:rgba(35,39,47,.7);--ph-pic:rgba(35,39,47,.42)}
-/* 이니셜 = 좌하단·대형(셸 폭~40%). 라이트 색면은 ink, 다크(venue/sight)는 화이트 — 대비 자동 분기(WCAG 대형텍스트 3:1+ 충족). */
-.place-ph .ph-init{position:absolute;left:9px;bottom:4px;font-weight:800;font-size:52px;line-height:1;color:var(--ph-ink,rgba(35,39,47,.7));letter-spacing:-.02em;user-select:none}
-/* 픽토 = 우상단·은은. 비라틴/비한글(ar·th)에서는 이니셜 숨기고 픽토만(이 페이지 ko라 둘 다 노출). */
-.place-ph .ph-pic{position:absolute;top:8px;right:9px;color:var(--ph-pic,rgba(35,39,47,.42))}
-.place-ph .ph-pic svg{display:block}
-/* 좌상단 타입칩 — 색면 위 가독 위해 반투명 화이트/잉크 백, radius 8 */
-.place-ph .ph-chip{position:absolute;top:7px;left:7px;font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:8px;background:rgba(255,255,255,.78);color:#23272F;line-height:1.2}
-.place-ph[data-cat="venue"] .ph-chip,.place-ph[data-cat="sight"] .ph-chip{background:rgba(255,255,255,.22);color:#fff}
-/* 실사진 있으면 색면 위 cover(placeholder는 fallback) */
-.place-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* place-ph = 사진 없는 항목의 미디어 박스 폐기 → 얇은 카테고리 색띠(~8px)로 강등.
+   "빈 공간을 색으로 채우는" 거대 색면 + 52px 1글자 고스트 전면 제거(공간만 차지 = 정보 0).
+   카테고리는 색띠 + 컴팩트 칩(.ph-chip)으로만 전달. 실사진(.ig-embed)은 별도 클래스라 불변. */
+/* place-ph 셸 = 색띠(::before 8px) + 본문 첫 줄 카테고리 칩. 거대 박스 폐기. */
+.place-ph{position:relative;width:100%;display:flex;align-items:center;padding:9px 11px 0}
+.place-ph::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--ph-band,linear-gradient(90deg,#F7D4B8,#FCE8D8))}
+/* 7타입 색띠(브랜딩 핑크패밀리 verbatim 색상 유지, 방향만 가로띠로) */
+.place-ph[data-cat="venue"]{--ph-band:linear-gradient(90deg,#E84A7F,#C7396B);--ph-chip-bg:#FCEAF1;--ph-chip-ink:#C7396B}
+.place-ph[data-cat="stay"]{--ph-band:linear-gradient(90deg,#F5C6D8,#FBE3EC);--ph-chip-bg:#FBE3EC;--ph-chip-ink:#B23A6B}
+.place-ph[data-cat="cafe"]{--ph-band:linear-gradient(90deg,#F7D4B8,#FCE8D8);--ph-chip-bg:#FBEADD;--ph-chip-ink:#9A5B2E}
+.place-ph[data-cat="restaurant"]{--ph-band:linear-gradient(90deg,#EFB89A,#F8D7C4);--ph-chip-bg:#F8E2D2;--ph-chip-ink:#A9542C}
+.place-ph[data-cat="sight"]{--ph-band:linear-gradient(90deg,#4A4470,#2E2A4A);--ph-chip-bg:#E8E6F2;--ph-chip-ink:#3E3866}
+.place-ph[data-cat="mountain"]{--ph-band:linear-gradient(90deg,#B8D4B0,#D8E8D4);--ph-chip-bg:#E1F0DD;--ph-chip-ink:#3E6B40}
+.place-ph[data-cat="market"]{--ph-band:linear-gradient(90deg,#F2D49A,#FBE8C8);--ph-chip-bg:#FBEFCE;--ph-chip-ink:#8A6420}
+/* 52px 1글자 고스트 + 픽토 SVG 전면 제거 — 공간만 차지, 정보 0 */
+.place-ph .ph-init,.place-ph .ph-pic{display:none}
+/* 카테고리 칩 = 색띠 바로 아래 컴팩트 인라인 칩(피츠 ≥ 본문 첫 줄 위계). */
+.place-ph .ph-chip{display:inline-flex;align-items:center;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--ph-chip-bg,#eeece5);color:var(--ph-chip-ink,var(--muted));line-height:1.3}
+/* 실사진 들어오면(향후) 색띠 대신 4:3 cover 복원 */
+.place-ph:has(img){display:block;padding:0;aspect-ratio:4/3;overflow:hidden}
+.place-ph:has(img)::before{display:none}
+.place-ph:has(img) img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.place-ph:has(img) .ph-chip{position:absolute;top:7px;left:7px;background:rgba(255,255,255,.82)}
 /* 본문 = flex:1로 stretch된 카드 높이를 채움 → 필드 수가 늘어도(도보/예약/영업시간 등) 셸이 수용,
    같은 레일 카드끼리 높이 자동 정합. min-height = 최소 리듬 바닥. */
 .spot-card .pbody{padding:10px 11px;display:flex;flex-direction:column;gap:4px;min-height:86px;flex:1}
 /* 메타 필드(영업시간·웨이팅 등 가변) 슬롯 — 기획 유용성 스펙 대기. 추가돼도 CTA는 하단 고정. */
 .spot-card .pmeta{display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--muted);line-height:1.35}
 .spot-card .pname{font-weight:600;font-size:13px;line-height:1.3}
-.spot-card .ptag{font-size:11.5px;color:var(--muted)}
+/* ptag = 카테고리 칩과 중복(.ph-chip이 카테고리 전달) → 숨김. 주소는 .pwhy에 유지. */
+.spot-card .ptag{display:none}
 .spot-card .plink{align-self:flex-start;color:var(--accent);text-decoration:none;font-size:12.5px;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
 .spot-more{flex:0 0 auto;align-self:center;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--accent);font-size:12.5px;font-weight:600;text-decoration:none;white-space:nowrap}
 .spot-card .pimg img{width:100%;height:100%;object-fit:cover;display:block}
@@ -625,7 +629,7 @@ body{overflow-wrap:break-word;word-break:normal}
   <div class="sec-hd" style="padding:14px 16px 4px;margin-bottom:0">🎫 티켓팅</div>
   <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">공연 시각</div><div class="lv">3일 연속 — 7/10(금) 19:00 · 7/11(토) 18:00 · 7/12(일) 17:00 시작. 본공연 약 2시간 40분(앙코르 시 +α)</div></div><div class="lirow"><div class="lk">선예매</div><div class="lv">팬클럽 ONCE 선예매 2026-06-09 20:00~23:59 KST<span class="tk-badge" data-tkdate="2026-06-09"></span></div></div><div class="lirow"><div class="lk">일반 예매</div><div class="lv">2026-06-11 20:00 KST<span class="tk-badge" data-tkdate="2026-06-11"></span></div></div><div class="lirow"><div class="lk">예매처</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket(world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">가격대</div><div class="lv">스탠딩 일반(Standing General) 154,000원(≈$110), 지정석 일반(Reserved General) 154,000원(≈$110)<div class="dsum" style="margin-top:3px">스탠딩=플로어 입석(선착순 입장·자리 미지정) · 지정석=좌석번호 지정. <span style="color:var(--muted)">이번 서울 좌석 구조는 공개 미확인 — 일반 정의.</span></div></div></div><div class="lirow"><div class="lk">외국인 결제 팁</div><div class="lv">해외카드(Visa·Master 등) 사용 가능하나 <b>3DS 인증 실패가 잦음 → 선불카드(WOWPASS) 권장</b>. <span class="dsum" style="display:block;margin:3px 0">3DS(3-D Secure): 결제 전 카드사가 본인 확인을 한 번 더 하는 절차(문자 OTP·앱 인증).</span><b>WOWPASS 1장 = 교통카드(지하철·버스·택시) + 선불 결제카드 통합</b> — 도착 후 공항에서 한 장만 발급하면 이동·결제 둘 다 해결(아래 ‘도착 1시간’ 타임라인 참조). WOWPASS(NOL World 제휴)는 <b>공식 사이트에서 온라인 사전 예약(Reserve Card) 가능</b> → 공항 키오스크 줄 스킵, 또는 공항·지하철 등 160+ 무인 키오스크 현장 발급(등록비 6,000원). 충전은 WOWPASS 앱에서 해외카드(VISA/MC/AMEX 등) 가능(앱 충전 4% 수수료, 키오스크 충전 무료). 가입·예매 시 여권 영문명 정확히(한 글자만 틀려도 입장 거부 위험). 당일 실물 여권 지참. 구체 수령방식은 예매처 공지 확인.<span class="dsum" style="display:block;margin:3px 0">교통카드만 필요하면 <b>티머니 코리아투어카드</b>(편의점 현금 4,000원)도 대안 — 단 결제카드 기능은 없음.</span></div></div><div class="lirow"><div class="lk">양도 안전수칙</div><div class="lv">공식 양도 시스템·에스크로 사용. 입금 전 <a href="https://thecheat.co.kr/" target="_blank" rel="noopener nofollow">더치트</a>로 계좌·전화번호 조회(<span style="color:var(--muted)">한국어 전용 사이트 — 번역 앱(파파고·구글 렌즈) 병용 권장</span>) · 피해 시 <a href="https://ecrm.police.go.kr/minwon/main" target="_blank" rel="noopener nofollow">경찰청 ECRM</a> 신고(<span style="color:var(--muted)">본문 한국어 중심·영어 지원 불확실, 본인 인증(휴대폰·I-PIN) 필요 — 피해자 본인 신고 원칙</span>). <b style="color:#A32D2D">여권·신분증 사진 제공 절대 금지.</b> SNS DM 웃돈 직거래 회피(외국인 표적 사기 사례 있음).</div></div></div>
 </div>
-<details class="setlist-box" style="margin-top:12px"><summary>🎤 셋리스트 (골격 — 확정값은 외부 확인)</summary>
+<details class="setlist-box" style="margin-top:12px"><summary>🎤 셋리스트 — 곡 구성은 회차마다 달라요, 공연 후 setlist.fm에서 확인</summary>
 <div style="padding:12px 16px 14px;font-size:13px;line-height:1.6">
 <p style="margin:0 0 6px">THIS IS FOR 월드투어 기준 <b>약 35~40곡 · 4막 구성 + 멤버 솔로 무대 · 약 2시간 20분~40분</b> 규모.</p>
 <p style="margin:0 0 6px;color:var(--muted);font-size:12px">곡 순서·구성은 회차마다 바뀌며, 서울(파이널)은 멘트·앙코르가 길어지는 관행이 있어 더 달라질 수 있습니다.</p>
