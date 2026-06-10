@@ -1,4 +1,25 @@
-<!doctype html><html lang="es" data-lang="es"><head><meta charset="utf-8">
+<!doctype html><html lang="es" data-lang="es"><head>
+<!-- Google tag (gtag.js) — GA4 G-LH0N5PJ1L6 + Consent Mode v2 (region-default) -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']});
+gtag('consent','default',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH0N5PJ1L6"></script>
+<script>
+gtag('js',new Date());gtag('config','G-LH0N5PJ1L6');
+</script>
+<!-- aff_click 위임 리스너 (어필 링크 동작 무간섭) -->
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest&&e.target.closest('a[rel~="sponsored"]');
+  if(!a||typeof gtag!=='function')return;
+  var vendor=a.getAttribute('data-aff-vendor');
+  if(!vendor){try{vendor=new URL(a.href).hostname.replace(/^www\./,'');}catch(_){vendor='';}}
+  gtag('event','aff_click',{vendor:vendor,pos:a.getAttribute('data-aff-pos')||'',page_slug:location.pathname});
+},true);
+</script>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>XG Bangkok — ByBias</title>
 <meta name="description" content="Cuando se anuncia un concierto → Cómo asegurar precios antes de que suban">
