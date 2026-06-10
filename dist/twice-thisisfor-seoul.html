@@ -161,14 +161,18 @@ body{overflow-wrap:break-word;word-break:normal}
 .langpick .langmenu .lng:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 @media(prefers-color-scheme:dark){.langpick .langmenu{box-shadow:0 8px 24px rgba(0,0,0,.5)}.langpick .langmenu .lng[aria-current="true"]{background:#1e2b3d}.langpick>summary:hover,.langpick .langmenu .lng:hover{background:#222}}
 [dir="rtl"] .langpick{justify-content:flex-start}[dir="rtl"] .langpick .langmenu{right:auto;left:16px}
+/* P2 모바일 언어 펼침 — 좁은 폭에서 드롭다운이 히어로 카운트다운·CTA를 가림.
+   전폭(좌16~우16) 불투명 패널로 펼쳐 부분 가림(혼동) 제거. 열림은 일시 상태라 최소 조정만. */
+@media (max-width:560px){.langpick .langmenu{left:16px;right:16px;min-width:0}[dir="rtl"] .langpick .langmenu{left:16px;right:16px}}
 /* P0-1 데스크톱 와이드 — 컨테이너 적정 확장 + 카드 그리드 와이드 활용. 본문 라인 길이는 산문 가드로 제한 */
 @media (min-width:1024px){
   .wrap{max-width:960px}
   /* 산문/정보행 단락은 가독 라인 유지(70~80자) — 와이드는 카드·표·미디어만 */
   .sec-hd,.lead,.disc,.gdisc,.crs-sum,.ig-disc{max-width:720px}
-  /* 반복 카드 섹션 2-column 흐름 — auto-fill 그리드가 넓어진 폭 자동 활용 */
-  .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-  .btns{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  /* 독립 카드형 반복 리스트만 2-column 흐름 — 정보행(.lirow) 정렬·캐러셀은 1열 유지.
+     이 페이지 실존 셀렉터: 처음순서 5단계(.steps5 ol li) + 준비단계 예약(.prep-list .prep-row). */
+  .wrap .steps5 ol{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
+  .prep-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
   .langpick .langmenu{min-width:180px}
 }
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */

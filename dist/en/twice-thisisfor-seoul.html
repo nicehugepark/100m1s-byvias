@@ -162,12 +162,17 @@ body{overflow-wrap:break-word;word-break:normal}
 .langpick .langmenu .lng:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 @media(prefers-color-scheme:dark){.langpick .langmenu{box-shadow:0 8px 24px rgba(0,0,0,.5)}.langpick .langmenu .lng[aria-current="true"]{background:#1e2b3d}.langpick>summary:hover,.langpick .langmenu .lng:hover{background:#222}}
 [dir="rtl"] .langpick{justify-content:flex-start}[dir="rtl"] .langpick .langmenu{right:auto;left:16px}
+/* P2 mobile language picker — on narrow widths the dropdown overlaps the hero countdown/CTA.
+   Expand to full-width (left16~right16) opaque panel to remove confusing partial occlusion. Open is a transient state — minimal adjustment only. */
+@media (max-width:560px){.langpick .langmenu{left:16px;right:16px;min-width:0}[dir="rtl"] .langpick .langmenu{left:16px;right:16px}}
 /* P0-1 desktop wide — container expand + card grid wide usage. Prose line-length capped */
 @media (min-width:1024px){
   .wrap{max-width:960px}
   .sec-hd,.lead,.disc,.gdisc,.crs-sum,.ig-disc{max-width:720px}
-  .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-  .btns{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  /* Independent card-type repeating lists only go 2-column; info rows (.lirow) and carousels stay 1-col.
+     Live selectors on this page: 5-step starter (.steps5 ol li) + prep checklist (.prep-list .prep-row). */
+  .wrap .steps5 ol{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
+  .prep-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
   .langpick .langmenu{min-width:180px}
 }
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
