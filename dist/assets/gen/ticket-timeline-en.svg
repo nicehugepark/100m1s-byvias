@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" role="img" aria-label="Ticketing timeline — fanclub presale Jun 9, general sale Jun 11, returned tickets, cancellation cutoff">
+  <title>Ticketing timeline — presale · general sale · returns · cutoff</title>
+  <desc>Fanclub ONCE presale 2026-06-09 20:00, general sale 2026-06-11 20:00 KST, returned tickets surface overnight 00:00-02:00 the day after booking, refund cutoff 17:00 the day before the show.</desc>
+  <defs>
+    <linearGradient id="tk-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF6"/><stop offset="1" stop-color="#FBF3DE"/></linearGradient>
+  </defs>
+  <rect x="0" y="0" width="880" height="560" rx="22" fill="url(#tk-bg)"/>
+
+  <text x="40" y="50" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="23" font-weight="800" fill="#4A4470">Booking timeline at a glance</text>
+  <text x="40" y="74" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13.5" font-weight="500" fill="#8B8499">Presale → general sale → returns → refund cutoff · all KST · check NOL first</text>
+
+  <line x1="120" y1="128" x2="120" y2="478" stroke="#E7E0CC" stroke-width="2"/>
+
+  <!-- STEP 1 — presale -->
+  <g font-family="-apple-system,sans-serif">
+    <circle cx="120" cy="150" r="11" fill="#C9A227"/><text x="120" y="155" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">1</text>
+    <rect x="152" y="126" width="296" height="50" rx="13" fill="#FFF4D1" stroke="#E8C063" stroke-width="1.5"/>
+    <text x="170" y="150" font-size="15" font-weight="800" fill="#7A5B12">ONCE fanclub presale</text>
+    <text x="170" y="168" font-size="12.5" font-weight="600" fill="#9A7B1E">Jun 9 (Tue) 20:00 ~ 23:59</text>
+    <rect x="466" y="138" width="82" height="26" rx="13" fill="#fff" stroke="#E8C063" stroke-width="1.5"/>
+    <text x="507" y="156" text-anchor="middle" font-size="12.5" font-weight="800" fill="#9A7B1E">ONCE only</text>
+  </g>
+
+  <!-- STEP 2 — general sale (HERO) -->
+  <g font-family="-apple-system,sans-serif">
+    <circle cx="120" cy="240" r="13" fill="#E84A7F"/><text x="120" y="245" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">2</text>
+    <rect x="150" y="212" width="500" height="58" rx="14" fill="#FCE7EE" stroke="#E84A7F" stroke-width="2"/>
+    <text x="170" y="240" font-size="17" font-weight="800" fill="#B4275B">General sale — open to all</text>
+    <text x="170" y="260" font-size="13.5" font-weight="700" fill="#8E2049">Jun 11 (Thu) 20:00 KST · NOL Ticket (world.nol.com)</text>
+    <rect x="556" y="226" width="78" height="30" rx="15" fill="#E84A7F"/>
+    <text x="595" y="246" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">D-DAY</text>
+  </g>
+  <text x="170" y="290" font-family="-apple-system,sans-serif" font-size="12" font-weight="600" fill="#A8A29A">154,000 KRW (~$110) · Standing=floor / Reserved=numbered seat</text>
+
+  <!-- STEP 3 — returns -->
+  <g font-family="-apple-system,sans-serif">
+    <circle cx="120" cy="350" r="11" fill="#8B50A4"/><text x="120" y="355" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">3</text>
+    <rect x="152" y="322" width="400" height="64" rx="13" fill="#F3EAF7" stroke="#B68BCB" stroke-width="1.5"/>
+    <text x="170" y="346" font-size="15" font-weight="800" fill="#6E3E88">When returned tickets surface</text>
+    <text x="170" y="365" font-size="12.5" font-weight="700" fill="#7E4E98">Overnight 00:00–02:00 the day after booking</text>
+    <text x="170" y="381" font-size="12" font-weight="600" fill="#9070A8">+ day-before / day-of crunch — refresh the same NOL page</text>
+  </g>
+
+  <!-- STEP 4 — cutoff -->
+  <g font-family="-apple-system,sans-serif">
+    <circle cx="120" cy="450" r="11" fill="#6B6A64"/><text x="120" y="455" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">4</text>
+    <rect x="152" y="430" width="400" height="44" rx="13" fill="#EEECE5" stroke="#CFCcC2" stroke-width="1.5"/>
+    <text x="170" y="450" font-size="14.5" font-weight="800" fill="#55534C">Refund cutoff — 17:00 the day before</text>
+    <text x="170" y="467" font-size="12" font-weight="600" fill="#8B8980">The last window for returned tickets to appear</text>
+  </g>
+
+  <!-- TIP callout -->
+  <g transform="translate(150,498)" font-family="-apple-system,sans-serif">
+    <rect x="0" y="0" width="710" height="46" rx="14" fill="#E3F1EC" stroke="#A9D6C6" stroke-width="1.5"/>
+    <circle cx="28" cy="23" r="12" fill="#0F6E56"/><path d="M22 23l4 4 8-8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="50" y="20" font-size="13" font-weight="800" fill="#0F6E56">Pro tip</text>
+    <text x="50" y="38" font-size="12.5" font-weight="600" fill="#1C5C49">Pre-log into NOL + register payment (WOWPASS) → tap the seat and pay in one go</text>
+  </g>
+</svg>
