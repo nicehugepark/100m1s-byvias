@@ -2,6 +2,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ByBias — 팬이 모이는 일정 → 미리 싸게 잡는 법</title>
 <meta name="description" content="팬이 모이는 일정 → 미리 싸게 잡는 법">
+<!-- 허브 OG/Twitter — 텍스트 메타만. 허브 전용 og:image 자산 준비 전까지 이미지 생략(개별 이벤트 사진 오용 방지). -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko">
+<meta property="og:title" content="ByBias — 팬이 모이는 일정 → 미리 싸게 잡는 법">
+<meta property="og:description" content="K-pop·공연 원정 일정별 동선·숙소·티켓 가이드. 팬이 모이기 전에 미리 싸게 잡으세요.">
+<meta property="og:url" content="https://bybias.100m1s.com/">
+<meta property="og:site_name" content="ByBias">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ByBias — 팬이 모이는 일정 → 미리 싸게 잡는 법">
+<meta name="twitter:description" content="K-pop·공연 원정 일정별 동선·숙소·티켓 가이드. 팬이 모이기 전에 미리 싸게 잡으세요.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="alternate" hreflang="ko" href="index.html">
 <link rel="alternate" hreflang="en" href="en/index.html">
@@ -17,7 +27,7 @@
 <link rel="alternate" hreflang="x-default" href="index.html">
 <style>
 :root{--ink:#1a1a18;--muted:#6b6a64;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5;--sun-chip-bg:#FFF9E8;--sun-chip-ink:#7A5A12}
-@media(prefers-color-scheme:dark){:root{--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}}
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18;--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}img{filter:brightness(.88)}}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
@@ -102,7 +112,7 @@ body{overflow-wrap:break-word;word-break:normal}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{color:var(--muted);text-decoration:none;padding:2px 4px;border-radius:5px}
+.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
