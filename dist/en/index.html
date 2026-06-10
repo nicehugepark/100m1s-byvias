@@ -150,11 +150,48 @@ body{overflow-wrap:break-word;word-break:normal}
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 [dir="rtl"] .langbar{justify-content:flex-start}
+.hubfilter{margin:0 0 16px}
+.hf-search{position:relative;display:flex;align-items:center}
+.hf-search svg{position:absolute;inset-inline-start:12px;color:var(--muted);pointer-events:none;flex:0 0 auto}
+.hf-search input{width:100%;min-height:46px;box-sizing:border-box;padding:11px 14px 11px 40px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:15px;font-family:inherit}
+[dir="rtl"] .hf-search input{padding:11px 40px 11px 14px}
+.hf-search input::placeholder{color:var(--muted)}
+.hf-search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(24,95,165,.12)}
+.hf-clear{position:absolute;inset-inline-end:6px;display:none;align-items:center;justify-content:center;width:38px;height:38px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:8px;font-size:20px;line-height:1}
+.hf-clear:hover{background:var(--line);color:var(--ink)}
+.hf-search.has-val .hf-clear{display:inline-flex}
+/* 나라 칩 — 좌우 스와이프(가로 스크롤), 선택 시 햇살 톤(정체성). 카드에서 동적 생성 → 드리프트 0 */
+.hf-chips{display:flex;flex-wrap:nowrap;gap:7px;overflow-x:auto;scrollbar-width:none;padding:10px 0 2px;margin:0 -2px;scroll-padding-inline:2px}
+.hf-chips::-webkit-scrollbar{display:none}
+.hf-chip{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;min-height:36px;box-sizing:border-box;padding:7px 13px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;font-family:inherit;transition:border-color .2s,background .2s}
+.hf-chip:hover{border-color:#c9c7bd}
+.hf-chip[aria-pressed="true"]{background:var(--sun-chip-bg);color:var(--sun-chip-ink);border-color:var(--sun-chip-ink)}
+.hf-chip .cnt{color:var(--muted);font-weight:400;font-size:11.5px}
+.hf-chip[aria-pressed="true"] .cnt{color:var(--sun-chip-ink);opacity:.75}
+/* 빈 결과 안내 — 탭 패널별. 매칭 0건일 때만 노출 */
+.hf-empty{display:none;text-align:center;color:var(--muted);font-size:14px;padding:30px 16px;line-height:1.6}
+.hf-empty b{color:var(--ink);font-weight:600}
+.tabpanel.hf-allhidden .hf-empty{display:block}
+/* 결과 요약 줄(검색·필터 활성 시만) */
+.hf-count{display:none;font-size:13px;color:var(--muted);margin:2px 0 12px}
+.hf-count.on{display:block}
+.hf-count b{color:var(--accent);font-weight:600}
+.ecard[hidden]{display:none}
 </style></head><body><div class="wrap">
 <details class="langpick"><summary aria-label="Language — current: English">English</summary><div class="langmenu"><a class="lng" href="../index.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/index.html" aria-current="true" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/index.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/index.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/index.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/index.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/index.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/index.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/index.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/index.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/index.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div></details>
 <div class="top"><img class="logo" src="../logo.svg" alt="ByBias" width="119" height="38"><span>bybias.100m1s.com</span></div>
 <h1>When fans gather → lock in early, beat rising prices</h1>
 <p class="sub">Concerts spike flights and hotels first. Lock yours in before prices climb.</p>
+
+<div class="hubfilter">
+  <label class="hf-search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <input id="hf-q" type="search" inputmode="search" autocomplete="off" placeholder="Search artist · country · city" aria-label="Search events by artist, country or city">
+    <button type="button" class="hf-clear" id="hf-clear" aria-label="Clear search">&times;</button>
+  </label>
+  <div class="hf-chips" id="hf-chips" role="group" aria-label="Filter by country"></div>
+</div>
+<p class="hf-count" id="hf-count" aria-live="polite"></p>
 
 <div class="tabs" role="tablist">
   <input type="radio" name="evtab" id="tab-c" checked><label for="tab-c">Lock in travel · Concert</label>
@@ -521,4 +558,80 @@ document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.targe
  f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(vid)+'?autoplay=1';
  b.parentNode.replaceChild(f,b);});
 }catch(e){}})();
+// 허브 검색·필터 — 클라이언트사이드. 카드 텍스트(아티스트+나라·도시)로 매칭, show/hide.
+// 나라 칩은 카드에서 동적 생성(하드코딩 0 → 카드 추가/삭제 시 자동 동기화).
+(function(){
+ var qEl=document.getElementById('hf-q'),clearEl=document.getElementById('hf-clear'),
+     chipsEl=document.getElementById('hf-chips'),countEl=document.getElementById('hf-count'),
+     searchWrap=qEl&&qEl.closest('.hf-search');
+ if(!qEl||!chipsEl)return;
+ // 검색 대상 = 예정 이벤트 4개 탭만(지난 이벤트 그리드는 참고용이라 필터 제외)
+ var panels=[].slice.call(document.querySelectorAll('.tabs .tabpanel'));
+ if(!panels.length)return;
+ // 나라명 SSOT(카드 .c 첫 토큰 추출용). 영어 허브 기준 — 도시-only(Hong Kong/Macau/Singapore)도 나라로 취급.
+ var COUNTRIES=['South Korea','Japan','Taiwan','USA','Singapore','Hong Kong','Thailand','UK','Mexico','Macau','Philippines','Indonesia','Germany','China','Vietnam','Canada','Australia','Malaysia'];
+ function norm(s){return (s||'').toLowerCase().replace(/\s+/g,' ').trim();}
+ // 카드별 색인 구성 + 빈상태 div 주입
+ var index=[],countryCount={};
+ panels.forEach(function(panel){
+  var grid=panel.querySelector('.grid');if(!grid)return;
+  var cards=[].slice.call(grid.querySelectorAll('.ecard'));
+  cards.forEach(function(card){
+   var a=card.querySelector('.a'),c=card.querySelector('.c');
+   var artist=a?a.textContent:'', cline=c?c.textContent:'';
+   // 나라 = .c 줄에 등장하는 알려진 나라명 전부(조건부 카드 'USA or Mexico'는 둘 다 매칭)
+   var ctrys=COUNTRIES.filter(function(k){return cline.indexOf(k)>=0;});
+   ctrys.forEach(function(k){countryCount[k]=(countryCount[k]||0)+1;});
+   index.push({card:card,panel:panel,hay:norm(artist+' '+cline),countries:ctrys});
+  });
+  // 탭별 빈 결과 안내
+  var empty=document.createElement('div');empty.className='hf-empty';
+  empty.innerHTML='No events match your search or filter.<br>Try a <b>different country</b> or clear your search.';
+  grid.appendChild(empty);
+ });
+ // 나라 칩 생성 — 카드 수 많은 순(빈도순). 'All' 먼저.
+ var order=Object.keys(countryCount).sort(function(x,y){return countryCount[y]-countryCount[x];});
+ var activeCountry='';
+ function makeChip(label,key,cnt){
+  var b=document.createElement('button');b.type='button';b.className='hf-chip';
+  b.setAttribute('aria-pressed',key===activeCountry?'true':'false');b.setAttribute('data-k',key);
+  b.innerHTML=label+(cnt!=null?' <span class="cnt">'+cnt+'</span>':'');
+  b.addEventListener('click',function(){activeCountry=(activeCountry===key)?'':key;syncChips();apply();});
+  return b;
+ }
+ chipsEl.appendChild(makeChip('All','',null));
+ order.forEach(function(k){chipsEl.appendChild(makeChip(k,k,countryCount[k]));});
+ function syncChips(){[].forEach.call(chipsEl.children,function(b){
+  b.setAttribute('aria-pressed',(b.getAttribute('data-k')||'')===activeCountry?'true':'false');});}
+ // 현재 보이는 탭(체크된 라디오)의 패널
+ function activePanel(){
+  var r=document.querySelector('.tabs>input:checked');
+  if(!r)return panels[0];
+  var p=document.querySelector('.tabpanel.tp-'+r.id.replace('tab-',''));
+  return p||panels[0];
+ }
+ function apply(){
+  var q=norm(qEl.value), cur=activePanel(), shownInCur=0;
+  index.forEach(function(it){
+   var ok=(!q||it.hay.indexOf(q)>=0)&&(!activeCountry||it.countries.indexOf(activeCountry)>=0);
+   it.card.hidden=!ok;
+   if(ok&&it.panel===cur)shownInCur++;
+  });
+  panels.forEach(function(p){
+   var vis=p.querySelectorAll('.ecard:not([hidden])').length;
+   p.classList.toggle('hf-allhidden',vis===0);
+  });
+  if(searchWrap)searchWrap.classList.toggle('has-val',!!qEl.value);
+  // 결과 요약(검색·필터 활성 시만)
+  if(q||activeCountry){
+   countEl.innerHTML=(activeCountry?activeCountry+' · ':'')+'<b>'+shownInCur+'</b>';
+   countEl.classList.add('on');
+  }else{countEl.classList.remove('on');countEl.textContent='';}
+ }
+ qEl.addEventListener('input',apply);
+ if(clearEl)clearEl.addEventListener('click',function(){qEl.value='';qEl.focus();apply();});
+ // 탭 전환 시 결과 요약 갱신(필터·검색 그대로 유지)
+ document.querySelectorAll('.tabs>input').forEach(function(r){r.addEventListener('change',apply);});
+ apply();
+})();
 </script></body></html>
