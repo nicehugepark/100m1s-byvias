@@ -130,7 +130,7 @@ body{overflow-wrap:break-word;word-break:normal}
 @media (max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 .langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
 .langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
@@ -420,6 +420,27 @@ body{overflow-wrap:break-word;word-break:normal}
     <li><span class="s5-num">5</span><div class="s5-body"><div class="s5-t">공연 후 귀가</div><div class="s5-d">세 회차 모두 막차 여유. 단 9호선 서행(개화)+토·일만 ~22:55로 빠름. 노선별 막차·역산표는 위 ‘공연 후 귀가 · 막차’ 참조.</div></div></li>
   </ol>
 </section>
+<!-- 도착 안심 — 첫 1시간 미니 타임라인 + WOWPASS 발급 안심 워크스루. 초심자 잔여 불안 해소. -->
+<section class="box" aria-label="도착 첫 1시간">
+  <div style="font-weight:600;font-size:14px">🛬 도착 첫 1시간 — 이 순서면 됩니다</div>
+  <ol style="margin:8px 0 0;padding-inline-start:18px;font-size:13px;line-height:1.7">
+    <li><b>eSIM 활성화</b> — 비행기에서 미리 설치해 둔 eSIM을, 착륙 직후 데이터 켜기. (현지 유심 구매 줄 설 필요 없음)</li>
+    <li><b>WOWPASS 발급</b> — 도착층 무인 키오스크에서 카드 발급(~5분). 여권만 있으면 됩니다.</li>
+    <li><b>6705 버스 탑승</b> — 잠실 직행 리무진(18,000원, 환승 0). 표는 버스 정류장 발권기·교통카드로.</li>
+  </ol>
+  <details style="margin-top:10px">
+    <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--accent)">💳 WOWPASS, 걱정 마세요 — 3단계면 끝</summary>
+    <div style="padding:8px 2px 0;font-size:13px;line-height:1.7">
+      <p style="margin:0 0 6px">해외카드 3DS 인증이 자주 막혀서, 선불카드 <b>WOWPASS</b>를 미리 챙겨두면 마음이 편합니다. 순서는 이렇게 단순합니다:</p>
+      <ol style="margin:0;padding-inline-start:18px">
+        <li><b>발급</b> — 인천공항 도착층(또는 지하철역) WOWPASS 키오스크에서 카드 발급. 약 5분, 여권 지참.</li>
+        <li><b>충전</b> — WOWPASS 앱 설치 후 해외카드(VISA·MC·AMEX)로 충전. (앱 충전 4% 수수료 · 키오스크 충전 무료)</li>
+        <li><b>끝</b> — 이제 티켓 결제·교통카드·편의점 결제까지 한 장으로 됩니다.</li>
+      </ol>
+      <p style="margin:6px 0 0;color:var(--muted);font-size:12px">온라인 사전구매는 현재 불가 → 현장 발급만 가능. 가입·예매 시 여권 영문명을 정확히(한 글자만 틀려도 입장 거부 위험).</p>
+    </div>
+  </details>
+</section>
 <!-- ② 공연 핵심 — 의사결정 첫 정보(공연장·3일 회차·동선). Hero 바로 다음. -->
 <div class="box">
   <div style="font-weight:600;font-size:14px">공연장</div>
@@ -513,12 +534,11 @@ body{overflow-wrap:break-word;word-break:normal}
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 티켓팅</div>
   <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">공연 시각</div><div class="lv">3일 연속 — 7/10(금) 19:00 · 7/11(토) 18:00 · 7/12(일) 17:00 시작. 본공연 약 2시간 40분(앙코르 시 +α)</div></div><div class="lirow"><div class="lk">선예매</div><div class="lv">팬클럽 ONCE 선예매 2026-06-09 20:00~23:59 KST<span class="tk-badge" data-tkdate="2026-06-09"></span></div></div><div class="lirow"><div class="lk">일반 예매</div><div class="lv">2026-06-11 20:00 KST<span class="tk-badge" data-tkdate="2026-06-11"></span></div></div><div class="lirow"><div class="lk">예매처</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket(world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">가격대</div><div class="lv">스탠딩 일반(Standing General) 154,000원(≈$110), 지정석 일반(Reserved General) 154,000원(≈$110)<div class="dsum" style="margin-top:3px">스탠딩=플로어 입석(선착순 입장·자리 미지정) · 지정석=좌석번호 지정. <span style="color:var(--muted)">이번 서울 좌석 구조는 공개 미확인 — 일반 정의.</span></div></div></div><div class="lirow"><div class="lk">외국인 결제 팁</div><div class="lv">해외카드(Visa·Master 등) 사용 가능하나 <b>3DS 인증 실패가 잦음 → 선불카드(WOWPASS) 권장</b>. <span class="dsum" style="display:block;margin:3px 0">3DS(3-D Secure): 결제 전 카드사가 본인 확인을 한 번 더 하는 절차(문자 OTP·앱 인증).</span>WOWPASS(NOL World 제휴)는 <b>온라인 사전구매 현재 불가</b> → 발급은 공항·지하철 등 160+ 무인 키오스크 현장, 충전은 WOWPASS 앱에서 해외카드(VISA/MC/AMEX 등) 가능(앱 충전 4% 수수료, 키오스크 충전 무료). 가입·예매 시 여권 영문명 정확히(한 글자만 틀려도 입장 거부 위험). 당일 실물 여권 지참. 구체 수령방식은 예매처 공지 확인.</div></div><div class="lirow"><div class="lk">양도 안전수칙</div><div class="lv">공식 양도 시스템·에스크로 사용. 입금 전 <a href="https://thecheat.co.kr/" target="_blank" rel="noopener nofollow">더치트</a>·<a href="https://www.police.go.kr/www/security/cyber.jsp" target="_blank" rel="noopener nofollow">사이버캅</a> 조회. <b style="color:#A32D2D">여권·신분증 사진 제공 절대 금지.</b> SNS DM 웃돈 직거래 회피(외국인 표적 사기 사례 있음).</div></div></div>
 </div>
-<details class="setlist-box" style="margin-top:12px"><summary>🎤 예상 셋리스트 (최근 투어 기준)</summary>
+<details class="setlist-box" style="margin-top:12px"><summary>🎤 셋리스트 (골격 — 확정값은 외부 확인)</summary>
 <div style="padding:12px 16px 14px;font-size:13px;line-height:1.6">
-<p style="margin:0 0 6px;color:var(--muted);font-size:12px">최근 실측: 2026-06-03/04 런던 O2 · 약 35~40곡 4막 구성 · 2h20m~2h40m</p>
-<p style="margin:0 0 6px">오프닝 <b>FOUR</b> → THIS IS FOR → Strategy → MAKE ME GO / SET ME FREE / I CAN'T STOP ME / OPTIONS / MOONLIGHT SUNRISE / MARS / I GOT YOU / The Feels / Gone 등.</p>
-<p style="margin:0 0 6px">2026 변경: TAKEDOWN이 4막 시작에 추가 · Feel Special 제외 · Run Away가 Dive In 대체. ONE SPARK 포함 여부 <b>미확인</b>.</p>
-<p style="margin:6px 0 0;color:#A32D2D;font-size:12px"><b>서울(파이널) 셋리는 다를 수 있음.</b> 파이널은 멘트·앙코르가 길어지는 관행 — 확정 아님.</p>
+<p style="margin:0 0 6px">THIS IS FOR 월드투어 기준 <b>약 35~40곡 · 4막 구성 + 멤버 솔로 무대 · 약 2시간 20분~40분</b> 규모.</p>
+<p style="margin:0 0 6px;color:var(--muted);font-size:12px">곡 순서·구성은 회차마다 바뀌며, 서울(파이널)은 멘트·앙코르가 길어지는 관행이 있어 더 달라질 수 있습니다.</p>
+<p style="margin:6px 0 0"><b>확정 셋리스트는 setlist.fm에서 확인</b> → <a href="https://www.setlist.fm/setlists/twice-63d6b06f.html" target="_blank" rel="noopener nofollow">TWICE 셋리스트 (setlist.fm) ↗</a></p>
 </div></details>
 
 <details class="cancel-box" style="margin-top:10px"><summary>🎟 취소표 노리는 법 (일반 관행)</summary>
