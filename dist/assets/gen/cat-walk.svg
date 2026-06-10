@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Hiking and walking">
+  <title>Hiking</title>
+  <defs>
+    <linearGradient id="cw-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF6"/><stop offset="1" stop-color="#FBE3EC"/></linearGradient>
+    <radialGradient id="cw-glow" cx="50%" cy="38%" r="50%"><stop offset="0" stop-color="#FFF4D1" stop-opacity=".9"/><stop offset="1" stop-color="#FFF4D1" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="360" rx="20" fill="url(#cw-bg)"/>
+  <!-- sun -->
+  <circle cx="478" cy="116" r="40" fill="url(#cw-glow)"/>
+  <circle cx="478" cy="116" r="24" fill="#FFE89A"/>
+  <!-- far ridge -->
+  <path d="M0 250 L120 198 L230 240 L360 176 L470 228 L560 188 L640 232 L640 360 L0 360 Z" fill="#F6B8CF"/>
+  <!-- mid ridge -->
+  <path d="M0 300 L150 236 L300 290 L430 230 L560 286 L640 250 L640 360 L0 360 Z" fill="#E84A7F"/>
+  <!-- near ridge (Inwangsan-like crest) -->
+  <path d="M0 360 L0 320 L110 268 L210 318 L330 262 L450 320 L560 274 L640 312 L640 360 Z" fill="#C7396B"/>
+  <!-- ridge rocks accent -->
+  <path d="M300 290 L330 262 L360 290 Z" fill="#fff" opacity=".18"/>
+  <!-- trail dashes -->
+  <path d="M120 348 Q260 312 360 322 Q470 332 540 300" fill="none" stroke="#FFF4D1" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 16" opacity=".85"/>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-label="Concert dome at night with crowd lightsticks">
+  <title>KSPO Dome night — crowd lightstick mood</title>
+  <defs>
+    <linearGradient id="hm-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6B8CF"/>
+      <stop offset=".42" stop-color="#E84A7F"/>
+      <stop offset="1" stop-color="#4A4470"/>
+    </linearGradient>
+    <linearGradient id="hm-dome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5A5276"/>
+      <stop offset="1" stop-color="#36304F"/>
+    </linearGradient>
+    <radialGradient id="hm-glow" cx="50%" cy="38%" r="55%">
+      <stop offset="0" stop-color="#FFF4D1" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#FFF4D1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hm-dot" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFFDF6"/>
+      <stop offset=".35" stop-color="#FFF4D1"/>
+      <stop offset="1" stop-color="#FFF4D1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hm-dot-pink" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFE3EF"/>
+      <stop offset=".35" stop-color="#F6B8CF"/>
+      <stop offset="1" stop-color="#F6B8CF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect x="0" y="0" width="1200" height="480" fill="url(#hm-sky)"/>
+  <!-- stage glow halo over dome -->
+  <ellipse cx="600" cy="250" rx="520" ry="240" fill="url(#hm-glow)"/>
+
+  <!-- dome silhouette (KSPO is a saddle/tented roof — abstract dome) -->
+  <g>
+    <path d="M150 360 Q600 168 1050 360 Z" fill="url(#hm-dome)"/>
+    <!-- roof ribs -->
+    <g stroke="#6B638A" stroke-width="2" opacity=".5" fill="none">
+      <path d="M300 332 Q600 210 900 332"/>
+      <path d="M420 318 Q600 230 780 318"/>
+    </g>
+    <!-- base plinth -->
+    <rect x="150" y="356" width="900" height="8" fill="#2E2A4A"/>
+  </g>
+
+  <!-- crowd silhouette band -->
+  <path d="M0 480 L0 420
+    Q60 408 120 418 Q180 428 240 414 Q300 402 360 416 Q420 428 480 412
+    Q540 400 600 414 Q660 426 720 412 Q780 400 840 416 Q900 428 960 414
+    Q1020 402 1080 418 Q1140 430 1200 420 L1200 480 Z" fill="#241F3A"/>
+
+  <!-- lightstick point-lights (crowd) — scattered dots above crowd band -->
+  <g>
+    <!-- warm gold cluster -->
+    <circle cx="120" cy="392" r="13" fill="url(#hm-dot)"/>
+    <circle cx="210" cy="404" r="9" fill="url(#hm-dot)"/>
+    <circle cx="300" cy="384" r="14" fill="url(#hm-dot)"/>
+    <circle cx="395" cy="400" r="8" fill="url(#hm-dot-pink)"/>
+    <circle cx="470" cy="388" r="12" fill="url(#hm-dot)"/>
+    <circle cx="545" cy="402" r="9" fill="url(#hm-dot-pink)"/>
+    <circle cx="618" cy="386" r="14" fill="url(#hm-dot)"/>
+    <circle cx="690" cy="400" r="8" fill="url(#hm-dot)"/>
+    <circle cx="760" cy="390" r="12" fill="url(#hm-dot-pink)"/>
+    <circle cx="835" cy="402" r="9" fill="url(#hm-dot)"/>
+    <circle cx="905" cy="386" r="13" fill="url(#hm-dot)"/>
+    <circle cx="985" cy="400" r="8" fill="url(#hm-dot-pink)"/>
+    <circle cx="1058" cy="390" r="12" fill="url(#hm-dot)"/>
+    <circle cx="1140" cy="400" r="9" fill="url(#hm-dot)"/>
+    <!-- upper sparse -->
+    <circle cx="260" cy="360" r="6" fill="url(#hm-dot)" opacity=".85"/>
+    <circle cx="500" cy="356" r="5" fill="url(#hm-dot-pink)" opacity=".8"/>
+    <circle cx="720" cy="358" r="6" fill="url(#hm-dot)" opacity=".85"/>
+    <circle cx="940" cy="360" r="5" fill="url(#hm-dot)" opacity=".8"/>
+  </g>
+</svg>

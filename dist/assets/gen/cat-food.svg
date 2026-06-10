@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Restaurant">
+  <title>Food</title>
+  <defs>
+    <linearGradient id="cf-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF6"/><stop offset="1" stop-color="#FBE3EC"/></linearGradient>
+    <radialGradient id="cf-glow" cx="50%" cy="40%" r="55%"><stop offset="0" stop-color="#FFF4D1" stop-opacity=".8"/><stop offset="1" stop-color="#FFF4D1" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="360" rx="20" fill="url(#cf-bg)"/>
+  <ellipse cx="320" cy="150" rx="240" ry="120" fill="url(#cf-glow)"/>
+  <!-- plate under bowl -->
+  <ellipse cx="320" cy="244" rx="158" ry="40" fill="#fff" stroke="#F0D8C8" stroke-width="3"/>
+  <!-- bowl: deep rounded bowl, clearly a vessel -->
+  <path d="M214 196 A106 50 0 0 0 426 196 L408 218 A92 56 0 0 1 232 218 Z" fill="#E84A7F"/>
+  <!-- bowl rim -->
+  <ellipse cx="320" cy="196" rx="106" ry="34" fill="#C7396B"/>
+  <ellipse cx="320" cy="194" rx="92" ry="28" fill="#FBE3EC"/>
+  <!-- food mound inside -->
+  <ellipse cx="320" cy="190" rx="66" ry="18" fill="#FFC9A6"/>
+  <ellipse cx="300" cy="186" rx="20" ry="9" fill="#E84A7F"/>
+  <ellipse cx="342" cy="188" rx="18" ry="8" fill="#FFE89A"/>
+  <!-- steam -->
+  <g fill="none" stroke="#C7396B" stroke-width="4" stroke-linecap="round" opacity=".5"><path d="M298 158 q-10 -16 0 -32 q10 -16 0 -30"/><path d="M342 158 q10 -16 0 -32 q-10 -16 0 -30"/></g>
+  <!-- chopsticks resting on bowl rim -->
+  <g stroke="#4A4470" stroke-width="6" stroke-linecap="round"><line x1="396" y1="170" x2="470" y2="146"/><line x1="402" y1="184" x2="476" y2="160"/></g>
+</svg>

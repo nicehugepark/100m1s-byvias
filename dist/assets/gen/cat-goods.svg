@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Goods booth">
+  <title>Goods</title>
+  <defs>
+    <linearGradient id="cg-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF6"/><stop offset="1" stop-color="#FBE3EC"/></linearGradient>
+    <radialGradient id="cg-glow" cx="50%" cy="40%" r="55%"><stop offset="0" stop-color="#FFF4D1" stop-opacity=".8"/><stop offset="1" stop-color="#FFF4D1" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="360" rx="20" fill="url(#cg-bg)"/>
+  <ellipse cx="320" cy="150" rx="240" ry="120" fill="url(#cg-glow)"/>
+  <!-- booth canopy (striped awning) -->
+  <path d="M150 150 L490 150 L490 175 L150 175 Z" fill="#C7396B"/>
+  <path d="M150 175 L490 175 L470 205 L170 205 Z" fill="#E84A7F"/>
+  <g fill="#FBE3EC"><path d="M170 205 L210 205 L222 175 L182 175 Z"/><path d="M250 205 L290 205 L298 175 L258 175 Z"/><path d="M330 205 L370 205 L374 175 L334 175 Z"/><path d="M410 205 L450 205 L450 175 L410 175 Z"/></g>
+  <!-- counter -->
+  <rect x="170" y="205" width="300" height="70" rx="6" fill="#fff" stroke="#F0D8C8" stroke-width="2"/>
+  <rect x="170" y="205" width="300" height="14" rx="6" fill="#FFF4D1"/>
+  <!-- posts -->
+  <rect x="158" y="150" width="8" height="125" rx="4" fill="#4A4470"/>
+  <rect x="474" y="150" width="8" height="125" rx="4" fill="#4A4470"/>
+  <!-- shopping bag -->
+  <g transform="translate(300,228)">
+    <path d="M0 14 L60 14 L54 80 L6 80 Z" fill="#E84A7F"/>
+    <path d="M14 14 Q14 -2 30 -2 Q46 -2 46 14" fill="none" stroke="#C7396B" stroke-width="5"/>
+    <rect x="20" y="34" width="20" height="20" rx="4" fill="#FFF4D1"/>
+  </g>
+  <!-- floor shadow -->
+  <ellipse cx="320" cy="288" rx="180" ry="10" fill="#4A4470" opacity=".12"/>
+</svg>
