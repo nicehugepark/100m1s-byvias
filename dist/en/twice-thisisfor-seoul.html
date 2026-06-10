@@ -69,6 +69,20 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
+/* Book in the right order = flat button grid replaced with timing-priority list (stay>flights>eSIM>tours). */
+.prep-list{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.prep-row{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);min-height:44px;transition:border-color .2s cubic-bezier(.16,1,.3,1)}
+.prep-row:hover{border-color:var(--accent)}
+.prep-row:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.prep-ico{flex:0 0 auto;display:inline-flex;color:var(--accent)}
+.prep-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.prep-name{font-size:14px;font-weight:600;line-height:1.25}
+.prep-name small{color:var(--muted);font-weight:500}
+.prep-sub{font-size:11.5px;color:var(--muted);line-height:1.35}
+.prep-when{flex:0 0 auto;align-self:flex-start;font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px;white-space:nowrap;color:var(--muted);background:rgba(120,118,110,0.12)}
+.prep-when--now{color:#fff;background:var(--accent)}
+.prep-when--soon{color:#7A5A12;background:#FFF9E8}
+@media (prefers-color-scheme:dark){.prep-when--soon{color:#F2D58A;background:#3a3320}}
 /* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
 ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
 li{margin:5px 0;overflow-wrap:break-word}
@@ -252,7 +266,7 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <div class="box tkbox" style="padding:0">
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 Ticketing</div>
-  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">Show Times</div><div class="lv">Three nights — Fri 7/10 19:00 <span class="us-ct">(= 5:00 AM CDT)</span> · Sat 7/11 18:00 <span class="us-ct">(= 4:00 AM CDT)</span> · Sun 7/12 17:00 KST <span class="us-ct">(= 3:00 AM CDT, US Central)</span>. Main show approx. 2h 40m (+α with encore)</div></div><div class="lirow"><div class="lk">Pre-Sale</div><div class="lv">Fan club ONCE presale 2026-06-09 20:00–23:59 KST<span class="tk-badge" data-tkdate="2026-06-09"></span></div></div><div class="lirow"><div class="lk">General Sale</div><div class="lv">2026-06-11 20:00 KST <span class="us-ct">(= 6:00 AM CDT, US Central)</span><span class="tk-badge" data-tkdate="2026-06-11"></span></div></div><div class="lirow"><div class="lk">Where to Book</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket (world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">Price Range</div><div class="lv">Standing General 154,000 KRW (≈$110), Reserved General 154,000 KRW (≈$110)<div class="dsum" style="margin-top:3px">Standing = floor, no assigned seat (entry by queue order) · Reserved = numbered seat. <span style="color:var(--muted)">Seoul's seat layout isn't publicly confirmed — general definition.</span></div></div></div><div class="lirow"><div class="lk">Foreigner payment</div><div class="lv">Overseas cards (Visa, Master, etc.) work, but <b>3DS authentication often fails → a prepaid card (WOWPASS) is recommended</b>. <span class="dsum" style="display:block;margin:3px 0">3DS (3-D Secure): an extra identity check your card issuer runs before payment (SMS OTP / app auth).</span>WOWPASS (a NOL World partner) <b>can't be pre-purchased online right now</b> → issue it in person at 160+ unmanned kiosks (airport, subway, etc.); top up in the WOWPASS app with an overseas card (VISA/MC/AMEX, etc. — 4% fee for app top-ups, free at kiosks). Enter your passport name in English exactly (one wrong letter risks entry denial). Bring your physical passport on the day. Confirm the exact pickup method on the ticketing site notice.</div></div><div class="lirow"><div class="lk">Safe resale</div><div class="lv">Use the official transfer system / escrow. Before paying, check <a href="https://thecheat.co.kr/" target="_blank" rel="noopener nofollow">TheCheat</a> &amp; <a href="https://www.police.go.kr/www/security/cyber.jsp" target="_blank" rel="noopener nofollow">CyberCop</a>. <b style="color:#A32D2D">Never share photos of your passport or ID.</b> Avoid premium DM deals on social media (foreigners are a known scam target).</div></div></div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">Show Times</div><div class="lv">Three nights — Fri 7/10 19:00 <span class="us-ct">(= 5:00 AM CDT)</span> · Sat 7/11 18:00 <span class="us-ct">(= 4:00 AM CDT)</span> · Sun 7/12 17:00 KST <span class="us-ct">(= 3:00 AM CDT, US Central)</span>. Main show approx. 2h 40m (+α with encore)</div></div><div class="lirow"><div class="lk">Pre-Sale</div><div class="lv">Fan club ONCE presale 2026-06-09 20:00–23:59 KST<span class="tk-badge" data-tkdate="2026-06-09"></span></div></div><div class="lirow"><div class="lk">General Sale</div><div class="lv">2026-06-11 20:00 KST <span class="us-ct">(= 6:00 AM CDT, US Central)</span><span class="tk-badge" data-tkdate="2026-06-11"></span></div></div><div class="lirow"><div class="lk">Where to Book</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket (world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">Price Range</div><div class="lv">Standing General 154,000 KRW (≈$110), Reserved General 154,000 KRW (≈$110)<div class="dsum" style="margin-top:3px">Standing = floor, no assigned seat (entry by queue order) · Reserved = numbered seat. <span style="color:var(--muted)">Seoul's seat layout isn't publicly confirmed — general definition.</span></div></div></div><div class="lirow"><div class="lk">Foreigner payment</div><div class="lv">Overseas cards (Visa, Master, etc.) work, but <b>3DS authentication often fails → a prepaid card (WOWPASS) is recommended</b>. <span class="dsum" style="display:block;margin:3px 0">3DS (3-D Secure): an extra identity check your card issuer runs before payment (SMS OTP / app auth).</span>WOWPASS (a NOL World partner) <b>can't be pre-purchased online right now</b> → issue it in person at 160+ unmanned kiosks (airport, subway, etc.); top up in the WOWPASS app with an overseas card (VISA/MC/AMEX, etc. — 4% fee for app top-ups, free at kiosks). Enter your passport name in English exactly (one wrong letter risks entry denial). Bring your physical passport on the day. Confirm the exact pickup method on the ticketing site notice.</div></div><div class="lirow"><div class="lk">Safe resale</div><div class="lv">Use the official transfer system / escrow. Before paying, check the account &amp; phone number on <a href="https://thecheat.co.kr/" target="_blank" rel="noopener nofollow">TheCheat</a> (Korea&#x27;s police also offer the &#x27;CyberCop&#x27; app). <b style="color:#A32D2D">Never share photos of your passport or ID.</b> Avoid premium DM deals on social media (foreigners are a known scam target).</div></div></div>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px">Venue</div>
@@ -335,13 +349,29 @@ body{overflow-wrap:break-word;word-break:normal}
 <p style="margin:6px 0 0;color:var(--muted);font-size:12px">※ General patterns, not confirmed for this show — check the ticketing site's notice.</p>
 </div></details>
 
-<p style="font-weight:600;font-size:14px;margin:16px 0 2px">Book now</p>
-<p style="font-size:12px;color:var(--muted);margin:0 0 8px">Only what you actually need for the trip — flights &amp; stays are cheaper the earlier you lock them, an eSIM keeps your data alive in the venue crowd, tours &amp; tickets fill spare days.</p>
-<div class="btns">
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul" rel="sponsored nofollow" target="_blank">🏨 Hotels <small>· Booking</small></a>
-  <a class="btn" href="https://www.skyscanner.co.kr/transport/flights/?destination=Seoul" rel="sponsored nofollow" target="_blank">✈️ Flights <small>· Skyscanner</small></a>
-  <a class="btn" href="https://www.airalo.com/south-korea-esim" rel="sponsored nofollow" target="_blank">📶 eSIM <small>· Airalo</small></a>
-  <a class="btn" href="https://www.klook.com/search/?query=Seoul" rel="sponsored nofollow" target="_blank">🎟 Tours·Tickets <small>· Klook</small></a>
+<p style="font-weight:600;font-size:14px;margin:16px 0 2px">Book in the right order</p>
+<p style="font-size:12px;color:var(--muted);margin:0 0 10px">What to lock first — in order of timing. Start from the top and work down.</p>
+<div class="prep-list">
+  <a class="prep-row" href="https://www.booking.com/searchresults.html?ss=Seoul" rel="sponsored nofollow" target="_blank">
+    <span class="prep-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 21V7l9-4 9 4v14"/><path d="M3 21h18"/><path d="M9 21v-5h6v5"/></svg></span>
+    <span class="prep-main"><span class="prep-name">Stay <small>· Booking</small></span><span class="prep-sub">Rooms near the venue sell out first on show weekends — book this first</span></span>
+    <span class="prep-when prep-when--now">Now</span>
+  </a>
+  <a class="prep-row" href="https://www.skyscanner.co.kr/transport/flights/?destination=Seoul" rel="sponsored nofollow" target="_blank">
+    <span class="prep-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10.5 13.5 21 3M21 3l-6 18-3.5-7.5L4 10z"/></svg></span>
+    <span class="prep-main"><span class="prep-name">Flights <small>· Skyscanner</small></span><span class="prep-sub">Once dates are set, the earlier the cheaper — prices climb near departure</span></span>
+    <span class="prep-when prep-when--soon">Sooner the better</span>
+  </a>
+  <a class="prep-row" href="https://www.airalo.com/south-korea-esim" rel="sponsored nofollow" target="_blank">
+    <span class="prep-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14 0M8.5 16.1a6 6 0 0 1 7 0M2 8.82a16 16 0 0 1 20 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+    <span class="prep-main"><span class="prep-name">eSIM <small>· Airalo</small></span><span class="prep-sub">Keeps your data alive in the venue crowd — any time before you fly</span></span>
+    <span class="prep-when">Before you fly</span>
+  </a>
+  <a class="prep-row" href="https://www.klook.com/search/?query=Seoul" rel="sponsored nofollow" target="_blank">
+    <span class="prep-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 6h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg></span>
+    <span class="prep-main"><span class="prep-name">Tours &amp; tickets <small>· Klook</small></span><span class="prep-sub">For spare days — fine to decide after you arrive</span></span>
+    <span class="prep-when">After arrival is OK</span>
+  </a>
 </div>
 <p class="disc disc-aff">Booking links on this page are affiliate (commission) links. No additional cost to you.</p>
 
