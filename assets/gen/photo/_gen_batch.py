@@ -98,13 +98,17 @@ CUTS = [
     (
         "last_train",
         [
-            # 서울 지하철 무드 — 밝은 알루미늄 차체 + 노선색 띠, 로고·실차 정밀 재현 금지.
-            "Late night Seoul subway platform, a bright modern Korean metro train "
-            "with a clean brushed-aluminum body and a colored line-stripe along its "
-            "side stopped at the platform, generic stylized design (not a real "
-            "branded train, no logos), a lone back-facing commuter silhouette "
-            "waiting, fluorescent platform lights, reflective floor, melancholic "
-            "end-of-day mood, cinematic blue tones." + LEGAL_SUFFIX,
+            # 서울 지하철 무드 — '여행 설렘'(대표 6/10 지시: 우울 금지). 막차 '경고'
+            # 맥락은 타임라인 SVG가 담당하므로 사진은 즐거움 담당. v3 채택안(v3a).
+            "Warm and lively Seoul subway platform in the evening, a bright modern "
+            "Korean metro train with clean brushed-aluminum body and a colored "
+            "line-stripe (generic stylized design, not a real branded train, no "
+            "logos) stopped at the platform, a small group of cheerful young "
+            "travelers seen from behind carrying rolling suitcases and tote bags, "
+            "one holding a glowing pink light stick, warm golden platform lighting, "
+            "soft bokeh, sense of excitement and shared adventure heading home from "
+            "a great concert, warm amber and soft pink color grading, uplifting "
+            "travel mood." + LEGAL_SUFFIX,
             # 대안 — 차내/플랫폼 경계, 한국 지하철 일반화 분위기.
             "Interior-to-platform view of a generic modern Korean subway station at "
             "night, a sleek silver metro car with a colored accent band along the "
