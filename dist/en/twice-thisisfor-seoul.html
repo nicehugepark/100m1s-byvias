@@ -146,6 +146,30 @@ body{overflow-wrap:break-word;word-break:normal}
 .langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
 .langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
 .langbar .lng:hover{background:#f0eee6}
+/* P0-2 language switcher — current only + expand (JS-free details). Keyboard accessible, hreflang/href preserved */
+.langpick{margin:0 0 10px;display:flex;justify-content:flex-end}
+.langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600;color:var(--muted);background:var(--card)}
+.langpick>summary::-webkit-details-marker{display:none}
+.langpick>summary::after{content:"▾";font-size:10px;color:var(--muted);transition:transform .2s cubic-bezier(0.16,1,0.3,1)}
+.langpick[open]>summary::after{transform:rotate(180deg)}
+.langpick>summary:hover{border-color:#c9c7bd}
+.langpick>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.langpick .langmenu{display:none;position:absolute;right:16px;margin-top:6px;z-index:5;flex-direction:column;min-width:160px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.langpick[open] .langmenu{display:flex}
+.langpick .langmenu .lng{display:flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:6px;font-size:13px;color:var(--muted);text-decoration:none}
+.langpick .langmenu .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}
+.langpick .langmenu .lng:hover{background:#f0eee6}
+.langpick .langmenu .lng:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+@media(prefers-color-scheme:dark){.langpick .langmenu{box-shadow:0 8px 24px rgba(0,0,0,.5)}.langpick .langmenu .lng[aria-current="true"]{background:#1e2b3d}.langpick>summary:hover,.langpick .langmenu .lng:hover{background:#222}}
+[dir="rtl"] .langpick{justify-content:flex-start}[dir="rtl"] .langpick .langmenu{right:auto;left:16px}
+/* P0-1 desktop wide — container expand + card grid wide usage. Prose line-length capped */
+@media (min-width:1024px){
+  .wrap{max-width:960px}
+  .sec-hd,.lead,.disc,.gdisc,.crs-sum,.ig-disc{max-width:720px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+  .btns{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .langpick .langmenu{min-width:180px}
+}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:12px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
@@ -426,7 +450,7 @@ body{overflow-wrap:break-word;word-break:normal}
 /* local time note (US Central) */
 .us-ct{color:var(--muted);font-weight:400;white-space:nowrap}
 </style></head><body><div class="wrap">
-<div class="langbar"><a class="lng" href="../twice-thisisfor-seoul.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/twice-thisisfor-seoul.html" aria-current="true" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/twice-thisisfor-seoul.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/twice-thisisfor-seoul.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/twice-thisisfor-seoul.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/twice-thisisfor-seoul.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/twice-thisisfor-seoul.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/twice-thisisfor-seoul.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/twice-thisisfor-seoul.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/twice-thisisfor-seoul.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/twice-thisisfor-seoul.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
+<details class="langpick"><summary aria-label="Language — current English">English</summary><div class="langmenu"><a class="lng" href="../twice-thisisfor-seoul.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/twice-thisisfor-seoul.html" aria-current="true" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/twice-thisisfor-seoul.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/twice-thisisfor-seoul.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/twice-thisisfor-seoul.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/twice-thisisfor-seoul.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/twice-thisisfor-seoul.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/twice-thisisfor-seoul.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/twice-thisisfor-seoul.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/twice-thisisfor-seoul.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/twice-thisisfor-seoul.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div></details>
 <div class="share-row">
   <a class="back" href="index.html" style="margin-inline-end:auto;align-self:center">← All events</a>
   <button type="button" class="share-btn" id="shareBtn" aria-label="Share this guide"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v13M8 7l4-4 4 4"/></svg>Share</button>
