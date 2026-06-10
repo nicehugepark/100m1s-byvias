@@ -3,17 +3,17 @@
   <defs>
     <linearGradient id="lt-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF6"/><stop offset="1" stop-color="#FBF3DE"/></linearGradient>
     <filter id="lt-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#4A4470" flood-opacity="0.14"/></filter>
-  </defs>
-  <rect x="0" y="0" width="880" height="620" rx="22" fill="url(#lt-bg)"/>
+  <style>@media (prefers-color-scheme: dark){.svg-panel{fill:#1c1b22!important}.svg-card{fill:#262430!important}.svg-tx{fill:#d6d3cb!important}}</style></defs>
+  <rect x="0" y="0" width="880" height="620" rx="22" fill="url(#lt-bg)" class="svg-panel"/>
 
-  <text x="40" y="50" font-family="-apple-system,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif" font-size="23" font-weight="800" fill="#4A4470">Last train from the venue</text>
-  <text x="40" y="74" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13.5" font-weight="500" fill="#8B8499">Olympic Park Stn (5·9) / Mongchontoseong Stn (8) · back-calc estimate — check the official app on the day</text>
+  <text x="40" y="50" font-family="-apple-system,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif" font-size="23" font-weight="800" fill="#4A4470" class="svg-tx">Last train from the venue</text>
+  <text x="40" y="74" font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13.5" font-weight="500" fill="#8B8499" class="svg-tx">Olympic Park Stn (5·9) / Mongchontoseong Stn (8) · back-calc estimate — check the official app on the day</text>
 
   <!-- legend: line color chips -->
   <g font-family="-apple-system,sans-serif" font-size="13" font-weight="700">
-    <circle cx="48" cy="104" r="9" fill="#8B50A4"/><text x="63" y="109" fill="#6B6A64">Line 5</text>
-    <circle cx="148" cy="104" r="9" fill="#E6186C"/><text x="163" y="109" fill="#6B6A64">Line 8</text>
-    <circle cx="248" cy="104" r="9" fill="#C9A227"/><text x="263" y="109" fill="#6B6A64">Line 9</text>
+    <circle cx="48" cy="104" r="9" fill="#8B50A4"/><text x="63" y="109" fill="#6B6A64" class="svg-tx">Line 5</text>
+    <circle cx="148" cy="104" r="9" fill="#E6186C"/><text x="163" y="109" fill="#6B6A64" class="svg-tx">Line 8</text>
+    <circle cx="248" cy="104" r="9" fill="#C9A227"/><text x="263" y="109" fill="#6B6A64" class="svg-tx">Line 9</text>
   </g>
 
   <!-- time axis 22:00 .. 01:00, x: 220 -> 820 -->
@@ -57,7 +57,7 @@
 
   <!-- ============ WEEKEND (Sat/Sun) block ============ -->
   <text x="40" y="376" font-family="-apple-system,sans-serif" font-size="15" font-weight="800" fill="#2E2A4A">Sat/Sun · Weekend</text>
-  <text x="40" y="394" font-family="-apple-system,sans-serif" font-size="11.5" font-weight="600" fill="#A8A29A">shortened service</text>
+  <text x="40" y="394" font-family="-apple-system,sans-serif" font-size="11.5" font-weight="600" fill="#A8A29A" class="svg-tx">shortened service</text>
   <!-- Line5 Macheon~23:49=109->583 Banghwa~23:54=114->600 -->
   <g font-family="-apple-system,sans-serif">
     <rect x="40" y="404" width="86" height="26" rx="13" fill="#8B50A4"/><text x="83" y="422" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Line 5</text>
