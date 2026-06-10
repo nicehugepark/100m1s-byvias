@@ -731,7 +731,7 @@ document.addEventListener('click',function(ev){
 
 // 공연 당일 체크리스트 영속 — localStorage(이벤트 페이지별 키). 불가 환경이면 graceful(체크는 되되 비저장, 에러 0).
 (function(){try{
- var KEY='bybias_showday_'+(location.pathname.split('/').pop()||'index');
+ var KEY='bybias_showday_'+(document.documentElement.lang||'ko')+'_'+(location.pathname.split('/').pop()||'index');
  var boxes=document.querySelectorAll('.ckstep[data-ck]');
  if(!boxes.length)return;
  var ls=null;try{ls=window.localStorage;var t='__bb_t';ls.setItem(t,'1');ls.removeItem(t);}catch(e){ls=null;}

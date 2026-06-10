@@ -678,6 +678,26 @@ document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.targe
  b.parentNode.replaceChild(f,b);});
 }catch(e){}})();
 
+// Show-day checklist persistence — localStorage (key separated by language + page). Graceful if unavailable (checks still toggle, no save, 0 errors).
+(function(){try{
+ var KEY='bybias_showday_'+(document.documentElement.lang||'en')+'_'+(location.pathname.split('/').pop()||'index');
+ var boxes=document.querySelectorAll('.ckstep[data-ck]');
+ if(!boxes.length)return;
+ var ls=null;try{ls=window.localStorage;var t='__bb_t';ls.setItem(t,'1');ls.removeItem(t);}catch(e){ls=null;}
+ var saved={};
+ if(ls){try{saved=JSON.parse(ls.getItem(KEY)||'{}')||{};}catch(e){saved={};}}
+ boxes.forEach(function(b){
+  var id=b.getAttribute('data-ck');
+  if(saved[id])b.checked=true;
+  b.addEventListener('change',function(){
+   if(!ls)return;
+   try{var cur=JSON.parse(ls.getItem(KEY)||'{}')||{};
+    if(b.checked)cur[id]=1;else delete cur[id];
+    ls.setItem(KEY,JSON.stringify(cur));}catch(e){}
+  });
+ });
+}catch(e){}})();
+
 // Live ticketing dates — presale / general-sale status (Ended / Today / D-N) vs today. Missing date stays hidden (no fabrication).
 (function(){try{
  var bs=document.querySelectorAll('.tk-badge[data-tkdate]');if(!bs.length)return;
