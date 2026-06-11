@@ -517,7 +517,9 @@ def fix_course(s, lang_dir):
         s = s.replace(
             ".hero-cta svg{flex:0 0 auto}",
             ".hero-cta svg{flex:0 0 auto}\n"
-            "/*W5HEROMOBILE*/@media (max-width:480px){.hero-cta{width:100%;padding:0 16px}}",
+            "/*W5HEROMOBILE*/@media (max-width:480px){.hero{display:flex;flex-direction:column;align-items:stretch}"
+            ".hero-finale,.hero-cd,.hero-cta{display:flex;width:100%;max-width:100%;margin:8px 0 0}"
+            ".hero-cd{justify-content:center}.hero-cta{padding:0 16px}}",
             1,
         )
     return s

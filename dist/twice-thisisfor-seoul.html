@@ -479,7 +479,7 @@ body{overflow-wrap:break-word;word-break:normal}
   border:1px solid rgba(255,255,255,.55);box-shadow:0 6px 18px rgba(120,15,55,.42)}
 .hero-cta:hover{filter:brightness(1.06)}
 .hero-cta svg{flex:0 0 auto}
-/*W5HEROMOBILE*/@media (max-width:480px){.hero-cta{width:100%;padding:0 16px}}
+/*W5HEROMOBILE*/@media (max-width:480px){.hero{display:flex;flex-direction:column;align-items:stretch}.hero-finale,.hero-cd,.hero-cta{display:flex;width:100%;max-width:100%;margin:8px 0 0}.hero-cd{justify-content:center}.hero-cta{padding:0 16px}}
 /* 다크: hero 응원색 그라데이션이 라이트 그대로면 검정 본문 위 발광 이질 → 응원색 정체성 유지하되 명도만 다크 정합(딥 마젠타~와인). eyebrow 딥와인→밝은 핑크 반전, CTA·칩 톤 정합. base 규칙 뒤에 둬 cascade 우선. */
 @media (prefers-color-scheme:dark){
   .hero{background:linear-gradient(135deg,#7A1A3E 0%,#3E0E20 100%);box-shadow:0 8px 28px rgba(0,0,0,.5)}
