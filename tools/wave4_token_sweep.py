@@ -584,6 +584,25 @@ def fix_course(s, lang_dir):
             ins = i + m.end()
             s = s[:ins] + safety + s[ins:]
             changed = True
+    # ⑥ en TWICE Seoul 위치 패리티 (대표 catch 2026-06-12) — Local practical info + Safety가
+    # ko처럼 최하단 알림 직전에 보여야 함. 기존 en은 sec-sources 앞에 있어 하단 화면에서 안전 영역이 누락됨.
+    if (
+        lang_dir == "en"
+        and "W4SAFETYMOVE" not in s
+        and "TWICE THIS IS FOR" in s
+        and "world.nol.com/en/ticket/places/26000627/products/26007949" in s
+    ):
+        start_marker = '<div class="box linfo-box">\n  <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 Local travel essentials</div>'
+        end_marker = '\n<div class="box srcbox">'
+        target_marker = '<div class="news-soon">'
+        start = s.find(start_marker)
+        end = s.find(end_marker, start)
+        target = s.find(target_marker)
+        if start >= 0 and end > start and target >= 0 and start < target:
+            block = "<!--W4SAFETYMOVE-->\n" + s[start:end].strip() + "\n"
+            s = s[:start] + s[end:]
+            s = s.replace(target_marker, block + target_marker, 1)
+            changed = True
     return s, changed
 
 

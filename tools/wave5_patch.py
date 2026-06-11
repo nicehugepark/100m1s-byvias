@@ -505,6 +505,21 @@ def fix_course(s, lang_dir):
         i = s.find("</style>")
         if i >= 0:
             s = s[:i] + COURSE_CSS + s[i:]
+    # R38 P0 — 모바일 hero CTA가 긴 문구에서 우측 clipping 되지 않도록 폭 상한과 래핑 보장.
+    if "W5HEROMOBILE" not in s and ".hero-cta{" in s:
+        s = s.replace(
+            "letter-spacing:.01em;text-decoration:none;border-radius:14px;\n  border:",
+            "letter-spacing:.01em;text-decoration:none;border-radius:14px;\n"
+            "  max-width:100%;box-sizing:border-box;white-space:normal;text-align:center;line-height:1.25;\n"
+            "  border:",
+            1,
+        )
+        s = s.replace(
+            ".hero-cta svg{flex:0 0 auto}",
+            ".hero-cta svg{flex:0 0 auto}\n"
+            "/*W5HEROMOBILE*/@media (max-width:480px){.hero-cta{width:100%;padding:0 16px}}",
+            1,
+        )
     return s
 
 

@@ -24,11 +24,16 @@ SVG = (
 )
 
 LABEL = {
-    "": "공연 당일(Day 3) 한눈에 보기 →",
-    "en": "Show day (Day 3) at a glance →",
+    "": "공연일로 이동 →",
+    "en": "Jump to show day →",
 }
 
-W6_CSS = "/*W6COURSE*/.showday-jump{min-height:44px;box-sizing:border-box}"
+W6_CSS = "/*W6COURSE*/.showday-jump{min-height:44px;box-sizing:border-box}"\
+    ".showday-jump[data-w6-course-jump=\"1\"]{min-height:32px;margin:2px 0 10px;padding:0;"\
+    "background:transparent;border:0;border-radius:0;color:var(--muted);font-weight:700;"\
+    "text-decoration:underline;text-underline-offset:3px}"\
+    ".showday-jump[data-w6-course-jump=\"1\"] svg{display:none}"\
+    ".showday-jump[data-w6-course-jump=\"1\"]:hover{background:transparent;color:var(--accent)}"
 
 
 def _panel_span(s: str, panel: str) -> Optional[Tuple[int, int]]:
@@ -127,8 +132,21 @@ def _remove_inner_jump(s: str, panel: str, target_id: str) -> str:
     return s[:start] + seg + s[end:]
 
 
+
+def _normalize_top_jump_labels(s: str, lang: str) -> str:
+    def repl(m: re.Match[str]) -> str:
+        return m.group(1) + LABEL[lang] + m.group(2)
+    return re.sub(
+        r'(<a class="showday-jump" data-w6-course-jump="1" href="#showday-s[47]">.*?</svg>).*?(</a>)',
+        repl,
+        s,
+        flags=re.S,
+    )
+
 def fix(s: str, lang: str) -> str:
-    if "W6COURSE" not in s:
+    if "W6COURSE" in s:
+        s = re.sub(r'/\*W6COURSE\*/\.showday-jump\{min-height:44px;box-sizing:border-box\}(?:\.showday-jump\[data-w6-course-jump=.*?\})?(?:\.showday-jump\[data-w6-course-jump=.*?\] svg\{display:none\})?(?:\.showday-jump\[data-w6-course-jump=.*?\]:hover\{.*?\})?', W6_CSS, s, count=1)
+    else:
         s = s.replace("</style>", W6_CSS + "</style>", 1)
     s = _move_base_jump_after_summary(s, "cp-0", "#showday-c0")
     s = _move_base_jump_after_summary(s, "cp-1", "#showday-c1")
@@ -137,6 +155,7 @@ def fix(s: str, lang: str) -> str:
     s = _insert_top_jump(s, lang, "sl-7", "#showday-s7")
     s = _remove_inner_jump(s, "sl-4", "showday-s4")
     s = _remove_inner_jump(s, "sl-7", "showday-s7")
+    s = _normalize_top_jump_labels(s, lang)
     return s
 
 
