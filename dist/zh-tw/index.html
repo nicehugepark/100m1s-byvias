@@ -52,7 +52,7 @@ document.addEventListener('click',function(e){
 <link rel="alternate" hreflang="vi" href="https://bybias.100m1s.com/vi/index.html">
 <link rel="alternate" hreflang="x-default" href="https://bybias.100m1s.com/index.html">
 <style>
-:root{--ink:#1a1a18;--muted:#6b6a64;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5}
+:root{--ink:#1a1a18;--muted:#56554e;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
@@ -76,8 +76,8 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .ehead-detail>.ghost{position:absolute;z-index:0}
 .ghost-lg{font-size:46px;bottom:-12px;inset-inline-end:-4px;opacity:.13;letter-spacing:-1px;white-space:nowrap;max-width:78%;overflow:hidden;text-overflow:clip}
 .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
-.outlook{background:#fdf6ec;border:1px solid #f0e4cf}
-.metric{font-size:22px;font-weight:600;color:#A32D2D}
+.outlook{background:var(--gold-soft);border:1px solid var(--gold-line)}
+.metric{font-size:22px;font-weight:600;color:var(--warn)}
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
@@ -86,31 +86,31 @@ ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
 li{margin:5px 0;overflow-wrap:break-word}
 /* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-.news{display:flex;gap:8px;background:#E6F1FB;border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid #b9d2ef;border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;cursor:pointer}.news-soon{background:#E6F1FB;border-radius:10px;padding:12px;margin-top:14px;text-align:center;color:#185FA5;font-size:14px;font-weight:500}
+.news{display:flex;gap:8px;background:var(--accent-soft);border-radius:10px;padding:12px;align-items:center;margin-top:14px}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid var(--accent-line);border-radius:8px;font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent-bg);color:var(--on-accent);border-radius:8px;font-size:14px;cursor:pointer}.news-soon{background:var(--accent-soft);border-radius:10px;padding:12px;margin-top:14px;text-align:center;color:var(--accent);font-size:14px;font-weight:500}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
-.disc{font-size:12px;color:var(--muted);background:#f3f1ea;border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
+.disc{font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
-.gdisc{color:var(--muted);font-size:11px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
+.gdisc{color:var(--muted);font-size:12px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
 .abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
 .ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .srcbox{background:#fff}.srcs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.srclink{font-size:13px;color:var(--accent);text-decoration:none;background:#f1f5fa;border:1px solid #dbe6f2;border-radius:7px;padding:6px 10px}
-.srclink:hover{background:#e6f1fb}
-.postlink{display:inline-block;font-size:14px;font-weight:500;color:#fff;background:var(--accent);text-decoration:none;border-radius:8px;padding:9px 14px}
+.srclink{font-size:13px;color:var(--accent);text-decoration:none;background:var(--surface-acc);border:1px solid var(--surface-acc-line);border-radius:7px;padding:6px 10px}
+.srclink:hover{background:var(--accent-soft)}
+.postlink{display:inline-block;font-size:14px;font-weight:500;color:var(--on-accent);background:var(--accent-bg);text-decoration:none;border-radius:8px;padding:9px 14px}
 .postlink:hover{filter:brightness(.94)}
 .plink{display:inline-flex;align-items:center;gap:7px}.plink .plogo{flex:0 0 auto}
 .chchips{display:flex;flex-wrap:wrap;gap:8px}
-.chchip{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);text-decoration:none;background:#f7f6f1;border:1px solid var(--line);border-radius:8px;padding:7px 11px}
+.chchip{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);text-decoration:none;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:7px 11px}
 .chchip:hover{border-color:var(--accent);color:var(--accent)}.chchip .plogo{flex:0 0 auto;color:var(--muted)}.chchip:hover .plogo{color:var(--accent)}
 .oshows{display:flex;flex-direction:column;gap:7px}
-.oshow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:#fafaf7;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px}
+.oshow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--surface-1);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px}
 .oshow:hover{border-color:var(--accent)}.oshow .osc{font-weight:500}.oshow .osd{color:var(--muted);margin-inline-start:auto}
-.oshow-next{background:#eef4fb;border-color:#cfe0f2}.oshow .nextflag{font-weight:700;color:var(--accent);font-size:12px}
+.oshow-next{background:var(--accent-soft);border-color:var(--accent-line)}.oshow .nextflag{font-weight:700;color:var(--accent);font-size:12px}
 .ytfacade{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;padding:0}
 .ytplay{position:absolute;inset:0;margin:auto;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.62);color:#fff;border-radius:50%;font-size:20px;padding-inline-start:3px}
 .ytfacade:hover .ytplay{background:#A32D2D}
@@ -145,17 +145,17 @@ body{overflow-wrap:break-word;word-break:normal}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--tabline,#807c6e);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
 .tabs>.tabpanel{display:none}
-#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+#tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:var(--on-accent);background:var(--accent-bg);border-color:var(--accent-bg)}
 #tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
-.dday{display:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
+.dday{display:none;font-size:12px;font-weight:700;color:var(--on-accent);background:var(--accent-bg);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 
-@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#9c998f;--line:#34322c;--bg:#16150f;--card:#211f18--ehead-mid:var(--card);}img{filter:brightness(.88)}/* DARK-COMPAT-INJECT-v1 */
-/* 다크: 라이트 하드코딩 컴포넌트 정합 (제휴 고지·출처·경유지·공식채널) — 흰/크림 발광 제거 + 텍스트 대비 확보 */.disc{background:#1d1c15;border-color:var(--line);color:var(--muted)}.srcbox{background:var(--card)}.srclink{background:#16243a;border-color:#2a3d57;color:#9ec3f0}.oshow{background:#1d1c16;border-color:var(--line);color:var(--ink)}.oshow .osd{color:var(--muted)}.chchip{background:#1d1c16;border-color:var(--line);color:var(--ink)}}/* HOME-REDESIGN-v1 */:root{--sun-chip-ink:#7A5A12;--r-sm:6px;--r-md:10px;--r-lg:16px;--fs-cap:12px;--fs-sm:13px;--fs-base:14px;--fs-lg:16px;--fs-h1:28px;--sun-1:#FFF4D1;--sun-2:#FFF9E8;--sun-deep:#E8C063;--chip-info:#185FA5;--chip-info-bg:#E6F1FB;--chip-purple:#6B3FA0;--chip-purple-bg:#F0E9F9;--chip-green:#0F6E56;--chip-green-bg:#E1F5EE;--chip-red:#A32D2D;--chip-red-bg:#FCEBEB;}@media(prefers-color-scheme:dark){:root{--sun-chip-ink:#F2D58A;--sun-1:#3a2e12;--sun-2:#2a2210;--sun-deep:#6b5320;}}.hero{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:30px 22px 24px;margin:8px 0 14px;background:radial-gradient(120% 80% at 80% 0%,var(--sun-1) 0%,var(--sun-2) 42%,var(--bg) 74%)}.hero::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;background:repeating-radial-gradient(circle at 88% -10%,transparent 0 38px,rgba(232,192,99,.05) 38px 40px)}[dir=rtl] .hero{background:radial-gradient(120% 80% at 20% 0%,var(--sun-1) 0%,var(--sun-2) 42%,var(--bg) 74%)}[dir=rtl] .hero::after{background:repeating-radial-gradient(circle at 12% -10%,transparent 0 38px,rgba(232,192,99,.05) 38px 40px)}.hero>*{position:relative;z-index:1}.hero h1{font-size:var(--fs-h1);line-height:1.25;margin:8px 0 4px}.eyebrow{display:inline-block;font-size:var(--fs-cap);font-weight:600;background:var(--sun-2);border:1px solid var(--sun-deep);color:var(--sun-chip-ink);border-radius:var(--r-sm);padding:3px 10px;margin:0}.hotweek{margin:0 0 18px}.hotweek-h{display:flex;align-items:baseline;gap:8px;font-size:var(--fs-lg);font-weight:600;margin:0 0 10px}.hotweek-h .hw-count{color:var(--muted);font-size:var(--fs-sm);font-weight:400}.hotrow{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px;-webkit-overflow-scrolling:touch}.hotcard{flex:0 0 78%;max-width:300px;scroll-snap-align:start;position:relative;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 14px;background:var(--card);border-inline-start:4px solid var(--stripe,var(--accent))}.hotcard:hover{border-color:var(--accent)}.hotcard .hc-art{font-weight:600;font-size:var(--fs-base);margin:0 0 2px}.hotcard .hc-meta{color:var(--muted);font-size:var(--fs-sm);margin:0}.dday-hot{display:inline-flex;align-items:center;font-size:var(--fs-cap);font-weight:700;color:#fff;background:var(--accent);border-radius:var(--r-sm);padding:2px 8px;margin:0 0 8px}@media(min-width:640px){.hotrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));overflow:visible}.hotcard{flex:initial;max-width:none}}.ghost{opacity:.06;font-size:52px;bottom:-10px}/* HOMEVIZ-v2 */:root{--urgent:#C62828;--urgent-bg:#FCE9E7;--sky:#11305a}@media(prefers-color-scheme:dark){:root{--urgent:#FF6B6B;--urgent-bg:#3a1f1d;--sky:#9ec3f0}}.ecard .ghost{display:none}.hero-spot{display:none;margin:16px 0 0;border-radius:var(--r-md);background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--stripe,var(--accent));padding:13px 15px;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}.hero-spot.on{display:flex;align-items:center;gap:14px}.hero-spot:hover{border-color:var(--accent)}.hero-spot .hs-dd{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:62px;line-height:1;color:var(--urgent)}.hero-spot .hs-dd b{font-size:30px;font-weight:800;letter-spacing:-1px}.hero-spot .hs-dd small{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:2px}.hero-spot .hs-body{min-width:0;flex:1}.hero-spot .hs-eye{font-size:11px;font-weight:700;color:var(--urgent);background:var(--urgent-bg);border-radius:var(--r-sm);padding:2px 8px;display:inline-block;margin:0 0 4px}.hero-spot .hs-art{font-weight:700;font-size:16px;margin:0;line-height:1.25}.hero-spot .hs-meta{color:var(--muted);font-size:13px;margin:1px 0 0}.hero-spot .hs-go{flex:0 0 auto;color:var(--muted);font-size:20px}[dir=rtl] .hero-spot .hs-go{transform:scaleX(-1)}.hotweek .dday-hot{background:var(--urgent)}.hotweek .hotcard{border-inline-start-color:var(--urgent)}.hotweek .hotcard:hover{border-color:var(--urgent)}.hotweek .hotweek-h{color:var(--urgent)}/* HOMEVIZ-v3 */.hero{background:linear-gradient(180deg,rgba(10,6,20,.30) 0%,rgba(10,6,20,.62) 78%,rgba(10,6,20,.78) 100%),url(/assets/gen/photo/hero.jpg) center/cover no-repeat,var(--bg)}[dir=rtl] .hero{background:linear-gradient(180deg,rgba(10,6,20,.30) 0%,rgba(10,6,20,.62) 78%,rgba(10,6,20,.78) 100%),url(/assets/gen/photo/hero.jpg) center/cover no-repeat,var(--bg)}.hero .eyebrow{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.28);color:#fff}.hero h1{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.45)}.hero .sub{color:rgba(255,255,255,.92) !important;text-shadow:0 1px 8px rgba(0,0,0,.55)}.hero-spot .hs-thumb{flex:0 0 auto;width:54px;height:54px;border-radius:var(--r-sm);object-fit:cover;display:block}@media(max-width:380px){.hero-spot .hs-thumb{display:none}}.hotweek .hotrow{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;scrollbar-width:none}.hotweek .hotrow::-webkit-scrollbar{display:none}.hotweek .hotcard{scroll-snap-align:start;flex:0 0 78%;max-width:300px}@media(min-width:620px){.hotweek .hotcard{flex:0 0 46%}}/* SHARE-DIALER */.share-row{display:flex;justify-content:flex-end;margin:0 0 6px}.share-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--accent);background:var(--card);border:1px solid var(--line);border-radius:12px;cursor:pointer}.share-btn:hover{border-color:var(--accent)}.share-btn svg{flex:0 0 auto}.share-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;padding:10px 16px;border-radius:12px;z-index:50;transition:opacity .2s,transform .2s}.share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}/* CARD-KEYCOLOR-v1 *//* HERO-COPY-v1 *//* WAVE2-HOME-v1 */:root{--tabline:#807c6e}@media(prefers-color-scheme:dark){:root{--tabline:#7d7868}}.grid .ecard .dday{position:absolute;bottom:13px;inset-inline-end:13px;margin:0;vertical-align:0;z-index:2}.grid .ecard .c{position:static}.lglegend{font-size:12px;color:var(--muted);margin:2px 0 10px;line-height:1.55}.lglegend .lgdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin:0 4px 1px 0;vertical-align:middle}/* WAVE3-HOME-v1 */:root{--pastbg:#eeece5}@media(prefers-color-scheme:dark){:root{--pastbg:#2a2820}.disc{background:#1d1c15;border-color:var(--line);color:var(--muted)}}.grid .ecard:has(.badge[style*="--pastbg"]){background:var(--card)!important;border-inline-start-color:var(--line)!important}.grid .ecard:has(.badge[style*="--pastbg"]) .abadge{filter:grayscale(.85);opacity:.7}.grid .ecard:has(.badge[style*="--pastbg"]) .ghost{display:none}.grid .ecard{padding-bottom:44px}.grid .ecard>.badge{position:absolute;bottom:13px;inset-inline-start:14px;margin:0;z-index:2}.grid .ecard .dday{bottom:17px}.mdiv{grid-column:1/-1;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.3px;margin:8px 0 -4px}@media(min-width:1024px){.hotweek .hotrow{scrollbar-width:thin;-webkit-mask:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask:linear-gradient(90deg,#000 calc(100% - 56px),transparent)}[dir=rtl] .hotweek .hotrow{-webkit-mask:linear-gradient(270deg,#000 calc(100% - 56px),transparent);mask:linear-gradient(270deg,#000 calc(100% - 56px),transparent)}}/* WAVE3-LANGPICK */.langpick{margin:0 0 10px;display:flex;justify-content:flex-end}.langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600;color:var(--muted);background:var(--card)}.langpick>summary::-webkit-details-marker{display:none}.langpick>summary::after{content:"▾";font-size:10px;color:var(--muted);transition:transform .2s cubic-bezier(0.16,1,0.3,1)}.langpick[open]>summary::after{transform:rotate(180deg)}.langpick>summary:hover{border-color:#c9c7bd}.langpick>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.langpick .langmenu{display:none;position:absolute;right:16px;margin-top:6px;z-index:5;flex-direction:column;min-width:160px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.12)}.langpick[open] .langmenu{display:flex}.langpick .langmenu .lng{display:flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:6px;font-size:13px;color:var(--muted);text-decoration:none}.langpick .langmenu .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:#eef4fb}.langpick .langmenu .lng:hover{background:#f0eee6}.langpick .langmenu .lng:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}@media(prefers-color-scheme:dark){.langpick .langmenu{box-shadow:0 8px 24px rgba(0,0,0,.5)}.langpick .langmenu .lng[aria-current="true"]{background:#1e2b3d}.langpick>summary:hover,.langpick .langmenu .lng:hover{background:#222}}[dir=rtl] .langpick{justify-content:flex-start}[dir=rtl] .langpick .langmenu{right:auto;left:16px}</style><script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#B3B0A5;--line:#34322c;--bg:#16150f;--card:#211f18;--ehead-mid:#211f18;}img{filter:brightness(.88)}/* DARK-COMPAT-INJECT-v1 */
+/* 다크: 라이트 하드코딩 컴포넌트 정합 (제휴 고지·출처·경유지·공식채널) — 흰/크림 발광 제거 + 텍스트 대비 확보 */.disc{background:#1d1c15;border-color:var(--line);color:var(--muted)}.srcbox{background:var(--card)}.srclink{background:#16243a;border-color:#2a3d57;color:#9ec3f0}.oshow{background:#1d1c16;border-color:var(--line);color:var(--ink)}.oshow .osd{color:var(--muted)}.chchip{background:#1d1c16;border-color:var(--line);color:var(--ink)}}/* HOME-REDESIGN-v1 */:root{--sun-chip-ink:#7A5A12;--r-sm:6px;--r-md:10px;--r-lg:16px;--fs-cap:12px;--fs-sm:13px;--fs-base:14px;--fs-lg:16px;--fs-h1:28px;--sun-1:#FFF4D1;--sun-2:#FFF9E8;--sun-deep:#E8C063;--chip-info:#185FA5;--chip-info-bg:#E6F1FB;--chip-purple:#6B3FA0;--chip-purple-bg:#F0E9F9;--chip-green:#0F6E56;--chip-green-bg:#E1F5EE;--chip-red:#A32D2D;--chip-red-bg:#FCEBEB;}@media(prefers-color-scheme:dark){:root{--sun-chip-ink:#F2D58A;--sun-1:#3a2e12;--sun-2:#2a2210;--sun-deep:#6b5320;}}.hero{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:30px 22px 24px;margin:8px 0 14px;background:radial-gradient(120% 80% at 80% 0%,var(--sun-1) 0%,var(--sun-2) 42%,var(--bg) 74%)}.hero::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;background:repeating-radial-gradient(circle at 88% -10%,transparent 0 38px,rgba(232,192,99,.05) 38px 40px)}[dir=rtl] .hero{background:radial-gradient(120% 80% at 20% 0%,var(--sun-1) 0%,var(--sun-2) 42%,var(--bg) 74%)}[dir=rtl] .hero::after{background:repeating-radial-gradient(circle at 12% -10%,transparent 0 38px,rgba(232,192,99,.05) 38px 40px)}.hero>*{position:relative;z-index:1}.hero h1{font-size:var(--fs-h1);line-height:1.25;margin:8px 0 4px;word-break:keep-all}.eyebrow{display:inline-block;font-size:var(--fs-cap);font-weight:600;background:var(--sun-2);border:1px solid var(--sun-deep);color:var(--sun-chip-ink);border-radius:var(--r-sm);padding:3px 10px;margin:0}.hotweek{margin:0 0 18px}.hotweek-h{display:flex;align-items:baseline;gap:8px;font-size:var(--fs-lg);font-weight:600;margin:0 0 10px}.hotweek-h .hw-count{color:var(--muted);font-size:var(--fs-sm);font-weight:400}.hotrow{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px;-webkit-overflow-scrolling:touch}.hotcard{flex:0 0 78%;max-width:300px;scroll-snap-align:start;position:relative;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 14px;background:var(--card);border-inline-start:4px solid var(--stripe,var(--accent))}.hotcard:hover{border-color:var(--accent)}.hotcard .hc-art{font-weight:600;font-size:var(--fs-base);margin:0 0 2px}.hotcard .hc-meta{color:var(--muted);font-size:var(--fs-sm);margin:0}.dday-hot{display:inline-flex;align-items:center;font-size:var(--fs-cap);font-weight:700;color:var(--on-accent);background:var(--accent-bg);border-radius:var(--r-sm);padding:2px 8px;margin:0 0 8px}@media(min-width:640px){.hotrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));overflow:visible}.hotcard{flex:initial;max-width:none}}.ghost{opacity:.06;font-size:52px;bottom:-10px}/* HOMEVIZ-v2 */:root{--urgent:#C62828;--urgent-bg:#FCE9E7;--sky:#11305a}@media(prefers-color-scheme:dark){:root{--urgent:#FF6B6B;--urgent-bg:#3a1f1d;--sky:#9ec3f0}}.ecard .ghost{display:none}.hero-spot{display:none;margin:16px 0 0;border-radius:var(--r-md);background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--stripe,var(--accent));padding:13px 15px;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}.hero-spot.on{display:flex;align-items:center;gap:14px}.hero-spot:hover{border-color:var(--accent)}.hero-spot .hs-dd{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:62px;line-height:1;color:var(--urgent)}.hero-spot .hs-dd b{font-size:30px;font-weight:800;letter-spacing:-1px}.hero-spot .hs-dd small{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:2px}.hero-spot .hs-body{min-width:0;flex:1}.hero-spot .hs-eye{font-size:12px;font-weight:700;color:var(--urgent);background:var(--urgent-bg);border-radius:var(--r-sm);padding:2px 8px;display:inline-block;margin:0 0 4px}.hero-spot .hs-art{font-weight:700;font-size:16px;margin:0;line-height:1.25}.hero-spot .hs-meta{color:var(--muted);font-size:13px;margin:1px 0 0}.hero-spot .hs-go{flex:0 0 auto;color:var(--muted);font-size:20px}[dir=rtl] .hero-spot .hs-go{transform:scaleX(-1)}.hotweek .dday-hot{background:var(--urgent-bg);color:var(--urgent)}.hotweek .hotcard{border-inline-start-color:var(--urgent)}.hotweek .hotcard:hover{border-color:var(--urgent)}.hotweek .hotweek-h{color:var(--urgent)}/* HOMEVIZ-v3 */.hero{background:linear-gradient(180deg,rgba(10,6,20,.30) 0%,rgba(10,6,20,.62) 78%,rgba(10,6,20,.78) 100%),url(/assets/gen/photo/hero.jpg) center/cover no-repeat,var(--bg)}[dir=rtl] .hero{background:linear-gradient(180deg,rgba(10,6,20,.30) 0%,rgba(10,6,20,.62) 78%,rgba(10,6,20,.78) 100%),url(/assets/gen/photo/hero.jpg) center/cover no-repeat,var(--bg)}.hero .eyebrow{background:rgba(10,6,20,.72);border-color:rgba(255,255,255,.28);color:#fff}.hero h1{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.45)}.hero .sub{color:rgba(255,255,255,.92) !important;text-shadow:0 1px 8px rgba(0,0,0,.55)}.hero-spot .hs-thumb{flex:0 0 auto;width:54px;height:54px;border-radius:var(--r-sm);object-fit:cover;display:block}@media(max-width:380px){.hero-spot .hs-thumb{display:none}}.hotweek .hotrow{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;scrollbar-width:none}.hotweek .hotrow::-webkit-scrollbar{display:none}.hotweek .hotcard{scroll-snap-align:start;flex:0 0 78%;max-width:300px}@media(min-width:620px){.hotweek .hotcard{flex:0 0 46%}}/* SHARE-DIALER */.share-row{display:flex;justify-content:flex-end;margin:0 0 6px}.share-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--accent);background:var(--card);border:1px solid var(--line);border-radius:12px;cursor:pointer}.share-btn:hover{border-color:var(--accent)}.share-btn svg{flex:0 0 auto}.share-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;padding:10px 16px;border-radius:12px;z-index:50;transition:opacity .2s,transform .2s}.share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}/* CARD-KEYCOLOR-v1 *//* HERO-COPY-v1 *//* WAVE2-HOME-v1 */:root{--tabline:#807c6e}@media(prefers-color-scheme:dark){:root{--tabline:#7d7868}}.grid .ecard .dday{position:absolute;bottom:13px;inset-inline-end:13px;margin:0;vertical-align:0;z-index:2}.grid .ecard .c{position:static}.lglegend{font-size:12px;color:var(--muted);margin:2px 0 10px;line-height:1.55}.lglegend .lgdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin:0 4px 1px 0;vertical-align:middle}/* WAVE3-HOME-v1 */:root{--pastbg:#eeece5}@media(prefers-color-scheme:dark){:root{--pastbg:#2a2820}.disc{background:#1d1c15;border-color:var(--line);color:var(--muted)}}.grid .ecard:has(.badge[style*="--pastbg"]){background:var(--card)!important;border-inline-start-color:var(--line)!important}.grid .ecard:has(.badge[style*="--pastbg"]) .abadge{filter:grayscale(.85)}.grid .ecard:has(.badge[style*="--pastbg"]) .ghost{display:none}.grid .ecard{padding-bottom:44px}.grid .ecard>.badge{position:absolute;bottom:13px;inset-inline-start:14px;margin:0;z-index:2}.grid .ecard .dday{bottom:17px}.mdiv{grid-column:1/-1;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.3px;margin:8px 0 -4px}@media(min-width:1024px){.hotweek .hotrow{scrollbar-width:thin;-webkit-mask:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask:linear-gradient(90deg,#000 calc(100% - 56px),transparent)}[dir=rtl] .hotweek .hotrow{-webkit-mask:linear-gradient(270deg,#000 calc(100% - 56px),transparent);mask:linear-gradient(270deg,#000 calc(100% - 56px),transparent)}}/* WAVE3-LANGPICK */.langpick{margin:0 0 10px;display:flex;justify-content:flex-end}.langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600;color:var(--muted);background:var(--card)}.langpick>summary::-webkit-details-marker{display:none}.langpick>summary::after{content:"▾";font-size:12px;color:var(--muted);transition:transform .2s cubic-bezier(0.16,1,0.3,1)}.langpick[open]>summary::after{transform:rotate(180deg)}.langpick>summary:hover{border-color:#c9c7bd}.langpick>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.langpick .langmenu{display:none;position:absolute;right:16px;margin-top:6px;z-index:5;flex-direction:column;min-width:160px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.12)}.langpick[open] .langmenu{display:flex}.langpick .langmenu .lng{display:flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:6px;font-size:13px;color:var(--muted);text-decoration:none}.langpick .langmenu .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:var(--accent-soft)}.langpick .langmenu .lng:hover{background:var(--surface-2)}.langpick .langmenu .lng:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}@media(prefers-color-scheme:dark){.langpick .langmenu{box-shadow:0 8px 24px rgba(0,0,0,.5)}.langpick .langmenu .lng[aria-current="true"]{background:#1e2b3d}.langpick>summary:hover,.langpick .langmenu .lng:hover{background:#222}}[dir=rtl] .langpick{justify-content:flex-start}[dir=rtl] .langpick .langmenu{right:auto;left:16px}/*W4TOKENS-v1*/:root{--accent-soft:#E6F1FB;--accent-line:#b9d2ef;--accent-bg:#185FA5;--on-accent:#fff;--ok:#0F6E56;--ok-soft:#E1F5EE;--warn:#A32D2D;--warn-soft:#FCEBEB;--purple:#6B3FA0;--purple-soft:#F0E9F9;--gold-soft:#fdf6ec;--gold-line:#f0e4cf;--surface-1:#fafaf7;--surface-2:#f7f6f1;--surface-acc:#f1f5fa;--surface-acc-line:#dbe6f2;--hoverline:#c9c7bd;--ehead-mid:#ffffff}@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#B3B0A5;--line:#34322c;--bg:#16150f;--card:#211f18;--accent:#8FBCEE;--accent-soft:#1A2A3E;--accent-line:#2f4a6a;--accent-bg:#2E6CB2;--on-accent:#fff;--ok:#7BD4B2;--ok-soft:#173228;--warn:#FF8A8A;--warn-soft:#3a1f1d;--purple:#C9A8F0;--purple-soft:#2A1F3D;--gold-soft:#2a2410;--gold-line:#4a3f20;--surface-1:#262420;--surface-2:#2a2820;--surface-acc:#1A2A3E;--surface-acc-line:#2f4a6a;--hoverline:#4a4840;--ehead-mid:#211f18;--urgent:#FF6B6B;--urgent-bg:#3a1f1d;--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}img{filter:brightness(.88)}}/*W4GRP*/.ecard-grp{display:flex;flex-direction:column}.ecard-grp>.ecard{flex:1 1 auto}.tourgrp{margin-top:6px}.tourgrp>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:8px 12px;min-height:36px;display:flex;align-items:center}.tourgrp>summary::-webkit-details-marker{display:none}.tourgrp>summary::after{content:"▾";margin-inline-start:auto;transition:transform .2s}.tourgrp[open]>summary::after{transform:rotate(180deg)}.tg-rows{display:flex;flex-direction:column;gap:4px;margin-top:6px}.tg-row{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);background:var(--surface-1);border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-size:13px}.tg-row:hover{border-color:var(--accent)}.tg-row .tg-d{color:var(--muted);margin-inline-start:auto}</style><script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
   (function () {
       var script = document.createElement("script");
       script.async = 1;
@@ -175,260 +175,220 @@ body{overflow-wrap:break-word;word-break:normal}
 <a class="hero-spot" id="hero-spot" href="#" aria-label="最臨近的行程"></a>
 <!-- HOTWEEK-v1 -->
 <section class="hotweek" id="hotweek" style="display:none" aria-label="本週即將截止"></section>
-<script>(function(){function run(){try{var T=new Date();T.setHours(0,0,0,0);var cards=document.querySelectorAll('.tp-c .ecard');var L=[];for(var i=0;i<cards.length;i++){var c=cards[i];var dd=c.querySelector('.dday[data-date]');if(!dd)continue;var p=(dd.getAttribute('data-date')||'').split('-');if(p.length!==3)continue;var ev=new Date(+p[0],+p[1]-1,+p[2]);ev.setHours(0,0,0,0);var diff=Math.round((ev-T)/86400000);if(diff<0)continue;var art=(c.querySelector('.a')||{}).textContent||'';var meta=(c.querySelector('.c')||{}).textContent||'';L.push({href:c.getAttribute('href'),art:art.trim(),meta:meta.replace(/D-\d+|D-DAY/,'').trim(),diff:diff});}L.sort(function(a,b){return a.diff-b.diff;});var dlabel=function(d){return d===0?'D-DAY':'D-'+d;};var esc=function(s){var t=document.createElement('div');t.textContent=s;return t.innerHTML;};var TKO=[{"h": "twice-thisisfor-seoul.html#sec-ticketing", "d": "2026-06-09", "a": "TWICE", "m": "🇰🇷 韓國 首爾 · 2026-07-10", "e0": "今日開票", "e1": "即將開票"}, {"h": "twice-thisisfor-seoul.html#sec-ticketing", "d": "2026-06-11", "a": "TWICE", "m": "🇰🇷 韓國 首爾 · 2026-07-10", "e0": "今日開票", "e1": "即將開票"}];var tkb=null;for(var q=0;q<TKO.length;q++){var tp=TKO[q].d.split('-');var te=new Date(+tp[0],+tp[1]-1,+tp[2]);te.setHours(0,0,0,0);var tdf=Math.round((te-T)/86400000);if(tdf>=0&&tdf<=2&&(tkb===null||tdf<tkb.df))tkb={df:tdf,o:TKO[q]};}var spot=document.getElementById('hero-spot');if(spot&&tkb){var o=tkb.o;spot.setAttribute('href',o.h);spot.innerHTML='<span class="hs-dd"><b dir="ltr">'+dlabel(tkb.df)+'</b></span>'+'<div class="hs-body"><span class="hs-eye">'+esc(tkb.df===0?o.e0:o.e1)+'</span>'+'<p class="hs-art">'+esc(o.a)+'</p>'+'<p class="hs-meta">'+esc(o.m)+'</p></div>'+'<span class="hs-go" aria-hidden="true">\u203a</span>';spot.classList.add('on');}else if(spot&&L.length){var s0=L[0];spot.setAttribute('href',s0.href);spot.innerHTML='<img class="hs-thumb" src="/assets/gen/photo/concert_day.jpg" alt="演出現場氛圍" width="54" height="54" loading="lazy">'+'<span class="hs-dd"><b dir="ltr">'+dlabel(s0.diff)+'</b></span>'+'<div class="hs-body"><span class="hs-eye">最臨近的行程</span>'+'<p class="hs-art">'+esc(s0.art)+'</p>'+'<p class="hs-meta">'+esc(s0.meta)+'</p></div>'+'<span class="hs-go" aria-hidden="true">\u203a</span>';spot.classList.add('on');}var box=document.getElementById('hotweek');if(!box)return;var hs=(spot&&!tkb&&L.length)?1:0;var H=[];for(var j=hs;j<L.length;j++){if(L[j].diff<=14)H.push(L[j]);}H=H.slice(0,5);if(!H.length){return;}var rows='';for(var k=0;k<H.length;k++){var it=H[k];rows+='<a class="hotcard" href="'+it.href+'">'+'<span class="dday-hot" dir="ltr">'+dlabel(it.diff)+'</span>'+'<div class="hc-art">'+esc(it.art)+'</div>'+'<div class="hc-meta">'+esc(it.meta)+'</div></a>';}var unit='';box.innerHTML='<div class="hotweek-h">'+'本週即將截止'+' <span class="hw-count">'+H.length+unit+'</span></div>'+'<div class="hotrow">'+rows+'</div>';box.style.display='block';}catch(e){}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script>
+<script>(function(){function run(){try{var T=new Date();T.setHours(0,0,0,0);var cards=document.querySelectorAll('.tp-c .ecard');var L=[];for(var i=0;i<cards.length;i++){var c=cards[i];var dd=c.querySelector('.dday[data-date]');if(!dd)continue;var p=(dd.getAttribute('data-date')||'').split('-');if(p.length!==3)continue;var ev=new Date(+p[0],+p[1]-1,+p[2]);ev.setHours(0,0,0,0);var diff=Math.round((ev-T)/86400000);if(diff<0)continue;var art=(c.querySelector('.a')||{}).textContent||'';var meta=(c.querySelector('.c')||{}).textContent||'';L.push({href:c.getAttribute('href'),art:art.trim(),meta:meta.replace(/D-\d+|D-DAY/,'').trim(),diff:diff});}L.sort(function(a,b){return a.diff-b.diff;});var dlabel=function(d){return d===0?'D-DAY':'D-'+d;};var esc=function(s){var t=document.createElement('div');t.textContent=s;return t.innerHTML;};var TKO=[{"h": "twice-thisisfor-seoul.html#sec-ticketing", "d": "2026-06-09", "a": "TWICE", "m": "🇰🇷 韓國 首爾 · 2026-07-10", "e0": "今日開票", "e1": "即將開票", "t": "20:00", "e2": "購票進行中"}, {"h": "twice-thisisfor-seoul.html#sec-ticketing", "d": "2026-06-11", "a": "TWICE", "m": "🇰🇷 韓國 首爾 · 2026-07-10", "e0": "今日開票", "e1": "即將開票", "t": "20:00", "e2": "購票進行中"}];var tkb=null;for(var q=0;q<TKO.length;q++){var tp=TKO[q].d.split('-');var te=new Date(+tp[0],+tp[1]-1,+tp[2]);te.setHours(0,0,0,0);var tdf=Math.round((te-T)/86400000);if(tdf>=0&&tdf<=2&&(tkb===null||tdf<tkb.df))tkb={df:tdf,o:TKO[q]};}var spot=document.getElementById('hero-spot');if(spot&&tkb){var o=tkb.o;spot.setAttribute('href',o.h);spot.innerHTML='<span class="hs-dd"><b dir="ltr">'+dlabel(tkb.df)+'</b></span>'+'<div class="hs-body"><span class="hs-eye">'+esc(tkb.df===0?((o.t&&(new Date()).getHours()>=parseInt(o.t,10))?(o.e2||o.e0):(o.e0+(o.t?' '+o.t:''))):o.e1)+'</span>'+'<p class="hs-art">'+esc(o.a)+'</p>'+'<p class="hs-meta">'+esc(o.m)+'</p></div>'+'<span class="hs-go" aria-hidden="true">\u203a</span>';spot.classList.add('on');}else if(spot&&L.length){var s0=L[0];spot.setAttribute('href',s0.href);spot.innerHTML='<img class="hs-thumb" src="/assets/gen/photo/concert_day.jpg" alt="演出現場氛圍" width="54" height="54" loading="lazy">'+'<span class="hs-dd"><b dir="ltr">'+dlabel(s0.diff)+'</b></span>'+'<div class="hs-body"><span class="hs-eye">最臨近的行程</span>'+'<p class="hs-art">'+esc(s0.art)+'</p>'+'<p class="hs-meta">'+esc(s0.meta)+'</p></div>'+'<span class="hs-go" aria-hidden="true">\u203a</span>';spot.classList.add('on');}var box=document.getElementById('hotweek');if(!box)return;var hs=(spot&&!tkb&&L.length)?1:0;var H=[];for(var j=hs;j<L.length;j++){if(L[j].diff<=14)H.push(L[j]);}H=H.slice(0,5);if(!H.length){return;}var rows='';for(var k=0;k<H.length;k++){var it=H[k];rows+='<a class="hotcard" href="'+it.href+'">'+'<span class="dday-hot" dir="ltr">'+dlabel(it.diff)+'</span>'+'<div class="hc-art">'+esc(it.art)+'</div>'+'<div class="hc-meta">'+esc(it.meta)+'</div></a>';}var unit='';box.innerHTML='<div class="hotweek-h">'+'本週即將截止'+' <span class="hw-count">'+H.length+unit+'</span></div>'+'<div class="hotrow">'+rows+'</div>';box.style.display='block';}catch(e){}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script>
 <div class="tabs" role="tablist">
   <input type="radio" name="evtab" id="tab-c" checked><label for="tab-c">搶訂旅程 · 演唱會</label>
   <input type="radio" name="evtab" id="tab-m"><label for="tab-m">搶位 · 音樂節目</label>
   <input type="radio" name="evtab" id="tab-u"><label for="tab-u">地下偶像</label>
   <input type="radio" name="evtab" id="tab-s"><label for="tab-s">演唱會 · 運動</label>
-  <p class="lglegend"><span class="lgdot" style="background:#0F6E56"></span><b>超早期搶先</b> = months out — lock flights &amp; stays early &nbsp;·&nbsp; <span class="lgdot" style="background:#185FA5"></span><b>公告黃金期</b> = just announced — best time to book</p><div class="tabpanel tp-c"><div class="grid"><a class="ecard" href="bts-arirang-busan-0612.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
+  <p class="lglegend"><span class="lgdot" style="background:#0F6E56"></span><b>超早期搶先</b> = months out — lock flights &amp; stays early &nbsp;·&nbsp; <span class="lgdot" style="background:var(--accent-bg)"></span><b>公告黃金期</b> = just announced — best time to book</p><div class="tabpanel tp-c"><div class="grid"><a class="ecard" href="bts-arirang-busan-0612.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.08) 0%,var(--ehead-mid,#ffffff) 42%,rgba(123,79,181,0.16) 100%);--stripe:#7B4FB5">
 <span class="ghost" aria-hidden="true">BTS</span>
 <div class="ehead"><div class="a"><bdi>BTS</bdi></div></div>
 <div class="c">🇰🇷 韓國 釜山 · 2026-06-12 <span class="dday" data-date="2026-06-12"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="gidle-syncopation-yokohama.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(199,39,76,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(199,39,76,0.26) 100%);--stripe:#C7274C">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="gidle-syncopation-yokohama.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#C7274C">
 <span class="ghost" aria-hidden="true">GI</span>
 <div class="ehead"><span class="abadge" style="background:#C7274C;color:#ffffff" title="(G)I-DLE"><bdi>GI</bdi></span><div class="a"><bdi>(G)I-DLE</bdi></div></div>
 <div class="c">🇯🇵 日本 橫濱 · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="itzy-tunnelvision-hongkong.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(216,30,91,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(216,30,91,0.26) 100%);--stripe:#D81E5B">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="itzy-tunnelvision-hongkong.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#D81E5B">
 <span class="ghost" aria-hidden="true">ITZY</span>
 <div class="ehead"><div class="a"><bdi>ITZY</bdi></div></div>
 <div class="c">🇭🇰 香港 · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="kim-junsu-gravity-macau.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><div class="ecard-grp"><a class="ecard" href="kim-junsu-gravity-macau.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">KIM JUNSU</span>
 <div class="ehead"><div class="a"><bdi>KIM JUNSU</bdi></div></div>
 <div class="c">🇲🇴 澳門 · 2026-06-20 <span class="dday" data-date="2026-06-20"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="ive-showwhatiam-tokyo.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><details class="tourgrp"><summary>另外 7 個城市場次</summary><div class="tg-rows"><a class="tg-row" href="kim-junsu-gravity-taipei.html"><span>🇹🇼 台灣 台北 · 2026-06-24</span></a><a class="tg-row" href="kim-junsu-gravity-tokyo-d1.html"><span>🇯🇵 日本 東京 · 2026-07-03</span></a><a class="tg-row" href="kim-junsu-gravity-tokyo-d2.html"><span>🇯🇵 日本 東京 · 2026-07-04</span></a><a class="tg-row" href="kim-junsu-gravity-osaka-d1.html"><span>🇯🇵 日本 大阪 · 2026-07-09</span></a><a class="tg-row" href="kim-junsu-gravity-osaka-d2.html"><span>🇯🇵 日本 大阪 · 2026-07-10</span></a><a class="tg-row" href="kim-junsu-gravity-hongkong.html"><span>🇭🇰 香港 · 2026-07-17</span></a><a class="tg-row" href="kim-junsu-gravity-singapore.html"><span>🇸🇬 新加坡 · 2026-07-19</span></a></div></details></div><a class="ecard" href="ive-showwhatiam-tokyo.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">IVE</span>
 <div class="ehead"><div class="a"><bdi>IVE</bdi></div></div>
 <div class="c">🇯🇵 日本 東京 · 2026-06-24 <span class="dday" data-date="2026-06-24"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="kim-junsu-gravity-taipei.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">KIM JUNSU</span>
-<div class="ehead"><div class="a"><bdi>KIM JUNSU</bdi></div></div>
-<div class="c">🇹🇼 台灣 台北 · 2026-06-24 <span class="dday" data-date="2026-06-24"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="babymonster-choom-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="babymonster-choom-seoul.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#C0392B">
 <span class="ghost" aria-hidden="true">BM</span>
 <div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER"><bdi>BM</bdi></span><div class="a"><bdi>BABYMONSTER</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-06-26 <span class="dday" data-date="2026-06-26"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="kiss-of-life-deja-vu-tokyo.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="kiss-of-life-deja-vu-tokyo.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">KIOF</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KISS OF LIFE"><bdi>KIOF</bdi></span><div class="a"><bdi>KISS OF LIFE</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="KISS OF LIFE"><bdi>KIOF</bdi></span><div class="a"><bdi>KISS OF LIFE</bdi></div></div>
 <div class="c">🇯🇵 日本 東京 · 2026-06-27 <span class="dday" data-date="2026-06-27"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="kim-junsu-gravity-tokyo-d1.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">KIM JUNSU</span>
-<div class="ehead"><div class="a"><bdi>KIM JUNSU</bdi></div></div>
-<div class="c">🇯🇵 日本 東京 · 2026-07-03 <span class="dday" data-date="2026-07-03"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="kim-junsu-gravity-tokyo-d2.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">KIM JUNSU</span>
-<div class="ehead"><div class="a"><bdi>KIM JUNSU</bdi></div></div>
-<div class="c">🇯🇵 日本 東京 · 2026-07-04 <span class="dday" data-date="2026-07-04"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="kim-junsu-gravity-osaka-d1.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">KIM JUNSU</span>
-<div class="ehead"><div class="a"><bdi>KIM JUNSU</bdi></div></div>
-<div class="c">🇯🇵 日本 大阪 · 2026-07-09 <span class="dday" data-date="2026-07-09"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="twice-thisisfor-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="twice-thisisfor-seoul.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#FB6E9B">
 <span class="ghost" aria-hidden="true">TW</span>
-<div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE"><bdi>TW</bdi></span><div class="a"><bdi>TWICE</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#1a1a18" title="TWICE"><bdi>TW</bdi></span><div class="a"><bdi>TWICE</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-07-10 <span class="dday" data-date="2026-07-10"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="kim-junsu-gravity-osaka-d2.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">KIM JUNSU</span>
-<div class="ehead"><div class="a"><bdi>KIM JUNSU</bdi></div></div>
-<div class="c">🇯🇵 日本 大阪 · 2026-07-10 <span class="dday" data-date="2026-07-10"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="lesserafim-pureflow-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="lesserafim-pureflow-incheon.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#6FA8DC">
 <span class="ghost" aria-hidden="true">LSF</span>
-<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#1a1a18" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
 <div class="c">🇰🇷 韓國 仁川 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="nmixx-zerofrontier-kaohsiung.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="nmixx-zerofrontier-kaohsiung.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">NMX</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="NMIXX"><bdi>NMX</bdi></span><div class="a"><bdi>NMIXX</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="NMIXX"><bdi>NMX</bdi></span><div class="a"><bdi>NMIXX</bdi></div></div>
 <div class="c">🇹🇼 台灣 高雄 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="exo-planet6-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(174,180,188,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(174,180,188,0.26) 100%);--stripe:#AEB4BC">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="exo-planet6-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#AEB4BC">
 <span class="ghost" aria-hidden="true">EXO</span>
 <div class="ehead"><div class="a"><bdi>EXO</bdi></div></div>
 <div class="c">🇯🇵 日本 東京 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="park-ji-hoon-reflect-bangkok.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><div class="ecard-grp"><a class="ecard" href="park-ji-hoon-reflect-bangkok.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">PARK JI HOON</span>
 <div class="ehead"><div class="a"><bdi>PARK JI HOON</bdi></div></div>
 <div class="c">🇹🇭 泰國 曼谷 · 2026-07-11 <span class="dday" data-date="2026-07-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="enhypen-bloodsaga-dallas.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(242,112,30,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(242,112,30,0.26) 100%);--stripe:#F2701E">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><details class="tourgrp"><summary>另外 3 個城市場次</summary><div class="tg-rows"><a class="tg-row" href="park-ji-hoon-reflect-singapore.html"><span>🇸🇬 新加坡 · 2026-07-18</span></a><a class="tg-row" href="park-ji-hoon-reflect-manila.html"><span>🇵🇭 菲律賓 馬尼拉 · 2026-08-08</span></a><a class="tg-row" href="park-ji-hoon-reflect-jakarta.html"><span>🇮🇩 印尼 雅加達 · 2026-08-29</span></a></div></details></div><a class="ecard" href="enhypen-bloodsaga-dallas.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#F2701E">
 <span class="ghost" aria-hidden="true">EN</span>
-<div class="ehead"><span class="abadge" style="background:#F2701E;color:#ffffff" title="ENHYPEN"><bdi>EN</bdi></span><div class="a"><bdi>ENHYPEN</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#F2701E;color:#1a1a18" title="ENHYPEN"><bdi>EN</bdi></span><div class="a"><bdi>ENHYPEN</bdi></div></div>
 <div class="c">🇺🇸 美國 達拉斯 · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="boynextdoor-knockon-seoul.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="boynextdoor-knockon-seoul.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">BND</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="BOYNEXTDOOR"><bdi>BND</bdi></span><div class="a"><bdi>BOYNEXTDOOR</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="BOYNEXTDOOR"><bdi>BND</bdi></span><div class="a"><bdi>BOYNEXTDOOR</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="kim-junsu-gravity-hongkong.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">KIM JUNSU</span>
-<div class="ehead"><div class="a"><bdi>KIM JUNSU</bdi></div></div>
-<div class="c">🇭🇰 香港 · 2026-07-17 <span class="dday" data-date="2026-07-17"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="park-ji-hoon-reflect-singapore.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">PARK JI HOON</span>
-<div class="ehead"><div class="a"><bdi>PARK JI HOON</bdi></div></div>
-<div class="c">🇸🇬 新加坡 · 2026-07-18 <span class="dday" data-date="2026-07-18"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="xg-the-core-bangkok.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="xg-the-core-bangkok.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">XG</span>
 <div class="ehead"><div class="a"><bdi>XG</bdi></div></div>
 <div class="c">🇹🇭 泰國 曼谷 · 2026-07-19 <span class="dday" data-date="2026-07-19"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="kim-junsu-gravity-singapore.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">KIM JUNSU</span>
-<div class="ehead"><div class="a"><bdi>KIM JUNSU</bdi></div></div>
-<div class="c">🇸🇬 新加坡 · 2026-07-19 <span class="dday" data-date="2026-07-19"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="illit-press-start-tokyo.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="illit-press-start-tokyo.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">ILLIT</span>
 <div class="ehead"><div class="a"><bdi>ILLIT</bdi></div></div>
 <div class="c">🇯🇵 日本 東京 · 2026-07-23 <span class="dday" data-date="2026-07-23"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="waterbomb-seoul-2026.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="waterbomb-seoul-2026.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">WTB</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="WATERBOMB SEOUL 2026"><bdi>WTB</bdi></span><div class="a"><bdi>WATERBOMB SEOUL 2026</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="WATERBOMB SEOUL 2026"><bdi>WTB</bdi></span><div class="a"><bdi>WATERBOMB SEOUL 2026</bdi></div></div>
 <div class="c">🇰🇷 韓國 高陽 · 2026-07-24 <span class="dday" data-date="2026-07-24"></span></div>
-<span class="badge" style="color:#A32D2D;background:#FCEBEB;font-size:11px">🎪 Festival</span></a><a class="ecard" href="lesserafim-pureflow-osaka.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
+<span class="badge" style="color:var(--warn);background:var(--warn-soft);font-size:12px">🎪 Festival</span></a><a class="ecard" href="lesserafim-pureflow-osaka.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#6FA8DC">
 <span class="ghost" aria-hidden="true">LSF</span>
-<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#1a1a18" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
 <div class="c">🇯🇵 日本 大阪 · 2026-07-25 <span class="dday" data-date="2026-07-25"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="mamamoo-4ward-singapore.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="mamamoo-4ward-singapore.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">MMM</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="MAMAMOO"><bdi>MMM</bdi></span><div class="a"><bdi>MAMAMOO</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="MAMAMOO"><bdi>MMM</bdi></span><div class="a"><bdi>MAMAMOO</bdi></div></div>
 <div class="c">🇸🇬 新加坡 · 2026-07-31 <span class="dday" data-date="2026-07-31"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="cortis-put-your-phone-down-newyork.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="cortis-put-your-phone-down-newyork.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">CORTIS</span>
 <div class="ehead"><div class="a"><bdi>CORTIS</bdi></div></div>
 <div class="c">🇺🇸 美國 紐約 · 2026-08-06 <span class="dday" data-date="2026-08-06"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="kai-kaion-yokohama.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="kai-kaion-yokohama.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">KAI</span>
 <div class="ehead"><div class="a"><bdi>KAI</bdi></div></div>
 <div class="c">🇯🇵 日本 橫濱 · 2026-08-06 <span class="dday" data-date="2026-08-06"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="aespa-synk-complaexity-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="aespa-synk-complaexity-seoul.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#2EC4B6">
 <span class="ghost" aria-hidden="true">æ</span>
-<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#1a1a18" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-08-07 <span class="dday" data-date="2026-08-07"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="kai-kaion-yokohama-d2.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="kai-kaion-yokohama-d2.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">KAI</span>
 <div class="ehead"><div class="a"><bdi>KAI</bdi></div></div>
 <div class="c">🇯🇵 日本 橫濱 · 2026-08-07 <span class="dday" data-date="2026-08-07"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="park-ji-hoon-reflect-manila.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">PARK JI HOON</span>
-<div class="ehead"><div class="a"><bdi>PARK JI HOON</bdi></div></div>
-<div class="c">🇵🇭 菲律賓 馬尼拉 · 2026-08-08 <span class="dday" data-date="2026-08-08"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="aespa-synk-complaexity-taipei-dome.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="aespa-synk-complaexity-taipei-dome.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#2EC4B6">
 <span class="ghost" aria-hidden="true">æ</span>
-<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#1a1a18" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
 <div class="c">🇹🇼 台灣 台北 · 2026-08-11 <span class="dday" data-date="2026-08-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="kcon-la-2026.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="kcon-la-2026.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">KCON</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="KCON LA 2026"><bdi>KCON</bdi></span><div class="a"><bdi>KCON LA 2026</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="KCON LA 2026"><bdi>KCON</bdi></span><div class="a"><bdi>KCON LA 2026</bdi></div></div>
 <div class="c">🇺🇸 美國 洛杉磯 · 2026-08-14 <span class="dday" data-date="2026-08-14"></span></div>
-<span class="badge" style="color:#A32D2D;background:#FCEBEB;font-size:11px">🎪 Festival</span></a><a class="ecard" href="stayc-stay-closer-seoul.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--warn);background:var(--warn-soft);font-size:12px">🎪 Festival</span></a><a class="ecard" href="stayc-stay-closer-seoul.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">STAYC</span>
 <div class="ehead"><div class="a"><bdi>STAYC</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-08-22 <span class="dday" data-date="2026-08-22"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="andteam-blaze-the-way-singapore.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="andteam-blaze-the-way-singapore.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">&amp;TEAM</span>
 <div class="ehead"><div class="a"><bdi>&amp;TEAM</bdi></div></div>
 <div class="c">🇸🇬 新加坡 · 2026-08-22 <span class="dday" data-date="2026-08-22"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="tws-247foryou-fukuoka.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="tws-247foryou-fukuoka.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">TWS</span>
 <div class="ehead"><div class="a"><bdi>TWS</bdi></div></div>
 <div class="c">🇯🇵 日本 福岡 · 2026-08-28 <span class="dday" data-date="2026-08-28"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="park-ji-hoon-reflect-jakarta.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
-<span class="ghost" aria-hidden="true">PARK JI HOON</span>
-<div class="ehead"><div class="a"><bdi>PARK JI HOON</bdi></div></div>
-<div class="c">🇮🇩 印尼 雅加達 · 2026-08-29 <span class="dday" data-date="2026-08-29"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="plave-keep-it-manic-incheon.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="plave-keep-it-manic-incheon.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">PLAVE</span>
 <div class="ehead"><div class="a"><bdi>PLAVE</bdi></div></div>
 <div class="c">🇰🇷 韓國 仁川 · 2026-09-12 <span class="dday" data-date="2026-09-12"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="babymonster-choom-osaka-kyocera.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="babymonster-choom-osaka-kyocera.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#C0392B">
 <span class="ghost" aria-hidden="true">BM</span>
 <div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER"><bdi>BM</bdi></span><div class="a"><bdi>BABYMONSTER</bdi></div></div>
 <div class="c">🇯🇵 日本 大阪 · 2026-09-22 <span class="dday" data-date="2026-09-22"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="katseye-wildworld-london.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="katseye-wildworld-london.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">KATSEYE</span>
 <div class="ehead"><div class="a"><bdi>KATSEYE</bdi></div></div>
 <div class="c">🇬🇧 英國 倫敦 · 2026-09</div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="mamamoo-4ward-hongkong.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="mamamoo-4ward-hongkong.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">MMM</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="MAMAMOO"><bdi>MMM</bdi></span><div class="a"><bdi>MAMAMOO</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="MAMAMOO"><bdi>MMM</bdi></span><div class="a"><bdi>MAMAMOO</bdi></div></div>
 <div class="c">🇭🇰 香港 · 2026-10-04 <span class="dday" data-date="2026-10-04"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="monstax-the-x-nexus-newyork.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="monstax-the-x-nexus-newyork.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">MX</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="MONSTA X"><bdi>MX</bdi></span><div class="a"><bdi>MONSTA X</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="MONSTA X"><bdi>MX</bdi></span><div class="a"><bdi>MONSTA X</bdi></div></div>
 <div class="c">🇺🇸 美國 紐約 · 2026-10-06 <span class="dday" data-date="2026-10-06"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="plave-keep-it-manic-bangkok.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="plave-keep-it-manic-bangkok.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">PLAVE</span>
 <div class="ehead"><div class="a"><bdi>PLAVE</bdi></div></div>
 <div class="c">🇹🇭 泰國 曼谷 · 2026-10-10 <span class="dday" data-date="2026-10-10"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="stayc-stay-closer-taipei.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="stayc-stay-closer-taipei.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">STAYC</span>
 <div class="ehead"><div class="a"><bdi>STAYC</bdi></div></div>
 <div class="c">🇹🇼 台灣 台北 · 2026-10-11 <span class="dday" data-date="2026-10-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="lesserafim-pureflow-london-o2.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(111,168,220,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(111,168,220,0.26) 100%);--stripe:#6FA8DC">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="lesserafim-pureflow-london-o2.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#6FA8DC">
 <span class="ghost" aria-hidden="true">LSF</span>
-<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#ffffff" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#6FA8DC;color:#1a1a18" title="LE SSERAFIM"><bdi>LSF</bdi></span><div class="a"><bdi>LE SSERAFIM</bdi></div></div>
 <div class="c">🇬🇧 英國 倫敦 · 2026-10-16 <span class="dday" data-date="2026-10-16"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="xg-the-core-oakland.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="xg-the-core-oakland.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">XG</span>
 <div class="ehead"><div class="a"><bdi>XG</bdi></div></div>
 <div class="c">🇺🇸 美國 奧克蘭 · 2026-11-03 <span class="dday" data-date="2026-11-03"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="bts-arirang-kaohsiung-1119.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="bts-arirang-kaohsiung-1119.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#7B4FB5">
 <span class="ghost" aria-hidden="true">BTS</span>
 <div class="ehead"><div class="a"><bdi>BTS</bdi></div></div>
 <div class="c">🇹🇼 台灣 高雄 · 2026-11-19 <span class="dday" data-date="2026-11-19"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="babymonster-choom-taipei.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(192,57,43,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(192,57,43,0.26) 100%);--stripe:#C0392B">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="babymonster-choom-taipei.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#C0392B">
 <span class="ghost" aria-hidden="true">BM</span>
 <div class="ehead"><span class="abadge" style="background:#C0392B;color:#ffffff" title="BABYMONSTER"><bdi>BM</bdi></span><div class="a"><bdi>BABYMONSTER</bdi></div></div>
 <div class="c">🇹🇼 台灣 台北 · 2026-11-21 <span class="dday" data-date="2026-11-21"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="katseye-wildworld-losangeles.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="katseye-wildworld-losangeles.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">KATSEYE</span>
 <div class="ehead"><div class="a"><bdi>KATSEYE</bdi></div></div>
 <div class="c">🇺🇸 美國 洛杉磯 · 2026-11</div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a></div></div>
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a></div></div>
   <div class="tabpanel tp-m"><div class="grid"><a class="ecard" href="m-countdown-20260611.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">♫</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="엠카운트다운 (M Countdown)"><bdi>♫</bdi></span><div class="a"><bdi>M Countdown</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="엠카운트다운 (M Countdown)"><bdi>♫</bdi></span><div class="a"><bdi>M Countdown</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-06-11 <span class="dday" data-date="2026-06-11"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 音樂節目</span></a><a class="ecard" href="music-bank-20260612.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 音樂節目</span></a><a class="ecard" href="music-bank-20260612.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">♫</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="뮤직뱅크 (Music Bank)"><bdi>♫</bdi></span><div class="a"><bdi>Music Bank</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="뮤직뱅크 (Music Bank)"><bdi>♫</bdi></span><div class="a"><bdi>Music Bank</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-06-12 <span class="dday" data-date="2026-06-12"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 音樂節目</span></a><a class="ecard" href="inkigayo-audience-sbs.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 音樂節目</span></a><a class="ecard" href="inkigayo-audience-sbs.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">人氣歌</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="인기가요 (Inkigayo)"><bdi>人氣歌</bdi></span><div class="a"><bdi>人氣歌謠(Inkigayo)</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="인기가요 (Inkigayo)"><bdi>人氣歌</bdi></span><div class="a"><bdi>人氣歌謠(Inkigayo)</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 每週日直播(約下午 12:20)</div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 觀賞</span></a><a class="ecard" href="musicbank-audience-kbs.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 觀賞</span></a><a class="ecard" href="musicbank-audience-kbs.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">MUS</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="뮤직뱅크 (Music Bank)"><bdi>MUS</bdi></span><div class="a"><bdi>Music Bank</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="뮤직뱅크 (Music Bank)"><bdi>MUS</bdi></span><div class="a"><bdi>Music Bank</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 每週五直播</div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 觀賞</span></a><a class="ecard" href="kbs-open-concert-audience.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 觀賞</span></a><a class="ecard" href="kbs-open-concert-audience.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">開放音</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="열린음악회 (Open Concert)"><bdi>開放音</bdi></span><div class="a"><bdi>開放音樂會 (Open Concert)</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="열린음악회 (Open Concert)"><bdi>開放音</bdi></span><div class="a"><bdi>開放音樂會 (Open Concert)</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 每週日下午6時播出 (KBS 1TV)</div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 觀賞</span></a></div></div>
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 觀賞</span></a></div></div>
   <div class="tabpanel tp-u"><div class="grid"><a class="ecard" href="seoul-live-idol-festival-2026-07-18-19-kintex.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">首爾L</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="서울 라이브아이돌 페스티벌"><bdi>首爾L</bdi></span><div class="a"><bdi>首爾Live Idol音樂節</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="서울 라이브아이돌 페스티벌"><bdi>首爾L</bdi></span><div class="a"><bdi>首爾Live Idol音樂節</bdi></div></div>
 <div class="c">🇰🇷 韓國 高陽(一山) · 2026-07-18 <span class="dday" data-date="2026-07-18"></span></div>
-<span class="badge" style="color:#6B3FA0;background:#F0E9F9;font-size:11px">🎤 地下偶像</span></a><a class="ecard" href="jugan-idol-jump-vol19-aroaro-RECURRING.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--purple);background:var(--purple-soft);font-size:12px">🎤 地下偶像</span></a><a class="ecard" href="jugan-idol-jump-vol19-aroaro-RECURRING.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">週間偶</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="주간 아이돌 점프 vol.19"><bdi>週間偶</bdi></span><div class="a"><bdi>週間偶像 Jump Vol.19</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="주간 아이돌 점프 vol.19"><bdi>週間偶</bdi></span><div class="a"><bdi>週間偶像 Jump Vol.19</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 定期演出(等待日期公佈中)</div>
-<span class="badge" style="color:#6B3FA0;background:#F0E9F9;font-size:11px">🎤 地下偶像</span></a></div></div>
-  <div class="tabpanel tp-s"><div class="grid"><a class="ecard" href="wc2026-kor-cze-guadalajara.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
+<span class="badge" style="color:var(--purple);background:var(--purple-soft);font-size:12px">🎤 地下偶像</span></a></div></div>
+  <div class="tabpanel tp-s"><div class="grid"><a class="ecard" href="wc2026-kor-cze-guadalajara.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.08) 0%,var(--ehead-mid,#ffffff) 42%,rgba(205,46,58,0.16) 100%);--stripe:#CD2E3A">
 <span class="ghost" aria-hidden="true">KOR</span>
 <div class="ehead"><span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span><div class="a"><bdi>韓國代表隊</bdi></div></div>
 <div class="c">🇲🇽 墨西哥 瓜達拉哈拉(薩波潘) · 2026-06-11 <span class="dday" data-date="2026-06-11"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">⚽ 運動</span></a><a class="ecard" href="wc2026-mex-kor-guadalajara.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">⚽ 運動</span></a><a class="ecard" href="wc2026-mex-kor-guadalajara.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.08) 0%,var(--ehead-mid,#ffffff) 42%,rgba(205,46,58,0.16) 100%);--stripe:#CD2E3A">
 <span class="ghost" aria-hidden="true">KOR</span>
 <div class="ehead"><span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span><div class="a"><bdi>韓國代表隊</bdi></div></div>
 <div class="c">🇲🇽 墨西哥 瓜達拉哈拉(薩波潘) · 2026-06-18 <span class="dday" data-date="2026-06-18"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">⚽ 運動</span></a><a class="ecard" href="wc2026-rsa-kor-monterrey.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">⚽ 運動</span></a><a class="ecard" href="wc2026-rsa-kor-monterrey.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#CD2E3A">
 <span class="ghost" aria-hidden="true">KOR</span>
 <div class="ehead"><span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span><div class="a"><bdi>韓國代表隊</bdi></div></div>
 <div class="c">🇲🇽 墨西哥 蒙特雷(瓜達盧佩, 新萊昂州) · 2026-06-24 <span class="dday" data-date="2026-06-24"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">⚽ 運動</span></a><a class="ecard" href="wc2026-kor-r32-conditional.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(205,46,58,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(205,46,58,0.26) 100%);--stripe:#CD2E3A">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">⚽ 運動</span></a><a class="ecard" href="wc2026-kor-r32-conditional.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#CD2E3A">
 <span class="ghost" aria-hidden="true">KOR</span>
 <div class="ehead"><span class="abadge" style="background:#CD2E3A;color:#ffffff" title="대한민국 대표팀"><bdi>KOR</bdi></span><div class="a"><bdi>韓國代表隊</bdi></div></div>
 <div class="c">美國或墨西哥 (依小組排名決定球場) · 2026-06-28 <span class="dday" data-date="2026-06-28"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">⚽ 運動</span></a></div></div>
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">⚽ 運動</span></a></div></div>
 </div>
 <p class="disc">各頁面的預訂連結為聯盟(佣金)連結。票價與庫存預測為估算，實際可能不同。預訂與付款責任由使用者自行承擔。</p>
 <div class="news-soon">🔔 暫無票價·完售提醒功能 — 餘票·補票請直接於官方售票網站查詢</div>
@@ -439,63 +399,63 @@ body{overflow-wrap:break-word;word-break:normal}
 <span class="ghost" aria-hidden="true">WOODZ</span>
 <div class="ehead"><div class="a"><bdi>WOODZ</bdi></div></div>
 <div class="c">🇬🇧 英國 倫敦 · 2026-06-10 <span class="dday" data-date="2026-06-10"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="show-champion-20260610.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="show-champion-20260610.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">♫</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="쇼! 챔피언 (Show Champion)"><bdi>♫</bdi></span><div class="a"><bdi>Show! Champion</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="쇼! 챔피언 (Show Champion)"><bdi>♫</bdi></span><div class="a"><bdi>Show! Champion</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-06-10 <span class="dday" data-date="2026-06-10"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 音樂節目</span></a><a class="ecard" href="azito-2026-06-10-toriset-lineup.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 音樂節目</span></a><a class="ecard" href="azito-2026-06-10-toriset-lineup.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">LIV</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="라이브아이돌 합동공연 (2026-06-10)"><bdi>LIV</bdi></span><div class="a"><bdi>Live Idol 合同公演 (2026-06-10)</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="라이브아이돌 합동공연 (2026-06-10)"><bdi>LIV</bdi></span><div class="a"><bdi>Live Idol 合同公演 (2026-06-10)</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-06-10 <span class="dday" data-date="2026-06-10"></span></div>
-<span class="badge" style="color:#6B3FA0;background:#F0E9F9;font-size:11px">🎤 地下偶像</span></a><a class="ecard" href="the-show-20260609.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--purple);background:var(--purple-soft);font-size:12px">🎤 地下偶像</span></a><a class="ecard" href="the-show-20260609.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">♫</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="더 쇼 (The Show)"><bdi>♫</bdi></span><div class="a"><bdi>The Show</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="더 쇼 (The Show)"><bdi>♫</bdi></span><div class="a"><bdi>The Show</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-06-09 <span class="dday" data-date="2026-06-09"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 音樂節目</span></a><a class="ecard" href="inkigayo-20260607.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 音樂節目</span></a><a class="ecard" href="inkigayo-20260607.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">♫</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="인기가요 (Inkigayo)"><bdi>♫</bdi></span><div class="a"><bdi>人氣歌謠(Inkigayo)</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="인기가요 (Inkigayo)"><bdi>♫</bdi></span><div class="a"><bdi>人氣歌謠(Inkigayo)</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-06-07 <span class="dday" data-date="2026-06-07"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 音樂節目</span></a><a class="ecard" href="woodz-archive1-berlin.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 音樂節目</span></a><a class="ecard" href="woodz-archive1-berlin.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">WOODZ</span>
 <div class="ehead"><div class="a"><bdi>WOODZ</bdi></div></div>
 <div class="c">🇩🇪 德國 柏林 · 2026-06-07 <span class="dday" data-date="2026-06-07"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="music-core-20260606.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="music-core-20260606.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">♫</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="쇼! 음악중심 (Show! Music Core)"><bdi>♫</bdi></span><div class="a"><bdi>Show! Music Core</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="쇼! 음악중심 (Show! Music Core)"><bdi>♫</bdi></span><div class="a"><bdi>Show! Music Core</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-06-06 <span class="dday" data-date="2026-06-06"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">📺 音樂節目</span></a><a class="ecard" href="bts-arirang-seoul.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(123,79,181,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(123,79,181,0.26) 100%);--stripe:#7B4FB5">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">📺 音樂節目</span></a><a class="ecard" href="bts-arirang-seoul.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#7B4FB5">
 <span class="ghost" aria-hidden="true">BTS</span>
 <div class="ehead"><div class="a"><bdi>BTS</bdi></div></div>
 <div class="c">🇰🇷 韓國 首爾 · 2026-03-21 <span class="dday" data-date="2026-03-21"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="blackpink-deadline-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="blackpink-deadline-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#F36BAE">
 <span class="ghost" aria-hidden="true">BP</span>
-<div class="ehead"><span class="abadge" style="background:#F36BAE;color:#ffffff" title="BLACKPINK"><bdi>BP</bdi></span><div class="a"><bdi>BLACKPINK</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#F36BAE;color:#1a1a18" title="BLACKPINK"><bdi>BP</bdi></span><div class="a"><bdi>BLACKPINK</bdi></div></div>
 <div class="c">🇯🇵 日本 東京 · 2026-01-16 <span class="dday" data-date="2026-01-16"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="twice-thisisfor-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(251,110,155,0.26) 100%);--stripe:#FB6E9B">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="twice-thisisfor-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#FB6E9B">
 <span class="ghost" aria-hidden="true">TW</span>
-<div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#ffffff" title="TWICE"><bdi>TW</bdi></span><div class="a"><bdi>TWICE</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#FB6E9B;color:#1a1a18" title="TWICE"><bdi>TW</bdi></span><div class="a"><bdi>TWICE</bdi></div></div>
 <div class="c">🇹🇼 台灣 高雄 · 2025-11-22 <span class="dday" data-date="2025-11-22"></span></div>
-<span class="badge" style="color:#A32D2D;background:#FCEBEB;font-size:11px">迫近警示</span></a><a class="ecard" href="blackpink-deadline-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(243,107,174,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(243,107,174,0.26) 100%);--stripe:#F36BAE">
+<span class="badge" style="color:var(--warn);background:var(--warn-soft);font-size:12px">迫近警示</span></a><a class="ecard" href="blackpink-deadline-kaohsiung.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#F36BAE">
 <span class="ghost" aria-hidden="true">BP</span>
-<div class="ehead"><span class="abadge" style="background:#F36BAE;color:#ffffff" title="BLACKPINK"><bdi>BP</bdi></span><div class="a"><bdi>BLACKPINK</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#F36BAE;color:#1a1a18" title="BLACKPINK"><bdi>BP</bdi></span><div class="a"><bdi>BLACKPINK</bdi></div></div>
 <div class="c">🇹🇼 台灣 高雄 · 2025-10-18 <span class="dday" data-date="2025-10-18"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="seventeen-new-incheon.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(226,154,174,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(226,154,174,0.26) 100%);--stripe:#E29AAE">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="seventeen-new-incheon.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#E29AAE">
 <span class="ghost" aria-hidden="true">SVT</span>
 <div class="ehead"><span class="abadge" style="background:#E29AAE;color:#1a1a18" title="SEVENTEEN"><bdi>SVT</bdi></span><div class="a"><bdi>SEVENTEEN</bdi></div></div>
 <div class="c">🇰🇷 韓國 仁川 · 2025-09-13 <span class="dday" data-date="2025-09-13"></span></div>
-<span class="badge" style="color:#185FA5;background:#E6F1FB;font-size:11px">公告黃金期</span></a><a class="ecard" href="gdragon-ubermensch-macau.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);font-size:12px">公告黃金期</span></a><a class="ecard" href="gdragon-ubermensch-macau.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">GD</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="G-DRAGON"><bdi>GD</bdi></span><div class="a"><bdi>G-DRAGON</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="G-DRAGON"><bdi>GD</bdi></span><div class="a"><bdi>G-DRAGON</bdi></div></div>
 <div class="c">🇲🇴 澳門 · 2025-06-06 <span class="dday" data-date="2025-06-06"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="aespa-synk-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(46,196,182,0.10) 0%,var(--ehead-mid,#ffffff) 42%,rgba(46,196,182,0.26) 100%);--stripe:#2EC4B6">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="aespa-synk-tokyo.html" style="border-inline-start:4px solid var(--stripe);background:var(--card);--stripe:#2EC4B6">
 <span class="ghost" aria-hidden="true">æ</span>
-<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#ffffff" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#2EC4B6;color:#1a1a18" title="aespa"><bdi>æ</bdi></span><div class="a"><bdi>aespa</bdi></div></div>
 <div class="c">🇯🇵 日本 東京 · 2024-08-17 <span class="dday" data-date="2024-08-17"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a><a class="ecard" href="newjeans-bunniescamp-tokyo.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a><a class="ecard" href="newjeans-bunniescamp-tokyo.html" style="border-inline-start:4px solid var(--line);background:var(--card)">
 <span class="ghost" aria-hidden="true">NJ</span>
-<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#ffffff" title="NewJeans"><bdi>NJ</bdi></span><div class="a"><bdi>NewJeans</bdi></div></div>
+<div class="ehead"><span class="abadge" style="background:#8A8A8A;color:#1a1a18" title="NewJeans"><bdi>NJ</bdi></span><div class="a"><bdi>NewJeans</bdi></div></div>
 <div class="c">🇯🇵 日本 東京 · 2024-06-26 <span class="dday" data-date="2024-06-26"></span></div>
-<span class="badge" style="color:#0F6E56;background:#E1F5EE;font-size:11px">超早期搶先</span></a></div>
+<span class="badge" style="color:var(--ok);background:var(--ok-soft);font-size:12px">超早期搶先</span></a></div>
 <div class="foot">預訂連結為聯盟連結。 · bybias.100m1s.com</div>
 
 <p class="gdisc">本網站為非官方排程與旅遊資訊服務，與藝人·經紀公司無關，並無官方聯盟關係。</p>
