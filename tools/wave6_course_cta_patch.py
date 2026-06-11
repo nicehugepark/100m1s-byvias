@@ -67,6 +67,28 @@ def _insert_top_jump(s: str, lang: str, panel: str, href: str) -> str:
     return s[:insert_at] + _jump(href, lang) + s[insert_at:]
 
 
+def _move_base_jump_after_summary(s: str, panel: str, href: str) -> str:
+    start = s.find(f'<div class="crs-panel {panel}">')
+    if start < 0:
+        return s
+    a_start = s.find(f'<a class="showday-jump" href="{href}"', start)
+    p_start = s.find('<p class="crs-sum">', start)
+    if a_start < 0 or p_start < 0 or a_start > p_start:
+        return s
+    a_end = s.find("</a>", a_start)
+    if a_end < 0:
+        return s
+    a_end += len("</a>")
+    jump = s[a_start:a_end]
+    s = s[:a_start] + s[a_end:]
+    p_start = s.find('<p class="crs-sum">', start)
+    p_end = s.find("</p>", p_start)
+    if p_start < 0 or p_end < 0:
+        return s
+    p_end += len("</p>")
+    return s[:p_end] + jump + s[p_end:]
+
+
 def _ensure_sl7_target(s: str) -> str:
     span = _panel_span(s, "sl-7")
     if not span:
@@ -86,12 +108,35 @@ def _ensure_sl7_target(s: str) -> str:
     return s[:start] + seg2 + s[end:]
 
 
+def _remove_inner_jump(s: str, panel: str, target_id: str) -> str:
+    span = _panel_span(s, panel)
+    if not span:
+        return s
+    start, end = span
+    seg = s[start:end]
+    marker = f'id="{target_id}"'
+    body_start = seg.find(marker)
+    if body_start < 0:
+        return s
+    m = re.search(r'<a class="showday-jump" href="#showday-s[47]">.*?</a>', seg[body_start:], re.S)
+    if not m:
+        return s
+    cut_start = body_start + m.start()
+    cut_end = body_start + m.end()
+    seg = seg[:cut_start] + seg[cut_end:]
+    return s[:start] + seg + s[end:]
+
+
 def fix(s: str, lang: str) -> str:
     if "W6COURSE" not in s:
         s = s.replace("</style>", W6_CSS + "</style>", 1)
+    s = _move_base_jump_after_summary(s, "cp-0", "#showday-c0")
+    s = _move_base_jump_after_summary(s, "cp-1", "#showday-c1")
     s = _ensure_sl7_target(s)
     s = _insert_top_jump(s, lang, "sl-4", "#showday-s4")
     s = _insert_top_jump(s, lang, "sl-7", "#showday-s7")
+    s = _remove_inner_jump(s, "sl-4", "showday-s4")
+    s = _remove_inner_jump(s, "sl-7", "showday-s7")
     return s
 
 
