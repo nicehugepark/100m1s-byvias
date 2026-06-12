@@ -27,6 +27,7 @@ DIST = ROOT / "dist"
 ALL = ["", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"]
 RICH = ["", "en"]  # 코스 리치 페이지 보유 locale
 COURSE = "twice-thisisfor-seoul.html"
+HOME = "index.html"
 
 CHECKS = [
     # ---- WAVE8 (R43 2심 조니 확정) ----
@@ -100,6 +101,62 @@ CHECKS = [
         "pattern": r"--r-m:12px",
         "locales": RICH,
         "gap_note": "코스 리치 페이지 ko·en만 존재",
+    },
+    # ---- WAVE7 (R44 2심 조니 확정) ----
+    {
+        "id": "w7-c4-equalized",  # #6 c4 동등화 — sl-2 규격 (스팟카드·맵페어·경고박스)
+        "page": COURSE,
+        "pattern": r'data-w7-c4="1"',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재 — 9 locale은 경량 이벤트 페이지(코스 섹션 부재, 백로그)",
+    },
+    {
+        "id": "w7-c4-spot-pair",  # #6 c4 스팟 카드 맵 링크 (kakao+google 페어 — en은 en sl-2 규격 google 단독)
+        "page": COURSE,
+        "pattern": r'class="sl-panel sl-4"[\s\S]*?class="psrc-row"[\s\S]*?class="sl-panel sl-7"',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재",
+    },
+    {
+        "id": "w7-no-fake-why",  # #7 'ptag · 주소' 가짜 why 잔존 0 (부정 체크 — pwhy=실사유만)
+        "page": COURSE,
+        "pattern": r'<div class="ptag">([^<]+)</div><div class="pwhy">\1',
+        "locales": RICH,
+        "negate": True,
+        "gap_note": "코스 리치 페이지 ko·en만 존재",
+    },
+    {
+        "id": "w7-ckstep-44",  # #9 ckstep 레이아웃 박스 44 실측화
+        "page": COURSE,
+        "pattern": r'\.ckstep\{[^}]*width:44px;height:44px',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재",
+    },
+    {
+        "id": "w7-psrc-44",  # #9 psrc min-width 44
+        "page": COURSE,
+        "pattern": r'\.psrc\{[^}]*min-width:44px',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재",
+    },
+    {
+        "id": "w7-home-radius-tokens",  # #8 홈 radius 토큰 (이벤트 체계 8/12/999)
+        "page": HOME,
+        "pattern": r"--r-s:8px;--r-m:12px;--r-pill:999px",
+        "locales": ALL,
+    },
+    {
+        "id": "w7-logo-real-ratio",  # #12 로고 attr=실비율 87×38 (206:90)
+        "page": HOME,
+        "pattern": r'class="logo"[^>]*width="87" height="38"',
+        "locales": ALL,
+    },
+    {
+        "id": "w7-logo-stale-attr",  # #12 구 attr 119 잔존 0 (부정 체크)
+        "page": HOME,
+        "pattern": r'class="logo"[^>]*width="119"',
+        "locales": ALL,
+        "negate": True,
     },
 ]
 
