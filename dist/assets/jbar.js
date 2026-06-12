@@ -161,15 +161,19 @@
     st.textContent = css;
     document.head.appendChild(st);
 
-    /* ── 바 DOM (시안 B 마크업 verbatim · bb 글리프 verbatim) ── */
+    /* ── 바 DOM (시안 B 마크업 기반 · bb 글리프 verbatim) ── */
+    /* 제거-1: 홈(zones 0건) = 점 5개·점등 라벨 무렌더 — 스크롤과 무관하게 "인지 1/5"
+       고정인 지시기는 진행 정보가 아니라 장식. 홈 바 = D-num + CTA만. */
+    var HAS_STAGE = T.zones.length > 0;
     var nav = document.createElement('nav');
     nav.id = 'jbar';
     nav.setAttribute('aria-label', L.nav);
     nav.innerHTML =
       '<div class="row">' +
       '<span class="dnum" id="jbDnum"></span>' +
-      '<span class="stage"><ol class="dots" id="jbDots" aria-label="' + L.dots + '"></ol><span class="lit" id="jbLit"></span></span>' +
-      '<span class="mininfo" id="jbMini"></span>' +
+      (HAS_STAGE ?
+        '<span class="stage"><ol class="dots" id="jbDots" aria-label="' + L.dots + '"></ol><span class="lit" id="jbLit"></span></span>' +
+        '<span class="mininfo" id="jbMini"></span>' : '') +
       '<span class="sp"></span>' +
       '<svg class="bb" viewBox="-10 -10 236 165" role="img" aria-label="ByBias">' +
       '<path fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" d="M14 14L14 131M86 95A36 36 0 1 1 14 95A36 36 0 1 1 86 95"/>' +
@@ -213,17 +217,19 @@
       elD.innerHTML = live ? '<span class="pulse"></span>LIVE' : 'D-' + dnum;
       elD.setAttribute('aria-label', live ? L.ariaLive :
         (TYPE === 'home' ? L.ariaDHome : L.ariaD).replace('{n}', dnum));
-      var h = '';
-      for (var i = 1; i <= 5; i++) {
-        /* P0-2: 현 단계 단일 점등 — done 누적 폐기. zones는 문서 순서(리치 3→5→4→2)로
-           단계 번호와 독립이라 누적 표시가 역행(점등 후퇴) 시각을 만들었음. 스테이지
-           라이트 본질 = 지금 서 있는 무대만 켠다. */
-        var c = i === S.step ? 'cur' : '';
-        h += '<li class="' + c + '"' + (i === S.step ? ' aria-current="step"' : '') + ' title="' + L.steps[i - 1] + '"></li>';
+      if (HAS_STAGE) { /* 제거-1: 홈 = stage DOM 자체가 없음 */
+        var h = '';
+        for (var i = 1; i <= 5; i++) {
+          /* P0-2: 현 단계 단일 점등 — done 누적 폐기. zones는 문서 순서(리치 3→5→4→2)로
+             단계 번호와 독립이라 누적 표시가 역행(점등 후퇴) 시각을 만들었음. 스테이지
+             라이트 본질 = 지금 서 있는 무대만 켠다. */
+          var c = i === S.step ? 'cur' : '';
+          h += '<li class="' + c + '"' + (i === S.step ? ' aria-current="step"' : '') + ' title="' + L.steps[i - 1] + '"></li>';
+        }
+        elDots.innerHTML = h;
+        elLit.innerHTML = L.steps[S.step - 1] + ' <span class="n">' + S.step + '/5</span>';
+        elMini.innerHTML = '<span class="n">' + S.step + '/5</span> ' + L.steps[S.step - 1];
       }
-      elDots.innerHTML = h;
-      elLit.innerHTML = L.steps[S.step - 1] + ' <span class="n">' + S.step + '/5</span>';
-      elMini.innerHTML = '<span class="n">' + S.step + '/5</span> ' + L.steps[S.step - 1];
       var cc = ctaFor();
       if (cc) { elCta.style.display = ''; elCta.textContent = cc.label; elCta.setAttribute('href', cc.href); }
       else { elCta.style.display = 'none'; }
