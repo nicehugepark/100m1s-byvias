@@ -43,24 +43,24 @@
       ko: {
         chip: '내 최애', hint: '최애를 고르면 모든 탭에서 최애 일정만 모아 봐요',
         all: '전체', sheetTitle: '내 최애', sheetSub: '선택하면 모든 탭에서 최애 일정을 먼저 봐요',
-        searchPh: '아티스트 검색', done: '완료', clearAll: '모두 해제',
+        searchPh: '아티스트 검색', done: '완료', clearAll: '모두 해제', close: '닫기',
         upcomingN: '다가오는 일정 {n}건', showAllN: '전체 {n}개 보기', change: '최애 변경',
         emptyConcert: '최애의 다가오는 공연이 아직 없어요',
         emptyLineup: '확정 라인업에 최애가 아직 없어요 — 라인업 미확정 회차는 아래 남겨뒀어요',
         emptyUnderground: '이 탭 라인업에는 최애가 없어요',
         lineupTbd: '라인업 미확정', sportsExempt: '이 탭은 최애 필터가 적용되지 않아요',
-        ariaDialog: '내 최애 선택', ariaApplied: '최애 필터 적용, {n}건 표시', ariaCleared: '전체 표시'
+        ariaApplied: '최애 필터 적용, {n}건 표시', ariaCleared: '전체 표시'
       },
       en: {
         chip: 'My bias', hint: 'Pick your bias to see only their schedule in every tab',
         all: 'All', sheetTitle: 'My bias', sheetSub: 'Pick artists to see their schedule first in every tab',
-        searchPh: 'Search artists', done: 'Done', clearAll: 'Clear all',
+        searchPh: 'Search artists', done: 'Done', clearAll: 'Clear all', close: 'Close',
         upcomingN: '{n} upcoming events', showAllN: 'Show all {n}', change: 'Change bias',
         emptyConcert: 'No upcoming shows from your bias yet',
         emptyLineup: "Your bias isn't in a confirmed lineup yet — TBA shows are kept below",
         emptyUnderground: "No bias in this tab's lineups",
         lineupTbd: 'Lineup TBA', sportsExempt: "This tab isn't affected by the bias filter",
-        ariaDialog: 'Select my bias', ariaApplied: 'Bias filter on, showing {n}', ariaCleared: 'Showing all'
+        ariaApplied: 'Bias filter on, showing {n}', ariaCleared: 'Showing all'
       }
     };
     var L = L10N[LANG] || L10N.en;
@@ -273,8 +273,7 @@
         sheet.id = 'favf-sheet';
         sheet.setAttribute('role', 'dialog');
         sheet.setAttribute('aria-modal', 'true');
-        sheet.setAttribute('aria-labelledby', 'favf-title');
-        sheet.setAttribute('aria-label', L.ariaDialog);
+        sheet.setAttribute('aria-labelledby', 'favf-title'); /* aria-label 미병기 — labelledby 항상 우선 */
         sheet.innerHTML = '<div class="favf-grab" aria-hidden="true"></div>' +
           '<div class="favf-head"><div><h2 id="favf-title" tabindex="-1"></h2><p class="favf-sub"></p></div>' +
           '<button id="favf-x" type="button">✕</button></div>' +
@@ -284,7 +283,7 @@
         document.body.appendChild(sheet);
         sheet.querySelector('#favf-title').textContent = L.sheetTitle;
         sheet.querySelector('.favf-sub').textContent = L.sheetSub;
-        sheet.querySelector('#favf-x').setAttribute('aria-label', L.all === 'All' ? 'Close' : '닫기');
+        sheet.querySelector('#favf-x').setAttribute('aria-label', L.close);
         var elSearch = sheet.querySelector('#favf-search');
         elSearch.placeholder = L.searchPh;
         var elList = sheet.querySelector('#favf-list');
@@ -393,7 +392,7 @@
           allBtn.setAttribute('aria-pressed', (hasSel && !S.filterOn) ? 'true' : 'false');
 
           /* tp-c: 매칭 표시 / festival dim / 그룹 단위 숨김 */
-          var i2, it, m, nC = 0, totC = 0, dimC = 0;
+          var i2, it, m, nC = 0, totC = 0;
           for (i2 = 0; i2 < C.length; i2++) {
             it = C[i2];
             if (it.past) continue;
@@ -401,7 +400,7 @@
             if (!on) { it.hide.classList.remove('favf-hide'); it.el.classList.remove('favf-tbd'); setCap(it, false); continue; }
             if (it.fest) { /* lineup 미확정 ≠ 불일치 — 유지+dim (§3) */
               it.hide.classList.remove('favf-hide');
-              it.el.classList.add('favf-tbd'); setCap(it, true); dimC++;
+              it.el.classList.add('favf-tbd'); setCap(it, true);
             } else {
               m = !!sel[it.key];
               it.el.classList.remove('favf-tbd'); setCap(it, false);
