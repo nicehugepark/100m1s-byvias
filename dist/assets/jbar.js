@@ -136,6 +136,11 @@
       '#jbar .stage{display:flex;align-items:center;gap:0;min-width:0}' +
       '#jbar .dots{display:flex;align-items:center;list-style:none;margin:0;padding:0}' +
       '#jbar .dots li{position:relative;width:6px;height:6px;border-radius:50%;background:#b9b7ac;background:color-mix(in srgb,var(--muted) 40%,transparent);transition:all .18s ease-out}' +
+      /* P1-3: color-mix 미지원 구형 폴백 light/dark 분리 — 라이트 폴백 #b9b7ac가 다크에
+         그대로 노출되면 muted(#B3B0A5)와 Δ(6,7,7)/채널로 사실상 동일 톤이던 결함.
+         다크 실측 폴백 #5b5950 = muted 40% on card(#211f18) 합성값 (비적색 — 빨강 d<=7 전유 무관).
+         base 룰 뒤 선언 = 다크에서 cascade 우선, color-mix 지원 브라우저는 후속 선언이 재적용. */
+      '@media(prefers-color-scheme:dark){#jbar .dots li{background:#5b5950;background:color-mix(in srgb,var(--muted) 40%,transparent)}}' +
       '#jbar .dots li+li{margin-inline-start:10px}' +
       '#jbar .dots li+li::before{content:"";position:absolute;inset-inline-end:100%;top:50%;width:10px;height:1.5px;margin-top:-.75px;background:var(--line)}' +
       '#jbar .dots li.cur{width:8px;height:8px;background:#E84A7F;box-shadow:0 0 0 3px rgba(232,74,127,.26);box-shadow:0 0 0 3px color-mix(in srgb,#E84A7F 26%,transparent)}' +
