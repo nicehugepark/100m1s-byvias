@@ -38,95 +38,109 @@ document.addEventListener('click',function(e){
 <meta name="twitter:description" content="热门演唱会 → 涨价前锁定低价的方法">
 <meta name="twitter:image" content="https://bybias.100m1s.com/og/bybias-default.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="canonical" href="https://bybias.100m1s.com/zh-cn/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="ko" href="https://bybias.100m1s.com/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="en" href="https://bybias.100m1s.com/en/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="ja" href="https://bybias.100m1s.com/ja/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="zh-Hans" href="https://bybias.100m1s.com/zh-cn/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="zh-Hant" href="https://bybias.100m1s.com/zh-tw/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="es" href="https://bybias.100m1s.com/es/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="th" href="https://bybias.100m1s.com/th/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="id" href="https://bybias.100m1s.com/id/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="pt-BR" href="https://bybias.100m1s.com/pt/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="ar" href="https://bybias.100m1s.com/ar/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="vi" href="https://bybias.100m1s.com/vi/twice-thisisfor-seoul.html">
-<link rel="alternate" hreflang="x-default" href="https://bybias.100m1s.com/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="ko" href="../twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="en" href="../en/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="ja" href="../ja/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh-cn/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="es" href="../es/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="th" href="../th/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="id" href="../id/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="ar" href="../ar/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="vi" href="../vi/twice-thisisfor-seoul.html">
+<link rel="alternate" hreflang="x-default" href="../twice-thisisfor-seoul.html">
 <style>
-:root{--ink:#1a1a18;--muted:#56554e;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5}
+/* W4TOKENS-v1 — 색 토큰 단일 레이어 (raw hex 사용 금지, R27 P0-4).
+   텍스트 토큰은 라이트·다크 양 모드에서 해당 soft/카드/배경 위 CR>=4.5 검증 완료(tools/cr_audit.py). */
+:root{--ink:#1a1a18;--muted:#56554e;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5;
+--accent-soft:#E6F1FB;--accent-line:#b9d2ef;--accent-bg:#185FA5;--on-accent:#fff;
+--ok:#0F6E56;--ok-soft:#E1F5EE;--warn:#A32D2D;--warn-soft:#FCEBEB;--purple:#6B3FA0;--purple-soft:#F0E9F9;
+--gold-soft:#fdf6ec;--gold-line:#f0e4cf;--surface-1:#fafaf7;--surface-2:#f7f6f1;
+--surface-acc:#f1f5fa;--surface-acc-line:#dbe6f2;--hoverline:#c9c7bd;--ehead-mid:#ffffff;--ta1:.08;--ta2:.16;
+--r-s:8px;--r-m:12px;--r-pill:999px}
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#B3B0A5;--line:#34322c;--bg:#16150f;--card:#211f18;--accent:#8FBCEE;
+--accent-soft:#1A2A3E;--accent-line:#2f4a6a;--accent-bg:#2E6CB2;--on-accent:#fff;
+--ok:#7BD4B2;--ok-soft:#173228;--warn:#FF8A8A;--warn-soft:#3a1f1d;--purple:#C9A8F0;--purple-soft:#2A1F3D;
+--gold-soft:#2a2410;--gold-line:#4a3f20;--surface-1:#262420;--surface-2:#2a2820;
+--surface-acc:#1A2A3E;--surface-acc-line:#2f4a6a;--hoverline:#4a4840;--ehead-mid:#211f18;--ta1:.26;--ta2:.42}
+img{filter:brightness(.88)}}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
 .top b{font-weight:600}.top span{margin-left:auto;color:var(--muted);font-size:13px}
 .top .logo{height:38px;width:auto;display:block}
-.badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
-h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+.badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:var(--r-s);font-weight:500}
+h1{font-size:22px;margin:14px 0 2px;font-weight:600;word-break:keep-all}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+@media(prefers-color-scheme:dark){.sub{color:#C3C0B5}}/*darkCR: 히어로 틴트(--ta) 합성 bg 위 --muted(#B3B0A5) CR 4.03~4.18<4.5 → 4.8+. base .sub 후행 배치(캐스케이드) (cr_audit subitem, 2026-06-12)*/
 /* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
    기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
 .subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
-.ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
+.ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:14px}
+.ecard:hover{border-color:var(--hoverline)}.ecard .a{font-weight:600;font-size:15px;word-break:keep-all}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
 .ecard>*{position:relative;z-index:1}
 /* 고스트 이니셜 워터마크 — 저불투명도, 콘텐츠 뒤(z=0), 인라인-끝 하단 */
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
-.ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:16px;min-height:64px}
+.ehead-detail{position:relative;overflow:hidden;border-radius:var(--r-m);padding:12px}
 .ehead-detail>:not(.ghost){position:relative;z-index:1}
 .ehead-detail>.ghost{position:absolute;z-index:0}
-.ghost-lg{font-size:46px;bottom:-12px;inset-inline-end:-4px;opacity:.13;letter-spacing:-1px;white-space:nowrap;max-width:78%;overflow:hidden;text-overflow:clip}
-.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.ghost-lg{font-size:96px;bottom:-22px;opacity:.09}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:16px;margin:14px 0}
 .outlook{background:var(--gold-soft);border:1px solid var(--gold-line)}
 .metric{font-size:22px;font-weight:600;color:var(--warn)}
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
-.btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:10px;font-size:14px}
+.btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid var(--line);border-radius:var(--r-m);font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
 /* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
 ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
 li{margin:5px 0;overflow-wrap:break-word}
 /* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
 body{overflow-wrap:break-word;word-break:normal}
-.news{display:flex;gap:8px;background:var(--accent-soft);border-radius:10px;padding:12px;align-items:center;margin-top:14px}
-.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid var(--accent-line);border-radius:8px;font-size:14px}
-.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent-bg);color:var(--on-accent);border-radius:8px;font-size:14px;cursor:pointer}.news-soon{background:var(--accent-soft);border-radius:10px;padding:12px;margin-top:14px;text-align:center;color:var(--accent);font-size:14px;font-weight:500}
+.news{display:flex;gap:8px;background:var(--accent-soft);border-radius:var(--r-m);padding:12px;align-items:center;margin-top:14px}
+.news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid var(--accent-line);border-radius:var(--r-s);font-size:14px}
+.news button{padding:9px 14px;min-height:44px;box-sizing:border-box;border:0;background:var(--accent-bg);color:var(--on-accent);border-radius:var(--r-s);font-size:14px;cursor:pointer}
+.news-soon{background:var(--accent-soft);border-radius:var(--r-m);padding:12px;margin-top:14px;text-align:center;color:var(--accent);font-size:14px;font-weight:500}
 .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
-.disc{font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:8px 0 0;line-height:1.5}
+.disc{font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-s);padding:9px 11px;margin:8px 0 0;line-height:1.5}
 .disc-aff{margin-top:8px}
 .gdisc{color:var(--muted);font-size:12px;margin:18px 0 0;padding-top:10px;border-top:1px dashed var(--line);line-height:1.5}
-.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:9px;font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
+.abadge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;width:auto;max-width:100%;height:34px;padding:0 9px;border-radius:var(--r-m);font-weight:700;font-size:13px;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;overflow:visible;box-sizing:border-box}
 .ecard .ehead{display:flex;align-items:center;gap:9px}
 .ehead-detail{display:flex;align-items:center;gap:11px;margin-top:10px}
-.ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.ehead-detail .abadge{min-width:46px;height:46px;font-size:16px;border-radius:var(--r-m)}
 .srcbox{background:var(--card)}.srcs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.srclink{font-size:13px;color:var(--accent);text-decoration:none;background:var(--surface-acc);border:1px solid var(--surface-acc-line);border-radius:7px;padding:6px 10px}
+.srclink{font-size:13px;color:var(--accent);text-decoration:none;background:var(--surface-acc);border:1px solid var(--surface-acc-line);border-radius:var(--r-s);padding:6px 10px}
 .srclink:hover{background:var(--accent-soft)}
-.postlink{display:inline-block;font-size:14px;font-weight:500;color:var(--on-accent);background:var(--accent-bg);text-decoration:none;border-radius:8px;padding:9px 14px}
+.postlink{display:inline-block;font-size:14px;font-weight:500;color:var(--on-accent);background:var(--accent-bg);text-decoration:none;border-radius:var(--r-s);padding:9px 14px}
 .postlink:hover{filter:brightness(.94)}
 .plink{display:inline-flex;align-items:center;gap:7px}.plink .plogo{flex:0 0 auto}
 .chchips{display:flex;flex-wrap:wrap;gap:8px}
-.chchip{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);text-decoration:none;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:7px 11px}
+.chchip{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);text-decoration:none;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-s);padding:7px 11px}
 .chchip:hover{border-color:var(--accent);color:var(--accent)}.chchip .plogo{flex:0 0 auto;color:var(--muted)}.chchip:hover .plogo{color:var(--accent)}
 .oshows{display:flex;flex-direction:column;gap:7px}
-.oshow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--surface-1);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px}
+.oshow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--surface-1);border:1px solid var(--line);border-radius:var(--r-m);padding:9px 12px;font-size:13.5px}
 .oshow:hover{border-color:var(--accent)}.oshow .osc{font-weight:500}.oshow .osd{color:var(--muted);margin-inline-start:auto}
 .oshow-next{background:var(--accent-soft);border-color:var(--accent-line)}.oshow .nextflag{font-weight:700;color:var(--accent);font-size:12px}
-.ytfacade{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px;background-color:var(--surface-2);background-size:cover;background-position:center;cursor:pointer;padding:0}
+.ytfacade{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:var(--r-m);background-color:var(--surface-2);background-size:cover;background-position:center;cursor:pointer;padding:0}
 .ytplay{position:absolute;inset:0;margin:auto;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.62);color:#fff;border-radius:50%;font-size:20px;padding-inline-start:3px}
 .ytfacade:hover .ytplay{background:var(--warn)}
-.ytframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
-.maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:var(--card);border:1px solid #cfcdc4;border-radius:8px;padding:7px 12px;margin-top:8px}
+.ytframe{width:100%;aspect-ratio:16/9;border:0;border-radius:var(--r-m)}
+.maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r-s);padding:7px 12px;margin-top:8px}
 .maplink:hover{border-color:var(--ink)}
 /* 현지 실용 정보 접힘 섹션 */
-.linfo{margin:14px 0}.linfo>summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:8px}
+.linfo{margin:14px 0}.linfo>summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);display:flex;align-items:center;gap:8px;min-height:44px;box-sizing:border-box}
 .linfo>summary::-webkit-details-marker{display:none}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
 .linfo[open]>summary::after{transform:rotate(180deg)}
-.linfo>summary:hover{border-color:#c9c7bd}
+.linfo>summary:hover{border-color:var(--hoverline)}
 .limore{margin-top:4px}.limore>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:var(--accent);padding:13px 0;min-height:44px;box-sizing:border-box;display:flex;align-items:center}
 .limore>summary::-webkit-details-marker{display:none}
 .limore>summary::after{content:" +";color:var(--muted)}.limore[open]>summary::after{content:" −"}
-.ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;padding:6px 16px 14px}
+.ligrid{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 var(--r-m) var(--r-m);padding:6px 16px 14px}
 .lirow{display:grid;grid-template-columns:108px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
 .lirow .lv{line-height:1.55;min-width:0}.lirow .lv a{color:var(--accent);text-decoration:none}.lirow .lv a:hover{text-decoration:underline}
@@ -136,26 +150,59 @@ body{overflow-wrap:break-word;word-break:normal}
 .hspot .hd{display:block;color:var(--muted);margin-top:2px;line-height:1.5}
 /* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
-.langbar{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-end;font-size:12px;margin:0 0 10px}
-.langbar .lng{display:inline-flex;align-items:center;min-height:36px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
-.langbar .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:var(--accent-soft)}@media(prefers-color-scheme:dark){.langbar .lng[aria-current="true"]{background:#1e2b3d}}
-.langbar .lng:hover{background:var(--surface-2)}
+/* 언어 선택 — langpick 드롭다운 (구 langbar 폐기, wave3 빌드 세대 통일) */
+.langpick{margin:0 0 10px;display:flex;justify-content:flex-end}
+.langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:44px;box-sizing:border-box;padding:6px 12px;border:1px solid var(--line);border-radius:var(--r-s);font-size:12px;font-weight:600;color:var(--muted);background:var(--card)}
+.langpick>summary::-webkit-details-marker{display:none}
+.langpick>summary::after{content:"▾";font-size:12px;color:var(--muted);transition:transform .2s cubic-bezier(0.16,1,0.3,1)}
+.langpick[open]>summary::after{transform:rotate(180deg)}
+.langpick>summary:hover{border-color:var(--hoverline)}
+.langpick>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.langpick .langmenu{display:none;position:absolute;right:16px;margin-top:6px;z-index:5;flex-direction:column;min-width:160px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.langpick[open] .langmenu{display:flex}
+.langpick .langmenu .lng{display:flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:var(--r-s);font-size:13px;color:var(--muted);text-decoration:none}
+.langpick .langmenu .lng[aria-current="true"]{color:var(--accent);font-weight:600;background:var(--accent-soft)}
+.langpick .langmenu .lng:hover{background:var(--surface-2)}
+.langpick .langmenu .lng:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+@media(prefers-color-scheme:dark){.langpick .langmenu{box-shadow:0 8px 24px rgba(0,0,0,.5)}}
 /* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
-.tabs>input{position:absolute;opacity:0;pointer-events:none}
-.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:9px;margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
-.tabs>label:hover{border-color:#c9c7bd}
+.tabs>input{position:absolute;opacity:0;pointer-events:none;width:44px;height:44px}
+.tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--line);border-radius:var(--r-m);margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
+.tabs>label:hover{border-color:var(--hoverline)}
 .tabs>.tabpanel{display:none}
 #tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:var(--on-accent);background:var(--accent-bg);border-color:var(--accent-bg)}
 #tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
-.dday{display:none;font-size:12px;font-weight:700;color:var(--on-accent);background:var(--accent-bg);border-radius:5px;padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
+.dday{display:none;font-size:12px;font-weight:700;color:var(--on-accent);background:var(--accent-bg);border-radius:var(--r-s);padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
+/* 투어 그룹 카드 (R27 P1-7④ 단일 아티스트 도배 봉쇄) — 메인 카드 + 잔여 도시 컴팩트 행 */
+.ecard-grp{display:flex;flex-direction:column}
+.ecard-grp>.ecard{flex:1 1 auto}
+.tourgrp{margin-top:6px}
+.tourgrp>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:var(--r-s);padding:8px 12px;min-height:36px;display:flex;align-items:center}
+.tourgrp>summary::-webkit-details-marker{display:none}
+.tourgrp>summary::after{content:"▾";margin-inline-start:auto;transition:transform .2s}
+.tourgrp[open]>summary::after{transform:rotate(180deg)}
+.tg-rows{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.tg-row{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);background:var(--surface-1);border:1px solid var(--line);border-radius:var(--r-s);padding:7px 11px;font-size:13px;min-height:44px;box-sizing:border-box}
+.tg-row:hover{border-color:var(--accent)}
+.tg-row .tg-d{color:var(--muted);margin-inline-start:auto}
 /* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
 :root{--ga:135deg}
 [dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
 [dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
-[dir="rtl"] .langbar{justify-content:flex-start}
-@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#B3B0A5;--line:#34322c;--bg:#16150f;--card:#211f18;--ehead-mid:#211f18;}img{filter:brightness(.88)}/* DARK-COMPAT-INJECT-v1 */
-/* 다크: 라이트 하드코딩 컴포넌트 정합 (제휴 고지·출처·경유지·공식채널) — 흰/크림 발광 제거 + 텍스트 대비 확보 */.disc{background:#1d1c15;border-color:var(--line);color:var(--muted)}.srcbox{background:var(--card)}.srclink{background:#16243a;border-color:#2a3d57;color:#9ec3f0}.oshow{background:#1d1c16;border-color:var(--line);color:var(--ink)}.oshow .osd{color:var(--muted)}.chchip{background:#1d1c16;border-color:var(--line);color:var(--ink)}/* +maplink-v2 */.maplink{background:#1d1c16;border-color:var(--line);color:var(--ink)}}/* SHARE-DIALER */.share-row{display:flex;justify-content:flex-end;margin:0 0 6px}.share-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--accent);background:var(--card);border:1px solid var(--line);border-radius:12px;cursor:pointer}.share-btn:hover{border-color:var(--accent)}.share-btn svg{flex:0 0 auto}.share-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;padding:10px 16px;border-radius:12px;z-index:50;transition:opacity .2s,transform .2s}.share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}/*W4TOKENS-v1*/:root{--accent-soft:#E6F1FB;--accent-line:#b9d2ef;--accent-bg:#185FA5;--on-accent:#fff;--ok:#0F6E56;--ok-soft:#E1F5EE;--warn:#A32D2D;--warn-soft:#FCEBEB;--purple:#6B3FA0;--purple-soft:#F0E9F9;--gold-soft:#fdf6ec;--gold-line:#f0e4cf;--surface-1:#fafaf7;--surface-2:#f7f6f1;--surface-acc:#f1f5fa;--surface-acc-line:#dbe6f2;--hoverline:#c9c7bd;--ehead-mid:#ffffff}@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#B3B0A5;--line:#34322c;--bg:#16150f;--card:#211f18;--accent:#8FBCEE;--accent-soft:#1A2A3E;--accent-line:#2f4a6a;--accent-bg:#2E6CB2;--on-accent:#fff;--ok:#7BD4B2;--ok-soft:#173228;--warn:#FF8A8A;--warn-soft:#3a1f1d;--purple:#C9A8F0;--purple-soft:#2A1F3D;--gold-soft:#2a2410;--gold-line:#4a3f20;--surface-1:#262420;--surface-2:#2a2820;--surface-acc:#1A2A3E;--surface-acc-line:#2f4a6a;--hoverline:#4a4840;--ehead-mid:#211f18;--urgent:#FF6B6B;--urgent-bg:#3a1f1d;--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}img{filter:brightness(.88)}}/*W5-v1*/:root{--rose:#E84A7F;--rose-cta:#C73364;--rose-deep:#B32E5C;--rose-badge:#C8295F;--rose-soft:#FCEAF1;--rose-hov:#F9DCE7;--rose-ink:#A32B5A;--rose-line:#F6CBDC;--ta1:.08;--ta2:.16}@media(prefers-color-scheme:dark){:root{--rose-soft:#2E1620;--rose-hov:#3A1622;--rose-ink:#F6B8CF;--rose-line:#4A2233;--ta1:.26;--ta2:.42}}/*W5COURSE*/.prep-name small{font-size:13px}.crs-tabs .crs-tabbar label{justify-content:flex-start}.crs-tabs .crs-tabbar label .crs-tag{margin-top:auto}.hero-finale{display:inline-flex;align-items:center;vertical-align:middle;border-radius:12px;min-height:54px;box-sizing:border-box}.hero-cd{border-radius:12px;vertical-align:middle;min-height:54px;box-sizing:border-box;align-items:center}@media(min-width:700px){.hero-finale,.hero-cd{margin:12px 10px 4px 0}}.hero-cd .hero-dd-num{align-self:baseline}.hero-cd .hero-dd-label,.hero-cd .hero-dd-unit{align-self:baseline}</style><script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
+[dir="rtl"] .langpick{justify-content:flex-start}
+[dir="rtl"] .langpick .langmenu{right:auto;left:16px}
+/* SHARE-DIALER — 공유 동선 (tools/share_dialer_sweep.py 포트 verbatim). logical property → RTL 자동 반전 */
+.share-row{display:flex;justify-content:flex-end;margin:0 0 6px}
+.share-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--accent);background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);cursor:pointer}
+.share-btn:hover{border-color:var(--accent)}
+.share-btn svg{flex:0 0 auto}
+.share-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;padding:10px 16px;border-radius:var(--r-m);z-index:50;transition:opacity .2s,transform .2s}
+.share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* W8R43H — 홈 터치 44px 게이트 마커 블록 (tools/locale_parity_gate.py w8-home-touch-css 계약,
+   라이브 dist verbatim). 위 개별 룰과 값 동일(중복 무해) + .hf-chip/.tabs>input 히트영역 보강 */
+/*W8R43H*/.linfo>summary,.langpick>summary,.tourgrp>summary,details summary{min-height:44px;box-sizing:border-box}.hf-chip{min-height:44px}.tg-row{min-height:44px;box-sizing:border-box}.tabs>input{width:44px;height:44px}
+</style><script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
   (function () {
       if (!window.location.protocol.startsWith('http') || !window.fetch) return;
       fetch('/tp-status.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (cfg) {
@@ -166,18 +213,17 @@ body{overflow-wrap:break-word;word-break:normal}
           document.head.appendChild(script);
       }).catch(function () {});
   })();
-</script>
-</head><body><div class="wrap">
-<div class="langbar"><a class="lng" href="../twice-thisisfor-seoul.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/twice-thisisfor-seoul.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/twice-thisisfor-seoul.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/twice-thisisfor-seoul.html" aria-current="true" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/twice-thisisfor-seoul.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/twice-thisisfor-seoul.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/twice-thisisfor-seoul.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/twice-thisisfor-seoul.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/twice-thisisfor-seoul.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/twice-thisisfor-seoul.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/twice-thisisfor-seoul.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div>
+</script></head><body><div class="wrap">
+<details class="langpick"><summary aria-label="Language — 简体中文">简体中文</summary><div class="langmenu"><a class="lng" href="../twice-thisisfor-seoul.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/twice-thisisfor-seoul.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/twice-thisisfor-seoul.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/twice-thisisfor-seoul.html" aria-current="true" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/twice-thisisfor-seoul.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/twice-thisisfor-seoul.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/twice-thisisfor-seoul.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/twice-thisisfor-seoul.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/twice-thisisfor-seoul.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/twice-thisisfor-seoul.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/twice-thisisfor-seoul.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div></details>
 <div class="share-row"><a class="back" style="margin-inline-end:auto;align-self:center" href="index.html">← 全部日程</a>
   <button type="button" class="share-btn" id="shareBtn" aria-label="分享此指南"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v13M8 7l4-4 4 4"/></svg>分享</button></div>
-<div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);background:linear-gradient(var(--ga,135deg),rgba(251,110,155,0.08) 0%,var(--ehead-mid,#ffffff) 42%,rgba(251,110,155,0.16) 100%);--stripe:#FB6E9B">
-  <span class="ghost ghost-lg" aria-hidden="true">TWICE</span>
+<div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);--tr:251,110,155;background:linear-gradient(var(--ga,135deg),rgba(var(--tr),var(--ta1,.08)) 0%,var(--ehead-mid,#ffffff) 42%,rgba(var(--tr),var(--ta2,.16)) 100%);--stripe:#FB6E9B">
+  <span class="ghost ghost-lg" aria-hidden="true">TW</span>
   <span class="abadge" style="background:#FB6E9B;color:#1a1a18" title="TWICE"><bdi>TW</bdi></span>
   <div><h1 style="margin:0"><bdi>TWICE</bdi> — <bdi>首尔</bdi></h1>
   <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>THIS IS FOR World Tour</bdi></span><span class="subitem"><bdi>KSPO体育馆(奥运体操竞技场)</bdi></span><span class="subitem">2026-07-10 <span class="dday" data-date="2026-07-10"></span></span><span class="subitem">🇰🇷 韩国 首尔</span></p></div>
 </div>
-<span class="badge" style="color:var(--ok);background:var(--ok-soft);margin-top:10px">超长期抢购 · 提前数月锁定</span>
+<span class="badge" style="color:var(--accent);background:var(--accent-soft);margin-top:10px">官宣黄金期 · 此时最优惠</span>
 
 <div class="box outlook">
   <div style="color:var(--muted);font-size:13px">价格·需求展望（发布后）</div>
@@ -187,7 +233,7 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <p class="disc">价格·库存预测为估计值，与实际情况可能不同。预订和支付责任由用户自行承担。</p>
 
-<div class="box srcbox">
+<div class="box srcbox" id="sec-sources">
   <div style="font-weight:600;font-size:14px">日程来源</div>
   <div class="srcs"><a class="srclink" href="https://www.soompi.com/article/1797016wpp" target="_blank" rel="noopener nofollow">Soompi 2026 K-Pop 巡演日程 ↗</a></div>
 </div>
@@ -204,40 +250,43 @@ body{overflow-wrap:break-word;word-break:normal}
 </div>
 <div class="box tkbox" style="padding:0">
   <div style="font-weight:600;font-size:14px;padding:14px 16px 4px">🎫 购票</div>
-  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">预计演出时间</div><div class="lv">19:00~20:00 (周五傍晚，预计)</div></div><div class="lirow"><div class="lk">预售</div><div class="lv">ONCE粉丝俱乐部早预售2026-06-09 20:00~23:59 KST</div></div><div class="lirow"><div class="lk">一般预售</div><div class="lv">2026-06-11 20:00 KST</div></div><div class="lirow"><div class="lk">购票渠道</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket(world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">价格范围</div><div class="lv">普通站票 154,000韩元(₩, 约¥685 / 约$110), 普通指定座位 154,000韩元(₩, 约¥685 / 约$110)</div></div></div>
+  <div class="ligrid" style="border:0;border-radius:0"><div class="lirow"><div class="lk">预计演出时间</div><div class="lv">19:00~20:00 (周五傍晚，预计)</div></div><div class="lirow"><div class="lk">预售</div><div class="lv">ONCE粉丝俱乐部早预售2026-06-09 20:00~23:59 KST</div></div><div class="lirow"><div class="lk">一般预售</div><div class="lv">2026-06-11 20:00 KST</div></div><div class="lirow"><div class="lk">购票渠道</div><div class="lv"><a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">NOL Ticket(world.nol.com) ↗</a></div></div><div class="lirow"><div class="lk">价格范围</div><div class="lv">普通站票 154000KRW, 普通指定座位 154000KRW</div></div></div>
 </div>
 <div class="box">
   <div style="font-weight:600;font-size:14px">演唱会场</div>
   <p style="margin:4px 0 0;font-size:14px"><bdi>KSPO体育馆(奥运体操竞技场)</bdi> · <bdi>首尔</bdi></p>
-  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=KSPO%E4%BD%93%E8%82%B2%E9%A6%86%20%E9%A6%96%E5%B0%94" target="_blank" rel="noopener">📍 在地图查看</a>
-  <div style="font-weight:600;font-size:14px;margin-top:14px">周边住宿建议</div><ul><li>蚕室·江东地区 + 地铁</li><li>城内/千户地区也方便到达</li></ul>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=KSPO+%EB%8F%94%28%EC%98%AC%EB%A6%BC%ED%94%BD%EC%B2%B4%EC%A1%B0%EA%B2%BD%EA%B8%B0%EC%9E%A5%29+Seoul" target="_blank" rel="noopener">📍 在地图查看</a>
+  <div style="font-weight:600;font-size:14px;margin-top:14px">周边住宿建议</div><ul><li>蚕室·江东地区 + 地铁</li><li>Seongdo/Cheonho地区也方便到达</li></ul>
   <div style="font-weight:600;font-size:14px;margin-top:12px">演唱会后的返程方案</div>
   <p style="margin:6px 0 0;font-size:14px">奥林匹克公园站(5、9号线)/蒙村土城站(8号线)。请查看末班车时间。</p>
 </div>
 
 <div class="box linfo-box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">🧭 当地实用信息</div>
-  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">首尔地铁(1-9号线、新盆唐线等) + 市内公交为主。广域一体化换乘体系。交通卡以T-money·Cashbee为标准,几乎兼容所有交通工具及便利店支付。</div></div></div>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">交通</div><div class="lv">首尔地铁(1-9号线、新分当线等) + 市内公交为主。广域一体化换乘体系。交通卡以T-money·Cashbee为标准,几乎兼容所有交通工具及便利店支付。</div></div></div>
   <details class="limore">
     <summary>查看更多</summary>
-    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">地铁末班车按路线约午夜~00:30左右(市中心→郊外方向更晚)。末班车后,夜间巴士N(夜猫巴士)运行主要干线。出租车·Kakao T呼叫覆盖范围广,夜间加价适用。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">信用卡/借记卡·快捷支付(Samsung Pay等)使用度很高。小额·路边摊部分接受现金。QR(Kakao Pay·Naver Pay)广泛使用。中国大陆支付宝(Alipay+)在韩国可广泛使用——明洞·市内商圈、便利店、首尔出租车·机场大巴等均可扫码,无需另行换汇。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">韩元(KRW, ₩)。刷卡支付为主,对单独换汇的依赖度低。机场·市内换汇所·ATM可用。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">韩语。旅游景点·大型场馆·交通标牌通常配有英文,日常英语使用度一般。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(出租车·代驾·移动出行呼叫)</span> · Naver 地图 <span style='color:var(--muted)'>(公共交通路线·实时导航)</span> · Kakao Pay <span style='color:var(--muted)'>(QR码·快捷支付)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(夜间出租车呼叫标准(市场占有率90%+,配对最快)。外国号码注册有限制。)</span> · Uber(优步) <span style='color:var(--muted)'>(出租车呼叫 — 可直接使用海外卡·号码,外国人友好)</span> · TADA <span style='color:var(--muted)'>(Carnival Van呼叫 — 可注册海外号码·卡片)</span> · i.M <span style='color:var(--muted)'>(大型厢式车高级出租车呼叫)</span> · K-RIDE <span style='color:var(--muted)'>(外国人专用出租车呼叫(无需KakaoTalk账户,首尔·仁川·首都圈))</span> · 猫头鹰巴士(N巴士) <span style='color:var(--muted)'>(末班车后夜间巴士 — 首尔市官方路线(N15·N16·N26等))</span> &nbsp;<a href="https://airalo.pxf.io/c/1209822/1310283/15608?sharedID=738149_&amp;subId1=bybias&amp;u=https%3A%2F%2Fwww.airalo.com%2Fsouth-korea-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">演出场地正门广场呼叫集中 — 走出1-2个街区再呼叫,配对更快;或地铁移动1站再呼叫,竞争分散</div></div><div class="lirow"><div class="lk">演出场地周边</div><div class="lv"><div class="hspot"><span class="hn">奥林匹克公园 和平之门</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%85%AC%E5%9B%AD%20%E5%92%8C%E5%B9%B3%E4%B9%8B%E9%97%A8" target="_blank" rel="noopener" aria-label="奥林匹克公园 和平之门 📍 在地图查看">📍</a><span class="hd">1988奥运会纪念雕塑与宽敞公园。散步和拍照的热门地点。</span></div><div class="hspot"><span class="hn">乐天世界商城</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B9%90%E5%A4%A9%E4%B8%96%E7%95%8C%E5%95%86%E5%9F%8E" target="_blank" rel="noopener" aria-label="乐天世界商城 📍 在地图查看">📍</a><span class="hd">大型购物综合体，汇聚Olive Young·免税店·K时尚·观景台。演出前后购物一站式。</span></div></div></div></div>
+    <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">深夜出行</div><div class="lv">地铁末班车按路线约午夜~00:30左右(市中心→郊外方向更晚)。末班车后,夜间巴士N(夜猫巴士)运行主要干线。出租车·Kakao T呼叫覆盖范围广,夜间加价适用。</div></div><div class="lirow"><div class="lk">支付</div><div class="lv">信用卡/借记卡·快捷支付(Samsung Pay等)使用度很高。小额·路边摊部分接受现金。QR(Kakao Pay·Naver Pay)广泛使用。</div></div><div class="lirow"><div class="lk">兑换·货币</div><div class="lv">韩元(KRW, ₩)。刷卡支付为主,对单独换汇的依赖度低。机场·市内换汇所·ATM可用。</div></div><div class="lirow"><div class="lk">语言</div><div class="lv">韩语。旅游景点·大型场馆·交通标牌通常配有英文,日常英语使用度一般。</div></div><div class="lirow"><div class="lk">本地应用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(出租车·代驾·移动出行呼叫)</span> · Naver 地图 <span style='color:var(--muted)'>(公共交通路线·实时导航)</span> · Kakao Pay <span style='color:var(--muted)'>(QR码·快捷支付)</span></div></div><div class="lirow"><div class="lk">深夜交通应用</div><div class="lv">Kakao T <span style='color:var(--muted)'>(夜间出租车呼叫标准(市场占有率90%+,配对最快)。外国号码注册有限制。)</span> · Uber(优步) <span style='color:var(--muted)'>(出租车呼叫 — 可直接使用海外卡·号码,外国人友好)</span> · TADA <span style='color:var(--muted)'>(Carnival Van呼叫 — 可注册海外号码·卡片)</span> · i.M <span style='color:var(--muted)'>(大型厢式车高级出租车呼叫)</span> · K-RIDE <span style='color:var(--muted)'>(外国人专用出租车呼叫(无需KakaoTalk账户,首尔·仁川·首都圈))</span> · 猫头鹰巴士(N巴士) <span style='color:var(--muted)'>(末班车后夜间巴士 — 首尔市官方路线(N15·N16·N26等))</span> &nbsp;<a href="https://airalo.pxf.io/c/1209822/1310283/15608?sharedID=738149_&amp;subId1=bybias&amp;u=https%3A%2F%2Fwww.airalo.com%2Fsouth-korea-esim" rel="sponsored nofollow" target="_blank" style="font-size:12px">📶 eSIM ↗</a></div></div><div class="lirow"><div class="lk">叫车贴士</div><div class="lv">演出场地正门广场呼叫集中 — 走出1-2个街区再呼叫,配对更快;或地铁移动1站再呼叫,竞争分散</div></div><div class="lirow"><div class="lk">演出场地周边</div><div class="lv"><div class="hspot"><span class="hn">奥林匹克公园 和平之门</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%98%AC%EB%A6%BC%ED%94%BD%EA%B3%B5%EC%9B%90+%ED%8F%89%ED%99%94%EC%9D%98+%EB%AC%B8+Olympic+Park+World+Peace+Gate" target="_blank" rel="noopener" aria-label="奥林匹克公园 和平之门 📍 在地图查看">📍</a><span class="hd">1988奥运会纪念雕塑与宽敞公园。散步和拍照的热门地点。</span></div><div class="hspot"><span class="hn">乐天世界商城</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0+Lotte+World+Mall" target="_blank" rel="noopener" aria-label="乐天世界商城 📍 在地图查看">📍</a><span class="hd">大型购物综合体，汇聚Olive Young·免税店·K时尚·观景台。演出前后购物一站式。</span></div></div></div></div>
   </details>
 </div>
 <div class="box linfo-box">
   <div style="font-weight:600;font-size:14px;margin-bottom:6px">🛡️ 安全</div>
-  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">紧急号码</div><div class="lv"><strong>警察 112</strong> · <strong>消防·急救 119</strong></div></div><div class="lirow"><div class="lk">旅行警报</div><div class="lv">国内 — 不属于单独旅行警报对象(平时)。</div></div><div class="lirow"><div class="lk">旅游警察</div><div class="lv">专门旅游警察 + 1330 旅游口译服务(24小时·多语言)。</div></div><div class="lirow"><div class="lk">附近警察局</div><div class="lv">演出场地附近警察分驻/派出所 — 地图搜索 &nbsp;<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B4%BE%E5%87%BA%E6%89%80%20%E8%AD%A6%E5%AF%9F%E5%B1%80%20KSPO%E4%BD%93%E8%82%B2%E9%A6%86%E9%99%84%E8%BF%91" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地图查看 ↗</a></div></div></div>
-  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全信息为一般参考指南；当地官方机构和大使馆指导始终优先。紧急号码和旅行警报可能变化，建议访问前重新确认。</p>
+  <div class="ligrid" style="border:0;padding:0"><div class="lirow"><div class="lk">紧急号码</div><div class="lv"><strong>警察 112</strong> · <strong>消防·急救 119</strong></div></div><div class="lirow"><div class="lk">旅行警告</div><div class="lv">国内 — 平时无特别旅行警告</div></div><div class="lirow"><div class="lk">旅游警察</div><div class="lv">专属旅游警察 + 1330旅游翻译服务(24小时·多语言)</div></div><div class="lirow"><div class="lk">附近警察局</div><div class="lv">演出场馆附近派出所 — 地图搜索 &nbsp;<a href="https://www.google.com/maps/search/%EA%B2%BD%EC%B0%B0%EC%84%9C%20%EC%84%9C%EC%9A%B8%20%EC%9E%A0%EC%8B%A4%20%EC%98%AC%EB%A6%BC%ED%94%BD%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5" target="_blank" rel="noopener nofollow" style="font-size:12px">📍 在地图查看 ↗</a></div></div></div>
+  <p style="font-size:12px;color:var(--muted);margin:6px 0 0">安全信息仅供参考，为一般性指南；当地官方机构及使馆指南始终优先。紧急号码·旅行警告可能变化，请于访问前重新确认。</p>
 </div>
 <p style="font-weight:600;font-size:14px;margin:16px 0 4px">立即预订</p>
 <div class="btns">
   <a class="btn" href="https://www.booking.com/searchresults.html?ss=Seoul" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Booking" data-aff-event="twice-thisisfor-seoul" data-aff-pos="0">🏨 酒店 <small>· Booking</small></a>
+  <a class="btn" href="https://www.trip.com/hotels/list?city=274&amp;display=Seoul&amp;optionId=274&amp;optionType=City&amp;optionName=Seoul&amp;Allianceid=8661388&amp;SID=319326505&amp;trip_sub1=twice_thisisfor_seoul_zh_cn_lock_hotel" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Trip.com" data-aff-event="twice-thisisfor-seoul" data-aff-pos="6">🏨 酒店 <small>· Trip.com</small></a>
   <a class="btn" href="https://www.skyscanner.com/flights/?destination=Seoul" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Skyscanner" data-aff-event="twice-thisisfor-seoul" data-aff-pos="1">✈️ 机票 <small>· Skyscanner</small></a>
+  <a class="btn" href="https://www.trip.com/flights/?Allianceid=8661388&amp;SID=319326505&amp;trip_sub1=twice_thisisfor_seoul_zh_cn_lock_flight" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Trip.com" data-aff-event="twice-thisisfor-seoul" data-aff-pos="7">✈️ 机票 <small>· Trip.com</small></a>
   <a class="btn" href="https://airalo.pxf.io/c/1209822/1310283/15608?sharedID=738149_&amp;subId1=bybias&amp;u=https%3A%2F%2Fwww.airalo.com%2Fsouth-korea-esim" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Airalo" data-aff-event="twice-thisisfor-seoul" data-aff-pos="2">📶 eSIM <small>· Airalo</small></a>
   <a class="btn" href="https://www.klook.com/search/?query=Seoul" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="Klook" data-aff-event="twice-thisisfor-seoul" data-aff-pos="3">🎟 套餐·门票 <small>· Klook</small></a>
+  
 </div>
 <p class="disc disc-aff">本页面的预订链接为联盟(佣金)链接。用户不产生额外费用。</p>
 
-<div class="news-soon">🔔 暂无价格·售罄提醒功能 — 余票·补票请直接在官方购票网站查询</div>
+<div class="news-soon">🔔 价格·售罄提醒功能即将推出</div>
 
 <div class="foot">各页面的预订链接为联盟(佣金)链接。价格·库存预测为估计值，与实际情况可能不同。预订和支付责任由用户自行承担。 · bybias.100m1s.com</div>
 
@@ -286,5 +335,17 @@ document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.targe
  f.setAttribute('allowfullscreen','');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
  f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(vid)+'?autoplay=1';
  b.parentNode.replaceChild(f,b);});
+}catch(e){}})();
+</script><script>
+(function(){try{
+// 어필리에이트 CTR 측정 — 단일 위임 리스너 1개(카드별 핸들러 금지). 네비게이션 비차단(beacon).
+// 엔드포인트는 PLACEHOLDER(서버리스 카운터 후행). 카운트 사용자 비노출. 클릭 흐름 무변경.
+var AFF_BEACON='';  // TODO: Cloudflare Workers/Supabase KV 엔드포인트(후행). 비면 no-op.
+document.addEventListener('click',function(ev){
+ var a=ev.target.closest&&ev.target.closest('[data-aff="1"]');
+ if(!a||!AFF_BEACON)return;
+ try{var p={surface:a.getAttribute('data-aff-surface')||'',vendor:a.getAttribute('data-aff-vendor')||'',event:a.getAttribute('data-aff-event')||'',pos:a.getAttribute('data-aff-pos')||''};
+  if(navigator.sendBeacon){navigator.sendBeacon(AFF_BEACON,new Blob([JSON.stringify(p)],{type:'application/json'}));}}catch(e){}
+});
 }catch(e){}})();
 </script><script>(function(){try{var btn=document.getElementById('shareBtn');if(!btn)return;var title=document.title;var url=location.href;function toast(msg){var t=document.createElement('div');t.className='share-toast';t.setAttribute('role','status');t.setAttribute('aria-live','polite');t.textContent=msg;document.body.appendChild(t);requestAnimationFrame(function(){t.classList.add('show');});setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove();},250);},1800);}btn.addEventListener('click',function(){if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){toast('链接已复制');}).catch(function(){toast('网址: '+url);});return;}toast('网址: '+url);});}catch(e){}})();</script></body></html>

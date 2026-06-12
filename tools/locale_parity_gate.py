@@ -193,14 +193,16 @@ CHECKS = [
         "page": COURSE,
         "pattern": r'href="[^"]*Allianceid=8661388[^"]*"[^>]*data-aff-surface="stay-ota" data-aff-vendor="Trip\.com"',
         "locales": RICH,
-        "gap_note": "코스 리치 페이지 ko·en만 존재 — 9 locale 구세대는 generate.py 포트로 재생성 시 자동 포함",
+        "gap_note": "stay-ota는 코스 리치 stays 섹션 전용(ko·en) — 경량 9 locale은 lock-now 표면만 보유"
+        " (generate.py 재생성으로 자동 포함되지 않음, 코스 다국어화 백로그)",
     },
     {
         "id": "tripcom-flights-locknow",  # lock-now Trip.com Flights prep-row 병렬 (Skyscanner 대체 금지)
         "page": COURSE,
         "pattern": r'data-aff-surface="lock-now" data-aff-vendor="Trip\.com"',
-        "locales": RICH,
-        "gap_note": "코스 리치 페이지 ko·en만 존재 — 9 locale 구세대는 generate.py 포트로 재생성 시 자동 포함",
+        # 9언어 재생성(feat/9lang-regen, generate.py d181e17c 포트)으로 lock-now 마커 11 locale 전수 확보
+        # — RICH→ALL 승격(회귀 봉쇄). stay-ota는 코스 리치 전용이라 RICH 유지.
+        "locales": ALL,
     },
 ]
 
