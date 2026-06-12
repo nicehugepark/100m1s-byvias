@@ -190,9 +190,10 @@ CHECKS = [
     },
     # ---- Trip.com 어필리에이트 (수익 마커 — 재생성 누락 = FAIL, tools/tripcom_affiliate_patch.py) ----
     {
-        "id": "tripcom-stay-ota",  # 숙소 ota-row Trip.com 버튼 + 실 Allianceid 부착
+        # R46-W2 F8: ota-row 3중 행 → 단일 CTA 1행 승계 (표면명 stay-ota → stay-cta-single, Allianceid 동일)
+        "id": "tripcom-stay-ota",
         "page": COURSE,
-        "pattern": r'href="[^"]*Allianceid=8661388[^"]*"[^>]*data-aff-surface="stay-ota" data-aff-vendor="Trip\.com"',
+        "pattern": r'href="[^"]*Allianceid=8661388[^"]*"[^>]*data-aff-surface="stay-cta-single" data-aff-vendor="Trip\.com"',
         "locales": RICH,
         "gap_note": "stay-ota는 코스 리치 stays 섹션 전용(ko·en) — 경량 9 locale은 lock-now 표면만 보유"
         " (generate.py 재생성으로 자동 포함되지 않음, 코스 다국어화 백로그)",
