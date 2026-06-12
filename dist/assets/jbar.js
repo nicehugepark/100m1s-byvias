@@ -314,5 +314,33 @@
     S.step = curStep();
     render();
     setYield(affEl());
+
+    /* ── 웨일 동적 툴바 가림 보정 (visualViewport) ──
+       웨일류는 하단 툴바 표시/숨김 시 layout viewport 하단(fixed bottom:0 기준면)을
+       즉시 추적하지 않음 → 스크롤 중 바가 툴바 뒤로 밀려 가림. 표준 추적 브라우저(크롬)는
+       (vv.offsetTop + vv.height) === documentElement.clientHeight → 보정값 0 = 무변화.
+       수식 단위 시뮬 (jsdom 불가 환경 — 정적 검증):
+         크롬:   offsetTop 0 + height 800 - clientHeight 800 =    0 → transform 해제 (무변화)
+         웨일:   offsetTop 0 + height 744 - clientHeight 800 =  -56 → translateY(-56px) 가시 하단 상승
+         키보드: innerHeight 800 - vv.height 420 = 380 > 150      → 보정 비적용 (바가 키보드 위로
+                 따라 올라오는 부작용 차단)
+       transform = 레이아웃 불변 — body.has-jbar padding·--bb-toast-b 기준면 무수정.
+       fav-filter 시트(z-45)는 독립 fixed 레이어 — jbar transform 영향 0.
+       visualViewport 부재 구형 = 블록 전체 무동작 (기존 동작 보존). */
+    if (window.visualViewport) {
+      var vv = window.visualViewport, vvTick = false;
+      var vvFix = function () {
+        vvTick = false;
+        if (innerHeight - vv.height > 150) { nav.style.transform = ''; return; } /* 가상 키보드 가드 */
+        var d = (vv.offsetTop + vv.height) - document.documentElement.clientHeight;
+        nav.style.transform = d ? 'translateY(' + d + 'px)' : '';
+      };
+      var vvQ = function () { /* rAF 스로틀 — 기존 onScroll 패턴 동형 */
+        if (!vvTick) { vvTick = true; requestAnimationFrame(vvFix); }
+      };
+      vv.addEventListener('resize', vvQ);
+      vv.addEventListener('scroll', vvQ);
+      vvFix();
+    }
   } catch (e) { /* 바 실패 = 페이지 본문 무영향 (콘솔 0) */ }
 })();
