@@ -161,9 +161,13 @@
       '#jbar.mini .mininfo{display:block}' +
       '#jbar.mini .cta{opacity:0;width:0;padding:0;overflow:hidden;pointer-events:none}' +
       '#jbar.mini{cursor:pointer}' +
-      '#jbar.mini::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px}' +
-      'body.has-jbar{padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}' +
-      'body.has-jbar .share-toast{bottom:calc(44px + env(safe-area-inset-bottom,0px) + 8px)}';
+      /* P1-4(iii): 미니 탭 타깃 — 시각 28px 유지, ::before 상향 16px 확장 = 히트 28+16=44px (HIG 하한) */
+      '#jbar.mini::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}' +
+      /* P1-4(i): 바 총높이 = row 44 + border-top 1 = 45px — padding 44가 본문 1px 점유하던 결함 해소 */
+      'body.has-jbar{padding-bottom:calc(45px + env(safe-area-inset-bottom,0px))}' +
+      /* P1-4(ii): toast 바닥 = 활성 바닥 표면 동적 참조 — 기본 jbar 45px, affbar 표시 중엔
+         P1-1 setYield가 --bb-toast-b=(affbar 실측 높이+8)px 설정 (50px affbar 위 2px 붕괴 해소) */
+      'body.has-jbar .share-toast{bottom:var(--bb-toast-b,calc(45px + env(safe-area-inset-bottom,0px) + 8px))}';
     var st = document.createElement('style');
     st.id = 'jbar-css';
     st.textContent = css;
