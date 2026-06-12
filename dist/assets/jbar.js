@@ -29,11 +29,11 @@
       ko: { nav: '현재 단계', dots: '여정 5단계',
         steps: ['인지', '티켓', '항공', '숙소', '현지'],
         ariaD: '공연까지 {n}일', ariaDHome: '다음 공연까지 {n}일', ariaLive: '오늘 공연',
-        cta: { ticket: '티켓 잡기', flight: '항공 보기', stay: '숙소 보기', local: '현지 보기', course: '코스 보기', book: '예매 보기', localInfo: '현지 정보', next: '임박 공연', liveGuide: '현지 가이드' } },
+        cta: { ticket: '티켓 잡기', flight: '항공 보기', stay: '숙소 보기', local: '현지 보기', course: '코스 보기', book: '예매 보기', localInfo: '현지 정보', next: '임박 공연', today: '오늘 공연', liveGuide: '현지 가이드' } },
       en: { nav: 'Current stage', dots: 'Journey: 5 steps',
         steps: ['Discover', 'Tickets', 'Flights', 'Stay', 'Local'],
         ariaD: '{n} days to the show', ariaDHome: '{n} days to the next show', ariaLive: 'Show day',
-        cta: { ticket: 'Get tickets', flight: 'See flights', stay: 'See stays', local: 'Local guide', course: 'See course', book: 'Book now', localInfo: 'Local info', next: 'Next show', liveGuide: 'Local guide' } },
+        cta: { ticket: 'Get tickets', flight: 'See flights', stay: 'See stays', local: 'Local guide', course: 'See course', book: 'Book now', localInfo: 'Local info', next: 'Next show', today: "Today's show", liveGuide: 'Local guide' } },
       ja: { nav: '旅程の進行', dots: '旅程5ステップ',
         steps: ['発見', 'チケット', '航空券', '宿泊', '現地'],
         ariaD: '公演まで{n}日', ariaDHome: '次の公演まで{n}日', ariaLive: '本日公演',
@@ -72,6 +72,9 @@
         cta: { ticket: 'Săn vé', flight: 'Xem vé bay', stay: 'Xem chỗ ở', local: 'Tại chỗ', course: 'Xem lịch trình', book: 'Đặt ngay', localInfo: 'Tại chỗ', next: 'Show sắp tới', liveGuide: 'Tại chỗ' } }
     };
     var L = L10N[LANG] || L10N.ko;
+    /* R2 W4 노트: P0-2 nav('현재 단계' 계열)·P1-2 cta.today('오늘 공연' 계열)는 ko/en만
+       직접 반영 — 나머지 9 locale 문자열은 i18n 캐시 경유 W4 재생성 대상.
+       today 부재 locale은 ctaFor()에서 cta.next 폴백 (undefined 라벨 봉쇄). */
 
     /* ── 페이지 유형별 여정 구성 (zones 문서 순서 · cta = 현 단계의 다음 행동) ── */
     var TYPES = {
@@ -85,7 +88,7 @@
         zones: [[2, '.btns'], [5, '.linfo-box']],
         cta: { 1: ['book', '.btns'], 2: ['localInfo', '.linfo-box'], 5: ['book', '.btns'], live: ['localInfo', '.linfo-box'] }
       },
-      home: { date: null, zones: [], cta: { 1: ['next', null], live: ['next', null] } }
+      home: { date: null, zones: [], cta: { 1: ['next', null], live: ['today', null] } } /* P1-2: 당일 CTA '오늘 공연' */
     };
     var T = TYPES[TYPE];
     if (!T) return;
@@ -206,15 +209,17 @@
     function ctaFor() {
       var cc = (dnum === 0 && T.cta.live) ? T.cta.live : (T.cta[S.step] || T.cta[1]);
       if (!cc) return null;
-      if (TYPE === 'home') return homeHref ? { label: L.cta[cc[0]], href: homeHref, el: null } : null;
+      var lbl = L.cta[cc[0]] || L.cta.next; /* P1-2: today 미보유 locale 폴백 (W4 재생성 전) */
+      if (TYPE === 'home') return homeHref ? { label: lbl, href: homeHref, el: null } : null;
       var tel = document.querySelector(cc[1]);
-      if (!tel && T.cta[1]) { cc = T.cta[1]; tel = document.querySelector(cc[1]); }
-      return tel ? { label: L.cta[cc[0]], href: '#', el: tel } : null;
+      if (!tel && T.cta[1]) { cc = T.cta[1]; tel = document.querySelector(cc[1]); lbl = L.cta[cc[0]] || L.cta.next; }
+      return tel ? { label: lbl, href: '#', el: tel } : null;
     }
     function render() {
       var live = dnum === 0, imm = dnum <= 7; /* 빨강 = 임박 전유 JS 게이트 */
       elD.className = 'dnum' + (imm ? ' imm' : '');
-      elD.innerHTML = live ? '<span class="pulse"></span>LIVE' : 'D-' + dnum;
+      /* P1-2: 당일 어휘 = D-DAY 단일 통일 — 홈 카드 dlabel()·.dday 렌더와 정합 (LIVE 이중 어휘 폐기) */
+      elD.innerHTML = live ? '<span class="pulse"></span>D-DAY' : 'D-' + dnum;
       elD.setAttribute('aria-label', live ? L.ariaLive :
         (TYPE === 'home' ? L.ariaDHome : L.ariaD).replace('{n}', dnum));
       if (HAS_STAGE) { /* 제거-1: 홈 = stage DOM 자체가 없음 */
