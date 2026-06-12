@@ -26,11 +26,11 @@
 
     /* ── 로케일 문자열 (11언어) ───────────────────────────── */
     var L10N = {
-      ko: { nav: '여정 진행', dots: '여정 5단계',
+      ko: { nav: '현재 단계', dots: '여정 5단계',
         steps: ['인지', '티켓', '항공', '숙소', '현지'],
         ariaD: '공연까지 {n}일', ariaDHome: '다음 공연까지 {n}일', ariaLive: '오늘 공연',
         cta: { ticket: '티켓 잡기', flight: '항공 보기', stay: '숙소 보기', local: '현지 보기', course: '코스 보기', book: '예매 보기', localInfo: '현지 정보', next: '임박 공연', liveGuide: '현지 가이드' } },
-      en: { nav: 'Journey progress', dots: 'Journey: 5 steps',
+      en: { nav: 'Current stage', dots: 'Journey: 5 steps',
         steps: ['Discover', 'Tickets', 'Flights', 'Stay', 'Local'],
         ariaD: '{n} days to the show', ariaDHome: '{n} days to the next show', ariaLive: 'Show day',
         cta: { ticket: 'Get tickets', flight: 'See flights', stay: 'See stays', local: 'Local guide', course: 'See course', book: 'Book now', localInfo: 'Local info', next: 'Next show', liveGuide: 'Local guide' } },
@@ -135,7 +135,6 @@
       '#jbar .dots li{position:relative;width:6px;height:6px;border-radius:50%;background:#b9b7ac;background:color-mix(in srgb,var(--muted) 40%,transparent);transition:all .18s ease-out}' +
       '#jbar .dots li+li{margin-inline-start:10px}' +
       '#jbar .dots li+li::before{content:"";position:absolute;inset-inline-end:100%;top:50%;width:10px;height:1.5px;margin-top:-.75px;background:var(--line)}' +
-      '#jbar .dots li.done{background:var(--muted)}' +
       '#jbar .dots li.cur{width:8px;height:8px;background:#E84A7F;box-shadow:0 0 0 3px rgba(232,74,127,.26);box-shadow:0 0 0 3px color-mix(in srgb,#E84A7F 26%,transparent)}' +
       '#jbar .lit{display:flex;align-items:center;gap:4px;margin-inline-start:8px;font-size:12px;font-weight:700;white-space:nowrap;animation:jbin .25s ease-out;color:var(--ink)}' +
       '#jbar .lit .n{color:var(--muted);font-weight:600;font-size:11px}' +
@@ -195,7 +194,7 @@
       return s;
     }
 
-    /* ── 렌더 (시안 render() 동작 verbatim — 빨강 d<=7 전유 게이트 포함) ── */
+    /* ── 렌더 (시안 render() 기반 + R2 fix — 빨강 d<=7 전유 게이트 포함) ── */
     var elD = document.getElementById('jbDnum'), elDots = document.getElementById('jbDots'),
       elLit = document.getElementById('jbLit'), elMini = document.getElementById('jbMini'),
       elCta = document.getElementById('jbCta');
@@ -216,7 +215,10 @@
         (TYPE === 'home' ? L.ariaDHome : L.ariaD).replace('{n}', dnum));
       var h = '';
       for (var i = 1; i <= 5; i++) {
-        var c = i < S.step ? 'done' : i === S.step ? 'cur' : '';
+        /* P0-2: 현 단계 단일 점등 — done 누적 폐기. zones는 문서 순서(리치 3→5→4→2)로
+           단계 번호와 독립이라 누적 표시가 역행(점등 후퇴) 시각을 만들었음. 스테이지
+           라이트 본질 = 지금 서 있는 무대만 켠다. */
+        var c = i === S.step ? 'cur' : '';
         h += '<li class="' + c + '"' + (i === S.step ? ' aria-current="step"' : '') + ' title="' + L.steps[i - 1] + '"></li>';
       }
       elDots.innerHTML = h;
