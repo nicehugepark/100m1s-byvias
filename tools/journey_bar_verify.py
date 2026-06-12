@@ -11,6 +11,13 @@
         (-) 과거 공연(아카이브) = 바 무렌더 negative + affbar 공존 (z40 < z60)
 
 주의: 사이트 언어 라우터가 브라우저 locale 로 자동 redirect — 컨텍스트 locale 을 페이지 언어로 고정.
+
+R2 캡처 절차 (P0-1 — 증거 자기모순 재발 차단):
+  1) 모든 스크롤 후 settle() = scroll → rAF 2프레임 대기 → 측정/캡처 (직후 캡처 race 봉쇄)
+  2) 미니 캡처 = zone 앵커 scrollIntoView — 고정 y=700 캡처는 섹션이 프레임에 보이면서
+     top이 40% 점등 기준선(vh*0.4) 미달인 "본문 단계3 / 바 1/5" 자기모순 프레임을 만들었음
+  3) 이벤트 = affbar yield(P1-1) 실측 후 해제하고 jbar 단독 상태에서 미니/탭 실측
+  4) 데스크탑(1280px) rich light/dark 2장 추가 (.wrap 960 변형)
 실행: python3 tools/journey_bar_verify.py   (종료 0=ALL PASS)
 """
 
@@ -46,8 +53,8 @@ BAR_METRICS = """()=>{const b=document.getElementById('jbar');if(!b)return null;
   z:getComputedStyle(b).zIndex,mini:b.classList.contains('mini'),
   dnum:d.textContent,dColor:getComputedStyle(d).color,
   pulse:!!d.querySelector('.pulse'),
-  lit:document.getElementById('jbLit').textContent.replace(/\\s+/g,' ').trim(),
-  miniTxt:document.getElementById('jbMini').textContent.replace(/\\s+/g,' ').trim(),
+  lit:(function(e){return e?e.textContent.replace(/\\s+/g,' ').trim():''})(document.getElementById('jbLit')),
+  miniTxt:(function(e){return e?e.textContent.replace(/\\s+/g,' ').trim():''})(document.getElementById('jbMini')),
   cta:document.getElementById('jbCta').textContent,
   dir:getComputedStyle(b).direction,
   bodyPad:getComputedStyle(document.body).paddingBottom,
@@ -86,6 +93,12 @@ def dismiss_affbar(pg):
     if x:
         x.click()
         pg.wait_for_timeout(300)
+
+
+def settle(pg, ms=120):
+    """P0-1 캡처 절차: scroll → rAF 1프레임+ 대기 → 측정/캡처 (스크롤 직후 캡처 race 봉쇄)."""
+    pg.evaluate("()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r())))")
+    pg.wait_for_timeout(ms)
 
 
 def main():
@@ -129,11 +142,19 @@ def main():
                         m["bodyPad"],
                     )
                     if mode == "light":
-                        gate(
-                            f"f/{name}/ko-lit",
-                            "인지" in m["lit"] and "1/5" in m["lit"],
-                            f"lit='{m['lit']}'",
-                        )
+                        if name == "home":
+                            # 제거-1: 홈 = 점·점등 라벨 무렌더 (D-num + CTA만)
+                            nostage = pg.evaluate(
+                                "()=>!document.querySelector('#jbar .stage')"
+                                "&&!document.querySelector('#jbar .mininfo')"
+                            )
+                            gate("f/home/no-stage", nostage, "홈 stage/mininfo DOM 0건")
+                        else:
+                            gate(
+                                f"f/{name}/ko-lit",
+                                "인지" in m["lit"] and "1/5" in m["lit"],
+                                f"lit='{m['lit']}'",
+                            )
 
                     # (i) 빨강 게이트
                     if name in ("rich", "event"):  # D-28 / D-160 = D-8+
@@ -142,10 +163,10 @@ def main():
                             m["dColor"] not in IMM,
                             f"{m['dnum']} {m['dColor']}",
                         )
-                    if name == "home":  # 최근접 = 2026-06-12 = D-0 LIVE
+                    if name == "home":  # 최근접 = 2026-06-12 = D-0 (P1-2: 당일 어휘 D-DAY 통일)
                         gate(
                             f"i/home/{mode}/live-red",
-                            m["dnum"] == "LIVE" and m["dColor"] in IMM and m["pulse"],
+                            m["dnum"] == "D-DAY" and m["dColor"] in IMM and m["pulse"],
                             f"{m['dnum']} {m['dColor']} pulse={m['pulse']}",
                         )
                         href = pg.evaluate(
@@ -157,9 +178,38 @@ def main():
                             href,
                         )
 
-                    # (b) 축소: 스크롤 다운 → 28px 미니 + 캡처 / affbar 해제 후 탭 확장
-                    pg.evaluate("()=>scrollTo(0,700)")
-                    pg.wait_for_timeout(400)
+                    # (b) 축소: 스크롤 다운 → 28px 미니 + 캡처
+                    # P1-1: 이벤트 = affbar yield 실측(표시 중 jbar visibility hidden +
+                    # 연산 중지) 후 해제 — 미니/탭 실측은 jbar 단독 상태에서.
+                    if name == "event":
+                        pg.evaluate(
+                            "()=>scrollTo(0,Math.round((document.documentElement"
+                            ".scrollHeight-innerHeight)*0.25))"
+                        )
+                        settle(pg, 300)
+                        yld = pg.evaluate(
+                            """()=>{const a=document.querySelector('.affbar.show');
+                            const b=document.getElementById('jbar');
+                            return {aff:!!a, vis:b?getComputedStyle(b).visibility:null};}"""
+                        )
+                        gate(
+                            f"-/event/{mode}/affbar-yield",
+                            (not yld["aff"]) or yld["vis"] == "hidden",
+                            f"{yld}",
+                        )
+                        dismiss_affbar(pg)
+                        pg.evaluate("()=>scrollTo(0,0)")
+                        settle(pg, 200)
+                    # P0-1: 미니 캡처 = zone 앵커 스크롤 — 고정 y=700은 섹션이 프레임에
+                    # 보이면서 top이 40% 점등선 미달인 자기모순 프레임 생성 (구 rich-light-mini)
+                    anchor = {"rich": ".steps5", "event": ".btns"}.get(name)
+                    if anchor:
+                        pg.evaluate(
+                            f"()=>document.querySelector('{anchor}').scrollIntoView()"
+                        )
+                    else:
+                        pg.evaluate("()=>scrollTo(0,700)")
+                    settle(pg, 300)
                     m2 = pg.evaluate(BAR_METRICS)
                     gate(
                         f"b/{name}/{mode}/mini-28px",
@@ -167,9 +217,6 @@ def main():
                         f"rowH={m2 and m2['rowH']} miniTxt={m2 and m2['miniTxt']}",
                     )
                     pg.screenshot(path=str(OUT / f"{name}-{mode}-mini.png"))
-                    dismiss_affbar(
-                        pg
-                    )  # 이벤트: affbar(z60) 하단 점유 시 실탭 차단 — 해제 후 측정
                     # 늦은 레이아웃 시프트가 scroll 재발화 → 탭 직후 재축소 가능 — settle 후 탭
                     pg.wait_for_function(
                         "()=>new Promise(r=>{const y=scrollY;"
@@ -206,7 +253,7 @@ def main():
                             pg.evaluate(
                                 f"()=>document.querySelector('{sel}').scrollIntoView()"
                             )
-                            pg.wait_for_timeout(350)
+                            settle(pg, 250)
                             got = pg.evaluate(BAR_METRICS)
                             txt = (
                                 (got["miniTxt"] if got["mini"] else got["lit"])
@@ -219,7 +266,7 @@ def main():
                                 f"got='{txt}'",
                             )
                         pg.evaluate("()=>scrollTo(0,0)")
-                        pg.wait_for_timeout(400)
+                        settle(pg, 300)
                         got = pg.evaluate(BAR_METRICS)
                         gate(
                             f"b/rich/{mode}/stage@top",
@@ -229,7 +276,7 @@ def main():
 
                     # (c) toast 겹침: 공유 실탭 → toast bottom vs 바 top
                     pg.evaluate("()=>scrollTo(0,0)")
-                    pg.wait_for_timeout(400)
+                    settle(pg, 300)
                     share = pg.query_selector("#shareBtn")
                     if share:
                         share.click()
@@ -254,7 +301,7 @@ def main():
 
                     # (d) 푸터 가림 0
                     pg.evaluate("()=>scrollTo(0,document.documentElement.scrollHeight)")
-                    pg.wait_for_timeout(500)
+                    settle(pg, 400)
                     f = pg.evaluate("""()=>{const cand=[...document.querySelectorAll('.disc-hub,.foot,footer')].pop();
                         if(!cand)return null;
                         const jb=document.getElementById('jbar');
@@ -314,6 +361,29 @@ def main():
                     )
                 gate(f"h/{tag}/console-0", not errors, "; ".join(errors[:2]))
                 pg.screenshot(path=str(OUT / f"locale-{tag}.png"))
+                pg.close()
+                ctx.close()
+
+            # R2: 데스크탑(>=760px) 캡처 — rich .wrap 960 변형 포함, light/dark
+            for mode in ("light", "dark"):
+                ctx = browser.new_context(
+                    viewport={"width": 1280, "height": 900},
+                    color_scheme=mode,
+                    locale="ko-KR",
+                )
+                pg = ctx.new_page()
+                errors = watch(pg)
+                pg.goto(f"{BASE}/twice-thisisfor-seoul.html", wait_until="load")
+                pg.wait_for_timeout(600)
+                settle(pg, 200)
+                md = pg.evaluate(BAR_METRICS)
+                gate(
+                    f"a/rich-desktop/{mode}/bar-render",
+                    bool(md) and md["rowH"] == 44,
+                    f"{md and md['dnum']} rowH={md and md['rowH']}",
+                )
+                gate(f"h/rich-desktop/{mode}/console-0", not errors, "; ".join(errors[:2]))
+                pg.screenshot(path=str(OUT / f"rich-desktop-{mode}.png"))
                 pg.close()
                 ctx.close()
             browser.close()
