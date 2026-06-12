@@ -74,9 +74,10 @@ CHECKS = [
         "gap_note": "코스 리치 페이지 ko·en만 존재",
     },
     {
-        "id": "w8-disc-merged",  # ⑥ 면책 1건 통합
+        # ⑥ 면책 1건 통합 — R46-W1: w8-disc 가 disc-hub(단일 고지 컴포넌트)로 흡수 승계
+        "id": "w8-disc-merged",
         "page": COURSE,
-        "pattern": r'data-w8-disc="1"',
+        "pattern": r'class="disc-hub" id="notice" data-r46w1="1"',
         "locales": RICH,
         "gap_note": "코스 리치 페이지 ko·en만 존재",
     },
