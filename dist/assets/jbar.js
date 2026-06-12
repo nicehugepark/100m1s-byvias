@@ -136,6 +136,16 @@
     /* ── CSS (시안 B 기반 + 실측 적응 — 헤더 '실측 5건' 선언 참조 · #jbar 스코프 · 논리 속성 · 토큰 페어 미러링) ── */
     var css = '' +
       '#jbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -1px 10px rgba(0,0,0,.05);padding-bottom:env(safe-area-inset-bottom,0px);--jb-imm:#C62828}' +
+      /* R2 웨일 동적 툴바 가림 보정 — CSS dvh 주 해법 (R1 JS transform은 dvh 미지원 폴백으로 강등).
+         웨일류: fixed 앵커가 layout viewport(큰 쪽) 고정인데 JS 측정치(clientHeight)는 vv와
+         동조 감소 → JS로는 차이 측정 불가(R1 무효 확정). dvh/lvh는 CSS 엔진 내부 진실값이라
+         측정치 거짓말과 무관. 분기 시뮬:
+           툴바 숨김·데스크톱:        dvh=lvh        → bottom:0   (무변화)
+           웨일 추정(하단 툴바 표시): dvh<lvh        → bottom:+툴바높이 → 바 가시 하단으로 상승
+           모바일 크롬(URL바 표시):   dvh<lvh인데 네이티브 추적도 작동 → 부유 갭 → 하단 JS 갭 가드가
+                                      실측(rect.bottom vs vv 하단) 후 bottom:0 중화
+           dvh 미지원 구형:           @supports 블록 미적용 → JS 폴백(R1 transform) 경로 */
+      '@supports (height:1dvh){#jbar{bottom:calc(100lvh - 100dvh)}}' +
       '@media(prefers-color-scheme:dark){#jbar{--jb-imm:#FF6B6B}}' +
       '#jbar .row{max-width:760px;margin:0 auto;height:44px;display:flex;align-items:center;gap:9px;padding:0 12px;transition:height .18s ease-out}' +
       '#jbar .dnum{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.2px;white-space:nowrap;display:flex;align-items:center;gap:5px;transition:font-size .18s ease-out;color:var(--ink);direction:ltr}' +
@@ -315,32 +325,90 @@
     render();
     setYield(affEl());
 
-    /* ── 웨일 동적 툴바 가림 보정 (visualViewport) ──
-       웨일류는 하단 툴바 표시/숨김 시 layout viewport 하단(fixed bottom:0 기준면)을
-       즉시 추적하지 않음 → 스크롤 중 바가 툴바 뒤로 밀려 가림. 표준 추적 브라우저(크롬)는
-       (vv.offsetTop + vv.height) === documentElement.clientHeight → 보정값 0 = 무변화.
-       수식 단위 시뮬 (jsdom 불가 환경 — 정적 검증):
-         크롬:   offsetTop 0 + height 800 - clientHeight 800 =    0 → transform 해제 (무변화)
-         웨일:   offsetTop 0 + height 744 - clientHeight 800 =  -56 → translateY(-56px) 가시 하단 상승
-         키보드: innerHeight 800 - vv.height 420 = 380 > 150      → 보정 비적용 (바가 키보드 위로
-                 따라 올라오는 부작용 차단)
-       transform = 레이아웃 불변 — body.has-jbar padding·--bb-toast-b 기준면 무수정.
-       fav-filter 시트(z-45)는 독립 fixed 레이어 — jbar transform 영향 0.
-       visualViewport 부재 구형 = 블록 전체 무동작 (기존 동작 보존). */
+    /* ── 웨일 동적 툴바 가림 보정 R2 (CSS dvh 주 해법 — 상단 css 문자열 @supports 블록) ──
+       R1(JS visualViewport transform) 실기기 무효 확정 — 웨일에서 clientHeight가 vv와
+       동조 감소해 보정값 0인데 fixed 앵커는 layout viewport(큰 쪽) 고정 → JS 측정으로는
+       차이 자체가 안 보임. 주 해법을 CSS dvh로 전환 (엔진 내부 진실값 — JS 측정치 무관).
+
+       이중 보정 차단 증명 (벡터 0):
+         DVH_OK = CSS.supports('height','1dvh') — @supports (height:1dvh)와 동일 엔진 판정.
+         · DVH_OK=true  → CSS calc 활성 + JS transform 분기 진입 자체 차단 (아래 if/else 상호배타)
+         · DVH_OK=false → @supports 블록 CSS 미적용 + JS R1 폴백만 동작
+         (dvh 지원 엔진(2022+)은 전부 CSS.supports 보유 — "JS API 부재 + @supports dvh 지원"
+          조합은 존재 불가 → 두 경로 동시 활성 불가능.)
+
+       DVH_OK 경로의 갭 가드 (네이티브 추적 브라우저 부유 중화 — 보정 추가 아님, 축소 단방향):
+         모바일 크롬류는 fixed 앵커가 툴바를 네이티브 추적 + dvh도 동조 → CSS calc와 이중
+         상승 = 바가 가시 하단 위로 부유. 실측 rect.bottom < (vv.offsetTop+vv.height)−1 이면
+         inline bottom:0 으로 CSS calc 중화. 반대 방향(잔존 가림) 추가 보정은 하지 않음 —
+         R1에서 vv 측정치 거짓말 확인된 만큼 측정 기반 상향 보정은 재도입 금지.
+       분기 시뮬 (jsdom 불가 — 정적 검증, lv=800/dv=744/툴바 56 가정):
+         데스크톱·툴바 숨김: calc=0, rect.bottom=744=vv하단 → gap 0 → 무동작
+         웨일(앵커 800 고정): calc=56 → rect.bottom=800−56=744 = vv하단 744 → gap 0 → CSS 유지(가림 해소)
+         모바일 크롬(앵커 744 추적): calc=56 → rect.bottom=744−56=688 < 744 → gap +56 → bottom:0 중화
+         키보드(innerH−vv.h>150): 상태 변경 없이 return (R1 가드 계승)
+         dvh 미지원: else 분기 = R1 transform 폴백 원형 그대로 (크롬0/웨일−56/키보드 가드)
+       toast 기준면(--bb-toast-b)·body padding 무수정. fav-filter 독립 fixed 레이어 — 영향 0. */
+    var DVH_OK = !!(window.CSS && CSS.supports && CSS.supports('height', '1dvh'));
     if (window.visualViewport) {
-      var vv = window.visualViewport, vvTick = false;
-      var vvFix = function () {
-        vvTick = false;
-        if (innerHeight - vv.height > 150) { nav.style.transform = ''; return; } /* 가상 키보드 가드 */
-        var d = (vv.offsetTop + vv.height) - document.documentElement.clientHeight;
-        nav.style.transform = d ? 'translateY(' + d + 'px)' : '';
-      };
+      var vv = window.visualViewport, vvTick = false, vvFix;
+      if (DVH_OK) {
+        vvFix = function () { /* 갭 가드 — CSS calc 부유 시에만 중화 */
+          vvTick = false;
+          if (innerHeight - vv.height > 150) return; /* 가상 키보드 가드 */
+          nav.style.bottom = ''; /* CSS calc 기준 실측 (rAF 내 — 중간 페인트 없음) */
+          var gap = (vv.offsetTop + vv.height) - nav.getBoundingClientRect().bottom;
+          if (gap > 1) nav.style.bottom = '0px';
+        };
+      } else {
+        vvFix = function () { /* R1 transform — dvh 미지원 폴백 강등 (수식 원형 유지) */
+          vvTick = false;
+          if (innerHeight - vv.height > 150) { nav.style.transform = ''; return; } /* 가상 키보드 가드 */
+          var d = (vv.offsetTop + vv.height) - document.documentElement.clientHeight;
+          nav.style.transform = d ? 'translateY(' + d + 'px)' : '';
+        };
+      }
       var vvQ = function () { /* rAF 스로틀 — 기존 onScroll 패턴 동형 */
         if (!vvTick) { vvTick = true; requestAnimationFrame(vvFix); }
       };
       vv.addEventListener('resize', vvQ);
       vv.addEventListener('scroll', vvQ);
       vvFix();
+    }
+
+    /* ── 계측 모드 (?jbdebug=1) — 다음 라운드 가림 시 대표가 숫자만 읽으면 확정 진단 ──
+       평시(파라미터 없음) = 이 블록 전체 미진입: DOM·스타일·타이머·리스너 0 (완전 무동작·무렌더).
+       항목: vv.h / vv.top / innerH / clientH / dvh실측·lvh실측(CSS 엔진 화면높이 probe) /
+             적용보정값(fixB=computed bottom, fixT=inline transform). 진단표:
+         dvh<lvh + fixB>0 + 가림 지속  → 웨일 dvh도 거짓 (R3: 다른 신호원 필요)
+         dvh=lvh + 가림                → 웨일 dvh 미동조 (CSS 해법 자체 무효 확정)
+         fixB=0 + 가림                 → 갭 가드 오발동 또는 @supports 미적용 */
+    if (/[?&]jbdebug=1(&|$)/.test(location.search)) {
+      var dbgP = function (h) { /* CSS 단위 실측 probe — 미지원 단위는 style 무시 → 0 표기 */
+        var p = document.createElement('div');
+        p.style.cssText = 'position:fixed;left:-9999px;top:0;width:1px;visibility:hidden;pointer-events:none';
+        p.style.height = h;
+        document.body.appendChild(p);
+        return p;
+      };
+      var pDvh = dbgP('100dvh'), pLvh = dbgP('100lvh');
+      var dbg = document.createElement('div');
+      dbg.style.cssText = 'position:absolute;bottom:100%;left:0;right:0;z-index:1;font:10px/1.5 ui-monospace,Menlo,monospace;background:rgba(0,0,0,.78);color:#7CFC00;padding:2px 8px;white-space:nowrap;overflow:hidden;pointer-events:none;direction:ltr;text-align:left';
+      nav.appendChild(dbg); /* #jbar(fixed) 기준 absolute = 바 바로 위 고정 */
+      var dbgUpd = function () {
+        var v = window.visualViewport;
+        dbg.textContent =
+          'vv.h:' + (v ? Math.round(v.height) : '-') +
+          ' vv.top:' + (v ? Math.round(v.offsetTop) : '-') +
+          ' inH:' + innerHeight +
+          ' clH:' + document.documentElement.clientHeight +
+          ' dvh:' + pDvh.offsetHeight +
+          ' lvh:' + pLvh.offsetHeight +
+          ' fixB:' + getComputedStyle(nav).bottom +
+          ' fixT:' + (nav.style.transform || '0');
+      };
+      dbgUpd();
+      setInterval(dbgUpd, 300); /* 계측 모드 한정 — vv 이벤트 미발화 브라우저(웨일 의심)도 포착 */
     }
   } catch (e) { /* 바 실패 = 페이지 본문 무영향 (콘솔 0) */ }
 })();
