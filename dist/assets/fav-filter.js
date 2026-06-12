@@ -35,10 +35,12 @@
     if (document.getElementById('favf-row')) return; /* 멱등 (중복 주입 가드) */
     var KEY = 'bybias_fav';
 
-    /* ── 로케일 문자열 (SPEC §8 키) ──
-       W4 노트 (jbar.js L82 관례): ko/en만 직접 반영 — 나머지 9 locale은
-       i18n 캐시 경유 W4 재생성 대상. 미보유 locale은 en 폴백 (아티스트명·배지는
-       번역 파이프라인 통과 금지 — 데이터 원문 그대로, FLR-20260606-AGT-001). */
+    /* ── 로케일 문자열 (SPEC §8 키, 11 locale — jbar.js L10N 11언어 선례 동형) ──
+       P0-2: index 11언어 wiring 선반영에 맞춰 9 locale 직접 추가. ko/en = 정본,
+       나머지 9 locale(_w4_review: true 마커) = 표준 UI 어휘 + 팬덤 호칭(推し·本命·
+       bias·เมน) — W4 재생성 시 i18n.py 캐시 경유 재검증 트리거. 미보유 locale은
+       en 폴백 (아티스트명·배지는 번역 파이프라인 통과 금지 — 데이터 원문 그대로,
+       FLR-20260606-AGT-001). */
     var L10N = {
       ko: {
         chip: '내 최애', hint: '최애를 고르면 모든 탭에서 최애 일정만 모아 봐요',
@@ -61,6 +63,114 @@
         emptyUnderground: "No bias in this tab's lineups",
         lineupTbd: 'Lineup TBA', sportsExempt: "This tab isn't affected by the bias filter",
         ariaApplied: 'Bias filter on, showing {n}', ariaCleared: 'Showing all'
+      },
+      ja: {
+        _w4_review: true,
+        chip: '推し', hint: '推しを選ぶと全タブで推しの予定だけまとめて見られます',
+        all: 'すべて', sheetTitle: 'マイ推し', sheetSub: '選ぶと全タブで推しの予定を先に見られます',
+        searchPh: 'アーティスト検索', done: '完了', clearAll: 'すべて解除', close: '閉じる',
+        upcomingN: '今後の予定{n}件', showAllN: '全{n}件を見る', change: '推しを変更',
+        emptyConcert: '推しの今後の公演はまだありません',
+        emptyLineup: '確定ラインナップに推しはまだいません — ラインナップ未確定の回は下に残しています',
+        emptyUnderground: 'このタブのラインナップに推しはいません',
+        lineupTbd: 'ラインナップ未確定', sportsExempt: 'このタブには推しフィルターは適用されません',
+        ariaApplied: '推しフィルター適用、{n}件表示', ariaCleared: 'すべて表示'
+      },
+      'zh-cn': {
+        _w4_review: true,
+        chip: '我的本命', hint: '选好本命后，所有标签页只看本命的日程',
+        all: '全部', sheetTitle: '我的本命', sheetSub: '选择后在所有标签页优先查看本命日程',
+        searchPh: '搜索艺人', done: '完成', clearAll: '全部取消', close: '关闭',
+        upcomingN: '即将到来的日程 {n} 场', showAllN: '查看全部 {n} 场', change: '更换本命',
+        emptyConcert: '本命暂时没有即将到来的演出',
+        emptyLineup: '确定阵容中暂时没有本命 — 阵容未定的场次保留在下方',
+        emptyUnderground: '此标签页的阵容中没有本命',
+        lineupTbd: '阵容待定', sportsExempt: '此标签页不受本命筛选影响',
+        ariaApplied: '本命筛选已开启，显示 {n} 场', ariaCleared: '显示全部'
+      },
+      'zh-tw': {
+        _w4_review: true,
+        chip: '我的本命', hint: '選好本命後，所有分頁只看本命的行程',
+        all: '全部', sheetTitle: '我的本命', sheetSub: '選擇後在所有分頁優先查看本命行程',
+        searchPh: '搜尋藝人', done: '完成', clearAll: '全部取消', close: '關閉',
+        upcomingN: '即將到來的行程 {n} 場', showAllN: '查看全部 {n} 場', change: '更換本命',
+        emptyConcert: '本命暫時沒有即將到來的演出',
+        emptyLineup: '確定陣容中暫時沒有本命 — 陣容未定的場次保留在下方',
+        emptyUnderground: '此分頁的陣容中沒有本命',
+        lineupTbd: '陣容待定', sportsExempt: '此分頁不受本命篩選影響',
+        ariaApplied: '本命篩選已開啟，顯示 {n} 場', ariaCleared: '顯示全部'
+      },
+      es: {
+        _w4_review: true,
+        chip: 'Mi bias', hint: 'Elige a tu bias para ver solo su agenda en todas las pestañas',
+        all: 'Todo', sheetTitle: 'Mi bias', sheetSub: 'Elige artistas para ver su agenda primero en todas las pestañas',
+        searchPh: 'Buscar artistas', done: 'Listo', clearAll: 'Quitar todo', close: 'Cerrar',
+        upcomingN: '{n} eventos próximos', showAllN: 'Ver los {n}', change: 'Cambiar bias',
+        emptyConcert: 'Tu bias aún no tiene shows próximos',
+        emptyLineup: 'Tu bias aún no está en un lineup confirmado — los shows por anunciar quedan abajo',
+        emptyUnderground: 'No hay bias en los lineups de esta pestaña',
+        lineupTbd: 'Lineup por anunciar', sportsExempt: 'El filtro de bias no afecta esta pestaña',
+        ariaApplied: 'Filtro de bias activado, mostrando {n}', ariaCleared: 'Mostrando todo'
+      },
+      pt: {
+        _w4_review: true,
+        chip: 'Meu bias', hint: 'Escolha seu bias para ver só a agenda dele em todas as abas',
+        all: 'Tudo', sheetTitle: 'Meu bias', sheetSub: 'Escolha artistas para ver a agenda deles primeiro em todas as abas',
+        searchPh: 'Buscar artistas', done: 'Concluir', clearAll: 'Limpar tudo', close: 'Fechar',
+        upcomingN: '{n} eventos em breve', showAllN: 'Ver todos os {n}', change: 'Trocar bias',
+        emptyConcert: 'Seu bias ainda não tem shows em breve',
+        emptyLineup: 'Seu bias ainda não está em um lineup confirmado — shows a anunciar ficam abaixo',
+        emptyUnderground: 'Nenhum bias nos lineups desta aba',
+        lineupTbd: 'Lineup a anunciar', sportsExempt: 'Esta aba não é afetada pelo filtro de bias',
+        ariaApplied: 'Filtro de bias ativado, mostrando {n}', ariaCleared: 'Mostrando tudo'
+      },
+      th: {
+        _w4_review: true,
+        chip: 'เมนของฉัน', hint: 'เลือกเมนเพื่อดูเฉพาะตารางของเมนในทุกแท็บ',
+        all: 'ทั้งหมด', sheetTitle: 'เมนของฉัน', sheetSub: 'เลือกศิลปินเพื่อดูตารางของเมนก่อนในทุกแท็บ',
+        searchPh: 'ค้นหาศิลปิน', done: 'เสร็จสิ้น', clearAll: 'ล้างทั้งหมด', close: 'ปิด',
+        upcomingN: 'ตารางที่กำลังมาถึง {n} รายการ', showAllN: 'ดูทั้งหมด {n} รายการ', change: 'เปลี่ยนเมน',
+        emptyConcert: 'เมนยังไม่มีโชว์ที่กำลังมาถึง',
+        emptyLineup: 'เมนยังไม่อยู่ในไลน์อัปที่ยืนยันแล้ว — รอบที่ยังไม่ประกาศไลน์อัปอยู่ด้านล่าง',
+        emptyUnderground: 'ไม่มีเมนในไลน์อัปของแท็บนี้',
+        lineupTbd: 'ไลน์อัปยังไม่ประกาศ', sportsExempt: 'แท็บนี้ไม่ใช้ฟิลเตอร์เมน',
+        ariaApplied: 'เปิดฟิลเตอร์เมนแล้ว แสดง {n} รายการ', ariaCleared: 'แสดงทั้งหมด'
+      },
+      id: {
+        _w4_review: true,
+        chip: 'Bias-ku', hint: 'Pilih bias untuk melihat jadwalnya saja di semua tab',
+        all: 'Semua', sheetTitle: 'Bias-ku', sheetSub: 'Pilih artis untuk melihat jadwal mereka lebih dulu di semua tab',
+        searchPh: 'Cari artis', done: 'Selesai', clearAll: 'Hapus semua', close: 'Tutup',
+        upcomingN: '{n} jadwal mendatang', showAllN: 'Lihat semua {n}', change: 'Ganti bias',
+        emptyConcert: 'Bias-mu belum punya show mendatang',
+        emptyLineup: 'Bias-mu belum ada di lineup yang dikonfirmasi — show TBA tetap di bawah',
+        emptyUnderground: 'Tidak ada bias di lineup tab ini',
+        lineupTbd: 'Lineup TBA', sportsExempt: 'Tab ini tidak terpengaruh filter bias',
+        ariaApplied: 'Filter bias aktif, menampilkan {n}', ariaCleared: 'Menampilkan semua'
+      },
+      vi: {
+        _w4_review: true,
+        chip: 'Bias của tôi', hint: 'Chọn bias để chỉ xem lịch của bias ở mọi tab',
+        all: 'Tất cả', sheetTitle: 'Bias của tôi', sheetSub: 'Chọn nghệ sĩ để xem lịch của họ trước ở mọi tab',
+        searchPh: 'Tìm nghệ sĩ', done: 'Xong', clearAll: 'Bỏ chọn tất cả', close: 'Đóng',
+        upcomingN: '{n} lịch sắp tới', showAllN: 'Xem tất cả {n}', change: 'Đổi bias',
+        emptyConcert: 'Bias của bạn chưa có show sắp tới',
+        emptyLineup: 'Bias của bạn chưa có trong lineup đã xác nhận — các show chưa công bố lineup vẫn ở bên dưới',
+        emptyUnderground: 'Không có bias trong lineup của tab này',
+        lineupTbd: 'Lineup chưa công bố', sportsExempt: 'Tab này không áp dụng bộ lọc bias',
+        ariaApplied: 'Đã bật bộ lọc bias, hiển thị {n}', ariaCleared: 'Hiển thị tất cả'
+      },
+      ar: {
+        _w4_review: true,
+        chip: 'البياس', hint: 'اختر البياس لترى جدوله فقط في كل التبويبات',
+        all: 'الكل', sheetTitle: 'البياس الخاص بي', sheetSub: 'اختر الفنانين لترى جدولهم أولًا في كل التبويبات',
+        searchPh: 'ابحث عن فنان', done: 'تم', clearAll: 'إلغاء الكل', close: 'إغلاق',
+        upcomingN: '{n} فعاليات قادمة', showAllN: 'عرض الكل {n}', change: 'تغيير البياس',
+        emptyConcert: 'لا توجد حفلات قادمة للبياس بعد',
+        emptyLineup: 'البياس ليس ضمن تشكيلة مؤكدة بعد — العروض غير المعلنة تبقى بالأسفل',
+        emptyUnderground: 'لا يوجد بياس في تشكيلات هذا التبويب',
+        lineupTbd: 'التشكيلة لم تُعلن', sportsExempt: 'هذا التبويب لا يتأثر بفلتر البياس',
+        ariaApplied: 'فلتر البياس مفعّل، عرض {n}', ariaCleared: 'عرض الكل'
       }
     };
     var L = L10N[LANG] || L10N.en;
