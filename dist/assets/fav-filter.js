@@ -468,7 +468,7 @@
         }
 
         /* ── 시트 ── */
-        var lastFocus = null, openFlag = false, bodyOv = '';
+        var lastFocus = null, openFlag = false, bodyOv = '', openSnap = '';
         function cells() { return elList.querySelectorAll('.favf-cell input'); }
         function doneCount() {
           var cs = cells(), n = 0;
@@ -535,6 +535,7 @@
           if (openFlag) return;
           openFlag = true;
           lastFocus = document.activeElement;
+          openSnap = S.artists.slice().sort().join('\u0001'); /* P0-1: 열 때 선택 스냅샷 */
           renderList();
           document.body.classList.add('favf-open');
           chip.setAttribute('aria-expanded', 'true');
@@ -555,8 +556,12 @@
             for (i = 0; i < S.artists.length; i++) {
               if (!A[S.artists[i]] && next.indexOf(S.artists[i]) < 0) next.push(S.artists[i]);
             }
+            /* P0-1: 자동 ON = 선택 "변경" 시에만 — 무변경 닫기(X/스크림/ESC)가
+               사용자가 끈 필터(전체 보기)를 강제 재활성하지 않음 (스냅샷 diff) */
+            var changed = next.slice().sort().join('\u0001') !== openSnap;
             S.artists = next;
-            S.filterOn = next.length > 0; /* 선택했다 = 보고 싶다 — 자동 ON, 0명 = 필터 소멸 (§1) */
+            if (!next.length) S.filterOn = false; /* 0명 = 필터 소멸 (§1) */
+            else if (changed) S.filterOn = true; /* 선택을 바꿨다 = 보고 싶다 — 자동 ON (§1) */
             sWrite(S.artists, S.filterOn);
             S.saved = true;
           }
