@@ -286,11 +286,11 @@
         /* ── CSS 주입 (페이지 토큰 상속 — W5 rose 토큰: 핑크 = 그래픽·보더·소프트 bg 전유) ── */
         var css = '' +
           '.favf-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}' +
-          '#favf-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}' +
+          '#favf-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:-6px 0 12px}' + /* R3 픽셀 P1-2: 위 18px(.hubfilter mb16+.hf-chips pb2) → 마진 상쇄 16-6=10+2=12px, 아래 12px 균일. 인접 행 무접촉 */
           '#favf-chip{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink);font-family:inherit}' +
           '#favf-chip:hover{border-color:var(--muted)}' +
           '#favf-chip .favf-heart{width:15px;height:15px;flex:none;color:var(--rose,#E84A7F)}' + /* 핑크 = 그래픽 ≥3:1 */
-          '#favf-chip[aria-pressed="true"]{background:var(--rose-soft,#FCEAF1);border-color:var(--rose-line,#F6CBDC)}' +
+          'body.favf-on #favf-chip{background:var(--rose-soft,#FCEAF1);border-color:var(--rose-line,#F6CBDC)}' + /* R3 DQA P1-3: aria-pressed 제거 → body.favf-on 동치 셀렉터 (on 토글 동일 조건) */
           '#favf-chip .favf-stack{display:inline-flex;gap:3px;margin-inline-start:3px}' +
           '#favf-chip .favf-mini{width:22px;height:22px;border-radius:7px;font-size:10.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;overflow:hidden}' +
           '#favf-hint{font-size:12.5px;color:var(--muted)}' +
@@ -300,7 +300,7 @@
           /* 필터 ON: 숨김/디밍 — pastguard inline display:none과 독립 */
           '.favf-hide{display:none}' +
           'body.favf-on .tabs .tp-c .mdiv{display:none}' + /* 월 구분 행 = 필터 뷰에서 노이즈 */
-          '.favf-tbd .ehead,.favf-tbd .c,.favf-tbd .badge,.favf-tbd .ghost{opacity:.45}' + /* 캡션은 dim 제외 (AA 유지 §6) */
+          '.favf-tbd .ehead,.favf-tbd .badge,.favf-tbd .ghost{opacity:.45}' + /* R3 DQA P1-2: 캡션+날짜 행(.c) dim 제외 — 날짜·임박도 = cap이 대체 못 하는 판단 정보 (페스티벌 카드 유지 취지) */
           '.favf-cap{display:block;font-size:12px;color:var(--muted);margin-top:8px}' +
           '.favf-showall{display:flex;align-items:center;justify-content:center;min-height:52px;grid-column:1/-1;border:1px dashed var(--line);border-radius:12px;font-size:13.5px;font-weight:600;color:var(--muted);background:transparent;cursor:pointer;font-family:inherit}' +
           '.favf-showall:hover{border-color:var(--muted);color:var(--ink)}' +
@@ -325,14 +325,16 @@
           '#favf-x:hover{background:var(--bg)}' +
           '#favf-search{margin:6px 18px 0;flex:none;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font-size:13.5px;font-family:inherit;box-sizing:border-box;display:none;width:calc(100% - 36px)}' +
           '#favf-sheet.favf-srch #favf-search{display:block}' +
-          '#favf-list{overflow:auto;padding:10px 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;-webkit-overflow-scrolling:touch}' +
-          '@media(min-width:720px){#favf-list{grid-template-columns:repeat(4,1fr)}}' +
+          /* R3 P0: minmax(0,1fr) — 1fr 단독 = min-content 하한으로 장명("PARK JI HOON") 셀이 칼럼 확장 (실측 107/122/107) */
+          /* R3 픽셀 P1-1: grid-auto-rows:1fr — 전 행 트랙 균등화 (105/106 1px 콘텐츠 편차 제거) */
+          '#favf-list{overflow:auto;padding:10px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:8px;-webkit-overflow-scrolling:touch}' +
+          '@media(min-width:720px){#favf-list{grid-template-columns:repeat(4,minmax(0,1fr))}}' +
           '.favf-cell{position:relative}' +
           '.favf-cell input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}' +
           '.favf-cell label{display:flex;flex-direction:column;align-items:center;gap:6px;min-height:44px;padding:12px 6px 10px;border:2px solid var(--line);border-radius:12px;cursor:pointer;text-align:center}' +
           '.favf-cell .abadge{pointer-events:none}' +
           '.favf-cell .favf-nm{font-size:12.5px;font-weight:600;line-height:1.3;word-break:keep-all}' +
-          '.favf-cell .favf-n{font-size:11px;color:var(--muted)}' +
+          '.favf-cell .favf-n{font-size:12px;color:var(--muted)}' + /* R3 DQA P1-1: 11→12px (셀 높이 114px 여백 충분) */
           '.favf-cell .favf-ck{position:absolute;top:6px;inset-inline-end:6px;width:18px;height:18px;border-radius:50%;background:var(--rose,#E84A7F);color:#1a1a18;font-size:11px;font-weight:800;display:none;align-items:center;justify-content:center}' +
           '.favf-cell input:checked+label{border-color:var(--rose,#E84A7F)}' + /* 보더+체크 병행 — 색상 단독 의존 금지 */
           '.favf-cell input:checked+label .favf-ck{display:flex}' +
@@ -474,8 +476,8 @@
           document.body.classList.toggle('favf-on', on);
           document.body.classList.toggle('favf-sel', hasSel);
 
-          /* 칩 */
-          chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+          /* 칩 — R3 DQA P1-3: aria-pressed 제거. pressed = #favf-all 전유,
+             칩은 haspopup="dialog"/expanded만 (SR "토글" 오인 차단). 시각 상태 = body.favf-on CSS */
           chipLbl.textContent = hasSel ? L.chip + ' ' + S.artists.length : L.chip;
           chipStack.innerHTML = '';
           if (hasSel) {
