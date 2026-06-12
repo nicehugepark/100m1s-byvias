@@ -187,6 +187,21 @@ CHECKS = [
         "locales": ALL,
         "negate": True,
     },
+    # ---- Trip.com 어필리에이트 (수익 마커 — 재생성 누락 = FAIL, tools/tripcom_affiliate_patch.py) ----
+    {
+        "id": "tripcom-stay-ota",  # 숙소 ota-row Trip.com 버튼 + 실 Allianceid 부착
+        "page": COURSE,
+        "pattern": r'href="[^"]*Allianceid=8661388[^"]*"[^>]*data-aff-surface="stay-ota" data-aff-vendor="Trip\.com"',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재 — 9 locale 구세대는 generate.py 포트로 재생성 시 자동 포함",
+    },
+    {
+        "id": "tripcom-flights-locknow",  # lock-now Trip.com Flights prep-row 병렬 (Skyscanner 대체 금지)
+        "page": COURSE,
+        "pattern": r'data-aff-surface="lock-now" data-aff-vendor="Trip\.com"',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재 — 9 locale 구세대는 generate.py 포트로 재생성 시 자동 포함",
+    },
 ]
 
 
