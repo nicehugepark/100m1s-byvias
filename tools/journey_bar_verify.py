@@ -93,6 +93,12 @@ def dismiss_affbar(pg):
     if x:
         x.click()
         pg.wait_for_timeout(300)
+    # NEW-1: affbar 재점등은 pre-existing 별건 — 검증 절차에서는 노드 제거로 차단.
+    # (affbar scroll 리스너가 dismissed 플래그 무시, y/h>0.18 시 .show 재부여 → jbar yield
+    #  재진입 = visibility:hidden 상태로 게이트 통과하는 증거-게이트 모순 벡터.
+    #  .show 선제거 동반 = jbar MutationObserver가 attributes만 관찰(childList 미관찰)이라
+    #  순수 remove로는 visibility 복원이 안 걸리는 역방향 잔존 봉쇄.)
+    pg.evaluate("()=>document.querySelectorAll('.affbar').forEach(n=>{n.classList.remove('show');n.remove()})")
 
 
 def settle(pg, ms=120):

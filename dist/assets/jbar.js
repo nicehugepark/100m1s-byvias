@@ -33,11 +33,11 @@
 
     /* ── 로케일 문자열 (11언어) ───────────────────────────── */
     var L10N = {
-      ko: { nav: '현재 단계', dots: '여정 5단계',
+      ko: { nav: '현재 단계', navHome: '공연 일정', dots: '여정 5단계',
         steps: ['인지', '티켓', '항공', '숙소', '현지'],
         ariaD: '공연까지 {n}일', ariaDHome: '다음 공연까지 {n}일', ariaLive: '오늘 공연',
         cta: { ticket: '티켓 잡기', flight: '항공 보기', stay: '숙소 보기', local: '현지 보기', course: '코스 보기', book: '예매 보기', localInfo: '현지 정보', next: '임박 공연', today: '오늘 공연', liveGuide: '현지 가이드' } },
-      en: { nav: 'Current stage', dots: 'Journey: 5 steps',
+      en: { nav: 'Current stage', navHome: 'Show schedule', dots: 'Journey: 5 steps',
         steps: ['Discover', 'Tickets', 'Flights', 'Stay', 'Local'],
         ariaD: '{n} days to the show', ariaDHome: '{n} days to the next show', ariaLive: 'Show day',
         cta: { ticket: 'Get tickets', flight: 'See flights', stay: 'See stays', local: 'Local guide', course: 'See course', book: 'Book now', localInfo: 'Local info', next: 'Next show', today: "Today's show", liveGuide: 'Local guide' } },
@@ -79,9 +79,11 @@
         cta: { ticket: 'Săn vé', flight: 'Xem vé bay', stay: 'Xem chỗ ở', local: 'Tại chỗ', course: 'Xem lịch trình', book: 'Đặt ngay', localInfo: 'Tại chỗ', next: 'Show sắp tới', liveGuide: 'Tại chỗ' } }
     };
     var L = L10N[LANG] || L10N.ko;
-    /* R2 W4 노트: P0-2 nav('현재 단계' 계열)·P1-2 cta.today('오늘 공연' 계열)는 ko/en만
-       직접 반영 — 나머지 9 locale 문자열은 i18n 캐시 경유 W4 재생성 대상.
-       today 부재 locale은 ctaFor()에서 cta.next 폴백 (undefined 라벨 봉쇄). */
+    /* R2 W4 노트: P0-2 nav('현재 단계' 계열)·NEW-3 navHome('공연 일정' 계열)·P1-2
+       cta.today('오늘 공연' 계열)는 ko/en만 직접 반영 — 나머지 9 locale 문자열은
+       i18n 캐시 경유 W4 재생성 대상.
+       today 부재 locale은 ctaFor()에서 cta.next 폴백 (undefined 라벨 봉쇄),
+       navHome 부재 locale은 aria-label에서 nav 폴백. */
 
     /* ── 페이지 유형별 여정 구성 (zones 문서 순서 · cta = 현 단계의 다음 행동) ── */
     var TYPES = {
@@ -131,7 +133,7 @@
       if (dnum < 0) return;                   /* 종료 공연(아카이브) → 무렌더 */
     }
 
-    /* ── CSS (시안 B verbatim · #jbar 스코프 · 논리 속성 · 토큰 페어 미러링) ── */
+    /* ── CSS (시안 B 기반 + 실측 적응 — 헤더 '실측 5건' 선언 참조 · #jbar 스코프 · 논리 속성 · 토큰 페어 미러링) ── */
     var css = '' +
       '#jbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -1px 10px rgba(0,0,0,.05);padding-bottom:env(safe-area-inset-bottom,0px);--jb-imm:#C62828}' +
       '@media(prefers-color-scheme:dark){#jbar{--jb-imm:#FF6B6B}}' +
@@ -186,7 +188,9 @@
     var HAS_STAGE = T.zones.length > 0;
     var nav = document.createElement('nav');
     nav.id = 'jbar';
-    nav.setAttribute('aria-label', L.nav);
+    /* NEW-3: 홈 = stage 무렌더(HAS_STAGE=false)인데 '현재 단계' 명명은 자기모순 —
+       홈 바 실내용(D-num + CTA)에 정직한 명칭으로 분기. navHome 미보유 locale은 nav 폴백. */
+    nav.setAttribute('aria-label', HAS_STAGE ? L.nav : (L.navHome || L.nav));
     nav.innerHTML =
       '<div class="row">' +
       '<span class="dnum" id="jbDnum"></span>' +
