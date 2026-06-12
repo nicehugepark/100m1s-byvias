@@ -102,6 +102,35 @@ CHECKS = [
         "locales": RICH,
         "gap_note": "코스 리치 페이지 ko·en만 존재",
     },
+    # ---- R45 (c7 동등화 — wave7 c4 패턴 동형) ----
+    {
+        "id": "r45-c7-equalized",  # c7 동등화 — c4 규격 (타임라인·스팟카드·경고박스·ckstep)
+        "page": COURSE,
+        "pattern": r'data-w7-c7="1"',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재 — 9 locale은 경량 이벤트 페이지(코스 섹션 부재, 백로그)",
+    },
+    {
+        "id": "r45-c7-spot-pair",  # c7 스팟 카드 맵 링크 (ko kakao+google 페어 — en은 google 단독)
+        "page": COURSE,
+        "pattern": r'class="sl-panel sl-7"[\s\S]*?class="psrc-row"[\s\S]*?<!-- /stay-len -->',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재",
+    },
+    {
+        "id": "r45-c7-showday-flat",  # c7 공연일 = flat day-card--show (c4 동형, 아코디언 아님)
+        "page": COURSE,
+        "pattern": r'<div class="day-card day-card--show" id="showday-s7">',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재",
+    },
+    {
+        "id": "r45-c7-ckstep",  # c7 showday ckstep 체크리스트
+        "page": COURSE,
+        "pattern": r'data-ck="showday-s7-0"',
+        "locales": RICH,
+        "gap_note": "코스 리치 페이지 ko·en만 존재",
+    },
     # ---- WAVE7 (R44 2심 조니 확정) ----
     {
         "id": "w7-c4-equalized",  # #6 c4 동등화 — sl-2 규격 (스팟카드·맵페어·경고박스)
@@ -128,14 +157,14 @@ CHECKS = [
     {
         "id": "w7-ckstep-44",  # #9 ckstep 레이아웃 박스 44 실측화
         "page": COURSE,
-        "pattern": r'\.ckstep\{[^}]*width:44px;height:44px',
+        "pattern": r"\.ckstep\{[^}]*width:44px;height:44px",
         "locales": RICH,
         "gap_note": "코스 리치 페이지 ko·en만 존재",
     },
     {
         "id": "w7-psrc-44",  # #9 psrc min-width 44
         "page": COURSE,
-        "pattern": r'\.psrc\{[^}]*min-width:44px',
+        "pattern": r"\.psrc\{[^}]*min-width:44px",
         "locales": RICH,
         "gap_note": "코스 리치 페이지 ko·en만 존재",
     },
