@@ -114,6 +114,9 @@
           return b ? (b.getAttribute('title') || '') : '';
         }
         function isFest(card) {
+          /* P1-4 결합 주석: generate.py festival 배지 이모지(🎪) 텍스트 스니핑 —
+             배지 텍스트 변경 시 본 함수 동반 수정 필요 (현 dist 제약상 유지).
+             TODO(차기 dist 재생성): .badge-fest 류 클래스 마커 승격 → 스니핑 제거 */
           var bs = card.querySelectorAll('.badge');
           for (var i = 0; i < bs.length; i++) { if (bs[i].textContent.indexOf('🎪') >= 0) return true; } /* 🎪 */
           return false;
@@ -153,6 +156,9 @@
           }
           A[c.key].n += n;
         }
+        /* P1-1: 매칭 키 0건(.abadge[title] 부재·전손 등 keyOf()='' 일괄) =
+           칩 행 자체 미생성 — 필터 ON 시 전 카드 침묵 숨김보다 기능 부재가 정직 */
+        if (!AKEYS.length) return;
 
         /* 아카이브 섹션 노드 (0건 시 헤더째 숨김 — 빈 섹션 잔해 금지 §4) */
         var arcDetails = document.querySelector('details.w5-archive');
@@ -450,14 +456,23 @@
             if (m) nArc++;
           }
           if (arcSummary) {
-            arcSummary.textContent = on ? arcSumOrig.replace(/\d+/, String(nArc)) : arcSumOrig;
+            /* P1-2: (N) 괄호 앵커 — 제목 내 다른 숫자(연도 등) 오치환 방지 */
+            arcSummary.textContent = on ? arcSumOrig.replace(/\(\d+\)/, '(' + nArc + ')') : arcSumOrig;
           }
           for (i2 = 0; i2 < arcSection.length; i2++) {
             arcSection[i2].style.display = (on && nArc === 0) ? 'none' : '';
           }
 
-          /* 결과 고지 (콘서트 탭 표시 건수 기준) */
-          if (announce) live.textContent = on ? fmtT(L.ariaApplied, nC) : L.ariaCleared;
+          /* P1-3: 결과 고지 = 활성 탭 기준 실 표시 건수 (콘서트 고정 → 탭별).
+             tp-m = 전 카드 유지(dim)라 totM, tp-s = 면제 문구 그대로 고지 */
+          if (announce) {
+            if (!on) { live.textContent = L.ariaCleared; }
+            else {
+              var rM = document.getElementById('tab-m'), rU = document.getElementById('tab-u'), rS = document.getElementById('tab-s');
+              if (rS && rS.checked) live.textContent = L.sportsExempt;
+              else live.textContent = fmtT(L.ariaApplied, (rM && rM.checked) ? totM : (rU && rU.checked) ? nU : nC);
+            }
+          }
         }
 
         function setFilterOn(v) {
