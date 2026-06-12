@@ -236,10 +236,11 @@
       nav.classList.toggle('mini', S.mini);
     }
 
-    /* ── 스크롤: 단계 점등 연동 + 44↔28 축소 (시안 동작 verbatim, rAF 스로틀) ── */
+    /* ── 스크롤: 단계 점등 연동 + 44↔28 축소 (시안 동작 + P1-1 yield 가드, rAF 스로틀) ── */
     var ly = scrollY, tick = false;
     function onScroll() {
       tick = false;
+      if (yielding) return; /* P1-1: affbar 양보 중 = 스크롤 연산 중지 */
       var dy = scrollY - ly; ly = scrollY;
       var ns = curStep(), ch = ns !== S.step;
       if (dy > 6 && scrollY > 40 && !S.mini) { S.mini = true; ch = true; }
@@ -258,7 +259,35 @@
       var cc = ctaFor();
       if (cc && cc.el) cc.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+    /* ── P1-1: affbar(z-60, 이벤트 페이지 inline 주입) 명시 yield ──
+       기존엔 z 40<60 우연한 점거에 의존 — 이제 의도된 양보를 코드로 선언:
+       .affbar.show 감지 시 (a) 바 visibility 숨김 (b) 스크롤 연산 중지(onScroll 가드)
+       (c) toast 바닥 기준면을 affbar 실측 높이로 전환(--bb-toast-b, P1-4 ii).
+       affbar 닫힘(.affbar-x → .show 제거 + body inline padding 해제) 시 즉시 복귀 + 단계 재동기.
+       affbar 없는 페이지(홈·리치)는 전 로직 자연 무동작. */
+    var yielding = false;
+    function affEl() {
+      var a = document.querySelector('.affbar');
+      return (a && a.classList.contains('show')) ? a : null;
+    }
+    function setYield(a) {
+      var on = !!a;
+      if (yielding === on) return;
+      yielding = on;
+      nav.style.visibility = on ? 'hidden' : ''; /* 명시 전환 (a11y 트리에서도 제외) */
+      if (on) {
+        document.body.style.setProperty('--bb-toast-b', Math.round(a.getBoundingClientRect().height + 8) + 'px');
+      } else {
+        document.body.style.removeProperty('--bb-toast-b');
+        ly = scrollY; S.step = curStep(); render(); /* 복귀 즉시 재동기 (중지 구간 보상) */
+      }
+    }
+    if (window.MutationObserver) {
+      new MutationObserver(function () { setYield(affEl()); })
+        .observe(document.body, { subtree: true, attributes: true, attributeFilter: ['class'] });
+    }
     S.step = curStep();
     render();
+    setYield(affEl());
   } catch (e) { /* 바 실패 = 페이지 본문 무영향 (콘솔 0) */ }
 })();
