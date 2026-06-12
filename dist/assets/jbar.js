@@ -136,16 +136,27 @@
     /* ── CSS (시안 B 기반 + 실측 적응 — 헤더 '실측 5건' 선언 참조 · #jbar 스코프 · 논리 속성 · 토큰 페어 미러링) ── */
     var css = '' +
       '#jbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -1px 10px rgba(0,0,0,.05);padding-bottom:env(safe-area-inset-bottom,0px);--jb-imm:#C62828}' +
-      /* R2 웨일 동적 툴바 가림 보정 — CSS dvh 주 해법 (R1 JS transform은 dvh 미지원 폴백으로 강등).
-         웨일류: fixed 앵커가 layout viewport(큰 쪽) 고정인데 JS 측정치(clientHeight)는 vv와
-         동조 감소 → JS로는 차이 측정 불가(R1 무효 확정). dvh/lvh는 CSS 엔진 내부 진실값이라
-         측정치 거짓말과 무관. 분기 시뮬:
-           툴바 숨김·데스크톱:        dvh=lvh        → bottom:0   (무변화)
-           웨일 추정(하단 툴바 표시): dvh<lvh        → bottom:+툴바높이 → 바 가시 하단으로 상승
-           모바일 크롬(URL바 표시):   dvh<lvh인데 네이티브 추적도 작동 → 부유 갭 → 하단 JS 갭 가드가
-                                      실측(rect.bottom vs vv 하단) 후 bottom:0 중화
-           dvh 미지원 구형:           @supports 블록 미적용 → JS 폴백(R1 transform) 경로 */
-      '@supports (height:1dvh){#jbar{bottom:calc(100lvh - 100dvh)}}' +
+      /* R3 웨일 잘림 최종 진단 — 실기기 계측 8값 검산 (2026-06-13, ?jbdebug=1 메인+이벤트 동일값):
+           vv.h:729 vv.top:0 inH:729 clH:729 dvh:729 lvh:837 fixB:0px fixT:0
+         검산표:
+           (b) @supports 미적용?  dvh probe 729≠0 = 단위 지원 = @supports 동일 엔진 판정 → 기각
+           (a) 갭 가드 발동?      R2 calc = lvh−dvh = 837−729 = 108px 적용 시
+                                  rect.bottom = clH−108 = 621, gap = (0+729)−621 = 108 > 1
+                                  → inline bottom:'0px' → fixB:0px 계측과 정확 일치 → 발동 확정
+           (c) 앵커 좌표계        vv.h=inH=clH=729 전원 동조 = 웨일 fixed 앵커도 729(작은 뷰포트)
+                                  → R2 가정 "웨일 앵커 = lvh 고정" 반증. 바는 이미 가시 좌표
+                                  하단(729)에 정착 — 잘림 = 뷰포트 내부를 브라우저/OS UI가 덮는
+                                  페인트 오버레이 (JS·CSS 어떤 좌표에도 안 잡힘).
+           lvh−dvh ≠ 오버레이 높이 증명: 바 총높이 45px인데 증상 = '사라짐' 아닌 '하단 잘림'
+           (부분 가시) → 오버레이 < 45px ≪ 108 → calc 보정은 +63px 이상 과보정 → 폐기.
+           (갭 가드는 오발동 아님 — 설계 의도대로 과보정을 정확히 중화했던 것.)
+         조치: calc 룰 제거(중립 — 데스크톱 calc=0 · 모바일은 가드가 0px 강제라 최종 computed
+         동일) + 웨일 Android 한정(jb-wh, UA 게이트) padding 보강. 24px = 잠정값 (Android 제스처
+         내비 영역 통상치 — 웨일이 env(safe-area-inset-bottom)=0 보고 시 무방어 노출 가설),
+         차기 계측 rb·sai 값으로 정밀화. env ≥ 24px 정상 보고 기기는 max()가 env 선택 = 무변화. */
+      'body.jb-wh #jbar{padding-bottom:max(env(safe-area-inset-bottom,0px),24px)}' +
+      'body.has-jbar.jb-wh{padding-bottom:calc(45px + max(env(safe-area-inset-bottom,0px),24px))}' +
+      'body.has-jbar.jb-wh .share-toast{bottom:var(--bb-toast-b,calc(45px + max(env(safe-area-inset-bottom,0px),24px) + 8px))}' +
       '@media(prefers-color-scheme:dark){#jbar{--jb-imm:#FF6B6B}}' +
       '#jbar .row{max-width:760px;margin:0 auto;height:44px;display:flex;align-items:center;gap:9px;padding:0 12px;transition:height .18s ease-out}' +
       '#jbar .dnum{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.2px;white-space:nowrap;display:flex;align-items:center;gap:5px;transition:font-size .18s ease-out;color:var(--ink);direction:ltr}' +
@@ -325,49 +336,28 @@
     render();
     setYield(affEl());
 
-    /* ── 웨일 동적 툴바 가림 보정 R2 (CSS dvh 주 해법 — 상단 css 문자열 @supports 블록) ──
-       R1(JS visualViewport transform) 실기기 무효 확정 — 웨일에서 clientHeight가 vv와
-       동조 감소해 보정값 0인데 fixed 앵커는 layout viewport(큰 쪽) 고정 → JS 측정으로는
-       차이 자체가 안 보임. 주 해법을 CSS dvh로 전환 (엔진 내부 진실값 — JS 측정치 무관).
-
-       이중 보정 차단 증명 (벡터 0):
-         DVH_OK = CSS.supports('height','1dvh') — @supports (height:1dvh)와 동일 엔진 판정.
-         · DVH_OK=true  → CSS calc 활성 + JS transform 분기 진입 자체 차단 (아래 if/else 상호배타)
-         · DVH_OK=false → @supports 블록 CSS 미적용 + JS R1 폴백만 동작
-         (dvh 지원 엔진(2022+)은 전부 CSS.supports 보유 — "JS API 부재 + @supports dvh 지원"
-          조합은 존재 불가 → 두 경로 동시 활성 불가능.)
-
-       DVH_OK 경로의 갭 가드 (네이티브 추적 브라우저 부유 중화 — 보정 추가 아님, 축소 단방향):
-         모바일 크롬류는 fixed 앵커가 툴바를 네이티브 추적 + dvh도 동조 → CSS calc와 이중
-         상승 = 바가 가시 하단 위로 부유. 실측 rect.bottom < (vv.offsetTop+vv.height)−1 이면
-         inline bottom:0 으로 CSS calc 중화. 반대 방향(잔존 가림) 추가 보정은 하지 않음 —
-         R1에서 vv 측정치 거짓말 확인된 만큼 측정 기반 상향 보정은 재도입 금지.
-       분기 시뮬 (jsdom 불가 — 정적 검증, lv=800/dv=744/툴바 56 가정):
-         데스크톱·툴바 숨김: calc=0, rect.bottom=744=vv하단 → gap 0 → 무동작
-         웨일(앵커 800 고정): calc=56 → rect.bottom=800−56=744 = vv하단 744 → gap 0 → CSS 유지(가림 해소)
-         모바일 크롬(앵커 744 추적): calc=56 → rect.bottom=744−56=688 < 744 → gap +56 → bottom:0 중화
-         키보드(innerH−vv.h>150): 상태 변경 없이 return (R1 가드 계승)
-         dvh 미지원: else 분기 = R1 transform 폴백 원형 그대로 (크롬0/웨일−56/키보드 가드)
-       toast 기준면(--bb-toast-b)·body padding 무수정. fav-filter 독립 fixed 레이어 — 영향 0. */
+    /* ── 웨일 잘림 보정 R3 — 계측 확정: 오버레이형 가림 (상단 css R3 검산표 참조) ──
+       웨일 fixed 앵커 = 729(작은 뷰포트) 실증 → 좌표 보정(bottom/transform)으로는 해소 불가
+       (모든 JS·CSS 측정 좌표가 이미 정합 — 가림은 측정계 밖 페인트 오버레이). 조치 = UA
+       게이트 padding 보강(상단 css jb-wh)만. R2의 "측정 기반 상향 보정 재도입 금지" 계승.
+       R2 calc + DVH_OK 갭 가드 제거 — 크롬 무회귀 논증: DVH_OK 경로 최종 computed bottom은
+       R2에서도 항상 0px(데스크톱 calc=lvh−dvh=0 · 모바일은 가드가 inline 0px 강제) → 제거
+       후에도 동일 0px(기본 룰) + 매 vv 이벤트 rAF 작업 소거(순이득). R1 transform 폴백은
+       dvh 미지원 구형 한정 원형 유지 (R2 else 분기와 바이트 동일).
+       UA 게이트: 크롬·삼성·iOS UA에 'Whale'+'Android' 동시 포함 불가 → 타 브라우저 영향 0.
+       웨일 데스크톱(Android 부재)·iOS 웨일(WebKit, env 정상) 미적용 — 오버레이 증상 기기군 한정. */
+    if (/Whale/.test(navigator.userAgent) && /Android/.test(navigator.userAgent)) {
+      document.body.classList.add('jb-wh');
+    }
     var DVH_OK = !!(window.CSS && CSS.supports && CSS.supports('height', '1dvh'));
-    if (window.visualViewport) {
-      var vv = window.visualViewport, vvTick = false, vvFix;
-      if (DVH_OK) {
-        vvFix = function () { /* 갭 가드 — CSS calc 부유 시에만 중화 */
-          vvTick = false;
-          if (innerHeight - vv.height > 150) return; /* 가상 키보드 가드 */
-          nav.style.bottom = ''; /* CSS calc 기준 실측 (rAF 내 — 중간 페인트 없음) */
-          var gap = (vv.offsetTop + vv.height) - nav.getBoundingClientRect().bottom;
-          if (gap > 1) nav.style.bottom = '0px';
-        };
-      } else {
-        vvFix = function () { /* R1 transform — dvh 미지원 폴백 강등 (수식 원형 유지) */
-          vvTick = false;
-          if (innerHeight - vv.height > 150) { nav.style.transform = ''; return; } /* 가상 키보드 가드 */
-          var d = (vv.offsetTop + vv.height) - document.documentElement.clientHeight;
-          nav.style.transform = d ? 'translateY(' + d + 'px)' : '';
-        };
-      }
+    if (!DVH_OK && window.visualViewport) {
+      var vv = window.visualViewport, vvTick = false;
+      var vvFix = function () { /* R1 transform — dvh 미지원 폴백 (수식 원형 유지) */
+        vvTick = false;
+        if (innerHeight - vv.height > 150) { nav.style.transform = ''; return; } /* 가상 키보드 가드 */
+        var d = (vv.offsetTop + vv.height) - document.documentElement.clientHeight;
+        nav.style.transform = d ? 'translateY(' + d + 'px)' : '';
+      };
       var vvQ = function () { /* rAF 스로틀 — 기존 onScroll 패턴 동형 */
         if (!vvTick) { vvTick = true; requestAnimationFrame(vvFix); }
       };
@@ -379,10 +369,13 @@
     /* ── 계측 모드 (?jbdebug=1) — 다음 라운드 가림 시 대표가 숫자만 읽으면 확정 진단 ──
        평시(파라미터 없음) = 이 블록 전체 미진입: DOM·스타일·타이머·리스너 0 (완전 무동작·무렌더).
        항목: vv.h / vv.top / innerH / clientH / dvh실측·lvh실측(CSS 엔진 화면높이 probe) /
-             적용보정값(fixB=computed bottom, fixT=inline transform). 진단표:
-         dvh<lvh + fixB>0 + 가림 지속  → 웨일 dvh도 거짓 (R3: 다른 신호원 필요)
-         dvh=lvh + 가림                → 웨일 dvh 미동조 (CSS 해법 자체 무효 확정)
-         fixB=0 + 가림                 → 갭 가드 오발동 또는 @supports 미적용 */
+             fixB=computed bottom / fixT=inline transform / R3 추가: rb=바 rect.bottom 실측
+             (앵커 좌표 직접 확인 — 729=작은 뷰포트 앵커 재확인용) / sai=env(safe-area-inset-
+             bottom) 실측 px (웨일 0 보고 가설 검증) / pb=바 computed padding-bottom. 진단표(R3 후):
+         잘림 해소 + 평시 갭 없음      → 24px 잠정값 확정 (종결)
+         잘림 잔존                     → 오버레이 > 24px: 잔여 px만큼 상향 (rb·pb로 산식 확정)
+         툴바 숨김 시 바 아래 갭        → 과보정: sai 기준 하향 또는 동적화 검토
+         sai > 0                       → env 정상 보고 = 가설 기각, rb 값으로 재진단 */
     if (/[?&]jbdebug=1(&|$)/.test(location.search)) {
       var dbgP = function (h) { /* CSS 단위 실측 probe — 미지원 단위는 style 무시 → 0 표기 */
         var p = document.createElement('div');
@@ -391,7 +384,8 @@
         document.body.appendChild(p);
         return p;
       };
-      var pDvh = dbgP('100dvh'), pLvh = dbgP('100lvh');
+      var pDvh = dbgP('100dvh'), pLvh = dbgP('100lvh'),
+          pSai = dbgP('env(safe-area-inset-bottom,0px)');
       var dbg = document.createElement('div');
       dbg.style.cssText = 'position:absolute;bottom:100%;left:0;right:0;z-index:1;font:10px/1.5 ui-monospace,Menlo,monospace;background:rgba(0,0,0,.78);color:#7CFC00;padding:2px 8px;white-space:nowrap;overflow:hidden;pointer-events:none;direction:ltr;text-align:left';
       nav.appendChild(dbg); /* #jbar(fixed) 기준 absolute = 바 바로 위 고정 */
@@ -405,7 +399,10 @@
           ' dvh:' + pDvh.offsetHeight +
           ' lvh:' + pLvh.offsetHeight +
           ' fixB:' + getComputedStyle(nav).bottom +
-          ' fixT:' + (nav.style.transform || '0');
+          ' fixT:' + (nav.style.transform || '0') +
+          ' rb:' + Math.round(nav.getBoundingClientRect().bottom) +
+          ' sai:' + pSai.offsetHeight +
+          ' pb:' + getComputedStyle(nav).paddingBottom;
       };
       dbgUpd();
       setInterval(dbgUpd, 300); /* 계측 모드 한정 — vv 이벤트 미발화 브라우저(웨일 의심)도 포착 */
