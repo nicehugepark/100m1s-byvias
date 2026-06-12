@@ -271,7 +271,7 @@
     addEventListener('scroll', function () {
       if (!tick) { tick = true; requestAnimationFrame(onScroll); }
     }, { passive: true });
-    nav.addEventListener('click', function () { /* 미니 바 전체 탭 = 확장 (+8px 히트 보정 CSS) */
+    nav.addEventListener('click', function () { /* 미니 바 전체 탭 = 확장 (+16px 히트 확장 CSS = 44px, P1-4 iii) */
       if (nav.classList.contains('mini')) { S.mini = false; render(); }
     });
     elCta.addEventListener('click', function (e) {
