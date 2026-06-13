@@ -58,8 +58,10 @@ document.addEventListener('click',function(e){
 --ok:#0F6E56;--ok-soft:#E1F5EE;--warn:#A32D2D;--warn-soft:#FCEBEB;--purple:#6B3FA0;--purple-soft:#F0E9F9;
 --gold-soft:#fdf6ec;--gold-line:#f0e4cf;--surface-1:#fafaf7;--surface-2:#f7f6f1;
 --surface-acc:#f1f5fa;--surface-acc-line:#dbe6f2;--hoverline:#c9c7bd;--ehead-mid:#ffffff;--ta1:.08;--ta2:.16;
---r-s:8px;--r-m:12px;--r-pill:999px}
-@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#B3B0A5;--line:#34322c;--bg:#16150f;--card:#211f18;--accent:#8FBCEE;
+--r-s:8px;--r-m:12px;--r-pill:999px;
+--tw-apricot:#FCA89F;--tw-magenta:#FF5FA2;
+--rose:#E84A7F;--rose-cta:#C73364;--rose-deep:#B32E5C;--rose-badge:#C8295F;--rose-soft:#FCEAF1;--rose-hov:#F9DCE7;--rose-ink:#A32B5A;--rose-line:#F6CBDC}
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#B3B0A5;--line:#34322c;--bg:#16150f;--card:#211f18;--accent:#8FBCEE;--rose-soft:#2E1620;--rose-hov:#3A1622;--rose-ink:#F6B8CF;--rose-line:#4A2233;
 --accent-soft:#1A2A3E;--accent-line:#2f4a6a;--accent-bg:#2E6CB2;--on-accent:#fff;
 --ok:#7BD4B2;--ok-soft:#173228;--warn:#FF8A8A;--warn-soft:#3a1f1d;--purple:#C9A8F0;--purple-soft:#2A1F3D;
 --gold-soft:#2a2410;--gold-line:#4a3f20;--surface-1:#262420;--surface-2:#2a2820;
@@ -493,6 +495,40 @@ body{overflow-wrap:break-word;word-break:normal}
 .prep-when{flex:0 0 auto;align-self:flex-start;font-size:12px;font-weight:600;padding:3px 8px;border-radius:var(--r-pill);white-space:nowrap;color:var(--muted);background:rgba(120,118,110,0.12)}
 .prep-when--now{color:var(--on-accent);background:var(--accent-bg)}
 .prep-when--soon{color:var(--sun-chip-ink,#9A5B00);background:var(--sun-chip-bg)}
+/* hero — TWICE apricot→magenta gradient, D-day countdown, single CTA */
+.hero{position:relative;overflow:hidden;border-radius:var(--r-m);margin:4px 0 18px;padding:26px 20px 22px;
+  background:linear-gradient(rgba(20,8,14,.62),rgba(20,8,14,.62)),linear-gradient(135deg,var(--tw-apricot) 0%,var(--tw-magenta) 100%);color:#fff;
+  text-align:center;box-shadow:0 8px 28px rgba(255,95,162,.22)}
+.hero-tour{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#FBD0E0;text-shadow:none;margin:0 0 8px}
+.hero-artist{font-size:clamp(34px,11vw,52px);font-weight:800;line-height:1.02;letter-spacing:-.01em;margin:0;text-shadow:0 2px 10px rgba(150,20,70,.25)}
+.hero-meta{font-size:14px;font-weight:500;opacity:.96;margin:10px 0 0;line-height:1.5}
+.hero-meta b{font-weight:700}
+.hero-finale{display:inline-flex;align-items:center;vertical-align:middle;border-radius:var(--r-m);min-height:54px;box-sizing:border-box;font-size:12px;font-weight:700;letter-spacing:.01em;margin:8px 0 0;padding:4px 10px;border-radius:var(--r-s);background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.34)}
+.hero-cd{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin:16px 0 4px;background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.34);border-radius:var(--r-m);padding:10px 18px;backdrop-filter:blur(2px);max-width:100%;min-height:54px;box-sizing:border-box}
+.hero-cd .hero-dd-label{font-size:12px;font-weight:600;align-self:baseline}
+.hero-cd .hero-dd-num{font-size:30px;font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap;align-self:baseline}
+.hero-cd .hero-dd-unit{font-size:13px;font-weight:600;align-self:baseline}
+.hero-presale{display:none;font-size:12px;font-weight:600;opacity:.94;margin:6px 0 0}
+.hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin:16px 0 0;min-height:48px;
+  padding:0 26px;background:var(--rose-deep);color:#fff;font-size:15px;font-weight:800;letter-spacing:.01em;text-decoration:none;border-radius:var(--r-m);
+  max-width:100%;box-sizing:border-box;white-space:normal;text-align:center;line-height:1.25;
+  border:1px solid rgba(255,255,255,.55);box-shadow:0 6px 18px rgba(120,15,55,.42)}
+.hero-cta:hover{filter:brightness(1.06)}
+.hero-cta svg{flex:0 0 auto}
+.hero-jump{margin:12px 0 0 10px;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.55);color:#fff;backdrop-filter:blur(2px)}
+.hero-jump:hover{background:rgba(255,255,255,.26);color:#fff}
+.showday-jump{display:inline-flex;align-items:center;gap:6px;min-height:44px;box-sizing:border-box;margin:4px 0 8px;padding:6px 12px;font-size:13px;font-weight:600;color:#AD2E5C;text-decoration:none;background:var(--rose-soft);border:1px solid #F3B6CC;border-radius:var(--r-m)}
+.showday-jump:hover{background:var(--rose-hov);color:#AD2E5C}
+@media(prefers-color-scheme:dark){.showday-jump{color:#F6B8CF;border-color:var(--rose-line)}.showday-jump:hover{color:#FBD0E0}
+  .hero{background:linear-gradient(135deg,#7A1A3E 0%,#3E0E20 100%);box-shadow:0 8px 28px rgba(0,0,0,.5)}
+  .hero-tour{color:#FBD0E0;text-shadow:none}
+  .hero-artist{text-shadow:0 2px 12px rgba(0,0,0,.5)}
+  .hero-finale{background:rgba(255,255,255,.1);border-color:rgba(246,184,207,.4)}
+  .hero-cd{background:rgba(255,255,255,.08);border-color:rgba(246,184,207,.34)}
+  .hero-cta{background:var(--rose-cta);border-color:rgba(255,255,255,.4);box-shadow:0 6px 18px rgba(0,0,0,.5)}}
+@media(max-width:900px){.hero{display:flex;flex-direction:column;align-items:stretch}.hero-finale,.hero-cd,.hero-cta{display:flex!important;width:100%;max-width:100%;margin:8px 0 0!important}.hero-cd{justify-content:center}.hero-cta{padding:0 16px}}
+@media(max-width:480px){.hero-jump{margin-left:0}}
 </style><script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
   (function () {
       if (!window.location.protocol.startsWith('http') || !window.fetch) return;
@@ -508,30 +544,34 @@ body{overflow-wrap:break-word;word-break:normal}
 <details class="langpick"><summary aria-label="Language — Português">Português</summary><div class="langmenu"><a class="lng" href="../twice-thisisfor-seoul.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/twice-thisisfor-seoul.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/twice-thisisfor-seoul.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/twice-thisisfor-seoul.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/twice-thisisfor-seoul.html" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/twice-thisisfor-seoul.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/twice-thisisfor-seoul.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/twice-thisisfor-seoul.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/twice-thisisfor-seoul.html" aria-current="true" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/twice-thisisfor-seoul.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/twice-thisisfor-seoul.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div></details>
 <div class="share-row"><a class="back" style="margin-inline-end:auto;align-self:center" href="index.html">← Todos os eventos</a>
   <button type="button" class="share-btn" id="shareBtn" aria-label="Compartilhar este guia"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v13M8 7l4-4 4 4"/></svg>Compartilhar</button></div>
-<div class="ehead-detail" style="border-inline-start:4px solid var(--stripe);--tr:251,110,155;background:linear-gradient(var(--ga,135deg),rgba(var(--tr),var(--ta1,.08)) 0%,var(--ehead-mid,#ffffff) 42%,rgba(var(--tr),var(--ta2,.16)) 100%);--stripe:#FB6E9B">
-  <span class="ghost ghost-lg" aria-hidden="true">TW</span>
-  <span class="abadge" style="background:#FB6E9B;color:#1a1a18" title="TWICE"><bdi>TW</bdi></span>
-  <div><h1 style="margin:0"><bdi>TWICE</bdi> — <bdi>Seul</bdi></h1>
-  <p class="sub subwrap" style="margin:2px 0 0"><span class="subitem"><bdi>THIS IS FOR World Tour</bdi></span><span class="subitem"><bdi>KSPO Dome (Ginásio Olímpico de Ginástica)</bdi></span><span class="subitem">2026-07-10 <span class="dday" data-date="2026-07-10"></span></span><span class="subitem">🇰🇷 Coreia do Sul Seul</span></p></div>
-</div>
-<span class="badge" style="color:var(--accent);background:var(--accent-soft);margin-top:10px">Janela Dourada do Anúncio · Agora é o melhor momento</span>
-<a class="hero-cta" href="#stay-len"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M8 2v4M16 2v4M3 9h18M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Crie seu roteiro</a><a class="showday-jump hero-jump" data-w8-fold="1" href="#showday-c0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v4M16 2v4M3 9h18M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Cronograma de shows →</a>
+<!-- Hero — primeira tela = desejo (cor de apoio · artista · contagem regressiva · único CTA). -->
+<div class="hero">
+  <p class="hero-tour"><bdi>THIS IS FOR World Tour</bdi></p>
+  <h1 class="hero-artist"><bdi>TWICE</bdi></h1>
+  <p class="hero-meta"><b><bdi>Seul · KSPO Dome</bdi></b><br><span class="dtkn">2026-07-10</span>~12 · 3 noites · 🇰🇷 Coreia do Sul</p>
+  <p class="hero-finale">THIS IS FOR FINALE in SEOUL — 7/10·11·12 KSPO Dome</p>
+  <div class="hero-cd" role="group" aria-label="Contagem regressiva para o primeiro show">
+    <span class="hero-dd-label">Faltam para o primeiro show</span>
+    <span class="hero-dd-num" data-date="2026-07-10">D-</span>
+    <span class="hero-dd-unit"></span>
+  </div>
+  <a class="hero-cta" href="#stay-len"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M8 2v4M16 2v4M3 9h18M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Monte meu roteiro</a><a class="showday-jump hero-jump" data-w8-fold="1" href="#showday-c0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v4M16 2v4M3 9h18M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Ver cronograma →</a>
 </div>
 <!-- TL;DR — 텍스트 많아 초심자가 30초 안에 핵심만 파악하도록 hero 직후 3줄 요약(일정·Ingresso·막차). -->
-<div class="tldr" aria-label="30 segundos essenciais 요약">
+<div class="tldr" aria-label="Resumo de 30 segundos">
   <p class="tldr-hd">30 segundos essenciais</p>
   <ul>
-    <li><b>Quando · Onde</b> — <span class="dtkn">2026-07-10</span>·11·12 (금·토·일) 3일 연속, 서울 <b>KSPO돔</b>(올림픽공원). 시작 금 19:00 / 토 18:00 / 일 17:00.</li>
-    <li><b>Ingresso</b> — <b>Venda em progresso</b> — <a class="tap44" href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">Verificar assentos disponíveis ↗</a> (일반 예매 6/11 20:00 오픈 경과). 가격 154,000원(≈$110), 좌석·스탠딩 동일.</li>
-    <li><b>A armadilha do último trem</b> — 세 회차 모두 막차 여유. 단 <span class="warn">Linha 9 (direção Gaeheung) + sábado e domingo até ~22h55</span>é o mais rápido → apenas esta combinação embarca até 22h30.</li>
+    <li><b>Quando · Onde</b> — <span class="dtkn">2026-07-10</span>·11·12 (sex·sáb·dom) 3 noites seguidas, Seul <b>KSPO Dome</b> (Parque Olímpico). Início: sex 19h / sáb 18h / dom 17h.</li>
+    <li><b>Ingresso</b> — <b>Venda em andamento</b> — <a class="tap44" href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">Verificar assentos disponíveis ↗</a> (venda geral aberta em 11/jun às 20h KST). Preço 154.000 KRW (≈$110), igual para plateia e pista.</li>
+    <li><b>A armadilha do último trem</b> — Todas as três noites têm margem. Só <span class="warn">Linha 9 sentido oeste (Gaehwa) aos sáb/dom encerra ~22h55</span> — nessa combinação, embarque até 22h30.</li>
   </ul>
 </div>
 <!-- 히어로 무드 배너 — 응원색 hero 정체성은 그대로 두고, 분위기만 와이드 사진으로 더함(배경 오버레이 회피). -->
-<div class="media-banner media-banner--hero"><img src="/assets/gen/photo/hero.jpg?v=3" width="1200" height="800" loading="eager" fetchpriority="high" decoding="async" alt="공연장을 가득 채운 핑크빛 응원봉 물결"><div class="mb-cap">공연의 밤 · 객석을 가득 메운 응원봉 물결</div></div>
+<div class="media-banner media-banner--hero"><img src="/assets/gen/photo/hero.jpg?v=3" width="1200" height="800" loading="eager" fetchpriority="high" decoding="async" alt="Arena lotada com uma onda de lightsticks cor-de-rosa"><div class="mb-cap">Noite de show · uma onda de lightsticks enchendo a arena</div></div>
 
 <!-- 긴 문서 동선 안내 — 스텝카드 위 1줄 + 핵심 3섹션 앵커 점프(막차/Hospedagem/코스). -->
 <nav class="jump-nav" aria-label="O que você ganha nesta página">
-  <p class="jn-lbl">O que você ganha nesta página — A armadilha do último trem·Hospedagem·Roteiro를 한 페이지에</p>
+  <p class="jn-lbl">O que você ganha nesta página — armadilha do último trem · hospedagem · roteiro, tudo em um só lugar</p>
   <div class="jn-row">
     <a href="#last-train"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 10h14M8 20l-2 2M16 20l2 2"/><circle cx="9" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1" fill="currentColor" stroke="none"/></svg>A armadilha do último trem</a>
     <a href="#sec-stays"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21V7l9-4 9 4v14"/><path d="M3 21h18"/><path d="M9 21v-5h6v5"/></svg>Hospedagem</a>
@@ -545,8 +585,8 @@ body{overflow-wrap:break-word;word-break:normal}
   <p class="s5-sub">Se é sua primeira vez em Seul, é só acompanhar os passos ①→⑤.</p>
   <ol>
     <li><span class="s5-num">1</span><div class="s5-body"><div class="s5-t">Passagem aérea + entrada (K-ETA)</div><div class="s5-d">Com base na chegada ao Aeroporto Internacional de Incheon (ICN). <a class="tap44" href="https://www.skyscanner.co.kr/flights-to/sela/cheap-flights-to-seoul.html" rel="nofollow" target="_blank">Comparar passagens ↗</a> · <a class="tap44" href="https://www.trip.com/flights/?Allianceid=8661388&amp;SID=319326505&amp;trip_sub1=twice_seoul_ko_steps5_flight" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="steps5" data-aff-vendor="Trip.com" data-aff-event="twice-thisisfor-seoul" data-aff-pos="1">Passagens Trip.com ↗</a><div class="s5-sub"><b>K-ETA / Visto:</b> Verifique os requisitos por sua nacionalidade no site oficial <a href="https://www.k-eta.go.kr" target="_blank" rel="noopener nofollow">k-eta.go.kr ↗</a>.</div></div></div></li>
-    <li><span class="s5-num">2</span><div class="s5-body"><div class="s5-t">공항 → Hospedagem</div><div class="s5-d"><b>Ônibus executivo 6705A</b>(Aeroporto Internacional de Incheon T1/T2 ↔ Lotte World (Jamsil), sem transferência — 18.000 KRW — recomendado para quem chega pela primeira vez) · Trem do Aeroporto + Linha 9 · Táxi (70–90 mil KRW).<div class="s5-sub">Como comprar passagens e a ordem para obter o WOWPASS estão em <a href="#arrival-1h" style="color:var(--accent);text-decoration:none;font-weight:500">‘도착 첫 1시간’ 타임라인 →</a> .</div></div></div></li>
-    <li><span class="s5-num">3</span><div class="s5-body"><div class="s5-t">Hospedagem 예약</div><div class="s5-d">4 opções perto de Jamsil — escolha depois de ver o roteiro.</div><a class="s5-go" href="#stay-len">Escolher datas de estadia →</a></div></li>
+    <li><span class="s5-num">2</span><div class="s5-body"><div class="s5-t">Aeroporto → Hospedagem</div><div class="s5-d"><b>Ônibus executivo 6705A</b>(Aeroporto Internacional de Incheon T1/T2 ↔ Lotte World (Jamsil), sem transferência — 18.000 KRW — recomendado para quem chega pela primeira vez) · Trem do Aeroporto + Linha 9 · Táxi (70–90 mil KRW).<div class="s5-sub">Como comprar passagens e a ordem para obter o WOWPASS estão em <a href="#arrival-1h" style="color:var(--accent);text-decoration:none;font-weight:500">cronograma ‘Sua primeira hora’ →</a>.</div></div></div></li>
+    <li><span class="s5-num">3</span><div class="s5-body"><div class="s5-t">Reservar hospedagem</div><div class="s5-d">4 opções perto de Jamsil — escolha depois de ver o roteiro.</div><a class="s5-go" href="#stay-len">Escolher datas de estadia →</a></div></li>
     <li><span class="s5-num">4</span><div class="s5-body"><div class="s5-t">No dia do show</div><div class="s5-d">Leve seu passaporte original · Chegue cedo para verificação de identidade · Merchandise de manhã · Show começa sexta 19h / sábado 18h / domingo 17h.</div></div></li>
     <li><span class="s5-num">5</span><div class="s5-body"><div class="s5-t">Depois do show</div><div class="s5-d">Todos os três dias têm margem para o último trem. Mas Linha 9 Slow (Gaeheung) + sábado e domingo são rápidos apenas até ~22h55. <a href="#last-train" style="color:var(--accent);text-decoration:none;font-weight:500">Ver últimos trens por linha e horários reversos →</a></div></div></li>
   </ol>
@@ -614,11 +654,11 @@ body{overflow-wrap:break-word;word-break:normal}
   <a class="prep-row" href="https://www.kkday.com/en/product/12827?cid=25407&amp;ud1=twice-seoul" rel="sponsored nofollow" target="_blank" data-aff="1" data-aff-surface="lock-now" data-aff-vendor="KKday" data-aff-event="twice-thisisfor-seoul" data-aff-pos="5">
     <span class="prep-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg></span>
     <span class="prep-main"><span class="prep-name">Passes de transporte e atrações turísticas <small>· KKday</small></span><span class="prep-sub">Seoul Pass Discover — transporte urbano + pontos turísticos em um cartão (para seus dias livres)</span></span>
-    <span class="prep-when">antes de partir~도착 후</span>
+    <span class="prep-when">antes de partir · após chegar</span>
   </a>
   <a class="prep-row" href="https://www.klook.com/search/?query=Seoul" rel="nofollow" target="_blank">
     <span class="prep-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 6h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg></span>
-    <span class="prep-main"><span class="prep-name">투어·Ingresso <small>· Klook</small></span><span class="prep-sub">Para seus dias sobressalentes — pode decidir depois de chegar, sem pressa</span></span>
+    <span class="prep-main"><span class="prep-name">Tours · Ingressos <small>· Klook</small></span><span class="prep-sub">Para seus dias extras — pode decidir depois de chegar, sem pressa</span></span>
     <span class="prep-when">também OK depois</span>
   </a>
 </div>
