@@ -61,7 +61,7 @@ WAVE7_REPLACEMENTS = [
     ),
     (
         ".langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600;color:var(--muted);background:var(--card)}",
-        ".langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:44px;box-sizing:border-box;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600;color:var(--muted);background:var(--card)}",
+        ".langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:44px;box-sizing:border-box;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600;color:var(--muted);background:var(--card);min-width:140px;white-space:nowrap}",
     ),
     (
         ".langpick .langmenu .lng{display:flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:6px;font-size:13px;color:var(--muted);text-decoration:none}",
