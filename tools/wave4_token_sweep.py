@@ -2,7 +2,7 @@
 """WAVE4 (R27 2심 조니 확정) — 다크 전역 토큰화 + P1 일괄 sweep. 멱등 (마커 W4TOKENS-v1).
 
 본질: raw hex 산재 → 색 토큰 + 다크 오버라이드 단일 레이어 (P0-4).
-소스 생성기(메인 repo projects/byvias/site/generate.py)에 동일 토큰 레이어 포트 완료 —
+소스 생성기(메인 repo projects/bybias/site/generate.py)에 동일 토큰 레이어 포트 완료 —
 본 sweep 은 generate.py 미포트 패치 레이어(GA4·Travelpayouts·share·stay22) 보존을 위해
 라이브 dist 에 같은 레이어를 적용하는 브리지. 전면 재생성은 4 레이어 포트 후 (보고 참조).
 

@@ -20,7 +20,7 @@
 - 제거: 헤더 자기 주소 라벨 <span>bybias.100m1s.com</span> / hf-count 빈 <p> → <div> (aria-live)
 - P2: '이번 주 임박'(실 윈도우 14일) → '다가오는 14일' 정직 표기 11개 언어 / 음방 카드 임박 틴트
 
-소스 정합: 메인 repo projects/byvias/site/generate.py 에 동치 변경 포트
+소스 정합: 메인 repo projects/bybias/site/generate.py 에 동치 변경 포트
 (topbar span 제거 / ytfacade bg / card_visual --tr 토큰 / 아카이브 분리). 코스 페이지(ko·en)는
 generate.py 비관리 — 본 sweep 이 단일 레이어.
 

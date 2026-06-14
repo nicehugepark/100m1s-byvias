@@ -13,7 +13,7 @@ import time
 
 import requests
 
-OUT_RAW = "/Users/seongjinpark/company/100m1s-byvias/assets/gen/photo/raw"
+OUT_RAW = "/Users/seongjinpark/company/100m1s-bybias/assets/gen/photo/raw"
 ENV_PATH = "/Users/seongjinpark/company/100m1s/.env"
 HARD_LIMIT = 30  # 본 배치 총 생성 한도 (시안 포함)
 MODEL = "gpt-image-1.5"

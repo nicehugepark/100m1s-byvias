@@ -3,7 +3,7 @@
 
 #6  c4(4박5일) 동등화 — sl-2 규격: 일자별 타임라인(lirow)·스팟 카드(kakao+google 페어,
     en은 en sl-2 규격 정합 google 단독)·경고 박스(wait-note)·showday ckstep 체크리스트.
-    재료 = 이시카와 실측 draft(메인 repo projects/byvias/site/twice-seoul-course-c4c7.draft.json,
+    재료 = 이시카와 실측 draft(메인 repo projects/bybias/site/twice-seoul-course-c4c7.draft.json,
     전 항목 WebSearch ≥2소스 교차 검증 2026-06-12). draft에 없는 정보 날조 0 — gaps는
     비우거나 '직전 확인' 일반 안내. c7은 R45 범위(본 패치 미접촉).
 #7  맛집 카드 정직화 — ①청와옥 중복 카드 제거(showday 야식 step의 동일 카드 — 같은

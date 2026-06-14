@@ -207,7 +207,7 @@ def build_translations(lang: str, trans_results: dict) -> dict:
 def batch_translate_all(langs: list) -> dict:
     """i18n.py를 통해 전 언어 배치 번역. 드라이 warm 패턴 (hung 회피)."""
     # i18n.py 경로 (100m1s repo site/)
-    site_path = Path("/Users/seongjinpark/company/100m1s/projects/byvias/site")
+    site_path = Path("/Users/seongjinpark/company/100m1s/projects/bybias/site")
     sys.path.insert(0, str(site_path))
     import i18n as i18n_mod
 

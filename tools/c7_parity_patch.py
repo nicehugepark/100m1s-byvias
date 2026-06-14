@@ -3,7 +3,7 @@
 
 c7 sl-7 패널을 c4(sl-4) 규격으로 교체: 일자별 타임라인(lirow)·스팟 카드(ko 카카오+구글
 페어, en은 en sl-2 규격 google 단독)·경고 박스(wait-note)·showday-s7 flat ckstep 체크리스트.
-재료 = 이시카와 실측 draft(메인 repo projects/byvias/site/twice-seoul-course-c4c7.draft.json,
+재료 = 이시카와 실측 draft(메인 repo projects/bybias/site/twice-seoul-course-c4c7.draft.json,
 전 항목 WebSearch ≥2소스 교차 검증 2026-06-12). 날조 0 —
   · draft gaps('직전 확인'·'미공지'·'미검증')는 그대로 정직 노출.
   · draft가 "c4 Day spots 참조"로 지시한 step만 c4 검증 스팟 카드 재사용(봉피양·소문난성수
