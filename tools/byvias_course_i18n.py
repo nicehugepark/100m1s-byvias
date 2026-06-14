@@ -285,8 +285,8 @@ def build_lang(
 
     # ── 3. 텍스트 노드 치환 ────────────────────────
     for node, new_text in zip(
-        nodes, translated, strict=False
-    ):  # strict= kwarg Python<3.10 미지원 제거
+        nodes, translated
+    ):  # strict= kwarg Python<3.10 미지원
         if new_text and new_text != str(node):
             node.replace_with(NavigableString(new_text))
 
