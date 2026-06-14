@@ -272,7 +272,9 @@ def build_lang(
     translated = I18N.translate_batch(raw_texts, lang)
 
     # ── 3. 텍스트 노드 치환 ────────────────────────
-    for node, new_text in zip(nodes, translated, strict=False):
+    for node, new_text in zip(
+        nodes, translated
+    ):  # strict= kwarg Python<3.10 미지원 제거
         if new_text and new_text != str(node):
             node.replace_with(NavigableString(new_text))
 
