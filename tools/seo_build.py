@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ByBias SEO 기반 산출물 생성 — canonical 주입 + sitemap.xml + robots.txt.
+"""ByVias SEO 기반 산출물 생성 — canonical 주입 + sitemap.xml + robots.txt.
 
 원칙 (발명 금지):
   - 각 페이지의 canonical / sitemap loc 은 그 페이지가 이미 보유한
@@ -92,7 +92,7 @@ def main() -> int:
     lines.append("</urlset>")
     (DIST / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-    # robots.txt — AI 검색엔진 포함 전체 허용 (ByBias 는 SEO 유입이 생명)
+    # robots.txt — AI 검색엔진 포함 전체 허용 (ByVias 는 SEO 유입이 생명)
     robots = f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n"
     (DIST / "robots.txt").write_text(robots, encoding="utf-8")
 

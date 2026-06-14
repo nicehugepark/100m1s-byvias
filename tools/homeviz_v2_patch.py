@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ByBias 홈 비주얼 2차 (HOMEVIZ-v2) — 11언어 일괄 패치.
+"""ByVias 홈 비주얼 2차 (HOMEVIZ-v2) — 11언어 일괄 패치.
 
 R19 UGC 처방 "홈 = 상세의 예고편":
   1. [P0] 히어로 스포트라이트 — 가장 임박한 이벤트(min D-day)를 히어로 안에 대형 D-day +

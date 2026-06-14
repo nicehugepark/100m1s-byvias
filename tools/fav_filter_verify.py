@@ -6,7 +6,7 @@ journey_bar_verify.py 동형: Playwright + 로컬 http(dist) + rAF 2프레임 se
 
 8항목 (조니 시각 verbatim):
   ITEM-1 칩 행 390px      — ko index 390×844 칩 행 클립 (flex line 수 게이트: 1줄 기대)
-  ITEM-2 다크 칩 ON       — prefers-color-scheme:dark + localStorage bybias_fav 선 주입
+  ITEM-2 다크 칩 ON       — prefers-color-scheme:dark + localStorage byvias_fav 선 주입
                             (아티스트 1명·filterOn) → 칩 ON 클립
   ITEM-3 dim 0.45 다크    — 다크 + 필터 ON에서 festival dim(.favf-tbd) 카드 포함 프레임
   ITEM-4 /ar/ RTL         — ar index 390px 칩 행 클립 + 시트 오픈 (X 버튼 = 좌측 기대)
@@ -49,7 +49,7 @@ OUT.mkdir(exist_ok=True)
 PORT = 8947
 BASE = f"http://127.0.0.1:{PORT}"
 VP = {"width": 390, "height": 844}
-KEY = "bybias_fav"
+KEY = "byvias_fav"
 # 콘서트 보유 아티스트 (dist/index.html .abadge[title] 실측: BTS 3건)
 ARTIST = "BTS"
 # festival-only 키 (🎪 배지 카드 — 비 festival 콘서트 0건 → 빈 상태 유도, ITEM-8)

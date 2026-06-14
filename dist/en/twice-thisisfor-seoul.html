@@ -21,20 +21,20 @@ document.addEventListener('click',function(e){
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TWICE Seoul — ByBias</title>
+<title>TWICE Seoul — ByVias</title>
 <meta name="description" content="When fans gather → lock in early, beat rising prices">
 <!-- Share card — OG/Twitter meta. og:image = cheer-color + text 1200x630 PNG (no logo / no real photo, legal-safe). -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en">
-<meta property="og:title" content="TWICE Seoul Travel Guide — ByBias">
+<meta property="og:title" content="TWICE Seoul Travel Guide — ByVias">
 <meta property="og:description" content="THIS IS FOR World Tour Seoul (KSPO Dome). Day-by-day routes + show-day checklist + hotels near the venue.">
 <meta property="og:image" content="https://bybias.100m1s.com/og/twice-seoul.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://bybias.100m1s.com/en/twice-thisisfor-seoul.html">
-<meta property="og:site_name" content="ByBias">
+<meta property="og:site_name" content="ByVias">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TWICE Seoul Travel Guide — ByBias">
+<meta name="twitter:title" content="TWICE Seoul Travel Guide — ByVias">
 <meta name="twitter:description" content="THIS IS FOR World Tour Seoul (KSPO Dome). Day-by-day routes + show-day checklist + hotels near the venue.">
 <meta name="twitter:image" content="https://bybias.100m1s.com/og/twice-seoul.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -880,10 +880,10 @@ body{overflow-wrap:break-word;word-break:normal}
 <section class="disc-hub" id="notice" data-r46w1="1">
 <h2>Site notice &amp; disclosures</h2>
 <ul>
-<li><b>Affiliate links</b> — Booking/product links marked <span class="aff-eg"></span> are affiliate (commission) links. ByBias may earn a commission on purchases, at no additional cost to you. We aim to mark every affiliate link with this badge.</li>
+<li><b>Affiliate links</b> — Booking/product links marked <span class="aff-eg"></span> are affiliate (commission) links. ByVias may earn a commission on purchases, at no additional cost to you. We aim to mark every affiliate link with this badge.</li>
 <li><b>Prices change</b> — Displayed prices are rough market rates and change frequently. Check live prices and availability at each provider after entering your dates.</li>
 <li><b>Forecasts</b> — Price and availability forecasts are estimates and may differ from actual. You are solely responsible for booking and payment.</li>
-<li><b>Unofficial service</b> — ByBias is an unofficial schedule &amp; travel information service, unaffiliated with artists, agencies, or official partners.</li>
+<li><b>Unofficial service</b> — ByVias is an unofficial schedule &amp; travel information service, unaffiliated with artists, agencies, or official partners.</li>
 <li><b>Entry requirements (K-ETA)</b> — K-ETA/visa rules vary by nationality and change often. Before departure, re-check the rules for your nationality on the official site <a href="https://www.k-eta.go.kr" target="_blank" rel="noopener nofollow">k-eta.go.kr</a>.</li>
 <li><b>Overseas cards</b> — Foreign-issued cards often fail 3DS (extra identity verification) on Korean ticket sites. We recommend having a prepaid card (e.g., WOWPASS) ready.</li>
 <li><b>No alerts</b> — There are no built-in price or sold-out alerts. Check seat returns and re-opens directly on the <a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">official seller (NOL Ticket) ↗</a>.</li>
@@ -899,7 +899,7 @@ var cur=document.documentElement.getAttribute('data-lang')||DEFL;
 var PFX=/^\/?(en|ja|zh-cn|zh-tw|es|th|id|pt|ar|vi)(\/|$)/;
 // 언어 토글 클릭 = 선택 저장(이후 자동 리다이렉트 억제)
 document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('.lng');
- if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('bybias_lang',hl);}catch(e){}}});
+ if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('byvias_lang',hl);}catch(e){}}});
 // 첫 방문(저장값 없음)만 Accept-Language 자동. 저장값 있으면 그 언어로 1회 이동.
 function go(l){if(l===cur)return;
  var path=location.pathname; var parts=path.split('/');
@@ -912,7 +912,7 @@ function go(l){if(l===cur)return;
  location.replace(tgt);}
 // 명시 언어경로(prefix 있음 = cur!==DEFL) = 자동/저장 리다이렉트 전면 skip. 명시 URL 우선.
 if(cur===DEFL){
-var saved=null;try{saved=localStorage.getItem('bybias_lang');}catch(e){}
+var saved=null;try{saved=localStorage.getItem('byvias_lang');}catch(e){}
 if(saved&&SUP.indexOf(saved)>=0){go(saved);}
 else if(!saved){var nav=(navigator.languages||[navigator.language||'']);
  for(var i=0;i<nav.length;i++){var c=(nav[i]||'').toLowerCase();
@@ -978,7 +978,7 @@ document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.targe
 
 // Show-day checklist persistence — localStorage (key separated by language + page). Graceful if unavailable (checks still toggle, no save, 0 errors).
 (function(){try{
- var KEY='bybias_showday_'+(document.documentElement.lang||'en')+'_'+(location.pathname.split('/').pop()||'index');
+ var KEY='byvias_showday_'+(document.documentElement.lang||'en')+'_'+(location.pathname.split('/').pop()||'index');
  var boxes=document.querySelectorAll('.ckstep[data-ck]');
  if(!boxes.length)return;
  var ls=null;try{ls=window.localStorage;var t='__bb_t';ls.setItem(t,'1');ls.removeItem(t);}catch(e){ls=null;}
@@ -1015,7 +1015,7 @@ document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.targe
  var src=document.querySelector('.btns'); if(!src) return;
  var label=(src.previousElementSibling&&/font-weight:600/.test(src.previousElementSibling.getAttribute('style')||'')?src.previousElementSibling.textContent.trim():'')||'';
  var links=[].slice.call(src.querySelectorAll('a.btn[rel~="sponsored"]')); if(!links.length) return;
- if(localStorage.getItem('bybias_affbar_dismissed')==='1') return;
+ if(localStorage.getItem('byvias_affbar_dismissed')==='1') return;
  var css='.affbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;gap:8px;'
   +'padding:8px max(10px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-right));'
   +'background:var(--card);border-top:1px solid var(--line);box-shadow:0 -2px 10px rgba(0,0,0,.06);'
@@ -1041,7 +1041,7 @@ document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.targe
  });
  bar.appendChild(wrap);
  var x=document.createElement('button'); x.className='affbar-x'; x.setAttribute('aria-label','close'); x.textContent='×';
- x.addEventListener('click',function(){bar.classList.remove('show');document.body.style.paddingBottom='';try{localStorage.setItem('bybias_affbar_dismissed','1');}catch(e){}});
+ x.addEventListener('click',function(){bar.classList.remove('show');document.body.style.paddingBottom='';try{localStorage.setItem('byvias_affbar_dismissed','1');}catch(e){}});
  bar.appendChild(x);
  document.body.appendChild(bar);
  function onScroll(){var y=window.scrollY||document.documentElement.scrollTop; var h=document.documentElement.scrollHeight-window.innerHeight;

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   ByBias 최애 필터 1단계 — A안 "독립 칩 행 + 바텀 시트" (Q-20260607-130)
+   ByVias 최애 필터 1단계 — A안 "독립 칩 행 + 바텀 시트" (Q-20260607-130)
    SPEC 정본: favorite-filter-drafts/SPEC.md §①~⑧ (디자인팀 2026-06-12)
    시안: fav-filter-A-chip-row.html (CSS 토글 데모 기법 이식 금지 — 본 파일은 JS 실구현)
    jbar.js 패턴 동형: 단일 모듈 SSOT · IIFE · 의존성 0 · 실패 = 본문 무영향(콘솔 0)
@@ -16,7 +16,7 @@
      tp-u: 매칭 시 표시, 통상 교집합 0 → 빈 상태 (전체 보기 유도)
      tp-s: 면제 — 항상 전체 + 상단 1줄 주석
      아카이브(.w5-archive): 콘서트 동일 + summary 카운트 갱신, 0건 = 섹션째 숨김
-   localStorage "bybias_fav" v1 (SPEC §5 verbatim):
+   localStorage "byvias_fav" v1 (SPEC §5 verbatim):
      {v:1, artists:[원문 그대로 — 정규화·번역·소문자화 금지], filterOn, updatedAt}
      v 불일치/파싱 실패 = 폐기 + 미선택. 알 수 없는 키 = 매칭만 무시·저장 보존
      (다음 투어 발표 시 부활) — 삭제는 사용자의 명시적 재저장(모두 해제)시에만.
@@ -33,7 +33,7 @@
     var FV = window.__FAV || {};
     var LANG = (FV.l || document.documentElement.lang || 'ko').toLowerCase();
     if (document.getElementById('favf-row')) return; /* 멱등 (중복 주입 가드) */
-    var KEY = 'bybias_fav';
+    var KEY = 'byvias_fav';
 
     /* ── 로케일 문자열 (SPEC §8 키, 11 locale — jbar.js L10N 11언어 선례 동형) ──
        P0-2: index 11언어 wiring 선반영에 맞춰 9 locale 직접 추가. ko/en = 정본,

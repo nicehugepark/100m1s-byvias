@@ -8,7 +8,7 @@
 - kaohsiung: 대만 공연 (NOL 미사용) → 공식 예매처 일반 안내 (잘못된 링크 박제 금지).
 
 zh-cn/zh-tw 는 동시 세션(zh-localization) 영역이라 제외.
-index 계열은 동시 세션(bybias-home-impl) 영역이라 제외.
+index 계열은 동시 세션(byvias-home-impl) 영역이라 제외.
 twice 외 845개 파일의 동일 라벨은 별도 사이클에서 일괄 처리 (lead 결정 대기).
 """
 

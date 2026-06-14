@@ -21,20 +21,20 @@ document.addEventListener('click',function(e){
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TWICE 首爾 — ByBias</title>
+<title>TWICE 首爾 — ByVias</title>
 <meta name="description" content="粉絲聚集演出 → 漲價前搶便宜法">
 <!-- 공유 장치 — 공용 브랜드 OG(핑크 그라데이션+텍스트, 로고·실사진 0, 법무 정합). -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh-Hant">
-<meta property="og:title" content="TWICE 首爾 — ByBias">
+<meta property="og:title" content="TWICE 首爾 — ByVias">
 <meta property="og:description" content="粉絲聚集演出 → 漲價前搶便宜法">
 <meta property="og:image" content="https://bybias.100m1s.com/og/twice-seoul.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://bybias.100m1s.com/zh-tw/twice-thisisfor-seoul.html">
-<meta property="og:site_name" content="ByBias">
+<meta property="og:site_name" content="ByVias">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TWICE 首爾 — ByBias">
+<meta name="twitter:title" content="TWICE 首爾 — ByVias">
 <meta name="twitter:description" content="粉絲聚集演出 → 漲價前搶便宜法">
 <meta name="twitter:image" content="https://bybias.100m1s.com/og/twice-seoul.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -592,10 +592,10 @@ body{overflow-wrap:break-word;word-break:normal}
 <section class="disc-hub" id="notice" data-r46w1="1">
 <h2>網站聲明與揭露</h2>
 <ul>
-<li><b>聯盟連結</b> — 預訂/商品連結中標有 <span class="aff-eg"></span> 標誌的連結為聯盟（佣金）連結。ByBias 可能在您購買時賺取佣金，您無需支付額外費用。我們致力於在每個聯盟連結上標示此標誌。</li>
+<li><b>聯盟連結</b> — 預訂/商品連結中標有 <span class="aff-eg"></span> 標誌的連結為聯盟（佣金）連結。ByVias 可能在您購買時賺取佣金，您無需支付額外費用。我們致力於在每個聯盟連結上標示此標誌。</li>
 <li><b>價格變動</b> — 顯示的價格為大致市場行情，隨時可能變動。請在輸入日期後，直接向各預訂平台查詢即時價格和可用性。</li>
 <li><b>預測免責</b> — 價格和可用性預測僅為估算，可能與實際情況不同。預訂及付款的最終責任由使用者本人承擔。</li>
-<li><b>非官方服務</b> — ByBias 是與藝人、經紀公司或官方合作夥伴無關的非官方行程及旅遊資訊服務。</li>
+<li><b>非官方服務</b> — ByVias 是與藝人、經紀公司或官方合作夥伴無關的非官方行程及旅遊資訊服務。</li>
 <li><b>入境要求（K-ETA）</b> — K-ETA/簽證規定因國籍和政策而異，且經常變動。出發前，請於官方網站 <a href="https://www.k-eta.go.kr" target="_blank" rel="noopener nofollow">k-eta.go.kr</a> 確認您的國籍所適用的規定。</li>
 <li><b>海外信用卡</b> — 在韓國售票網站上，海外發行的信用卡常因 3DS（額外身份驗證）而失敗。建議備妥預付卡（如 WOWPASS）。</li>
 <li><b>無通知功能</b> — 本站不提供價格或售罄通知功能。請直接至 <a href="https://world.nol.com/en/ticket/places/26000627/products/26007949" target="_blank" rel="noopener nofollow">官方售票商（NOL Ticket）↗</a> 確認退票及補售資訊。</li>
@@ -688,7 +688,7 @@ var cur=document.documentElement.getAttribute('data-lang')||DEFL;
 var PFX=/^\/?(en|ja|zh-cn|zh-tw|es|th|id|pt|ar|vi)(\/|$)/;
 // 언어 토글 클릭 = 선택 저장(이후 자동 리다이렉트 억제)
 document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('.lng');
- if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('bybias_lang',hl);}catch(e){}}});
+ if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('byvias_lang',hl);}catch(e){}}});
 // 첫 방문(저장값 없음)만 Accept-Language 자동. 저장값 있으면 그 언어로 1회 이동.
 function go(l){if(l===cur)return;
  var path=location.pathname; var parts=path.split('/');
@@ -701,7 +701,7 @@ function go(l){if(l===cur)return;
  location.replace(tgt);}
 // 명시 언어경로(prefix 있음 = cur!==DEFL) = 자동/저장 리다이렉트 전면 skip. 명시 URL 우선.
 if(cur===DEFL){
-var saved=null;try{saved=localStorage.getItem('bybias_lang');}catch(e){}
+var saved=null;try{saved=localStorage.getItem('byvias_lang');}catch(e){}
 if(saved&&SUP.indexOf(saved)>=0){go(saved);}
 else if(!saved){var nav=(navigator.languages||[navigator.language||'']);
  for(var i=0;i<nav.length;i++){var c=(nav[i]||'').toLowerCase();

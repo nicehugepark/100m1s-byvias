@@ -17,8 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
 
-LOGO_DARK = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 90" width="206" height="90" role="img" aria-label="ByBias">
-  <title>ByBias</title>
+LOGO_DARK = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 90" width="206" height="90" role="img" aria-label="ByVias">
+  <title>ByVias</title>
   <text x="14" y="66" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="60" font-weight="700" letter-spacing="-1.5">
     <tspan fill="#ECE9E0">by</tspan><tspan fill="#E84A7F">bias</tspan>
   </text>

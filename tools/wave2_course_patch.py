@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ByBias 코스 페이지 R25 wave2 패치 (WAVE2-COURSE-v1) — ko+en 멱등 적용.
+"""ByVias 코스 페이지 R25 wave2 패치 (WAVE2-COURSE-v1) — ko+en 멱등 적용.
 
 코스 섹션은 ko·en만 존재 (44a6f17a에서 타 9언어 grep 0건 확인).
 dist/ = 라이브 SSOT (FLR-20260611-TEC-001).

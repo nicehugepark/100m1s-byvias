@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ByBias 홈(메인) 재설계 패치 — DOC-20260611-DSN-001 집행.
+"""ByVias 홈(메인) 재설계 패치 — DOC-20260611-DSN-001 집행.
 
 dist/<lang>/index.html (11언어) 에 다음을 멱등(idempotent) 적용:
   P0 ① 첫화면 hero 재구성 (eyebrow 칩 + 햇살 무드 배경) — §1

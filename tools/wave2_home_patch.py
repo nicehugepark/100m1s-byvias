@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ByBias 홈 R25 wave2 패치 (WAVE2-HOME-v1) — 11언어 index 멱등 적용.
+"""ByVias 홈 R25 wave2 패치 (WAVE2-HOME-v1) — 11언어 index 멱등 적용.
 
 R25 판정 + 조니(아이브) 지적 집행. dist/ = 라이브 SSOT (FLR-20260611-TEC-001).
 
@@ -25,12 +25,23 @@ R25 판정 + 조니(아이브) 지적 집행. dist/ = 라이브 SSOT (FLR-202606
 """
 
 import re
+import sys
 from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
 TODAY = date.today().isoformat()
+
+# i18n 연동 — site/ 경로 추가 후 import
+_SITE_SRC = Path("/Users/seongjinpark/company/100m1s/projects/byvias/site")
+sys.path.insert(0, str(_SITE_SRC))
+try:
+    import i18n as _I18N
+
+    _HAS_I18N = True
+except ImportError:
+    _HAS_I18N = False
 
 MARK = "WAVE2-HOME-v1"
 
@@ -103,7 +114,7 @@ CSS_BLOCK = (
     "margin:0 4px 1px 0;vertical-align:middle}"
 )
 
-# ── 조니② legend 설명문 (ko/en — 타 9언어 en fallback) ──
+# ── 조니② legend 설명문 (ko/en 하드코딩 SSOT — 타 9언어 i18n 번역, 미이용 시 en fallback) ──
 LEGEND_EXPL = {
     "ko": ("공연까지 여유 — 항공·숙소 미리 선점 구간", "막 발표됨 — 지금이 예약 적기"),
     "en": (
@@ -111,6 +122,21 @@ LEGEND_EXPL = {
         "just announced — best time to book",
     ),
 }
+
+
+def _legend_expl(lang: str) -> tuple[str, str]:
+    """lang별 lglegend 설명문 반환. i18n 사전 우선 → LEGEND_EXPL → en fallback."""
+    if lang in LEGEND_EXPL:
+        return LEGEND_EXPL[lang]
+    if _HAS_I18N:
+        ui = _I18N.ui(lang)
+        pre = ui.get("lglegend_pre")
+        ann = ui.get("lglegend_ann")
+        if pre and ann:
+            # HTML 엔티티 보존: &amp; → & 치환 없이 그대로 반환
+            return (pre, ann)
+    return LEGEND_EXPL["en"]
+
 
 PAST_H2 = (
     '<h2 style="font-size:16px;font-weight:600;margin:28px 0 4px;color:var(--muted)">'
@@ -212,12 +238,12 @@ def legend_html(html, lang):
     am = A_LABEL_RE.search(html)
     if not (bm and am):
         return ""
-    b_expl, a_expl = LEGEND_EXPL.get(lang, LEGEND_EXPL["en"])
+    b_expl, a_expl = _legend_expl(lang)
     return (
         '<p class="lglegend">'
         f'<span class="lgdot" style="background:#0F6E56"></span>'
         f"<b>{bm.group(1).strip()}</b> = {b_expl} &nbsp;·&nbsp; "
-        f'<span class="lgdot" style="background:#185FA5"></span>'
+        f'<span class="lgdot" style="background:var(--accent-bg)"></span>'
         f"<b>{am.group(1).strip()}</b> = {a_expl}</p>"
     )
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ByBias TWICE 서울 페이지 — 사진풍 무드 컷 배치 생성.
+"""ByVias TWICE 서울 페이지 — 사진풍 무드 컷 배치 생성.
 
 법무 가드: 실존 인물·아이돌 얼굴 금지(뒷모습 군중 실루엣만), TWICE/JYP
 로고·앨범아트·공식 키비주얼 모사 금지, 텍스트 삽입 최소.
@@ -13,7 +13,7 @@ import time
 
 import requests
 
-OUT_RAW = "/Users/seongjinpark/company/100m1s-bybias/assets/gen/photo/raw"
+OUT_RAW = "/Users/seongjinpark/company/100m1s-byvias/assets/gen/photo/raw"
 ENV_PATH = "/Users/seongjinpark/company/100m1s/.env"
 HARD_LIMIT = 30  # 본 배치 총 생성 한도 (시안 포함)
 MODEL = "gpt-image-1.5"

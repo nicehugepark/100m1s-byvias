@@ -21,20 +21,20 @@ document.addEventListener('click',function(e){
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LE SSERAFIM Incheon — ByBias</title>
+<title>LE SSERAFIM Incheon — ByVias</title>
 <meta name="description" content="Chốt sớm trước khi fan xúm tới">
 <!-- 공유 장치 — 공용 브랜드 OG(핑크 그라데이션+텍스트, 로고·실사진 0, 법무 정합). -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="vi">
-<meta property="og:title" content="LE SSERAFIM Incheon — ByBias">
+<meta property="og:title" content="LE SSERAFIM Incheon — ByVias">
 <meta property="og:description" content="Chốt sớm trước khi fan xúm tới">
 <meta property="og:image" content="https://bybias.100m1s.com/og/bybias-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://bybias.100m1s.com/vi/lesserafim-pureflow-incheon.html">
-<meta property="og:site_name" content="ByBias">
+<meta property="og:site_name" content="ByVias">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LE SSERAFIM Incheon — ByBias">
+<meta name="twitter:title" content="LE SSERAFIM Incheon — ByVias">
 <meta name="twitter:description" content="Chốt sớm trước khi fan xúm tới">
 <meta name="twitter:image" content="https://bybias.100m1s.com/og/bybias-default.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -253,7 +253,7 @@ var cur=document.documentElement.getAttribute('data-lang')||DEFL;
 var PFX=/^\/?(en|ja|zh-cn|zh-tw|es|th|id|pt|ar|vi)(\/|$)/;
 // 언어 토글 클릭 = 선택 저장(이후 자동 리다이렉트 억제)
 document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('.lng');
- if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('bybias_lang',hl);}catch(e){}}});
+ if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('byvias_lang',hl);}catch(e){}}});
 // 첫 방문(저장값 없음)만 Accept-Language 자동. 저장값 있으면 그 언어로 1회 이동.
 function go(l){if(l===cur)return;
  var path=location.pathname; var parts=path.split('/');
@@ -266,7 +266,7 @@ function go(l){if(l===cur)return;
  location.replace(tgt);}
 // 명시 언어경로(prefix 있음 = cur!==DEFL) = 자동/저장 리다이렉트 전면 skip. 명시 URL 우선.
 if(cur===DEFL){
-var saved=null;try{saved=localStorage.getItem('bybias_lang');}catch(e){}
+var saved=null;try{saved=localStorage.getItem('byvias_lang');}catch(e){}
 if(saved&&SUP.indexOf(saved)>=0){go(saved);}
 else if(!saved){var nav=(navigator.languages||[navigator.language||'']);
  for(var i=0;i<nav.length;i++){var c=(nav[i]||'').toLowerCase();

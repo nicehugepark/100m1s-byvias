@@ -21,20 +21,20 @@ document.addEventListener('click',function(e){
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ByBias — 粉絲聚集 → 趁漲價前先鎖定</title>
+<title>ByVias — 粉絲聚集 → 趁漲價前先鎖定</title>
 <meta name="description" content="粉絲聚集 → 趁漲價前先鎖定">
 <!-- 공유 장치 — 공용 브랜드 OG(핑크 그라데이션+텍스트, 로고·실사진 0, 법무 정합). -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh-Hant">
-<meta property="og:title" content="ByBias — 粉絲聚集 → 趁漲價前先鎖定">
+<meta property="og:title" content="ByVias — 粉絲聚集 → 趁漲價前先鎖定">
 <meta property="og:description" content="粉絲聚集 → 趁漲價前先鎖定">
 <meta property="og:image" content="https://bybias.100m1s.com/og/bybias-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://bybias.100m1s.com/zh-tw/index.html">
-<meta property="og:site_name" content="ByBias">
+<meta property="og:site_name" content="ByVias">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ByBias — 粉絲聚集 → 趁漲價前先鎖定">
+<meta name="twitter:title" content="ByVias — 粉絲聚集 → 趁漲價前先鎖定">
 <meta name="twitter:description" content="粉絲聚集 → 趁漲價前先鎖定">
 <meta name="twitter:image" content="https://bybias.100m1s.com/og/bybias-default.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -169,7 +169,7 @@ body{overflow-wrap:break-word;word-break:normal}
 </script>
 </head><body><div class="wrap">
 <details class="langpick"><summary aria-label="Language — 繁體中文">繁體中文</summary><div class="langmenu"><a class="lng" href="../index.html" hreflang="ko" data-lang="ko">한국어</a><a class="lng" href="../en/index.html" hreflang="en" data-lang="en">English</a><a class="lng" href="../ja/index.html" hreflang="ja" data-lang="ja">日本語</a><a class="lng" href="../zh-cn/index.html" hreflang="zh-Hans" data-lang="zh-cn">简体中文</a><a class="lng" href="../zh-tw/index.html" aria-current="true" hreflang="zh-Hant" data-lang="zh-tw">繁體中文</a><a class="lng" href="../es/index.html" hreflang="es" data-lang="es">Español</a><a class="lng" href="../th/index.html" hreflang="th" data-lang="th">ไทย</a><a class="lng" href="../id/index.html" hreflang="id" data-lang="id">Bahasa Indonesia</a><a class="lng" href="../pt/index.html" hreflang="pt-BR" data-lang="pt">Português</a><a class="lng" href="../ar/index.html" hreflang="ar" data-lang="ar">العربية</a><a class="lng" href="../vi/index.html" hreflang="vi" data-lang="vi">Tiếng Việt</a></div></details>
-<div class="top" style="display:flex;align-items:center;gap:8px"><picture><source srcset="../logo-dark.svg" media="(prefers-color-scheme: dark)"><img class="logo" src="../logo.svg" alt="ByBias" width="87" height="38"></picture><button type="button" class="share-btn" id="shareBtn" aria-label="分享此指南" style="margin-inline-start:auto"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v13M8 7l4-4 4 4"/></svg>分享</button></div>
+<div class="top" style="display:flex;align-items:center;gap:8px"><picture><source srcset="../logo-dark.svg" media="(prefers-color-scheme: dark)"><img class="logo" src="../logo.svg" alt="ByVias" width="87" height="38"></picture><button type="button" class="share-btn" id="shareBtn" aria-label="分享此指南" style="margin-inline-start:auto"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v13M8 7l4-4 4 4"/></svg>分享</button></div>
 <!-- HERO-REDESIGN-v1 -->
 <div class="hero">
 <span class="eyebrow">K-pop 演唱會 · 機票和住宿時機</span>
@@ -469,7 +469,7 @@ var cur=document.documentElement.getAttribute('data-lang')||DEFL;
 var PFX=/^\/?(en|ja|zh-cn|zh-tw|es|th|id|pt|ar|vi)(\/|$)/;
 // 언어 토글 클릭 = 선택 저장(이후 자동 리다이렉트 억제)
 document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('.lng');
- if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('bybias_lang',hl);}catch(e){}}});
+ if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('byvias_lang',hl);}catch(e){}}});
 // 첫 방문(저장값 없음)만 Accept-Language 자동. 저장값 있으면 그 언어로 1회 이동.
 function go(l){if(l===cur)return;
  var path=location.pathname; var parts=path.split('/');
@@ -482,7 +482,7 @@ function go(l){if(l===cur)return;
  location.replace(tgt);}
 // 명시 언어경로(prefix 있음 = cur!==DEFL) = 자동/저장 리다이렉트 전면 skip. 명시 URL 우선.
 if(cur===DEFL){
-var saved=null;try{saved=localStorage.getItem('bybias_lang');}catch(e){}
+var saved=null;try{saved=localStorage.getItem('byvias_lang');}catch(e){}
 if(saved&&SUP.indexOf(saved)>=0){go(saved);}
 else if(!saved){var nav=(navigator.languages||[navigator.language||'']);
  for(var i=0;i<nav.length;i++){var c=(nav[i]||'').toLowerCase();

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   ByBias 상주 바 — 시안 B "스테이지 라이트" (R46 P1-5 · 조니 R2 fix 2026-06-12)
+   ByVias 상주 바 — 시안 B "스테이지 라이트" (R46 P1-5 · 조니 R2 fix 2026-06-12)
    시안 정본: journey-bar-drafts/journey-bar-B-stage-light.html (브랜딩 2026-06-12)
    점등 메타포 (R2 P0-2 재정의): "현재 읽는 단계" 단일 점등 — done 누적 없음.
      zones는 문서 순서(리치 3→5→4→2)로 단계 번호와 독립 — 누적 표시는 역행 시각 유발.
@@ -219,7 +219,7 @@
         '<span class="stage"><ol class="dots" id="jbDots" aria-label="' + L.dots + '"></ol><span class="lit" id="jbLit"></span></span>' +
         '<span class="mininfo" id="jbMini"></span>' : '') +
       '<span class="sp"></span>' +
-      '<svg class="bb" viewBox="-10 -10 236 165" role="img" aria-label="ByBias">' +
+      '<svg class="bb" viewBox="-10 -10 236 165" role="img" aria-label="ByVias">' +
       '<path fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" d="M14 14L14 131M86 95A36 36 0 1 1 14 95A36 36 0 1 1 86 95"/>' +
       '<path fill="none" stroke="#E84A7F" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" d="M130 14L130 131M202 95A36 36 0 1 1 130 95A36 36 0 1 1 202 95"/>' +
       '</svg>' +

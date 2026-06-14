@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ByBias 홈 비주얼 3차 (HOMEVIZ-v3) — 11언어 일괄 패치.
+"""ByVias 홈 비주얼 3차 (HOMEVIZ-v3) — 11언어 일괄 패치.
 
 R20 UGC 처방 "사진이 필요 + 404 수리":
   1. [P0] city-skyline.svg 404 fix — 마스크 url 을 상대경로(assets/gen/…) →

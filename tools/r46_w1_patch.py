@@ -115,7 +115,7 @@ P = {
             '<section class="disc-hub" id="notice" data-r46w1="1">\n'
             "<h2>이용 안내 · 고지</h2>\n<ul>\n"
             '<li><b>제휴 링크</b> — 예약·상품 링크 중 <span class="aff-eg"></span> 표식이 붙은 링크는 '
-            "제휴(수수료) 링크입니다. 구매 시 ByBias가 수수료를 받을 수 있으나, 이용자가 추가로 부담하는 "
+            "제휴(수수료) 링크입니다. 구매 시 ByVias가 수수료를 받을 수 있으나, 이용자가 추가로 부담하는 "
             "비용은 없습니다. 제휴 링크에는 위 표식을 표시하는 것을 원칙으로 합니다.</li>\n"
             "<li><b>가격 변동</b> — 표시 가격은 대략적인 시세이며 수시로 변동됩니다. 실시간 가격·잔여석은 "
             "날짜 입력 후 각 예약처에서 직접 확인하세요.</li>\n"
@@ -185,13 +185,13 @@ P = {
             '<section class="disc-hub" id="notice" data-r46w1="1">\n'
             "<h2>Site notice &amp; disclosures</h2>\n<ul>\n"
             '<li><b>Affiliate links</b> — Booking/product links marked <span class="aff-eg"></span> are '
-            "affiliate (commission) links. ByBias may earn a commission on purchases, at no additional cost "
+            "affiliate (commission) links. ByVias may earn a commission on purchases, at no additional cost "
             "to you. We aim to mark every affiliate link with this badge.</li>\n"
             "<li><b>Prices change</b> — Displayed prices are rough market rates and change frequently. "
             "Check live prices and availability at each provider after entering your dates.</li>\n"
             "<li><b>Forecasts</b> — Price and availability forecasts are estimates and may differ from actual. "
             "You are solely responsible for booking and payment.</li>\n"
-            "<li><b>Unofficial service</b> — ByBias is an unofficial schedule &amp; travel information service, "
+            "<li><b>Unofficial service</b> — ByVias is an unofficial schedule &amp; travel information service, "
             "unaffiliated with artists, agencies, or official partners.</li>\n"
             "<li><b>Entry requirements (K-ETA)</b> — K-ETA/visa rules vary by nationality and change often. "
             "Before departure, re-check the rules for your nationality on the official site "

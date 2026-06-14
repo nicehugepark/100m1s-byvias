@@ -2,7 +2,7 @@
 """wave3 patch — R26 판정 P0 3건 + P1 6건 + 조니 권고 (멱등).
 
 대상: dist/ 11언어 home + ko/en 코스(twice-thisisfor-seoul) + 9언어 langbar→langpick.
-근거: R26 판정단·조니 캡처 (/tmp/bybias-r26, /tmp/jony-r26).
+근거: R26 판정단·조니 캡처 (/tmp/byvias-r26, /tmp/jony-r26).
 CR 토큰 (WCAG): today #C8295F/white=5.33, past dark #2a2820/#9c998f=5.18,
                 light #eeece5/#6b6a64=4.59, warn dark #FF8A8A/card=7.26.
 """
