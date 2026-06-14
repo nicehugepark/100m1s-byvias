@@ -34,7 +34,7 @@ DIST = ROOT / "dist"
 TODAY = date.today().isoformat()
 
 # i18n 연동 — site/ 경로 추가 후 import
-_SITE_SRC = Path("/Users/seongjinpark/company/100m1s/projects/bybias/site")
+_SITE_SRC = Path("/Users/seongjinpark/company/100m1s/projects/byvias/site")
 sys.path.insert(0, str(_SITE_SRC))
 try:
     import i18n as _I18N

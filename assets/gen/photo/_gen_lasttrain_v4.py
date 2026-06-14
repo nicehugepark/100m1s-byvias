@@ -21,7 +21,7 @@ import sys
 
 import requests
 
-OUT_RAW = "/Users/seongjinpark/company/100m1s-bybias/assets/gen/photo/raw"
+OUT_RAW = "/Users/seongjinpark/company/100m1s-byvias/assets/gen/photo/raw"
 ENV_PATH = "/Users/seongjinpark/company/100m1s/.env"
 MODEL = "gpt-image-1.5"
 LANDSCAPE = "1536x1024"

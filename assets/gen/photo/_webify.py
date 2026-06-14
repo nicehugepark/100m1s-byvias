@@ -12,7 +12,7 @@ import sys
 
 from PIL import Image
 
-BASE = "/Users/seongjinpark/company/100m1s-bybias/assets/gen/photo"
+BASE = "/Users/seongjinpark/company/100m1s-byvias/assets/gen/photo"
 RAW = f"{BASE}/raw"
 TARGET_W = 1200
 

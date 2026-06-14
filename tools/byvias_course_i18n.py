@@ -33,8 +33,8 @@ from pathlib import Path
 # ──────────────────────────────────────────────
 # 경로 설정
 # ──────────────────────────────────────────────
-BYVIAS_REPO = Path(__file__).parent.parent  # 100m1s-bybias/
-SITE_SRC = Path("/Users/seongjinpark/company/100m1s/projects/bybias/site")
+BYVIAS_REPO = Path(__file__).parent.parent  # 100m1s-byvias/
+SITE_SRC = Path("/Users/seongjinpark/company/100m1s/projects/byvias/site")
 sys.path.insert(0, str(SITE_SRC))
 
 import i18n as I18N  # noqa: E402

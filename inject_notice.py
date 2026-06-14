@@ -2,13 +2,13 @@
 """
 ByVias P0 fix: inject affiliate disclosure notice section into 8 non-en language pages.
 Additive only — no existing elements removed.
-Target: /Users/seongjinpark/company/100m1s-bybias/dist/{lang}/twice-thisisfor-seoul.html
+Target: /Users/seongjinpark/company/100m1s-byvias/dist/{lang}/twice-thisisfor-seoul.html
 Insert point: after <p class="disc-mini" data-r46w1="1"> line
 """
 
 import re
 
-DIST = "/Users/seongjinpark/company/100m1s-bybias/dist"
+DIST = "/Users/seongjinpark/company/100m1s-byvias/dist"
 NOLTX_URL = "https://world.nol.com/en/ticket/places/26000627/products/26007949"
 KETA_URL = "https://www.k-eta.go.kr"
 DATE = "2026-06-12"
