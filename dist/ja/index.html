@@ -677,6 +677,8 @@ document.addEventListener('click',function(ev){
  if(!panels.length)return;
  // 나라명 SSOT(카드 .c 첫 토큰 추출용). 한국어 허브 기준 — 도시-only(홍콩/마카오/싱가포르)도 나라로 취급.
  var COUNTRIES=['대한민국','일본','대만','미국','싱가포르','홍콩','태국','영국','멕시코','마카오','필리핀','인도네시아','독일','중국','베트남','캐나다','호주','말레이시아'];
+ // 나라 표시 라벨 — 매칭키(한글)와 표시명 분리. 키 보존으로 카드 매칭 무손상.
+ var COUNTRY_LABELS={'대한민국':'韓国','일본':'日本','대만':'台湾','미국':'アメリカ','싱가포르':'シンガポール','홍콩':'香港','태국':'タイ','영국':'イギリス','멕시코':'メキシコ','마카오':'マカオ','필리핀':'フィリピン','인도네시아':'インドネシア','독일':'ドイツ','중국':'中国','베트남':'ベトナム','캐나다':'カナダ','호주':'オーストラリア','말레이시아':'マレーシア'};
  function norm(s){return (s||'').toLowerCase().replace(/\s+/g,' ').trim();}
  // 카드별 색인 구성 + 빈상태 div 주입
  var index=[],countryCount={};
@@ -707,7 +709,7 @@ document.addEventListener('click',function(ev){
   return b;
  }
  chipsEl.appendChild(makeChip('全体','',null));
- order.forEach(function(k){chipsEl.appendChild(makeChip(k,k,countryCount[k]));});
+ order.forEach(function(k){chipsEl.appendChild(makeChip(COUNTRY_LABELS[k]||k,k,countryCount[k]));});
  function syncChips(){[].forEach.call(chipsEl.children,function(b){
   b.setAttribute('aria-pressed',(b.getAttribute('data-k')||'')===activeCountry?'true':'false');});}
  // 현재 보이는 탭(체크된 라디오)의 패널
@@ -732,7 +734,7 @@ document.addEventListener('click',function(ev){
   // 결과 요약(검색·필터 활성 시만)
   if(q||activeCountry){
    var label=activeCountry||'検索';
-   countEl.innerHTML=(activeCountry?activeCountry+' · ':'')+'<b>'+shownInCur+'</b>件';
+   countEl.innerHTML=(activeCountry?(COUNTRY_LABELS[activeCountry]||activeCountry)+' · ':'')+'<b>'+shownInCur+'</b>件';
    countEl.classList.add('on');
   }else{countEl.classList.remove('on');countEl.textContent='';}
  }
