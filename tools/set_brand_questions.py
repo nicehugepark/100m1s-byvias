@@ -19,11 +19,11 @@ import sys
 from pathlib import Path
 
 BRAND_QUESTIONS = {
-    "ko": "어디야?",
+    "ko": "Where are you?",
     "en": "Where are you?",
-    "ja": "どこにいる?",
-    "zh-cn": "你在哪?",
-    "zh-tw": "你在哪裡?",
+    "ja": "Where are you?",
+    "zh-cn": "Where are you?",
+    "zh-tw": "Where are you?",
 }
 
 HERO_CALL_RE = re.compile(
