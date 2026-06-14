@@ -161,6 +161,18 @@ def _update_meta(
     if og_desc and translated_desc:
         og_desc["content"] = translated_desc
 
+    # twitter:title, twitter:description, meta name="description" — og 미러
+    # og가 이미 번역됐으므로 동일 값 복사 (신규 LLM 번역 불요)
+    tw_title = soup.find("meta", attrs={"name": "twitter:title"})
+    if tw_title and translated_title:
+        tw_title["content"] = translated_title
+    tw_desc = soup.find("meta", attrs={"name": "twitter:description"})
+    if tw_desc and translated_desc:
+        tw_desc["content"] = translated_desc
+    meta_desc = soup.find("meta", attrs={"name": "description"})
+    if meta_desc and translated_desc:
+        meta_desc["content"] = translated_desc
+
 
 def _update_hreflang(soup: BeautifulSoup, filename: str) -> None:
     """hreflang alternate link 태그 갱신 (모든 언어 포함 확인, 누락 시 추가)."""
@@ -272,7 +284,9 @@ def build_lang(
     translated = I18N.translate_batch(raw_texts, lang)
 
     # ── 3. 텍스트 노드 치환 ────────────────────────
-    for node, new_text in zip(nodes, translated, strict=False):
+    for node, new_text in zip(
+        nodes, translated
+    ):  # strict= kwarg Python<3.10 미지원
         if new_text and new_text != str(node):
             node.replace_with(NavigableString(new_text))
 
