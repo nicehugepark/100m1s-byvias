@@ -183,8 +183,9 @@
       '#jbar .mininfo .n{color:var(--muted);font-weight:600}' +
       '#jbar .sp{flex:1}' +
       '#jbar .bb{height:20px;width:auto;display:block;color:var(--ink);flex:none}' +
-      '#jbar .cta{position:relative;flex:none;display:flex;align-items:center;height:32px;padding:0 14px;border-radius:16px;background:#E84A7F;color:#1a1a18;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:opacity .18s ease-out}' +
-      '#jbar .cta::after{content:"";position:absolute;inset:-6px -4px}' +
+      /* R74-P1(tech·guestpool): CTA 시각 높이 32→44px (모바일 390 WCAG 2.5.5 AAA 충족). radius 16→22px = 44px pill 곡률(branding 사다리 정합). row 44px와 동일 높이 → align center. */
+      '#jbar .cta{position:relative;flex:none;display:flex;align-items:center;height:44px;padding:0 16px;border-radius:22px;background:#E84A7F;color:#1a1a18;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:opacity .18s ease-out}' +
+      '#jbar .cta::after{content:"";position:absolute;inset:0}' +
       '#jbar.mini .row{height:28px}' +
       '#jbar.mini .dnum{font-size:13px}' +
       '#jbar.mini .stage{display:none}' +
@@ -219,9 +220,10 @@
         '<span class="stage"><ol class="dots" id="jbDots" aria-label="' + L.dots + '"></ol><span class="lit" id="jbLit"></span></span>' +
         '<span class="mininfo" id="jbMini"></span>' : '') +
       '<span class="sp"></span>' +
+      /* R74-P1(branding): 모노그램 자형 "bb"→"bv" = ByVias 정합. 1글자 b(잉크) 유지, 2글자를 핑크 "v"로(logo.svg bias 핑크 강조 동형). v = 소문자, b bowl 높이대(y59~131)에 좌상→하단꼭짓점→우상. */
       '<svg class="bb" viewBox="-10 -10 236 165" role="img" aria-label="ByVias">' +
       '<path fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" d="M14 14L14 131M86 95A36 36 0 1 1 14 95A36 36 0 1 1 86 95"/>' +
-      '<path fill="none" stroke="#E84A7F" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" d="M130 14L130 131M202 95A36 36 0 1 1 130 95A36 36 0 1 1 202 95"/>' +
+      '<path fill="none" stroke="#E84A7F" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" d="M130 59L166 131L202 59"/>' +
       '</svg>' +
       '<a class="cta" id="jbCta" href="#"></a>' +
       '</div>';
