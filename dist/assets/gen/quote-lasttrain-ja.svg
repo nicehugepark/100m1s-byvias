@@ -28,7 +28,7 @@
   <!-- supporting line -->
   <g transform="translate(48,378)">
     <rect x="0" y="0" width="444" height="58" rx="16" fill="rgba(255,255,255,0.16)"/>
-    <text x="22" y="25" font-family="-apple-system,'Hiragino Sans',sans-serif" font-size="13" font-weight="700" fill="#fff">他の路線は23:55~00:54 — 9号線開花行きだけ1時間早い。</text>
+    <text x="22" y="25" font-family="-apple-system,'Hiragino Sans',sans-serif" font-size="13" font-weight="700" fill="#fff">他の路線は23:55~00:54 — 9号線開化(ケファ)行きだけ1時間早い。</text>
     <text x="22" y="46" font-family="-apple-system,'Hiragino Sans',sans-serif" font-size="12.5" font-weight="500" fill="rgba(255,255,255,0.85)">東行き(中央報勲病院)で乗るか、8号線夢村土城で迂回。</text>
   </g>
 
