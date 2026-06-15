@@ -187,7 +187,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .langbar .lng:hover{background:var(--surface-2)}
 /* P0-2 언어 스위처 — 현재 언어만 노출 + 펼침(무JS details). 키보드 접근 가능, hreflang/href 보존 */
 .langpick{margin:0 0 10px;display:flex;justify-content:flex-end}
-.langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:44px;box-sizing:border-box;padding:6px 12px;border:1px solid var(--line);border-radius:var(--r-s);font-size:12px;font-weight:600;color:var(--muted);background:var(--card)}
+.langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:44px;box-sizing:border-box;padding:6px 12px;border:1px solid var(--line);border-radius:var(--r-s);font-size:12px;font-weight:600;color:var(--muted);background:var(--card);min-width:140px;white-space:nowrap}
 .langpick>summary::-webkit-details-marker{display:none}
 .langpick>summary::after{content:"▾";font-size:12px;color:var(--muted);transition:transform .2s cubic-bezier(0.16,1,0.3,1)}
 .langpick[open]>summary::after{transform:rotate(180deg)}
