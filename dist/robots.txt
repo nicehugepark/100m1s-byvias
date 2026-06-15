@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bybias.100m1s.com/sitemap.xml
+Sitemap: https://byvias.100m1s.com/sitemap.xml
