@@ -69,5 +69,5 @@
     <text x="20" y="44" font-family="-apple-system,sans-serif" font-size="12.5" font-weight="500" fill="#A8895C">막대는 항목 비중을 나타냅니다. 절대 금액은 시즌·환율로 달라져 표기하지 않았습니다.</text>
   </g>
 
-  <text x="840" y="476" text-anchor="end" font-family="-apple-system,sans-serif" font-size="13" font-weight="700" fill="#C7396B" letter-spacing="0.5">by<tspan fill="#E84A7F">bias</tspan></text>
+  <text x="840" y="476" text-anchor="end" font-family="-apple-system,sans-serif" font-size="13" font-weight="700" fill="#C7396B" letter-spacing="0.5">By<tspan fill="#E84A7F">Vias</tspan></text>
 </svg>

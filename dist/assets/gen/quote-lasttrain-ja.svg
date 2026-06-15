@@ -34,7 +34,7 @@
 
   <!-- brand footer -->
   <g transform="translate(48,486)">
-    <text x="0" y="20" font-family="-apple-system,sans-serif" font-size="18" font-weight="800" fill="#fff" letter-spacing="0.3">by<tspan fill="#FFF4D1">bias</tspan></text>
+    <text x="0" y="20" font-family="-apple-system,sans-serif" font-size="18" font-weight="800" fill="#fff" letter-spacing="0.3">By<tspan fill="#FFF4D1">Vias</tspan></text>
     <text x="444" y="20" text-anchor="end" font-family="-apple-system,'Hiragino Sans',sans-serif" font-size="12.5" font-weight="600" fill="rgba(255,255,255,0.8)">TWICE ソウル遠征ガイド</text>
   </g>
 </svg>

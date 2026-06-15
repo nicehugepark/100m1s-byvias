@@ -29,5 +29,5 @@
     <text x="0" y="7" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="19" font-weight="800" fill="#fff">D-day · Night 1</text>
   </g>
   <!-- brand foot -->
-  <text x="270" y="516" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="13" font-weight="700" fill="#C7396B" letter-spacing="0.5">by<tspan fill="#E84A7F">bias</tspan></text>
+  <text x="270" y="516" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="13" font-weight="700" fill="#C7396B" letter-spacing="0.5">By<tspan fill="#E84A7F">Vias</tspan></text>
 </svg>
