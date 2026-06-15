@@ -10,7 +10,7 @@ gtag('consent','default',{'ad_storage':'granted','ad_user_data':'granted','ad_pe
 <script>
 gtag('js',new Date());gtag('config','G-LH0N5PJ1L6');
 </script>
-<!-- aff_click 위임 리스너 (어필 링크 동작 무간섭) -->
+
 <script>
 document.addEventListener('click',function(e){
   var a=e.target&&e.target.closest&&e.target.closest('a[rel~="sponsored"]');
@@ -24,7 +24,7 @@ document.addEventListener('click',function(e){
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>ByVias — 人気ツアーを、お早めにお得に確保するコツ</title>
 <meta content="K-pop・コンサート遠征の日程別ルート・宿泊・チケットガイド。ファンが集まる前に、早めにお得な価格で押さえておきましょう。" name="description"/>
-<!-- 허브 OG/Twitter — 공용 브랜드 OG(핑크 그라데이션+텍스트, 로고·실사진 0, 법무 정합). -->
+
 <meta content="website" property="og:type"/>
 <meta content="ja_JP" property="og:locale"/>
 <meta content="ByVias — 人気ツアーを、お早めにお得に確保するコツ" property="og:title"/>
@@ -49,7 +49,7 @@ document.addEventListener('click',function(e){
 <style>
 :root{--ink:#1a1a18;--muted:#56554e;--line:#e7e5dd;--bg:#fbfaf6;--card:#fff;--accent:#185FA5;--sun-chip-bg:#FFF9E8;--sun-chip-ink:#7A5A12}
 @media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#B3B0A5;--line:#34322c;--bg:#16150f;--card:#211f18;--ehead-mid:var(--card);--sun-chip-bg:#3a3320;--sun-chip-ink:#F2D58A}img{filter:brightness(.88)}/* DARK-COMPAT-INJECT-v1 */
-/* 다크: 라이트 하드코딩 컴포넌트 정합 (제휴 고지·출처·경유지·공식채널) — 흰/크림 발광 제거 + 텍스트 대비 확보 */.disc{background:#1d1c15;border-color:var(--line);color:var(--muted)}.srcbox{background:var(--card)}.srclink{background:#16243a;border-color:#2a3d57;color:#9ec3f0}.oshow{background:#1d1c16;border-color:var(--line);color:var(--ink)}.oshow .osd{color:var(--muted)}.chchip{background:#1d1c16;border-color:var(--line);color:var(--ink)}}
+.disc{background:#1d1c15;border-color:var(--line);color:var(--muted)}.srcbox{background:var(--card)}.srclink{background:#16243a;border-color:#2a3d57;color:#9ec3f0}.oshow{background:#1d1c16;border-color:var(--line);color:var(--ink)}.oshow .osd{color:var(--muted)}.chchip{background:#1d1c16;border-color:var(--line);color:var(--ink)}}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top{display:flex;align-items:center;gap:8px;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
@@ -57,8 +57,7 @@ a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:20px 16px}
 .top .logo{height:38px;width:auto;display:block}
 .badge{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;font-weight:500}
 h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
-/* 헤더 sub: 항목 단위 줄바꿈(투어/공연장/날짜·D-day/국가) — 단어 중간 개행·고아 구분점 방지.
-   기본 항목은 nowrap(통째로 다음 줄), 컨테이너보다 긴 장문 항목만 내부 단어 단위 개행 fallback */
+
 .subwrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;word-break:keep-all}
 .subitem{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;min-width:0;max-width:100%}
 .subitem:not(:first-child)::before{content:"·";color:var(--muted);margin-inline-end:4px}
@@ -66,7 +65,7 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .ecard{display:block;position:relative;overflow:hidden;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
 .ecard:hover{border-color:#c9c7bd}.ecard .a{font-weight:600;font-size:15px}.ecard .c{color:var(--muted);font-size:13px;margin:2px 0 8px}
 .ecard>*{position:relative;z-index:1}
-/* 다크: 인라인 아티스트색 그라데이션(rgba 0.10→mid→0.26) + 밝은 mid가 다크 표면 위에서 "은빛 신용카드" 광택(sheen)으로 읽힘 → 다크에선 단색 surface로 강등(인라인 우선순위 때문에 !important), 아티스트색은 좌측 4px 색띠(인라인 border-inline-start)로만 유지. */
+
 @media(prefers-color-scheme:dark){.ecard:hover{border-color:var(--hoverline)}}
 .ghost{position:absolute;z-index:0;bottom:-14px;inset-inline-end:-6px;font-weight:800;font-size:64px;line-height:1;color:var(--stripe);opacity:.10;pointer-events:none;user-select:none;letter-spacing:-2px}
 .ehead-detail{position:relative;overflow:hidden;border-radius:12px;padding:16px;min-height:64px}
@@ -79,10 +78,10 @@ h1{font-size:22px;margin:14px 0 2px;font-weight:600}.sub{color:var(--muted);font
 .btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px}
 .btn{display:flex;align-items:center;gap:8px;text-decoration:none;padding:11px 12px;border:1px solid #d7d5cb;border-radius:var(--r-m);font-size:14px}
 .btn:hover{border-color:var(--accent)}.btn small{color:var(--muted)}
-/* 리스트 들여쓰기 정합(단일 규칙 — 중복/충돌 제거): 마커 바깥, 2줄+는 텍스트 아래 hanging */
+
 ul{margin:8px 0 0;padding-inline-start:20px;list-style-position:outside}
 li{margin:5px 0;overflow-wrap:break-word}
-/* 긴 단어(URL·붙여쓰기 언어) 박스 내 줄바꿈 */
+
 body{overflow-wrap:break-word;word-break:normal}
 .news{display:flex;gap:8px;background:var(--accent-soft);border-radius:var(--r-m);padding:12px;align-items:center;margin-top:14px}
 .news input{flex:1;padding:9px;min-height:44px;box-sizing:border-box;border:1px solid var(--accent-line);border-radius:8px;font-size:14px}
@@ -115,7 +114,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .ytframe{width:100%;aspect-ratio:16/9;border:0;border-radius:var(--r-m)}
 .maplink{display:inline-block;font-size:13px;color:var(--ink);text-decoration:none;background:var(--card);border:1px solid #cfcdc4;border-radius:8px;padding:7px 12px;margin-top:8px}
 .maplink:hover{border-color:var(--ink)}
-/* 현지 실용 정보 접힘 섹션 */
+
 .linfo{margin:14px 0}.linfo>summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:8px}
 .linfo>summary::-webkit-details-marker{display:none}
 .linfo>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:transform .2s}
@@ -129,16 +128,16 @@ body{overflow-wrap:break-word;word-break:normal}
 .lirow:first-child{border-top:0}.lirow .lk{color:var(--muted);font-weight:600;display:flex;gap:5px;align-items:flex-start}
 .lirow .lv{line-height:1.55;min-width:0}.lirow .lv a{color:var(--accent);text-decoration:none}.lirow .lv a:hover{text-decoration:underline}
 .tkbox .lirow .lv a{font-weight:500}
-/* 핫플 항목: 이름+지도 한 줄, 설명은 그 아래 hanging(좌측 정렬 유지) */
+
 .hspot{margin:7px 0}.hspot:first-child{margin-top:0}.hspot .hn{font-weight:600}
 .hspot .hd{display:block;color:var(--muted);margin-top:2px;line-height:1.5}
-/* 좁은 화면: 라벨/값 세로 스택(들여쓰기 꼬임 방지) */
+
 @media(max-width:420px){.lirow{grid-template-columns:1fr;gap:3px}.lirow .lk{font-size:12.5px}}
 
 
 @media(prefers-color-scheme:dark){}
 
-/* P0-2 언어 스위처 — 현재 언어만 노출 + 펼침(무JS details). 키보드 접근 가능, hreflang/href 보존. twice 페이지 패턴 이식. */
+
 .langpick{margin:0 0 10px;display:flex;justify-content:flex-end}
 .langpick>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600;color:var(--muted);background:var(--card);min-width:140px;white-space:nowrap}
 .langpick>summary::-webkit-details-marker{display:none}
@@ -154,7 +153,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .langpick .langmenu .lng:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 @media(prefers-color-scheme:dark){.langpick .langmenu{box-shadow:0 8px 24px rgba(0,0,0,.5)}.langpick .langmenu .lng[aria-current="true"]{background:#1e2b3d}.langpick>summary:hover,.langpick .langmenu .lng:hover{background:#222}}
 [dir="rtl"] .langpick{justify-content:flex-start}[dir="rtl"] .langpick .langmenu{right:auto;left:16px}
-/* 이벤트 타입 탭 (CSS-only 라디오) — 콘서트/음악방송 분리 */
+
 .tabs>input{position:absolute;opacity:0;pointer-events:none}
 .tabs>label{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 16px;border:1px solid var(--tabline,#807c6e);border-radius:var(--r-m);margin:0 6px 12px 0;cursor:pointer;background:var(--card)}
 .tabs>label:hover{border-color:#c9c7bd}
@@ -162,14 +161,13 @@ body{overflow-wrap:break-word;word-break:normal}
 #tab-c:checked~label[for="tab-c"],#tab-m:checked~label[for="tab-m"],#tab-u:checked~label[for="tab-u"],#tab-s:checked~label[for="tab-s"]{color:var(--on-accent);background:var(--accent-bg);border-color:var(--accent-bg)}
 #tab-c:checked~.tp-c,#tab-m:checked~.tp-m,#tab-u:checked~.tp-u,#tab-s:checked~.tp-s{display:block}
 .dday{display:none;font-size:12px;font-weight:700;color:var(--on-accent);background:var(--accent-bg);border-radius:var(--r-s);padding:1px 6px;vertical-align:1px;unicode-bidi:isolate}
-/* RTL(아랍어) — logical property 자동 반전 + 그라데이션 각도·잔여 보정 */
+
 :root{--ga:135deg}
-[dir="rtl"]{--ga:225deg}  /* 그라데이션 대각선 거울 반전 */
-[dir="rtl"] .ghost{inset-inline-end:-6px}  /* logical → 자동 좌측, 명시 유지 */
+[dir="rtl"]{--ga:225deg}  
+[dir="rtl"] .ghost{inset-inline-end:-6px}  
 [dir="rtl"] .top span{margin-left:0;margin-inline-start:auto}
 
-/* 1a 함께 묵는 숙소 캐러셀 (좌우 스와이프) + 2박3일 코스 — 신규 클래스 3종.
-   색·radius·이모지 신규 0(기존 토큰·클래스 재사용). 햇살칩만 --sun-chip-* 토큰(다크 분기). */
+
 .stays-rail{display:flex;overflow-x:auto;scroll-snap-type:x proximity;gap:12px;scroll-padding-inline:16px;scrollbar-width:none;padding:2px 0 4px;margin:8px 0 0}
 .stays-rail::-webkit-scrollbar{display:none}
 .stay-card{flex:0 0 76%;max-width:300px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
@@ -178,45 +176,43 @@ body{overflow-wrap:break-word;word-break:normal}
 .stay-card .sname{font-weight:600;font-size:14.5px;line-height:1.35}
 .sun-chip{align-self:flex-start;font-size:12.5px;background:var(--sun-chip-bg);color:var(--sun-chip-ink);border-radius:8px;padding:5px 9px;line-height:1.4}
 .sun-chip b{font-weight:700}
-/* 인원 시각화 — 사람 도트(설명 텍스트 없이 인원 전달). sun-chip 톤 재사용, 신규 색 0 */
+
 .pp-chip{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font-size:12.5px;background:var(--sun-chip-bg);color:var(--sun-chip-ink);border-radius:8px;padding:5px 9px;line-height:1.4}
 .pp-chip b{font-weight:700;font-size:13.5px}
 .guest-dots{display:inline-flex;align-items:center;gap:2px;color:var(--sun-chip-ink)}
 .guest-dots svg{flex:0 0 auto;display:block}
-/* 유형 배지 안 공간 픽토 — 텍스트와 가로 정렬, 살짝 작게(장식) */
+
 .badge-room{display:inline-flex;align-items:center;gap:4px}
 .badge-room svg{flex:0 0 auto;display:block}
-/* 총액 = 보조 강등(muted, 작게). 1인당이 주(主) 위계 */
+
 .stay-card .stotal{font-size:12px;color:var(--muted)}
 .stay-card .scap{font-size:12px;color:var(--muted)}
-/* B1: 예약 버튼 터치타겟 44px(현 38px 미달) — 텍스트 크기 불변, 히트영역만 */
+
 .stay-card .postlink{align-self:flex-start;margin-top:2px;min-height:44px;display:inline-flex;align-items:center}
-/* 총액 줄 보조 메타(공연장 N분) — muted, SVG 인라인 */
+
 .stotal-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .smeta{display:inline-flex;align-items:center;gap:3px;font-size:12px;color:var(--muted)}
 .smeta svg{flex:0 0 auto}
 .day-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:8px 0 0}
 .day-card .dhead{font-weight:600;font-size:14px;margin-bottom:4px}
 .course-aff{margin-top:6px}
-/* B2: inline 어필리에이트 링크 터치타겟 44px(현 16px) — 텍스트 크기 불변, 히트영역만 */
+
 .course-aff a{color:var(--accent);text-decoration:none;font-size:13.5px;font-weight:500;display:inline-flex;align-items:center;min-height:44px;padding:11px 0}
 .course-aff a:hover{text-decoration:underline}
-/* B3: 캐러셀 하단 보조 CTA(ghost .btn 재사용, 폭 자동) */
+
 .rail-more{margin-top:10px}
 .rail-more .btn{display:inline-flex;width:auto}
-/* A: 코스 A/B/C 전환 — CSS-only radio(신규 JS 0), 메인 evtab과 격리(name=crs).
-   탭 = 상단 sticky 칩(좌우 스와이프 아님 — 식당 슬라이드 제스처 충돌 회피). */
+
 .crs-tabs>input{position:absolute;opacity:0;pointer-events:none}
 .crs-tabbar{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;background:var(--card);padding:8px 0;margin:6px 0 2px}
 .crs-tabbar::-webkit-scrollbar{display:none}
 .crs-tabs label{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;font-size:13px;font-weight:600;color:var(--muted);padding:8px 14px;border:1px solid var(--line);border-radius:var(--r-m);cursor:pointer;background:var(--card);white-space:nowrap}
 .crs-tabs label:hover{border-color:#c9c7bd}
 .crs-panel{display:none}
-/* 선택 탭 강조 + 해당 패널 노출(코스 최대 6개 — 페이지당 코스 1세트라 고정 id 안전) */
+
 #crs-0:checked~.crs-tabbar label[for="crs-0"],#crs-1:checked~.crs-tabbar label[for="crs-1"],#crs-2:checked~.crs-tabbar label[for="crs-2"],#crs-3:checked~.crs-tabbar label[for="crs-3"],#crs-4:checked~.crs-tabbar label[for="crs-4"],#crs-5:checked~.crs-tabbar label[for="crs-5"]{color:var(--on-accent);background:var(--accent-bg);border-color:var(--accent-bg)}
 #crs-0:checked~.cp-0,#crs-1:checked~.cp-1,#crs-2:checked~.cp-2,#crs-3:checked~.cp-3,#crs-4:checked~.cp-4,#crs-5:checked~.cp-5{display:block}
-/* 식당·핫플 = Day 스텝 내 좌우 슬라이드. stays-rail 복제 + 폭 차별(56% vs 숙소 76%).
-   overscroll-behavior-x:contain = 레일 끝에서 부모/페이지 가로 스크롤 누수(chaining) 차단(핵심). */
+
 .spot-rail{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;gap:10px;scrollbar-width:none;padding:2px 0;margin:6px 0 0}
 .spot-rail::-webkit-scrollbar{display:none}
 .spot-card{flex:0 0 56%;max-width:230px;scroll-snap-align:start;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;display:flex;flex-direction:column}
@@ -228,16 +224,16 @@ body{overflow-wrap:break-word;word-break:normal}
 .spot-more{flex:0 0 auto;align-self:center;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--accent);font-size:12.5px;font-weight:600;text-decoration:none;white-space:nowrap}
 .spot-card .pimg img{width:100%;height:100%;object-fit:cover;display:block}
 .spot-card .pwhy{font-size:12px;color:var(--muted);line-height:1.35}
-/* 출처 표기(카카오맵 등) — 재배포 라이선스 의무. 작게·muted, place_url 링크 */
+
 .spot-card .psrc{align-self:flex-start;font-size:12px;color:var(--muted);text-decoration:none}
 .spot-card a.psrc:hover{text-decoration:underline;color:var(--accent)}
-/* 인스타 공식 임베드(에이전트 선별 핫플) — 좌우 슬라이드 레일, iframe lazy */
+
 .ig-rail{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;gap:12px;scrollbar-width:none;padding:2px 0 4px;margin:6px 0 0}
 .ig-rail::-webkit-scrollbar{display:none}
 .ig-card{flex:0 0 88%;max-width:340px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .ig-embed{position:relative;width:100%;background:var(--surface-2)}
 .ig-embed iframe{width:100%;min-height:480px;border:0;display:block}
-/* 임베드 깨짐 대비 fallback 캡션(임베드 위 안내·계정·사유). iframe 실패해도 정보 남음 */
+
 .ig-cap{padding:9px 11px;display:flex;flex-direction:column;gap:3px;border-top:1px solid var(--line)}
 .ig-cap .igtop{font-size:12.5px;font-weight:600;line-height:1.3}
 .ig-cap .igwhy{font-size:12px;color:var(--muted);line-height:1.4}
@@ -245,18 +241,18 @@ body{overflow-wrap:break-word;word-break:normal}
 .ig-cap a.iglink{font-size:12px;color:var(--accent);text-decoration:none}
 .ig-cap a.iglink:hover{text-decoration:underline}
 .ig-disc{font-size:12px;color:var(--muted);margin:4px 0 0;line-height:1.4}
-/* 숙소 OTA 예약(다중 어필) + 인스타 링크/임베드 — 인스타∩OTA 교집합 */
+
 .ota-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:4px;font-size:12px;color:var(--muted)}
 .ota-btn{display:inline-flex;align-items:center;min-height:36px;padding:6px 12px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-size:12px;font-weight:600;text-decoration:none}
 .ota-btn:hover{background:var(--accent-bg);color:var(--on-accent)}
 .stay-noota{font-size:12px;color:var(--muted);margin-top:4px}
-/* Stay22 메인 예약 버튼 — solid accent(최저가 비교 라우팅), OTA 보조보다 강조 */
+
 .stay22-btn{align-self:flex-start;margin-top:6px;background:var(--accent-bg);color:var(--on-accent);border-radius:var(--r-m);padding:10px 16px;font-size:13px;font-weight:600;min-height:44px}
 .stay22-btn:hover{filter:brightness(0.94)}
 .stay-iglink{align-self:flex-start;font-size:12px;color:var(--accent);text-decoration:none;font-weight:500;min-height:36px;display:inline-flex;align-items:center;margin-top:2px}
 .stay-iglink:hover{text-decoration:underline}
 .stay-card .stay-ig iframe{min-height:440px}
-/* 실데이터 — 실사진(숙소·스텝), 공연일 대기·혼잡 안내(빨강 강조), 소요시간/공연일 노트 */
+
 .stay-card .simg img{width:100%;height:100%;object-fit:cover;display:block}
 .lirow .lk .dur{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:1px}
 .step-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-m);margin:6px 0 0;display:block;background:var(--surface-2)}
@@ -266,8 +262,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .day-note svg{flex:0 0 auto;margin-top:1px}
 .day-card .dsum{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.4}
 .crs-sum{font-size:12px;color:var(--muted);line-height:1.4;margin:2px 0 4px;padding:0 2px}
-/* 허브 검색·필터 — 50+ 이벤트를 "내 아티스트/내 나라"로 좁힘. 기존 토큰·radius 재사용, 신규 색 0.
-   진행: JS가 카드 텍스트(.a 아티스트 + .c 나라·도시)로 매칭 → 카드 show/hide. 정적 사이트 = 서버 0. */
+
 .hubfilter{margin:0 0 16px}
 .hf-search{position:relative;display:flex;align-items:center}
 .hf-search svg{position:absolute;inset-inline-start:12px;color:var(--muted);pointer-events:none;flex:0 0 auto}
@@ -278,7 +273,7 @@ body{overflow-wrap:break-word;word-break:normal}
 .hf-clear{position:absolute;inset-inline-end:6px;display:none;align-items:center;justify-content:center;width:38px;height:38px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:8px;font-size:20px;line-height:1}
 .hf-clear:hover{background:var(--line);color:var(--ink)}
 .hf-search.has-val .hf-clear{display:inline-flex}
-/* 나라 칩 — 좌우 스와이프(가로 스크롤), 선택 시 햇살 톤(정체성). 카드에서 동적 생성 → 드리프트 0 */
+
 .hf-chips{display:flex;flex-wrap:nowrap;gap:7px;overflow-x:auto;scrollbar-width:none;padding:10px 0 2px;margin:0 -2px;scroll-padding-inline:2px}
 .hf-chips::-webkit-scrollbar{display:none}
 .hf-chip{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;min-height:36px;box-sizing:border-box;padding:7px 13px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--card);color:var(--ink);font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;font-family:inherit;transition:border-color .2s,background .2s}
@@ -286,11 +281,11 @@ body{overflow-wrap:break-word;word-break:normal}
 .hf-chip[aria-pressed="true"]{background:var(--sun-chip-bg);color:var(--sun-chip-ink);border-color:var(--sun-chip-ink)}
 .hf-chip .cnt{color:var(--muted);font-weight:400;font-size:12px}
 .hf-chip[aria-pressed="true"] .cnt{color:var(--sun-chip-ink);opacity:.75}
-/* 빈 결과 안내 — 탭 패널별. 매칭 0건일 때만 노출 */
+
 .hf-empty{display:none;text-align:center;color:var(--muted);font-size:14px;padding:30px 16px;line-height:1.6}
 .hf-empty b{color:var(--ink);font-weight:600}
 .tabpanel.hf-allhidden .hf-empty{display:block}
-/* 결과 요약 줄(검색·필터 활성 시만) — "런던 · 3개" */
+
 .hf-count{display:none;font-size:13px;color:var(--muted);margin:2px 0 12px}
 .hf-count.on{display:block}
 .hf-count b{color:var(--accent);font-weight:600}
@@ -617,20 +612,20 @@ body{overflow-wrap:break-word;word-break:normal}
 var SUP=["ko", "en", "ja", "zh-cn", "zh-tw", "es", "th", "id", "pt", "ar", "vi"],DEFL='ko';
 var cur=document.documentElement.getAttribute('data-lang')||DEFL;
 var PFX=/^\/?(en|ja|zh-cn|zh-tw|es|th|id|pt|ar|vi)(\/|$)/;
-// 언어 토글 클릭 = 선택 저장(이후 자동 리다이렉트 억제)
+
 document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('.lng');
  if(a){var hl=a.getAttribute('data-lang')||'';if(hl)try{localStorage.setItem('byvias_lang',hl);}catch(e){}}});
-// 첫 방문(저장값 없음)만 Accept-Language 자동. 저장값 있으면 그 언어로 1회 이동.
+
 function go(l){if(l===cur)return;
  var path=location.pathname; var parts=path.split('/');
  var file=parts.pop()||'index.html';
- var dir=parts.join('/'); // 현재 디렉토리(언어 prefix 포함 가능)
- // 현재 prefix 제거
+ var dir=parts.join('/'); 
+ 
  var base=dir.replace(/\/(en|ja|zh-cn|zh-tw|es|th|id|pt|ar|vi)$/,'');
  var tgt=(l===DEFL)?(base+'/'+file):(base+'/'+l+'/'+file);
  tgt=tgt.replace(/\/+/g,'/');
  location.replace(tgt);}
-// 명시 언어경로(prefix 있음 = cur!==DEFL) = 자동/저장 리다이렉트 전면 skip. 명시 URL 우선.
+
 if(cur===DEFL){
 var saved=null;try{saved=localStorage.getItem('byvias_lang');}catch(e){}
 if(saved&&SUP.indexOf(saved)>=0){go(saved);}
@@ -639,7 +634,7 @@ else if(!saved){var nav=(navigator.languages||[navigator.language||'']);
   var m=(c.indexOf('ko')===0)?DEFL:(c.indexOf('zh')===0?((c.indexOf('tw')>0||c.indexOf('hant')>0||c.indexOf('hk')>0)?'zh-tw':'zh-cn'):c.split('-')[0]);
   if(SUP.indexOf(m)>=0){go(m);break;}}}
 }
-// D-day: 완전 날짜(data-date)만 계산. 과거/오늘 이후 표기, 부분날짜 span 자체 없음.
+
 var T=new Date();T.setHours(0,0,0,0);
 var els=document.querySelectorAll('.dday[data-date]');
 for(var j=0;j<els.length;j++){var ds=els[j].getAttribute('data-date');
@@ -648,7 +643,7 @@ for(var j=0;j<els.length;j++){var ds=els[j].getAttribute('data-date');
  var diff=Math.round((ev2-T)/86400000);var txt='';
  if(diff>0){txt='D-'+diff;}else if(diff===0){txt='D-DAY';}else{continue;}
  els[j].textContent=txt;els[j].setAttribute('dir','ltr');els[j].style.display='inline-block';}
-// YouTube 경량 facade: 썸네일 클릭 시에만 iframe 주입(외부 SDK 0, 초기 로드 가벼움).
+
 document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('.ytfacade');
  if(!b)return;var vid=b.getAttribute('data-vid');if(!vid)return;
  var f=document.createElement('iframe');f.className='ytframe';
@@ -656,31 +651,31 @@ document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.targe
  f.setAttribute('allowfullscreen','');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
  f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(vid)+'?autoplay=1';
  b.parentNode.replaceChild(f,b);});
-// 어필리에이트 CTR 측정 — 단일 위임 리스너 1개(카드별 핸들러 금지). 네비게이션 비차단(beacon).
-// 엔드포인트는 PLACEHOLDER(서버리스 카운터 후행). 카운트 사용자 비노출. 클릭 흐름 무변경.
-var AFF_BEACON='';  // TODO: Cloudflare Workers/Supabase KV 엔드포인트(후행). 비면 no-op.
+
+
+var AFF_BEACON='';  
 document.addEventListener('click',function(ev){
  var a=ev.target.closest&&ev.target.closest('[data-aff="1"]');
  if(!a||!AFF_BEACON)return;
  try{var p={surface:a.getAttribute('data-aff-surface')||'',vendor:a.getAttribute('data-aff-vendor')||'',event:a.getAttribute('data-aff-event')||'',pos:a.getAttribute('data-aff-pos')||''};
   if(navigator.sendBeacon){navigator.sendBeacon(AFF_BEACON,new Blob([JSON.stringify(p)],{type:'application/json'}));}}catch(e){}
 });
-// 허브 검색·필터 — 클라이언트사이드. 카드 텍스트(아티스트+나라·도시)로 매칭, show/hide.
-// 나라 칩은 카드에서 동적 생성(하드코딩 0 → 카드 추가/삭제 시 자동 동기화).
+
+
 (function(){
  var qEl=document.getElementById('hf-q'),clearEl=document.getElementById('hf-clear'),
      chipsEl=document.getElementById('hf-chips'),countEl=document.getElementById('hf-count'),
      searchWrap=qEl&&qEl.closest('.hf-search');
  if(!qEl||!chipsEl)return;
- // 검색 대상 = 예정 이벤트 4개 탭만(지난 이벤트 그리드는 참고용이라 필터 제외)
+ 
  var panels=[].slice.call(document.querySelectorAll('.tabs .tabpanel'));
  if(!panels.length)return;
- // 나라명 SSOT(카드 .c 첫 토큰 추출용). 한국어 허브 기준 — 도시-only(홍콩/마카오/싱가포르)도 나라로 취급.
+ 
  var COUNTRIES=['대한민국','일본','대만','미국','싱가포르','홍콩','태국','영국','멕시코','마카오','필리핀','인도네시아','독일','중국','베트남','캐나다','호주','말레이시아'];
- // 나라 표시 라벨 — 매칭키(한글)와 표시명 분리. 키 보존으로 카드 매칭 무손상.
+ 
  var COUNTRY_LABELS={'대한민국':'韓国','일본':'日本','대만':'台湾','미국':'アメリカ','싱가포르':'シンガポール','홍콩':'香港','태국':'タイ','영국':'イギリス','멕시코':'メキシコ','마카오':'マカオ','필리핀':'フィリピン','인도네시아':'インドネシア','독일':'ドイツ','중국':'中国','베트남':'ベトナム','캐나다':'カナダ','호주':'オーストラリア','말레이시아':'マレーシア'};
  function norm(s){return (s||'').toLowerCase().replace(/\s+/g,' ').trim();}
- // 카드별 색인 구성 + 빈상태 div 주입
+ 
  var index=[],countryCount={};
  panels.forEach(function(panel){
   var grid=panel.querySelector('.grid');if(!grid)return;
@@ -688,17 +683,17 @@ document.addEventListener('click',function(ev){
   cards.forEach(function(card){
    var a=card.querySelector('.a'),c=card.querySelector('.c');
    var artist=a?a.textContent:'', cline=c?c.textContent:'';
-   // 나라 = .c 줄에 등장하는 알려진 나라명 전부(조건부 카드 '미국 또는 멕시코'는 둘 다 매칭)
+   
    var ctrys=COUNTRIES.filter(function(k){return cline.indexOf(k)>=0;});
    ctrys.forEach(function(k){countryCount[k]=(countryCount[k]||0)+1;});
    index.push({card:card,panel:panel,hay:norm(artist+' '+cline),countries:ctrys});
   });
-  // 탭별 빈 결과 안내
+  
   var empty=document.createElement('div');empty.className='hf-empty';
   empty.innerHTML='検索・絞り込みに一致する日程がありません。<br><b>別の国</b>を選ぶか、検索ワードをクリアしてください。';
   grid.appendChild(empty);
  });
- // 나라 칩 생성 — 카드 수 많은 순(런던 팬이 영국을 바로 찾도록 빈도순). '전체' 먼저.
+ 
  var order=Object.keys(countryCount).sort(function(x,y){return countryCount[y]-countryCount[x];});
  var activeCountry='';
  function makeChip(label,key,cnt){
@@ -712,7 +707,7 @@ document.addEventListener('click',function(ev){
  order.forEach(function(k){chipsEl.appendChild(makeChip(COUNTRY_LABELS[k]||k,k,countryCount[k]));});
  function syncChips(){[].forEach.call(chipsEl.children,function(b){
   b.setAttribute('aria-pressed',(b.getAttribute('data-k')||'')===activeCountry?'true':'false');});}
- // 현재 보이는 탭(체크된 라디오)의 패널
+ 
  function activePanel(){
   var r=document.querySelector('.tabs>input:checked');
   if(!r)return panels[0];
@@ -731,7 +726,7 @@ document.addEventListener('click',function(ev){
    p.classList.toggle('hf-allhidden',vis===0);
   });
   if(searchWrap)searchWrap.classList.toggle('has-val',!!qEl.value);
-  // 결과 요약(검색·필터 활성 시만)
+  
   if(q||activeCountry){
    var label=activeCountry||'検索';
    countEl.innerHTML=(activeCountry?(COUNTRY_LABELS[activeCountry]||activeCountry)+' · ':'')+'<b>'+shownInCur+'</b>件';
@@ -740,7 +735,7 @@ document.addEventListener('click',function(ev){
  }
  qEl.addEventListener('input',apply);
  if(clearEl)clearEl.addEventListener('click',function(){qEl.value='';qEl.focus();apply();});
- // 탭 전환 시 결과 요약 갱신(필터·검색 그대로 유지)
+ 
  document.querySelectorAll('.tabs>input').forEach(function(r){r.addEventListener('change',apply);});
  apply();
 })();

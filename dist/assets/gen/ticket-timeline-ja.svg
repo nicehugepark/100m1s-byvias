@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" role="img" aria-label="チケット予約タイムライン — 先行予約6/9、一般予約6/11、リターンチケット、キャンセル締切は前日17時">
+  <title>チケット予約タイムライン — 先行予約 · 一般予約 · リターン · 締切</title>
+  <desc>ファンクラブ先行予約2026-06-09 20:00、一般予約2026-06-11 20:00 KST、リターンチケットは予約翌日の深夜0~2時に出る、キャンセル・返金締切は観覧前日17:00。</desc>
+  <defs>
+    <linearGradient id="tk-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF6"/><stop offset="1" stop-color="#FBF3DE"/></linearGradient>
+  <style>@media (prefers-color-scheme: dark){.svg-panel{fill:#1c1b22!important}.svg-card{fill:#262430!important}.svg-tx{fill:#d6d3cb!important}}</style></defs>
+  <rect x="0" y="0" width="880" height="560" rx="22" fill="url(#tk-bg)" class="svg-panel"/>
+
+  <text x="40" y="50" font-family="-apple-system,'Hiragino Sans','Yu Gothic',sans-serif" font-size="23" font-weight="800" fill="#4A4470" class="svg-tx">予約タイムライン — 一目で</text>
+  <text x="40" y="74" font-family="-apple-system,'Hiragino Sans',sans-serif" font-size="13.5" font-weight="500" fill="#8B8499" class="svg-tx">先行予約 → 一般予約 → リターン → キャンセル締切 · 時刻はKST · 公式(NOL)告知優先</text>
+
+  <!-- vertical day axis -->
+  <line x1="120" y1="128" x2="120" y2="478" stroke="#E7E0CC" stroke-width="2"/>
+
+  <!-- ===== STEP 1 — 先行予約 6/9 ===== -->
+  <g font-family="-apple-system,'Hiragino Sans','Yu Gothic',sans-serif">
+    <circle cx="120" cy="150" r="11" fill="#C9A227"/><text x="120" y="155" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">1</text>
+    <rect x="152" y="126" width="300" height="50" rx="13" fill="#FFF4D1" stroke="#E8C063" stroke-width="1.5" class="svg-card"/>
+    <text x="170" y="150" font-size="15" font-weight="800" fill="#7A5B12">ファンクラブONCE先行予約</text>
+    <text x="170" y="168" font-size="12.5" font-weight="600" fill="#9A7B1E">6/9 (火) 20:00 ~ 23:59</text>
+    <rect x="474" y="138" width="78" height="26" rx="13" fill="#fff" stroke="#E8C063" stroke-width="1.5" class="svg-card"/>
+    <text x="513" y="156" text-anchor="middle" font-size="12.5" font-weight="800" fill="#9A7B1E">ONCE only</text>
+  </g>
+
+  <!-- ===== STEP 2 — 一般予約 6/11 (HERO) ===== -->
+  <g font-family="-apple-system,'Hiragino Sans','Yu Gothic',sans-serif">
+    <circle cx="120" cy="240" r="13" fill="#E84A7F"/><text x="120" y="245" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">2</text>
+    <rect x="150" y="212" width="500" height="58" rx="14" fill="#FCE7EE" stroke="#E84A7F" stroke-width="2" class="svg-card"/>
+    <text x="170" y="240" font-size="17" font-weight="800" fill="#B4275B">一般予約 — 誰でも</text>
+    <text x="170" y="260" font-size="13.5" font-weight="700" fill="#8E2049">6/11 (木) 20:00 KST · NOL Ticket (world.nol.com)</text>
+    <rect x="556" y="226" width="78" height="30" rx="15" fill="#E84A7F"/>
+    <text x="595" y="246" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">D-DAY</text>
+  </g>
+  <text x="170" y="290" font-family="-apple-system,'Hiragino Sans',sans-serif" font-size="12" font-weight="600" fill="#A8A29A" class="svg-tx">価格154,000ウォン (≈$110) · スタンディング=フロア立見 / 指定席=座席番号</text>
+
+  <!-- ===== STEP 3 — リターンチケット ===== -->
+  <g font-family="-apple-system,'Hiragino Sans','Yu Gothic',sans-serif">
+    <circle cx="120" cy="350" r="11" fill="#8B50A4"/><text x="120" y="355" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">3</text>
+    <rect x="152" y="322" width="420" height="64" rx="13" fill="#F3EAF7" stroke="#B68BCB" stroke-width="1.5" class="svg-card"/>
+    <text x="170" y="346" font-size="15" font-weight="800" fill="#6E3E88">リターンチケットが出る時間帯</text>
+    <text x="170" y="365" font-size="12.5" font-weight="700" fill="#7E4E98">予約翌日の深夜0~2時 (未入金分の放出)</text>
+    <text x="170" y="381" font-size="12" font-weight="600" fill="#9070A8">+ 公演前日・当日の直前 — 同じNOLページを更新</text>
+  </g>
+
+  <!-- ===== STEP 4 — キャンセル締切 (前日17時) ===== -->
+  <g font-family="-apple-system,'Hiragino Sans','Yu Gothic',sans-serif">
+    <circle cx="120" cy="450" r="11" fill="#6B6A64"/><text x="120" y="455" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">4</text>
+    <rect x="152" y="430" width="420" height="44" rx="13" fill="#EEECE5" stroke="#CFCcC2" stroke-width="1.5" class="svg-card"/>
+    <text x="170" y="450" font-size="14.5" font-weight="800" fill="#55534C" class="svg-tx">キャンセル・返金締切 — 観覧前日17:00</text>
+    <text x="170" y="467" font-size="12" font-weight="600" fill="#8B8980" class="svg-tx">それまでがリターンチケットの出る最後の時間帯</text>
+  </g>
+
+  <!-- TIP callout -->
+  <g transform="translate(150,498)" font-family="-apple-system,'Hiragino Sans','Yu Gothic',sans-serif">
+    <rect x="0" y="0" width="710" height="46" rx="14" fill="#E3F1EC" stroke="#A9D6C6" stroke-width="1.5" class="svg-card"/>
+    <circle cx="28" cy="23" r="12" fill="#0F6E56"/><path d="M22 23l4 4 8-8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="50" y="20" font-size="13" font-weight="800" fill="#0F6E56">ヒント · Pro tip</text>
+    <text x="50" y="38" font-size="12.5" font-weight="600" fill="#1C5C49">事前にNOLログイン + 決済手段(WOWPASS)登録 → 出たら座席を押して決済まで一気に</text>
+  </g>
+</svg>
