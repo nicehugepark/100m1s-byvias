@@ -217,11 +217,17 @@ def _update_langpick(soup: BeautifulSoup, lang: str, filename: str) -> None:
         elif "aria-current" in a_tag.attrs:
             del a_tag["aria-current"]
         # href 갱신 (ko 기준 href를 각 언어 상대경로로)
-        _, _, prefix, _ = LANGS.get(a_lang, (None, None, "", False))
+        a_hl, a_name, prefix, _ = LANGS.get(a_lang, (None, None, "", False))
         if prefix:
             a_tag["href"] = f"../{prefix}/{filename}"
         else:
             a_tag["href"] = f"../{filename}"
+        # 🔴 라벨 = 해당 언어 고정 native self-name 강제 (현재 페이지 언어 무관).
+        # _collect_text_nodes 가 native name 중 유일하게 한글인 '한국어'를
+        # translate_batch 로 흘려 zh-cn='简体中文'/en='Korean' 오역 baked 되던
+        # 회귀를 차단 (R87, 2026-06-16).
+        if a_name:
+            a_tag.string = a_name
 
 
 def build_lang(
@@ -285,7 +291,7 @@ def build_lang(
 
     # ── 3. 텍스트 노드 치환 ────────────────────────
     for node, new_text in zip(
-        nodes, translated
+        nodes, translated, strict=False
     ):  # strict= kwarg Python<3.10 미지원
         if new_text and new_text != str(node):
             node.replace_with(NavigableString(new_text))
