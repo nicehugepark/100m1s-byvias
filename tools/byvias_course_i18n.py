@@ -230,6 +230,36 @@ def _update_langpick(soup: BeautifulSoup, lang: str, filename: str) -> None:
             a_tag.string = a_name
 
 
+def _rewrite_root_relative_assets(soup: BeautifulSoup) -> None:
+    """루트 상대경로 자산을 ../ 로 보정.
+
+    마스터 = dist 루트(ko) HTML 이라 logo.svg·favicon.svg·logo-dark.svg·
+    assets/jbar.js 를 bare 상대경로로 참조한다. lang 페이지는 dist/{lang}/ 한
+    단계 아래라 그대로 두면 /{lang}/logo.svg 로 해석되어 404 (FLR-20260406-TEC-001
+    재발 방지: 빌더에서 보정해 재빌드 시 회귀 차단). 이미 ../ 또는 절대경로(/)·
+    http 인 자산은 건드리지 않는다(멱등).
+    """
+
+    def _fix(val: str) -> str:
+        if not val:
+            return val
+        if val.startswith(("../", "/", "http://", "https://", "data:", "#")):
+            return val
+        return f"../{val}"
+
+    # src 속성 (img.logo, script[src=assets/jbar.js])
+    for tag in soup.find_all(src=True):
+        tag["src"] = _fix(tag["src"])
+    # srcset 속성 (source[srcset=logo-dark.svg]) — 단일 URL 가정(공백 디스크립터 없음)
+    for tag in soup.find_all(srcset=True):
+        tag["srcset"] = _fix(tag["srcset"])
+    # favicon link[rel=icon][href=favicon.svg]
+    for tag in soup.find_all("link", href=True):
+        rel = tag.get("rel") or []
+        if any(r in ("icon", "apple-touch-icon", "manifest") for r in rel):
+            tag["href"] = _fix(tag["href"])
+
+
 def build_lang(
     master_html: str, filename: str, lang: str, out_dir: Path, verbose: bool = True
 ) -> Path:
@@ -319,6 +349,7 @@ def build_lang(
     _update_meta(soup, lang, html_lang, trans_title, trans_desc)
     _update_hreflang(soup, filename)
     _update_langpick(soup, lang, filename)
+    _rewrite_root_relative_assets(soup)  # FLR-20260406-TEC-001 재발 방지
 
     # ── 5. 출력 디렉토리 생성 + 저장 ──────────────
     out_dir.mkdir(parents=True, exist_ok=True)
