@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 DIST = Path(__file__).resolve().parent.parent / "dist"
-BASE = "https://bybias.100m1s.com"
+BASE = "https://byvias.100m1s.com"
 
 OG_URL_RE = re.compile(r'<meta property="og:url" content="([^"]+)"')
 CANONICAL_RE = re.compile(r'<link rel="canonical"')
